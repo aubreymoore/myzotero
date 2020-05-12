@@ -1,0 +1,888 @@
+Available at www.sciencedirect.com
+INFORMATION PROCESSING IN AGRICULTURE XXX (2018) XXX–XXX
+journal homepage: www.elsevier.com/locate/inpa
+A review of neural networks in plant disease detection using hyperspectral data
+Kamlesh Golhani a, Siva K. Balasundram a,*, Ganesan Vadamalai b, Biswajeet Pradhan c
+a Department of Agriculture Technology, Faculty of Agriculture, Universiti Putra Malaysia, 43400 Serdang, Selangor, Malaysia b Department of Plant Protection, Faculty of Agriculture, Universiti Putra Malaysia, 43400 Serdang, Selangor, Malaysia c School of Systems, Management and Leadership, Faculty of Engineering and IT, University of Technology Sydney, Broadway, NSW 2007, Australia
+
+ARTICLE INFO
+Article history: Received 3 October 2017 Received in revised form 20 April 2018 Accepted 2 May 2018 Available online xxxx
+
+ABSTRACT
+This paper reviews advanced Neural Network (NN) techniques available to process hyperspectral data, with a special emphasis on plant disease detection. Firstly, we provide a review on NN mechanism, types, models, and classiﬁers that use different algorithms to process hyperspectral data. Then we highlight the current state of imaging and nonimaging hyperspectral data for early disease detection. The hybridization of NNhyperspectral approach has emerged as a powerful tool for disease detection and diagnosis. Spectral Disease Index (SDI) is the ratio of different spectral bands of pure disease spectra. Subsequently, we introduce NN techniques for rapid development of SDI. We also highlight current challenges and future trends of hyperspectral data. Ó 2018 The Authors. China Agricultural University. Publishing services by Elsevier B.V. This
+is an open access article under the CC BY-NC-ND license (http://creativecommons.org/ licenses/by-nc-nd/4.0/).
+
+Contents
+1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 2. Mechanism of neural networks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 3. Major types of NNs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00
+3.1. Single-Layer Perceptron (SLP) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 3.2. Multi-Layer Perceptron (MLP) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 3.3. Radial-Basis Function (RBF) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 3.4. Kohonen’s Self-Organising Map (SOM) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 3.5. Probabilistic Neural Network (PNN) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 3.6. Convolutional Neural Network (CNN) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 4. NN models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 4.1. Feed-Forward Neural Network (FFNN) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 4.2. Back-Propagation Neural Network (BPNN) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00
+* Corresponding author at: Department of Agriculture Technology, Faculty of Agriculture, Universiti Putra Malaysia, 3400 Serdang, Selangor, Malaysia.
+E-mail address: siva@upm.edu.my (S.K. Balasundram). Peer review under responsibility of China Agricultural University. https://doi.org/10.1016/j.inpa.2018.05.002 2214-3173 Ó 2018 The Authors. China Agricultural University. Publishing services by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+2
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+Nomenclature
+
+AIS
+
+Airborne Imaging Spectrometer
+
+AISA Airborne Imaging Spectrometer for Applications
+
+AVIRIS Airborne Visible/infrared Imaging Spectrometer
+
+ANN Artiﬁcial Neural Network
+
+BP
+
+Back-Propagation
+
+BPNN Back-Propagation Neural Network
+
+CLSI Cersopora Leaf Spot- Index
+
+CA
+
+Cluster Analysis
+
+CNN Convolutional Neural Network
+
+CP
+
+Counter-Propagation
+
+DSWI Disease-Water stress Index
+
+ELISA Enzyme-Linked Immune Sorbent Assay
+
+ELM Extreme Learning Machine
+
+FFNN Feed-Forward Neural Network
+
+GLD Generalized Linear Discriminants
+
+GRNN Generalized Regression Neural Network
+
+GA
+
+Genetic Algorithm
+
+HI
+
+Healthy- Index
+
+HPLC High Performance Liquid Chromatography
+
+HIS
+
+Hyperspectral imaging
+
+HyMap Hyperspectral Mapping Imaging Spectrometer
+
+Lw
+
+Laurel wilt
+
+LRDSI Leaf Rust Disease Severity Index
+
+LVQ Learning Vector Quantization
+
+LS-SVM Least Squares Support Vector Machine
+
+LDF
+
+Linear Discriminant Function
+
+LDA Linear Discriminant Analysis
+
+LVQ Learning Vector Quantization
+
+MLP Multi-Layer Perceptron
+
+NASA/JPL National Aeronautics and Space Administration
+
+Jet Propulsion Laboratory
+
+NIR
+
+Near Infra-Red
+
+NN
+
+Neural Network
+
+NDVI Normalized Difference Vegetation Index
+
+NLRHI Normalized Leaf Rust Healthy Index
+
+PLS-DA Partial Least Squares-Discrimination Analysis
+
+PLS
+
+Partial Least-Square Regression
+
+PMI
+
+Powdery Mildew-Index
+
+PCA Principal Component Analysis
+
+PCS
+
+Principal Component Spectra
+
+PCs
+
+Principle Components
+
+PNN Probabilistic Neural Network
+
+RBF
+
+Radial-Basis Function
+
+RF
+
+Random Forest
+
+ROSIS Reﬂective Optics System Imaging Spectrometer
+
+RT-PCR Real-Time Polymerase Chain Reaction
+
+RT-LAMP Reverse Transcription Loop-Mediated Isother-
+
+mal Ampliﬁcation
+
+RPA
+
+Ribonuclease Protection Assay
+
+SWIR Shortwave Infrared
+
+SLP
+
+Single-Layer Perceptron
+
+SPAD Soil and Plant Analysis Development
+
+SOM Self-Organising Map
+
+SDI
+
+Spectral Disease Index
+
+SMA Spectral Mixture Analysis
+
+SBRI Sugar Beet Rust-Index
+
+SVM Support Vector Machine
+
+TMV Tobacco Mosaic Virus
+
+TSWV Tomato Spotted Wilt Virus
+
+VIs
+
+Vegetation Indices
+
+VNIR Visible/Near-Infrared
+
+4.3. Generalized regression Neural Network (GRNN) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 5. The NN classifiers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 6. Early disease detection. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00
+6.1. Early detection using non-imaging field spectroscopy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 6.2. Early detection using imaging spectroscopy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 7. An overview of two studies on rice (Oryza sativa L.) disease detection using NN-hyperspectral approach. . . . . . . . . . . 00 7.1. RBF network with PCA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 7.2. Learning Vector Quantization (LVQ) NN with PCA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 8. Challenges of NN . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 9. SDI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 10. Future trends: deep learning of hyperspectral data. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 11. Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 Acknowledgement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 Conflict of interest . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00 References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 00
+
+1. Introduction
+Plant disease has become a major threat to global food security [1]. Plant diseases contribute 10–16% losses in the global harvest of crops each year costing an estimated US$220 billion [2]. According to a report of the Food and Agriculture
+
+Organization (FAO) [3], our world population is anticipated to hit 9.1 billion in 2050. Therefore, agricultural production needs to be increased up to 70% to fulﬁll the food requirements of a steadily growing population. On the other hand, abundant use of chemicals such as bactericides, fungicides, and nematicides to control plant diseases has been causing
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+3
+
+adverse effects in the agro-ecosystem. Currently, there is a need for effective early disease detection techniques to control plant diseases for food security and sustainability of agro-ecosystem.
+Plant disease affects the quality of fruits, vegetables, grains, legumes and causes heavy losses in production [4,5]. Lethal plant diseases result in high mortality in plants. For example, cadang-cadang (dying-dying) disease of coconut palm (Cocus nucifera L.) causes premature decline and death of coconut palms. It was reported to have killed over 40 million coconut palms in the central Philippines since ﬁrst being described in 1914 [6]. Typically, plant disease damages the photosynthetic apparatus and affects the growth of plant [7]. Most plant diseases (around 85%) are caused by fungal or fungal-like organisms. Other serious diseases of plants are caused by bacteria, viruses, and viroids, and few diseases are caused by certain nematodes [8].
+Pathogenic microorganisms are ubiquitous in nature. Pathogens characterize the symptoms in the plants and produce diseases due to the susceptibility of the plant against adverse impacts of the pathogens. The majority of pathogens carry out essential activities in nature, obtain nourishment from the host, and associate with plants via symbiotic or non-symbiotic relationships. Suspected plants are required to be identiﬁed by their external fruit and foliar symptoms on fruits and leaves prior to investigation in the laboratory. In most cases, these visible symptoms typically manifest in the middle to later stages of the infection [1]. However, morphological identiﬁcation of diseases is not reliable. An appropriate method is needed for detection of the causal agent.
+Traditionally, fungi were identiﬁed morphologically followed by isolating and culturing. While biochemical tests were employed to detect bacteria, and viruses were identiﬁed based on genetic material, transmission assays and their host range [4]. Recently, the advancements in the ﬁeld of biotechnology and molecular biology have revolutionized the ﬁeld of plant disease detection. Several invasive diagnostic techniques such as Western blotting, Enzyme-Linked ImmunoSorbent Assay (ELISA), Reverse Transcription Polymerase Chain Reaction (RT-PCR) and microarrays have been developed [4]. A plant disease can be detected with the onset of the symptoms by these laboratory techniques. These techniques are also referred to as molecular marker or destructive techniques. They involve destructive leaf sampling followed by chemical treatment.
+Every technique has its own advantages and limitations. Researchers prefer to adopt invasive techniques because of their speed and accuracy in disease detection. However, invasive techniques pose inconsistency and insensitivity due to different reasons, including host-pathogen interaction and concentration. For example, Coconut cadang-cadang viroid (CCCVd) is a causal agent of orange spotting disease of oil palm (Elaeis guineensis Jacq.) which can be detected using RT-PCR [9,10], Ribonuclease Protection Assay (RPA) [11], and Reverse Transcription Loop-mediated Isothermal Ampliﬁcation (RT-LAMP) [12]. But, a recent study found that these techniques were neither consistent nor sensitive, and not able to quantify the viroid concentrations [13]. Similarity, Sakudo et al. [14] found that invasive techniques (i.e. ELISA, RT-PCR and Western blotting) were effective for diagnosis of viral
+
+infections, but none of them were ideal in terms of costeffectiveness, speed, and accuracy. Recently, Cui et al. [15] have reviewed advantages and disadvantages of invasive and non-invasive techniques.
+There is a few more techniques which are also frequently used, i.e. Polymerase Chain Reaction (PCR) and Fluorescence In-situ Hybridization (FISH). The PCR is easy to operate and portable, but has been subjected to DNA extraction, and inhibitors and polymerase activity [16,17]. FISH is a highly sensitive technique allowing simultaneous visualization, identiﬁcation, enumeration, and localization of individual microbial cells, but auto-ﬂuorescence of microorganism is a major challenge for this technique [18].
+In the last decade, a number of non-invasive techniques have been developed, which are sensitive, consistent, standard, high throughput, rapid and cost-effective. Application of non-invasive techniques has been steadily increasing. The most popular non-invasive techniques are: ﬂuorescence spectroscopy, Visible/Near-Infrared (VNIR) spectroscopy, ﬂuorescence imaging, and hyperspectral imaging [19].
+Hyperspectral imaging is an important technique in remote sensing. Hyperspectral sensors capture the data from the visible through the Near Infra-Red (NIR) range of the electromagnetic spectrum, and acquire the spectral information from hundreds of narrow spectral bands [20]. This paper is intended to review the applications of hyperspectral imaging for plant disease detection.
+The concept of hyperspectral imaging came into existence in the 1970s as a supporting ﬁeld spectral measurement for Landsat-1. In 1983, Airborne Imaging Spectrometer (AIS) was designed by National Aeronautics and Space Administration Jet Propulsion Laboratory (NASA/JPL) as an alternative to satellite. The Airborne Visible/infrared Imaging Spectrometer (AVIRIS) followed in 1987, which is the most important hyperspectral data provider [21]. Currently, development of hyperspectral imaging has reached in its blooming stage. The hyperspectral sensors are not only orbiting around Earth [22], but also around Mars [23].
+Hyperspectral imaging is one of the most efﬁcient and fast-developing techniques, for extraction of more precise and detailed information about an object [24]. For example, hyperspectral sensors as a tool for ﬁeld spectroscopy have been applied for applications in geology [25,26] and agriculture [27,28]. Hyperspectral imaging has been used for various applications such as detection, classiﬁcation, discrimination, identiﬁcation, and characterization [29,30].
+These advantages of hyperspectral imaging has made precision plant protection even more achievable. Several recent studies [31–36] have attempted to explain the role of hyperspectral bands in discriminating between healthy and diseased plants. The literature highlights more thorough and dynamic interpretation of hyperspectral data that are geared toward early detection of plant diseases. For example, Moghadam et al. [37] described the importance of full range hyperspectral imaging and machine learning techniques in discriminating between healthy and Tomato Spotted Wilt Virus (TSWV) infected plants of capsicum. Different Vegetation Indices (VIs) and data-driven probabilistic topic models were used to train the classiﬁers for detection of TSWV. Ahmadi et al. [38] detected Ganoderma basal stem rot disease
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+4
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+of oil palm in its early stage from spectroscopic and imagery data using artiﬁcial neural network.
+More often than not, spectral signatures of a diseased plant could not be analyzed correctly using parametric approaches such as simple or multiple regression and functional statistics. Therefore, non-parametric approaches such as Principal Component Analysis (PCA), Fuzzy logic, Support Vector Machine (SVM), Cluster Analysis (CA), Partial LeastSquare (PLS), and Neural Networks (NNs) have been employed in the area of hyperspectral spectroscopy. For example, Fisher’s Linear Discriminant Analysis (LDA) technique is used to classify imaging and non-imaging hyperspectral data with two or more classes.
+Hyperspectral data are basically multivariate in nature. PCA is a multivariate statistical method that eliminates redundancy in univariate analyses. PCA helps to identify patterns of spectral data. Basically, PCA transforms large numbers of correlated variables into smaller number of uncorrelated variables, called Principal Component (PC) [39]. The PCA and PLS were recently used for detection of fungal diseases (yellow rust and fusarium head blight) of wheat and barley [32,33]. Whetton et al. [32] conducted PCA on healthy and yellow rust and fusarium infected cereal crops at different growth stages and studied their temporal pattern and serial autocorrelation. The results suggested to use PLS for each growing stage for accurate prediction. In the second part of the study, Whetton et al. [33] used PLS regression with leave-one-out cross-validation for both diseases. Results showed that the regression model developed for fusarium head blight and yellow rust in wheat can be applied to predict these diseases in barley.
+Recently, Lu et al. [31] also conducted PCA to evaluate ﬁftyseven different VIs and obtained six PCs for detecting multidiseased tomato leaves at different stages. The K-nearest neighbor classiﬁer was used for classifying each PC with weight coefﬁcients ranking from 1 to 30. Highest classiﬁcation accuracy (100%) was achieved for healthy leaves amongst the tested healthy and diseased leaves of tomato. Using the concept of Fuzzy set theory, Kole et al. [40] proposed digital image processing operations with K-means for detection of downy mildew disease in grape leaves. A total of 31 digital images of diseased and healthy grape plants were processed. An 87% detection accuracy was obtained in this study.
+The CA is one of the most widely used techniques. To organize hyperspectral data, CA allows for grouping of pixels within similar spectral values and builds the clusters [41]. Krezhova et al. [42] applied CA and student t-test for determination of statistical signiﬁcance of difference between means of reﬂectance values from control and infected apple trees. The SVM is a popular machine learning technique, which is suitable for the analysis of high-dimensional spectral data [43]. Nagasubramanian et al. [44] used Genetic Algorithm (GA), an optimizer, with SVM for selection of optimal spectral bands for early identiﬁcation of charcoal rot disease in soybean. GA-SVM approach identiﬁed charcoal rot disease within three days after inoculation with 97% classiﬁcation accuracy.
+The machine learning techniques have two major disadvantages. First, they are highly dependent on the patterns of variables, as well as on the features which are going to be
+
+extracted. Second, classiﬁers are required to be trained many times before being applied to real world applications [45].
+NNs are the most promising tools for hyperspectral data analysis. The mechanism of NNs is based on the human nervous system. Basically, NNs are very useful for pattern recognition, regardless of any explicit recognition rules [46]. Cui et al. [15] reported that NNs require less formal statistics and are able to model complex nonlinear relationships.
+There is a growing interest in applying NNs to achieve the greater goal of precision plant protection using hyperspectral data. Precision plant protection offers a holistic means of controlling plant diseases based on the concept of spatialtemporal variability. Previously, NNs have been used for data mining purposes but its various applications with hyperspectral data have shown promise for early disease detection. It has unique capabilities such as learning, generalization, and imagination to facilitate a reliable diagnosis of plant disease. NNs have a higher degree of diagnosability than other machine learning techniques.
+These days, processing huge data volume of high dimensional hyperspectral imageries is one of the challenging problems [47]. Data dimensionality reduction is an important and efﬁcient application for managing hyperspectral data. It has been reported that high degree of data dimensionality reduction could be achieved when good classiﬁcation accuracy is retained in hyperspectral data [48]. It is well known that hyperspectral data contain the apparent and inherent spectral information, so its accomplishments and capabilities must be deliberated using NNs.
+NNs endorse the most powerful discriminating capability for plant diseases because they combine the best trainer sets for accurate classiﬁcation. Marini et al. [49] described a particular type of NN-based pattern recognition technique called class-modeling. Class-modeling has a good discriminating capability to enable development of plant disease models. The most popular class-modeling tools were developed on the basis of Kohonen artiﬁcial neural network [50] and multilayer feed-forward network [51].
+Al Bashish et al. [52] used an image processing based framework for detection of ﬁve diseases, namely, early scorch, cottony mold, ashen mold, late scorch, and tiny whiteness of rice leaves and stems. The K-means was used for clustering the diseased leaf images. Then clustered images were passed through an NN classiﬁer. The result described that NN classiﬁer detected leaf diseases with an accuracy of 93%. This framework signiﬁcantly supports accurate and automatic detection of leaf diseases.
+Zhu et al. [53] investigated the potential of hyperspectral imaging as a non-invasive fast detection technique. They detected Tobacco Mosaic Virus (TMV) disease in a short period of time using hyperspectral imaging combined with the variable selection method and machine-learning classiﬁers. The accuracies were up to 95% for Back Propagation Neural Network (BPNN), Extreme Learning Machine (ELM), and Least Squares Support Vector Machine (LS-SVM) models, and up to 80% for chemometric models with data fusion. In a similar study, Zhu et al. [54] tested BPNN along with SVM, ELM, LSSVM, Partial Least Squares-Discrimination Analysis (PLS-DA), LDA, and Random Forest (RF) to process the hyperspectral
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+5
+
+images for presymptomatic detection and classiﬁcation of TMV in tobacco leaves.
+A new approach called artiﬁcial intelligent nose (electronic nose) is a fast and non-invasive technique for diagnosis of plant disease [15]. Pattern recognition techniques such as RF, CA, SVM, linear regression can be applied with electronic nose for pattern recognition. In spite of an extended range of NN applications, including data dimensionality reduction and classiﬁcation, NNs ensure unadulterated high-quality spectral information for hyperspectral data analysis.
+A ratio of different wavelengths of pure disease spectra called Spectral Disease Index (SDI) also requires such speciﬁc machine-learning algorithms that could help to simplify and possibly expedite detection of plant disease. Ashourloo et al. [55] described that SDIs are very effective for dimensionality reduction. SDIs increase the rate of disease estimation. However, a small number of SDIs has so far been developed from imaging and non-imaging hyperspectral remote sensing data and not processed using NNs. The general objectives of this review are:
+1. To discuss applicability of NNs to the analysis of hyperspectral data for early disease detection
+2. To review new SDIs that could be employed in detecting plant diseases using NN classiﬁers
+2. Mechanism of neural networks
+NNs are mathematical models that have been used in data mining. Fundamentally, NNs are an interconnected network of nodes, parallel to the vast network of neurons in the human brain. In an Artiﬁcial Neural Network (ANN), each node assigned to the network represents a neuron. Generally, neurons receive the signals from other similar neurons via synapse connection. A neuron typically connects to an individual processing element, which is called perceptron. In a network, the neurons play an important role, they accept and process the inputs and create the outputs [56,57]. Generally, the connection between two neurons carries the weights in which the electrical information is encoded implicitly. Then electrical information simulates with speciﬁc values stored in those weights that enable the networks to have capabilities like learning, generalization, imagination and creating the relationship within the network [58].
+The ﬁrst model of ANN was proposed by McCulloch and Pitts in 1943 [59]. This model was based on a ‘‘computing element” also known as Mc-Culloch-Pitts neuron. Since then, this model has inspired many researchers to design fast computing models that have the functioning ability like a human brain; such that they are called ANNs. In the contrary, ANNs operate in a feed-forward mode from the input layer through the hidden layers to the output layer [60]. The hidden layer acts somewhat like a ‘black box’ which can sometimes pose complexity to the human brain. This drawback in ANNs has remained an obstacle to their acceptance.
+Nevertheless, NNs are a promising tool for feature selection from spectral data [61]. Almeida [62] deﬁned NNs as artiﬁcial intelligence tools that identify arbitrary non-linear multi
+
+parametric discriminant functions directly from experimental data. The hyperspectral data are typical example of such experimental data. A group of neurons or perceptrons is assembled in an interconnected network that forms an ANN model. The ANN model represents a non-linear structure combining input, output and hidden layers as shown in Fig. 1. Marini et al. [49] described NNs as interconnecting pathways of neurons organized into a sequence of layers.
+In the context of hyperspectral data analysis, a simple NN model can be obtained by deﬁning the neurons, their connections, and outputs. For example, in a three-layer NN, the ﬁrst layer is an input layer with one node for each spectral band. The second layer is one or more hidden layer(s), in which nodes entail reﬂectance values of each spectral band. The last layer is an output layer consisting the nodes usually computed by a non-linear combination of the nodes of input and hidden layers. A three-layer NN model is the most dynamic and widely used.
+3. Major types of NNs
+This section provides a brief description of the major types of NNs which are Single-Layer Perceptron (SLP), Multi-Layer Perceptron (MLP), Radial-Basis Function (RBF) networks, Kohonen’s Self-Organising Map (SOM) networks, Probabilistic Neural Network (PNN), and Convolutional Neural Network (CNN).
+3.1. Single-Layer Perceptron (SLP)
+In 1958, Rosenblatt introduced Rosenblatt’s perceptron algorithm and the mechanism of SLP [63]. Later in 1961, Rosenblatt derived the perceptron rules which yield the optimal weight vector to the perceptron instead of the initial weight values [64]. In the early 1960s, it was also found that SLP can assign the input vectors to one of two classes [65]. Basically, the concept of SLP is based on an activation function that transforms the linear combination into a non-linear function, which is also called the simple discriminant. Another extension of this approach is called linear discriminant in which input variables transform into non-linear functions before forming linear combination. The linear discriminants give promise that an SLP with adaptive weight connects the input and the output. Linear Discriminant Functions (LDFs), Linear separability, Generalized Linear Discriminants (GLD), Fisher’s LDA are few techniques that determine the weights for SLP [66]. It is possible for the SLP network to
+Fig. 1 – The multi-layer NN consisting input layer, hidden layer, and output layer.
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+6
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+comprise one or more artiﬁcial neurons [67] that senses different optimal weight vectors which can be assigned to different neurons. Furthermore, the SLP is the key elementary component of the multilayer feed-forward network. It is also known as the simplest prototype for studying the general non-linear MLPs [68].
+Monteiro et al. [69] implemented SLP and MLP architectures for visual inspection of blood covering surgical ﬁelds using hyperspectral data. These architectures were capable of learning the combinations of reﬂectance bands of various spectral ﬁelds. Both the architectures had generated good visualization, but SLP produced more noise in output. An SLP architecture can provide a simple and comprehensible veriﬁcation for the feasibility of hyperspectral data. This was a signiﬁcant application in diagnostic hyperspectral imaging [70]. Monteiro et al. [69] recommended remote assessment of crop disease may be possible through this approach. So far SLP architecture has not been applied anywhere for crop disease detection using hyperspectral data.
+3.2. Multi-Layer Perceptron (MLP)
+MLP consists more than one hidden layer of perceptron in a network. A common set of layers in an MLP has input, output, and hidden layers. In an ANN, the input layer is the ﬁrst passive layer acts a conduit for entering the data. The second layer is a hidden layer. Paola and Schowengerdt [71] emphasized the importance of hidden layer in a network to increase the network’s ability and for modeling the complex problems. The last layer is the output layer that produces the output signals at the network. Since the SLP is not of practical utility these days, the MPL is most suitable for analyzing hyperspectral data speciﬁcally in the context of non-destructive disease detection for high performance classiﬁcation [72,73]
+Moshou et al. [73] used MLP architecture in order to detect yellow rust in wheat crop. The MLP architecture was designed for input layer having neurons equal to the number of processed spectral bands, one hidden layer with different numbers of neurons varying from 5 to 25, and output layer consisting of two neurons, each for healthy and diseased crop. They used a handheld spectrograph (460–900 nm) for capturing the images in wheat ﬁeld. In this work, four optimal spectral bands were selected. They tested different quantities of neurons, then most efﬁcient neurons were selected for ﬁnal MLP architecture. The MLP architecture produced over 98% classiﬁcation accuracy for the healthy plants and over 99% classiﬁcation accuracy for diseased plants.
+Recent researches have demonstrated that the MLP is a highly applicable network. Most of the MLP networks are trained with the back-propagation algorithms. Therefore MLP is a very popular choice among researchers [74]. Backpropagation algorithms employ a supervised learning paradigm in MPL, which minimizes errors between the desired outputs and the calculated outputs driven from the inputs and network learning [75].
+3.3. Radial-Basis Function (RBF)
+RBF networks were ﬁrst proposed by Moody and Darken [76]. In a three-layer network, an RBF network combines a layer of
+
+inputting neurons, a hidden layer of RBF neurons and a layer of outputting neurons [77]. Alexandridis et al. [78] described the importance of hidden layer in the RBF networks. They showed that hidden layer linearly connects to the output node and calculates the input variables passed via input layer to the hidden layer. A process of non-linear transformation is also carried out at the hidden layer resulting in a map between the neurons of input and hidden layers. Chen et al. [79] also described that in order to establish the nonlinear relationships in the input data, the hidden layer of the RBF network plays an important role in data modeling. Yang et al. [80] focused on its various advantages such as parametric modeling, nonlinear interpolation, function approximation, and classiﬁcation of the sensory data (vis-a` -vis the hyperspectral remote sensing data).
+In a recent study, Abdulridha et al. [72] used RBF, MLP and stepwise discriminant analysis for detecting Laurel wilt (Lw) disease of avocado at early and late stage of infection. They found that VNIR range (400–950 nm) was sufﬁcient to show spectral differences between Lw, healthy trees, and trees that have other stresses such as Phytophthora root rot and salinity-damage. They collected reﬂectance using handheld spectroradiometer and averaged total number of spectral bands in two bandwidths i.e. 10 nm and 40 nm. Subsequently, the narrower bandwidth (10 nm) did not produce better results than wider bandwidth (40 nm). Almost parallel classiﬁcation results were obtained at both the bandwidths. An MLP model registered the best classiﬁcation accuracy (over 98%) than stepwise discriminant analysis and RBF models at early and late stages. They further mentioned that developing classiﬁcation model like RBF is useful for disease detection at both the early and the late stage but results in lower detection accuracy.
+3.4. Kohonen’s Self-Organising Map (SOM)
+SOM [81] is known as an unsupervised learning network. Fundamentally, SOM follows the architecture of a two-layer feedforward network. These two layers are input layer and Kohonen layer. In SOM network, neurons are arranged in the grid form, either in hexagonal or rectangular array. Input layer is connected to the Kohonen layer where Kohonen map is formed. Technically, a map is created at the input space. Kohonen map is a discrete representation used for visualizing highdimensional data at the low-dimensional view. This network uses a neighborhood function that preserves the topological properties of the map and detects regularities of input [82].
+Lawrence et al. [83] used aerial and handheld hyperspectral sensors for studying infestation of Reniform nematode (Rotylenchulus reniformis) in cotton using supervised NN-SOM architecture. Different hyperspectral signatures were developed on the basis of nematode colonization and level of infection in cotton plants. The NN-SOM architecture predicted infection in a range between 83 and 97%. According to Lawrence et al. [83] evaluation of larger amounts of hyperspectral data needs an advance NN model (like NN-SOM) with expanded capacity for data processing in computer. In a similar study, Lawrence et al. [84] demonstrated spatial distribution of the nematode infestation and established different zones for nematicides applications.
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+7
+
+3.5. Probabilistic Neural Network (PNN)
+Specht [85] introduced the PNN based on the statistical approach called Bayesian classiﬁers. Specht [86] showed that Bayesian classiﬁer could improve the predictability by taking relative likelihood and priori information into consideration. PNN is a feed-forward network comprising input, hidden and output layers. The hidden layer is also known as pattern layer. In particular, pattern layer consists of Bayesian classiﬁer. The PNN is functioned upon utilizing a non-parametric estimator for obtaining multivariate probability and estimating density. At present, PNN remains the most appropriate neural architecture for solving classiﬁcation problems.
+For detection of rice leaves infected by Aphelenchoides besseyi Christie (at rice booting stage) and by rice leaf roller (at the rice tillering stage), Li et al. [87] applied PNN architecture over visible (490–670 nm) and Shortwave Infrared (SWIR) (1520–1750 nm) spectral bands. PCA was used to transform visible and SWIR bands into principal component spectrum. PNN predicted both disease and pest infection with an accuracy of 95.65%. The PCA and PNN together have been proved to be a reliable predictor of disease and pest infection in rice leaves.
+3.6. Convolutional Neural Network (CNN)
+In the recent years, deep learning in NNs has been getting much prominences. Unsupervised classiﬁcation is the most active research area in hyperspectral data analysis. CNN is a leading unsupervised deep learning architecture that learns ‘ﬁlters performing convolutions’ in the image domain [88]. A measure difference between CNN and conventional NNs is that CNN is inspired from retinal ﬁelds in the vision system. In a simple word, CNN is an integration of biological vision and neural system. Lowe et al. [88] described CNN is a complex architecture which takes considerably more time to train the neurons. Nonetheless, it has remarkable classiﬁcation accuracy, and rate of object recognition is very high.
+Mohanty et al. [89] deployed an automated image recognition system in which widespread smartphone penetration, HD cameras, and high performance processors were used for plant disease detection. This model based on an automated image recognition system and CNN achieved an overall accuracy of 99.35% on a held-out test data. This classiﬁcation accuracy demonstrates the technical feasibility of CNN approach. They used the CNN to detect 26 diseases over 14 crop species. A total of 54,306 colour images was tested. Sladojevic et al. [90] also developed a plant disease recognition model based on leaf image classiﬁcation using CNN. They downloaded a large set of online available images of 13 crop diseases, including powdery mildew, rust (apple), leaf spot (pear), and wilt, mites, downey mildew (grapevine). This model achieved an overall detection accuracy of 96.3%.
+In particular, CNN has proven to be a powerful tool for recognition and classiﬁcation of hyperspectral images, as well as extracting their nonlinear, discriminant, and invariant features [91–93]. In a recent study, Langford et al. [94] implemented the CNN to develop an arctic vegetation map using multi-sensor data fusion approach integrating hyperspectral, multispectral, radar, and terrain datasets. They found that
+
+hyperspectral datasets provide highest data content to the CNN model. Spectral signatures developed from hyperspectral data played a very signiﬁcant role to the predictability of vegetation. From the perspective of multi-sensor data fusion, we believe that such vegetation maps will facilitate remote detection of plant diseases that spread over large areas.
+Generally, more than one NNs were used for classiﬁcation of hyperspectral dataset in studying prediction accuracy. More than 90% classiﬁcation accuracy was achieved in all the NNs, as shown in Table1. However, Monteiro et al. [69] encountered a nontrivial problem in selecting the optimal spectral bands, which can be resolved using a non-linear solution technique.
+In NNs, major problems are observed due to its structure itself where decision regions pose complexity in making decision. Single layer networks are half plan, bound by hyperplane, two-layer networks are either open or closed regions, and multi-layer networks are arbitrary depending on the number of nodes [95]. Stefanowski [95] described MLPs separate the classes via hyperplans while RBFs separate classes via hyperspheres. Additionally, MLPs use distributed learning while RBFs use localized learning. There are also many differences in terms locality, separation surface, approximation capability, and interpretability within the different types of NNs.
+4. NN models
+Different types of NNs are implemented on the basis of speciﬁc neural architectures and learning algorithms which in combination are called NN models. The most important NN models are discussed in this following section.
+4.1. Feed-Forward Neural Network (FFNN)
+Several studies [96–98] have attempted to explain FFNN as a transformation network that transforms input layers to output layers in the forward direction. FFNN is most useful when an end user is interested in input and output layers and not in the hidden layers. Therefore, FFNNs have been increasingly used in non-parametric data analysis. FFNN is an alternative to classic pattern classiﬁcation and clustering techniques.
+Hawkins and Bode´ n [97] explored the relationship between input and hidden layers in a standard FFNN. They highlighted that one set of connections could be fully connected from the input layer to the hidden layer. The network consisted of three layers and two mapping functions for hidden and output nodes. Such dynamics of the FFNN was described in following formula:
+fðxÞ ¼ rðWF Á x þ bÞ
+where: WF is the weight matrix, b is the set of biases, r is a non-linear activation function that uses logistic function for hidden nodes and softmax function for output nodes.
+The FFNN algorithm is one of the important standard methods for chemical characterization of sediments using hyperspectral data. Udelhoven and Schu¨ tt [99] tested chemical properties including inorganic carbon, iron, sulfur, aluminium, silica, calcium, potassium and magnesium. The 214 samples of spectral observation were collected from
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+Table 1 – List of major contributions according to different types of NNs for plant disease detection.
+
+Authors and year
+
+Types of NNs Species
+
+Disease/pest
+
+Monteiro et al. [69] Towards applying hyperspectral imagery as an intraoperative visual aid tool (2004) Moshou et al. [73] Automatic detection of ‘‘yellow rust” in wheat using reﬂectance measurements and neural networks (2004) Abdulridha et al. [72] Detection and differentiation between Laurel wilt disease, phytophthora disease, and salinity damage using a hyperspectral sensing technique (2016) Lawrence et al. [83] Remote sensing and precision nematicide applications for Rotylenchulus reniformis management in cotton (2004) Liu et al. [87] Hyperspectral identiﬁcation of rice diseases and pests based on principal component analysis and probabilistic neural network (2009) Mohanty et al. [89] Using deep learning for imagebased plant disease detection (2016) Sladojevic et al. [90] Deep neural networks based recognition of plant diseases by leaf image classiﬁcation (2016)
+
+SLP, MLP MLP, SOM RBF, MLP
+NN-SOM PNN CNN CNN
+
+–
+Wheat (Triticum sp.)
+
+Recommended for remote assessment of plant disease
+Yellow rust
+
+Avocado (Persea americana)
+
+Laurel wilt (Lw) disease
+
+Cotton (Gossypium sp.) Reniform nematode
+
+Rice (Oryza sativa L.)
+
+Aphelenchoides besseyi, Rice leaf roller
+
+–
+
+26 crop diseases
+
+–
+
+13 crop diseases
+
+Disease recognition (Detection accuracy %) – 99% 98%
+97% 95%
+99.3% 96.3%
+
+Types of decision regions Half plan bounded by hyperplane Arbitrary (Complexity limited by no. of nodes) Arbitrary
+Arbitrary
+Arbitrary
+Arbitrary Arbitrary
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+8
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+9
+
+various drilling locations from all over the central part of the Iberian Peninsula. They estimated chemical properties using spectral data and trained them simultaneously in an FFNN model. Bishop [100] described a variety of different training algorithms for FFNN such as gradient descent methods, conjugate gradient methods, and Levenberg-Marquardt algorithm. Currently, the ELM learning algorithm has been proposed to train single hidden-layer forward network [101,102], and this concept has been extended to multihidden-layer networks [103] and kernel learning [104].
+
+4.2. Back-Propagation Neural Network (BPNN)
+
+BPNN is an important and widely used ANN model. Its application is very prospective for a variety of purposes for nonlinear data analysis. Paul and Munkvold [105] highlighted relevance of BPNN with FFNN. In FFNN, information is fed through the input layer to the output layer (forward) via the hidden layer, thus the network is called FFNN. In the BPNN, further processing is directed at the output layer. A network-estimated output is generated and compared with the actual output. The errors are calculated as a difference between the actual output and the estimated output. Then, estimated errors are propagated from the output layer to the input layer, thus the term back-propagation.
+Zhang et al. [106] showed how BPNN is used to generate derivatives of performance (i.e. per f) with respect to the weight and bias variables associated with the neurons. Each variable is adjusted according to gradient descent with a momentum. Hence BPNN algorithm is expressed as:
+dX ¼ mc Â dXprev þ lr Â ð1 À mcÞ Â dperf =dX
+where: dX is derivatives of per f, mc is the value of momentum, dXprev is the previous change to the weight or bias, and lr is the learning parameters.
+BPNN can be more robust and operational using the Bayesian decision theory which has become more popular over the past decade. Sajda [107] reported that the Bayesian decision theory may also be applicable to other NN models. It helps to design an intelligent system, which explicitly represents uncertainty in the data and decision making process.
+4.3. Generalized regression Neural Network (GRNN)
+GRNN is a very important network having an immense prediction capability. It is an adequate model for time series hyperspectral data analysis. GRNN can also be a robust model for real-time disease prediction by adding weather and vegetation variables with hyperspectral data (Fig. 2). Chtioui et al. [108] predicted leaf wetness based on weather parameters such as temperature, relative humidity, wind speed, solar radiation, and precipitation in order to forecast the crop disease. GRNN performed statistically better than multiple linear regression. GRNN out-performed the multiple linear regression in prediction accuracy. However, a substantial computational time is required for training the datasets. GRNN is called the realistic NN model. Chtioui et al. [108] used following algorithm to express GRNN:
+
+Fig. 2 – A GRNN that process the time series data for disease diagnosis.
+
+Eðy=xÞ ¼ y^ðxÞ ¼ RRÀþÀ1111yffððxx;;yyÞÞddyy
+
+where: E (y/x) is the conditional mean of y given x, (y xÞ, or regression of y on x. f ðx; yÞ is the joint probability density function of a vector random input variable x (independent feature), and a scalar random output variable y (dependent feature). The probability density is estimated from the traning set using the Parzen’s nonparametric estimator [109]:
+
+f ðx; yÞ ¼
+
+1
+pþ1
+
+Xn eÀdðx;xiÞeÀdðy;yiÞ
+
+nð2pÞ 2 r1r2: : :rpry i¼1
+
+where:
+
+dðx; xiÞ
+
+¼
+
+Pp
+j¼1
+
+½ðxj
+
+À
+
+xi Þ=ðrj Þ2
+
+and
+
+ÀÁ d y; yi ¼
+
+½ðy À yiÞ=ðrjÞ2;
+
+n is the number of traning patterns, p is the number of inde-
+
+pendent features.
+
+5. The NN classiﬁers
+Classiﬁers are basically classiﬁcation learning systems. NN classiﬁers are non-parametric classiﬁers that classify nonparametric data. In particular, the classiﬁers make few presumptions for classiﬁcation without any prior knowledge of the pattern of the data. It shows up in many different ways, some examples include Back-propagation (BP) classiﬁer, Counter-propagation (CP) classiﬁer and Multilayer perceptron (MLP) classiﬁer. Wu et al. [110] reported that NN classiﬁers are the best classiﬁers among all approaches having the fastest speed and best accuracy for classiﬁcation work.
+Currently, BP classiﬁers are the more prevalent classiﬁcation paradigm. BP classiﬁers yield better outcomes in terms of classiﬁcation accuracy, simplicity, and robustness. BP classiﬁers can be used as an alternative approach to the large database with several advantages in speed, sensitivity and automation [111]. Liu and Zhou [112] have done a signiﬁcant study on rice brown spot using artiﬁcial means. They showed that BP classiﬁers classiﬁed the healthy and diseased leaves of rice resulting to its ability to identify rice brown spots.
+CP classiﬁers usually extract statistical properties from the input data. Therefore, on the basis of statistical properties,
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+10
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+samples of network training become easier and perform faster. CP is a supervised learning algorithm, which is closely related to the nearest-neighbor classiﬁer [113].
+Mostly, in order to establish non-linear relationship, multilayer FFNN such as the MLP classiﬁers have been used. However, the success of any non-linear relationship is not only subject to NN classiﬁer, but also depends on the quality of the input data [114]. Lorente et al. [115] described the importance of MLP classiﬁers. MLP classiﬁers have been shown to be relevant to a wide range of non-linear classiﬁers such as regression trees or fuzzy classiﬁers. Many approaches, however, have addressed the importance of MLP classiﬁers by comparison with other classiﬁers. Liu and Wu [116] reported that its superior performance compared to regression tree is based on four factors: accuracy, model complexity, interpolation ability and error distribution.
+6. Early disease detection
+Early detection of crop disease using non-destructive methods can minimize direct human intervention in plant protection. Several NN methods have been used for early disease detection. Learning capabilities of NNs are very helpful in detecting and diagnosing plant diseases. An effective disease diagnosis requires an accurate NN model, which is usually coupled with a learning function that adjusts all the weights and biases to the assigned layers. Rapid and accurate diagnosis of plant disease at an early stage is essential for effective disease control. In recent years, it has become possible to detect and diagnose plant disease at an early stage by employing hyperspectral data and NN models together. However, visual scouting is still an initial way of early inspection of disease symptoms.
+Hyperspectral sensors are promising tools for nondestructive disease detection and diagnosis. In order to attain reliable early detection and diagnosis of plant diseases, new approaches (i.e. imaging and non-imaging spectroscopy) must be introduced and incorporated into laboratory scale to compliment molecular, serological and microbiological techniques such as ELISA and RT-PCR. These techniques have been facing challenges in resource consumption in terms of time, cost and skilled labor. On the other hand, a highly controlled and contamination-free environment has to be maintained in a laboratory. Nonetheless, a wide gap remains between destructive and non-destructive diagnosis. Recent literature therefore suggests the application of NNs [117] with hyperspectral data [37] as a measure to cover this gap. In particular, NN-hyperspectral approach will improve the classiﬁcation results in non-destructive diagnosing of plant diseases.
+The various microbial pathogens cause a wide range of diseases in the plants such as mottle, mosaic, ringspot, and systemic necrosis caused by viruses [118]; leaf spot, blight, rot, wilt, steaming, cankers, galls, overgrowths, specks, and scabs caused by bacteria [119] and anthracnose, rust, root rot and damping off mostly caused by fungi [120]. Nevertheless, Some diseases often do not manifest symptoms but remain asymptomatic, for example: orange spotting disease in oil palm caused by viroids [10].
+
+Hyperspectral sensors measure reﬂectances from infected plants. Then reﬂectance data are used to design an NN model to produce a decision support system. Hyperspectral and NNbased models act signiﬁcantly on early disease detection. The basic principle of this approach is modeling of crop reﬂectance data which are measured through hyperspectral imaging and/or non-imaging techniques. Then optimal wavelength features (i.e. spectral bands) are extracted and processed using the multivariate or NN techniques. VIs are developed from these spectral bands, which are very helpful for characterizing crop status. In the meantime, though, the NN can use either spectral bands or VIs for data modeling.
+6.1. Early detection using non-imaging ﬁeld spectroscopy
+Hyperspectral data typically consist of a large number (>100) of narrow and contiguous spectral bands. Pre-processing of these spectral bands is required for spectral data analysis and modelling. Thenkabail et al. [121] have mentioned the beneﬁts of using a generous data processing approach such as ANN to select the best spectral bands. NN algorithms have been successfully implemented in identifying outliers and spectral features. Additionally, NN is also a data dimensionality reduction method. Using the NN technique, hyperspectral data can be processed much faster than other techniques. The NNs transform hyperspectral data into a very reasonable data form [122]. Hyperspectral data offer high diagnostic capability for early disease detection. The spectral bands with high absorption are more sensitive to several leaf pigments including chlorophyll a, chlorophyll b, violaxanthin, bcarotene, neoxanthin, and carotenoids. Pathogenesis in plants directly affects biochemical concentrations.
+Traditionally, a wet chemistry method involves leaf extraction with organic solvents to estimate chlorophyll content using High Performance Liquid Chromatography (HPLC). These days, chlorophyll estimation is carried out nondestructively using the non-imaging spectroradiometer and portable Soil and Plant Analysis Development (SPAD) meter. Non-destructive techniques measure chlorophyll content in real time and render worthwhile savings in cost, labor and time. However, further efforts are required to estimate other plant pigments using a non-imaging spectroradiometer.
+During pathogenesis, pathogen-speciﬁc toxins or enzymes induce plant tissues and inﬂuence the optical properties of plants. Changes in reﬂectance pattern due to plant-pathogen interaction can be altered by impairments in the leaf structure and chemical composition [123]. Hyperspectral data can be evaluated with a trained and representative NN [124]. VIs can also be classiﬁed using NN classiﬁers. Wu et al. [125] detected Botrytis cinerea on eggplant leaves using NNhyperspectral approach. They applied NN classiﬁers and PCA to hyperspectral signatures and accurately identiﬁed small symptoms of gray mold on eggplants. In another study, le Maire et al. [126] studied VIs derived from red-edge using NNs.
+Recent researches have demonstrated great value of using VNIR spectroscopy for early disease detection in a wide range of applications. Pydipati et al. [127] found that a multilayer BPNN has the highest correction and discriminating capabilities of reﬂectance wavelength between 460 nm and 1130 nm,
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+11
+
+at 10 nm increments. Similarly, Miller et al. [128] used multilayer BPNN with a pattern recognition algorithm to classify surface blemishes of various apple varieties.
+Hyperspectral non-imaging data are most interesting and challenging. Real-time spectral measurement using ﬁeld spectroradiometer produces large amount of spectral data which require spectral pre-processing. In spectral preprocessing, many spectral bands are reduced, therefore selection of optimal wavebands is very important [129]. It is noted that spectral processing with NN algorithm has increased the accessibility of non-imaging data in disease detection. For selection of optimal spectral bands, Kohonen’s SOM model can be applied, that will be a better option to random selection of wavebands. Application of BPNN [127,128] for differentiating between healthy and diseased plant spectra has become one of the most efﬁcient and fast-developing networks in precision plant protection. We recommend other types of NNs (such as FFNN, GRNN) for spectral segregation, so that would simplify the disease detection process.
+6.2. Early detection using imaging spectroscopy
+Several studies on hyperspectral image processing have been conducted in recent years since remote sensing imageries became easier to archive. Highly ﬂexible NN techniques have been developed to investigate spectral characteristics of crop. Nevertheless, the use of innovative hyperspectral imaging systems for early disease detection and disease severity assessment are still at the research stage [130,131].
+To our knowledge, purely non-parametric NN classiﬁers have not so far been evaluated for early disease detection using hyperspectral imageries. Space-born imaging hyperspectral spectroradiometers such as Airborne Imaging Spectrometer for Applications (AISA) Eagle system, AVIRIS, Hyperion, the Reﬂective Optics System Imaging Spectrometer (ROSIS) and Hyperspectral Mapping Imaging Spectrometer (HyMap) have been deployed to detect disease without NN applications.
+NNs are suitable for classiﬁcation of hyperspectral imageries. NNs generate classiﬁer using training inputs that are
+
+employed for classiﬁcation purposes. The NNs are basically used to extract image features as their training inputs. NN classiﬁers enhance the accuracy of classiﬁcation and reduce the overall effects of noise from the images.
+NNs offer a dynamic range of algorithms for hyperspectral image analysis. Mostly, a two-dimensional algorithm is used for detecting diseases from hyperspectral image features. The basic algorithms are for data reduction, feature extraction, segmentation, object recognition and image optimization. The advanced algorithms are for abstraction at pixel, feature, structure, object-set levels and scene characterization [98,132,133].
+NNs overcome the limitations of hyperspectral data analysis signiﬁcantly. Hyperspectral images contain highdimensional information in multidimensional data cubes. CNN is a new concept for hyperspectral data analysis, which has proven to be very effective for classiﬁcation of highdimensional hyperspectral images [91,92]. CNN is composed by a set of blocks that can be applied both across space and across time [92]. Paoletti et al. [92] developed a new deep 3D CNN architecture for spatial-spectral classiﬁcation of hyperspectral images. For better classiﬁcation results, a joint consideration of spectral information together with spatial information is required in this architecture.
+Mutanga and Skidmore [134] integrated spectral features over the full spectral range (400–2500 nm) of HyMap data with NNs. It is worth mentioning that AVIRIS hyperspectral images are useful in characterizing and estimating various fungal and bacterial diseases [135,136]. Thus, NNs are highly recommended for AVIRIS data analysis especially for vegetation disease. Table 2 summarizes some important studies on early disease detection using hyperspectral data.
+7. An overview of two studies on rice (Oryza sativa L.) disease detection using NNhyperspectral approach
+For crop disease detection, the spectral data acquired from a non-imaging spectroradiometer have been analyzed using PCA for a long time. Almost all the NNs have been evaluated
+
+Table 2 – Use of hyperspectral sensor in detecting and diagnosing crop disease at an early stage.
+
+Sensor
+
+Crop
+
+Disease
+
+Reference
+
+ASD ﬁeld spectroradiometer
+
+Rice
+
+Fungal infections
+
+Liu et al. [137]
+
+(350–2500 nm)
+
+Rice
+
+Rice brown spot
+
+Liu et al. [138]
+
+Eggplant Gray mould
+
+Wu et al. [125]
+
+GER-2600
+
+Tomato Late blight
+
+Wang et al. [139]
+
+(400–2500 nm)
+
+ImSpector V10E
+
+Wheat
+
+Yellow rust
+
+Moshou et al. [73]
+
+(400–1000 nm)
+
+Oil seed Fungal infections
+
+Baranowski et al. [140]
+
+AISA
+
+Citrus
+
+Citrus greening
+
+Lee and Ehsani [141]
+
+Oil Palm Ganoderma basal stem rot
+
+Shafri and Hamdan [142]
+
+Hyperspectral imaging (HIS)
+
+Sugar beet Leaf spot, Powdery mildew and leaf rust Mahlein et al. [143]
+
+Hyperion
+
+Sugar beet Orange rust
+
+Apan et al. [144]
+
+Hyperspectral image scanner
+
+Wheat
+
+Fusarium head blight
+
+Bauriegel and Herppich [145]
+
+Portable hyperspectral imaging system Citrus
+
+Citrus canker
+
+Qin et al. [146]
+
+Maize
+
+Fungal infections
+
+Del Fiore et al. [147]
+
+Hyper spectrometer
+
+Wheat
+
+Powdery mildew
+
+Shen et al. [148]
+
+(350–1050 nm)
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+12
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+using Principal Component Spectra (PCS). PCS are achieved after reducing and/or compacting the spectral dimension of data into small and ﬁnite components called Principle Components (PCs) having equal dimensions. In this overview, two case studies are thoroughly reviewed in the context of non-destructive bacterial and fungal disease detection in rice (Oryza sativa L.) using a full range spectroradiometer. These case studies deliberately and iteratively applied PCS onto the NN framework.
+7.1. RBF network with PCA
+The ﬁrst study on brown spot disease of rice [138] examined the capability of RBF network and PCA for determining the disease severity. The disease severity of brown spot was determined in terms of percentage of the infected surface area. Three methods, namely, spectral transformation, PCA, and RBF network were employed to gain a preliminary understanding of the severity of brown spot disease. The spectroradiometer was deployed over healthy and diseased rice leaves separated from the rice plant in order to obtain leaf spectra. These spectra of rice leaves were transformed through three different preprocessing techniques – spectral resampling at an interval of 10 nm, ﬁrst-order derivatives, and secondorder derivatives.
+Liu et al. [138] further processed the transformed spectra to attain PCS using PCA. Then, preprocessed spectra and PCS were trained as the input vectors in an RBF network. The efﬁcient extrapolation capability of RBF has been mostly deployed for classifying the data with high operation rate. The most surprising aspect of this study was ﬁrst-order derivative spectra yielded the best prediction result using RBF network. Additionally, good prediction was recorded by resampling the spectra. They concluded that PCA-RBF network was an accurate predictor and superior model for estimating disease severity of rice brown spot.
+7.2. Learning Vector Quantization (LVQ) NN with PCA
+In the second study, glume blight disease of rice panicles was detected using PCA and LVQ NN classiﬁers by Liu et al.[137]. PCA is a powerful statistical tool used to analyze the spectra of glume blight disease infected panicles while the LVQ NN classiﬁer classiﬁed these spectra into four infection levels: healthy, light, moderate and serious infection levels. The spectral processing methods – raw, inverse logarithmic, ﬁrst and second derivative were chosen to process the original spectra to obtain in-depth band information. Then, PCs were derived from the different spectral data set of different spectral processing methods.
+In LVQ network, ﬁnding a relationship among the PCs of different spectral processing methods was the main object of the learning process. For assigning the nodes in the layers, those PCs that responded to about 95% proportion of variance at each spectral data set were selected to determine the number of nodes in the input layer. While the nodes for output layer assigned from the classiﬁed infection levels. Kappa coefﬁcient was used to evaluate of classiﬁcation accuracy in this study.
+
+Liu et al. [137] investigated the changes in the spectral behavior of spectrum, speciﬁcally in the visible and NIR regions. These spectral changes occurred due to fungal infection in the panicles of rice. A common observation within the spectrum was the visible region received a higher reﬂectance and NIR received a lower reﬂection in diseased panicle as compared to healthy panicle. In SWIR region, healthy rice panicles observed a dramatic lower reﬂectance than the moderately and seriously infected panicles. Liu et al. [137] cautioned that the spectral behavior of rice under fungal infection could be different at different atmospheric and edaphic ﬁeld conditions.
+8. Challenges of NN
+The main challenge of ANN in hyperspectral data processing is the training of large quantity of spectral inputs and deﬁning their targets. This is made even more challenging with application of NN classiﬁers for classiﬁcation of VIs and SDIs. Over all, the Hughes phenomenon or ‘‘the curse of dimensionality” is the most complex problem for hyperspectral data which deals with diversity and distortions in spectral bands. The Hughes phenomenon may affect the NN modeling. Generally, it happens where the ratio of number of training pixels or the number of spectral bands are above the minimum value to achieve statistical ﬁt [149]. In particular, one of most challenging aspect is the use of NN classiﬁers for analyzing the spectral mixtures. Spectral Mixture Analysis (SMA) is good linear model, non-linear NNs are required for training a large dataset of plant disease spectra. In addition, ANN is often regarded as a black box since it does not contain priori information, which itself is complex.
+Generally, NN classiﬁers classify different plant diseases on the basis of combination of optimal parameters such as texture, colour, and shape in a normal camera image [74]. The optimal parameters could be trained easily as the normal images are linearly separable. On the other hand, the hyperspectral image is different from a normal camera image. Hyperspectral data cannot be trained linearly as long as it contains more than hundred contiguous spectral bands. The MLP architectures typically deal with such non-linear features. In addition, adjacent spectral bands in different spectral regions (such as, visible, NIR, SWIR) are highly redundant in extracting information for an ANN. The spectral bands are found to be highly interconnected to each other.
+9. SDI
+The most of common VIs have been computed from red and NIR wavelengths. Normalized Difference Vegetation Index (NDVI) [150] is one of the most popular and widely used VIs for monitoring crop health. Balasundram et al. [151] used NDVI for preliminary screening of red tip disease in pineapple (Ananas comosus). They demonstrated and inferred NDVI as a reliable disease predictor for predicting disease severity. Nevertheless, NDVI has not been shown to be suitable for identifying the causal agent of crop disease. Pen˜ uelas et al. [152] found that NDVI does not follow speciﬁc wavebands that represent physiological changes caused by pathogens. Therefore,
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+13
+
+disease sensitive spectral features must be extracted to develop an SDI. Generally, SDI is a ratio of the different disease sensitive spectral bands which are extracted on the basis of spectral responses from diseased vegetation.
+Early detection of disease based on hyperspectral remote sensing is more precise and signiﬁcant. Therefore, new SDIs are being developed based on general interest for detecting disease in an early stage using hyperspectral data. Different SDI values represent speciﬁcity, sensitivity and severity of the vegetation at different stages of infection. SDIs have been used to provide a unique, scientiﬁc and detailed understanding of pathogenesis. In contrast to common VIs, SDIs have the potential to discriminate and differentiate one plant disease from another. However, each disease may affect the leaf reﬂectance spectrum in a speciﬁc way [153].
+It is important to develop disease-speciﬁc indices based on the progression of disease symptoms. Ashourloo et al. [154] have developed two SDIs on the basis of disease progression for detection of wheat leaf rust using hyperspectral data. Rumpf [155] showed via comparative studies that SDIs are superior to common VIs for early disease detection. SDIs developed from imaging spectroradiometer can be correlated to SDIs developed from non-imaging ﬁeld spectroradiometers. The generalization ability of the developed SDIs could be improved by correlation and cross-validation. Generally, non-imaging ﬁeld spectroradiometers calculate SDIs within a very short period. Whereas imaging spectroradiometers can take comparatively longer time in selecting sensitive end members (pixels) from hyperspectral imageries. Hyperspectral data can detect diseases at various scales, ranging from an individual plant to ﬁelds. Table 3 summarizes different SDIs applied for early disease detection using hyperspectral data.
+10. Future trends: deep learning of hyperspectral data
+Deep learning is an advance technique for big data analysis. A deep learning model contains many layers (typically deeper than three layer model). Neurons of its each layer intensely
+
+are connected with features of the data, thereby more complex information can be obtained. Deep learning models learn features of input data through a hierarchically organized network of neurons [88]. Recent literature [90,156,157] is available on evaluation of deep learning models with digital photography, image analysis and hyperspectral imaging for plant disease detection.
+It is believed that deep learning is a future of hyperspectral remote sensing. CNN is a most popular deep model that works on an image domain. CNN can utilize for hyperspectral image in order to detect and classify plant disease at an early onset. Currently, multimedia [156] and computer vision and natural language processing [20] are most promising areas of deep learning application [90].
+Cloud computing architecture that have been identiﬁed in the recent literature [158,159], were reviewed, along with future scope for NN-hyperspectral approach. Haut et al. [158] explored for the ﬁrst time the possibility of using a distributed framework for clustering of huge volume of hyperspectral images based on cloud computing architecture. Quirita et al. [159] proposed an architecture, called InterCloud Data Mining Architecture, for cloud computing environments. InterCloud will allow users to allocate processing power and storage space in order to manage very large datasets, such as hyperspectral imagery.
+11. Conclusion
+Previously, NNs have been used for data mining purposes only but its various applications with hyperspectral data are now showing signiﬁcant promise for disease detection. More often than not, like many other technologies, researchers have been confronted with emerging challenges in NN applications. For example, detection of three different categories of diseases manifestation viz. pre-symptomatic, symptomatic and asymptomatic diseases from a single plant requires best trainer sets for accurate classiﬁcation. NNs have shown incredible capabilities in adapting new challenges of disease detection using hyperspectral data. NNs have been used for a variety of purposes, such as reduction of data dimensionality, training
+
+Table 3 – Well-established SDIs for early disease detection using hyperspectral data.
+
+Device
+
+SDI
+
+Formula
+
+Hyperion
+ASD ﬁeld spec Spectroradiometer
+ASD ﬁeld spec Spectroradiometer ASD ﬁeld spec Spectroradiometer
+
+Disease-Water stress Index 1(DSWI-1) DSWI-2 DSWI-3 DSWI-4 DSWI-5 Healthy- Index (HI)
+Cersopora Leaf Spot- Index (CLSI)
+Sugar Beet Rust-Index (SBRI) Powdery Mildew –Index (PMI)
+Leaf Rust Disease Severity Index 1 (LRDSI_1)
+Leaf Rust Disease Severity Index 2 (LRDSI_2)
+Normalized Leaf Rust Healthy Index (NLRHI)
+
+R800/R1660
+
+R1660/ R550
+
+R1660/R 680
+
+R550/R 680
+
+(R800 + R550)/(R1660 + R680)
+
+R534ÀR698 R534þR698
+
+À
+
+1 2
+
+Á
+
+R704
+
+R698ÀR570 R698þR570
+
+À
+
+R734
+
+R520ÀR513 R570þR513
+
+À
+
+1 2
+
+Á
+
+R704
+
+R520ÀR584 R520þR584
+
+À
+
+R724
+
+6:9
+
+q605 q455
+
+À
+
+1:2
+
+4:2
+
+q695 q455
+
+À
+
+0:38
+
+ð Þ DSÀ
+
+q675 q775
+
+ð Þ DSþ
+
+q675 q775
+
+References Apan et al. [144]
+Mahlein et al. [153]
+Ashourloo et al. [154] Ashourloo et al. [55]
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+14
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+of image pixels or spectra as the input sets, generalization of the input sets and classiﬁcation of wavebands or SDIs.
+This paper has extensively reviewed the available literature on SDIs. To the best of our knowledge, there is no report on the application of NNs to analyze SDIs. In the near future, SDIs will be processed with NNs to achieve more reliable results. Since NNs have not been evaluated for SDIs elsewhere, there is a possibility to exemplify some directions for possible development in the future, such as data preprocessing, reduction of data dimensionality, and efﬁcient data analysis. These processes can be carried out using NNs before the development of an SDI. After the development of an SDI, NNs can also play a major role to accelerate the performance of SDIs in order to obtain pertinent information for disease diagnosis. As long as SDIs are gaining high traction in precision plant protection, they should be tested on various hyperspectral sensors at the canopy and leaf scale.
+Acknowledgement
+We thank the research group on interdisciplinary study of precision plant protection at Universiti Putra Malaysia, Serdang, Selangor, Malaysia. We acknowledge the valuable comments and suggestions given by the reviewers of this paper.
+Conﬂict of interest
+All authors contributed to the writing of the paper. None of the authors had a conﬂict of interest.
+REFERENCES
+[1] Strange RN, Scott PR. Plant disease: a threat to global food security. Annu Rev Phytopathol 2005;43(1):83–116.
+[2] Society for General Microbiology. Combating plant diseases is key for sustainable crops. Link: <http:// www.sciencedaily.com/releases/2011/04/110411194819. htm>; 2013.
+[3] Food and Agriculture Organization (FAO). Declaration of the World Summit on Food Security. Rome: Food and Agriculture Organization; 2009.
+[4] Sharma P, Sharma S. Paradigm shift in plant disease diagnostics: a journey from conventional diagnostics to nano-diagnostics. In: Kumar P, Gupta KV, Tiwari KA, Kamle M, editors. Current trends in plant disease diagnostics and management practices. Switzerland: Springer International Publishing AG; 2016. p. 237–64.
+[5] Desai M, Jain AK, Jain NK, Jethwa K. Detection and classiﬁcation of fruit disease: a review. Int Res J Eng Technol 2016;3(3):727–9.
+[6] Hanold D, Randles JW. Coconut cadang-cadang disease and its viroid agent. Plant Dis 1991;75(4):330–5.
+[7] Lichtenthaler HK. Vegetation stress: an introduction to the stress concept in plants. J Plant Physiol 1996;148(1–2):4–14.
+[8] Michigan State Univ Ext. Signs and symptoms of plant disease: Is it fungal, viral or bacterial. Link: <http://msue. anr.msu.edu/news/signs_and_symptoms_of_plant_disease_ is_it_fungal_viral_or_bacterial>; 2012.
+[9] Wu YH, Cheong LC, Meon S, Lau WH, Kong LL, Joseph H, et al. Characterization of Coconut cadang-cadang viroid
+
+variants from oil palm affected by orange spotting disease in Malaysia. Arch Virol 2013;158(6):1407–10. [10] Vadamalai G, Hanold D, Rezaian MA, Randles JW. Variants of Coconut cadang-cadang viroid isolated from an African oil palm (Elaies guineensis Jacq.) in Malaysia. Arch Virol 2006;151 (7):1447–56. [11] Vadamalai G, Perera A, Hanold D, Rezaian MA, Randles JW. Detection of Coconut cadang-cadang viroid sequences in oil and coconut palm by ribonuclease protection assay. Ann Appl Biol 2009;154(10):117–25. [12] Thanarajoo SS, Kong LL, Kadir J, Lau WH, Vadamalai G. Detection of Coconut cadang-cadang viroid (CCCVd) in oil palm by reverse transcription loop-mediated isothermal ampliﬁcation (RT-LAMP). J Virol Methods 2014;202:19–23. [13] Thanarajoo SS. Rapid detection, accumulation and translocation of Coconut cadang-cadang viroid variants in oil palm [Doctor thesis]. Serdang, Malaysia: Universiti Putra Malaysia; 2014. [14] Sakudo A, Suganuma Y, Kobayashi T, Onodera T, Ikuta K. Near-infrared spectroscopy: promising diagnostic tool for viral infections. Biochem Biophys Res Commun 2006;341 (2):279–84. [15] Cui S, Ling P, Zhu H, Keener H. Plant pest detection using an artiﬁcial nose system: a review. Sensors 2018;18(2):378. [16] Eun AJC, Huang L, Chew FT, Fong-Yau Li S, Wong SM. Detection of two orchid viruses using quartz crystal microbalance-based DNA biosensors. Phytopathology 2002;92(6):654–8. [17] Eun AJC, Huang L, Chew FT, Li SFY, Wong SM. Detection of two orchid viruses using quartz crystal microbalance (QCM) immunosensors. J Virol Methods 2002;99(1–2):71–9. [18] Perera RMM, Marriott PJ, Galbally IE. Headspace solid-phase microextraction-comprehensive two-dimensional gas chromatography of wound induced plant volatile organic compound emissions. Analyst 2002;127(12):1601–7. [19] Sankaran S, Mishra A, Ehsani R, Davis C. A review of advanced techniques for detecting plant diseases. Comput Electron Agric 2010;72(1):1–13. [20] Ghamisi P, Plaza J, Chen Y, Li J, Plaza AJ. Advanced spectral classiﬁers for hyperspectral images: a review. IEEE Geosci Remote Sens Mag 2017;5(1):8–32. [21] Goetz AFH. Three decades of hyperspectral remote sensing of the earth: a personal view. Remote Sens Environ 2009;113: S5–S16. [22] Pearlman JS, Barry PS, Segal CC, Shepanski J, Beiso D, Carman SL. Hyperion, a space-based imaging spectrometer. IEEE Trans Geosci Remote Sens 2003;41(6):1160–73. [23] Bell J. The martian surface: composition, mineralogy and physical properties. UK: Cambridge University Press; 2008. [24] Ortenberg F, Thenkabail PS, Lyon JG, Huete A. Hyperspectral sensor characteristics: airborne, spaceborne, hand-held, and truck-mounted; Integration of hyperspectral data with Lidar. In: Thenkabail PS, Lyon JG, Huete A, editors. Hyperspectral remote sensing of vegetation. USA: CRC Press; 2011. p. 39–67. [25] Goetz AFH, Curtiss B, Shiley DA. Rapid gangue mineral concentration measurement over conveyors by NIR reﬂectance spectroscopy. Miner Eng 2009;22(5):490–9. [26] Thompson AJB, Hauff PL, Robitaille AJ. Alteration mapping in exploration: application of short wave infrared (SWIR) spectroscopy. Soc Econ Geol Newsl 1999;39:16–27. [27] Liu J, Dong Z, Chen X. Study on hyperspectral estimation model of total nitrogen content in soil of shaanxi province. IOP Conf Ser Earth Environ Sci 2018;108(4):42025. [28] Silva-Perez V, Molero G, Serbin SP, Condon AG, Reynolds MP, Furbank RT, et al. Hyperspectral reﬂectance as a tool to measure biochemical and physiological traits in wheat. J Exp Bot 2017;69(3):483–96.
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+15
+
+[29] Chang CI. Hyperspectral data exploitation: theory and applications. John Wiley & Sons; 2007.
+[30] Chang CI. Hyperspectral imaging: techniques for spectral detection and classiﬁcation. New York: Kluwer Academic Publishers; 2003.
+[31] Lu J, Ehsani R, Shi Y, de Castro AI, Wang S. Detection of multi-tomato leaf diseases (late blight, target and bacterial spots) in different stages by using a spectral-based sensor. Sci Rep 2018;8:2793.
+[32] Whetton RL, Hassall KL, Waine TW, Mouazen AM. Hyperspectral measurements of yellow rust and fusarium head blight in cereal crops: Part 1: laboratory study. Biosyst Eng 2018;166:101–15.
+[33] Whetton RL, Waine TW, Mouazen AM. Hyperspectral measurements of yellow rust and fusarium head blight in cereal crops: Part 2: on-line ﬁeld measurement. Biosyst Eng 2018;167:144–58.
+[34] Heim RHJ, Wright IJ, Chang HC, Carnegie AJ, Pegg GS, Lancaster EK, et al. Detecting myrtle rust (Austropuccinia psidii) on lemon myrtle trees using spectral signatures and machine learning. Plant Pathol 2018.
+[35] Dhau I, Adam E, Mutanga O, Ayisi KK. Detecting the severity of maize streak virus infestations in maize crop using in situ hyperspectral data. Trans R Soc S Afr 2018;73:8–15.
+[36] Kong W, Zhang C, Huang W, Liu F, He Y. Application of hyperspectral imaging to detect Sclerotinia sclerotiorum on oilseed rape stems. Sensors 2018;18(1):123.
+[37] Moghadam P, Ward D, Goan E, Jayawardena S, Sikka P, Hernandez E. Plant disease detection using hyperspectral imaging. In: International conference on digital image computing: techniques and applications. Sydney, NSW, Australia: IEEE; 2017. p. 1–8.
+[38] Ahmadi P, Muharam FM, Ahmad K, Mansor S, Abu Seman I. Early detection of ganoderma basal stem rot of oil palms using artiﬁcial neural network spectral analysis. Plant Dis 2017;101(6):1009–16.
+[39] Zhao Y, Chen P, Lin L, Harnly JM, Yu L, Li Z. Tentative identiﬁcation, quantitation, and principal component analysis of green pu-erh, green, and white teas using UPLC/ DAD/MS. Food Chem 2011;126(3):1269–77.
+[40] Kole DK, Ghosh A, Mitra S. Detection of downy mildew disease present in the grape leaves based on fuzzy set theory. In: Kundu MK, Mohapatra DP, Konar A, Chakraborty A, editors. Advanced computing, networking and informatics. Switzerland: Springer; 2014. p. 377–84.
+[41] Leeser ME, Belanovic P, Estlick M, Gokhale M, Szymanski JJ, Theiler JP. Applying reconﬁgurable hardware to the analysis of multispectral and hyperspectral imagery. In: Proc. SPIE 4480, Imaging Spectrometry VII. p. 100–8.
+[42] Krezhova D, Stoev A, Maneva S. Detection of biotic stress caused by apple stem grooving virus in apple trees using hyperspectral reﬂectance analysis. Comptes Rendus l’Acade´ mie Bulg Des Sci 2015;68(2):175–82.
+[43] Zou T, Dou Y, Mi H, Zou J, Ren Y. Support vector regression for determination of component of compound oxytetracycline powder on near-infrared spectroscopy. Anal Biochem 2006;355:1–7.
+[44] Nagasubramanian K, Jones S, Sarkar S, Singh AK, Singh A, Ganapathysubramanian B. Hyperspectral band selection using genetic algorithm and support vector machines for early identiﬁcation of charcoal rot disease in soybean. arXiv preprint arXiv 2017;1710(04681):1–20.
+[45] Zhang B, Huang W, Wang C, Gong L, Zhao C, Liu C, et al. Computer vision recognition of stem and calyx in apples using near-infrared linear-array structured light and 3D reconstruction. Biosyst Eng 2015;139:25–34.
+[46] Bishop CM. Neural networks for pattern recognition. USA: Oxford University Press; 1995.
+
+[47] Ettabaa KS, Ben Salem M. Adaptive progressive band selection for dimensionality reduction in hyperspectral images. J Indian Soc Remote Sens 2018;46(2):157–67.
+[48] Goetz AFH, Vane G, Solomon JE, Rock BN. Imaging spectrometry for earth remote sensing. Science 1985;228 (4704):1147–53.
+[49] Marini F, Bucci R, Magr`ı AL, Magr`ı AD. Artiﬁcial neural networks in chemometrics: history, examples and perspectives. Microchem J 2008;88(2):178–85.
+[50] Marini F, Zupan J, Magr`ı AL. Class-modeling using kohonen artiﬁcial neural networks. Anal Chim Acta 2005;544(1– 2):306–14.
+[51] Marini F, Magr`ı AL, Bucci R. Multilayer feed-forward artiﬁcial neural networks for class modeling. Chemom Intell Lab Syst 2007;88(1):118–24.
+[52] Al Bashish D, Braik M, Bani-Ahmad S. In: A framework for detection and classiﬁcation of plant leaf and stem diseases. Chennai, India: IEEE; 2010. p. 113–8.
+[53] Zhu H, Chu B, Zhang C, Liu F, Jiang L, He Y. Hyperspectral imaging for presymptomatic detection of tobacco disease with successive projections algorithm and machinelearning Classiﬁers. Sci Rep 2017;7(1):4125.
+[54] Zhu H, Cen H, Zhang C, He Y. Early detection and classiﬁcation of tobacco leaves inoculated with tobacco mosaic virus based on hyperspectral imaging technique. In: ASABE Annual Internation Meeting. p. 1.
+[55] Ashourloo D, Matkan AA, Huete A, Aghighi H, Mobasheri MR. Developing an index for detection and identiﬁcation of disease stages. IEEE Geosci Remote Sens Lett 2016;13 (6):851–5.
+[56] Shiffman D. Neural networks. The nature of code: simulating natural systems with processing (Online). Link: <http://natureofcode.com/book/chapter-10-neuralnetworks/>; 2012.
+[57] Karray FO, De Silva CW. Soft computing and intelligent systems design: theory, tools, and applications. London: Pearson Education; 2004.
+[58] Tarassenko L. Neural computing hardware and software. In: Guide to neural computing applications. ButterworthHeinemann; 1998. p. 59–66.
+[59] McCulloch WS, Pitts W. A logical calculus of the ideas immanent in nervous activity. Bull Math Biophys 1943;5 (4):115–33.
+[60] Caocci G, Baccoli R, La G. The usefulness of artiﬁcial neural networks in predicting the outcome of hematopoietic stem cell transplantation. In: Suzuki K, editor. Artiﬁcial neural networks – methodological advances and biomedical applications. Rijeka, Croatia: InTech; 2011. p. 217–32.
+[61] Demuth H, Beale M, Hagan M. Neural network toolboxTM, 2008.
+[62] Almeida JS. Predictive non-linear modeling of complex data by artiﬁcial neural networks. Curr Opin Biotechnol 2002;13 (1):72–6.
+[63] Rosenblatt F. The perceptron: a probabilistic model for information storage and organization in the brain. Psychol Rev 1958;65(6):386–408.
+[64] Rosenblatt F. Physiological and psychological consideration. In: Principles of neurodynamics: perceptrons and theory of brain mechanisms. USA: Cornell Aeronautical Laboratory, Inc.; 1961. p. 32.
+[65] Tarassenko L. Mathematical background for neural computing. In: Tarassenko L, editor. Guide to neural computing applications. Butterworth-Heinemann; 1998. p. 5–35.
+[66] Bishop CM. Single layer networks. In: Neural networks for pattern recognition. USA: Oxford University Press; 1995. p. 77–112.
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+16
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+[67] Baehni S. Single-layer perceptron neural networks. Link: <http://lcn.epﬂ.ch/tutorial/english/perceptron/html/intro. html>; 2000.
+[68] Raudys Sˇ . Evolution and generalization of a single neurone: I. Single-layer perceptron as seven statistical classiﬁer. Neural Netw 1998;11(2):283–96.
+[69] Monteiro ST, Kosugi Y, Uto K, Watanabe E. Towards applying hyperspectral imagery as an intraoperative visual aid tool. In: Proceeding of the Fourth IASTED International Conference on Visualization, Imaging and Image Processing. Marbella, Spain. p. 483–8.
+[70] Lu G, Lu G, Fei B. Medical hyperspectral imaging : a review. J Biomed Opt 2014;19(1):10901.
+[71] Paola JD, Schowengerdt RA. A review and analysis of backpropagation neural networks for classiﬁcation of remotely-sensed multi-spectral imagery. Int J Remote Sens 1995;16(16):3033–58.
+[72] Abdulridha J, Ehsani R, de Castro A. Detection and differentiation between Laurel wilt disease, phytophthora disease, and salinity damage using a hyperspectral sensing technique. Agriculture 2016;6(4):56.
+[73] Moshou D, Bravo C, West J, Wahlen S, McCartney A, Ramon H. Automatic detection of ‘‘yellow rust” in wheat using reﬂectance measurements and neural networks. Comput Electron Agric 2004;44(3):173–88.
+[74] Ghaiwat SN, Arora P. Detection and classiﬁcation of plant leaf diseases using image processing techniques: a review. Int J Recent Adv Eng Technol 2014;2:2347–812.
+[75] Huang Y. Advances in artiﬁcial neural networks – methodological development and application. Algorithms 2009;2(3):973–1007.
+[76] Moody J, Darken CJ. Fast learning in networks of locallytuned processing units. Neural Comput 1989;1(2):281–94.
+[77] Broomhead DS, Lowe D. Multivariable functional interpolation and adaptive networks. Comp Syst 1988:21.
+[78] Alexandridis A, Chondrodima E, Sarimveis H. Cooperative learning for radial basis function networks using particle swarm optimization. Appl Soft Comput 2016;49:485–97.
+[79] Chen Y, Xie M, Zhang H, Wang Y, Nie S, Li C. Quantiﬁcation of total polysaccharides and triterpenoids in Ganoderma lucidum and Ganoderma atrum by near infrared spectroscopy and chemometrics. Food Chem 2012;135:268–75.
+[80] Yang R, Er PV, Wang Z, Tan KK. An RBF neural network approach towards precision motion system with selective sensor fusion. Neurocomputing 2016;199:31–9.
+[81] Kohonen T. Self-organized formation of topologically correct feature maps. Biol Cybern 1982;43(1):59–69.
+[82] Krenker A, Besˇter J, Kos A. Introduction to the artiﬁcial neural networks. In: Suzuki K, editor. Artiﬁcial neural networks – methodological advances and biomedical applications. Rijeka, Croatia: InTech; 2011. p. 3–18.
+[83] Lawrence GW, Kelley AT, King RL, Vickery J, Lee HK, McLean KS. Remote sensing and precision nematicide applications for Rotylenchulus reniformis management in cotton. In: Cook R, Hunt DJ, editors. Nematology monographs and perspectives. Brill, Leiden and Boston.
+[84] Lawrence GW, Doshi RA, King RL, Lawrence KS, Caceres J. Nematode management using remote sensing technology, self-organized maps and variable rate nematicide applications. World Cotton Research Conference.Texas USA, 2007.
+[85] Specht DF. Probabilistic neural networks. Neural Netw 1990;3(1):109–18.
+[86] Specht DF. Probabilistic neural networks and general regression neural networks. In: Chen CH, editor. Fuzzy logic and neural network handbook. USA: McGraw-Hill; 1996. p. 3.1–3.44.
+
+[87] Li B, Liu Z, Huang J, Zhang L, Zhou W, Shi J. Hyperspectral identiﬁcation of rice diseases and pests based on principal component analysis and probabilistic neural network. Trans Chinese Soc Agric Eng 2009;25(9):143–7.
+[88] Lowe A, Harrison N, French AP. Hyperspectral image analysis techniques for the detection and classiﬁcation of the early onset of plant disease and stress. Plant Methods 2017;13(1):80.
+[89] Mohanty SP, Hughes DP, Salathe´ M. Using deep learning for image-based plant disease detection. Front. Plant Sci 2016;7..
+[90] Sladojevic S, Arsenovic M, Anderla A, Culibrk D, Stefanovic D. Deep neural networks based recognition of plant diseases by leaf image classiﬁcation. Comput Intell Neurosci 2016;2016:1–11.
+[91] Chen Y, Jiang H, Li C, Jia X, Member S. Deep feature extraction and classiﬁcation of hyperspectral images based on convolutional neural networks. IEEE Trans Geosci Remote Sens 2016;54(10):6232–51.
+[92] Paoletti ME, Haut JM, Plaza J, Plaza A. A new deep convolutional neural network for fast hyperspectral image classiﬁcation. ISPRS J Photogramm Remote Sens 2017.
+[93] Lu Y, Yi S, Zeng N, Liu Y, Zhang Y. Identiﬁcation of rice diseases using deep convolutional neural networks. Neurocomputing 2017;267:378–84.
+[94] Langford ZL, Kumar J, Hoffman FM. Convolutional neural network approach for mapping arctic vegetation using multi-sensor remote sensing fusion. In: International Conference on Data Mining Workshops IEEE. p. 322–31.
+[95] Stefanowski, J. Artiﬁcial neural networks – basics of MLP, RBF and Kohonen networks. Institute of computing science lecture 13 in data mining for M. Sc. course of SE version for 2010. Link: <http://www.cs.put.poznan.pl/jstefanowski/sed/ DM13neuralnetworks.pdf>; 2010.
+[96] Plate TA, Bert J, Grace J, Band P. Visualizing the function computed by a feedforward neural network. Neural Comput 2000;12(6):1337–53.
+[97] Hawkins J, Boden M. The applicability of recurrent neural networks for biological sequence analysis. IEEE/ACM Trans Comput Biol Bioinform 2005;2(3):243–53.
+[98] Egmont-Petersen M, de Ridder D, Handels H. Image processing with neural networks – a review. Pattern Recognit 2002;35(10):2279–301.
+[99] Udelhoven T, Schu¨ tt B. Capability of feed-forward neural networks for a chemical evaluation of sediments with diffuse reﬂectance spectroscopy. Chemom Intell Lab Syst 2000;51(1):9–22.
+[100] Bishop CM. The multi-layer perceptron. In: Neural networks for pattern recognition. USA: Oxford University Press; 1995. p. 116–20.
+[101] Huang G-B, Zhu Q-Y, Siew C-K. Extreme learning machine: theory and applications. Neurocomputing 2006;70(1– 3):489–501.
+[102] Huang G, Huang G-B, Song S, You K. Trends in extreme learning machines: a review. Neural Netw 2015;61:32–48.
+[103] Tang J, Deng C, Huang G-B. Extreme learning machine for multilayer perceptron. IEEE Trans Neural Networks Learn Syst 2016;27(4):809–21.
+[104] Huang G-B. An insight into extreme learning machines: random neurons, random features and kernels. Cognit Comput 2014;6(3):376–90.
+[105] Paul PA, Munkvold GP. Regression and artiﬁcial neural network modeling for the prediction of gray leaf spot of maize. Phytopathology 2005;95(4):388–96.
+[106] Zhang AB, Sikes DS, Muster C, Li SQ. Inferring species membership using DNA sequences with back-propagation neural networks. Syst Biol 2008;57:202–15.
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+17
+
+[107] Sajda P. Machine learning for detection and diagnosis of disease. Annu Rev Biomed Eng 2006;8(1):537–65.
+[108] Chtioui Y, Panigrahi S, Francl L. A generalized regression neural network and its application for leaf wetness prediction to forecast plant disease. Chemom Intell Lab Syst. 1999;48(1):47–58.
+[109] Parzen E. On estimation of a probability density function and mode. Ann Math Stat 1962;33(3):1065–76.
+[110] Wu SG, Bao FS, Xu EY, Wang YX, Chang YF, Xiang QL. A leaf recognition algorithm for plant classiﬁcation using probabilistic neural network. In: International Symposium on Signal Processing and Information Technology IEEE. Giza, Egypt. p. 11–6.
+[111] Wu C, Berry M, Fung YS, McLarty J. Neural networks for molecular sequence classiﬁcation. In: International conference on intelligent systems for molecular biology. p. 429–37.
+[112] Liu L, Zhou G. Extraction of the rice leaf disease image based on BP neural network. In: International Conference on Computational Intelligence and Software Engineering IEEE. Wuhan, China. p. 1–3.
+[113] Wu C, Shivakumar S. Back-propagation and counterpropagation neural networks for phylogenetic classiﬁcation of ribosomal RNA sequences. Nucl Acids Res 1994;22 (20):4291–9.
+[114] Camargo A, Smith JS. Image pattern classiﬁcation for the identiﬁcation of disease causing agents in plants. Comput Electron Agric 2009;66(2):121–5.
+[115] Lorente D, Aleixos N, Go´ mez-Sanchis J, Cubero S, Blasco J. Selection of optimal wavelength features for decay detection in citrus fruit using the ROC curve and neural networks. Food Bioprocess Technol 2013;6(2):530–41.
+[116] Liu W, Wu EY. Comparison of non-linear mixture models: sub-pixel classiﬁcation. Remote Sens Environ. 2005;94 (2):145–54.
+[117] Pu R. Hyperspectral remote sensing: fundamentals and practices. USA: CRC Press; 2017.
+[118] Wood KR. Nepovirus isolation and RNA extraction. In: Foster GD, Taylor SC, editors. Plant virology protocols. USA: Humana Press; 1998.
+[119] Raid R. Speciﬁc symptoms & signs of bacterial diseases. Plant pathology guidelines for master gardeners. University Florida. Link: <http://erec.ifas.uﬂ.edu/plant_pathology_ guidelines/module_03.shtml>; 2011.
+[120] Koike ST, Gladders P, Paulus AO. Causes of disease. In: Vegetable diseases: a color handbook. London: Manson Publishing Ltd; 2007. p. 22–4.
+[121] Thenkabail PS, Smith RB, De Pauw E. Evaluation of narrowband and broadband vegetation indices for determining optimal hyperspectral wavebands for agricultural crop characterization. Photogramm Eng Remote Sens 2002;68(6):607–22.
+[122] Qi J, Inoue Y, Wiangwang N. Hyperspectral remote sensing in global change studies. In: Thenkabail PS, Lyon JG, Huete A, editors. Hyperspectral remote sensing of vegetation. USA: CRC Press; 2011. p. 69–90.
+[123] Mahlein AK. Plant disease detection by imaging sensors – parallels and speciﬁc demands for precision agriculture and plant phenotyping. Plant Dis 2016;100(2):241–51.
+[124] Hill J, Udelhoven T, Vohland M, Stevens A. The use of laboratory spectroscopy and optical remote sensing for estimating soil properties. In: Oerke E-C, Gerhards R, Menz G, Sikora RA, editors. Precision crop protection – the challenge and use of heterogeneity. Dordrecht: Springer, Netherlands; 2010. p. 67–85.
+[125] Wu D, Feng L, Zhang C, He Y. Early detection of Botrytis cinerea on eggplant leaves based on visible and near-infrared spectroscopy. Trans ASABE 2008;51:1133–9.
+
+[126] le Maire G, Francois C, Soudani K, Berveiller D, Pontailler J-Y, Bre´ da N, et al. Calibration and validation of hyperspectral indices for the estimation of broadleaved forest leaf chlorophyll content, leaf mass per area, leaf area index and leaf canopy biomass. Remote Sens Environ 2008;112:3846–64.
+[127] Pydipati R, Burks TF, Lee WS. Identiﬁcation of citrus disease using color texture features and discriminant analysis. Comput Electron Agric 2006;52(1–2):49–59.
+[128] Miller WM, Throop JA, Upchurch BL. Pattern recognition models for spectral reﬂectance evaluation of apple blemishes. Postharvest Biol Technol 1998;14(1):11–20.
+[129] Bulanon DM, Burks TF, Kim DG, Ritenour MA. Citrus black spot detection using hyperspectral image analysis. Agric Eng Int CIGR J 2013;15(3):171–80.
+[130] Bajwa SG, Bajcsy P, Groves P, Tian LF. Hyperspectral image data mining for band selection in agricultural applications. Trans ASAE. 2004;47(3):895–907.
+[131] Delalieux S, van Aardt J, Keulemans W, Schrevens E, Coppin P. Detection of biotic stress (Venturia inaequalis) in apple trees using hyperspectral data: Non-parametric statistical approaches and physiological implications. Eur J Agron. 2007;27(1):130–43.
+[132] Gautam RK, Panigrahi S. Image processing techniques and neural network models for predicting plant nitrate using aerial images. In: International Joint Conference on Neural Networks IEEE. Portland, OR, USA. p. 1031–6.
+[133] Han Min, Cheng Lei, Meng Hua. Classiﬁcation of aerial photograph using neural network. In: International Conference on Systems, Man and Cybernetics IEEE. Yasmine Hammamet, Tunisia. p. 6.
+[134] Mutanga O, Skidmore AK. Narrow band vegetation indices overcome the saturation problem in biomass estimation. Int J Remote Sens 2004;25(19):3999–4014.
+[135] Muhammed HH. Hyperspectral crop reﬂectance data for characterising and estimating fungal disease severity in wheat. Biosyst Eng 2005;91(1):9–20.
+[136] Jones CD, Jones JB, Lee WS. Diagnosis of bacterial spot of tomato using spectral signatures. Comput Electron Agric 2010;74(2):329–35.
+[137] Liu Z-Y, Wu H-F, Huang J-F. Application of neural networks to discriminate fungal infection levels in rice panicles using hyperspectral reﬂectance and principal components analysis. Comput Electron Agric 2010;72(2):99–106.
+[138] Liu Z, Huang J, Tao R, Zhang H. Estimating the severity of rice brown spot disease based on principal component analysis and radial basis function neural network. Spectrosc Spectr Anal. 2008;28(9):2156–60.
+[139] Wang X, Zhang M, Zhu J, Geng S. Spectral prediction of Phytophthora infestans infection on tomatoes using artiﬁcial neural network (ANN). Int J Remote Sens 2008;29 (6):1693–706.
+[140] Baranowski P, Jedryczka M, Mazurek W, Babula-Skowronska D, Siedliska A, Kaczmarek J. Hyperspectral and thermal imaging of oilseed rape (Brassica napus) response to fungal species of the genus alternaria. PLoS One 2015;10(3) e0122913.
+[141] Lee WS, Ehsani R. Sensing systems for precision agriculture in Florida. Comput Electron Agric 2015;112:2–9.
+[142] Shafri HZM, Hamdan N. Hyperspectral imagery for mapping disease infection in oil palm plantation using vegetation indices and red edge techniques. Am J Appl Sci 2009;6 (6):1031–5.
+[143] Mahlein AK, Steiner U, Hillnhu¨ tter C, Dehne HW, Oerke EC. Hyperspectral imaging for small-scale analysis of symptoms caused by different sugar beet diseases. Plant Methods 2012;8(1):3.
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+
+18
+
+Information Processing in Agriculture xxx (2018) xxx–xxx
+
+[144] Apan A, Held A, Phinn S, Markley J. Detecting sugarcane ‘‘orange rust” disease using EO-1 hyperion hyperspectral imagery. Int J Remote Sens. 2004;25(2):489–98.
+[145] Bauriegel E, Herppich W. Hyperspectral and chlorophyll ﬂuorescence imaging for early detection of plant diseases, with special reference to fusarium spec. infections on wheat. Agriculture 2014;4(1):32–57.
+[146] Qin J, Burks TF, Ritenour MA, Bonn WG. Detection of citrus canker using hyperspectral reﬂectance imaging with spectral information divergence. J Food Eng 2009;93 (2):183–91.
+[147] Del Fiore A, Reverberi M, Ricelli A, Pinzari F, Serranti S, Fabbri AA, et al. Early detection of toxigenic fungi on maize by hyperspectral imaging analysis. Int J Food Microbiol 2010;144(1):64–71.
+[148] Shen W, Li Y, Feng W, Zhang H, Zhang Y, Xie Y, et al. Inversion model for severity of powdery mildew in wheat leaves based on factor analysis-BP neural network. Trans Chinese Soc Agric Eng. 2015;31(22):183–90.
+[149] Camps-Valls G, Bruzzone L. Kernel-based methods for hyperspectral image classiﬁcation. IEEE Trans Geosci Remote Sens. 2005;43(6):1351–62.
+[150] Rouse Jr JW, Haas RH, Deering DW, Harlan JC. Monitoring the vernal advancement and retrogradation (green wave effect) of natural vegetation. Link: <https://ntrs.nasa.gov/ archive/nasa/casi.ntrs.nasa.gov/19730016613.pdf>; 1973
+[151] Balasundram SK, Kassim FA, Vadamalai G, Hanif AHM. Estimation of red tip disease severity in pineapple using a non-contact sensor approach. Agric Sci 2013;4(4):206–8.
+
+[152] Pen˜ uelas J, Gamon JA, Fredeen AL, Merino J, Field CB. Reﬂectance indices associated with physiological changes in nitrogen- and water-limited sunﬂower leaves. Remote Sens Environ 1994;48(2):135–46.
+[153] Mahlein AK, Rumpf T, Welke P, Dehne HW, Plu¨ mer L, Steiner U, et al. Development of spectral indices for detecting and identifying plant diseases. Remote Sens Environ 2013;128:21–30.
+[154] Ashourloo D, Mobasheri M, Huete A. Developing two spectral disease indices for detection of wheat leaf rust (Pucciniatriticina). Remote Sens 2014;6(6):4723–40.
+[155] Rumpf T. Finding spectral features for the early identication of biotic stress in plants [Doctor thesis]. Rheinische Friedrich-Wilhelms-Universita¨ t Bonn; 2012.
+[156] Go´ mez-Chova L, Tuia D, Moser G, Camps-Valls G. Multimodal classiﬁcation of remote sensing images: a review and future directions. Proc IEEE 2015;103(9):1560–84.
+[157] Wang G, Sun Y, Wang J. Automatic image-based plant disease severity estimation using deep learning. Comput Intell Neurosci 2017;2017(2917536):1–8.
+[158] Haut JM, Paoletti M, Plaza J, Plaza A. Cloud implementation of the K-means algorithm for hyperspectral image analysis. J Supercomput 2017;73(1):514–29.
+[159] Quirita VAA, da Costa GAOP, Happ PN, Feitosa RQ, d.S. Ferreira RQ, Oliveira DAB, et al. A new cloud computing architecture for the classiﬁcation of remote sensing data. IEEE J Sel Topics Appl Earth Observ Remote Sens 2017;10 (2):409–16.
+
+Please cite this article in press as: Golhani K et al. A review of neural networks in plant disease detection using hyperspectral data. Info Proc Agri (2018), https://doi.org/10.1016/j.inpa.2018.05.002
+

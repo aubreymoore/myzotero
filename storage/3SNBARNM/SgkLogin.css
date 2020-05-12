@@ -1,0 +1,32 @@
+﻿.Product_login-debuginfo
+{
+    width: 670px; 
+    height: 200px; 
+    overflow: auto; 
+    margin-top:10px; 
+    border-top: 1px solid black; 
+    padding-top: 4px;
+}
+
+.Commercial_login-debuginfo
+{
+    width: 225px; 
+    max-height: 300px; 
+    overflow: auto; 
+    margin-top:10px; 
+    border-top: 1px solid black; 
+    padding: 2px;
+    font-size: 8pt;
+}
+
+.CD4_login-debuginfo
+{
+    width: 100%; 
+    max-height: 200px; 
+    overflow: auto; 
+    margin-top:10px; 
+    border-top: 1px solid black; 
+    padding: 10px;
+    font-size: 8pt;
+}
+

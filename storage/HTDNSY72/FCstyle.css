@@ -1,0 +1,366 @@
+body {
+  font: 16px Sans-Serif;
+	background: #0F233B;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+ul, ol, dl {
+	padding: 0;
+	margin: 0;
+  font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	font-style: normal;
+	line-height: normal;
+	left: 30px;
+}
+
+li {
+  margin: 10px 0 0 25px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	padding-right: 45px;
+	padding-left: 45px;
+}
+
+input[type=submit],
+input[type=reset],
+input[type=button] {
+  filter:chroma(color=#000000);
+}
+
+input:focus, 
+input:active, 
+input:hover 
+{ 
+   outline: none;
+   border: none;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+	margin-top: 0;
+	padding-right: 45px;
+	padding-left: 45px;
+  font-family: "Times New Roman", Times, serif;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+
+.backtop {
+  font-size: 12px;
+  font-weight: normal;
+  cursor: pointer;
+  position: relative;
+  top: -1.5px;
+	color: #6e99c5;
+}
+
+.container {
+  width: 100%;
+	max-width: 750px;
+	min-width: 250px;
+	background: #FFF;
+	margin: 0 auto;
+}
+
+.header {
+  background: #6F7D94 url(UFlogofeatcreat.gif) no-repeat;
+  height: 94px;
+  width: 750px;
+  position: relative;
+}
+
+  .header ul {
+    list-style: none;
+    margin: 0;
+    position: relative;
+    top: 62%;
+    left: 0px;
+    text-align: center;
+  }
+
+  .header li {
+    display: inline;
+    margin: 0 5px 0 0;
+  }
+  
+  .header a {
+    color: #FFF;
+    text-decoration: none;
+    font: 14px Sans-Serif;
+    font-weight: bold;
+  }
+
+.header-box-left {
+  display: block;
+  height: 94px;
+  width: 170px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  text-indent: -9999px;
+}
+
+.header-box-middle {
+  display: block;
+  height: 35px;
+  width: 345px;
+  position: absolute;
+  top: 15px;
+  left: 200px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  text-indent: -9999px;
+}
+
+.header-box-right {
+  display: block;
+  height: 100%;
+  width: 160px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  float: right;
+  text-indent: -9999px;
+}
+
+#search {
+  position: absolute;
+  top: 70px;
+  right: 5px;
+  z-index: 999;
+  font-size: 12px;
+  overflow: hidden;
+  display: inline;
+  margin: 0;
+}
+
+  #search-field {
+    height: 16px;
+    width: 115px;
+    padding: 0 0 0 5px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    outline: none;
+    border-radius: 2px;
+    -border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+  }
+
+  #search-button {
+    height: 18px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    outline: none;
+    border-radius: 2px;
+    -border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    cursor: pointer;
+    overflow: visible;
+  }
+/* ~~ This is the layout information. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+*/
+.content {
+	max-width: 750px;
+	min-width: 250px;
+	padding: 10px 0;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol {
+	padding: 0 45px 45px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+	left: 30px;
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+  color: #FFF;
+  font-size: 16px;
+	padding: 90px 40px 40px 40px;
+	background: #2C4D6F;
+  position: relative;
+  
+}
+
+  .footer a {
+    color: #CCC;
+  }
+
+ul.footer-links {
+  background-color: transparent;
+  list-style: none;
+  position: relative;
+  top: 30px;
+  left: 0px;
+  overflow: hidden;
+}
+
+  ul.footer-links li {
+    float: left;
+    margin: 0;
+  }
+
+    ul.footer-links li a {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+
+  .footer-link1 {
+    height: 60px;
+    width: 186px;
+    margin: 14px 35px 0 0 !important;
+    background: transparent url('ifas3.png') 0 0 no-repeat;
+  }
+
+  .footer-link2 {
+    height: 60px;
+    width: 200px;
+    margin: 12px 35px 0 0 !important;
+    background: transparent url('dpi.png') 0 0 no-repeat;
+  }
+
+  .footer-link3 {
+    height: 60px;
+    width: 210px;
+    margin: 10px 0 0 0 !important;
+    background: transparent url('entnem.png') 0 0 no-repeat;
+  }
+
+ul.social {
+  list-style: none;
+  position: absolute;
+  top: 15px;
+  left: 40px;
+}
+
+  ul.social li {
+    float: left;
+    margin: 0 7px 0 0;
+  }
+
+    ul.social li a {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+
+  .social-facebook {
+    height: 51px;
+    width: 55px;
+    background: transparent url('social.png') 0 0 no-repeat;
+  }
+
+  .social-facebook:hover { background: transparent url('social.png') 0 -53px no-repeat; }
+
+  .social-youtube {
+    height: 51px;
+    width: 55px;
+    background: transparent url('social.png') 0 -106px no-repeat;
+  }
+
+  .social-youtube:hover { background: transparent url('social.png') 0 -159px no-repeat; }
+
+  .social-twitter {
+    height: 51px;
+    width: 55px;
+    background: transparent url('social.png') 0 -212px no-repeat;
+  }
+
+  .social-twitter:hover { background: transparent url('social.png') 0 -265px no-repeat; }
+
+  .social-creatures {
+    height: 53px;
+    width: 235px;
+    background: transparent url('fc_button.png') 0 0 no-repeat;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+.photo-with-caption {
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+  .photo-with-caption p {
+    margin: 20px auto 20px auto;
+    width: 68%;
+    text-align: center;
+  }
+
+  .photo-with-caption img {
+    max-width: 75%;
+    min-width: 200px;
+    max-height: 100%;
+    min-height: 100px;
+  }

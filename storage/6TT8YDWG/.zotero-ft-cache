@@ -1,0 +1,189 @@
+
+
+    Deutsch
+    European Hospital
+    Publications
+    LabBook
+    RadBook
+    Media Kits
+    Events
+    Newsletter
+    Contact
+
+healthcare-in-europe Logo
+Search Menu
+
+    Latest News
+    Diagnostic imaging
+    Laboratory/pathology
+    Treatment
+    Management
+    Health IT
+    Research
+
+The math behind corona
+Predicting the future of the Covid-19 pandemic with data
+Mathematical models can help shed light on the evolution of the coronavirus pandemic, according to Spanish mathematician Juan Luis Fernández Martínez, who predicted Spain could have between 90,000 and 160,000 infected patients. The next trend in epidemic data science will be to issue prediction models that focus on early detection.
+
+Report: Mélisande Rouger
+portrait of Juan Luis Fernández Martínez
+Juan Luis Fernández Martínez
+
+Fernández, a professor of applied mathematics from Oviedo, Spain, has developed a short term prediction tool that is helping Spanish emergency departments know how many patients with Covid-19 will need to be admitted in intensive care units (ICU) and prepare adequately. With surprisingly exact results – he accurately predicted that 29 patients would present with the infection in Asturias on March 24 –, Fernández and his team are providing much needed help to an extremely strained healthcare system. “The model is quite accurate and users are happy. They can correlate our predictions with the number of people who are currently in the ICU to plan workflow and anticipate their necessities,” he said.
+Advertisement
+Advertisement
+Looking at curves to predict trends
+Photo
+This curve shows the prediction of the daily number of infected in Spain (prediction date: March 26)
+
+Fernández gathers the infection data published by the healthcare authorities in Asturias, Cantabria and Castile Leon provinces every night, and analyzes the numbers using a population growth model to calculate the evolution over the next 15-20 days. He has also been using the data shared by the Spanish ministry of health since March 18th, and the estimations issued by Johns Hopkins University, who started to follow the epidemics across the world well before the Spanish administration. “It’s a growing curve and you don’t know where it’s going to finish. But using a population growth model, you know when the infection will peak and deduce the total number of infected people. The main point is to perform a correct uncertainty analysis of the growth model fitting the past history and transmitting this uncertainty to the future predictions,” Fernández said.
+
+Most Spanish experts have agreed that the peak of the epidemic would occur between March 25th and 29th. The total number of infected patients will be double that peak at the end of this wave of the epidemic. On March 26th, the number of infected across Spain was 56, 188, pointing to potentially 120,000 infected when the epidemic fades. But there might be more, Fernández warned. “We think that the total number could oscillate between 90,000 and 160,000, depending on the data we receive every day. We can only predict accurately day by day, as we receive new information,” he said. 
+Photo
+Comparison of Covid-19 infections across European countries (log-10)
+
+To issue his predictions, Fernández uses the Verhulst model, a population growth scale that looks at the initial population to identify velocity and propagation constant. This approach enables to calculate the level of uncertainty in the short run, by adjusting epidemics history and identifying parameters. The results are then classified into percentiles ranging from 25, 50, 75 and 90, which have different levels of probability. “Percentile 50 (P50) is what is most likely to happen. If you obtain a percentile above that, for example P75, you know that the infection is not controlled. But if your percentile is below P50, then the infection is under control.” Fernández explained.
+
+The system is also able to absorb temporary peaks, for example a mass infection in a nursing home. The infection will not peak at the same time across the country, he said. “Valencia still has some time. In Asturias, we thought we had it contained a few days ago, but we had a surge with 59 newly infected patients at a nursing home in one day. But the model adapts, by predicting more admissions in the ICU. On the next day, the peak was absorbed.”
+Increased reliance on data
+
+Fernández has been publishing his forecast every day in Asturian newspaper La Nueva España since March 18th. The prediction wasn’t worth publishing before as the numbers provided by the different local and federal administrations were not in line, he explained. “The summation of the infected across the regions didn’t match the total number provided by the national government. Fortunately, they all managed to homogenize their data.”
+Photo
+Comparison of Covid-19 infections per continent (log-10)
+
+Governments are increasingly relying on data and prediction models in the epidemic setting. Many prediction models are currently used to that end around the world. The Verhulst model Fernández uses is not as sophisticated as others like CIR, but it is reliable and strong for short-term uncertainty analysis. For long-term analysis, prediction tools should base themselves on the models used in the stock market, to look at the infection as a stock share.
+
+Thanks to the information provided by Johns Hopkins, Fernández and his team have also been checking the data around the world to assess the evolution on each continent. America is without a doubt the next Covid-19 hub . The Covid-19 pandemic will continue for quite some time, until an efficient vaccine is found. The trend will be to develop early detection tools using data. Fernández is already looking at ways to obtain cough data. “By analyzing patients’ cough, we could design an AI system that predicts if a person is infected or not,” he concluded.
+
+27.03.2020
+More on the subject:
+
+    coronavirus (45)
+    ICU (193)
+    infections (447)
+    prevention (477)
+    research (1834)
+
+I'm interested in more information … Read all latest stories
+
+Related articles
+Photo
+Killing copper
+
+In Europe, nosocomial infections cause about 25,000 deaths every year. Copper has strong antibiotic effects and may reduce hospital acquired infections.
+
+    #disinfection
+    #hygiene
+    #ICU
+    #infections
+    #MRSA
+    #prevention
+    #research
+    #security
+
+Photo
+Study: 700,000 cases prevented
+What China got right in the first 50 days of COVID-19
+
+China's control measures during the first 50 days of the COVID-19 epidemic may have delayed the spread of the virus to cities outside of Wuhan by several days and, by interrupting transmission…
+
+    #coronavirus
+    #healthcare politics
+    #infections
+    #research
+    #studies
+
+Photo
+Coronavirus chronology
+COVID-19 in the U.S.: Government inaction gave virus a head start
+
+The sense of fear is palpable in the images and videos of hospital intensive care units (ICUs) and emergency departments that are broadcast on television and posted on social media. Fear and…
+
+    #coronavirus
+    #healthcare politics
+    #hospital
+    #infections
+    #prevention
+
+Related products
+Atlas Genetics - Atlas Genetics io system
+Infectious diseases testing
+Atlas Genetics - Atlas Genetics io system
+Atlas Genetics Ltd
+Eppendorf – Mastercycler nexus X2
+Research Use Only (RUO)
+Eppendorf – Mastercycler nexus X2
+Eppendorf AG
+Sarstedt – Low DNA Binding Micro Tubes
+Research Use Only (RUO)
+Sarstedt – Low DNA Binding Micro Tubes
+SARSTEDT AG & CO. KG
+Shimadzu – CLAM-2030
+Research Use Only (RUO)
+Shimadzu – CLAM-2030
+Shimadzu Europa GmbH
+Siemens Healthineers – Fast Track Diagnostics Real-time PCR assays
+Infectious Disease
+Siemens Healthineers – Fast Track Diagnostics Real-time PCR assays
+Siemens Healthineers
+Siemens Healthineers – Versant HCV Genotype 2.0 Assay (LiPA)
+Infectious Disease/Hepatitis
+Siemens Healthineers – Versant HCV Genotype 2.0 Assay (LiPA)
+Siemens Healthineers
+
+    Categories
+    Diagnostic imaging
+    Laboratory/pathology
+    Treatment
+
+     
+    Management
+    Health IT
+    Research
+
+    General
+    LabBook
+    RadBook
+    Manufacturer-Index
+
+     
+    Media Kits
+    Newsletter
+    Contact
+
+     
+    Facebook
+    Twitter
+    YouTube
+
+     
+    RSS-Feed
+    Privacy policy
+    Imprint
+
+To Homepage?
+
+    Home
+    Deutsch
+
+    Latest News
+    Diagnostic imaging
+    Laboratory/pathology
+    Treatment
+    Management
+    Health IT
+    Research
+
+    Manufacturer-Index
+    European Hospital
+    Publications
+    LabBook
+    RadBook
+    Media Kits
+    Events
+    Newsletter
+    Contact
+
+This website uses cookies to give our readers the best website experience.
+Please refer to our privacy policy to find out how we use cookies and how you can edit your preferences.
+Refuse cookies Accept cookies

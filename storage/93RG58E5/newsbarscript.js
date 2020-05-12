@@ -1,0 +1,1 @@
+var sNZHBreakingNews = [{"inclusions":[],"titleimage":"","text":"Partners in crime: How a couple cynically cheated the benefit system out of $36,000","id":210702,"url":"\/nz\/news\/article.cfm?c_id=1&objectid=11999629","clickmap":"homeBNB","type":"breaking","title":"Breaking News"}];

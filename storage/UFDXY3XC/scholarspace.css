@@ -1,0 +1,33 @@
+/* To edit global bootstrap styles, edit less/bootstrap/variables.less and recompile */
+a {
+  color: #049366;
+}
+a:focus,
+a:hover {
+  color: #024731;
+}
+
+.list-group-item h4 {
+  color: #049366;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+ol.breadcrumb li a {
+  color: #049366;
+}
+
+.navbar-inverse {
+  background-color: #024731;
+  border-color: #024731;
+  box-shadow: 1px 1px 2px #999;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-inverse .navbar-nav > .open > a:hover {
+  color: #FFF;
+  background-color: #013323;
+}

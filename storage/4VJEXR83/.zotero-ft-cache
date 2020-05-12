@@ -1,0 +1,439 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/224239710
+Recent developments and recommendations for improving harmonic radar tracking systems
+Conference Paper · May 2011
+Source: IEEE Xplore
+
+CITATIONS
+38
+2 authors: Nazifa Tahir GME 22 PUBLICATIONS 79 CITATIONS
+SEE PROFILE
+
+READS
+360
+Graham Brooker The University of Sydney 92 PUBLICATIONS 639 CITATIONS
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects: Harmonic Tags View project Biomedical and Biomechatronic Systems View project
+
+All content following this page was uploaded by Nazifa Tahir on 09 October 2014.
+The user has requested enhancement of the downloaded file.
+
+Recent Developments and Recommendations for Improving Harmonic Radar Tracking Systems
+
+Nazifa Tahir
+Australian Centre for Field Robotics University of Sydney, Australia n.mariam@acfr.usyd.edu.au
+
+Dr Graham Brooker
+Australian Centre for Field Robotics University of Sydney, Australia gbrooker@acfr.usyd.edu.au
+
+Abstract - The paper presents some recent developments in harmonic radar tracking systems. These are widely used for monitoring and tracking of low flying insects like honey bees, butterflies, snail and carabid beetles, and come under the category of individual marking techniques and use harmonic range detection or range finding for tracking insects tagged with harmonic transponders. In most cases the transponder is, however, a vertical rod or trailing wire both of which hinder insect movement. This paper presents recommendations for improving the harmonic radar, detectable range and minimizing the weight and size of transponder. It presents externally biased microstrip antenna based prototype harmonic transponder.
+Keywords - Radiofrequency identification, transponder, Microstrip antennas, millimeter wave radar
+I. INTRODUCTION
+Entomologists have always been interested in tracking flying and crawling insects for various reasons like determining the length and duration of their migration [1], studying movement behavior for understanding population dynamics [2] and analyzing dynamics of spatial scale of foraging for determining their role in pollination and their needs in terms of nesting sites and food plants [3].
+Various techniques have been used in these investigations. For example, techniques like aerial photography and videography provide real time monitoring [4]. They lack high resolution and insect identification capability but are suitable for rapid survey and recording of large or inaccessible insect affected areas. Individual marking techniques have a higher rate of recapture and permit the release of individuals anywhere in the experimental arena rather than from a single central area [5] as compared to mass marking. It can be used on insects which are not detectable over wide ranges by other techniques due to their small mass , low altitude flights and concealment in clutter offered by vegetations, crops etc. Techniques can use pollens and sugars in the guts of insects respectively as a self marking technique [3], [6]. Radio frequency identification is used effectively on larger organisms [7] which requires a radio transmitter to be fixed on the organism to be tracked. Despite of its efficiency this technique is not easy to apply to insects due to size and weight of the transmitters and batteries. While it is possible to use these miniaturized radio transmitters they are also relatively expensive. One of the most widely used techniques today is harmonic radar with its associated low-cost passive transponders [8].
+
+The paper presents the evolution of harmonic radar tracking systems and provides recommendations for improving it. Section II describes the harmonic radar and different transponders being used today. Section III presents the recommendations and describes a prototype harmonic transponder to improve harmonic radar tracking. Finally, section VI states the conclusions.
+II. HARMONIC RADAR TRACKING SYSTEM
+Harmonic radar is generally used for tracking and monitoring low flying insects which, unlike their high flying counterparts, are difficult to track by simple radar because reflections from these insects are obscured by reflections from the ground and foliage. In radar parlance, these unwanted returns are known as ‘clutter’. A harmonic Radar tracking system presents a solution to this problem by transmitting a frequency ‘f’ and receiving its second harmonic frequency ‘h’. The tracking system consists of the harmonic radar and a transponder attached to the insect to be tracked.
+A. Harmonic Radar
+Harmonic radars have been used since 1986 for tracking low flying insects. They can be categorized as direction finders and range measurement devices. The former are usually portable and operate at short range, while the latter are stationary and operate at much longer ranges. This section compares both types and presents their pros and cons.
+a) Harmonic Radar Direction Finder
+The first portable harmonic radar direction finder [9] was developed for monitoring carbide beetles and used technology originally developed for locating avalanche victims. It uses a portable RECCO transceiver unit available off the shelf. It transmits a CW signal with a power of 1.7W at 917MHz and receives a signal at 1834 MHz. The earlier units were very heavy for the operator to carry, weighing around 15Kg [9,10] and 8Kg [12,13]. The more recent RECCO transceiver [14] weighs only 1.6Kg. It uses a 5 element Yagi antenna for transmitting signals and 4 element patch array for receiving signals from the transponders. This portable harmonic radar has been widely used for monitoring butterflies [11] and snails [12] up to a maximum range of 50m [11]. One of the main disadvantages of this device is that it is only a direction finder [8]. That is, it is not capable of measuring insect’s range and is limited to stationary and crawling insects. Further, the maximum range up to which the insects can be monitored is
+
+very short, and detection depth of carbide beetles [14] is no more than 1m through ground.
+
+(a)
+
+(b)
+
+element with the diode capacitance producing higher harmonic currents [6] and voltages at the diode [17] and a dc return path [8]. The lightest transponder developed weighs approximately 0.4mg [11]. The transponder developed in [8] is heavier at 12mg but is detectable over greatest range of 900m. Unfortunately, transponders developed to date all lack mechanical robustness, and are prone to abrasion and bending during fitting and insect movement.
+
+Figure 1: Shown are the two types of harmonic radars (a) Harmonic radar direction finder [14] (b) Harmonic radar range measurement [8]
+
+III. RECOMMENDATIONS FOR IMPROVING HARMONIC RADAR TRACKING SYSTEM
+
+b) Harmonic Radar Range Measurement
+A modified Racal Decca 90 series marine radar was the first range measurement system [15] developed for tracking long range forging bumble and honey bees. It is actually a pulsed radar capable of transmitting pulses of 25kW with duration 0.1µs and repetitive frequency of 1.5 KHz at 9.375 GHz from a paraboloid 1.5cm diameter. The receiver is tuned to receive signals at 18.75 GHz captured by a dish antenna with a diameter of 0.7m (to match the transmit and receive antenna beam patterns). The radar has successfully detected moths, bumble and honey bees up to a range of 900 m [8] with a reliable working range of 750 m [16]. It can detect insects from a height of a few centimeters to 3-4m [8]. The ranging device is immobile and requires clear line of sight to achieve the quoted range [8]. Further, tracking of insects is only possible as long as they remain within the radar horizon.
+B. HARMONIC TRANSPONDER
+The harmonic transponder consists primarily of a passive schottky diode and an antenna. The nonlinear characteristic of the diode generates current at multiple harmonics of the original frequency when illuminated by electromagnetic waves. These currents then re-radiate harmonic frequencies of the received signal. The antenna is attached across the diode to increase its efficiency on both transmit and receive. Monopole [9, 14], dipole [8, 15] and copper sheets of different shapes [12] have been used as antennas. It is shown in [14] that transponder with dipole antenna has greater range and allows more efficient conduction of current across the diode when compared to a monopole antenna. However, it makes the transponder more susceptible to damage. Both the antennas illustrated in Figure 2 hinder the insect movements and produce aerodynamic drag, effect flight of the insect and are prone to entangling.
+
+This section presents recommendations for improving tracking of low flying insects.
+A. Frequency Modulated Continuous Wave Radar
+The use of a range measurement device is determined by the level of information required about a particular insect. Whereas a direction finder is portable and available commercially it lacks a range measurement capability. That notwithstanding, it can provide a method of mapping an insect’s movement when the operator is equipped with a GPS system and a vehicle [18].
+
+Range measurement devices developed so far use pulse radar. The range and altitude at which the insects can be detected is limited by the transmitter power and the elevation angle covered by the beam. The range resolution of a pulsed radar can be impoved by emitting shorter pulses. However, this decreases the maximum detectable range as each pulse contains less energy. Longer pulses deliver greater range but can cause interference with the receiver when used at close range [18]. One approach can be to use a modified form of frequency modulated continuous wave (FMCW) radar.
+
+Chirp Transmitter
+
+Coupler
+
+Spectrum Analyzer
+
+Multiplier
+
+x2 Duplexer
+
+AMP
+(a)
+
+Mixer
+
+Antenna
+
+fb 2∆f
+
+(a)
+
+(b)
+
+Figure 2: Shows harmonic transponder (a) with pole like dipole antenna [8] (b) with monopole antenna trailing behind [9]
+In the transponders recently developed [15] an inductor is connected in parallel with the diode to increase its efficiency as shown in Figure 2 (a). The inductor acts as a resonant
+
+Tp Tb
+(b)
+Figure 3: (a) Schematic diagram of FMCW radar for harmonic ttacking system (b) Illustration of FMCW concepts
+Unlike a pulse radar, FMCW radar does not require high peak power to be transmitted. It usually transmits a linear frequency chirp, ∆f of duration Tb. The second harmonic is also linear
+
+with a chirp of 2∆f with the same duration. The received second harmonic signal is shifted in frequency by the product of roundtrip time Tp and rate of change of frequency, S = 2δf/δt. It is mixed with the 2nd harmonic of the transmitted signal and filtered to obtain a constant beat frequency fb which then can be used for calculating the range R of the target by equation 1 [19]
+
+R = Tbc
+
+(1)
+
+fb 4∆f
+
+where c is the speed of light.
+
+movement and limit robustness as they need to be kept stiff and vertical [8] or horizontally trailing behind [9] to minimize polarization loss factor. This problem can be overcome by using microstrip antennas [23]. The use of a printed circuit antenna on a material like Mylar has been suggested in [13]. With a sufficiently high operating frequency the small size of these antennas would enable them to be fixed to the thorax or abdomen of the insect without hindering its activities, obstructing wing stroke action or introducing significant aerodynamic drag. Mass production of these antennas will also decrease the cost of individual transponders.
+
+In the design of the FMCW version of an harmonic radar, care needs to be taken to ensure that the transmitted signal is devoid of any harmonics. This requires an extremely clean source which is generally followed by a filter bank. Further, for continuous tracking of migrating insects as they move or fly beyond human accessible range, a UAV based harmonic radar would be needed. This is not feasible at low frequency, but for FMCW operating in the millimeter wave band where component size and weights are low, this becomes practical.
+B. Prototype Transponder
+Two of the basic requirements of the harmonic transponder are efficiency and miniaturization. It should be small in size and weight no more than 10% to 12% of insects mass in order to ensure limited alteration in insect movement [11]. This can be best achieved by increasing the operating frequency.
+
+(a)
+
+(b)
+
+0
+
+-5
+
+-10
+
+-15
+
+S11 (dB)
+
+-20
+
+-25
+
+-30
+
+5.3 GHz - Simulated
+
+-35
+
+5.3 GHz - Measured
+
+10.6GHz - Simulated
+
+10.6GHz - Measured
+
+-40
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+Frequency (GHz)
+
+10
+
+11
+
+12
+
+(c) Figure 5: (a) 5.3 GHz and (b) 10.6 GHz fabricated microstrip antennas (c)
+Simulated and measured return losses of developed antennas
+
+Figure 5 (a), (b) show the fabricated microstrip antennas for prototype harmonic transponder with gains of 8.39 dBi and 8.85 dBi respectively.
+
+d) Externally Biased Frequency Doubler
+
+Figure 4: Clear air attenuation as a function of frequency [19]
+Figure 4 shows frequency bands (atmospheric windows) with low atmospheric losses that can be exploited to maximize range performance. However, for substantial miniaturization of the transponder while maintaining low atmospheric losses, frequencies greater than 35 GHz and 70 GHz should be considered for ‘f’ and ‘h’ respectively. Atmospheric losses for 35 ≤ f ≤ 50 GHz and 70 ≤ h ≤ 100 GHz range from 0.08 to 0.5 dB/km and 0.8 to 0.5 dB/km respectively [19]. As developing antennas in the millimeter wave band is fairly difficult, the first prototype harmonic transponder was developed at the lower operating frequencies of 5.3 GHz and 10.6 GHz. This facilitates testing and the determination of components critical for efficient performance of harmonic transponder.
+c) Microstrip Antenna
+
+Frequency conversion in the harmonic transponder is generally accomplished by a Schottky diode which should be light, small, have high electrostatic protection, low parasitic capacitances and inductance as well as a low turn-on voltage. In addition it should have zero-bias high voltage sensitivity and a low barrier in order to maximize conversion of small signals [6]. It can be packaged or unpackaged. Transponders using unpackaged diodes are more susceptible to static discharge damage and might have grounding problems.
+
+DCVS ID=V2 V=225 mV
+RES ID=R1 R=10 Ohm
+
+PORT_PS1 P=1 Z=50 Ohm PStart=10 dBm PStop=-22 dBm PStep=-2 dB
+
+IND ID=L2 L=33 nH
+
+CAP ID=C1 C=100e-6 uF
+
+SDIODE ID=SD1
+
+PORT P=2 Z=50 Ohm
+
+IND ID=L4 L=1.2 nH
+
+The transponder will always have an effect on the insect so the challenge is to minimize the effects [18]. Existing antennas, whether dipole or monopole, hinder the insect’s
+
+(a)
+
+(b)
+
+Figure 6: Externally biased frequency doubler (a) Schematic diagram
+
+(b) Fabricated
+
+Figure 6 (a) and (b) show the schematic and fabricated frequency doubler for the first prototype harmonic transponder. The doubler uses SMS7621-040LF low barrier plastic packaged schottky diode. The problem of the relatively low peak power provided by the FMCW radar for forward biasing the diode is addressed by applying an external bias.
+
+-15 -20
+
+-25
+
+Conversion Gain (dB)
+
+-30
+
+-35
+
+-40
+
+-45
+
+Biased - Simulated
+
+-50
+
+Biased - Measured
+
+Unbiased - Simulated
+
+Unbiased - Measured
+
+-55
+
+-28
+
+-26
+
+-24
+
+-22
+
+-20
+
+-18
+
+-16
+
+-14
+
+-12
+
+Input power (dBm) @ 5.3 GHz
+
+Figure 7: Comparison of conversion gain of biased doubler with diode
+
+Figure 7 compares conversion gain of the developed frequency doubler with an unbiased diode used for frequency conversion. It is demonstrated that the maximum conversion gain is obtained for the diode biased by the current source at its knee voltage.
+
+Initial investigations are carried out by biasing the diode with a lab power supply. However in the actual harmonic transponder this can be accomplished in a number of ways. Power scavenging using a small piezo transducer [20] or the use of a micro-cell [21] is possible as the current drawn by the diode is minute. However, the preferred method will be to use a small photodiode to act as solar cell [21] to provide the bias. Further, one problem which is not addressed here is the impedance mismatch between the diode and the antenna(s). The input impedance of the diode depends on the current, which in turn depends on the power it receives, and this in turn depends on the range. The mismatch can be overcome by using a transmission line transformer but at the expense of increased size and weight of the transponder [8].
+
+The powers received by and then re-radiated by the harmonic transponder in decibels are given by equations 2 and 3 respectively
+
+Pin(transponder) = PSG − Lc(in) + GTX − FSPLf
+
+(2)
+
+Po(transponder) = PSA + Lc(out) − GRX + FSPLh
+
+(3)
+
+Where
+
+PSG : Power generated by signal generator (dBm) PSA : Power received by spectrum ananlyzer (dBm)
+
+Lc(in) : Input cable losses at 5.3 GHz (dB)
+
+Lc(out) : Output cable losses at 10.6GHz (dB)
+
+GTX : Gain of 5.3 GHz microstrip antenna (dBi) GRX : Gain of 10.6GHz microstrip antenna (dBi) FSPLf : Free space path loss at 5.3 GHz (dB)
+
+FSPLh : Free space path loss at 10.6 GHz (dB) Free space path loss at any frequency is given by [22]
+
+FSPL
+
+=
+
+−10
+
+log10
+
+ 
+
+λ 4πR
+
+ 
+
+2
+
+(4)
+
+where R :Distance between TX (RX) & harmonic transponder (m) λ : Signal wavelength (m)
+
+Conversion gain (CG) of the harmonic transponder in decibel is given by
+
+CG(transponder) = Po(transponder) − Pin(transponder) (5)
+
+e) Externally Biased Microstrip Antenna Based Harmonic Transponder The prototype low frequency harmonic transponder was tested using the setup illustrated in figure 8. Two methods were adopted to determine the conversion gain of harmonic transponder. The first method excites the transponder at various ranges using a signal of the correct frequency with an output power of 8 dBm generated by a signal generator. The second method fixes the range of the transponder and excites it with signals of different amplitudes.
+Figure 8: Setup for testing prototype harmonic transponder
+
+(a)
+
+0
+
+20
+
+PRX transponder
+
+PRX Radar from biased trans.
+
+0
+
+PRX Radar from unbiased trans.
+
+-5
+
+Noise Floor
+
+-20
+
+-10
+
+-40
+
+-15 -60
+
+-20
+
+-80
+
+Conversion Gain (dB) Power (dBm)
+
+-25
+
+-100
+
+-30
+
+Biased - PSG = 8 dBm
+
+Biased - Fixed Range
+
+-35
+
+Unbiased - PSG = 8 dBm
+
+Unbiased - Fixed Range
+
+-45
+
+-40
+
+-35
+
+-30
+
+-25
+
+-20
+
+-15
+
+-10
+
+-5
+
+0
+
+Power received by tag (dBm)
+
+-120 -140 -160
+101
+
+102
+
+103
+
+Range (m)
+
+(b)
+
+(c)
+
+Figure 9: (a) Fabricated prototype harmonic transponder (b) Conversion
+
+Gain of transponder (biased and unbiased frequency doubler) (c) Power
+
+received by radar and transponder (biased and unbiased frequency
+
+doubler)
+
+Figure 9 (a) shows the fabricated prototype harmonic transponder. An SMA connector is attached to the lower port for biasing the frequency doubler using a power supply. Figure 9 (b) compares the conversion gain of the harmonic
+
+transponder with externally biased frequency doubler and diode, measured using the two methods described above. It is demonstrated that the conversion gains determined by two methods described above are in good agreement, and that it increases when the diode is replaced by the proposed biased frequency doubler circuit. Figure 9 (c) shows the power received from transponder (biased and unbiased) when excited by FMCW radar with the specifications shown in table 1.
+
+Variable PTX NF GTX, GRX
+
+Description Power transmitted Noise Floor Gain TX/RX antennas
+
+Values 30 dBm -131 dBm 40 dBi
+
+Table 1: Specifications of FMCW Radar
+
+It can be seen that the maximum range at which the transponder can be detected increases from 425 m to 1080 m when the diode is replaced by the proposed externally biased frequency doubler. This can be compared to the 900m detection range for the 25kW pulsed system described in [8]. Unfortunately the maximum range for millimeter wave band transponder would be less than that predicted by the prototype transponder due to increase in path losses, decrease in conversion gain of the doubler and gains of transponder’s antennas at higher frequencies. However, for UAV or mobile vehicle based FMCW radar for continuous tracking of low flying insects, the radar can be operated at a range just sufficient to not disturb the insect’s natural behavior and activities. Under such conditions maximum detectable range becomes somewhat less significant.
+
+VI. CONCLUSIONS
+This paper summarizes recent developments of a harmonic radar tracking system for tracking low flying insects. Existing systems consist of a range measurement system with a harmonic transponder attached to the insect. The most efficient tracking systems available today use pulsed radar and a harmonic transponder with a dipole antenna. However, the detectable range is no more than 900m, and the tag weighs 12mg and hinders the insect movements. The paper suggests using UAV or mobile vehicle based FMCW radar instead of pulse radar for continuous tracking of low flying insects. It also suggests using a fundamental operating frequency greater than 30GHz to minimize the size of the transponder. It presents a prototype harmonic transponder operating at a lower frequency that uses an externally biased, packaged Schottky diode and microstrip antennas.
+ACKNOWLEDGEMENT
+
+This research is supported by Australian Research Council (ARC) Linkage grant (LP0989291) and ARC Centre of Excellence for Autonomous Systems (CAS). The authors would like to thank Prof Godfrey Lucas at school of Electrical and Information Engg. at University of Sydney for his consultancy and guidance; Dr David Johnson at ACFR for his
+
+guidance regarding FMCW radar and technical staff at ACFR lab for their technical assistance.
+REFERENCES
+[1] Riley, JR , Reynolds, DR, “A long-range migration of grasshoppers observed in the Sahelian zone of Mali by two radars”. Journal of Animal Ecology, 1983
+[2] Rainey, RC, “Observation of desert locust swarms by radar”. Nature 1955
+[3] Schaefer, GW, “Radar studies of locust, moth and butterfly migration in the Sahara”. Proc. Roy. Ent. Soc. Lond. C 1969 [4] Riley, JR “Remote sensing in entomology”. Ann. Rev. Entomol. 1989
+[5] Rainey, RC, Joyce ,RJV, “An airborne radar system for Desert Locust control”. Phil. Trans. R. Soc. Lond. 1990
+[6] Colpitts, B, Luke, D, Boiteau, G, Doyle, M, “Harmonic radar identification tag for insect tracking”. Proc. IEEE Canadian Conf. on El. & Comp. Engg, 1999
+[7] Loper, GM, Wolf, WW, Taylor, ORJr, “Detection and monitoring of honeybee drone congregation areas by radar”. Apidologie 1987
+[8] Riley, JR, Smith, AD, “Design considerations for an harmonic radar to investigate the flight of insects at low altitude”. Comp. and Elec. in Agri. 2002
+[9] Mascanzoni, D, Wallin, H, “The harmonic radar: a new method of tracing insects in the field”. Eco. Ent. 1986
+[10] Wallin, H, Ekbom, BS, “Movements of carabid beetles (Coleoptera: Carabidae) inhabiting cereal fields: a field tracing study”. Oecologia 1988 [11] Roland, J, McKinnon, G, Backhouse, C, Taylor, PD, “Even smaller radar tags for insects”. Nature 1996 [12] Lövei, GL, Stringer, IAN, Devine, CD, Cartellieri, M, “Harmonic radar – a method using inexpensive tags to study invertebrate movement on land”. New Zea. Journal of Eco. 1997
+[13] Williams, DW, Li, G, Gao, R,“Tracking movements of individual Anoplophora glabripennis (Coleoptera: Cerambycidae) adults: application of harmonic radar”. Envir. Ent. 2004
+[14] O'Neal, ME, Landis, DA, Rothwell, E, Kempel, L, Reinhard, D, “Tracking insects with harmonic radar: a case study”. Amer. Ento. 2004 [15] Riley, JR, Smith, AD, Reynolds, DR, Edwards, AS, Osborne, JL, Williams, IH, Carreck, NL, Poppy, GM, “Tracking bees with harmonic radar”. Nature 1996
+[16] Chapman, JW, Reynolds, DR, Smith, AD, ”Migratory and foraging movements in beneficial insects: a review of radar monitoring and tracking methods”. Inter. Jr. of Pest Manag. 2004
+[17] Colpitts, BG, Boiteau, G, “Harmonic radar transceiver design: miniature tags for insect tracking”. IEEE Trans. on Ant. and Prop. 2004
+[18] Boiteau, G, Colpitts, B “The potential of portable harmonic radar technology for the tracking of beneficial insects. Inter. Jr. of Pest Manag. 2004 [19] Brooker,G., “ Introduction to sensors for ranging and imaging”, 1st Ed. 2008
+[20] Shen, D, Choe, SY, Kim, DJ, “Comparative Study of Piezoelectric Transducers for Power Scavengers”, 15th IEEE Inter. Symp. on the App. of ferroelectrics, 2006.
+[21] Otis, B, Rabaey, Jan M, “ Ultra-Low Power Wireless Technologies for Sensor Networks” 2007
+[22] Rappaport, T.S., "Wireless Communications: Principles and Practice, 2nd Ed. 2002
+[23] N. Tahir, G.Brooker “ Efficient of harmonic transponder for UAV based harmonic tracker” 5th Int. Conf. on Intelligent Sensors, Sensor Networks and Information Processing, ISSNIP, Australia 2009
+
+View publication stats
+

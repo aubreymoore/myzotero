@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Measuring the interactions of species with GloBI - Cabinet of Curiosity</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="Cabinet of Curiosity" property="og:site_name">
+  
+    <meta content="Measuring the interactions of species with GloBI" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Exploring the data of natural history." property="og:description">
+  
+  
+    <meta content="http://localhost:4000/part1_globi_access/" property="og:url">
+  
+  
+    <meta content="2019-02-07T00:00:00+00:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/2019-02-05-part1_globi_access/bat_header.jpg" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="Tutorials" property="article:tag">
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@ofcuriositydata">
+  
+    <meta name="twitter:title" content="Measuring the interactions of species with GloBI">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/part1_globi_access/">
+  
+  
+    <meta name="twitter:description" content="Exploring the data of natural history.">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/2019-02-05-part1_globi_access/bat_header.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="http://curiositydata.org/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="http://curiositydata.org/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://curiositydata.org/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://curiositydata.org/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="css_002.css" rel="stylesheet">
+	<link href="css.css" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="font-awesome.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="main.css">
+<script async="" src="analytics.js"></script><script src="embed" data-timestamp="1583680916074"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.91790a929b2fba6bf8967d2204d948d5.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.b9167d06dc7bd01b59d6d6332d6aafa1.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.3e35597ccafc421f5ee35c2229110d93.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"></head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="http://curiositydata.org/"><img src="david-freeman.jpg" alt="Cabinet of Curiosity"></a>
+      </div>
+      <div class="author-name">Cabinet of Curiosity</div>
+      <p>Exploring the data of natural history</p>
+    </div>
+  </header> <!-- End Header -->
+  <div class="sidebar-nav">
+    <ul class="post-tags-list">
+      <li class="post-tag-item">
+        <a href="http://curiositydata.org/about" target="_blank">
+          About
+        </a>
+      </li>
+      
+      <li class="post-tag-item">
+        <a href="http://curiositydata.org/">
+          All Posts
+        </a>
+      </li>
+      
+    </ul>  
+  </div>
+  <footer>
+    
+    <section class="contact">
+      <h3 class="contact-title">Contact Us</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/ofcuriositydata" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/cabinetofcuriosity" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:ofcuriositydata"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2019 © Cabinet of Curiosity</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  
+  <div class="page-content">
+    
+
+    <div class="page-cover-image">
+      <img class="page-image" src="bat_header.jpg" alt="Measuring the interactions of species with GloBI">
+    </div> <!-- End Page Cover Image -->
+    <div class="img-legend">
+      <a href="http://curiositydata.org/assets/img/2019-02-05-part1_globi_access/bat_header.jpg">biodiversitylibrary.org/page/40020007</a>
+    </div>
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">Measuring the interactions of species with GloBI</h1>
+        <div class="page-date"><span>2019, Feb 07&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <div class="avatar-image">
+        <img src="yikang.png" alt="Yikang Li">
+        <p>Yikang Li</p>
+      </div>
+      <p>I am Yikang Li, an international student from Tianjin, China. I
+ recently just graduated from UC Berkeley with BA degree in Statistics. I
+ have long been interested in data science and therefore seized every 
+possible means to be part of projects to improve my practical ability in
+ data mining.  This interest lead me to exploring Biodiversity Data with
+ the Cabinet of Curiosity Team. During this research experience, I, 
+together with other interns, studied different natural history databases
+ and revised each other’s work using Github. During our first week 
+togerther we all explored what types of data was available to us and 
+together created a brief list with summaries of the databases we could 
+find. We each were given the option to explore one database of our 
+choosing (<a href="https://github.com/cabinetofcuriosity/homebase/blob/master/list-of-databases.md">link</a>).  I choose Global Biotic Interactions (GLoBI) <a href="https://www.globalbioticinteractions.org/">globalbioticinteractions.org</a>, a database of biodiversity, which as the name implies, collates species interactions data from around the world.</p>
+
+<p>GloBI does a fantastic job of explaining itself:</p>
+
+<blockquote>
+  <p>Global Biotic Interactions (GloBI) provides open access to species 
+interaction data (e.g., predator-prey, pollinator-plant, pathogen-host, 
+parasite-host) by combining existing open datasets using open source 
+software. By providing an infrastructure to capture and share 
+interaction data, individual biologists can focus on gathering new 
+interaction data and analyzing existing datasets without having to spend
+ resources on (re-) building a cyberinfrastructure to do so.</p>
+</blockquote>
+
+<p>I was intitially interested in the GloBI database because it provides
+ data in the format of interactions, which is different from other 
+biodiversity databases. Instead of focusing on one species at a time, it
+ connects different species by describing interactions between them. My 
+work will be posted in two parts 1. Accessing and understanding the data
+ 2. Exploring the data with network visualizations. Hope you enjoy!</p>
+
+<h2 id="how-to-access-globi">How to access GloBi</h2>
+
+<p>To start, we must get the access the data! I will discuss a few options that I tried.</p>
+
+<h3 id="1-the-r-package-rglobi">1. The R package <code class="highlighter-rouge">rglobi</code></h3>
+
+<p>There is a package called <a href="https://cran.r-project.org/web/packages/rglobi/index.html">rglobi</a>
+ in R which allows us to access the database on Global Biotic 
+Interactions (GloBI).  Here is a description from the documentation of 
+the package:</p>
+
+<blockquote>
+  <p>A programmatic interface to the web service methods provided by 
+Global Biotic Interactions (GloBI). GloBI provides access to 
+spatial-temporal species interaction records from sources all over the 
+world. rglobi provides methods to search species interactions by 
+location, interaction type, and taxonomic name. In addition, it supports
+ Cypher, a graph query language, to allow for executing custom queries 
+on the GloBI aggregate species interaction data set.”</p>
+</blockquote>
+
+<p>To use its methods and functions, we need to install and load the package “rglobi” in R.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"rglobi"</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">rglobi</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Users are able to search data on species interactions by location, 
+interaction type, taxonomic names and so on. Please check out the <a href="https://cran.r-project.org/web/packages/rglobi/vignettes/rglobi_vignette.html">rglobi vignette</a>
+ to learn more about the use of this package. While the R package 
+provides built in methods and functions, it has limitation on the 
+maximum amount of data displayed.  Look into Pagination options to 
+understand the limitations: <a href="https://github.com/ropensci/rglobi/blob/master/vignettes/rglobi_vignette.Rmd#L410">https://github.com/ropensci/rglobi/blob/master/vignettes/rglobi_vignette.Rmd#L410</a></p>
+
+<p>By default, the amount of results are limited. If you’d like to 
+retrieve all results, you can used pagination. For instance, to retrieve
+ parasitic interactions using pagination, you can use:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">otherkeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s2">"limit"</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="s2">"skip"</span><span class="o">=</span><span class="m">0</span><span class="p">)</span><span class="w">
+</span><span class="n">first_page_of_ten</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">get_interactions_by_type</span><span class="p">(</span><span class="n">interactiontype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"hasParasite"</span><span class="p">),</span><span class="w"> </span><span class="n">otherkeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">otherkeys</span><span class="p">)</span><span class="w">
+</span><span class="n">otherkeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="s2">"limit"</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="s2">"skip"</span><span class="o">=</span><span class="m">10</span><span class="p">)</span><span class="w">
+</span><span class="n">second_page_of_ten</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">get_interactions_by_type</span><span class="p">(</span><span class="n">interactiontype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"hasParasite"</span><span class="p">),</span><span class="w"> </span><span class="n">otherkeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">otherkeys</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Basically you have to exhaust all available interactions, you can 
+keep paging results until the size of the page is less than the limit 
+(e.g., <code class="highlighter-rouge">nrows(interactions) &lt; limit</code>).</p>
+
+<h3 id="2-globi-api">2. GloBI API</h3>
+
+<p>Another way to access the GloBI data is through the API: <a href="https://github.com/jhpoelen/eol-globi-data/wiki/API">https://github.com/jhpoelen/eol-globi-data/wiki/API</a>.
+ The link above contains the API which provide access to interaction 
+data for the purpose of integrating the data into wikis, custom webpages
+ or other interaction exploration tools.</p>
+
+<h3 id="3-download-everything">3. Download Everything</h3>
+
+<p>The third option is to download the whole dataset directly at <a href="https://github.com/jhpoelen/eol-globi-data/wiki/API">https://www.globalbioticinteractions.org/data</a>.  Datasets are available to download in different formats including tsv, csv and N-Quads/RDF. I chose the <code class="highlighter-rouge">.tsv</code> version.</p>
+
+<h2 id="basic-data-exploration-and-characteristics">Basic data exploration and characteristics</h2>
+
+<p>I ended up choosing Choice 3 and explored the dataset with Python in 
+the Jupyter notebook enviroment. One of the reasons is that I don’t want
+ to be limited by the built-in functions in <code class="highlighter-rouge">rglobi</code>
+ package. Importing the whole dataset allows me to explore in whatever 
+ways I want to. Also, by Choice 3, I have the same dataset everytime so 
+the results can be fully reproducible.</p>
+
+<p>If you would like to follow along to follow along in a Jupyter notebook, please checkout the notebook here: <a href="https://github.com/cabinetofcuriosity/globi_explore/blob/master/notebook/part1_globi_access.ipynb">Notebook</a>. You will first need to download the interactions.tsv file here: <a href="https://depot.globalbioticinteractions.org/snapshot/target/data/tsv/interactions.tsv.gz">interactions.tsv.gz</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Takes a few mintutes to load.</span>
+<span class="c"># If following along please download and unzip interactions.tsv.gz from </span>
+<span class="c"># https://depot.globalbioticinteractions.org/snapshot/target/data/tsv/interactions.tsv.gz</span>
+<span class="c"># Unziping the file is ~6.5 GB</span>
+<span class="c"># Don't forget to change path to the file on your computer</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'~/Desktop/interactions.tsv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">'</span><span class="se">\t</span><span class="s">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/anaconda3/lib/python3.7/site-packages/IPython/core/interactiveshell.py:3020: DtypeWarning: Columns (21,22,23,24,25,26,27,28,29,30,41,42,43,44,45,46,47,48,49,50,55,58,59,60,61,62,63,64,65,68,69,72,73,78) have mixed types. Specify dtype option on import or set low_memory=False.
+  interactivity=interactivity, compiler=compiler, result=result)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># See the first few rows</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table class="dataframe" border="1">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sourceTaxonId</th>
+      <th>sourceTaxonIds</th>
+      <th>sourceTaxonName</th>
+      <th>sourceTaxonRank</th>
+      <th>sourceTaxonPathNames</th>
+      <th>sourceTaxonPathIds</th>
+      <th>sourceTaxonPathRankNames</th>
+      <th>sourceTaxonSpeciesName</th>
+      <th>sourceTaxonSpeciesId</th>
+      <th>sourceTaxonGenusName</th>
+      <th>...</th>
+      <th>eventDateUnixEpoch</th>
+      <th>argumentTypeId</th>
+      <th>referenceCitation</th>
+      <th>referenceDoi</th>
+      <th>referenceUrl</th>
+      <th>sourceCitation</th>
+      <th>sourceNamespace</th>
+      <th>sourceArchiveURI</th>
+      <th>sourceDOI</th>
+      <th>sourceLastSeenAtUnixEpoch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>EOL:4472733</td>
+      <td>EOL:4472733 | EOL:4472733</td>
+      <td>Deinosuchus</td>
+      <td>genus</td>
+      <td>Deinosuchus</td>
+      <td>EOL:4472733</td>
+      <td>genus</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Deinosuchus</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>https://en.wiktionary.org/wiki/support</td>
+      <td>Rivera-Sylva H.E., E. Frey and J.R. Guzmán-Gui...</td>
+      <td>10.4267/2042/28152</td>
+      <td>NaN</td>
+      <td>Katja Schulz. 2015. Information about dinosaur...</td>
+      <td>KatjaSchulz/dinosaur-biotic-interactions</td>
+      <td>https://github.com/KatjaSchulz/dinosaur-biotic...</td>
+      <td>NaN</td>
+      <td>2018-12-14T23:59:22.189Z</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>EOL:4433651</td>
+      <td>EOL:4433651 | EOL:4433651</td>
+      <td>Daspletosaurus</td>
+      <td>genus</td>
+      <td>Daspletosaurus</td>
+      <td>EOL:4433651</td>
+      <td>genus</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Daspletosaurus</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>https://en.wiktionary.org/wiki/support</td>
+      <td>doi:10.1666/0022-3360(2001)075&lt;0401:GCFACT&gt;2.0...</td>
+      <td>10.1666/0022-3360(2001)075&lt;0401:GCFACT&gt;2.0.CO;2</td>
+      <td>NaN</td>
+      <td>Katja Schulz. 2015. Information about dinosaur...</td>
+      <td>KatjaSchulz/dinosaur-biotic-interactions</td>
+      <td>https://github.com/KatjaSchulz/dinosaur-biotic...</td>
+      <td>NaN</td>
+      <td>2018-12-14T23:59:22.189Z</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>EOL_V2:24210058</td>
+      <td>EOL_V2:24210058 | OTT:3617018 | GBIF:4975216 |...</td>
+      <td>Repenomamus robustus</td>
+      <td>species</td>
+      <td>Eucarya | Opisthokonta | Metazoa | Eumetazoa |...</td>
+      <td>EOL:5610326 | EOL:2910700 | EOL:42196910 | EOL...</td>
+      <td>|  | subkingdom |  |  |  |  |  |  |  |  | supe...</td>
+      <td>Repenomamus robustus</td>
+      <td>EOL_V2:24210058</td>
+      <td>Repenomamus</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>https://en.wiktionary.org/wiki/support</td>
+      <td>doi:10.1038/nature03102</td>
+      <td>10.1038/nature03102</td>
+      <td>NaN</td>
+      <td>Katja Schulz. 2015. Information about dinosaur...</td>
+      <td>KatjaSchulz/dinosaur-biotic-interactions</td>
+      <td>https://github.com/KatjaSchulz/dinosaur-biotic...</td>
+      <td>NaN</td>
+      <td>2018-12-14T23:59:22.189Z</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>EOL:4433892</td>
+      <td>EOL:4433892 | EOL:4433892</td>
+      <td>Sinocalliopteryx gigas</td>
+      <td>species</td>
+      <td>Sinocalliopteryx gigas</td>
+      <td>EOL:4433892</td>
+      <td>species</td>
+      <td>Sinocalliopteryx gigas</td>
+      <td>EOL:4433892</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>https://en.wiktionary.org/wiki/support</td>
+      <td>doi:10.1371/journal.pone.0044012</td>
+      <td>10.1371/journal.pone.0044012</td>
+      <td>NaN</td>
+      <td>Katja Schulz. 2015. Information about dinosaur...</td>
+      <td>KatjaSchulz/dinosaur-biotic-interactions</td>
+      <td>https://github.com/KatjaSchulz/dinosaur-biotic...</td>
+      <td>NaN</td>
+      <td>2018-12-14T23:59:22.189Z</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>EOL:4433892</td>
+      <td>EOL:4433892 | EOL:4433892</td>
+      <td>Sinocalliopteryx gigas</td>
+      <td>species</td>
+      <td>Sinocalliopteryx gigas</td>
+      <td>EOL:4433892</td>
+      <td>species</td>
+      <td>Sinocalliopteryx gigas</td>
+      <td>EOL:4433892</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>https://en.wiktionary.org/wiki/support</td>
+      <td>doi:10.1371/journal.pone.0044012</td>
+      <td>10.1371/journal.pone.0044012</td>
+      <td>NaN</td>
+      <td>Katja Schulz. 2015. Information about dinosaur...</td>
+      <td>KatjaSchulz/dinosaur-biotic-interactions</td>
+      <td>https://github.com/KatjaSchulz/dinosaur-biotic...</td>
+      <td>NaN</td>
+      <td>2018-12-14T23:59:22.189Z</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 80 columns</p>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check the number of rows</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3456395
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># How many columns?</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>80
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># What are the 80 columns of this dataset?</span>
+<span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Index(['sourceTaxonId', 'sourceTaxonIds', 'sourceTaxonName', 'sourceTaxonRank',
+       'sourceTaxonPathNames', 'sourceTaxonPathIds',
+       'sourceTaxonPathRankNames', 'sourceTaxonSpeciesName',
+       'sourceTaxonSpeciesId', 'sourceTaxonGenusName', 'sourceTaxonGenusId',
+       'sourceTaxonFamilyName', 'sourceTaxonFamilyId', 'sourceTaxonOrderName',
+       'sourceTaxonOrderId', 'sourceTaxonClassName', 'sourceTaxonClassId',
+       'sourceTaxonPhylumName', 'sourceTaxonPhylumId',
+       'sourceTaxonKingdomName', 'sourceTaxonKingdomId', 'sourceId',
+       'sourceOccurrenceId', 'sourceCatalogNumber', 'sourceBasisOfRecordId',
+       'sourceBasisOfRecordName', 'sourceLifeStageId', 'sourceLifeStageName',
+       'sourceBodyPartId', 'sourceBodyPartName', 'sourcePhysiologicalStateId',
+       'sourcePhysiologicalStateName', 'interactionTypeName',
+       'interactionTypeId', 'targetTaxonId', 'targetTaxonIds',
+       'targetTaxonName', 'targetTaxonRank', 'targetTaxonPathNames',
+       'targetTaxonPathIds', 'targetTaxonPathRankNames',
+       'targetTaxonSpeciesName', 'targetTaxonSpeciesId',
+       'targetTaxonGenusName', 'targetTaxonGenusId', 'targetTaxonFamilyName',
+       'targetTaxonFamilyId', 'targetTaxonOrderName', 'targetTaxonOrderId',
+       'targetTaxonClassName', 'targetTaxonClassId', 'targetTaxonPhylumName',
+       'targetTaxonPhylumId', 'targetTaxonKingdomName', 'targetTaxonKingdomId',
+       'targetId', 'targetOccurrenceId', 'targetCatalogNumber',
+       'targetBasisOfRecordId', 'targetBasisOfRecordName', 'targetLifeStageId',
+       'targetLifeStageName', 'targetBodyPartId', 'targetBodyPartName',
+       'targetPhysiologicalStateId', 'targetPhysiologicalStateName',
+       'decimalLatitude', 'decimalLongitude', 'localityId', 'localityName',
+       'eventDateUnixEpoch', 'argumentTypeId', 'referenceCitation',
+       'referenceDoi', 'referenceUrl', 'sourceCitation', 'sourceNamespace',
+       'sourceArchiveURI', 'sourceDOI', 'sourceLastSeenAtUnixEpoch'],
+      dtype='object')
+</code></pre></div></div>
+
+<h4 id="how-many-different-types-of-taxons-as-sources--target">How many different types of taxons as sources &amp; target?</h4>
+
+<p>You can see that many of the columns start with either “source”, 
+“target”.  Columns in which start with “source” describe the organisms 
+or group of organisms that act upon the “target” organism. These columns
+ are different ways to describe those organisms. The TaxonIDs columns 
+are columns that link the organisms to an established database of 
+organisms such as the <a href="https://eol.org/">Encyclopedia of Life</a>. The great part of these columns is that they are unique IDs.</p>
+
+<p>Let’s check out how many unique organims or organims groups there are in GloBi.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Source taxon</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'sourceTaxonId'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>147510
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Target taxon</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'targetTaxonId'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>106613
+</code></pre></div></div>
+
+<h3 id="what-interaction-types-are-there">What interaction types are there?</h3>
+
+<p>The source and target organisms are connected by the action in which 
+they interact and are described by the interaction columns which must 
+fit into 37 interaction types.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">'interactionTypeName'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array(['eats', 'preysOn', 'interactsWith', 'pollinates', 'parasiteOf',
+       'pathogenOf', 'visitsFlowersOf', 'adjacentTo', 'dispersalVectorOf',
+       'hasHost', 'endoparasitoidOf', 'symbiontOf', 'endoparasiteOf',
+       'hasVector', 'ectoParasiteOf', 'vectorOf', 'livesOn', 'livesNear',
+       'parasitoidOf', 'guestOf', 'livesInsideOf', 'farms',
+       'ectoParasitoid', 'inhabits', 'kills', 'hasDispersalVector',
+       'livesUnder', 'kleptoparasiteOf', 'hostOf', 'eatenBy',
+       'flowersVisitedBy', 'preyedUponBy', 'hasParasite', 'pollinatedBy',
+       'visits', 'commensalistOf', 'hasPathogen'], dtype=object)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># number of different types of interaction</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'interactionTypeName'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>37
+</code></pre></div></div>
+
+<p>Each record in GloBI comes from a specific dataset. One of the great parts of GloBI is the transparency on <em>exactly</em>
+ where that data is coming from.  GloBI has a system set up that 
+continually gathers the information from its sources on a daily basis. 
+Because of this, the database can fix a mistake on their end and without
+ intervention GloBi will incorporate those changes into their data set. 
+ You can tell the source of the data from a few columns, but what is 
+especially interesting is the <code class="highlighter-rouge">sourceNamespace</code> column which displays the exact place on GitHub where the data is coming from.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Top 10 data sources ranked by amount of records contributed to GloBI</span>
+<span class="n">data</span><span class="p">[</span><span class="s">'sourceNamespace'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>globalbioticinteractions/fishbase                                            504260
+globalbioticinteractions/arthropodEasyCaptureAMNH                            350213
+millerse/Wardeh-et-al.-2015                                                  271904
+globalbioticinteractions/natural-history-museum-london-interactions-bank     242429
+millerse/Dapstrom-integrated-database-and-portal-for-fish-stomach-records    225564
+globalbioticinteractions/ices                                                183935
+EOL/pseudonitzchia                                                           183773
+globalbioticinteractions/noaa-reem                                           122328
+millerse/US-National-Parasite-Collection                                      99713
+globalbioticinteractions/roopnarine                                           96647
+Name: sourceNamespace, dtype: int64
+</code></pre></div></div>
+
+<p>To look at where GloBI is getting this data from simply add the first column to <code class="highlighter-rouge">github.com/</code>.</p>
+
+<p>Example: The largest contributer appears to be Fishbase <a href="http://curiositydata.org/part1_globi_access/github.com/globalbioticinteractions/fishbase">github.com/globalbioticinteractions/fishbase</a>. You can also get the status of GloBi’s interaction with the data sources here: <a href="https://www.globalbioticinteractions.org/status.html">https://www.globalbioticinteractions.org/status.html</a>.</p>
+
+<p>Many of the columns are related to the type of organism being described and the most intersting</p>
+
+<p>I’m interested in how many unique interaction type records are found 
+in GloBi.  The most interesting columns and really the heart of the 
+database is <code class="highlighter-rouge">sourceTaxonId</code>, <code class="highlighter-rouge">interactionTypeName</code>, and <code class="highlighter-rouge">targetTaxonId</code>. With these three columns you can see what an animal interacts with and how.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[[</span><span class="s">'sourceTaxonId'</span><span class="p">,</span> <span class="s">'interactionTypeName'</span><span class="p">,</span> <span class="s">'targetTaxonId'</span><span class="p">,</span> <span class="s">'sourceTaxonName'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table class="dataframe" border="1">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sourceTaxonId</th>
+      <th>interactionTypeName</th>
+      <th>targetTaxonId</th>
+      <th>sourceTaxonName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>EOL:4472733</td>
+      <td>eats</td>
+      <td>EOL_V2:42417811</td>
+      <td>Deinosuchus</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>EOL:4433651</td>
+      <td>eats</td>
+      <td>EOL_V2:42417811</td>
+      <td>Daspletosaurus</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>EOL_V2:24210058</td>
+      <td>eats</td>
+      <td>EOL:4532049</td>
+      <td>Repenomamus robustus</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>EOL:4433892</td>
+      <td>eats</td>
+      <td>EOL_V2:4433896</td>
+      <td>Sinocalliopteryx gigas</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>EOL:4433892</td>
+      <td>eats</td>
+      <td>EOL:4433563</td>
+      <td>Sinocalliopteryx gigas</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>EOL:4433551</td>
+      <td>eats</td>
+      <td>EOL:42331729</td>
+      <td>Microraptor gui</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>EOL:4531246</td>
+      <td>eats</td>
+      <td>EOL_V2:4530741</td>
+      <td>Baryonyx walkeri</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>EOL:4531246</td>
+      <td>eats</td>
+      <td>EOL:4653801</td>
+      <td>Baryonyx walkeri</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>EOL:4433582</td>
+      <td>eats</td>
+      <td>EOL_V2:4531936</td>
+      <td>Deinonychus antirrhopus</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>EOL:4433881</td>
+      <td>preysOn</td>
+      <td>EOL:4518630</td>
+      <td>Compsognathus longipes</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="how-to-search-by-organism---sanity-check-with-bats">How to search by Organism - Sanity check with bats</h2>
+<p><img src="Dqb5IIsXgAEqgJK.jpg" alt="vampire bat"></p>
+
+<p>There are many columns that describe the species or order, you can 
+search by any of the columns. One of the main ways in which researchers 
+would want to use this data is to find the data corresponding to the 
+species or taxa they are interested in. If you want to search for a 
+specific taxa, you can just search using a organism string. I explored 
+this feature a bit to try and understand if the data is making sense 
+i.e. sanity check.</p>
+
+<p>I choose to search a few types of bats and just browse the results to see if they made sense.  First off I choose to see what <a href="https://en.wikipedia.org/wiki/Carollia">Carollia</a>, a genus of short tail fruit bats, eats.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Subset by the term Carollia</span>
+<span class="n">corollia</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'sourceTaxonName'</span><span class="p">]</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'Carollia'</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="bp">False</span><span class="p">)]</span>
+
+<span class="c">#subset by only what Carollia eats</span>
+<span class="n">corollia</span> <span class="o">=</span> <span class="n">corollia</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">corollia</span><span class="o">.</span><span class="n">interactionTypeName</span> <span class="o">==</span> <span class="s">'eats'</span><span class="p">]</span>
+
+<span class="c"># Show only relevant columns</span>
+<span class="n">corollia</span><span class="p">[[</span><span class="s">'sourceTaxonName'</span><span class="p">,</span><span class="s">'sourceTaxonId'</span><span class="p">,</span> <span class="s">'interactionTypeName'</span><span class="p">,</span> <span class="s">'targetTaxonName'</span><span class="p">,</span><span class="s">'targetTaxonId'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table class="dataframe" border="1">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sourceTaxonName</th>
+      <th>sourceTaxonId</th>
+      <th>interactionTypeName</th>
+      <th>targetTaxonName</th>
+      <th>targetTaxonId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>785626</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Terminalia catappa</td>
+      <td>GBIF:3189394</td>
+    </tr>
+    <tr>
+      <th>785631</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Terminalia catappa</td>
+      <td>GBIF:3189394</td>
+    </tr>
+    <tr>
+      <th>785683</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Syzygium malaccense</td>
+      <td>EOL:2508662</td>
+    </tr>
+    <tr>
+      <th>785688</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Syzygium jambos</td>
+      <td>EOL:2508661</td>
+    </tr>
+    <tr>
+      <th>785693</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Syzygium jambos</td>
+      <td>EOL:2508661</td>
+    </tr>
+    <tr>
+      <th>785727</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Syzygium cumini</td>
+      <td>EOL:2508660</td>
+    </tr>
+    <tr>
+      <th>785900</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Spondias</td>
+      <td>EOL:61097</td>
+    </tr>
+    <tr>
+      <th>785963</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Solanum</td>
+      <td>EOL:590245</td>
+    </tr>
+    <tr>
+      <th>785968</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Solanum</td>
+      <td>EOL:590245</td>
+    </tr>
+    <tr>
+      <th>785970</th>
+      <td>Carollia perspicillata</td>
+      <td>EOL:327438</td>
+      <td>eats</td>
+      <td>Solanum</td>
+      <td>EOL:590245</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>From above you can see that <a href="https://en.wikipedia.org/wiki/Seba%27s_short-tailed_bat">Carollia perspicillata</a> eats yummy things like <a href="https://en.wikipedia.org/wiki/Terminalia_catappa">Terminalia catappa</a> which is some type of nut and <a href="https://en.wikipedia.org/wiki/Syzygium_malaccense">Syzygium malaccense</a> some apple-like fruit. Seems right.</p>
+
+<p><img src="Indian_almond_Terminalia_catappa_L.jpg" alt="Fruit"></p>
+
+<p>Now lets try another type of bat, <a href="https://en.wikipedia.org/wiki/Desmodus">Desmodus</a> - the Vampire Bats!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Subset by the term Desmodus</span>
+<span class="n">Desmodus</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s">'sourceTaxonName'</span><span class="p">]</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s">'Desmodus'</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="bp">False</span><span class="p">)]</span>
+
+<span class="c">#subset by only what Carollia eats or preysOn</span>
+<span class="n">Desmodus</span> <span class="o">=</span> <span class="n">Desmodus</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">Desmodus</span><span class="o">.</span><span class="n">interactionTypeName</span> <span class="o">==</span> <span class="s">'eats'</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">Desmodus</span><span class="o">.</span><span class="n">interactionTypeName</span> <span class="o">==</span> <span class="s">'preysOn'</span><span class="p">)]</span>
+
+<span class="c"># Show only relevant columns</span>
+<span class="n">Desmodus</span><span class="p">[[</span><span class="s">'sourceTaxonName'</span><span class="p">,</span><span class="s">'sourceTaxonId'</span><span class="p">,</span> <span class="s">'interactionTypeName'</span><span class="p">,</span> <span class="s">'targetTaxonName'</span><span class="p">,</span><span class="s">'targetTaxonId'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table class="dataframe" border="1">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sourceTaxonName</th>
+      <th>sourceTaxonId</th>
+      <th>interactionTypeName</th>
+      <th>targetTaxonName</th>
+      <th>targetTaxonId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1542376</th>
+      <td>Desmodus rotundus</td>
+      <td>GBIF:2433298</td>
+      <td>eats</td>
+      <td>Bos taurus</td>
+      <td>GBIF:2441022</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>So if you look up <a href="https://en.wikipedia.org/wiki/Cattle">Bos taurus</a>,
+ you see that this animal is “cattle”. A mammal with blood. So creepy. 
+So cool. I highly recommend just trying the above code with</p>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>Now that I have a handle on the data I see a few different ways in 
+which to explore the data. If you are like me, and need to google every 
+species or taxa that is in the dataset, you should read next weeks post 
+on automation of hyperlinking species names directly into a Jupyter 
+Notebook, which makes exploring this GLoBI data really intuitive. Also, 
+in the next post I will be creating tools that wrap the interaction data
+ into informative network visualizations. Below is a sneak peak into the
+ type of visualizations I will be creating.</p>
+
+<center><figure>
+    <img src="network_example.png" alt="my alt text">
+  <figcaption>Network visualization using GLoBI data to visualize what species humans interacts with.</figcaption>
+</figure></center>
+
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=Measuring%20the%20interactions%20of%20species%20with%20GloBI&amp;url=http://localhost:4000/part1_globi_access/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/part1_globi_access/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/part1_globi_access/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+            <a href="http://curiositydata.org/tags#Tutorials" class="tag"># Tutorials</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"><iframe id="dsq-app5005" name="dsq-app5005" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px !important; min-width: 100% !important; border: medium none !important; overflow: hidden !important; height: 0px !important;" src="https://disqus.com/embed/comments/?base=default&amp;f=cabinetofcuriosity&amp;t_u=http%3A%2F%2Fcuriositydata.org%2Fpart1_globi_access%2F&amp;t_d=Measuring%20the%20interactions%20of%20species%20with%20GloBI&amp;t_t=Measuring%20the%20interactions%20of%20species%20with%20GloBI&amp;s_o=default#version=6f9501379904e0f22d03f15ed2ef82ed" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//cabinetofcuriosity.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-116118773-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+<script src="jquery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	
+	function filter(tag) {
+	  setActiveTag(tag);
+	  showContainer(tag);
+	}
+
+	function setActiveTag(tag) {
+	  // loop through all items and remove active class
+	  var items = document.getElementsByClassName('post-tag-item');
+	  for(var i=0; i < items.length; i++) {
+	    items[i].setAttribute('class', 'post-tag-item');
+	  }
+
+	  // set the selected tag's item to active
+	  var item = document.getElementById(tag + '-item');
+	  if(item) {
+	    item.setAttribute('class', 'post-tag-item active');
+	  }
+	}
+
+	function showContainer(tag) {
+	  // loop through all lists and hide them
+	  var lists = document.getElementsByClassName('post-list-container');
+	  for(var i=0; i < lists.length; i++) {
+	    lists[i].setAttribute('class', 'post-list-container hidden');
+	  }
+
+	  // remove the hidden class from the list corresponding to the selected tag
+	  var list = document.getElementById(tag + '-container');
+	  if(list) {
+	    list.setAttribute('class', 'post-list-container');
+	  }
+	}
+
+	
+</script>
+
+
+
+
+<iframe style="display: none;"></iframe></body></html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase no-indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="https://www.zotero.org/groups/511387">
+<meta name="wpd_url" content="https://www.zotero.org/groups/511387">
+<meta name="wpd_date" content="2016-03-17T02:23Z">
+ 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="verify-v1" content="IwMu0wZAlDVdRyYXR2iE6fy68J75yL4ZExOpoyPDHdw=">
+        <meta name="keywords" content="Zotero, research, tool, firefox, extension">
+        <meta name="description" content="Zotero is a powerful, easy-to-use research tool that 
+                                          helps you gather, organize, and analyze sources and then 
+                                          share the results of your research.">
+                
+        <title>Zotero | Groups &gt; CRB</title>
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+        
+        <!-- css -->
+        
+        
+        
+                <!-- auto discovery links -->
+        <link rel="openid2.provider" href="https://www.zotero.org/user/openidprovider/">
+        <link rel="openid.server" href="https://www.zotero.org/user/openidprovider/">
+        <script src="modernizr-1.7.min.js"></script>
+                <script type="text/javascript" charset="utf-8" src="jquery-all.js"></script>
+        <script type="text/javascript" charset="utf-8" src="bootstrap.js"></script>
+        <script type="text/javascript">
+
+            var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
+            $.fn.bootstrapBtn = bootstrapButton
+        </script>
+            <script>try {  for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){    var lastpass_f = document.forms[lastpass_iter];    if(typeof(lastpass_f.lpsubmitorig)=="undefined"){      if (typeof(lastpass_f.submit) == "function") {        lastpass_f.lpsubmitorig = lastpass_f.submit;        lastpass_f.submit = function(){          var form = this;          try {            if (document.documentElement && 'createEvent' in document)            {              var forms = document.getElementsByTagName('form');              for (var i=0 ; i<forms.length ; ++i)                if (forms[i]==form)                {                  var element = document.createElement('lpformsubmitdataelement');                  element.setAttribute('formnum',i);                  element.setAttribute('from','submithook');                  document.documentElement.appendChild(element);                  var evt = document.createEvent('Events');                  evt.initEvent('lpformsubmit',true,false);                  element.dispatchEvent(evt);                  break;                }            }          } catch (e) {}          try {            form.lpsubmitorig();          } catch (e) {}        }      }    }  }} catch (e) {}</script>
+<link rel="stylesheet" type="text/css" href="511387.css" media="all">
+</head>
+<body>
+        <!-- Header -->
+        <header role="banner" class="container">
+            <div class="center container">
+                                                
+                                <h1 id="logohead">
+                    <a href="https://www.zotero.org/"><img src="zotero.png" alt="Zotero"></a>
+                </h1>
+            
+            <div id="login-links">
+
+                                    Welcome, <a href="https://www.zotero.org/aubreymoore">Aubrey Moore</a>
+                    <a href="https://www.zotero.org/settings/">Settings</a>
+                    <a href="https://www.zotero.org/message/inbox">
+
+                                                    Inbox
+                                            </a>
+                    <a href="https://www.zotero.org/download">Download</a>
+                    <a href="https://www.zotero.org/user/logout/">Log Out</a>
+                            </div>
+            
+            <a href="https://www.zotero.org/settings/storage?ref=usb" class="button" id="purchase-storage-link"><img src="archive.png"> Upgrade Storage</a>
+            
+            <div id="navbar" class="container">
+                <nav id="sitenav">
+                    <ul>
+                                        <li><a href="https://www.zotero.org/">Home</a></li>
+                                        <li><a href="https://www.zotero.org/aubreymoore/items">My Library</a></li>
+                                        <li class="selected"><a href="https://www.zotero.org/groups/">Groups</a></li>
+                    <li><a href="https://www.zotero.org/people/">People</a></li>
+                    <li><a href="https://www.zotero.org/support/">Documentation</a></li>
+                    <li><a href="https://forums.zotero.org/categories/">Forums</a></li>
+                    <li><a href="https://www.zotero.org/getinvolved/">Get Involved</a></li>
+                    </ul>
+                </nav>
+                                <form action="https://www.zotero.org/search/" class="zform zsearch" id="simple-search">
+                    <div>
+                        <input placeholder="Search for groups" name="q" size="20" id="header-search-query" type="text">
+                        <button class="button clear-field-button" type="reset"><span class="ui-icon ui-icon-circle-close">&nbsp;</span></button>
+                        <input class="button" value="Search" type="submit">
+                    </div>
+                </form>
+                            </div>
+        </div>
+        </header>
+        <div id="content">
+            <div class="center container">
+            <!-- Output the breadcrumb if it's set -->
+                            <div id="breadcrumbs">
+                    <a href="https://www.zotero.org/">Home</a> &gt; <a href="https://www.zotero.org/groups">Groups</a> &gt; CRB                </div>
+                        
+            <!-- Output any stored messages -->
+                                                                                                            
+            <!-- hidden area for possible JS messages -->
+            <div id="js-message">
+                <ul id="js-message-list">
+                </ul>
+            </div>
+
+            <!-- Output content -->
+            <div id="group-show" class="major-col">
+    <h1>CRB</h1>
+     <!-- user logged in and can perform group actions -->
+                
+                <span id="libraryGroupID" title="511387"></span>
+    <nav class="action-links">
+        <ul>
+        <!-- group library link -->
+                
+        <!-- settings link -->
+                    <li><a href="https://www.zotero.org/groups/511387/settings">Group Settings</a></li>
+                </ul>
+    </nav>
+    <!-- Recent Items List -->
+        <div id="new-group-items">
+	    <h2>Recently Added Items</h2>
+            <table id="field-table">
+        <thead>
+            <tr>
+                <th class="field-table-header">Title</th>
+				<th class="field-table-header" width="20%">Added By</th>
+                <th class="date-added-header field-table-header">Updated On</th>
+            </tr>
+        </thead>
+        <tbody>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="P8MXJCT5" href="https://www.zotero.org/groups/511387/items/itemKey/P8MXJCT5"><span class="sprite-icon sprite-treeitem-webpage left"></span>Discovery of the Coconut Rhinoceros Beetle Guam Biotype and Implications for Global Control Aubrey Moore Entomological Society of America Pacific Branch Meeting Honolulu April 5, 2016</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 10:08:43 AM</td>
+            </tr>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="MC2I67H8" href="https://www.zotero.org/groups/511387/items/itemKey/MC2I67H8"><span class="sprite-icon sprite-treeitem-attachment left"></span>DIY-Pesticide-Wand-Extender.pdf</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 7:00:05 AM</td>
+            </tr>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="QEVBJSSF" href="https://www.zotero.org/groups/511387/items/itemKey/QEVBJSSF"><span class="sprite-icon sprite-treeitem-attachment left"></span>CRB-Trapping.pdf</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 7:00:05 AM</td>
+            </tr>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="JQ9DF94U" href="https://www.zotero.org/groups/511387/items/itemKey/JQ9DF94U"><span class="sprite-icon sprite-treeitem-webpage left"></span>Green waste from Typhoon Dolphin to be disposed of, finally | Local News | postguam.com</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 7:00:05 AM</td>
+            </tr>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="RTZIAJBG" href="https://www.zotero.org/groups/511387/items/itemKey/RTZIAJBG"><span class="sprite-icon sprite-treeitem-attachment left"></span>CRB-Behavior-and-Biology1.pdf</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 7:00:05 AM</td>
+            </tr>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="BD57D24M" href="https://www.zotero.org/groups/511387/items/itemKey/BD57D24M"><span class="sprite-icon sprite-treeitem-journalArticle left"></span>Coconut Rhinoceros Beetles (Coleoptera: Scarabaeidae) Develop in Arboreal Breeding Sites in Guam</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 7:00:05 AM</td>
+            </tr>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="9NGENFJZ" href="https://www.zotero.org/groups/511387/items/itemKey/9NGENFJZ"><span class="sprite-icon sprite-treeitem-journalArticle left"></span>Assessment of the Rhinoceros Beetle Infestation on Guam</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 7:51:49 AM</td>
+            </tr>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="K2ENF46Z" href="https://www.zotero.org/groups/511387/items/itemKey/K2ENF46Z"><span class="sprite-icon sprite-treeitem-journalArticle left"></span>Toxicity of four systemic neonicotinoids to adults of \textit{Anoplophora glabripennis} (Coleoptera: Cerambycidae)</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 6:55:49 AM</td>
+            </tr>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="WI2IEGBC" href="https://www.zotero.org/groups/511387/items/itemKey/WI2IEGBC"><span class="sprite-icon sprite-treeitem-report left"></span>The coconut rhinoceros beetle (Oryctes rhinoceros) with particular reference to the Palau Islands</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 6:55:49 AM</td>
+            </tr>
+                                    <tr>
+                        <td><a class="item-select-link" data-itemkey="Z2G3I38A" href="https://www.zotero.org/groups/511387/items/itemKey/Z2G3I38A"><span class="sprite-icon sprite-treeitem-journalArticle left"></span>Some Temperature Studies on the Beetle , Popilius Disjunctus</a></td>
+                                            <td><a class="item-creator-link" href="http://zotero.org/users/1835631">aubreymoore</a></td>
+                                                        <td>Apr 12, 2016 6:55:49 AM</td>
+            </tr>
+                    </tbody>
+    </table>
+    </div>
+            <p>See all 188 items for this group in the <a href="https://www.zotero.org/groups/511387/items">Group Library</a>.</p>
+            <!-- Recent Messages List -->
+                    
+</div>
+<div class="minor-col last-col">
+    
+    <!-- Group Image -->
+            
+        <ul class="group-information">
+        <li>
+        <span class="field">Owner:</span> 
+        <span class="value">
+            <a href="https://www.zotero.org/aubreymoore">Aubrey Moore</a>
+		</span>
+        </li>
+        
+        <li>
+        <span class="field">Registered:</span> <span class="value">2016-04-12</span>
+        </li>
+        <li>
+        <span class="field">Type:</span> <span class="value">
+
+                    Private
+        		</span>
+        </li>
+        <li>
+        <span class="field">Membership:</span> <span class="value">
+
+                    Invitation
+                </span>
+        </li>
+                                        		
+    </ul>
+
+    <!-- Member list -->
+    <h2><a href="https://www.zotero.org/groups/511387/members">Members (1)</a></h2>
+        <div class="people-tiny-nuggets">
+            <div class="nugget-user">
+    <div class="nugget-tiny">
+        <!-- Linked profile image -->
+        <a href="https://www.zotero.org/aubreymoore">
+            <img class="small-profile-image" src="default_squarethumb.png" alt="aubreymoore" title="aubreymoore">
+        </a>
+                <!-- Affiliation for small size -->
+                    </div>
+</div>
+                        </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+
+    var zoterojsClass = "group_view";
+    var zoteroData = {groupID: 511387, 
+                      member:true,
+                      user: {"userID":"1835631","username":"aubreymoore","password":"b263b8800d71323e99fa5498d526939f68dde531","email":"aubreymoore@guam.net","openid":null,"role":"member","resetValidationKey":null,"resetValidationExp":null,"emailValidationKey":"f2617adfd0487147e480","emailValidated":"1","lastUpdated":"2015-11-17 22:47:49","dateRegistered":"2014-03-07 04:39:30","hasImage":"0","slug":"aubreymoore","settings":{"privacy_publishLibrary":0,"privacy_publishNotes":0,"privacy_hideFromSearchEngines":0,"profile_bio":"","profile_disciplines":"","profile_realname":"Aubrey Moore","profile_website":"","profile_affiliation":"","profile_location":"Guam","websiteApiKey":"Mkd3JltDkEoRR3UjS9N8lQjJ","zotero_xZoteroVersion":"4.0.19"},"xZoteroVersion":"4.0.29.7","unreadMessages":"0"},
+                      group: {"properties":null,"id":"511387","groupID":"511387","owner":1835631,"type":"Private","name":"CRB","libraryEnabled":null,"libraryEditing":"members","libraryReading":"members","fileEditing":"members","hasImage":0,"description":"","disciplines":null,"enableComments":null,"url":"","adminIDs":[1835631],"memberIDs":[],"title":"CRB","dateAdded":"2016-04-12T06:28:32Z","dateUpdated":"2016-04-12T06:28:32Z","links":{"self":{"application\/atom+xml":{"href":"https:\/\/api.zotero.org\/groups\/511387"}},"alternate":{"text\/html":{"href":"http:\/\/zotero.org\/groups\/511387"}}},"author":{"name":"aubreymoore","uri":"http:\/\/zotero.org\/users\/1835631"},"contentArray":[],"entries":[],"apiObject":{"name":"CRB","owner":1835631,"type":"Private","description":"","url":"","libraryEditing":"members","libraryReading":"members","fileEditing":"members"},"ownerID":1835631,"groupType":"Private","numItems":"337","members":[],"admins":[1835631],"userReadable":true,"userEditable":true},
+                      };
+    var zoterojsSearchContext = "group";
+</script>
+            </div>
+        </div>
+        <footer>
+            <div class="center container">
+                    <img id="chnm-logo" src="rrchnmlogo-gray.png" alt="Zotero">
+                <nav role="secondary">                 
+                    <ul>
+                        <!-- <li><a href="#">Give Us Feedback</a></li> -->
+                        <li><a href="https://www.zotero.org/blog/">Blog</a></li>
+                        <li><a href="https://forums.zotero.org/categories/">Forums</a></li>
+                        <li><a href="https://www.zotero.org/support/dev/start">Developers</a></li>
+                        <li><a href="https://www.zotero.org/support/">Documentation</a></li>
+                        <li><a href="https://www.zotero.org/support/terms/privacy">Privacy</a></li>
+                        <li><a href="https://www.zotero.org/getinvolved/">Get Involved</a></li>
+                        <li><a href="https://www.zotero.org/jobs">Jobs</a></li>
+                        <li><a href="https://www.zotero.org/about/">About</a></li>
+                        <li class="last"><a href="https://www.zotero.org/groups/511387?fullsite=0">Mobile Site</a></li>
+                    </ul>
+                </nav>
+                <p>
+
+                    Zotero is a project of the <a href="http://chnm.gmu.edu/">Roy
+                    Rosenzweig Center for History and New Media</a>, and was initially funded
+                     by the <a href="http://mellon.org/">Andrew W. Mellon
+                    Foundation</a>, the <a href="http://imls.gov/">Institute of
+                    Museum and Library Services</a>, and the <a href="http://sloan.org/">Alfred P. Sloan Foundation</a>.
+                </p>
+
+        </div>
+        </footer>
+                        <script type="text/javascript" charset="utf-8" src="globalize.js"></script>
+                                        <script type="text/javascript" charset="utf-8" src="globalize.culture.en-US.js"></script>
+                                                        <script type="text/javascript" charset="utf-8">
+
+            if(typeof zoteroData == 'undefined'){
+                var zoteroData = {};
+            }
+            var baseURL = "";
+            var baseDomain = "https://www.zotero.org";
+            var staticPath = "/static";
+        </script>
+        
+        <script type="text/javascript" charset="utf-8" src="_zoterowwwAll.bugly.js"></script>
+        
+        <script type="text/javascript" src="tiny_mce.js"></script>                        
+               
+                <!-- End zoteroLibrary modules. -->
+                                <script type="text/javascript" charset="utf-8">
+
+                Zotero.currentUser = {"userID":"1835631","slug":"aubreymoore"};
+                                    Zotero.prefs.server_javascript_enabled = false;
+                                            </script>
+         
+        <!-- TOS CHANGE NOTIFICATION -->
+                <script type="text/javascript">
+
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script src="ga.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+        try {
+        var pageTracker = _gat._getTracker("UA-6354803-1");
+        pageTracker._trackPageview();
+        } catch(err) {}</script>
+    
+
+</body>
+</html>

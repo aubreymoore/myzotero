@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js  ie lt-ie9 lt-ie8 lt-ie7 gray-background fg-item-page"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js  ie lt-ie9 lt-ie8 gray-background fg-item-page"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js  ie lt-ie9 gray-background fg-item-page"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js  ie ie9 gray-background fg-item-page"> <![endif]-->
+<!--[if IE  ]>         <html class="no-js  ie gray-background fg-item-page"> <![endif]-->
+<!--[if IE]><!--> <html class="no-js  gray-background fg-item-page" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Building a Terrestrial Biodiversity Inventory for Guam
+    </title>
+    <meta name="referrer" content="origin"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="csrf_token" content="d36bc89e-2706-443f-95ef-84d16bd4df66" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/favicon/mstile-310x310.png" />
+    
+  
+    <meta name="citation_title" content="Building a Terrestrial Biodiversity Inventory for Guam" />
+    <meta name="citation_publication_date" content="2018/04/26" />
+    
+      <meta name="citation_author" content="Moore, Aubrey" />
+    
+    
+      <meta name="DC.identifier" content="doi:10.6084/m9.figshare.6188315.v1" />
+    
+  
+  <meta property="og:title" content="Building a Terrestrial Biodiversity Inventory for Guam">
+  <meta name="twitter:title" content="Building a Terrestrial Biodiversity Inventory for Guam">
+  <meta itemprop="name" content="Building a Terrestrial Biodiversity Inventory for Guam">
+
+
+  <meta name="citation_pdf_url" content="https://figshare.com/articles/Building_a_Terrestrial_Biodiversity_Inventory_for_Guam/6188315/files/11208659.pdf" />
+
+  <meta name="description" content="Building a Terrestrial Biodiversity Inventory for Guam" />
+  <meta name="abstract" content="Presented at the Guam Island Sustainability Conference, Guam, March 29, 2018." />
+  <meta property="og:description" content="Presented at the Guam Island Sustainability Conference, Guam, March 29, 2018.">
+  <meta name="twitter:description" content="Presented at the Guam Island Sustainability Conference, Guam, March 29, 2018.">
+  <meta itemprop="description" content="Presented at the Guam Island Sustainability Conference, Guam, March 29, 2018.">
+  <meta name="google" content="notranslate" />
+  <meta property="og:url" content="https://figshare.com/articles/Building_a_Terrestrial_Biodiversity_Inventory_for_Guam/6188315">
+  <meta name="twitter:url" content="https://figshare.com/articles/Building_a_Terrestrial_Biodiversity_Inventory_for_Guam/6188315">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="figshare">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@figshare">
+  <link href="//plus.google.com/107997370406416536977" rel="publisher">
+
+  <meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/11208659/thumb.png">
+  <meta name="twitter:image" content="https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/11208659/thumb.png">
+  <meta itemprop="image" content="https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/11208659/thumb.png">
+
+
+    
+      <link rel="stylesheet" type="text/css" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/styles/main.css" />
+    
+    <link rel="stylesheet" type="text/css" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public.css" />
+    
+      <link rel="stylesheet" type="text/css" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/account.css" />
+      <link rel="stylesheet" type="text/css" href="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/fonts/figIcon.css" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+  </head>
+  <body>
+    <div id="global-messenger"></div>
+    <div id="ck-banner"></div>
+    <div id="main-container">
+    
+        
+          
+<header role="banner" class="main-header">
+  <div class="center-layout clearfix">
+    
+      
+        <a class="figshare-logo" href="https://figshare.com/">
+    <img width="167" height="52" src="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/global/images/full-logo.png" alt="https://figshare.com/" />
+  </a>
+      
+    
+    
+    <div class="h-search showMyData ">
+      <a class="normal-link underline my-data" href="https://figshare.com/account/home">My data</a>
+      <form action="https://figshare.com/search" method="get">
+        <div class="mimic-input search-input-wrap">
+          <input type="search" name="q" placeholder="search on figshare" />
+        </div>
+        <input type="hidden" name="quick" value="1">
+        <button type="submit" class="hs-button">go</button>
+      </form>
+      <a class="normal-link underline" href="https://figshare.com/browse">Browse</a>
+      
+        <a class="normal-link underline" href="https://figshare.com/account/home?_f=%2Fupload">Upload</a>
+      
+    </div>
+    
+    
+    <div class="h-options">
+        
+          <div id="ummenu"></div>
+        
+    </div>
+    
+  </div>
+</header>
+        
+    
+
+    
+      <div id="impersonate-ribbon"></div>
+    
+
+    
+
+
+  
+
+<div id="app-root" data-app="item">
+  <div class="item-page">
+    <div class="loader show-content">
+      <div class="item-page">
+        <div class="global-message-queue"></div>
+        <div class="item-preview expanded">
+          <div class="figshare-viewer">
+            <div class="display"></div>
+            <div class="controls-wrapper"></div>
+          </div>
+          <div class="actions-bar-wrap">
+            <div class="actions-bar">
+              <div class="items">
+                <a class="simple-pink-button citation-button">Cite</a>
+                
+                  <a class="normal-link download-button shallow-button" href="https://ndownloader.figshare.com/files/11208659">Download</a>
+                
+                <a class="normal-link">Share</a>
+                <a class="normal-link">Embed</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-wrap">
+          <div class="center-layout cf">
+            <div class="item-left">
+              <h2 class="title">Building a Terrestrial Biodiversity Inventory for Guam</h2>
+              <div class="details section">
+                <span>2018-04-26T05:56:19Z</span> (GMT)
+                <span>
+                  by
+                  <span class="authors-holder">
+                    
+                      
+  
+    
+  
+<a class="normal-link author" href="https://figshare.com/authors/Aubrey_Moore/683160">
+  Aubrey Moore
+</a>
+                    </span>
+                </span>
+              </div>
+              <div class="description section">Presented at the Guam Island Sustainability Conference, Guam, March 29, 2018.&lt;br&gt;</div>
+            </div>
+            <div class="item-right">
+            
+            
+              <div class="categories section">
+                <h4>Categories</h4>
+                <ul class="normal-list">
+                  
+                  <li><a class="normal-link" href="/search?q=:category: \"Ecology not elsewhere classified\"">Ecology not elsewhere classified</a></li>
+                  
+                </ul>
+              </div>
+            
+            
+              <div class="tags section">
+                <h4>Keyword(s)</h4>
+                <div>
+                 
+                  <a class="tag-wrap" href="/search?q=:keyword: biodiversity informatics"><span class="inner-wrap">biodiversity informatics</span></a>
+                
+                </div>
+              </div>
+            
+            
+              <div class="license section">
+                <h4>License</h4>
+                <div>CC BY 4.0</div>
+              </div>
+            
+              <div class="exports-wrap section">
+                <h4>Export</h4>
+                  <div>
+                    <a class="normal-link" href="/articles/6188315/1/citations/refworks" target="_blank">RefWorks</a>
+                  </div>
+                  <div>
+                    <a class="normal-link" href="/articles/6188315/1/citations/bibtex" target="_blank">BibTeX</a></div>
+                  <div>
+                    <a class="normal-link" href="/articles/6188315/1/citations/reference_manager" target="_blank">Ref. manager</a></div><div><a class="normal-link" href="/articles/6188315/1/citations/mendeley" target="_blank">Mendeley</a>
+                  </div>
+                  <div>
+                    <a class="normal-link" href="/articles/6188315/1/citations/endnote" target="_blank">Endnote</a></div><div><a class="normal-link" href="/articles/6188315/1/citations/datacite" target="_blank">DataCite</a></div><div><a class="normal-link" href="/articles/6188315/1/citations/nlm" target="_blank">NLM</a>
+                  </div>
+                  <div>
+                    <a class="normal-link" href="/articles/6188315/1/citations/dc" target="_blank">DC</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+  <footer role="contentinfo">
+    <div class="f-sitemap">
+      <div class="center-layout clearfix">
+        <ul class="fs-links">
+          <li><a href="https://figshare.com/about">About</a></li>
+          <li><a href="https://figshare.com/features">Features</a></li>
+          <li><a href="https://figshare.com/tools">Tools</a></li>
+          <li><a href="https://figshare.com/blog">Blog</a></li>
+          <li><a href="https://figshare.com/ambassadors">Ambassadors</a></li>
+          <li><a href="https://figshare.com/contact">Contact</a></li>
+          <li><a target="_blank" href="https://knowledge.figshare.com/">FAQs</a></li>
+          <li><a href="https://figshare.com/privacy">Privacy Policy</a></li>
+          <li><a href="https://figshare.com/terms">Terms &amp; Conditions</a></li>
+          <li class="last">
+            <a href="/sitemap/siteindex.xml">Sitemap</a>
+          </li>
+        </ul>
+
+        <ul class="fs-social">
+          <li><a class="fss-facebook hide-text" target="_blank" href="//facebook.com/FigShare">facebook page</a></li>
+          <li><a class="fss-twitter hide-text" target="_blank" href="//twitter.com/figshare">twitter page</a></li>
+          <li><a class="fss-google hide-text" target="_blank" href="//plus.google.com/107997370406416536977">google plus page</a></li>
+          <li><a class="fss-vimeo hide-text" target="_blank" href="//vimeo.com/figshare">vimeo page</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-informations">
+      <div class="center-layout clearfix">
+        <div class="fi-figshare">
+          <a href="https://figshare.com/">fig<strong>share</strong></a>. credit for <strong>all</strong> your research.
+        </div>
+        <ul class="fi-partners">
+          <li><a class="fip-digital hide-text" target="_blank"  href="//www.digital-science.com/">digital science page</a></li>
+          <li><a class="fip-dpn hide-text" target="_blank"  href="http://www.dpn.org/">dpn page</a></li>
+          <li><a class="fip-datacite hide-text" target="_blank"  href="//www.datacite.org/">datacite page</a></li>
+          <li><a class="fip-cope hide-text" target="_blank" href="http://publicationethics.org/">publication ethics page</a></li>
+          <li><a class="fip-dataciteindex hide-text" target="_blank" href="http://wokinfo.com/products_tools/multidisciplinary/dci/">data citation index</a></li>
+            <li><a class="fip-open hide-text" target="_blank" href="//creativecommons.org/licenses/by/3.0/">creative commons page</a></li>
+          </ul>
+        </div>
+    </div>
+  </footer>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-20427479-1', 'figshare.com');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+    
+  </script>
+  
+   <script id="menu-data" type="text/json">
+      {
+          "accountSwitch": {
+              "name": "Switch account",
+              "url": "https://figshare.com/account/switch"
+          },
+          "myProfile": {
+              "name": "Edit profile",
+              "url": "https://figshare.com/account/profile"
+          },
+          "applications": {
+              "name": "Applications",
+              "url": "https://figshare.com/account/applications"
+          },
+          "accountSettings": {
+              "name": "Account settings",
+              "url": "https://figshare.com/account/settings"
+          },
+          "institutionSettings": {
+              "name": "Institution settings",
+              "url": "https://figshare.com/institution/settings"
+          },
+          "institutionCuration": {
+            "name": "Review requests",
+            "url": "https://figshare.com/institution/curation"
+          },
+          "stats": {
+              "name": "Statistics",
+              "url": "https://figshare.com/institution/reporting"
+          },
+          "emailNofitifications": {
+              "name": "Email notifications",
+              "url": "https://figshare.com/account/notifications"
+          },
+          
+          "logout": {
+              "name": "Logout",
+              "url": "https://figshare.com/account/logout"
+          }
+      }
+  </script>
+  <script id="account-data" type="text/json">
+    {"usedQuota": 498139, "profile": {"name": "Aubrey Moore", "firstName": "Aubrey", "photoUrl": "https://secure.gravatar.com/avatar/26235200545a5993250b89031667688d?s=250&d=https%3A%2F%2Fweb-static.figshare.com%2Fassets%2Fa89f1ea2ecb20a283c940f9a2416b2cbb42770be%2Fpublic%2Fprofile%2Favatar.jpg", "lastName": "Moore", "isPublic": true, "privateUrl": "https://figshare.com/authors/Aubrey_Moore/683160", "title": "", "location": "University of Guam", "jobTitle": "entomologist", "urlName": "Aubrey_Moore", "id": 683160, "isActive": true, "publicUrl": "https://figshare.com/authors/Aubrey_Moore/683160"}, "isInstitutional": false, "institutionId": null, "totalQuota": 21474836480, "usedQuotaPublic": 8768898, "projectsCount": 0, "quota": {"total": 21474836480, "used": 9267037}, "canViewStructure": false, "isImpersonated": false, "isGroupAdmin": false, "hasMultipleAccounts": false, "availableQuota": 21474338341, "active": 1, "isCurator": null, "institution": null, "canViewStats": false, "cookiesEnabled": false, "isDataSteward": false, "followCounters": {"notificationCounter": 0, "followLimit": 50, "followCounter": 0, "notificationLimit": 10}, "canImpersonateUsers": false, "maximumFileSize": 5368709120, "id": 683160, "isPremium": null, "isInstitutionAdmin": false, "canEditStructure": false, "user": {"name": "Aubrey Moore", "firstName": "Aubrey", "photoUrl": "https://secure.gravatar.com/avatar/26235200545a5993250b89031667688d?s=250&d=https%3A%2F%2Fweb-static.figshare.com%2Fassets%2Fa89f1ea2ecb20a283c940f9a2416b2cbb42770be%2Fpublic%2Fprofile%2Favatar.jpg", "lastName": "Moore", "isPublic": true, "privateUrl": "https://figshare.com/authors/Aubrey_Moore/683160", "title": "", "location": "University of Guam", "jobTitle": "entomologist", "urlName": "Aubrey_Moore", "id": 683160, "isActive": true, "publicUrl": "https://figshare.com/authors/Aubrey_Moore/683160"}}
+  </script>
+  
+
+  
+  <script id="app-data" type="text/json">{"article": {"isLastVersion": true, "linkbackCollection": null, "filesCount": 1, "supplementaryFields": [], "citation": {"text": "Moore, Aubrey (2018): Building a Terrestrial Biodiversity Inventory for Guam. figshare. Presentation.", "doi": "10.6084/m9.figshare.6188315.v1"}, "confidentialReason": "", "actions": [], "virusScanInfo": {"message": "File not scanned yet", "error": false, "virus_found": false, "scan_done": false}, "embargoType": 2, "curationStatus": null, "resourceTitle": null, "id": 6188315, "size": 5137162, "funding": "", "thumb": "https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/11208659/thumb.png", "citationPublishedDate": "2018/04/26", "title": "Building a Terrestrial Biodiversity Inventory for Guam", "publishedDate": "2018-04-26T05:56:19Z", "definedType": 7, "version": 1, "isActive": true, "branding": null, "customFields": [], "accountId": 683160, "isMetadataRecord": false, "metadataReason": "", "publicUrl": "https://figshare.com/articles/Building_a_Terrestrial_Biodiversity_Inventory_for_Guam/6188315", "files": [{"status": "available", "previewMeta": {"totalPages": 30, "version": "1.0.0", "baseUrl": "https://ndownloader.figshare.com/files/11208659/preview", "key": "11208659/preview.pdf"}, "isLinkOnly": false, "thumb": "https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/11208659/thumb.png", "previewState": "preview_available", "size": 5137162, "downloadUrl": "https://ndownloader.figshare.com/files/11208659", "virusScanInfo": {"message": "No virus found", "error": false, "virus_found": false, "scan_done": true}, "suppliedMd5": "", "viewerType": "document_canvas", "md5": "09c7d9e9d8ba4ecec78028cdbf108aa5", "id": 11208659, "previewLocation": "https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews", "name": "main.pdf"}], "description": "Presented at the Guam Island Sustainability Conference, Guam, March 29, 2018.<br>", "tags": ["biodiversity informatics"], "embargoDate": null, "isPublic": true, "authorId": null, "modifiedDate": "2018-04-26T05:56:48Z", "isEmbargoed": false, "authors": [{"name": "Aubrey Moore", "firstName": "Aubrey", "photoUrl": "https://secure.gravatar.com/avatar/26235200545a5993250b89031667688d?s=250&d=https%3A%2F%2Fweb-static.figshare.com%2Fassets%2Fa89f1ea2ecb20a283c940f9a2416b2cbb42770be%2Fpublic%2Fprofile%2Favatar.jpg", "lastName": "Moore", "isPublic": true, "privateUrl": "https://figshare.com/authors/Aubrey_Moore/683160", "title": "", "location": "University of Guam", "jobTitle": "entomologist", "urlName": "Aubrey_Moore", "id": 683160, "isActive": true, "publicUrl": "https://figshare.com/authors/Aubrey_Moore/683160"}], "hasLinkedFile": false, "categories": [{"urlName": "Ecology_not_elsewhere_classified", "parentId": 48, "id": 678, "name": "Ecology not elsewhere classified"}], "createdDate": "2018-04-26T05:56:19Z", "doi": "10.6084/m9.figshare.6188315.v1", "license": {"url": "https://creativecommons.org/licenses/by/4.0/", "logo": "https://s3-eu-west-1.amazonaws.com/staticfigassets/images/CC-BY.png", "name": "CC BY 4.0", "value": 1}, "isEmbargoedPublished": false, "versions": [{"date": "2018-04-26T05:56:19Z", "downloadUrl": "https://ndownloader.figshare.com/articles/6188315/versions/1", "id": 1}], "isConfidential": false, "embargoReason": "", "resourceDOI": null, "downloadUrl": "https://ndownloader.figshare.com/articles/6188315", "status": "public", "references": []}, "institution": {"stringId": null, "name": null, "googleTrackingCode": null}}</script>
+  <script type="text/javascript" src="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/public/index.js"></script>
+  <script type="text/javascript" src="//web-static.figshare.com/assets/a89f1ea2ecb20a283c940f9a2416b2cbb42770be/vendor/altmetric/altmetric.js"></script>
+
+
+  </body>
+</html>

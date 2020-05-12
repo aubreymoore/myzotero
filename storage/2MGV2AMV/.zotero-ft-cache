@@ -1,0 +1,678 @@
+Arch Linux
+
+    Home
+    Packages
+    Forums
+    Wiki
+    Bugs
+    AUR
+    Download
+
+    Index
+    Search
+    Register
+    Login
+
+You are not logged in.
+
+    Topics: Active | Unanswered
+
+    Index
+    »  Community Contributions
+    »  Slider: PDF presentations
+
+Pages: 1 2 3 4 5 Next
+#1 2012-08-29 23:15:05
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Slider: PDF presentations
+
+UPDATE
+
+Slider has been reborn (8 Apr 2013).  I've continued the discussion in this thread starting here .  Note that all discussion up to that point likely no longer applies to what is currently on github.
+
+---------------------------------
+
+Slider is a PDF presentation / slideshow tool much like Impressive.  ( PKGBUILD )
+
+This was very much inspired by impressive.  I liked how that app worked, but I thought it could use some optimizing and customizing.  I briefly looked at it's code, but I am absolutely horrible with python, so I started from scratch with Slider.
+
+Right now Slider has most of the features I liked in Impressive plus some of it's own:
+1) I shows fullscreen slide shows from pdfs
+2) It has an overview screen (aka slide sorter)
+3) Slider has customizable (through config.h and recompile) key bindings and can be fully controled by either the keyboard or just a mouse (or both of course)
+4) Customizable colored "pens" allow you to draw on your slides (with the mouse)
+5) Zoom mode to zoom in on any part of a slide.
+
+Slider will have added features:
+1) an ability to play embeded media and run embedded script commands within the pdf. (edit: done)
+2) a "presentation mode" where the slides are shown on one external display and notes will show on the local screen. (edit: done)
+
+Current limitation(s):
+1) There are no "transitions".  There likely never will be. (edit: simple fade transitions have been added)
+2) The mouse cursor is not hidden or customizable.  This is next on my todo list.
+3) General "beta" state.  Use at your own risk.
+4) No man page nor built in help system yet.  Controls are documented in the README for now.  A man page will be created once slider reaches a suitable stability for a versioned "release".  Options for slipper are documented in the sample slipper.dat file.
+
+Git it here or from the AUR.
+
+edit: for those keeping score:  Impressive - 4342 lines of python vs. Slider - 460 860 lines of C.  Who said scripting languages made things simpler!  This is said in a friendly spirit of competition, not as a rip on Impressive.  It was that app after all that inspired me to mimic it.
+
+edit (2012-08-30) Note: Slider assumes that all pages of the document are the same size as the first page.  Generally this is safe, but in documents with a prepended cover page it may not be - In my tests this seems to apply to older journal articles retreived from JSTOR.
+
+Last edited by Trilby (2013-06-20 21:30:04)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#2 2012-08-29 23:39:29
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+(Edit: this should be fixed.  Let me know if it is not.)
+
+First bug discovered.  If you use a window manager key binding (alt Tab style) to switch focus another window, it may be hard to return focus to Slider.  This is very easy to fix - but I'll put that off to tomorrow.  For now it is also pretty easy to avoid - so just don't do it! wink
+
+Last edited by Trilby (2012-08-30 17:49:36)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#3 2012-08-29 23:51:49
+
+cfr
+    Member 
+    From: Cymru 
+    Registered: 2011-11-27 
+    Posts: 5,527 
+
+Re: Slider: PDF presentations
+
+OK. Long shot. It can't hurt to ask, right?
+
+You don't by any chance intend to enable the filling of forms in Slider or Slipper and the saving of the filled result, do you?
+
+This is one of a couple of things I can't find a way to do in Linux. People seem to think that nobody would want to fill in form fields in presentation mode but it is extraordinarily useful...
+
+acroread lets me fill them out but not save the result. Plus I'd rather not depend on acroread - just it is the closest I've come to a solution so far, unfortunately.
+
+okular would let me fill them out and save the result but won't allow me to do the filling in presentation mode.
+
+Last edited by cfr (2012-08-29 23:52:29)
+
+How To Ask Questions The Smart Way | Help Vampires
+
+Arch Linux | x86_64 | GPT | EFI boot | grub2 | systemd | LVM2 on LUKS
+Lenovo x121e | Intel(R) Core(TM) i3-2367M CPU @ 1.40GHz GenuineIntel | Intel Centrino Wireless-N 1000 | US keyboard with Euro | 320G 7200 RPM Seagate HDD
+
+Offline
+#4 2012-08-29 23:57:49
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+Ha, I do recall seeing you mention that in other threads.
+
+I was definitely not part of the planned development, but I'll check it out.  If it can be added without adding much bulk (eg more data structures or many lines of code) then I'll give it a shot.  I have seen the relevant parts of the poppler docs for that, I just haven't paid them much attention yet.
+
+Question: do you want to fill in the forums as a demonstration, or do you also want to be able to save the filled in forms with the new data added to the pdf?  The later would not happen (sorry), the former might have chance. *
+
+*deletion: see below for details: if filling works, saving will be easy.
+
+Last edited by Trilby (2012-08-31 14:41:00)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#5 2012-08-29 23:58:34
+
+AaronBP
+    Member 
+    Registered: 2012-08-06 
+    Posts: 105 
+    Website 
+
+Re: Slider: PDF presentations
+
+Temporary PKGBUILD until you can take over:
+
+  # Maintainer: Aaron Paden <aaronbpaden@gmail.com>
+pkgname=slider-git
+pkgver=20120829
+pkgrel=1
+pkgdesc="PDF Presentation Program"
+arch=('i686' 'x86_64')
+url="https://github.com/TrilbyWhite/Slider"
+license=('GPL')
+makedepends=('git')
+md5sums=() #generate with 'makepkg -g'
+
+_gitroot='git://github.com/TrilbyWhite/Slider.git'
+_gitname='slider'
+
+build() {
+  cd "$srcdir"
+  msg "Connecting to GIT server...."
+
+  if [[ -d "$_gitname" ]]; then
+    cd "$_gitname" && git pull origin
+    msg "The local files are updated."
+  else
+    git clone "$_gitroot" "$_gitname"
+  fi
+
+  msg "GIT checkout done or server timeout"
+  msg "Starting build..."
+
+  rm -rf "$srcdir/$_gitname-build"
+  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
+  cd "$srcdir/$_gitname-build"
+
+  make
+}
+
+package() {
+  cd "$srcdir/$_gitname-build"
+
+  mkdir -p $pkgdir/usr/bin
+  install -m 755 $_gitname $pkgdir/usr/bin/$_gitname
+}
+
+# vim:set ts=2 sw=2 et: 
+
+I tested it out. It actually has a lot of artifacts and is unresponsive for me. But I have a very old computer/GPU with Nouveau so this is probably not abnormal. Seems like the resolution is off, too. I'm on 1280x1024. 
+
+I remember reading a discussion involving scaling algorithms on reddit recently. May be relevant to your interests. -> www.reddit.com/r/linux/comments/yr180/thats_why_we_cant_have_nice_pdfs/
+
+Also, I think mupdf has an API.
+
+Google+
+
+Offline
+#6 2012-08-30 00:02:13
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+Thanks, I've checked out the mupdf API.  While I love mupdf (it's my sole pdf reader for regular document style pdfs), the API was not really appealing.
+
+Poppler and cairo have everything I need.  I just need to get the right scaling factor.  These API's have the option to set the scale ... I just don't know what to set it to yet.
+
+I think I found what I'm missing.  Aaron, or others that get scaling problems, could you please post the first two lines of xrandr output?  Thanks.
+
+Last edited by Trilby (2012-08-30 00:15:20)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#7 2012-08-30 00:35:09
+
+AaronBP
+    Member 
+    Registered: 2012-08-06 
+    Posts: 105 
+    Website 
+
+Re: Slider: PDF presentations
+
+Sure no problem.
+
+  Screen 0: minimum 320 x 200, current 1280 x 1024, maximum 4096 x 4096
+VGA-1 connected 1280x1024+0+0 (normal left inverted right x axis y axis) 338mm x 270mm 
+
+Google+
+
+Offline
+#8 2012-08-30 00:45:02
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+Thanks, I'll put that together with my data and should have an update tomorrow.  The problem was I was just scaling based on screen resolution, but cairo scales the PDF from a DPI (dots per inch) source - so the physical size is needed to scale it properly.  I think the ratio of vertical pixels to vertical screen size was the same for my two machines even though the screens are quite different so it worked for me - but it'll need to account for different screen pixel/size ratios.
+
+edit: Originally I just had an awkward calculation in there that worked but I wasn't sure why.  I just spent the evening reading, checking, calculating, and experimenting to come to a final answer very close to my original with just a little more precision and much more reason to make sense.  The result was it worked slightly better for me.  Aaron was the pdf you tried it with generated by latex beamer?  Was it a slideshow layout, or was it a regular pdf document?  What were the size dimensions of the pdf?  Slider will not work with regular (A4 or letter) sized PDFs - it is not designed to.  This will produce "scratchy" output of half pages with a lot of artifacts.
+
+(removed edit 2 as it had information that is no longer correct nor relevant)
+
+edit3: The scaling should be completely fixed .  Please test.  As a byproduct of a more general solution, Slider should now handle any size pdf well.
+
+Last edited by Trilby (2012-08-31 14:41:55)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#9 2012-08-30 06:46:45
+
+linux-ka
+    Member 
+    From: ADL 
+    Registered: 2010-05-07 
+    Posts: 224 
+
+Re: Slider: PDF presentations
+
+Interesting prog, it is pretty fast. But how do I exit ? I am using xmonad, thus there is no window-close button. I had to kill the whole console. And I could not change the workingspace. Is this a bug or a feature ? ;-)
+
+Offline
+#10 2012-08-30 10:42:58
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+Linux-KA, check out the default controls listed on the github README.  Alt-q should exit.
+
+There should never be a window close button on any window manager.  Slider creates a fullscreen override-redirect window.  Window managers do not manage such windows.  In fact this is what lead to the first bug I noted, that if you switch focus away from Slider it can be hard to get it back as the window manager ignores Slider.  That bug will be fixed today.
+
+edit: I suppose once you switch input focus to another window the quit keybinding isn't recieved by Slider.  But this is due to the above mentioned bug.
+
+Edit: This should be fixed with the last git update, Slider will reaquire focus when clicked.
+
+Last edited by Trilby (2012-08-30 14:30:36)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#11 2012-08-30 17:58:53
+
+AaronBP
+    Member 
+    Registered: 2012-08-06 
+    Posts: 105 
+    Website 
+
+Re: Slider: PDF presentations
+Trilby wrote:
+
+    edit2: I should be able to add support for pdfs that report different physical sizes (pdf format includes a size in inches) so that this isn't so latex-beamer-centric.  This will allow just about any presentation creation software to make a suitable pdf ... as long as they can export to pdf.  However Slider will remain strict about the aspect ratio.  Slider is for slide shows.  A4 / Letter documents can be viewed nicely in any number of other apps (I like mupdf).  I will add a step that detects the aspect ratio, and if incorrect Slider will exit gracefully with an informative message rather than just coughing up garbled images.  But for now it follows the crap-in crap-out principle.
+
+Yes, it was a normal PDF. I just grabbed the ICCCM documentation off the Internet. It was the first thing that came to mind. Send me a link to a more appropriate PDF and I'll test it out.
+Trilby wrote:
+
+    edit3: The scaling should be completely fixed .  Please test.  As a byproduct of a more general solution, Slider should now handle any size pdf well.  The presentation slide aspect ratio is still assumed for the horizontal spacing, so if you open an  A4 / letter pdf document it will zoom to fit vertically on the screen and be off center to the left, but it will be viewable.  Slider, however, only sets a black background, so unless the document-pdf explicitly sets a background color (eg white), you may not see much of the text.  PDFs that are scanned in images of paper documents tend to do this, pdfs generated from electronic documents tend not to.  All presentation software (eg latex beamer) set background colors.
+
+It does seem to scale in the way you mentioned, but I'm still getting artifacts. Again, this is not too unusual on this computer with these drivers.
+
+Google+
+
+Offline
+#12 2012-08-30 18:01:29
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+Aaron, I just did a couple updates quite possibly while you were posting.  Could you try again, and if you still get artifacts would you be able to get a screenshot?
+
+If you don't have anywhere convenient to upload the screenshot feel free to email it to my address at the top of the PKGBUILD.
+
+Last edited by Trilby (2012-08-30 18:01:48)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#13 2012-08-30 18:11:15
+
+AaronBP
+    Member 
+    Registered: 2012-08-06 
+    Posts: 105 
+    Website 
+
+Re: Slider: PDF presentations
+Trilby wrote:
+
+    Aaron, I just did a couple updates quite possibly while you were posting.  Could you try again, and if you still get artifacts would you be able to get a screenshot?
+
+    If you don't have anywhere convenient to upload the screenshot feel free to email it to my address at the top of the PKGBUILD.
+
+Ok, yeah, it looks great now. Aligned in the center and everything.
+
+The UI is still unresponsive, though. I have to move to another TTY and kill it manually.
+
+EDIT:
+It seems that input with the mouse works, but keyboard input is unresponsive.
+
+Last edited by AaronBP (2012-08-30 18:14:00)
+
+Google+
+
+Offline
+#14 2012-08-31 00:28:38
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+Hmm, that is very odd.  The scaling stuff was a bit new to me, but there is nothing unique about Slider's key bindings.  They are pretty standard Xlib methods.  Is it possible you have a capslock or numlock on?
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#15 2012-08-31 00:34:35
+
+cfr
+    Member 
+    From: Cymru 
+    Registered: 2011-11-27 
+    Posts: 5,527 
+
+Re: Slider: PDF presentations
+Trilby wrote:
+
+    Question: do you want to fill in the forums as a demonstration, or do you also want to be able to save the filled in forms with the new data added to the pdf?  The later would not happen (sorry), the former might have chance.
+
+Ideal would be ability to save the forms with the data.
+
+But the ability to fill them in on screen would be an incredible improvement over anything else I've found for Linux, excepting acroread.
+
+I use these sorts of slides in class so in an ideal world, I type up people's answers to questions etc. and then save the result and post it on the web for the students.
+
+But I can also tell them I'm not able to save what I type and they can take notes based on that, with me just putting up the slides on the web. The really crucial thing is being able to fill in the form fields on screen in class. I basically use this to make presentations more interactive and less passive - so it isn't always the case that the answer to the question is on the next slide. Sometimes the answer depends on the results of the students' discussing the question, for example. I also have a scratch slide at the end which I use if I want to type anything up in response to an unanticipated question.
+
+As far as I know, PowerPoint and similar software doesn't have this capability but beamer *does* and whenever anybody tells me I should be using PowerPoint, I have an excellent answer for not doing so!
+
+That isn't why I do it, of course. If it were the only reason to do it, it would not be an excellent answer. It is an excellent answer only because there really are sound pedagogical reasons for doing it - people often lament the "passivity" which presentation software induces in students. Some people create handouts with missing words to get students to pay attention to the slides but in many cases, it is much better to have incomplete slides. There's typically no right or wrong answer to interesting philosophical questions and I can't predict what people will say. Putting it in the presentation gives it a legitimacy and significance which it otherwise lacks.
+
+OK. I'll stop...
+
+EDIT: Forgot to say that I really appreciate your even being prepared to consider this!
+
+EDIT 2: I don't know if this makes it simpler or not but PDF forms have all kinds of different varieties - radio buttons, combo boxes etc. Apart from maybe once or twice, the only kind I ever use is a multiline text box. The kind that you make in beamer using something like:
+
+  \TextField[charsize={10pt},multiline=true,height={10mm},width={100mm},name={eg3},bordercolor={1 1 1}]{\mbox{ }
+} 
+
+Last edited by cfr (2012-08-31 00:45:14)
+
+How To Ask Questions The Smart Way | Help Vampires
+
+Arch Linux | x86_64 | GPT | EFI boot | grub2 | systemd | LVM2 on LUKS
+Lenovo x121e | Intel(R) Core(TM) i3-2367M CPU @ 1.40GHz GenuineIntel | Intel Centrino Wireless-N 1000 | US keyboard with Euro | 320G 7200 RPM Seagate HDD
+
+Offline
+#16 2012-08-31 00:43:41
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+(edit: removing this post would make the thread confusing - but note that most of the content of this post is now incorrect - if fillable forms work, saving will work)
+
+cfr, I think that would be a wonderful ability to have.  But I think it would take substantial changes and additions to Slider.  In fact I just realized that slider does not even seem to open fillable pdfs at all.  I'm not sure why - but this is something I'll definitely have to figure out.
+
+Not displaying a pdf at all is a serious bug that I'll work on fixing.  If in the process of learning about fillable pdfs I find an easy way to add the feature you want, I'll try it out.  But I doubt it will happen.
+
+Last edited by Trilby (2012-08-31 14:35:54)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#17 2012-08-31 00:48:25
+
+cfr
+    Member 
+    From: Cymru 
+    Registered: 2011-11-27 
+    Posts: 5,527 
+
+Re: Slider: PDF presentations
+Trilby wrote:
+
+    cfr, I think that would be a wonderful ability to have.  But I think it would take substantial changes and additions to Slider.  In fact I just realized that slider does not even seem to open fillable pdfs at all.  I'm not sure why - but this is something I'll definitely have to figure out.
+
+    Not displaying a pdf at all is a serious bug that I'll work on fixing.  If in the process of learning about fillable pdfs I find an easy way to add the feature you want, I'll try it out.  But I doubt it will happen.
+
+Oh, well. I always thought it was a long shot. And I really do appreciate your being willing to consider it smile even if it never happens sad .
+
+How To Ask Questions The Smart Way | Help Vampires
+
+Arch Linux | x86_64 | GPT | EFI boot | grub2 | systemd | LVM2 on LUKS
+Lenovo x121e | Intel(R) Core(TM) i3-2367M CPU @ 1.40GHz GenuineIntel | Intel Centrino Wireless-N 1000 | US keyboard with Euro | 320G 7200 RPM Seagate HDD
+
+Offline
+#18 2012-08-31 01:00:06
+
+cfr
+    Member 
+    From: Cymru 
+    Registered: 2011-11-27 
+    Posts: 5,527 
+
+Re: Slider: PDF presentations
+Trilby wrote:
+
+    In fact I just realized that slider does not even seem to open fillable pdfs at all.  I'm not sure why - but this is something I'll definitely have to figure out.
+
+It can open at least some fillable pdfs. In particular, it just opened a presentation made in beamer which includes a number of text fields. It also displays the text fields (some PDF software doesn't) but it isn't possible, of course, to click in the field to fill it in.
+
+I suspect the forms I produce are about as simple as a PDF form gets but it can't be a problem with opening fillable forms per se.
+
+It looks very nice, by the way! I haven't got an external screen here to try it out on but it displays fine on my laptop. I'm glad I'd read about the alt+q trick as I wouldn't have thought to try that otherwise.
+
+How To Ask Questions The Smart Way | Help Vampires
+
+Arch Linux | x86_64 | GPT | EFI boot | grub2 | systemd | LVM2 on LUKS
+Lenovo x121e | Intel(R) Core(TM) i3-2367M CPU @ 1.40GHz GenuineIntel | Intel Centrino Wireless-N 1000 | US keyboard with Euro | 320G 7200 RPM Seagate HDD
+
+Offline
+#19 2012-08-31 01:04:34
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+cfr wrote:
+
+    It can open at least some fillable pdfs.
+
+Good to hear, thanks.  It did choke on one pdf I had.  My first thought was the pdf version - it was 1.6 (which is still relatively new/rare).  But I tried some other 1.6s and they worked.  The one that failed to open was also fillable, so I found another fillable pdf form online and that also failed to open.  There must be some other commonality.
+
+Edit: I've found one more that won't open in Slider.  Perhaps the common thread is the way they were made.  Those that have failed for me all have this in the meta-data
+
+  <pdf:Producer>Acrobat Distiller 8.1.0 (Windows)</pdf:Producer> 
+
+  One created in word, another in excel.  Oh well, perhaps my tool can't support M$ made crap. wink
+
+Last edited by Trilby (2012-08-31 01:11:27)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#20 2012-08-31 01:25:57
+
+cfr
+    Member 
+    From: Cymru 
+    Registered: 2011-11-27 
+    Posts: 5,527 
+
+Re: Slider: PDF presentations
+
+This is probably too obvious but have you checked if there is anything odd about the fonts in those PDFs e.g. not all fonts embedded, for example?
+
+Or whether they have any DRM restrictions?
+
+EDIT: It can open a PDF created in Word on a Mac. I don't have any fillable examples to try for that though and it isn't Acrobat:
+
+  Creator:        Word
+Producer:       Mac OS X 10.7.4 Quartz PDFContext 
+
+Maybe it is Distiller rather than Word itself?
+
+Last edited by cfr (2012-08-31 01:28:57)
+
+How To Ask Questions The Smart Way | Help Vampires
+
+Arch Linux | x86_64 | GPT | EFI boot | grub2 | systemd | LVM2 on LUKS
+Lenovo x121e | Intel(R) Core(TM) i3-2367M CPU @ 1.40GHz GenuineIntel | Intel Centrino Wireless-N 1000 | US keyboard with Euro | 320G 7200 RPM Seagate HDD
+
+Offline
+#21 2012-08-31 02:00:15
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+Perhaps, I don't have nearly enough samples to really make sound inferences.  I'm just keeping an eye out for any pattern.
+
+Slider works perfectly well for me, but I like to be a bit neurotic about such bugs to be sure it will (eventually) work well under any reasonable circumstances.
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#22 2012-08-31 02:12:43
+
+AaronBP
+    Member 
+    Registered: 2012-08-06 
+    Posts: 105 
+    Website 
+
+Re: Slider: PDF presentations
+Trilby wrote:
+
+    Hmm, that is very odd.  The scaling stuff was a bit new to me, but there is nothing unique about Slider's key bindings.  They are pretty standard Xlib methods.  Is it possible you have a capslock or numlock on?
+
+You're right, it works with numlock off. Should it not work otherwise?
+
+Google+
+
+Offline
+#23 2012-08-31 02:19:01
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+Yup, if it's just due to num lock I just haven't polished the keypress event much so it does treat with and without numlock differently.  That's an easy fix though.  You can expect that to be working by this time tomorrow.
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#24 2012-08-31 03:49:25
+
+Trilby
+    Member 
+    From: Massachusetts, USA 
+    Registered: 2011-11-29 
+    Posts: 6,867 
+    Website 
+
+Re: Slider: PDF presentations
+
+Hey CFR, I've been browsing some more of the poppler-glib docs (it's really a great API).  It turns out *basic* form filling may not be too hard.
+
+Getting and setting text fields would only take a few function calls.  The biggest obstacle would be creating an interface for typing in the new data, but I already have an idea for this from another little tinkering project.
+
+I'll experiment a bit with this, but my top priority will remain getting the core functions stable.  I should know better with a week or so whether fillable forms will be feasible, if so I'll probably start that as a separate branch of Slider to keep the "minimalism" of the main project.
+
+Last edited by Trilby (2012-08-31 03:50:23)
+
+Alopex , Interrobang , Slider , Swifer , ...
+How's my coding? see the bottom of  this page .
+
+Offline
+#25 2012-08-31 07:29:06
+
+Army
+    Member 
+    Registered: 2007-12-07 
+    Posts: 1,784 
+
+Re: Slider: PDF presentations
+
+Works perfectly here smile I took the liberty to upload it as a package on the AUR, see https://aur.archlinux.org/packages.php?ID=62403 I added the possibility to use custom config.h. Trilby, if you want to maintain it on the AUR yourself, just tell me, then I'll orphan it right away.
+
+Offline
+
+Pages: 1 2 3 4 5 Next
+
+    Index
+    »  Community Contributions
+    »  Slider: PDF presentations
+
+Board footer
+Jump to
+Newbie Corner Installation Kernel & Hardware Applications & Desktop Environments Laptop Issues Networking, Server, and Protection Multimedia and Games System Administration Other Architectures Announcements, Package & Security Advisories Arch Discussion Forum & Wiki discussion Pacman & Package Upgrade Issues [testing] Repo Forum Creating & Modifying Packages AUR Issues, Discussion & PKGBUILD Requests GNU/Linux Discussion Community Contributions Programming & Scripting Other Languages Artwork and Screenshots
+
+Atom topic feed
+
+Powered by FluxBB

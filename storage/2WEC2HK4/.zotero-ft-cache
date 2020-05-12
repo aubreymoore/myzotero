@@ -1,0 +1,89 @@
+Peer Review
+Potamitis et al. 2D optoacoustic sensors embedded in mosquito insectary cages report species identity through wingbeats. Submitted to the Journal of Medical Entomology
+General Comments
+This article needs to be thoroughly edited to improve structure and grammar. In addition, a possible major ﬂaw in the data needs to be investigated (see comments on Figure 3).
+This submission does not comply with the manuscript preparation instructions for JME:
+Order of elements should be as follows: title page; Abstract and key words; introduction (no heading); Materials and Methods; Results; Discussion (or Results and Discussion); Acknowledgments; References Cited; footnotes; tables; ﬁgure legends; and ﬁgures. This article, as submitted, does not have a Results section and it has a Conclusions section.
+Citations and references are not formatted correctly.
+Figures should be on separate pages near the end of the document.
+Figure captions should be on a single page near the end of the document.
+Tables should be on separate pages near the end of the document.
+Acronyms are used liberally without deﬁnition on ﬁrst use: LED, SNR, FOV, SD, 2D, 1D, GPRS
+A published report on similar research may be of interest to the authors:
+Moore, A. 1991. Artiﬁcial neural network trained to identify mosquitoes in ﬂight. J. Insect Behavior 4(3) 391-396
+Speciﬁc Comments
+1-2: The title is not very informative:
+Something like "Large aperture optical sensors embedded in mosquito insectary cages report species identity through wingbeats." would be more meaningful.
+Strictly speaking, optoacoustic sensors were not used. The sensor consists of an infrared LED array which projects light onto a rectangular light guide which routes the light to a one dimensional array of photodiodes. This article does not fully describe the sensor system: "We direct the interested reader to [15] for the full electronic board of our sensor and details of construction." Unfortunately, this reviewer was unable to download the full text of this reference, which is not published in an open source journal. I highly recommend adding a schematic of the sensor system as "Supplemental Material". Granted that the signals from the photodiode array contain insect wingbeat waveforms with fundamental frequencies and harmonics within the human audio frequency band, but that does not make the sensors "optoacoustic". The sensors are not sensing sound, but ﬂuctuations in light intensity. That makes them optical sensors.
+12 Abstract
+1
+
+21 "mosquitos" used here, but "mosquitoes" elsewhere in the article.
+38 Introduction
+38 According to the preparation instructions for the JME, there should not be a heading for the Introduction section
+42-43 Change "It has been reported that 700 million people get a mosquito borne illness each year resulting in greater than one million deaths [1]." to "Seven hundred million (700,000,000) people get a mosquito borne illness each year resulting in greater than one million deaths [1]."
+44 Change "Prevention of the vector borne diseases ..." to "Prevention of vector borne diseases ..."
+57 automatize > automate
+81-82 "The qualitative characteristics of the recorded wingbeat are very high (i.e. SNR, duration, noise)." Not clear what is meant by this sentence.
+82-83 "Hereinafter, we present details on Materials & Methods followed by evaluation results and their practical implications." This sentence is unnecessary.
+84 Materials and Methods
+General comments:
+The Materials and Methods section does not provide enough information to allow reproduction of this research. Following the modern trend towards reproducible research, I encourage the authors to provide the following as Supplemental Material:
+a schematic for the sensor hardware code listing for data acquisition software code listings for signal processing and data analysis the raw dataset on which results are based
+Speciﬁc comments:
+85 The 2-dimensional optical Sensor
+86-91 "Mosquitoes perform erratic movements during ﬂight; they beat their wings at higher rates compared to other insects commonly encountered in domestic environments (e.g. ﬂies, bees, hawkmoths) and they are generally slower than those. Being slower and less direct in movement makes them ideal candidates for our sensors as they spend enough time inside the ﬁeld of view of the sensors and since they have a beating frequency of more than 300 Hz they leave enough trace to allow for their eﬃcient classiﬁcation."
+These sentences do not belong in Materials and Methods. Move to Introduction. Suggest changing "beating frequency of more than 300 Hz" to "wingbeat frequency of greater than 300 Hz" Suggest changing "they beat their wings at higher rates compared to other insects commonly encountered in domestic environments (e.g. ﬂies, bees, hawkmoths)" to "they beat their wings at higher rates than other insects commonly encountered in domestic environments (e.g. ﬂies, bees, hawkmoths)". There is a problem including ﬂies here because mosquitoes are ﬂies (Diptera) and there are small ﬂies with wingbeat frequencies higher than that of mosquitoes.
+99-100 "The light ﬂuctuation in the output of the receiver is monitored by a microprocessor and the device is auto-triggered when it senses a wingbeat." Please provide more
+2
+
+and the device is auto-triggered when it senses a wingbeat." Please provide more
+information about the trigger. Please provide the make and model of the microprocessor. Is this a simple amplitude set point trigger or something more sophisticated? Is any pretrigger signal recorded? A code listing would be useful to the technical reader.
+100-102 "Once triggered the light ﬂuctuation is turned to an audio snippet of 5000 samples at 8 kHz (i.e. 0.625 s), time-stamped and internally stored in the SD of the device as a permanent record." Please include resolution (bits per sample).
+102-104 "The device is immune to optical interferences from natural or electric light as it sends high frequency pulses instead of constant ﬂow of light. We direct the interested reader to [15] for the full electronic board of our sensor and details of its construction." Please provide the pulse frequency for the IR-LEDs. This reviewer is unable to access full text for reference 15.
+115 The optical Recordings
+117 "The light intensity is normalized to line-out levels and is treated as an audio recording." Please clarify.
+118-121 "In Fig. 2 we show characteristic wingbeat recordings of mosquitos in ﬂight. In the same ﬁgure the upper row of each subﬁgure contains three typical inﬂight recordings one from each diﬀerent species of mosquitoes. In Fig. 2 – bottom row of each subﬁgure we show the frequency content of these recordings." Figure 2 should be fully described by its caption, and this information should not be repeated in the main text. I suggest you simply refer to the ﬁgure along these lines: Spectral analysis shows that each recorded wingbeat waveform contains a wingbeat frequency and harmonics (Fig. 2).
+121 Suggest changing "The fundamental frequency corresponds to the beating frequency of the insects’ wings." to "The fundamental frequency corresponds to the insect's wingbeat frequency".
+123-124 Suggest changing "The sensor can resolve the fundamental frequency (that coincides with the beating rhythm of the wings) and all harmonics up to 4 kHz." to "The sensor can resolve the fundamental frequency (wingbeat frequency) and all harmonics up to 4 kHz."
+128-140 "Many insects beat their wings at almost the same rhythm and, therefore, the fundamental frequency alone is an insuﬃcient parameter to discern species [18-19]. Provided the species have morphological diﬀerences or functional diﬀerences in the wingbeating mechanism, these diﬀerences will be imprinted on the distribution of their power spectrum. Classiﬁcation will be accurate if the inter-species variability of the spectrum is small and the spectrum of their wingbeats demonstrates a consistent, recognizable pattern. Advanced machine learning techniques that we will report on later in this work do not need visual resemblance in order to classify species to classes as they learn from training data the relationship among spectral coeﬃcients (in our case among the fundamental frequency and power distribution on the harmonics). Classiﬁcation accuracy is assisted if spectral variation of wingbeats is large among diﬀerent species that have diﬀerent wing shape, size and wingbeat frequency. As reported in [20] for the case of bumblebees, and can also be veriﬁed in Fig. 3 for mosquitoes, ﬂying insects hold a rather constant wingbeat frequency, in a given temperature, regardless the speed and ﬂight pattern."
+These sentences do not belong in the materials and Methods section. Move to introduction or Discussion (or Results and Discussion Section).
+141-151 "In Fig. 3 we gather the spectra of 600 distinct free-ﬂight passes, 100 for each species (Ae. aegypti, Ae. albopictus, A. arabiensis, A. gambiae, C. pipiens and C. quinquefasciatus). A close look of this aggregation of spectra allows us to visually assess the
+3
+
+quinquefasciatus). A close look of this aggregation of spectra allows us to visually assess the
+consistency of the frequency signature in each group of specimens respectively rather than the detail of a single ﬂight-case. The variability one observes is due to the diﬀerent individuals taking part in a random experiment with diﬀerent entrance angles and ﬂight patterns once inside the ﬁeld of view of the sensor. Insects of the same species will have diﬀerences in the spectrum of their in-ﬂight wingbeat, as they are unrepeatable biological organisms. However, one can note the consistency of the spectrum within the same species and the diﬀerence among species. This entails that the spectrum (i.e. f 0 and harmonics) provided by the optoacoustic sensors are invariant to the entrance angle and behavioral mode of the ﬂying insect."
+These sentences belong in the Results or Results and Discussion section.
+157-161 "Note, that both sexes are included and since mosquitoes are dimorphic this results to a phenotypic diﬀerentiation between males and females of the same species. Incoherence in the frequency pattern within the same species group is attributed to individuals of diﬀerent sex. Sex diﬀerentiation results into males being smaller in size and higher pitched than females."
+Can be expressed more clearly. Something like: "We recorded both males and females of each species. Mosquitoes are sexually dimorphic. Males are smaller and their wingbeat frequencies about 40% higher than conspeciﬁc females [Moore]"
+163 Classiﬁcation Experiments
+General comments
+Potential ﬂaw in the data - see comments on Figure 3.
+Information on the mosquitoes is needed. Where were they collected? How were they identiﬁed to species? How long have they been in a lab colony?
+The experimental design is not clearly described. It is not clear how recordings were made. Looks like the sensor system is a single prototype. So, in a recording session, this device was placed in a cage containing one of the six species? How long was each recording session? Was each species recorded once or multiple times? Was each species in one cage or several cages? Answers to these questions are necessary for the reader to assess the scientiﬁc veracity of the experiment.
+In the text, tables, and ﬁgures "quinx" is used as a an abbreviation of the species epithet "quinquefasciatus". Please do not do this.
+Speciﬁc Comments
+168-170 "This innovative setting allows us to take eﬀortless and secure recordings of a large number of ﬂight cases in a practical way, even for quarantine pests, as insects are generally diﬃcult to handle in free-ﬂight experiments."
+Move to Results or Results and Discussion section.
+173-179 "In [14-15] we have shown that the generated optical ﬂuctuations modulated by the wingbeats of insects, though short in time, oﬀer enough information that can be used to discern species adequately. One can get a variety of features out of a recording but, as analyzed thoroughly in [22], we believe that the unprocessed spectrum containing the fundamental and its harmonics and possibly certain simple transformations of it (e.g. frequency pooling through a ﬁlter-bank, logarithmic amplitude compression) are a better choice than estimating the f 0 , the harmonics, and autoregressive features for this task."
+These sentences belong in the Introduction or Discussion (or Results and Discussion) section
+4
+
+181-184 Figure 3
+This ﬁgure is a very nice visualization of the spectral data. However, it seems to expose a major problem with the data. If I am interpreting the ﬁgure correctly, the background noise is not constant, but is much lower for all the Culex pipiens records and most of the Anopheles arabiensis records. This is very evident in the higher frequency bins (3000-4000 Hz) where there are distinct troughs in the three dimensional plot. I suspect that your learning algorithms are using diﬀerences in nonbiological background noise signatures in classifying signals. This potential problem needs to be investigated thoroughly. It may be possible to apply a digital ﬁlter to remove background noise for all signals in the dataset. The amplitude of the power spectra in Figure 3 ranges from -240 to -120 dB, whereas the amplitude of the power spectra in Figure 2 ranges from -100 to -60 dB. Please explain this diﬀerence. Please state how the 600 samples were selected from the data set. Is this a random sample? Ae. Aegypti should be Ae. aegypti Ae. Albopictus should be Ae. albopictus
+186-189 "In [21] it is documented that changes in fundamental and second harmonic ratio coincide with major changes in ﬂight direction and speed. In the same work it is demonstrated that for part of the ﬂight of a fruit ﬂy the second harmonic can be larger than the fundamental at the time of a maneuver. We therefore focus on the spectrum solely."
+These sentences belong in the Introduction or Discussion (or Results and Discussion) section
+291 "Anopheles/Pipiens genus"
+Pipiens should be Culex
+306 Discussion
+"Mosquitoes are ectothermic and increase their wingbeat frequency along with the rise in temperature."
+Please cite a reference which shows that mosquito wingbeat frequencies increse with temperature.
+340 Conclusions
+General Comments
+There is no Conclusions section in a JME article. Please move the text to the Results (or Results and Discussion) section.
+370 APPENDIX
+General Comments
+"This work is accompanied with an associated folder that can be found in the site of the paper as supporting information containing detailed recordings of insects and videos as well as the classiﬁcation software."
+This reviewer could not ﬁnd supporting materials in the review package. This article would really beneﬁt from inclusion of supporting materials (see comments for Materials and methods section.
+5
+

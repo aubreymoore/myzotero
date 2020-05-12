@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0.2" name="wpd_version">
+<meta content="https://aubreymoore.github.io/blog/posts/web2py-to-static/" name="wpd_baseurl">
+<meta content="https://aubreymoore.github.io/blog/posts/web2py-to-static/" name="wpd_url">
+<meta content="2017-06-24T17:46Z" name="wpd_date">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Converting a web2py web site to a static web site | Aubrey Moore</title>
+
+
+
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://aubreymoore.github.io/blog/rss.xml">
+<link rel="canonical" href="https://aubreymoore.github.io/blog/posts/web2py-to-static/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+<meta name="author" content="Aubrey Moore">
+<link rel="prev" href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" title="Calculate geographical coordinates for equidistant points at vertices of a triangular grid" type="text/html">
+<link rel="next" href="https://aubreymoore.github.io/blog/posts/migrate-a-mysql-database-to-postgreql/" title="Migrate a MySQL database to postgreql" type="text/html">
+<meta property="og:site_name" content="Aubrey Moore">
+<meta property="og:title" content="Converting a web2py web site to a static web site">
+<meta property="og:url" content="https://aubreymoore.github.io/blog/posts/web2py-to-static/">
+<meta property="og:description" content="I am building a web site using the web2py framework.  The site uses data stored
+in MySQL database to build an index page of crops. For each crop, there is a
+link to a page which is built to display al">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-05-28T09:33:46+10:00">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="web2py">
+
+<link media="all" href="web2py-to-static.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://aubreymoore.github.io/blog/">
+
+                <span id="blog-title">Aubrey Moore</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="https://aubreymoore.github.io/blog/archive.html">Archive</a>
+                </li>
+<li>
+<a href="https://aubreymoore.github.io/blog/categories/">Tags</a>
+                </li>
+<li>
+<a href="https://aubreymoore.github.io/blog/rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<span class="navbar-form navbar-left">
+<input id="tipue_search_input" class="form-control" placeholder="Search" type="text"></span>
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="https://aubreymoore.github.io/blog/posts/web2py-to-static/index.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="https://aubreymoore.github.io/blog/posts/web2py-to-static/" class="u-url">Converting a web2py web site to a static web site</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                    Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/web2py-to-static/" rel="bookmark"><time class="published dt-published" datetime="2017-05-28T09:33:46+10:00" itemprop="datePublished" title="2017-05-28 09:33">2017-05-28 09:33</time></a></p>
+            
+        <p class="sourceline"><a href="https://aubreymoore.github.io/blog/posts/web2py-to-static/index.md" id="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>I am building a web site using the web2py framework.  The site uses data stored
+in MySQL database to build an index page of crops. For each crop, there is a
+link to a page which is built to display all pests attacking the crop.</p>
+<p>I would like to host
+a copy of this as a static site in GitHub pages.  Creating the static site was
+surprisingly easy:</p>
+<ol>
+<li>Run the web2py site in a local test browser.</li>
+<li>In an empty folder, use <strong>wget</strong> to save local a local copy of every page generated by the site:</li>
+</ol>
+<pre class="code literal-block"><span></span>wget --recursive --no-clobber --page-requisites \
+ --adjust-extension --convert-links \
+ --restrict-file-names=windows \
+ --no-parent \
+  http://127.0.0.1:8000/pestlist/default/crop_index
+</pre>
+
+
+<ol>
+<li>On the <strong>crop_index.html</strong> page, change links to the <strong>pest_index.html</strong> pages. Easily done using <strong>relace all</strong> in <strong>atom</strong> or some other
+editor.</li>
+<li>Upload all files to a GitHub repo and enable GitHub pages for the repo.</li>
+<li>Create an index.html page in the top level folder of the repo which links to <strong>crop_index.html</strong>.</li>
+</ol>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="https://aubreymoore.github.io/blog/categories/github/" rel="tag">github</a></li>
+            <li><a class="tag p-category" href="https://aubreymoore.github.io/blog/categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="https://aubreymoore.github.io/blog/categories/web2py/" rel="tag">web2py</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" rel="prev" title="Calculate geographical coordinates for equidistant points at vertices of a triangular grid">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="https://aubreymoore.github.io/blog/posts/migrate-a-mysql-database-to-postgreql/" rel="next" title="Migrate a MySQL database to postgreql">Next post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+
+            Contents © 2017         <a href="mailto:aubreymoore@guam.net">Aubrey Moore</a> - Powered by         <a href="https://getnikola.com/" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><!-- Modal --><div id="search-results" class="modal fade" role="dialog" style="height: 80%;">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Search Results:</h4>
+      </div>
+      <div class="modal-body" id="tipue_search_content" style="max-height: 600px; overflow-y: auto;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+
+$(document).ready(function() {
+    $.when(
+        $.getScript( "/assets/js/tipuesearch_set.js" ),
+        $.getScript( "/assets/js/tipuesearch.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json'
+        });
+        $('#tipue_search_input').keyup(function (e) {
+            if (e.keyCode == 13) {
+                $('#search-results').modal()
+            }
+        });
+    });
+});
+</script>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body>
+</html>

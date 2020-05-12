@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="nr-1071.js"></script><script async="" src="analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"686a925e94","applicationID":"55662617","transactionName":"d1hWRUVfWlUBEUwJWkdSSkdWRF9WChBMFVBbQA==","queueTime":0,"applicationTime":58,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <title>Pacific Orange Leafwing (Doleschallia tongana)
+observed by
+jakemanuel
+on
+October 23, 2017
+ ·  iNaturalist.org </title>
+    <meta http-equiv="Content-Language" content="en-US">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.inaturalist.org/assets/favicon-aa0778bc63c6f377e92e49014514feb7.ico">
+    <meta name="viewport" content="width=980">
+    <link rel="stylesheet" media="screen" href="font-awesome.css">
+<link rel="stylesheet" media="screen" href="application_bundle-fc52ab09762059ddc12aaf7c21c4e78f.css">
+<!--[if lte IE 7]>
+  <link rel="stylesheet" media="screen" href="/assets/ie-f88791c0dd822a18b61b465e3c01cf33.css" />
+<![endif]-->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" media="screen" href="bootstrap_bundle-1f6c3ca9622b9ba76ef23b95837045a9.css">
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="PSFxT5qBXtKMckSUOgN3QJK+JOsogbXHaoEk3x/YIuysP+Pem0MBIZdH+Menv3X0ZF/vzQTG951u4dAdSDSZMg==">
+    <meta name="config:inaturalist_api_url" content="https://api.inaturalist.org/v1">
+    <meta property="og:site_name" content="iNaturalist.org">
+      <meta property="fb:app_id" content="26558815027">
+      <meta name="apple-itunes-app" content="app-id=421397028">
+    <meta content="Pacific Orange Leafwing (Doleschallia tongana)" property="og:title">
+<meta content="Pacific Orange Leafwing (Doleschallia tongana) observed by Jake Manuel" property="twitter:title">
+<meta content="https://static.inaturalist.org/photos/11367112/original.jpg?1508729677" property="og:image">
+<meta content="https://static.inaturalist.org/photos/11367112/original.jpg?1508729677" property="twitter:image">
+<meta content="photo" name="twitter:card">
+<meta content="auto" property="og:determiner">
+<meta content="https://www.inaturalist.org/observations/8515898" property="og:url">
+<meta content="Pacific Orange Leafwing on October 23, 2017 at 12:54 PM ChST by Jake Manuel.  Found hanging under a sour sop leaf at UOG campus" property="og:description">
+<script>
+  var RECENT_OBSERVATION_FIELDS = [];
+</script>
+
+    <link rel="stylesheet" media="screen" href="font-awesome.css">
+<link rel="stylesheet" media="screen" href="show2-f2ce2fa91c87d9982dfcc00dd34d4faf.css">
+
+  <script type="text/javascript">
+
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  
+    
+      
+      ga('create', 'UA-248105-5', {});
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      ga('send', 'pageview');
+    
+  
+
+
+</script><script type="text/javascript" charset="UTF-8" src="common.js"></script><script type="text/javascript" charset="UTF-8" src="map.js"></script></head>
+  <body>
+    <div id="bodywrapper">
+        <div class="bootstrap" id="header">
+<div class="navtabs" id="logonav">
+<a class="logolink innertab" href="https://www.inaturalist.org/" title="iNaturalist.org">
+<img alt="iNaturalist.org" src="1-logo.svg">
+</a>
+</div>
+<div class="search navtabs form-group" id="headersearch">
+<div class="searchwrapper">
+<div class="ac-chooser"><input class="form-control ui-autocomplete-input" placeholder="Search" autocomplete="off" type="text"></div>
+</div>
+<button class="btn btn-link show-btn">
+<i class="fa fa-search"></i>
+</button>
+<button class="btn btn-link hide-btn">
+<i class="fa fa-times-circle"></i>
+</button>
+</div>
+<ul class="navtabs" id="mainnav">
+<li class="active navtab">
+<a href="https://www.inaturalist.org/observations">Explore</a>
+</li>
+<li class="navtab communitytab menutab">
+<div class="dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" id="header-community-dropdown-toggle">
+<a href="https://www.inaturalist.org/people">Community</a>
+<i class="fa fa-angle-down"></i>
+</div>
+<ul aria-labelledby="header-community-dropdown-toggle" class="dropdown-menu">
+<li><a href="https://www.inaturalist.org/people">People</a></li>
+<li><a href="https://www.inaturalist.org/projects">Projects</a></li>
+</ul>
+</div>
+</li>
+<li class="navtab moretab menutab">
+<div class="dropdown">
+<div aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" id="header-more-dropdown-toggle">
+More
+<i class="fa fa-angle-down"></i>
+</div>
+<ul aria-labelledby="header-more-dropdown-toggle" class="dropdown-menu">
+<li><a href="https://www.inaturalist.org/taxa">Taxa Info</a></li>
+<li><a href="https://www.inaturalist.org/guides">Guides</a></li>
+<li><a href="https://www.inaturalist.org/places">Places</a></li>
+<li><a href="https://www.inaturalist.org/stats">Site Stats</a></li>
+<li class="divider" role="separator"></li>
+<li><a href="https://www.inaturalist.org/help">Help</a></li>
+</ul>
+</div>
+</li>
+</ul>
+<ul class="navtabs" id="usernav">
+<li class="navtab signedout">
+<a class="signin_link" href="https://www.inaturalist.org/login">Log In</a>
+or
+<a class="signup_link" href="https://www.inaturalist.org/signup">Sign Up</a>
+</li>
+</ul>
+</div>
+
+      
+      
+
+
+      <div id="wrapper" class="bootstrap">
+        <div id="app">
+<div class="text-center" id="initial-loading">
+<div class="loading_spinner"></div>
+</div>
+</div>
+
+      </div>
+    </div>
+
+    <div class="bootstrap" id="footer">
+<div class="container">
+<div class="row">
+<div class="col-xs-2">
+<p>
+<a href="https://www.inaturalist.org/pages/about">About</a>
+</p>
+<p>
+<a href="https://www.inaturalist.org/pages/help">Help</a>
+</p>
+<p>
+<a href="http://groups.google.com/group/inaturalist/">Feedback</a>
+</p>
+<p>
+<a href="https://www.inaturalist.org/pages/press">Press</a>
+</p>
+</div>
+<div class="col-xs-2">
+<p>
+<a href="https://www.inaturalist.org/blog">Our Blog</a>
+</p>
+<p>
+<a href="https://www.inaturalist.org/pages/community+guidelines">Community Guidelines</a>
+</p>
+<p>
+<a href="https://www.inaturalist.org/pages/terms">Terms of Service</a>
+</p>
+<p>
+<a href="https://www.inaturalist.org/pages/privacy">Privacy Policy</a>
+</p>
+</div>
+<div class="col-xs-1">
+<a class="social-media-link facebook" href="https://www.facebook.com/pages/iNaturalistorg/63336575498">Facebook</a>
+<a class="social-media-link twitter" href="https://twitter.com/inaturalist">Twitter</a>
+</div>
+<div class="col-xs-1">
+&nbsp;
+</div>
+<div class="col-xs-2">
+  <a href="https://play.google.com/store/apps/details?id=org.inaturalist.android">
+    <img alt="Android app on Google Play" src="412-original.png" style="display:block; max-height: 42px; max-width: 100%; margin: 0 auto 18px;">
+  </a>
+  <a href="https://itunes.apple.com/us/app/inaturalist/id421397028?mt=8">
+    <img alt="iPhone app in the Apple App Store" src="414-original.png" style="display:block; max-height: 42px; max-width: 100%; margin: 0 auto;">
+  </a>
+</div>
+<div class="col-xs-2">
+  <a href="https://calacademy.org/"><img src="420-original.svg" style="width:100%; position: relative;
+    top: 50%;
+    transform: translateY(25%);"></a>
+</div>
+<div class="col-xs-2">
+  <a href="https://www.nationalgeographic.org/"><img src="922-original.svg" style="width:100%; position: relative;
+    top: 50%;
+    transform: translateY(50%);"></a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bootstrap" id="inatnotice">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="links inlineblock">
+Member of the <a href="https://www.inaturalist.org/pages/network">iNaturalist Network</a>
+
+&nbsp;
+|
+&nbsp;
+Powered by <a href="https://github.com/inaturalist/inaturalist" target="_new">iNaturalist open source software</a>
+|
+&nbsp;
+Documentation for <a href="https://www.inaturalist.org/pages/developers">developers</a>
+</div>
+<div class="btn-group dropup pull-right" id="footer-locale-chooser">
+<button aria-haspopup="" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+<i class="icon-ios-world"></i>
+English (United States)
+<span class="caret"></span>
+<span class="sr-only">Toggle Dropdown</span>
+</button>
+<ul class="dropdown-menu">
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=ar">العربية</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=bg">български</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=br">Breton</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=ca">Català</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=cs">Czech</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=da">Dansk</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=de">Deutsch</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=el">Ελληνικά</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=en-US">English (United States)</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=en">English</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=es-ES">Español (España)</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=es-MX">Español (México)</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=es">Español</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=et">Estonian</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=eu">Euskara</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=fi">Suomi</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=fr">Français</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=gl">Galician</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=id">bahasa Indonesia</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=it">Italiano</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=ja">日本語</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=ko">한국어</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=lb">Lëtzebuergesch</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=mk">македонски</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=oc">Occitan</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=pt-BR">Português (Brasil)</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=pt-PT">Português (Portugal)</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=ru">Русский</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=sq">Shqip</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=zh-CN">简体中文</a>
+</li>
+<li>
+<a rel="nofollow" href="https://www.inaturalist.org/set_locale?locale=zh-TW">繁體中文</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+    <div id="inat-universal-autocomplete"><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul></div>
+
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script type="text/javascript">
+      I18n = { }
+      I18n.defaultLocale = "en";
+      I18n.locale = "en-US";
+      I18n.fallbacks = true;
+      var PREFERRED_PLACE;
+      var PREFERRED_SEARCH_PLACE;
+      var CURRENT_USER;
+      var RAILS_FLASH = {};
+      var TIMEZONE = "Etc/UTC";
+      var SITE = {
+        name: "iNaturalist.org",
+        short_name: "iNat",
+        help_email: "help@inaturalist.org",
+        logo_square: "https://static.inaturalist.org/sites/1-logo_square.png?1514411332",
+        copyrighted_media_image_urls: {
+          original: "https://www.inaturalist.org/assets/copyright-infringement-original-e2ebfbd04cebc91b6ff3b41f2ff39ba7.png",
+          large: "https://www.inaturalist.org/assets/copyright-infringement-large-e2ebfbd04cebc91b6ff3b41f2ff39ba7.png",
+          medium: "https://www.inaturalist.org/assets/copyright-infringement-medium-d3e225873cb8d4309dae459f8845a0b1.png",
+          small: "https://www.inaturalist.org/assets/copyright-infringement-small-d12cfa95aa657f915a801430747c77d9.png",
+          square: "https://www.inaturalist.org/assets/copyright-infringement-square-b45df3bc649c6f224e9e039bb77b4e6c.png"
+        },
+        processing_image_urls: {
+          small: "https://www.inaturalist.org/attachment_defaults/local_photos/small.png",
+          square: "https://www.inaturalist.org/attachment_defaults/local_photos/square.png"
+        }
+      };
+    </script>
+    <script src="application_bundle-6142c8b0075bd6ab8c036fdf5a0c1bf1.js"></script>
+    <script src="bootstrap.js"></script>
+    <script type="text/javascript">
+      // stop conflict btwn jqueryui button and bootstrap button
+      var btn = $.fn.button.noConflict()
+      $.fn.btn = btn
+    </script>
+    <script type="text/javascript" src="js"></script>
+    <script src="map_bundle-073cdf7a008d40e7555f827fc5f8738d.js"></script>
+    <script>
+  var INITIAL_OBSERVATION_ID = 8515898;
+  var CURRENT_USER = { };
+  var SITE = {
+    name: "iNaturalist.org",
+    short_name: "iNat",
+    help_email: "help@inaturalist.org",
+    logo_square: "https://static.inaturalist.org/sites/1-logo_square.png?1514411332",
+    copyrighted_media_image_urls: {
+      original: "https://www.inaturalist.org/assets/copyright-infringement-original-e2ebfbd04cebc91b6ff3b41f2ff39ba7.png",
+      large: "https://www.inaturalist.org/assets/copyright-infringement-large-e2ebfbd04cebc91b6ff3b41f2ff39ba7.png",
+      medium: "https://www.inaturalist.org/assets/copyright-infringement-medium-d3e225873cb8d4309dae459f8845a0b1.png",
+      small: "https://www.inaturalist.org/assets/copyright-infringement-small-d12cfa95aa657f915a801430747c77d9.png",
+      square: "https://www.inaturalist.org/assets/copyright-infringement-square-b45df3bc649c6f224e9e039bb77b4e6c.png"
+    },
+    processing_image_urls: {
+      small: "https://www.inaturalist.org/attachment_defaults/local_photos/small.png",
+      square: "https://www.inaturalist.org/attachment_defaults/local_photos/square.png"
+    }
+  };
+  var LIFE_TAXON = {"id":48460,"created_at_utc":"2008-09-26T05:55:02.000Z","updated_at_utc":"2018-06-02T14:52:32.979Z","default_name":{"name":"Life"}};
+  var OUTLINK_SITE_ICONS = {
+    "Atlas of Living Australia": "https://www.inaturalist.org/assets/sites/ala-e6966ce85ad136e9f6f1f0386872ffc7.png",
+    "Calflora": "https://www.inaturalist.org/assets/sites/calflora-a7ba12d52a81118f626d8cef36d1663a.png",
+    "GBIF": "https://www.inaturalist.org/assets/sites/gbif-c6c1da28df0a6def1488fe6669865e73.png",
+    "GloBI": "https://www.inaturalist.org/assets/sites/globi-8aabfe80f96be7d63b62ac457291c81a.png",
+  };
+</script>
+<script src="observations-show-webpack-490d7110231a0cb956c0d3c3db7fc305.js"></script>
+
+  
+
+<span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span></body></html>

@@ -1,0 +1,22 @@
+#issueCoverImage img{
+max-width: 100%;
+height: auto;
+}
+
+#header {
+background-color: transparent;
+}
+
+.journalDescription {
+padding-left: 110px;
+}
+
+/* Get homepage thumbnails all to the same standard width. */
+#pkp_content_main > div > div.journals > ul div.thumb > a > img {
+width: 170px;
+}
+
+/* Get thumbnails lined up on journal back issues. */
+#pkp_content_main > div > ul div > a.cover > img {
+width: 170px;
+}

@@ -1,0 +1,102 @@
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Gist
+
+        New repository Import repository New gist New organization
+        This repository
+        New issue 
+    @aubreymoore
+    Signed in as aubreymoore
+    Your profile Your stars Explore Integrations Help
+    Settings
+    Sign out
+
+    Watch 0
+    Notifications
+    Not watching Be notified when participating or @mentioned. Watch
+    Watching Be notified of all conversations. Unwatch
+    Ignoring Never be notified. Stop ignoring
+    Unstar 0
+    Star 0
+    Fork
+    0
+
+dshorthouse / RefineNames
+Code Issues 0 Pull requests 0 Projects 0 Wiki Pulse Graphs
+PHP code to make connections to scientific names reconciliation services in Open Refine
+
+    5 commits
+    1 branch
+    0 releases
+    1 contributor
+    MIT
+
+    PHP 100.0%
+
+PHP
+Clone or download
+Use SSH
+Clone with HTTPS
+
+Use Git or checkout with SVN using the web URL.
+Use HTTPS
+Clone with SSH
+
+Use an SSH key and passphrase from account.
+Download ZIP
+Create new file
+Upload files Find file
+Branch: master
+Switch branches/tags
+
+    Branches
+    Tags
+
+master
+Nothing to show
+Nothing to show
+New pull request
+Latest commit 5b34d12 on Dec 17, 2014 @dshorthouse dshorthouse Add requirements and another example to index.php
+Permalink
+	Failed to load latest commit information.
+	src 	Add batch size and hit limit to constructor 	3 years ago
+	.gitignore 	First commit 	3 years ago
+	LICENSE 	Add files 	3 years ago
+	README.md 	Add requirements and another example to index.php 	2 years ago
+	index.php 	Add requirements and another example to index.php 	2 years ago
+README.md
+Open Refine Services for Scientific Names
+
+These PHP files can be used to connect scientific names resolution services to Open Refine . Example provided here are for the Vascular Plants of Canada and the Global Names Resolver . Code was developed in part by Roderic Page .
+
+ Developer: David P. Shorthouse Email: davidpshorthouse@gmail.com  
+
+Example use can be found in index.php
+Requirements
+
+    PHP >= 5.5
+    php5-curl
+
+Copyright
+
+ Copyright (c) Université de Montréal Released under MIT License Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  
+
+    Contact GitHub
+    API
+    Training
+    Shop
+    Blog
+    About
+
+    © 2016 GitHub , Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+You can't perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.

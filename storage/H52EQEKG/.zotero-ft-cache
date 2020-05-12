@@ -1,0 +1,829 @@
+To use Google Groups Discussions, please enable JavaScript in your browser settings and then refresh this page.
+<plaintext/> <xmp> .
+Aubrey
+
+    My Account
+    Search
+    Maps
+    YouTube
+    Play
+    News
+    Gmail
+    Drive
+    Calendar
+    Google+
+    Translate
+    Photos
+
+Groups
+Add a shortcut
+More
+
+    Shopping
+    Wallet
+    Finance
+    Docs
+    Books
+    Blogger
+    Contacts
+    Hangouts
+
+Even more from Google
+Change
+Aubrey Moore
+aubreymoore2013@gmail.com
+Google+ Profile – Privacy
+My Account
+Profile
+Aubrey Moore
+aubreymoore2013@gmail.com (default)
+All of your Brand Accounts »
+Add account
+Sign out
+Hidden fields
+Search for groups or messages
+	
+Groups
+	
+	
+ of  ( )
+My groups
+Home
+Starred
+0
+Saved searches
+Import predefined searches to add them to your saved searches.
+0
+Favourites
+Click on a group’s star icon to add it to your favourites
+0
+Recently viewed
+0 web2py-developers
+0 web2py-users
+0 weewx-user
+0 nikola-discuss
+0 Django users
+0
+Recent searches
+0 web2py handle locals in view (in web2py)
+0 web2py sqlform.grid view (in web2py)
+0 web2py view for sqlform.grid (in web2py)
+0 web2py return locals (in web2py)
+0 Virtualenv (in web2py)
+0
+Recently posted to
+0 iNaturalist
+Sign in or start browsing to organise your groups and view recent items.
+Privacy - Terms of Service
+web2py-users ›
+This topic is no longer open for new replies due to inactivity. If you would like to post a message, please search for a more recent topic above or post a new question.
+ipython notebook and web2py
+This topic is a duplicate of another discussion.
+You were redirected here from a duplicate topic.
+15 posts by 7 authors
+Previous Previous  
+Page 1
+  Next Next
+There are no tags in this tag set.
+show all
+	Johann Spies 	
+13/05/2014
+Other recipients:
+Thanks to Anthony for his talk about the hard way to learn Web2py. Anthony I have been thinking of writing to you to ask about how you got to know the inner workings of Web2py and you have answered about everything in your talk at the conference
+Thanks to Anthony for his talk about the hard way to learn Web2py. 
+
+Anthony I have been thinking of writing to you to ask about how you got to know the inner workings of Web2py and you have answered about everything in your talk at the conference - of which I saw the video today.
+
+I did not know about ipython notebook before I saw your presentation so I tried it out but it complained a little bit:
+
+                                             
+
+ % run  / home / js / web2py / web2py . py  - M  - S  alterit 
+
+ WARNING:web2py:import IPython error; use default python shell
+Python 2.7.6 (default, Mar 22 2014, 15:40:47) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+
+ web2py Web Framework
+Created by Massimo Di Pierro, Copyright 2007-2014
+Version 2.9.5-trunk+timestamp.2014.04. 15.10.26.52
+Database drivers available: SQLite(sqlite3), MySQL(pymysql), MySQL(MySQLdb), PostgreSQL(pg8000), MSSQL(pyodbc), DB2(pyodbc), Teradata(pyodbc), Ingres(pyodbc), IMAP(imaplib)
+
+In :
+
+
+I have a further question - maybe because I do not have the time to study the source code of ipython notebook as you would probably do :)
+
+How did you define the %w2p  macro or magic command?
+
+And
+
+Your "render" function with which you could show the form - how did you do it?
+
+Regards
+Johann
+
+-- 
+Because experiencing your loyal love is better than life itself,
+my lips will praise you.  (Psalm 63:3)
+Show trimmed content
+	Anthony 	
+13/05/2014
+Other recipients:
+Sorry, I've been meaning to release the relevant code. Note, I did not create the web2py shell environment that way in IPython Notebook. Instead, the %w2p magic function directly creates a web2py environment (using one of the functions from
+Sorry, I've been meaning to release the relevant code. Note, I did not create the web2py shell environment that way in IPython Notebook. Instead, the %w2p magic function directly creates a web2py environment (using one of the functions from gluon/shell.py). I created a web2py_magic.py file (attached) and put it in the .ipython/profile_nbserver/ startup folder. Below is the code in that file:
+
+import os
+import sys
+import xml . dom . minidom as xml
+
+from IPython . core . magic import register_line_magic
+from IPython . core import display
+
+cwd = os . getcwd ()
+if cwd . endswith ( os . path . sep + 'web2py' ):
+    WEB2PY_PATH = cwd
+else :
+    WEB2PY_PATH = os . path . join ( '/' , 'home' , 'www-data' , 'web2py' )
+    sys . path . append ( WEB2PY_PATH )
+
+import gluon . shell
+from gluon . dal import Rows
+from gluon . sqlhtml import SQLTABLE
+
+@register_line_magic
+def w2p ( line ):
+    line = 'test/default' if not line else line . encode ( 'ascii' )
+    line = line . split ( '/' )
+    app = line [ 0 ]
+    controller = line [ 1 ] if len ( line ) > 1 else None
+    environment = gluon . shell . env ( app , import_models = True , c = controller ,
+        dir = os . path . join ( WEB2PY_PATH , 'applications' , app ))
+    folder = environment [ 'request' ]. folder
+    if controller :
+        pyfile = os . path . join ( folder , 'controllers' , controller + '.py' )
+        if os . path . isfile ( pyfile ):
+            execfile ( pyfile , environment )
+    globals (). update (** environment )
+
+def pp ( helper , indent = '    ' ):
+    declaration = len ( xml . Document (). toxml ()) + 1
+    doc = xml . parseString ( helper . xml ())
+    print XML ( doc . toprettyxml ( indent = ind ent )[ declaration :])
+
+def render ( html ):
+    if isinstance ( html , Rows ):
+        html = SQLTABLE ( html )
+    return display . HTML ( str ( html ))
+
+So, just start up a notebook, and at the top, run:
+
+% w2p myapp / mycontroller
+
+and you will get a full web2py environment with the models from myapp as well as the (optionally) specified controller (so you can run functions from that controller). Should be easy to add an optional command line flag to later add other controllers (without overwriting the full environment).
+
+Note, you may have to edit the hard-coded path provided in the WEB2PY_PATH section of the code based on your server setup.
+
+The above code also defines the pp() and render() functions.
+
+Also, attached is the .ipynb file for the notebook I showed during the presentation.
+
+Finally, I have also attached a PDF of the slides, though it's not really intended to be read as a standalone document.
+
+Anthony
+- show quoted text -
+
+
+On Monday, May 12, 2014 4:59:06 PM UTC-4, Johann Spies wrote:
+
+    Thanks to Anthony for his talk about the hard way to learn Web2py. 
+
+    Anthony I have been thinking of writing to you to ask about how you got to know the inner workings of Web2py and you have answered about everything in your talk at the conference - of which I saw the video today.
+
+    I did not know about ipython notebook before I saw your presentation so I tried it out but it complained a little bit:
+
+                                                 
+
+     % run  / home / js / web2py / web2py . py  - M  - S  alterit 
+
+     WARNING:web2py:import IPython error; use default python shell
+    Python 2.7.6 (default, Mar 22 2014, 15:40:47) 
+    [GCC 4.8.2] on linux2
+    Type "help", "copyright", "credits" or "license" for more information.
+    (InteractiveConsole)
+
+     web2py Web Framework
+    Created by Massimo Di Pierro, Copyright 2007-2014
+    Version 2.9.5-trunk+timestamp.2014.04. 15.10.26.52
+    Database drivers available: SQLite(sqlite3), MySQL(pymysql), MySQL(MySQLdb), PostgreSQL(pg8000), MSSQL(pyodbc), DB2(pyodbc), Teradata(pyodbc), Ingres(pyodbc), IMAP(imaplib)
+
+    In :
+
+
+    I have a further question - maybe because I do not have the time to study the source code of ipython notebook as you would probably do :)
+
+    How did you define the %w2p  macro or magic command?
+
+    And
+
+    Your "render" function with which you could show the form - how did you do it?
+
+    Regards
+    Johann
+
+    -- 
+    Because experiencing your loyal love is better than life itself,
+    my lips will praise you.  (Psalm 63:3)
+
+Show trimmed content
+Attachments ( 3 )
+web2py.ipynb
+64 KB     Download
+Learn web2py the Really Hard Way.pdf
+410 KB   View   Download
+web2py_magic.py
+1 KB   View   Download
+This post has been edited
+13/05/2014 by the author
+13/05/2014 by the author
+	Johann Spies 	
+13/05/2014
+Re: [web2py] Re: ipython notebook and web2py
+Other recipients:
+Thank you very much Anthony! Again, I received much more than I expected.
+Thank you very much Anthony!
+
+Again, I received much more than I expected.
+
+
+Regards
+Johann
+
+-- 
+Because experiencing your loyal love is better than life itself,
+my lips will praise you.  (Psalm 63:3)
+Show trimmed content
+	Johann Spies 	
+13/05/2014
+Re: [web2py] Re: ipython notebook and web2py
+Other recipients:
+Dear Anthony,
+Dear Anthony,
+
+
+    So, just start up a notebook, and at the top, run:
+
+    % w2p myapp / mycontroller
+
+    and you will get a full web2py environment with the models from myapp as well as the (optionally) specified controller (so you can run functions from that controller). Should be easy to add an optional command line flag to later add other controllers (without overwriting the full environment).
+
+
+I am struggling to get this to work.
+
+The following show that the environment works with normal ipython:
+
+ > pwd
+/home/js/web2py
+
+> python web2py.py -M -S test
+
+web2py Web Framework
+Created by Massimo Di Pierro, Copyright 2007-2014
+Version 2.9.5-trunk+timestamp.2014.05. 09.15.41.38
+Database drivers available: SQLite(sqlite2), SQLite(sqlite3), MySQL(pymysql), MySQL(MySQLdb), PostgreSQL(psycopg2), PostgreSQL(pg8000), MSSQL(pyodbc), DB2(pyodbc), Teradata(pyodbc), Ingres(pyodbc), IMAP(imaplib)
+
+Python 2.7.6 (default, Mar 22 2014, 15:40:47)
+Type "copyright", "credits" or "license" for more information.
+
+IPython 1.2.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]:
+
+
+In ipython-notebook I was trying to debug the process following the logic in your web2py_magic.py:
+
+In [4]:
+
+  
+
+ line  = 'test/default'  
+
+In [5]:
+
+                       
+
+ line  = line . split ( '/' )
+
+In [6]:
+
+     
+
+ line 
+
+Out[6]:
+
+ ['test', 'default']
+
+In [7]:
+
+              
+
+ app  = line [ 0 ]
+
+In [8]:
+
+     
+
+ controller  = line [ 1 ] if  len ( line ) >  1  else  None 
+
+     
+
+In [9]:
+
+            
+
+ WEB2PY_PATH  = os . path . join ( '/' , 'home' , 'js' , 'web2py' )
+
+  
+
+In [10]:
+
+        
+
+ sys . path . append ( WEB2PY_PATH )
+
+  
+
+In [11]:
+
+                                                         
+
+ environment  = gluon . shell . env ( app , import_models = True , c = controller ,
+
+      dir = os . path . join ( WEB2PY_PATH , 'applications' , app ) ) 
+
+ An exception has occurred, use %tb to see the full traceback.
+
+SystemExit :  1
+
+
+ Traceback (most recent call last):
+  File "/usr/lib/pymodules/python2.7/ gluon/restricted.py", line 205, in restricted
+    exec ccode in environment
+  File "/home/js/web2py/applications/ test/models/db.py", line 48, in <module>
+    auth.define_tables(username= False, signature=False)
+TypeError: define_tables() got an unexpected keyword argument 'signature'
+
+To exit: use 'exit', 'quit', or Ctrl-D.
+
+
+
+I get the same exception when I try
+
+%w2p
+or
+ %w2p test/default.
+
+Lines 43-48 in db.py are
+
+ 43 from gluon.tools import Auth, Crud, Service, PluginManager, prettydate$
+ 44 auth = Auth(db)$
+ 45 crud, service, plugins = Crud(db), Service(), PluginManager()$
+ 46 $
+ 47 ## create all tables needed by auth if not custom tables$
+ 48 auth.define_tables(username= False, signature=False)$
+
+which was created by the admin app when I created the test app.
+
+
+I could so far not figure out what is causing this.
+
+When I try another app it complains about 'lazy_tables'
+
+ An exception has occurred, use %tb to see the full traceback.
+
+SystemExit :  1
+
+
+ Traceback (most recent call last):
+  File "/usr/lib/pymodules/python2.7/ gluon/restricted.py", line 205, in restricted
+    exec ccode in environment
+  File "/home/js/web2py/applications/ nkb/models/0.py", line 18, in <module>
+    lazy_tables=True, bigint_id = True)
+TypeError: __init__() got an unexpected keyword argument 'lazy_tables'
+ 
+ 
+
+ REgards
+ Johann
+ -- 
+ 
+
+Because experiencing your loyal love is better than life itself,
+my lips will praise you.  (Psalm 63:3)
+Show trimmed content
+	Anthony 	
+13/05/2014
+Re: [web2py] Re: ipython notebook and web2py
+Other recipients:
+Is it possible you are running an old version of web2py that doesn't support those arguments. Based on the restricted.py line number shown in the traceback, it looks like you're on web2py 1.99 or earlier. Anthony
+Is it possible you are running an old version of web2py that doesn't support those arguments. Based on the restricted.py line number shown in the traceback, it looks like you're on web2py 1.99 or earlier.
+
+Anthony
+- show quoted text -
+
+
+On Tuesday, May 13, 2014 6:29:56 AM UTC-4, Johann Spies wrote:
+
+    Dear Anthony,
+
+
+        So, just start up a notebook, and at the top, run:
+
+        % w2p myapp / mycontroller
+
+        and you will get a full web2py environment with the models from myapp as well as the (optionally) specified controller (so you can run functions from that controller). Should be easy to add an optional command line flag to later add other controllers (without overwriting the full environment).
+
+
+    I am struggling to get this to work.
+
+    The following show that the environment works with normal ipython:
+
+     > pwd
+    /home/js/web2py
+
+    > python web2py.py -M -S test
+    web2py Web Framework
+    Created by Massimo Di Pierro, Copyright 2007-2014
+    Version 2.9.5-trunk+timestamp.2014.05. 09.15.41.38
+    Database drivers available: SQLite(sqlite2), SQLite(sqlite3), MySQL(pymysql), MySQL(MySQLdb), PostgreSQL(psycopg2), PostgreSQL(pg8000), MSSQL(pyodbc), DB2(pyodbc), Teradata(pyodbc), Ingres(pyodbc), IMAP(imaplib)
+    Python 2.7.6 (default, Mar 22 2014, 15:40:47)
+    Type "copyright", "credits" or "license" for more information.
+
+    IPython 1.2.1 -- An enhanced Interactive Python.
+    ?         -> Introduction and overview of IPython's features.
+    %quickref -> Quick reference.
+    help      -> Python's own help system.
+    object?   -> Details about 'object', use 'object??' for extra details.
+
+    In [1]:
+
+
+    In ipython-notebook I was trying to debug the process following the logic in your web2py_magic.py:
+
+    In [4]:
+
+      
+
+     line  = 'test/default'  
+
+    In [5]:
+
+                           
+
+     line  = line . split ( '/' )
+
+    In [6]:
+
+         
+
+     line 
+
+    Out[6]:
+
+     ['test', 'default']
+
+    In [7]:
+
+                  
+
+     app  = line [ 0 ]
+
+    In [8]:
+
+         
+
+     controller  = line [ 1 ] if  len ( line ) >  1  else  None 
+
+         
+
+    In [9]:
+
+                
+
+     WEB2PY_PATH  = os . path . join ( '/' , 'home' , 'js' , 'web2py' )
+
+      
+
+    In [10]:
+
+            
+
+     sys . path . append ( WEB2PY_PATH )
+
+      
+
+    In [11]:
+
+                                                             
+
+     environment  = gluon . shell . env ( app , import_models = True , c = controller ,
+
+          dir = os . path . join ( WEB2PY_PATH , 'applications' , app ) ) 
+
+     An exception has occurred, use %tb to see the full traceback.
+
+    SystemExit :  1
+
+
+     Traceback (most recent call last):
+      File "/usr/lib/pymodules/python2.7/ gluon/restricted.py", line 205, in restricted
+        exec ccode in environment
+      File "/home/js/web2py/applications/ test/models/db.py", line 48, in <module>
+        auth.define_tables(username= False, signature=False)
+    TypeError: define_tables() got an unexpected keyword argument 'signature'
+
+    To exit: use 'exit', 'quit', or Ctrl-D.
+
+
+
+    I get the same exception when I try
+
+    %w2p
+    or
+     %w2p test/default.
+
+    Lines 43-48 in db.py are
+
+     43 from gluon.tools import Auth, Crud, Service, PluginManager, prettydate$
+     44 auth = Auth(db)$
+     45 crud, service, plugins = Crud(db), Service(), PluginManager()$
+     46 $
+     47 ## create all tables needed by auth if not custom tables$
+     48 auth.define_tables(username= False, signature=False)$
+
+    which was created by the admin app when I created the test app.
+
+
+    I could so far not figure out what is causing this.
+
+    When I try another app it complains about 'lazy_tables'
+
+     An exception has occurred, use %tb to see the full traceback.
+
+    SystemExit :  1
+
+
+     Traceback (most recent call last):
+      File "/usr/lib/pymodules/python2.7/ gluon/restricted.py", line 205, in restricted
+        exec ccode in environment
+      File "/home/js/web2py/applications/ nkb/models/0.py", line 18, in <module>
+        lazy_tables=True, bigint_id = True)
+    TypeError: __init__() got an unexpected keyword argument 'lazy_tables'
+     
+     
+
+     REgards
+     Johann
+     -- 
+     
+
+    Because experiencing your loyal love is better than life itself,
+    my lips will praise you.  (Psalm 63:3)
+
+Show trimmed content
+	Johann Spies 	
+14/05/2014
+Re: [web2py] Re: ipython notebook and web2py
+Other recipients:
+Version 2.9.5-trunk+timestamp.2014.05.09.15.41.38
+
+
+
+On 13 May 2014 15:44, Anthony < abas...@gmail.com > wrote:
+
+    Is it possible you are running an old version of web2py that doesn't support those arguments. Based on the restricted.py line number shown in the traceback, it looks like you're on web2py 1.99 or earlier.
+
+
+Version 2.9.5-trunk+timestamp.2014.05. 09.15.41.38
+ 
+
+-- 
+Because experiencing your loyal love is better than life itself,
+my lips will praise you.  (Psalm 63:3)
+Show trimmed content
+	Johann Spies 	
+14/05/2014
+Re: [web2py] Re: ipython notebook and web2py
+Other recipients:
+Anthony, you are very sharp. Looking at the traceback I saw that it used files in /us/lib/pymodules/python2.7/gluon of which I do not know the origin. I deleted that directory and the problem was solved. Thanks a lot. Regards Johann
+Anthony, you are very sharp. 
+
+Looking at the traceback I saw that it used files in /us/lib/pymodules/python2.7/ gluon of which I do not know the origin.
+
+I deleted that directory and the problem was solved.
+
+Thanks a lot.
+
+Regards
+Johann
+- show quoted text -
+
+
+On 13 May 2014 16:27, Johann Spies < johann...@gmail.com > wrote:
+
+
+
+
+    On 13 May 2014 15:44, Anthony < abas...@gmail.com > wrote:
+
+        Is it possible you are running an old version of web2py that doesn't support those arguments. Based on the restricted.py line number shown in the traceback, it looks like you're on web2py 1.99 or earlier.
+
+
+    Version 2.9.5-trunk+timestamp.2014.05. 09.15.41.38
+     
+
+    -- 
+    Because experiencing your loyal love is better than life itself,
+    my lips will praise you.  (Psalm 63:3)
+
+
+
+
+-- 
+Because experiencing your loyal love is better than life itself,
+my lips will praise you.  (Psalm 63:3)
+Show trimmed content
+	Anthony 	
+14/05/2014
+Re: [web2py] Re: ipython notebook and web2py
+Other recipients:
+Did you install web2py from PyPi at some point in the past? It looks like you have a version of the gluon modules in /usr/lib/pymodules/python2.7/gluon. Your traceback includes:
+Did you install web2py from PyPi at some point in the past? It looks like you have a version of the gluon modules in /usr/lib/pymodules/python2.7/ gluon. Your traceback includes:
+
+ 
+ File "/usr/lib/pymodules/python2.7/ gluon/restricted.py", line 205, in restricted
+    exec ccode in environment
+
+
+That particular line in restricted.py hasn't been at line number 205 since web2py 1.99.7 (it is now at line number 220).
+
+I think the problem is that because the web2py_magic.py simply appends the web2py path to sys.path, it is looking in /usr/lib/pymodules/python2.7/ gluon before it looks in the path of your current version of web2py and therefore running the old version of gluon. In web2py_magic.py, maybe change sys.path.append(WEB2PY_PATH) to sys.path.insert(1, WEB2PY_PATH). You could also simply remove the old web2py gluon folder, use virtualenv, etc.
+
+Anthony
+
+
+On Tuesday, May 13, 2014 10:27:23 AM UTC-4, Johann Spies wrote:
+
+
+
+
+    Is it possible you are running an old version of web2py that doesn't support those arguments. Based on the restricted.py line number shown in the traceback, it looks like you're on web2py 1.99 or earlier.
+
+    Version 2.9.5-trunk+timestamp.2014.05. 09.15.41.38
+     
+
+    -- 
+    Because experiencing your loyal love is better than life itself,
+    my lips will praise you.  (Psalm 63:3)
+
+Show trimmed content
+	Anthony 	
+14/05/2014
+Re: [web2py] Re: ipython notebook and web2py
+Other recipients:
+Looks like our posts crossed. Glad you got it figured out. Anthony
+Looks like our posts crossed. Glad you got it figured out.
+
+Anthony
+
+
+On Tuesday, May 13, 2014 10:49:09 AM UTC-4, Johann Spies wrote:
+
+    Anthony, you are very sharp. 
+
+    Looking at the traceback I saw that it used files in /us/lib/pymodules/python2.7/ gluon of which I do not know the origin.
+
+    I deleted that directory and the problem was solved.
+
+    Thanks a lot.
+
+    Regards
+    Johann
+
+
+    On 13 May 2014 16:27, Johann Spies < johann...@gmail.com > wrote:
+
+
+
+
+
+        Is it possible you are running an old version of web2py that doesn't support those arguments. Based on the restricted.py line number shown in the traceback, it looks like you're on web2py 1.99 or earlier.
+
+        Version 2.9.5-trunk+timestamp.2014.05. 09.15.41.38
+         
+
+        -- 
+        Because experiencing your loyal love is better than life itself,
+        my lips will praise you.  (Psalm 63:3)
+
+
+
+
+    -- 
+    Because experiencing your loyal love is better than life itself,
+    my lips will praise you.  (Psalm 63:3)
+
+Show trimmed content
+	peter 	
+22/05/2014
+Other recipients:
+c:/users/your_name/.ipython/profile_default/startup Peter
+
+    Many thanks for your talk Anthony. It was really very useful for me. Particularly with the addition of these files. Working inside ipython notebook will be a real asset. By the way for windows users the magic python file should go in
+
+
+c:/users/your_name/.ipython/ profile_default/startup
+
+Peter
+Show trimmed content
+	pepper_bg 	
+09/01/2016
+Other recipients:
+Sorry to resurrect an older thread, do let me know if I should create a new one. I had this perfectly working as described in this thread. Then I upgraded to Jupyter and things fell apart. The thing just doesn't have profiles, startup folders,
+Sorry to resurrect an older thread, do let me know if I should create a new one. I had this perfectly working as described in this thread. Then I upgraded to Jupyter and things fell apart. The thing just doesn't have profiles, startup folders, none of the way iPython Notebook used to set things up. Has anybody figured how to make the %w2p magic work with Jupyter?
+Show trimmed content
+	Ron Chatterjee 	
+09/01/2016
+Other recipients:
+This is great Anthony. For documenting code and standalone application. Nice!
+This is great Anthony. For documenting code and standalone application. Nice!
+
+
+On Friday, January 8, 2016 at 1:56:26 PM UTC-5, pepper_bg wrote:
+
+    Sorry to resurrect an older thread, do let me know if I should create a new one. I had this perfectly working as described in this thread. Then I upgraded to Jupyter and things fell apart. The thing just doesn't have profiles, startup folders, none of the way iPython Notebook used to set things up. Has anybody figured how to make the %w2p magic work with Jupyter?
+
+Show trimmed content
+	Wen 	
+09/01/2016
+Other recipients:
+This integration is very useful, Thank you Anthony!
+This integration is very useful, Thank you Anthony!
+- show quoted text -
+
+
+On Friday, January 8, 2016 at 3:49:33 PM UTC-5, Ron Chatterjee wrote:
+
+    This is great Anthony. For documenting code and standalone application. Nice!
+
+    On Friday, January 8, 2016 at 1:56:26 PM UTC-5, pepper_bg wrote:
+
+        Sorry to resurrect an older thread, do let me know if I should create a new one. I had this perfectly working as described in this thread. Then I upgraded to Jupyter and things fell apart. The thing just doesn't have profiles, startup folders, none of the way iPython Notebook used to set things up. Has anybody figured how to make the %w2p magic work with Jupyter?
+
+Show trimmed content
+	Manuele 	
+11/01/2016
+Other recipients:
+Il 12/05/14 22:59, Johann Spies ha scritto:
+Il 12/05/14 22:59, Johann Spies ha scritto:
+> Anthony I have been thinking of writing to you to ask about how you
+> got to know the inner workings of Web2py and you have answered about
+> everything in your talk at the conference - of which I saw the video
+> today.
+Hi Johann,
+can you paste the url to the video you are talking about please?
+Thanks a lot
+
+    M.
+Show trimmed content
+	Anthony 	
+11/01/2016
+Other recipients:
+See https://groups.google.com/d/msg/web2py/Q-vP6mWM5LM/fp1s31E6R-kJ
+- show quoted text -
+On Monday, January 11, 2016 at 3:04:38 AM UTC-5, Manuele wrote:
+
+    Il 12/05/14 22:59, Johann Spies ha scritto:
+    > Anthony I have been thinking of writing to you to ask about how you
+    > got to know the inner workings of Web2py and you have answered about
+    > everything in your talk at the conference - of which I saw the video
+    > today.
+    Hi Johann,
+    can you paste the url to the video you are talking about please?
+
+
+See https://groups.google.com/d/ msg/web2py/Q-vP6mWM5LM/ fp1s31E6R-kJ
+
+Show trimmed content
+Previous Previous  
+Page 1
+  Next Next
+	Ignore
+Refresh

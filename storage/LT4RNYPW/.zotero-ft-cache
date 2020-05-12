@@ -1,0 +1,121 @@
+
+2
+Aubrey Moore
+Towards Data Science
+
+    Data Science
+    Machine Learning
+    Programming
+    Visualization
+    AI
+    Video
+    About
+    Contribute
+
+Anyone can publish on Medium per our Policies , but we don’t fact-check every story. For more info about the coronavirus, see cdc.gov .
+COVID-19 Open Source Dashboard
+As data scientists, we must do our best to approach the current COVID-19 pandemic from a data perspective. Therefore, I have created a dashboard using open source tools to track and visualize the spread of COVID-19.
+Christoph Schönenberger
+Christoph Schönenberger
+Follow
+Mar 20 · 6 min read
+
+The COVID-19 pandemic has been an unavoidable topic for several weeks now. Media is flooding us with breaking news on newly infected celebrities, exponential growth of cases and deaths in several countries. People on social media cannot talk about anything else these days and videos of toilet paper hoarders go viral.
+
+Companies did not miss this trend. In the past few days, my Twitter and LinkedIn feeds have been cluttered with companies showing how great their technology is and how selfless they use it to support government agencies, health care facilities and the like. Do not get me wrong, I think it is awesome that companies are willing to help; kudos to every company that offers assistance to any public institution that needs help in this current crisis! However, if each of these contributions has to be fully exploited in terms of marketing, they leave a stale taste in their wake.
+
+Additionally, the most popular dashboard uses a black and red coloring schema that encourages fearmongering, just like various news pages with their shocking headlines. Visualizations do matter, and as data scientists, we should be well aware of this as outlined in this article . I knew that it is possible to create a less alarmist dashboard that is on-par with most popular COVID-19 dashboards using open source technology such as R Shiny or Python Dash , all in a couple of hours. And that’s exactly what I did! You can find the R Shiny dashboard I created here .
+Data
+
+The data that was used for all visualizations was provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) who shared their data on a public Github page . The Johns Hopkins CSSE aggregates data from primary sources, such as the World Health Organisation, national, and regional public health institutions. This data is made freely available and is updated every day.
+
+The population data used in the dashboard is sourced from the World Bank Open Data . The data only needed some minor tinkering to fit the Johns Hopkins CSSE COVID-19 data. The population for “countries” which were not available in the dataset (mostly insular entities) was added manually with data from Wikipedia . The World Bank has a large data repository covering various topics, from gender statistics to investment flows. This repository is highly accessible, either by using their API directly or one of the various third-party APIs which are available in most common programming languages. This provides us the opportunity to integrate various interesting data sets in the dashboard that are currently not included in the “mainstream” options. You can find more information for developers here .
+The COVID-19 Dashboard — Open Source Edition
+
+The dashboard is segmented into several sections that can be selected on the top left of the browser window.
+
+The Overview section of the dashboard shows the most important key figures and visualizations of the COVID-19 pandemic, such as the world map and a list of countries with their respective number of confirmed, recovered, deceased and active cases. A time-lapse feature with a simple slider is included to get an idea about the development of the pandemic.
+COVID-19 Dashboard — Overview Section
+
+The Plots section contains plots visualizing several interesting aspects of the COVID-19 pandemic progression. This additional information includes issues, such as the global evolution of cases; new cases; as well as two plots which allow for comparisons between different countries. The user has the ability to manually select the countries she or he is interested in. Most of the plots have checkboxes with which the y-axis can be switched to a logarithmic scale and the country-specific plots can be normalized by population. By default, the five countries with the most confirmed cases are selected in the country-specific plots.
+COVID-19 Dashboard — Plots Section (marked in red: Country selection)
+
+The dashboard is rounded off with the “About” section which describes the motivation, data sources, and additional information on development and contribution.
+Considerations
+
+Please not that this data cannot be taken for granted. There is a lot of uncertainty concerning the COVID-19 case numbers. I refrained from calculating mortality rates and similar figures as they are relatively obscure as stated by several sources[1][2]. The testing regime of countries varies greatly and therefore a direct comparison between countries might be difficult.
+Technology
+
+The dashboard is developed using R shiny , which lets you build and host interactive web apps using only R code. For the IDE, I use the IntelliJ Community Edition for which there is an R plugin that lets you code R as effectively as in the most popular R IDE; R Studio. Additional libraries I used were:
+
+    Shinydashboard : Provides many pre-configured dashboard elements that can be integrated relatively easily.
+    Tidyverse : A collection of R packages designed for data wrangling and processing which all share an underlying design philosophy, grammar, and data structure.
+    Leaflet : A wrapper library around the most popular open source JavaScript library for interactive maps.
+    Plotly : A plotting library which allows you to create interactive plots in many colours and shapes.
+    WBstats : A package which allows you to access and download data from the World Bank with only one line of code.
+
+The dashboard is currently hosted on shinyapps.io , which has a free-use plan that allows you access to some limited resources on the shinyapps.io cloud. As the resources are strictly limited, I need to assess if a change to another server/cloud provider makes sense. Nevertheless, shinyapps.io is a nice quick-and-dirty approach to publishing your R apps.
+Why Open Source?
+
+So why was it important to create an open source version of a dashboard?
+
+    Open source is free and available for everyone.
+    If you create something open source and show your code to other people bugs will sooner be found and fixed.
+    Use swarm intelligence to improve your product or get other ideas how to solve certain issues.
+    Get feedback quickly and from various sides so you can improve your skills and learn new things.
+
+Tom Preston-Werner, the founder of Github, wrote a great article about why we should open source (almost) everything about ten years ago and his points still hold today!
+Contribute
+
+The idea of this project was to create an open source dashboard which uses free tools. I hope this dashboard helps provide more insights to the global pandemic. If you have any ideas on how to improve the dashboard, or for new plots or anything in this direction, please do contribute . You can find all the code on Github . If you have questions, need help or anything the like, please drop me a note. I am happy to help!
+
+You can find the dashboard here and the code here .
+
+Note from the editors: Towards Data Science is a Medium publication primarily based on the study of data science and machine learning. We are not health professionals or epidemiologists, and the opinions of this article should not be interpreted as professional advice. To learn more about the coronavirus pandemic, you can click here .
+Sources
+
+    https://www.medicalnewstoday.com/articles/why-are-covid-19-death-rates-so-hard-to-calculate-experts-weigh-in
+    https://time.com/5798168/coronavirus-mortality-rate/
+
+Data
+
+    Johns Hopkins CSSE COVID-19 Cases
+    Population data from World Bank
+
+Thanks to Nadja, Ivor and Tomas for the proof-read!
+Christoph Schönenberger - Data Scientist - Zühlke Group | LinkedIn
+In my childhood it was Lego bricks which I carefully sorted, structured and assembled into something new. Today the…
+www.linkedin.com
+Towards Data Science
+A Medium publication sharing concepts, ideas, and codes.
+Follow
+14
+Thanks to Nadja . 
+
+    Data Science
+    Data Visualization
+    Covid 19
+    Open Source
+    R
+
+14 claps
+Christoph Schönenberger
+
+Written by
+Christoph Schönenberger
+Follow
+I’m a trained GIScientist, working as a data scientist in various projects at Zühlke Engineering in Zurich, Switzerland.
+Follow
+Towards Data Science
+Towards Data Science
+Follow
+A Medium publication sharing concepts, ideas, and codes.
+Follow
+Write the first response
+Discover Medium
+Welcome to a place where words matter. On Medium , smart voices and original ideas take center stage - with no ads in sight. Watch
+Make Medium yours
+Follow all the topics you care about, and we’ll deliver the best stories for you to your homepage and inbox. Explore
+Explore your membership
+Thank you for being a member of Medium . You get unlimited access to insightful stories from amazing thinkers and storytellers. Browse
+About Help Legal

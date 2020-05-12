@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0.2" name="wpd_version">
+<meta content="https://aubreymoore.github.io/blog/" name="wpd_baseurl">
+<meta content="https://aubreymoore.github.io/blog/" name="wpd_url">
+<meta content="2017-06-24T18:21Z" name="wpd_date">
+
+<meta charset="utf-8">
+<meta name="description" content="All things techie.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aubrey Moore</title>
+
+
+
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://aubreymoore.github.io/blog/rss.xml">
+<link rel="canonical" href="https://aubreymoore.github.io/blog/">
+<link rel="next" href="https://aubreymoore.github.io/blog/index-1.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
+<link rel="prefetch" href="https://aubreymoore.github.io/blog/posts/migrate-a-mysql-database-to-postgreql/" type="text/html">
+
+<link media="all" href="blog.css" type="text/css" rel="stylesheet">
+</head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://aubreymoore.github.io/blog/">
+
+                <span id="blog-title">Aubrey Moore</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="https://aubreymoore.github.io/blog/archive.html">Archive</a>
+                </li>
+<li>
+<a href="https://aubreymoore.github.io/blog/categories/">Tags</a>
+                </li>
+<li>
+<a href="https://aubreymoore.github.io/blog/rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<span class="navbar-form navbar-left">
+<input id="tipue_search_input" class="form-control" placeholder="Search" type="text"></span>
+
+            <ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/migrate-a-mysql-database-to-postgreql/" class="u-url">Migrate a MySQL database to postgreql</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/migrate-a-mysql-database-to-postgreql/" rel="bookmark"><time class="published dt-published" datetime="2017-06-11T20:16:24+10:00" title="2017-06-11 20:16">2017-06-11 20:16</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Ran into some problems using <strong>MySQL</strong> on <strong>Dreamhost</strong> as the online database manager for my <strong>web2py PestList app</strong>.  Decided to upgrade the database to postgresql. <strong>DreamHost</strong> doesn't support pg, so I had to revert to running pg on localhost.  After several attempts to convert the <strong>MySQL</strong> tables to <strong>pg</strong>, I came across <strong>pgloader</strong>, which did the trick.  I simply created an empty <strong>pg</strong> database and ran the following command.</p>
+<pre class="code literal-block"><span></span>$ pgloader mysql://user:pass@mysql.guaminsects.net/pestlist postgresql://user:pass/localhost/import_test
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/web2py-to-static/" class="u-url">Converting a web2py web site to a static web site</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/web2py-to-static/" rel="bookmark"><time class="published dt-published" datetime="2017-05-28T09:33:46+10:00" title="2017-05-28 09:33">2017-05-28 09:33</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>I am building a web site using the web2py framework.  The site uses data stored
+in MySQL database to build an index page of crops. For each crop, there is a
+link to a page which is built to display all pests attacking the crop.</p>
+<p>I would like to host
+a copy of this as a static site in GitHub pages.  Creating the static site was
+surprisingly easy:</p>
+<ol>
+<li>Run the web2py site in a local test browser.</li>
+<li>In an empty folder, use <strong>wget</strong> to save local a local copy of every page generated by the site:</li>
+</ol>
+<pre class="code literal-block"><span></span>wget --recursive --no-clobber --page-requisites \
+ --adjust-extension --convert-links \
+ --restrict-file-names=windows \
+ --no-parent \
+  http://127.0.0.1:8000/pestlist/default/crop_index
+</pre>
+
+
+<ol>
+<li>On the <strong>crop_index.html</strong> page, change links to the <strong>pest_index.html</strong> pages. Easily done using <strong>relace all</strong> in <strong>atom</strong> or some other
+editor.</li>
+<li>Upload all files to a GitHub repo and enable GitHub pages for the repo.</li>
+<li>Create an index.html page in the top level folder of the repo which links to <strong>crop_index.html</strong>.</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" class="u-url">Calculate geographical coordinates for equidistant points at vertices of a triangular grid</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" rel="bookmark"><time class="published dt-published" datetime="2017-05-28T09:33:46+10:00" title="2017-05-28 09:33">2017-05-28 09:33</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>I needed to set up a grid of equally spaced insect pheromone traps. While it is
+convenient to put traps at the vertices of a rectangular grid, this is not
+optimal because nearest neighbors on the diagonals are further away than those
+within rows or columns (If the spacing within rows and columns is X, then the
+diagonal spacing is sqrt(2)*X).  For equidistant spacing, points are placed
+at vertices of a grid made with equilateral triangles. This python script
+calculates such a grid of points and returns the data as a KML file containing
+latitude/longitude coordinates in decimal degrees.</p>
+<script src="7f3688e88556e08a8069623ecf48b68f.js"></script><div id="gist48115701" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-triangular_grid-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-triangular_grid-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-triangular_grid-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>!/usr/bin/python3</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-triangular_grid-py-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-triangular_grid-py-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> pyproj</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-triangular_grid-py-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> simplekml</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-triangular_grid-py-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s"><span class="pl-pds">'''</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-triangular_grid-py-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s">Generates a KML file with equally spaced points at vertices of a triangular grid. The epsg argument is the code for the UTM </span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-triangular_grid-py-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s">projection which converts lat/lon to meters. The epsg default value, EPSG:32655 is for Guam (zone 55n).</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-triangular_grid-py-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s"></span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-triangular_grid-py-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s">Example: This command line places points equally spaced at 10 m on the lawn in front of the Canadian Parliament Building:</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-triangular_grid-py-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s">$ python -c 'from triangular_grid import *; <span class="pl-c1">\</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-triangular_grid-py-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s">generate_equidistant_points(epsg="EPSG:32618", ll_longitude=-75.698873, ll_latitude=45.424078, meters_between_points=10)'</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-triangular_grid-py-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s"><span class="pl-pds">'''</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-triangular_grid-py-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">generate_equidistant_points</span>(<span class="pl-smi">epsg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>EPSG:32655<span class="pl-pds">'</span></span>, <span class="pl-smi">meters_between_points</span><span class="pl-k">=</span><span class="pl-c1">100.0</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-triangular_grid-py-LC14" class="blob-code blob-code-inner js-file-line">    <span class="pl-smi">ll_longitude</span><span class="pl-k">=</span><span class="pl-c1">144.71318</span>, <span class="pl-smi">ll_latitude</span><span class="pl-k">=</span><span class="pl-c1">13.26232</span>, <span class="pl-smi">ncols</span><span class="pl-k">=</span><span class="pl-c1">5</span>, <span class="pl-smi">nrows</span><span class="pl-k">=</span><span class="pl-c1">5</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-triangular_grid-py-LC15" class="blob-code blob-code-inner js-file-line">    <span class="pl-smi">kml_file</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>points.kml<span class="pl-pds">'</span></span>):</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-triangular_grid-py-LC16" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-triangular_grid-py-LC17" class="blob-code blob-code-inner js-file-line">    wgs84<span class="pl-k">=</span>pyproj.Proj(<span class="pl-v">init</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>EPSG:4326<span class="pl-pds">'</span></span>) <span class="pl-c"><span class="pl-c">#</span> LatLon with WGS84 datum used by GPS units and Google Earth</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-triangular_grid-py-LC18" class="blob-code blob-code-inner js-file-line">    utm<span class="pl-k">=</span>pyproj.Proj(<span class="pl-v">init</span><span class="pl-k">=</span>epsg) <span class="pl-c"><span class="pl-c">#</span> UTM coords (Cartesian coordinates in meters)</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-triangular_grid-py-LC19" class="blob-code blob-code-inner js-file-line">    hdist <span class="pl-k">=</span> meters_between_points <span class="pl-c"><span class="pl-c">#</span> horizontal distance between points</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-triangular_grid-py-LC20" class="blob-code blob-code-inner js-file-line">    vdist <span class="pl-k">=</span> meters_between_points <span class="pl-k">*</span> (<span class="pl-c1">0.75</span><span class="pl-k">**</span><span class="pl-c1">0.5</span>) <span class="pl-c"><span class="pl-c">#</span> vertical distance between points</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-triangular_grid-py-LC21" class="blob-code blob-code-inner js-file-line">    x0, y0 <span class="pl-k">=</span> pyproj.transform(wgs84, utm, ll_longitude, ll_latitude) <span class="pl-c"><span class="pl-c">#</span> convert lon lat to Cartesian coordinates in meters (UTM)</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-triangular_grid-py-LC22" class="blob-code blob-code-inner js-file-line">    x <span class="pl-k">=</span> x0; y <span class="pl-k">=</span> y0; i <span class="pl-k">=</span> <span class="pl-c1">0</span>;  kml <span class="pl-k">=</span> simplekml.Kml()</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-triangular_grid-py-LC23" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">for</span> row <span class="pl-k">in</span> <span class="pl-c1">range</span>(nrows):</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-triangular_grid-py-LC24" class="blob-code blob-code-inner js-file-line">        y <span class="pl-k">=</span> y0 <span class="pl-k">+</span> row <span class="pl-k">*</span> vdist</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-triangular_grid-py-LC25" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span> col <span class="pl-k">in</span> <span class="pl-c1">range</span>(ncols):</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-triangular_grid-py-LC26" class="blob-code blob-code-inner js-file-line">            x <span class="pl-k">=</span> x0 <span class="pl-k">+</span> col <span class="pl-k">*</span> hdist</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-triangular_grid-py-LC27" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">if</span> row <span class="pl-k">%</span> <span class="pl-c1">2</span> <span class="pl-k">!=</span> <span class="pl-c1">0</span>: <span class="pl-c"><span class="pl-c">#</span> Odd numbered rows are offset by dist/2</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-triangular_grid-py-LC28" class="blob-code blob-code-inner js-file-line">                x <span class="pl-k">=</span> x <span class="pl-k">+</span> hdist <span class="pl-k">/</span> <span class="pl-c1">2</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-triangular_grid-py-LC29" class="blob-code blob-code-inner js-file-line">            lon, lat <span class="pl-k">=</span> pyproj.transform(utm, wgs84, x, y) <span class="pl-c"><span class="pl-c">#</span> convert UTM back to lon lat</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-triangular_grid-py-LC30" class="blob-code blob-code-inner js-file-line">            i <span class="pl-k">=</span> i <span class="pl-k">+</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-triangular_grid-py-LC31" class="blob-code blob-code-inner js-file-line">            kml.newpoint(<span class="pl-v">name</span><span class="pl-k">=</span><span class="pl-c1">str</span>(i), <span class="pl-v">coords</span><span class="pl-k">=</span>[(lon, lat)])</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-triangular_grid-py-LC32" class="blob-code blob-code-inner js-file-line">    kml.save(kml_file)</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-triangular_grid-py-LC33" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/aubreymoore/7f3688e88556e08a8069623ecf48b68f/raw/c0af0bb1ce652bdefe244d113ebf38a6b90ba4b4/triangular_grid.py" style="float: right;">view raw</a>
+        <a href="https://gist.github.com/aubreymoore/7f3688e88556e08a8069623ecf48b68f#file-triangular_grid-py">triangular_grid.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p>The KML file may be displayed using Google Earth.</p>
+<p><img alt="example output" src="points.jpg"></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/" class="u-url">Using Scrapy to Extract Scientific Names from PestNet Fact Sheets</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/" rel="bookmark"><time class="published dt-published" datetime="2017-05-18T13:00:26+10:00" title="2017-05-18 13:00">2017-05-18 13:00</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>PestNet serves a couple of hundred excellent pest fact sheets on its site at http://www.pestnet.org/fact_sheets/index.htm. Unfortunately, these are indexed only by vernacular names. I want to hyperlink to sheets using scientific names.  So I wrote a  <a href="https://scrapy.org/">scrapy</a> script to crawl the site and scrape the section from each page which contains scientific names.  </p>
+<pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">scrapy.spiders</span> <span class="kn">import</span> <span class="n">CrawlSpider</span><span class="p">,</span> <span class="n">Rule</span>
+<span class="kn">from</span> <span class="nn">scrapy.contrib.linkextractors</span> <span class="kn">import</span> <span class="n">LinkExtractor</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">class</span> <span class="nc">someSpider</span><span class="p">(</span><span class="n">CrawlSpider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">'crawltest'</span>
+    <span class="n">allowed_domains</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'www.pestnet.org'</span><span class="p">]</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'http://www.pestnet.org/fact_sheets/index.htm'</span><span class="p">]</span>
+    <span class="n">rules</span> <span class="o">=</span> <span class="p">(</span> <span class="n">Rule</span><span class="p">(</span><span class="n">LinkExtractor</span><span class="p">(</span><span class="n">allow</span><span class="o">=</span><span class="p">()),</span> <span class="n">follow</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="s1">'parse_item'</span><span class="p">),</span> <span class="p">)</span>
+
+
+    <span class="c1"># Let's capture scientific names</span>
+    <span class="k">def</span> <span class="nf">parse_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="n">log</span> <span class="o">=</span> <span class="s1">'scientific_names_log.md'</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+        <span class="n">searchObj</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="s1">r'&lt;a name="Scientific Name"(.*?)&lt;a name='</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="o">|</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">searchObj</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">searchObj</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="s2">"Nothing found!!"</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'{} {}</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
+        <span class="k">return</span>
+</pre>
+
+
+<p>The script was invoked from the terminal using:</p>
+<pre class="code literal-block"><span></span>scrapy runspider scrapePP.py -s <span class="nv">DEPTH_LIMIT</span><span class="o">=</span>1
+</pre>
+
+
+<p>Here are the first few lines from <strong>scientific_names_log.md</strong>:</p>
+<pre class="code literal-block"><span></span>http://www.pestnet.org/fact_sheets/mini/index.htm Nothing found!!
+http://www.pestnet.org/fact_sheets/batiki_blue_grass_eye_spot_207.htm &gt;<span class="nt">&lt;/a&gt;&lt;h1</span> <span class="na">class=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"False"</span><span class="nt">&gt;</span>Scientific Name<span class="nt">&lt;/h1&gt;&lt;P&gt;&lt;EM&gt;</span>Curvularia ischaemi<span class="nt">&lt;/EM&gt;&lt;/P&gt;</span>
+http://www.pestnet.org/fact_sheets/bean_pod_borer_037.htm &gt;<span class="nt">&lt;/a&gt;&lt;h1</span> <span class="na">class=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"False"</span><span class="nt">&gt;</span>Scientific Name<span class="nt">&lt;/h1&gt;&lt;P&gt;&lt;EM&gt;</span>Maruca<span class="nt">&lt;/EM&gt;</span> <span class="nt">&lt;EM&gt;</span>vitrata<span class="nt">&lt;/EM&gt;</span>; it used to be known as <span class="nt">&lt;EM&gt;</span>Maruca testulalis.<span class="nt">&lt;/EM&gt;&lt;/P&gt;</span>
+http://www.pestnet.org/fact_sheets/bean_lace_bug_253.htm &gt;<span class="nt">&lt;/a&gt;&lt;h1</span> <span class="na">class=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"False"</span><span class="nt">&gt;</span>Scientific Name<span class="nt">&lt;/h1&gt;&lt;P&gt;&lt;EM&gt;&lt;/EM&gt;</span><span class="ni">&amp;nbsp;</span><span class="nt">&lt;EM&gt;</span>Corythucha gossypii<span class="nt">&lt;/EM&gt;&lt;/P&gt;</span>
+http://www.pestnet.org/fact_sheets/bean_phaseolus_rust_217.htm &gt;<span class="nt">&lt;/a&gt;&lt;h1</span> <span class="na">class=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"False"</span><span class="nt">&gt;</span>Scientific Name<span class="nt">&lt;/h1&gt;&lt;P&gt;&lt;EM&gt;</span>Uromyces appendiculatus<span class="nt">&lt;/EM&gt;</span> \r\nvar. <span class="nt">&lt;EM&gt;</span>appendiculatus.<span class="nt">&lt;/EM&gt;</span> Previously <span class="nt">&lt;EM&gt;</span>Uromyces \r\nphaseoli.<span class="nt">&lt;/EM&gt;</span> <span class="nt">&lt;/P&gt;</span>
+</pre>
+
+
+<p>As you can see, there was still some work to be done to clean this up. I used the <a href="https://atom.io/">atom</a>  editor to delete the extraneous bits and saved urls and scientific names to 
+<a href="https://aubreymoore.github.io/blog/pacific_pests_insects.csv">pacific_pests_insects.csv</a>. Note that this file contains info only on arthropod pests.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/finding-lost-parents/" class="u-url">Finding Lost Parents</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/finding-lost-parents/" rel="bookmark"><time class="published dt-published" datetime="2017-05-01T13:01:11+10:00" title="2017-05-01 13:01">2017-05-01 13:01</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Finding-Missing-Parents-in-a-Child-Parent-Self-Referencing-Table">Finding Missing Parents in a Child-Parent Self-Referencing Table<a class="anchor-link" href="https://aubreymoore.github.io/blog/posts/finding-lost-parents/#Finding-Missing-Parents-in-a-Child-Parent-Self-Referencing-Table">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">getpass</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Pattern:-Find-items-in-one-list-which-does-not-occur-in-a-second-list">Pattern: Find items in one list which does not occur in a second list<a class="anchor-link" href="https://aubreymoore.github.io/blog/posts/finding-lost-parents/#Pattern:-Find-items-in-one-list-which-does-not-occur-in-a-second-list">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># To find parent_tids which do not have corresponding tids,</span>
+<span class="c1"># convert lists to sets and calculate the difference.</span>
+
+<span class="n">tid</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">,</span> <span class="s2">"e"</span><span class="p">]</span>
+<span class="n">parent_tid</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"f"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"m"</span><span class="p">]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">parent_tid</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">tid</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['m', 'f']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Repeat-using-data-from-database">Repeat using data from database<a class="anchor-link" href="https://aubreymoore.github.io/blog/posts/finding-lost-parents/#Repeat-using-data-from-database">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s1">'Database password: '</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Database password: ········
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'mysql+pymysql://aubreymoore:{}@localhost/pestlist'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">rs</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"select tid, parent_tid from taxon2;"</span><span class="p">)</span>
+<span class="n">tid_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">parent_tid_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rs</span><span class="p">:</span>
+    <span class="n">tid_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">tid</span><span class="p">)</span>
+    <span class="n">parent_tid_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">parent_tid</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">tid_list</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['6',
+ '7707728',
+ '196',
+ '1169',
+ '7683',
+ '2766430',
+ '2766636',
+ '220',
+ '407',
+ '6688']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">parent_tid_list</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['#',
+ '6',
+ '7707728',
+ '196',
+ '1169',
+ '7683',
+ '2766430',
+ '7707728',
+ '220',
+ '407']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">missing_parents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">parent_tid_list</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">tid_list</span><span class="p">))</span>
+<span class="n">missing_parents</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['2002379', '#', '1890281']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Results">Results<a class="anchor-link" href="https://aubreymoore.github.io/blog/posts/finding-lost-parents/#Results">¶</a>
+</h3>
+<p>There are two missing parent_tids. Note that '#' is the parent of root nodes, so this is OK.</p>
+<p>A constraint needs to be added to the <strong>taxon2</strong> table to prevent entry of a <strong>parent_tid</strong> which does not match an existing <strong>tid</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/using-the-species-api-to-mine-the-gbif-backbone-taxonomy/" class="u-url">Using the Species API to Mine the GBIF Backbone Taxonomy</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/using-the-species-api-to-mine-the-gbif-backbone-taxonomy/" rel="bookmark"><time class="published dt-published" datetime="2017-04-22T10:34:00+10:00" title="2017-04-22 10:34">2017-04-22 10:34</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<h3>Here's how to get tons of info from GBIF.</h3>
+<p>Check out the <a href="http://www.gbif.org/developer/species">Species API</a>.</p>
+<p>First step is to locate the taxon in the GBIF Backbone Taxonomy. The GBIF Backbone Taxonomy, often called the Nub taxonomy, is a single synthetic management classification with the goal of covering all names GBIF is dealing with.</p>
+<p>You can search GBIF manually by going to <a href="http://www.gbif.org/species">http://www.gbif.org/species</a> and entering a scientific name or common name. The magic number you are looking for is the <strong>GBIF ID</strong>.</p>
+<p>Alternatively, you can use the Species API: <a href="http://api.gbif.org/v1/species/search?q=lawn%20armyworm&amp;rank=SPECIES">http://api.gbif.org/v1/species/search?q=lawn%20armyworm&amp;rank=SPECIES</a>. This will return info encoded as JSON. The magic number in this case is <strong>nubKey</strong>.</p>
+<p>Once we have the GBIF ID, which is 5109848 for <em>Spodoptera mauritia</em>, we can harvest more data:</p>
+<table>
+<thead><tr>
+<th></th>
+<th></th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Name usage:</td>
+<td><a href="http://api.gbif.org/v1/species/5109848">http://api.gbif.org/v1/species/5109848</a></td>
+</tr>
+<tr>
+<td>Synonyms:</td>
+<td><a href="http://api.gbif.org/v1/species/5109848/synonyms">http://api.gbif.org/v1/species/5109848/synonyms</a></td>
+</tr>
+<tr>
+<td>Vernacular names:</td>
+<td><a href="http://api.gbif.org/v1/species/5109848/vernacularNames">http://api.gbif.org/v1/species/5109848/vernacularNames</a></td>
+</tr>
+<tr>
+<td>Media:</td>
+<td><a href="http://api.gbif.org/v1/species/5109848/media">http://api.gbif.org/v1/species/5109848/media</a></td>
+</tr>
+<tr>
+<td>References:</td>
+<td><a href="http://api.gbif/v1/species/5109848/references">http://api.gbif/v1/species/5109848/references</a></td>
+</tr>
+<tr>
+<td>Distributions:</td>
+<td><a href="http://api.gbif.org/v1/species/5109848/distributions">http://api.gbif.org/v1/species/5109848/distributions</a></td>
+</tr>
+<tr>
+<td>Descriptions:</td>
+<td><a href="http://api.gbif.org/v1/species/5109848/descriptions">http://api.gbif.org/v1/species/5109848/descriptions</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/setting-up-an-online-weather-station/" class="u-url">Setting Up an Online Weather Station</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/setting-up-an-online-weather-station/" rel="bookmark"><time class="published dt-published" datetime="2017-04-09T02:43:59+10:00" title="2017-04-09 02:43">2017-04-09 02:43</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Was asked to set up an on-line weather station for the University of Guam's Agricutural Experiment Station at Yigo, Guam. The weather station is a <a href="http://www.davisnet.com/solution/vantage-pro2/">Davis Vantage Pro 2 Plus</a> on a mast mounted on the roof of a 40 foot shipping container. The container is equipped with internet access via a cable modem. Data is fetched from the weather instruments using a Davis Vantage Pro 2 console fitted with an optional data logger.</p>
+<p>Decided to use a <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Raspberry Pi 3</a> to read data from the weather station console via USB. Data is stored using <a href="http://www.weewx.com/">weewx</a> software, which also takes care of sending it to Weather Underground. The RP is connected to the modem by a cable.</p>
+<h3>Step 1: Install weewx on RPi</h3>
+<h3>Step 2: Remove the Fake Clock on the RPi</h3>
+<p>Following the suggestion in
+<a href="https://github.com/weewx/weewx/wiki/Raspberry-Pi">https://github.com/weewx/weewx/wiki/Raspberry-Pi</a>,
+I deleted the fake hardware clock from the RPi:</p>
+<pre class="code literal-block"><span></span>$ sudo apt-get purge fake-hwclock
+</pre>
+
+
+<p>This forces <strong>weewx</strong> to wait until a software clock is set from the internet connection before resuming after a power outage.</p>
+<h3>Step 3: Create a Weather Underground Personal Weather Station and Configure weewx to Feed It</h3>
+<p>Followed these directions:
+<a href="https://publiclab.org/notes/amysoyka/06-20-2014/how-to-set-up-your-weather-station-and-stream-it-to-the-internet">https://publiclab.org/notes/amysoyka/06-20-2014/how-to-set-up-your-weather-station-and-stream-it-to-the-internet</a></p>
+<p>WU assigned <strong>KYIGO4</strong> as the weather station ID.</p>
+<h3>Step 4: Access Weather Station Online</h3>
+<p>The weather station is online at:
+<a href="https://www.wunderground.com/personal-weather-station/dashboard?ID=KYIGO4">https://www.wunderground.com/personal-weather-station/dashboard?ID=KYIGO4</a></p>
+<p>This page automatically updates every few seconds.</p>
+<p><a href="http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KYIGO4"><img src="wxBanner" alt="Weather Underground PWS KYIGO4" width="250" height="150" border="0"></a></p>
+<h3>Notes</h3>
+<p>All outdoor sensors were replaced on April 21, 2017 because the temperature/humidity senor was not working.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/play-pen/" class="u-url">Install web2py in a Conda Virtual Environment</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/play-pen/" rel="bookmark"><time class="published dt-published" datetime="2017-02-21T13:01:06+10:00" title="2017-02-21 13:01">2017-02-21 13:01</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Here's how to get <strong>web2py</strong> installed in a virtual environment using <strong>conda</strong> instead of <strong>virtualenv</strong>.</p>
+<p>Info on <strong>conda environments</strong> is available here: 
+https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/</p>
+<h3>Step 1. Create a directory for our web2py project.</h3>
+<pre class="code literal-block"><span></span><span class="nb">cd</span> Devel
+mkdir playpen
+<span class="nb">cd</span> playpen
+</pre>
+
+
+<h3>Step 2. Create a virtual environment and activate it.</h3>
+<p>Note that <strong>web2py</strong> runs under python 2, not python 3.</p>
+<pre class="code literal-block"><span></span>conda create -n playpen <span class="nv">python</span><span class="o">=</span>2.7
+<span class="nb">source</span> activate playpen
+</pre>
+
+
+<h3>Step 3. Download and install web2py.</h3>
+<pre class="code literal-block"><span></span>wget https://mdipierro.pythonanywhere.com/examples/static/web2py_src.zip
+unzip web2py_src.zip
+rm web2py_src.zip
+</pre>
+
+
+<h3>Step 3. Install pygraphwiz (used to visualize models).</h3>
+<pre class="code literal-block"><span></span>pip install pygraphviz
+</pre>
+
+
+<h3>Step 4 -- Open web2py in a browser</h3>
+<pre class="code literal-block"><span></span><span class="o">(</span>playpen<span class="o">)</span> aubreymoore@aubreymoore-Aspire-7750Z:~/Devel/playpen/web2py$ python web2py.py
+</pre>
+
+
+<h3>Step 5 -- Open web2py in a python shell</h3>
+<pre class="code literal-block"><span></span>(playpen) aubreymoore@aubreymoore-Aspire-7750Z:~/Devel/playpen/web2py$ python web2py.py -S pestlist/default -M
+</pre>
+
+
+<h3>Step 6. At the end of a session, the virtual environment can be deactivated.</h3>
+<pre class="code literal-block"><span></span><span class="nb">source</span> deactivate playpen
+</pre>
+
+
+<h3>Step 7. To undo everything:</h3>
+<pre class="code literal-block"><span></span>conda remove -n playpen --all
+<span class="nb">cd</span> ..
+rm -rf playpen
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/tweeking-nikola-css-to-improve-table-display/" class="u-url">Tweeking Nikola CSS to Improve Table Display</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/tweeking-nikola-css-to-improve-table-display/" rel="bookmark"><time class="published dt-published" datetime="2017-02-20T19:28:56+10:00" title="2017-02-20 19:28">2017-02-20 19:28</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<p>Crappy default styling of tables was fixed by adding this file:</p>
+<p><strong>~nik/mysite/files/assets/css/custom.css</strong> **</p>
+<pre class="code literal-block"><span></span><span class="c">/* Tweeks by Aubrey Moore */</span>
+
+<span class="nt">td</span> <span class="p">{</span>
+    <span class="nb">padding</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">th</span> <span class="p">{</span>
+    <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nb">padding</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span><span class="p">{</span><span class="nb">background-color</span><span class="o">:</span> <span class="m">#f2f2f2</span><span class="p">}</span>
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="https://aubreymoore.github.io/blog/posts/usda-farm-bill-funding-for-coconut-rhinoceros-beetle-projects-in-guam-and-hawaii/" class="u-url">USDA Farm Bill Funding for Coconut Rhinoceros Beetle Projects in Guam and Hawaii</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/usda-farm-bill-funding-for-coconut-rhinoceros-beetle-projects-in-guam-and-hawaii/" rel="bookmark"><time class="published dt-published" datetime="2017-02-20T17:08:40+10:00" title="2017-02-20 17:08">2017-02-20 17:08</time></a></p>
+        </div>
+    </header><div class="e-content entry-content">
+    <div>
+<table>
+<thead><tr>
+<th>Fiscal year<sup>*</sup>
+</th>
+<th align="right">Guam</th>
+<th align="right">Hawaii</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="http://www.aphis.usda.gov/newsroom/2014/04/pdf/fy14_farm_bill_spending_plan.pdf">2014</a></td>
+<td align="right">$180,000</td>
+<td align="right">$2,448,000</td>
+</tr>
+<tr>
+<td><a href="http://www.aphis.usda.gov/plant_health/farmbill-section10007/fy15/FY15-FarmBill10007-PlantPlestandDisease-Spending-Plan.pdf">2015</a></td>
+<td align="right">$179,844</td>
+<td align="right">$2,200,000</td>
+</tr>
+<tr>
+<td><a href="https://www.aphis.usda.gov/plant_health/farmbill-section10007/fy16/Plant-Pest-Disease-FB-Spending-Plan-FY16.pdf">2016</a></td>
+<td align="right">$250,000</td>
+<td align="right">$1,399,384</td>
+</tr>
+<tr>
+<td><a href="https://www.aphis.usda.gov/plant_health/farmbill-section10007/fy17/FY2017-PPDMDPP-Spending-Plan.pdf">2017</a></td>
+<td align="right">$475,000</td>
+<td align="right">$1,225,000</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td align="right"><strong>$1,084,844</strong></td>
+<td align="right"><strong>$7,272,384</strong></td>
+</tr>
+</tbody>
+</table>
+<p><sup>*</sup>Click on fiscal year for details.</p>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="next">
+                <a href="https://aubreymoore.github.io/blog/index-1.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav><script src="MathJax.js" id=""> </script><script type="text/x-mathjax-config;executed=true">
+
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+
+            Contents © 2017         <a href="mailto:aubreymoore@guam.net">Aubrey Moore</a> - Powered by         <a href="https://getnikola.com/" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><!-- Modal --><div id="search-results" class="modal fade" role="dialog" style="height: 80%;">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Search Results:</h4>
+      </div>
+      <div class="modal-body" id="tipue_search_content" style="max-height: 600px; overflow-y: auto;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+
+$(document).ready(function() {
+    $.when(
+        $.getScript( "/assets/js/tipuesearch_set.js" ),
+        $.getScript( "/assets/js/tipuesearch.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json'
+        });
+        $('#tipue_search_input').keyup(function (e) {
+            if (e.keyCode == 13) {
+                $('#search-results').modal()
+            }
+        });
+    });
+});
+</script>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body>
+</html>

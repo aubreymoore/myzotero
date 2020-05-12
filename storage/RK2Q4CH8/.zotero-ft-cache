@@ -1,0 +1,198 @@
+Research in Support of the Guam Coconut Rhinoceros Beetle Eradication Project
+DRAFT: Relative Attractiveness of White and Ultraviolet Light Emitting Diodes Plus Oryctalure
+Prepared by Aubrey Moore University of Guam Cooperative Extension Service January 8, 2014∗
+Abstract to appear here any day now.
+1 Methods
+We measured the attractiveness of white light emitting diodes (LEDs) versus ultraviolet LEDs in a series of A-B selection experiments performed in two large ﬁeld cages at the University of Guam Agricultural Experiment Station at Yigo on the evenings of January 2 through 7, 2014 See ﬁgure 1for the experimental setup. We tested three types of LEDs: a white LED (W) and two ultraviolet LEDs. To human eyes, one type had a blue color (B) and the other had a violet color (V). In each cage, we ran all permutations (WB, WV, BV, BW, VW, VB) in random order on consecutive nights (Table 1). Test beetles came from pheromone traps.
+∗Revised January 9, 2014 C:/Documents and Settings/Administrator/My Documents/LEDcolor/LEDcolor.lyx
+1
+
+Figure 1: Experimental setup. Release site (CRB adults in peat moss) in foreground. Two barrel traps equipped with pans and LEDs in background. A single oryctalure was hung between the barrels. The experiment was performed in two large ﬁeld cages (20’ x 20’ x 10’).
+2
+
+2 Results and Discussion
+Both types of UVLEDs, when used in conjunction with oryctalure, resulted in trap catches signiﬁcantly higher than those obtained with white LEDs.There was no diﬀerence in trap catch obtained using the diﬀerent types of UVLEDs.
+3
+
+Table 1: Raw data.
+
+Day Cage Permutation LeftCount RightCount UntrappedCount
+
+1 1 N VW
+
+9
+
+1
+
+8
+
+2 1S
+
+BW
+
+11
+
+2
+
+5
+
+3 2 N BV
+
+8
+
+12
+
+7
+
+4 2S
+
+VW
+
+13
+
+2
+
+6
+
+5 3 N BW
+
+8
+
+1
+
+4
+
+6 3S
+
+BV
+
+6
+
+7
+
+6
+
+7 4 N WV
+
+1
+
+3
+
+9
+
+8 4S
+
+WV
+
+1
+
+7
+
+12
+
+9 5 N WB
+
+3
+
+13
+
+26
+
+10 5 S
+
+WB
+
+4
+
+22
+
+10
+
+11 6 N VB
+
+7
+
+4
+
+17
+
+12 6 S
+
+VB
+
+2
+
+10
+
+6
+
+4
+
+30
+
+20
+
+ntrapped
+
+10
+
+0
+
+white
+
+LEDcolor
+
+violet
+
+> binom.test(c(white,violet))
+Exact binomial test
+data: c(white, violet) number of successes = 5, number of trials = 37, p-value = 7.428e-06 alternative hypothesis: true probability of success is not equal to 0.5 95 percent confidence interval:
+0.04537199 0.28774780 sample estimates: probability of success
+0.1351351
+
+5
+
+40
+
+ntrapped
+
+20
+
+0
+
+white
+
+blue
+
+LEDcolor
+
+> binom.test(c(white,blue))
+Exact binomial test
+data: c(white, blue) number of successes = 10, number of trials = 64, p-value = 1.996e-08 alternative hypothesis: true probability of success is not equal to 0.5 95 percent confidence interval:
+0.07755733 0.26863424 sample estimates: probability of success
+0.15625
+
+6
+
+20
+
+ntrapped
+
+10
+
+0
+
+violet
+
+blue
+
+LEDcolor
+
+> binom.test(c(violet,blue))
+Exact binomial test
+data: c(violet, blue) number of successes = 28, number of trials = 56, p-value = 1 alternative hypothesis: true probability of success is not equal to 0.5 95 percent confidence interval:
+0.3633554 0.6366446 sample estimates: probability of success
+0.5
+
+7
+

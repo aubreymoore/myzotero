@@ -1,0 +1,96 @@
+
+Homepage
+The Physics arXiv Blog
+Sign in Get started
+Go to the profile of The Physics arXiv Blog
+The Physics arXiv Blog Blocked Unblock Follow Following
+An alternative view of the best new ideas in science. About: http://tinyurl.com/p6ypk56
+Mar 19, 2014
+
+Entomologists Have Never Been Able To Identify Flying Insects Automatically…Until Now
+Cheap laser monitor leads to the first automatic identification of flying insects and to a device that could protect crops and save lives while revolutionising the study of flying insects
+
+If you’ve ever lain in bed listening to the sound of flying insects swooping and wondering if they’re going to a bite, this story is for you.
+
+Identifying flying insects is hard, even for entomologists. So they’ve long hoped for a way to automate the process.
+
+One obvious way is to identify insects from the noise of their beating wings. For example, the wing beat frequency of the female foul water mosquito, culex stigmatosoma, is around 350 hertz whereas the wingbeat frequency of the male western encephalitis mosquito, culex tarsalis , is about 550 hertz.
+
+So in principle it should be easy to tell them apart with little more than a microphone and a computer to analyse the data.
+
+In practice, this turns out to be tremendously difficult. The problem is that sound intensity drops by an inverse square law. So the noise from a mosquito three times as far away, is nine times less intense.
+
+Increasing the sensitivity of the microphone doesn’t work because it also magnifies any background noise and this increases the difficulty of identification.
+
+The result is that entomologists have surprisingly little data on the wing beat frequency of their subjects. And that has hampered any automated recognition techniques since these require training data sets much larger than the few hundred recordings that acoustic microphones have generated.
+
+The bottom line is that automated insect identification has never been possible.
+
+Now all that is set to change. Today, Yanping Chen at the University of California, Riverside and a few pals say they’ve developed a sensor capable of accurately recording insect wing beat frequency at distances of several metres.
+
+As a result, they’ve created a huge database of recordings that they have used to train a computer to automatically recognise insects. “These sensors have allowed us to record on the order of millions of labeled training instances, far more data than all previous efforts combined,” they say
+
+The new technique should revolutionise the way entomologists study insects in the wild and lead to a new generation of techniques and devices that can more accurately control insect populations without widespread use of insecticides.
+
+The new technique avoids acoustic microphones completely. Instead, Chen and co record the wing beat frequency using a laser beam shining onto an array of phototransistors.
+
+When an insect flies through the beam, its wings cast a shadow onto the light sensitive array, causing fluctuations that change in time with the wing beat. Chen and co encode these fluctuations in an ordinary mp3 sound file producing a “sound recording” of the flight.
+
+By placing the device inside cages in which they reared specific types of insect, they recorded millions of instances of wing beats for use as a training data set.
+
+But wing beat frequency alone is not enough for accurate identification. There are 3500 known species of mosquito and these all have a wing beat frequency of between 100 and 1000 hertz. That means at least 2600 of them must share the same frequency (if each has a integer frequency).
+
+But the recordings reveal other properties of wing beats, such as harmonics, that can help to distinguish between them, just as humans can easily distinguish between a piano and a saxophone even though they both play the same note, a Middle C, for example.
+
+For the identification process, Chen and co use a relatively simple algorithm known as a Bayesian classifier. This allows them to add in other data too, such as the insect’s circadian rhythms that make them more likely to be detected at certain times of the day.
+
+“The ability to allow the incorporation of auxiliary features is one of the reasons we argue that the Bayesian classifier is ideal for this task, as it can gracefully incorporate evidence from multiple sources and in multiple formats,” they say.
+
+The results are a big improvement on anything that has been possible before. “We demonstrate our findings with large scale experiments that dwarf all previous works combined,” they say.
+
+The team took recordings of six species of flying insect— Culex tarsalis , the western encephalitis mosquito; Culex stigmatosoma , the foul water mosquito; Aedes aegypti , the yellow fever mosquito; Culex quinquefasciatus , the southern mosquito; Musca domestica , the common housefly; and Drosophila simulans , a type of fruit fly.
+
+They then showed how their technique could distinguish between insects in various combinations. With ten species, the accuracy is greater than 79 per cent and with five species it is better than 96 per cent. That’s something that has not been possible until now.
+
+That opens the door to all kinds of possibilities.
+
+The simplicity of the device means it could easily be incorporated into commercial insect zappers that electrocute flying creatures. These are indiscriminate killers. But studies have shown that fewer than one per cent of the insects killed by mosquito zappers are actually mosquitoes.
+
+This kind of identification system could easily improve the accuracy of these systems by spotting mosquitoes and switching on the device only when they approach.
+
+And the device could also be used to identify male insects that have been sterilised for population control. The plan is to create insect hatcheries from which only sterile males can escape. “The idea is to use a high powered laser that selectively turns on and off to allow males to pass through, but kills the females,” say Chen and co.
+
+That could have a big impact on human health where mosquitoes and other flying insects kill millions of people each year. It could also help in agriculture where insects threaten billions of dollars worth of crops.
+
+And then there is entomology itself. Entomologists general study the way insects are attracted to colours odours and so on, by watching insect behaviour. That’s obviously a time-consuming business in which the bottleneck for data gathering is the human observer. So automated insect identification will revolutionise these kinds of experiments.
+
+What’s more, Chen and co say they are willing to help to encourage the adoption of their ideas and techniques.. “Within the limits of our budget, we will continue our practice of giving a complete system to any research entomologist who requests one,” they say.
+
+So get your orders in early!
+
+Ref: arxiv.org/abs/1403.2654  : Flying Insect Classification with Inexpensive Sensors
+
+Follow the Physics arXiv Blog by hitting the Follow button below, on Twitter at @arxivblog and now also on Facebook
+
+One clap, two clap, three clap, forty?
+
+By clapping more or less, you can signal to us which stories really stand out.
+2
+1
+Blocked Unblock Follow Following
+Go to the profile of The Physics arXiv Blog
+The Physics arXiv Blog
+
+An alternative view of the best new ideas in science. About: http://tinyurl.com/p6ypk56
+Follow
+The Physics arXiv Blog
+The Physics arXiv Blog
+
+An alternative view of the best new ideas in science. About: http://tinyurl.com/p6ypk56
+
+    2
+
+The Physics arXiv Blog
+Never miss a story from The Physics arXiv Blog , when you sign up for Medium. Learn more
+Never miss a story from The Physics arXiv Blog
+Get updates Get updates

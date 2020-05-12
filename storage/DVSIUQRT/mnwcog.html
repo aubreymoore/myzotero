@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="https://coderwall.com/p/mnwcog">
+<meta name="wpd_url" content="https://coderwall.com/p/mnwcog">
+<meta name="wpd_date" content="2014-02-08T23:08Z">
+
+<link href="favicon-7e6bed591eb101ee51bd9c308b42d17b.png" rel="shortcut icon" type="image/x-icon">
+
+
+  <script src="50775e2d30a1d50002000221.js" async="" type="text/javascript"></script><script src="mixpanel-2.2.min.js" async="" type="text/javascript"></script><script src="ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-797907-8']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+
+    <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+        typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+mixpanel.init('3698c19fe4d7e94568a3b7de32667644', {
+  'track_pageview':true,
+  'debug': false,
+  'verbose': false
+});
+</script><!-- end Mixpanel -->
+
+
+<title>Raine : Create new github repo from command line</title>
+<link href="https://coderwall.com/p/mnwcog" rel="canonical">
+<meta content="A protip by raineorshine about github, shell, git, and curl." name="description" property="og:description">
+<meta content="https://secure.gravatar.com/avatar/03b704efdab65c446bb6a1f486f1867f?d=https://d3levm2kxut31z.cloudfront.net/assets/blank-mugshot-112e2e92d74b7344b8be3630bbccc5da.png" property="og:image">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport">
+<meta content="summary" name="twitter:card">
+<meta content="@coderwall" name="twitter:site">
+<meta content="Create new github repo from command line" name="twitter:title">
+<meta content="https://coderwall.com/p/mnwcog" name="twitter:url">
+<meta content="A protip by raineorshine about github, shell, git, and curl." name="twitter:description">
+<meta content="321428473" name="twitter:creator:id">
+
+<meta content="authenticity_token" name="csrf-param">
+<meta content="2zPZWuOdL0SmEImikiUNFIv/tTJIOZ8FDcXcJ76++fg=" name="csrf-token">
+<img src="seg" border="0" height="1" width="1"><img src="untitled" border="0" height="1" width="1">
+<link rel="stylesheet" type="text/css" href="mnwcog.css" media="all">
+</head>
+<body class="protip-single">
+<header id="masthead">
+<div class="inside-masthead cf">
+<div class="mobile-panel cf">
+<a class="logo" href="https://coderwall.com/">
+<span>coderwall</span>
+</a>
+<!-- %a.notifications{:href => '/'} 3 -->
+<a class="menu-btn"></a>
+</div>
+<a class="tee-ribbon track" data-action="clicked tee" href="https://coderwall.com/team/new-relic"></a>
+<nav id="nav">
+<ul>
+<li><a href="https://coderwall.com/">Discover</a></li>
+<li><a href="https://coderwall.com/teams">Teams</a></li>
+<li><a href="https://coderwall.com/jobs">Jobs</a></li>
+<li><a href="https://coderwall.com/signin">Sign In</a></li>
+<li><a href="https://coderwall.com/signin">Sign Up</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="mobile-top">
+<a class="new-logo" href="https://coderwall.com/"></a>
+<a class="mobile-nav-btn" id="x-mobile-toggle"></a>
+<nav style="" class="mobile-nav" id="x-mobile-menu">
+<ul>
+<li><a href="https://coderwall.com/">Discover</a></li>
+<li><a href="https://coderwall.com/teams">Teams</a></li>
+<li><a href="https://coderwall.com/jobs">Jobs</a></li>
+<li><a href="https://coderwall.com/signin">Sign In</a></li>
+<li><a href="https://coderwall.com/signin">Sign Up</a></li>
+</ul>
+</nav>
+</div>
+<canvas height="375" width="500" class="blur" src="https://d3levm2kxut31z.cloudfront.net/assets/locations/nowhere-cc1d85583c8a7ef5ee50282edc703fbe.jpg"></canvas>
+<div id="x-active-preview-pane">
+<div style="display: block; opacity: 0.890215;" class="side-conversion-alert hide">
+<p>Where developers come to connect, share, build and be inspired.</p>
+<a class="convert-signup track" data-action="view homepage" data-from="convert button on protip" href="https://coderwall.com/">Join Coderwall</a>
+</div>
+<div class="inside cf x-protip-pane">
+<!-- /.blur-screen -->
+<div class="cf fullpage protip-single tip-container x-protip-content" id="x-protip">
+<aside class="tip-sidebar">
+<div class="user-box">
+<a class="avatar" data-action="view user profile" data-from="protip author avatar on top" data-properties="{&quot;mode&quot;:&quot;fullpage&quot;}" href="https://coderwall.com/raineorshine">
+<img alt="Blank-mugshot" class="avatar" src="03b704efdab65c446bb6a1f486f1867f">
+</a>
+<ul class="user-team">
+<li class="user">
+
+by
+<a class="track" data-action="view user profile" data-from="protip author name on top" data-properties="{&quot;mode&quot;:&quot;fullpage&quot;}" href="https://coderwall.com/raineorshine">
+
+Raine
+</a>
+</li>
+</ul>
+<p class="bio">
+
+Lead instructor at RefactorU.
+Founder of collegecoding.com.
+</p>
+<ul class="side-bar-list">
+<li class="username">
+<a class="name track" data-action="view user profile" data-from="protip author name(follow)" data-properties="{&quot;mode&quot;:&quot;fullpage&quot;}" href="https://coderwall.com/raineorshine">raineorshine</a>
+<a href="https://coderwall.com/users/raineorshine/follow" class="follow" data-follow-type="Users" data-method="post" data-remote="true" data-value="raineorshine" rel="nofollow"></a>
+</li>
+</ul>
+</div>
+<div class="side-btm">
+<h3>Networks</h3>
+<ul class="side-bar-list side-bar-networks">
+<li style="border-color: rgb(201, 55, 78);">
+<a class="name" href="https://coderwall.com/n/git">git</a>
+<a href="https://coderwall.com/n/git/leave" class="follow git" data-follow-type="Networks" data-method="post" data-remote="true" data-value="git" rel="nofollow"></a>
+</li>
+<li style="border-color: rgb(46, 246, 103);">
+<a class="name" href="https://coderwall.com/n/shell">shell</a>
+<a href="https://coderwall.com/n/shell/leave" class="follow shell" data-follow-type="Networks" data-method="post" data-remote="true" data-value="shell" rel="nofollow"></a>
+</li>
+</ul>
+<h3>Featured team</h3>
+<a href="https://coderwall.com/team/iddiction" class="team-box" data-action="view team jobs" data-from="job on protip" data-properties="{&quot;author's team&quot;:false,&quot;adjective&quot;:&quot;is amazing&quot;,&quot;mode&quot;:&quot;fullpage&quot;}"><div class="image-top">
+<img alt="961x477" src="961x477">
+</div>
+<div class="content">
+<div class="avatar">
+<img alt="Profile_005" src="profile_005.png">
+</div>
+<h4>Iddiction</h4>
+<p>
+
+Calling all Senior iOS engineers. Iddiction is amazing and is hiring!
+</p>
+</div>
+</a><a class="feature-jobs track" data-action="upgrade team" data-from="protip page" href="https://coderwall.com/employers">
+
+feature your jobs here
+</a>
+</div>
+</aside>
+<article class="tip-panel" id="mnwcog">
+<a href="http://twitter.com/share?url=https%3A%2F%2Fcoderwall.com%2Fp%2Fmnwcog&amp;via=coderwall&amp;text=Create+new+github+repo+from+command+line+%23protip&amp;related=&amp;count=vertical&amp;lang=en" class="share-this-tip direction track" data-action="share protip" data-from="protip" target="new">Share this</a>
+<div class="upvoted upvote">69</div>
+<header class="tip-header">
+<h1 class="tip-title">
+
+Create new github repo from command line
+</h1>
+<p class="views">
+<span>
+
+4338
+</span>
+views
+</p>
+<ul class="cf" id="tags">
+<li>
+<a href="https://coderwall.com/p/t/github">github</a>
+</li>
+<li>
+<a href="https://coderwall.com/p/t/shell">shell</a>
+</li>
+<li>
+<a href="https://coderwall.com/p/t/git">git</a>
+</li>
+<li>
+<a href="https://coderwall.com/p/t/curl">curl</a>
+</li>
+</ul>
+<!-- /.tip-body.tip-content -->
+</header>
+<div class="tip-content">
+<p><em>Note: While the below is a great way to do it yourself, <a href="https://coderwall.com/hauleth">hauleth</a> suggested <a href="http://defunkt.io/hub/">Hub</a> which does all this and more!</em></p>
+
+<p>Create a new shell script called "git-create"</p>
+
+<pre><code style="overflow-y: hidden;" class="bash"><span class="shebang">#!/bin/sh</span>
+
+repo_name=<span class="variable">$1</span>
+test -z <span class="variable">$repo_name</span> &amp;&amp; <span class="keyword">echo</span> <span class="string">"Repo name required."</span> <span class="number">1</span>&gt;&amp;<span class="number">2</span> &amp;&amp; <span class="keyword">exit</span> <span class="number">1</span>
+
+curl -u <span class="string">'your_github_username'</span> https://api.github.com/user/repos -d <span class="string">"{\"name\":\"<span class="variable">$repo_name</span>\"}"</span>
+</code></pre>
+
+<p>As <a href="https://coderwall.com/tchaudhri">tchaudhri</a> mentioned in the comments, don't forget to make the above script executable by running <code style="overflow-y: hidden;">chmod +x git-create</code>.</p>
+
+<p>Make sure you save it somewhere on your PATH. If you don't have a directory for custom shell scripts on your PATH, you can save it in ~/bin and then add that to your PATH by editing ~/.bash_profile as follows:</p>
+
+<pre><code style="overflow-y: hidden;" class="bash">PATH=<span class="variable">$PATH</span>:~/bin
+export PATH
+</code></pre>
+
+<p>Now you can easily create a new github repo from with the following command:</p>
+
+<pre><code style="overflow-y: hidden;" class="haskell"><span class="title">git</span> create mynewrepo
+</code></pre>
+
+<p>If you assume this command is run from a valid local git repo (or the folder containing what should become the repo) you can add the following lines to "git-create" to automatically add the remote:</p>
+
+<pre><code style="overflow-y: hidden;" class="haskell"><span class="title">git</span> init
+<span class="title">git</span> remote add origin <span class="string">"https://github.com/your_github_username/$repo_name.git"</span>
+</code></pre>
+
+<p><code style="overflow-y: hidden;">git init</code> is safe and won't mess anything up if the local repo already exists.</p>
+
+<p>Enjoy!</p>
+
+<p><em>Again, <a href="http://defunkt.io/hub/">Hub</a> recommended by <a href="https://coderwall.com/hauleth">hauleth</a> does all this and more!</em></p>
+
+</div>
+</article>
+<section class="comments">
+<h2 class="comments-header">Comments</h2>
+<ul class="comment-list">
+<li class="cf top-comment" id="comment_6820">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Laughingman" class="avatar" src="LaughingMan.jpg">
+</div>
+<a class="comment-user" data-reply-to="hauleth" href="https://coderwall.com/hauleth">
+
+hauleth
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/mnwcog/comments/6820/like" rel="nofollow">
+
+10
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Or you can use <a href="http://defunkt.io/hub/">Hub</a> which provide some more features.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_6915">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="f9961873414a964cb8aa6d81aa2e2293">
+</div>
+<a class="comment-user" data-reply-to="mattpolito" href="https://coderwall.com/mattpolito">
+
+mattpolito
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/mnwcog/comments/6915/like" rel="nofollow">
+
+1
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>As already stated, Hub is a really great library for this kind of thing.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_6971">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="e6b625008c816ab3d8d742cc3eddbb00">
+</div>
+<a class="comment-user" data-reply-to="dommmel" href="https://coderwall.com/dommmel">
+
+dommmel
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/mnwcog/comments/6971/like" rel="nofollow">
+
+1
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>You can alias the hub command in your .dotfiles like so</p>
+
+<pre><code style="overflow-y: hidden;" class="lua">hub_path=$(which hub)
+<span class="keyword">if</span> <span class="string">[[ -f $hub_path ]]</span>
+<span class="keyword">then</span>
+  alias git=$hub_path
+fi
+</code></pre>
+
+<p>that gives you the additional github commands</p>
+
+<pre><code style="overflow-y: hidden;" class="coffeescript">git pull-request   Open a pull request <span class="literal">on</span> GitHub
+git fork           Make a fork <span class="keyword">of</span> a remote repository 
+                   <span class="literal">on</span> GitHub <span class="keyword">and</span> add as remote
+git create         Create <span class="keyword">this</span> repository <span class="literal">on</span> GitHub <span class="keyword">and</span> 
+                   add GitHub as origin
+git browse         Open a GitHub page <span class="keyword">in</span> the <span class="reserved">default</span> browser
+git compare        Open a compare page <span class="literal">on</span> GitHub
+</code></pre>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_7035">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="54588_555132027835563_687647376_o" class="avatar" src="54588_555132027835563_687647376_o.jpg">
+</div>
+<a class="comment-user" data-reply-to="rshetty" href="https://coderwall.com/rshetty">
+
+rshetty
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/mnwcog/comments/7035/like" rel="nofollow">
+
+1
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Some Shell Scripts for github
+<a href="https://github.com/rShetty/Scriptomaniac">https://github.com/rShetty/Scriptomaniac</a></p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_7044">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="920336c9691d56f5048491399e5c2ded">
+</div>
+<a class="comment-user" data-reply-to="tchaudhri" href="https://coderwall.com/tchaudhri">
+
+tchaudhri
+</a>
+<a class="like liked" data-method="post" data-remote="true" href="https://coderwall.com/p/mnwcog/comments/7044/like" rel="nofollow">
+
+1
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>if not using Hub, but instead this method - you still need to remember to 'chmod +x script_name' the script file.</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_6826">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="03b704efdab65c446bb6a1f486f1867f">
+</div>
+<a class="comment-user" data-reply-to="raineorshine" href="https://coderwall.com/raineorshine">
+
+raineorshine
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/mnwcog/comments/6826/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Good to know! Thanks hauleth!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_7078">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="03b704efdab65c446bb6a1f486f1867f">
+</div>
+<a class="comment-user" data-reply-to="raineorshine" href="https://coderwall.com/raineorshine">
+
+raineorshine
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/mnwcog/comments/7078/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Great point tchaudhri, thanks!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+<li class="cf" id="comment_7079">
+<header class="cf">
+<div class="comment-avatar">
+<img alt="Blank-mugshot" class="avatar" src="03b704efdab65c446bb6a1f486f1867f">
+</div>
+<a class="comment-user" data-reply-to="raineorshine" href="https://coderwall.com/raineorshine">
+
+raineorshine
+</a>
+<a class="like not-liked" data-method="post" data-remote="true" href="https://coderwall.com/p/mnwcog/comments/7079/like" rel="nofollow">
+
+</a>
+</header>
+<div class="comment">
+<p>
+</p><p>Great point tchaudhri, thanks!</p>
+
+<p></p>
+</div>
+<ul class="edit-del cf">
+</ul>
+</li>
+
+</ul>
+<div class="add-comment cf" id="add-comment">
+<h2>Add a comment</h2>
+<form accept-charset="UTF-8" action="https://coderwall.com/p/mnwcog/comments" class="new_comment" id="new_comment" method="post"><div style="margin: 0px; padding: 0px; display: inline;"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="2zPZWuOdL0SmEImikiUNFIv/tTJIOZ8FDcXcJ76++fg=" type="hidden"></div>
+<textarea cols="40" id="comment_comment" label="false" name="comment[comment]" rows="5"></textarea>
+<input class="button" value="Submit comment" type="submit">
+</form>
+</div>
+
+</section>
+<div class="mobile-job">
+<a href="https://coderwall.com/team/iddiction" class="team-box" data-action="view team jobs" data-from="job on protip" data-properties="{&quot;author's team&quot;:false,&quot;adjective&quot;:&quot;has a great engineering team&quot;,&quot;mode&quot;:&quot;fullpage&quot;}"><div class="image-top">
+<img alt="961x477" src="961x477">
+</div>
+<div class="content">
+<div class="avatar">
+<img alt="Profile_005" src="profile_005.png">
+</div>
+<h4>Iddiction</h4>
+<p>
+
+Calling all Senior iOS engineers. Iddiction has a great engineering team and is hiring!
+</p>
+</div>
+</a></div>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+  //<![CDATA[
+    window.console.log = function(){}
+  //]]>
+</script>
+<script src="jquery-55a1cc2df3a4b065fc618d31d7e0d695.js" type="text/javascript"></script>
+<script src="jquery_ujs-365fabdf74f208e2cde927b444f7a01e.js" type="text/javascript"></script>
+  <script src="tracking-26f5ae2985e3ab6e89f978f3ab2ad279.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+
+
+      mixpanel.identify('144a3e83007449-06c8a5e426ae828-74226756-15f900-144a3e8300871b');
+
+        mixpanel.register({'signed in' : false,
+                           'member': false,
+                           'first visit': true
+        }, 'all', 31);
+
+        logUsage('viewed protip', null, {"featured":false,"distinction":"hawt"});
+
+  
+    (function() {
+      window._pa = window._pa || {};
+      var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+      pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.perfectaudience.com/serve/50775e2d30a1d50002000221.js";
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+    })();
+    window.onerror = function(message, file, line) {
+        var prop     = {}
+        prop.message = message;
+        prop.file    = file;
+        prop.line    = line;
+        mixpanel.track('error',prop);
+    }
+  </script>    
+
+<script src="highlight-1acc1d65b35ce5a7d65545136329827b.js" type="text/javascript"></script>
+<script src="language-106d6366bd3f6d24557c18a83ae5080f.js" type="text/javascript"></script>
+<script src="protips-ddfc063abf3e78513b088e96be678808.js" type="text/javascript"></script>
+
+
+
+</body>
+</html>

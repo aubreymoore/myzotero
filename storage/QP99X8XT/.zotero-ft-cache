@@ -1,0 +1,836 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/254336309
+Assessment of smartphone-based technology for remote environmental monitoring and its development
+Article in Instrumentation Science & Technology · November 2012
+DOI: 10.1080/10739149.2012.700534
+
+CITATIONS
+5
+5 authors, including: Seongkyu Lee APEC Climate Center 10 PUBLICATIONS 65 CITATIONS
+SEE PROFILE
+Cheonggil Jin Korea Aerospace Research Institute 5 PUBLICATIONS 20 CITATIONS
+SEE PROFILE
+
+READS
+471
+Jinsoo Kim Pukyong National University 30 PUBLICATIONS 395 CITATIONS
+SEE PROFILE
+Chuluong Choi Pukyong National University 43 PUBLICATIONS 605 CITATIONS
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects: Forecasting the Potential Effects of Climatic and Land-Use Changes on Shoreline Variation in Relation to Watershed Sediment Supply and Transport View project
+Feasibility of employing a smartphone as the payload in a photogrammetric UAV system View project
+
+All content following this page was uploaded by Jinsoo Kim on 18 November 2015.
+The user has requested enhancement of the downloaded file.
+
+This article was downloaded by: [Pukyong National University] On: 12 November 2012, At: 23:23 Publisher: Taylor & Francis Informa Ltd Registered in England and Wales Registered Number: 1072954 Registered office: Mortimer House, 37-41 Mortimer Street, London W1T 3JH, UK
+Instrumentation Science & Technology
+Publication details, including instructions for authors and subscription information: http://www.tandfonline.com/loi/list20
+ASSESSMENT OF SMARTPHONEBASED TECHNOLOGY FOR REMOTE ENVIRONMENTAL MONITORING AND ITS DEVELOPMENT
+Seongkyu Lee a , Jinsoo Kim b , Cheonggil Jin c , Sanghoon Bae a & Chuluong Choi a a Department of Spatial Information Engineering, Pukyong National University, Busan, South Korea b ZEN21, Seoul, South Korea c Satellite Data Cal/Val Team, Satellite Information Research Center, Korea Aerospace Research Institute, Daejeon, South Korea Accepted author version posted online: 15 Jun 2012.Version of record first published: 07 Nov 2012.
+To cite this article: Seongkyu Lee, Jinsoo Kim, Cheonggil Jin, Sanghoon Bae & Chuluong Choi (2012): ASSESSMENT OF SMARTPHONE-BASED TECHNOLOGY FOR REMOTE ENVIRONMENTAL MONITORING AND ITS DEVELOPMENT, Instrumentation Science & Technology, 40:6, 504-529
+To link to this article: http://dx.doi.org/10.1080/10739149.2012.700534
+PLEASE SCROLL DOWN FOR ARTICLE
+Full terms and conditions of use: http://www.tandfonline.com/page/terms-and-conditions
+This article may be used for research, teaching, and private study purposes. Any substantial or systematic reproduction, redistribution, reselling, loan, sub-licensing, systematic supply, or distribution in any form to anyone is expressly forbidden.
+The publisher does not give any warranty express or implied or make any representation that the contents will be complete or accurate or up to date. The accuracy of any instructions, formulae, and drug doses should be independently verified with primary sources. The publisher shall not be liable for any loss, actions, claims, proceedings, demand, or costs or damages whatsoever or howsoever caused arising directly or indirectly in connection with or arising out of the use of this material.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+Instrumentation Science and Technology, 40:504–529, 2012 Copyright # Taylor & Francis Group, LLC ISSN: 1073-9149 print/1525-6030 online DOI: 10.1080/10739149.2012.700534
+ASSESSMENT OF SMARTPHONE-BASED TECHNOLOGY FOR REMOTE ENVIRONMENTAL MONITORING AND ITS DEVELOPMENT
+Seongkyu Lee,1 Jinsoo Kim,2 Cheonggil Jin,3 Sanghoon Bae,1 and Chuluong Choi1 1Department of Spatial Information Engineering, Pukyong National University, Busan, South Korea 2ZEN21, Seoul, South Korea 3Satellite Data Cal=Val Team, Satellite Information Research Center, Korea Aerospace Research Institute, Daejeon, South Korea
+& Many countries are increasing their research on monitoring technology to identify and systematically manage various domestic changes. In particular, the need for remote monitoring is increasing in response to climatic disasters, such as flooding, storms, and rising tides caused by global warming. We developed a smartphone-based environmental monitoring system that enables remote monitoring in any place and at any time. The overall system is composed of a 24-hour smartphonebased imaging system, a monitoring information management system to receive the monitoring information, and stereo image rectification software that provides lens distortion correction, geometric correction, and stereo matching of the monitoring images. The system was developed using the Samsung Galaxy S with the Android OS, as well as open source–based software and other hardware. It is easy to install, control remotely, and monitor the status of imaging devices. We assessed the accuracy of the micro-electro-mechanical system (MEMS) sensors of the smartphone to evaluate the applicability of our environmental monitoring system. The assessment was conducted via survey using metric cameras, a global positioning system receiver, a three-dimensional laser scanner and total station, geometric correction, and digital elevation models generated with camera internal elements, external elements, and ground control points. We demonstrated the effectiveness of the system, and showed that the accuracy of the MEMS sensor and camera calibration have a significant effect on image analysis.
+Keywords automated camera system, environmental monitoring, remote monitoring system, smartphone
+Address correspondence to Chuluong Choi, Department of Spatial Information Engineering, Pukyong National University, Daeyeon Campus 45, Yongso-ro, Nam-Gu, Busan 608-737, South Korea. E-mail: cuchoi@pknu.ac.kr
+
+Smartphone Technology for Environmental Monitoring
+
+505
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+INTRODUCTION
+In recent years, many countries have been increasing their investment in research on monitoring technologies to identify and systematically manage various domestic changes. In particular, there is an increasing need for remote monitoring to respond to meteorological disasters due to global warming, including flooding caused by storms and storm surges. Natural disasters such as earthquakes, storm surges, and volcanic eruptions create serious problems, and remote monitoring allows such disasters to be forecasted and verified as quickly as possible. The core of a monitoring technology is imaging, and because monitoring is generally conducted on a long-term basis, video-based technologies are commonly used. The benefits of automated procedures for collecting scientific data have been widely recognized.[1,2] Bertucco et al.[3] applied a video-based technology to monitor active volcanoes on a real-time basis, while Ando` and Pecora[4] acquired and processed real-time images of volcanic activity. Hinkler et al.[2] monitored snow cover using digital images. Remote video monitoring in the coastal engineering field provides information on coastline conditions on temporal and spatial scales large enough to potentially contribute to the forecasting of future conditions over time.[5] This technology can provide 20$30 images per second, while observing a variety of changes over a long period, and has been widely used to study coastlines that undergo frequent changes.[6–10]
+In addition, it has been used to monitor wildlife, as well as for long-term habitat-based natural ecosystem management. York et al.[11] introduced a camera system for monitoring carnivorous species.
+Newbery and Southwell[12] proposed an automatic camera system for remote monitoring in an arctic environment, to make it easier to monitor certain aspects of Adelie penguin breeding. Kako et al.[13] used a Webcam for the sequential monitoring of beach litter.
+Bater et al.[14] utilized ground-based digital camera systems to monitor understory and overstory vegetation in a forested environment. Arebey et al.[15] used a camera to estimate amounts of solid waste of a bin, and proposed a solid waste bin monitoring system to enhance the efficiency of solid waste collection.
+However, monitoring systems have many time and space limitations. In particular, video-based monitoring technologies are subject to a variety of limitations, including camera location, power supply, and network building, and the cost of solving these problems has increased considerably. Currently available systems can be installed and operated only in places where a wire network and a power supply are established. Moreover, because these systems usually provide low-resolution images (e.g., 480 pixels, 720 pixels), it is unrealistic to expect high accuracy in photogrammetric interpretation, such as the determination of three-dimensional (3D) locations. This article
+
+506
+
+S. Lee et al.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+introduces a smartphone-based environmental monitoring technology to compensate for these weaknesses in existing video-based technologies.
+Most current smartphones (e.g., iPhone, HTC, Samsung Galaxy, BlackBerry) have a micro-electro-mechanical system (MEMS) equipped not only with sensors and chips (including high-resolution camera, global positioning system [GPS], magnetometer, third-generation [3G] chip, Wi-Fi chip), but also with an operating system (OS) such as iOS or Android OS. In addition to receiving high-resolution images, camera location information, and camera orientation information on a real-time basis, smartphones allow a monitoring system to be established at a lower cost than other current technologies. The smartphone is an intelligent terminal in the ubiquitous concept, and offers the advantage of being operable under any conditions in a 3G network environment. In particular, this technology will be able to overcome the existing network limitations wherever a nationwide integrated wireless network has been established (as in Korea). Therefore, smartphones should be very useful for environmental monitoring in a ubiquitous environment.
+Most of the existing studies on smartphones have been limited to applications of the built-in sensors, and because a smartphone-based technology depends on a combination of such sensors, it is essential to assess them. Takeuchi and Kennelly[16] developed an earthquake-detection application based on the accelerometer built into a smartphone. Furthermore, smartphones have been applied to atmospheric visibility monitoring and augmented reality (AR), using the built-in camera, accelerometer, and magnetometer.[17,18] However, there has been little research on photogrammetric or environmental monitoring usage of the high-resolution images provided by a smartphone.
+In the present study, we designed a smartphone-based environmental monitoring system, and used field experiments to evaluate the possibility of utilizing smartphone technologies in photogrammetry or environmental monitoring. The main contributions of this study are as follows:
+
+1. A smartphone-based environmental monitoring system was developed to automatically send image, position, and attitude data acquired from various built-in smartphone MEMS sensors to a monitoring center, and to manage that data.
+2. Field experiments were carried out using a measurement camera (metric camera), GPS receiver, 3D laser scanner, and total station to evaluate the accuracy of various sensors in the proposed monitoring system.
+3. Geometric correction was performed, stereo images and DEMs were constructed from acquired images and sensor information, and the results were used to evaluate the possibility of employing smartphone technologies in photogrammetry and environmental monitoring.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+Smartphone Technology for Environmental Monitoring
+
+507
+
+METHODS
+Design of the Smartphone-Based Environmental Monitoring System
+Because a remote environmental monitoring system requires monitoring equipment, communication equipment (to send images from the remote location to a server), and electric equipment (for the external power supply), it is strongly affected by location. This is a weakness of remote environmental monitoring systems.
+To remedy this, we developed an environmental monitoring system using smartphones with various built-in MEMS sensors (including highresolution camera, accelerometer, GPS, magnetometer, Wi-Fi, and 3 G).
+The proposed system consists of a smartphone-based image-capture system (to carry out the environmental monitoring) and a monitoring information management system (MIMS) (to manage the monitoring information) (Figure 1). The image-capture system is composed of a smartphone and a solar generator. Photos are taken over a 24-hour period, and this system is installed within the overall system (Figure 2). The smartphone adopted for this research was a Samsung Galaxy S (Samsung, Korea) with Android 2.3 Gingerbread OS, and the solar generator consisted of a photovoltaic cell (SSM112110-5 V, Solar Center, Korea), a diode, a 5 V voltage regulator, and a Mobile Station AMS-D100 charger (BS Energy, Korea). The photovoltaic power-generation system was designed to deliver current to the smartphone battery (including the backup battery) at approximately 3,600 mA=day, based on a maximum of 4 h of sunshine per day. This
+
+FIGURE 1 Architecture of the smartphone-based environmental monitoring system. (color figure available online.)
+
+508
+
+S. Lee et al.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+FIGURE 2 Diagram of the smartphone-based image-capture system, consisting of a rechargeable Li-ion 5200-mAh charger, smartphone, and solar panel. (color figure available online.)
+imaging instrument can be operated for at least 8 days on a single charge, even when cloudy weather makes photovoltaic power generation impossible.
+MIMS was developed to collect and manage monitoring images and information on a real-time basis, and consisted of a Web server and database (DB) server. Monitoring information transferred to the Web server by the smartphone-based image-capture system is stored in the file DB, while sensor information is stored and managed in the DB.
+Smartphone-Based Environmental Monitoring App
+The smartphone-based environmental monitoring app automatically captures images in accordance with a user-set schedule in the Android OS, or in response to commands transmitted via short message service (SMS), and then sends monitoring information to the MIMS server at the monitoring center (Figure 3). This application was developed for environmental monitoring, using the Android smartphone app.[19,20]
+We designed the smartphone-based environmental monitoring app to capture images of desired objects in accordance with a preset schedule, or in response to a request sent via SMS, and send them to the MIMS Web server. The software consists of four modules: a properties manager, a schedule manager, a scheduler, and a capture procedure. The properties manager manages the monitoring properties, using an XML file. The
+
+Smartphone Technology for Environmental Monitoring
+
+509
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+FIGURE 3 Component diagram of the monitoring software developed in this study. (color figure available online.)
+schedule manager registers and manages a minute-interval monitoring schedule. The scheduler checks the schedule saved in the SQLite database in 1-h intervals and registers capture procedure calls in the system alarm service of the Android OS. The system alarm service checks the system time and calls the capture procedure at the registered times. The image capture procedure first acquires an image, 3D position, and 3D orientation from the built-in smartphone sensors and chips, and then sends this information to the server.
+The SMS receiver interprets the image-capture commands received via SMS (which is limited to a maximum of 80 bytes), and transmits the requests to the capture procedure. The control text structure of SMS is composed of header and information sections. The header section consists of the identification code (5 bytes) and the control code (3 bytes). The information section is subject to change, depending on the control code of the header.
+Stereo Image Rectification Software
+To utilize images sent from a smartphone in a disaster area (e.g., tsunami, storm surge, forest fire, flood), security area, or environmental monitoring area, an accuracy test is required, based on geometric correction and construction of stereo images. This procedure is more effective
+
+510
+
+S. Lee et al.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+than a single image for identifying and tracking moving objects. Accord-
+ingly, we developed stereo image rectification (SIR) software to provide
+lens distortion correction, geometric correction, and stereo matching.
+The SIR software corrects lens distortion by using the interior orien-
+tation calculated from the camera’s calibration. The geometric correction
+feature generates a homography using known ground control points (GCPs)[21] and then performs geometric correction. The stereo matching
+feature generates stereo images from the left and right images after geo-
+metric correction has been completed. Accuracy assessment of the stereo
+images is accomplished by generating a DEM, using the ERDAS Leica
+Photogrammetry Suite (LPS).
+Camera calibration is essential for 3D computer vision and photogrammetry to extract metric information from 2D images.[22] A camera model consists of interior and exterior parameters.[23,24] Interior orientation deter-
+mines the interior parameters, including the true image center, scale factor,
+and focal length. The Samsung Galaxy S used in this study was equipped with
+a low-priced Complementary Metal-oxide-semiconductor (CMOS) camera,
+which is a nonmetric camera, and exhibits greater distortion in the location
+of the camera lens. Thus, it is essential to calculate the camera parameters via
+camera calibration. Exterior orientation is the 3D position and orientation of
+the camera frame relative to a certain world coordinate system (exterior parameters)[25]; it determines the location and orientation of the camera at the
+time a photo is taken. Therefore, using the location and orientation
+determined by the exterior orientation of the camera, the accuracy of the
+smartphone location and orientation information can be assessed.
+In general, lens distortions can be classified into radial, decentering,
+and affinity distortions. Affinity distortions are very small, and hence only
+radial and decentering distortions are taken into account.
+The camera exterior mode is defined by the mathematical correlation
+between the observed image points and the world points on the image
+plane side. The camera model is generally defined by directly employing all of the optical and geometrical parameters of the camera.[26]
+Using matching points where the two images corresponded, stereo
+image rectification was performed. The matching points were obtained
+by the feature-matching method. First, the matching points were extracted using Vedaldi’s Matlab code,[27] which realizes Lowe’s scale invariant feature transform (SIFT).[28] Then the matching point outliers were discarded
+by fitting a fundamental matrix to the matching points via random sample consensus (RANSAC).[29] The matching point outliers were removed using Kovesi’s Matlab code,[30] and RANSAC was utilized to extract the inliers.
+Finally, stereo image rectification was accomplished via the uncalibrated rectification methods of Fusiello and Irsara[31] and Fusiello et al.,[32] using
+the extracted inliers.
+
+Smartphone Technology for Environmental Monitoring
+
+511
+
+Experimental Configuration
+The field experiment was conducted on a lawn at a university campus located in Nam-gu, Busan, Korea, from 5:00 PM to 6:30 PM (UTC) on 2 May and 2 June 2011 (Figure 4). The instruments used in this experiment included smartphones, metric cameras, a GPS receiver, a 3D laser scanner, and a total station.
+Two smartphone cameras and two metric cameras were arranged to acquire stereo images. The metric cameras (Rollei d7 and d30) were used for comparison with the smartphone image-processing results. The resolutions of the metric and smartphone cameras are 1.4 M and 5.0 M pixels, respectively. However, the lenses built into the smartphones are smaller and much cheaper than those of the metric cameras, and hence the images acquired from the smartphones have greater distortion. Therefore, it is essential to calibrate the smartphone cameras to correct lens distortion.
+The images for this study were taken from the roof of a six-story building on campus, 28 m in height. The distances between smartphones A (SLeft) and B (SRight) and metric cameras A (MLeft) and B (MRight) were both approximately 10 m. The pitch angles of SLeft and SRight were approximately 60. To obtain a 90% vertical overlap for stereo matching, SLeft was rotated
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+FIGURE 4 The target area of this study was a university campus located in Nam-gu, Busan, Korea. (color figure available online.)
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+512
+
+S. Lee et al.
+
+through 15 of the roll angle in the clockwise direction, while SRight was rotated through 15 of the roll angle in the counterclockwise direction. The images from the smartphones were captured and transmitted automatically over a 10-min interval by the proposed smartphone-based environmental monitoring app. The metric camera images were captured manually at the same time.
+Geometric correction of images from a smartphone is based on GCPs, which are very important for triangulation when using overlapped images. In general, 3D control points are determined by GPS surveying. In the present experiment, GPS surveys were conducted at 1 s and 3 s using a Topcon HiPer-GB receiver. The resulting data were processed for network adjustment with GPS Continuously Operating Reference Stations (CORS) data provided by the National Geographic Information Institute.[33] Using the two control points obtained from the GPS surveys, 10 GCPs were determined, and 13 checkpoints were selected to assess the accuracy of the final images. These procedures were carried out with a Topcon GPT-7001i Total Station. Finally, a Topcon GLS-1000 was used to carry out the scanning and generate a DEM.
+Table 1 shows the accuracies of the metric instruments, as listed in the technical specifications and verified by the field experiment. After network adjustment, the accuracy of the GPS was 47 mm horizontally and 95 mm vertically. The accuracy of the 3D laser scanner was 3 mm horizontally and 6 mm vertically. The accuracy of the total station was 2 mm horizontally and 3 mm vertically. The GPS survey accuracy exceeded the accuracy listed in the manufacturer’s technical specifications. In particular, the vertical accuracy was greater than the horizontal accuracy, which may be due to the difference between GPS surveying and the vertical standard system currently used in Korea. The accuracies of the 3D laser scanner and the total station were within a 10-mm range in both the vertical and horizontal directions.
+The DEM in this study was generated by LPS, and then was compared to the DEM generated by terrestrial laser scanning (TLS) to assess its accuracy. To accomplish this, scanning was performed at three stations, using the
+
+TABLE 1 Comparison of Manufacturer-Specified and Experimentally Calculated Accuracies for Each Instrument
+
+Manufactural Accuracya
+
+Field Accuracyb
+
+Model
+
+Horizontal
+
+Vertical
+
+Horizontal Vertical
+
+GPS
+
+Topcon GB-500 Æ(10 mm þ 1 ppm) Æ(15 mm þ 2 ppm)
+
+3D laser scanner Topcon GLS-1000
+
+4 mm þ 150 m
+
+Total station
+
+GPT-7001i
+
+Æ (2 mm þ 2 ppm)
+
+aAccuracy according to the manufacturer’s technical specifications. bAccuracy calculated from the field experiment.
+
+47 mm 3 mm 2 mm
+
+95 mm 6 mm 3 mm
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+Smartphone Technology for Environmental Monitoring
+
+513
+
+GLS-100 scanner to cover the entire field. The scanned data from each sta-
+tion were used to calculate the object coordinates after registration and
+geo-referencing, and the point density within the field was approximately 400 points=m2.
+
+RESULTS AND DISCUSSION
+Smartphone-Based Environmental Monitoring System
+The smartphone-based environmental monitoring system consists of a smartphone-based environmental monitoring app, MIMS, and SIR software (Figure 5).
+The app features a schedule management function for managing the monitoring process minute-by-minute from start to finish, so that images can be captured according to a registered schedule and a setting function. The setting function makes it possible to set monitoring information, sensor information, the transmission of monitoring information, camera options, and other items (Table 2). Furthermore, the app uses an image-processing method (average) that makes it possible not only to perform image processing on a real-time basis, but also to receive image-processing results on a real-time basis via HTTP or FTP over a wireless network.
+The system uses Wi-Fi 4591 ms (about 5 s on average) and 3G 41,673 ms (about 42 s on average) as the network environment for sending monitoring images and information to the MIMS Web server, which enables monitoring in 1-min intervals.
+
+FIGURE 5 Screenshots of the smartphone-based environmental monitoring app, MIMS, and SIR. (color figure available online.)
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+514
+
+S. Lee et al.
+
+TABLE 2 Function Settings for the Smartphone-Based Environmental Monitoring App for Android
+
+Option Name
+
+Sub-Option Name (Unit)
+
+Sub-Option Select Type
+
+Monitoring information Sensor information Sending monitoring information
+Camera options Miscellaneous
+
+Monitoring station name
+Photo-taking intervals (second)
+Number of photos (piece)
+Image processing method
+Save folder GPS informationa Accelerometer informationa Magnetometer informationa Orientation informationa Sending monitoring informationb
+Sending method
+HTTP server address
+FTP server address
+FTP server port number
+FTP server ID
+FTP server password
+Focus
+Antibanding
+White balance
+ISO
+Color effect
+Flash App remote control via SMSb Sending the photo-taking resultc
+SMS sending phone number Autorun after Android OS booted upd
+
+aSettings for saving or not saving. bSettings for receiving or not receiving SMS remote-control information. cSettings for sending or not sending. dSettings for running or not running the app after the Android OS has booted up.
+
+Input Input Input Select Input Check Check Check Check Check Select Input Input Input Input Input Select Select Select Select Select Select Check Check Input Check
+
+The MIMS server saves and manages the information sent from the smartphone into the file DB and the DB management system (DBMS). Moreover, MIMS offers functions for querying monitoring information, downloading, and uploading geometrically corrected images. Users are able to query monitoring information for each camera by connecting to the MIMS over the Web. The Web server used in the present study was an Apache Tomcat 6.0 64 bit, and the DB server was PostgreSQL 9.1. We also developed the SIR software, using open-source-based libraries, Visual C#.NET, and MATLAB.
+The SIR software provides functions for creating projects, opening projects, downloading images, uploading images, obtaining camera information, correcting distortion, correcting geometry, and matching stereo images.
+The system is primarily based on smartphones with built-in MEMS sensors and chips. In particular, basic smartphone equipment includes
+
+Smartphone Technology for Environmental Monitoring
+
+515
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+not only a digital camera, 3G and Wi-Fi wireless network chips, and a GPS chip, but also a light sensor and a proximity sensor. The 3D position and orientation of the camera can be acquired from the GPS, magnetometer, and accelerometer, and provide the exterior orientation parameters necessary to perform geometric correction. The light sensor can be used to detect forest fires at night.
+There is a software development kit (SDK) for the Android OS used in the proposed system, making it possible to effectively manage the sensors and chips and acquire information. This also makes it easier for anyone with the necessary programming skills to develop apps using the sensors and chips in a smartphone. Moreover, the kit allows the same functions from different vendors’ smartphones to be employed in a single app.
+In this section, the proposed system is compared to several previously proposed systems, hereafter referred to as case A,[10] case B,[34] case C,[12] and case D,[14,35] and then evaluated.
+Although the camera employed in the proposed system has a higher resolution than those used in cases A and B (which use digital video cameras), it has a fairly low resolution compared to those of cases C and D (which use DSLR cameras). However, in cases C and D, without an additional SDK from the digital camera vendor to provide remote-control functionality, the user must construct an automatic image-capture system, using automated shutter controllers such as intervalometers and servomotors. This is a weakness. In addition, because the camera SDKs of different vendors have different application programming interfaces (APIs), additional program development is necessary whenever a particular camera model is no longer available, and another vendor’s camera must be substituted.
+On the other hand, while additional automatic shutter controllers are not required in cases A and B, image analysis is somewhat limited due to the low resolution. These cases are also hampered by the necessity to store output images from a standard video-out terminal, using a computer or microcontroller, because digital video cameras are employed. Therefore, researchers without the necessary electronic engineering skills are likely to have a difficult time producing output.
+The proposed system is able to receive monitoring information on a real-time basis via a Wi-Fi wireless network, without an additional wireless network card. Of course, in cases B and A, it is also possible to send information on a real-time basis, using a radio modem (case B) or a satellite modem (case A). However, because case A requires an Internet line, it might actually be impossible to send data on a real-time basis, depending on the installation location. Moreover, because case D does not offer additional wireless communication functionality, it is impossible to send data on a real-time basis.
+The proposed system not only allows SMS messages to be sent, but also enables system control via SMS. These functions make it possible to send
+
+516
+
+S. Lee et al.
+
+monitoring information or information on emergency situations to the mobile phone of a manager, and also provide a very effective way to remotely control the image-capture schedule and check system status in a wireless network environment that uses dynamic Internet protocol (IP) addresses.
+In cases B, C, and D, users are inconvenienced by the necessity to visit the installation site to control the image-capture interval. In case A, it is possible to control the image-capture interval via an additional client= server program or terminal service, because an Internet line and computer are used. On the other hand, the system proposed in this article can be operated with smartphones of any type, and can be used to carry out real-time monitoring wherever a 3 G or Wi-Fi wireless network is available. These are strengths of the proposed system.
+In addition, because a smartphone-based monitoring technology can be operated independently, system establishment is less costly than with other existing technologies. For example, the cost of establishing a monitoring system for coastal erosion using a video-based technology is approximately US$15,000 per unit.[36–38] Compared to this, the smartphone-based technology is relatively inexpensive to operate (approx. US$1,500), and is also more efficient in terms of its functional aspects.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+Field Experiment
+Camera Calibration Most smartphones use cheap single lenses, which can cause lens distortion and reduce the accuracy of 3D location estimations. Accordingly, the most important issue in using a smartphone for photogrammetric purposes is to correct this distortion, because it shifts the image points locally and causes errors in their positions.[39] Therefore, when a smartphone is used for photogrammetry or environmental monitoring, it is essential to carry out camera calibration, to correct any lens distortion. Camera calibration in photogrammetry is generally performed using a perspective geometrical model with bundle adjustment. Bundle adjustment provides for simultaneous determination of the parameters of all systems, as well as assessment of the extracted calibration parameters. The bundle adjustment used in this study was calculated by the Rolleimetric CloseRange Digital Workstation (CDW) (Table 4). The camera calibration to correct the distortion of the cameras built into the smartphones (carried out by bundle adjustment) indicated that the accuracy of MRight was highest, whereas the accuracy of SLeft was lowest. In previous studies on 3D location determination using a nonmetric camera, Rieke-Zapp and Nearing[40] and D’Amelio and Brutto[41] reported that RMS errors within 0.2 pixels appeared in the calibration of high-resolution cameras. Other studies have reported a range of RMS errors within a half
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+517
+
+TABLE 3 Comparison of the Monitoring System Proposed in This Study with Previously Developed Monitoring Systems
+
+Proposed System
+
+Holman and Stanley[10]
+
+Wawerla et al.[34]
+
+Newbery and Southwell[12]
+
+Bater et al.[14,35]
+
+Monitoring system System name
+Monitoring area Camera device
+Operating device
+
+Smartphone-based environmental monitoring system
+Several areas Smartphone CMOS camera Smartphone
+
+Argus III
+Beach Digital video
+camera Linux computer
+
+Power supply
+Operation time
+Storage
+Uses network Uses network type System operation costs Instrument cost Installation cost Operation cost Image Pixels Image resolution
+
+Solar power (1.5 Watt Â 3)
+24 h
+16 GB built-in memory= 32 GB microSD card
+O Wi-Fi, 3 G
+Lowb Lowc Low
+5.0 megapixel 2560 Â 1920
+
+Power utilities
+24 h
+–h
+O Internet line
+Expensive Expensive Mediume
+0.7 megapixel 1024 Â 768
+
+Image type Camera control
+
+JPEG
+
+JPEG (snapshot image)
+
+BearCam
+Arctic circle Digital video
+camera Microcontroller
+Solar power (50 Watt Â 2)
+4 h=day (approximately)
+1.38 TB (230 GB Â 6 HDDs)
+O Radio modem
+
+Automated camera system
+Polar DSLR Camera Microcontroller
+Solar power (5 Watt) 24 h 2 GB memory card 4a X
+
+Ground-based digital camera system
+Several areas DSLR Camera
+Harbortronics time-lapse camera package (Harbortronics, USA)
+Solar power (5 Watt)
+24 h
+4 GB SD
+X X
+
+Expensive Mediumd Low
+0.4 megapixel 768 Â 494
+MPEG-2
+
+Medium Lowc Low
+8.0 megapixel 3458 Â 2304
+JPEG
+
+Medium Lowc Low
+6.1 MPf or 10.2 MPf 2000 Â 3008 or
+2592 Â 3872 JPEG, RAW, TIF
+
+(Continued )
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+518
+
+TABLE 3 Continued
+
+Proposed System
+
+Holman and Stanley[10]
+
+Wawerla et al.[34]
+
+Newbery and Southwell[12]
+
+Image capture Remote controlg
+
+Automatically by smartphone app
+
+Automatically by Linux computer
+
+Automatically by microcontroller
+
+SMS, App
+
+Client=server program Manually
+
+Externally mounted protective shutter using servomotor
+Manually
+
+aAvailable when connected to separate equipment. bAvailable for free under a two-year subscription contract in Korea. cBecause the size of the monitoring equipment is small, it can be installed in a narrow space. dThere is no need for a separate power supply and operating space for the monitoring equipment. eSpace rental required to operate the monitoring system. fMegapixels. gHow to set the image-capture information (image-capture interval and other items) for the monitoring equipment. hA storage can be selected free by a user.
+
+Bater et al.[14,35] Automatically
+by intervalometer
+Manually
+
+Smartphone Technology for Environmental Monitoring
+
+519
+
+TABLE 4 RMS Errors for the Image Coordinates Calculated by Bundle Adjustment, and Interior Orientation of Each Camera Calculated by Bundle Adjustment[42]
+
+Metric
+
+Smartphone
+
+MLefta
+
+MRightb
+
+SLeftc
+
+SRightc
+
+Image coordinate
+Intrinsic parameters Focal length (mm) Principal point (mm)
+Distortion parameters Symmetric radial distortion
+Decentering distortion
+
+RMS-x (pixel) RMS-y (pixel)
+ck xH yH
+K1 K2 K3 P1 P2
+
+0.16 0.29
+7.5626 À0.1883
+0.2595
+À2.037eÀ3 2.286eÀ5 4.304eÀ7 8.543eÀ5
+À7.057eÀ5
+
+0.28 0.35
+10.4913 0.8149 0.2749
+À1.457eÀ3 2.542eÀ5
+À9.034eÀ6 7.774eÀ5 8.832eÀ5
+
+aRollei d7 digital camera manufactured by Rollei, Germany. bRollei d30 digital camera manufactured by Rollei, Germany. cSamsung Galaxy S manufactured by Samsung Electronics, Korea.
+
+0.52 0.67
+3.8395 À0.0595
+0.0217
+1.007eÀ2 À5.390eÀ3
+7.030eÀ4 À3.373eÀ4
+2.543eÀ4
+
+0.19 0.21
+3.8441 À0.0005 À0.1036
+6.174eÀ3 À3.005eÀ3
+2.959eÀ4 2.011eÀ4 2.093eÀ5
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+pixel.[43,44] Chandler et al.[45] observed that RMS errors within 0.3$0.4
+pixel appeared in the calibration of a low-priced camera. Akca and Gruen[44] conducted various types of camera calibration and found that
+the accuracy of the cameras built into mobile phones is within half a pixel. Moreover, Parian and Gruen[46] and Lagu¨ ela et al.[47] studied thermographic cameras, panoramic cameras, and semi-metric cameras, and found
+that the RMS errors were less than 1 pixel in a semi-metric camera, and 1
+pixel or above in the thermographic and panoramic cameras. The SRight used in this study showed similar or better accuracy compared to other
+recent studies. The SLeft used in this study, although less accurate than the above results, had RMS errors of 1 pixel or less.
+
+Accuracy of the Built-In Smartphone Sensors In photogrammetric analysis, the external expression element consists of the location (X, Y, Z) and 3D orientation of a captured image relative to the camera, and this information is used to perform geometric correction. Therefore, evaluating the accuracy of smartphone sensors is an important factor. The accuracy of the sensors built into a smartphone is essential in such studies. In the present research, the accuracy of the 3D locations determined by the smartphones was assessed by comparison with geodetic GPS data (Table 5). The differences between these values and the values obtained from the GPS survey were 2.14 m, À6.81 m, and 36.31 m, respectively, and the standard deviations were 20.20 m, 43.81 m, and 24.12 m. The projection center
+
+520
+
+S. Lee et al.
+
+TABLE 5 Comparison of Camera Projection Center Locations Determined by the A-GPS Built into the Smartphone and by a Geodetic GPS (Unit: m)
+
+X0 (m)
+
+SLeft Y0 (m)
+
+Z0 (m)
+
+X0 (m)
+
+SRight Y0 (m)
+
+Z0 (m)
+
+Geodetic GPS A-GPS
+Average SD Differenta
+
+209702.53
+209695.13 9.66
+À7.40
+
+282075.12
+282086.02 5.96
+10.90
+
+28.03
+74.10 12.88 46.08
+
+209694.24
+209696.38 20.20 2.14
+
+282074.37
+282067.56 43.81 À6.81
+
+aDifference between the exterior orientation information calculated directly by the app.
+
+28.03
+64.34 24.12 36.31
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+locations determined by geodetic GPS and built-in A-GPS had maximum standard deviations of 12.88 m for SLeft and 43.81 m for SRight. Although these results showed a slight improvement compared to ordinary mobile phones, the deviations were still relatively large, necessitating future studies on the improvement of A-GPS accuracy.
+The direction sensor built into a smartphone provides orientation information (roll /, pitch h, and heading w) for the camera when an image is captured. The best method for determining the direction of the equipment when using a smartphone without a built-in gyroscope is by direct calculation, using the data from the acceleration sensor and the magnetic field sensor. Therefore, in this study, we calculated the orientation information directly, using functions provided by Meier.[48]
+The 3D orientation information for a smartphone consists of roll, pitch, and heading, whereas the rotational parameters calculated by LPS are x, /, and j. The directional parameters calculated by LPS are transformed into the camera orientation information /, h, and w.[49]
+Because the orientation information provided by a smartphone is obtained from the built-in accelerometer and magnetometer, it is necessary to take into account the Earth’s magnetic field values in the experimental region (Busan, Korea). Thus, the declination of the experimental region was calculated via the NOAA world magnetic model,[50] and was included in the final computational process (Table 6).
+When the orientation information directly calculated from the accelerometer and magnetometer results was compared to the orientation parameters calculated by LPS, the standard deviations were approximately 0.22 and 0.44 for the roll of SLeft and SRight, approximately 0.29 and 0.17 for the pitch, and approximately 0.55 and 1.39 for the heading. Considering that the sensors built into a smartphone are relatively inexpensive, the results for pitch and roll were satisfactory. However, there were relatively large differences in the heading, which may be attributable to the greater influence of magnetic declination on heading.
+
+Smartphone Technology for Environmental Monitoring
+
+521
+
+TABLE 6 Comparison of the Orientation Information for SLeft and SRight obtained by direct calculation and by LPS (unit: degree)
+
+Exterior Orientation
+
+Information Obtained from
+
+the Smart Phone
+
+LPS
+
+Deviationa
+
+/
+
+h
+
+w
+
+/
+
+h
+
+w
+
+D/
+
+Dh
+
+Dw
+
+SLeft Maximum Minimum Average SD
+SRight Maximum Minimum Average SD
+
+67.3801 66.7726 67.1166
+0.2536
+61.2988 60.0863 60.8403
+0.3578
+
+À2.4118 À2.4226 À2.4179
+0.0045
+À2.4770 À2.5038 À2.4911
+0.0086
+
+18.8841 17.6459 18.6062
+0.4922
+À10.3847 À14.1310 À12.1916
+1.4194
+
+64.9681 64.5634 64.6753
+0.1405
+
+1.8016 1.0029 1.3755 0.2863
+
+15.0657 À2.1196 4.2134 À2.6391 14.5731 À2.8164 3.4147 À4.2522 14.7807 À2.4413 3.7935 À3.8255
+0.1983 0.2221 0.2866 0.5485
+
+59.7104 À0.1966 À15.2767 À0.7966 2.2985 À1.2575 58.3555 À0.7114 À15.6469 À2.3483 1.7741 À4.8964 59.3263 À0.4094 À15.3976 À1.5140 2.0817 À3.2061
+0.5302 0.1739 0.1173 0.4428 0.1760 1.3878
+
+aDeviation of the exterior orientation information for SLeft and SRight calculated directly by the app and by LPS.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+TABLE 7 Root Mean-Square (RMS) Errors at Different Times and GCPs According to Geometric Image Correction Procedure (Unit: pixel)
+
+RMS Error
+
+Inversea
+
+Smartphone Camera
+
+Inverseb
+
+SIRc
+
+SIRd
+
+Metric Camera
+
+GCPe
+
+GCPf
+
+Times Maximum Minimum Average SD
+GCPs Maximum Minimum Average SD
+
+12.5729 12.2925 12.4751
+0.0868
+9.2299 8.2961 8.8640 0.2589
+
+1.8143 1.2783 1.5029 0.1919
+1.8792 0.5154 1.0647 0.4354
+
+3.6350 3.3832 3.5123 0.0746
+6.0434 1.6521 3.8185 1.6148
+
+1.0692 0.9140 0.9883 0.0445
+1.1430 0.4246 0.7043 0.2251
+
+2.6847 1.8353 2.4522 0.2537
+3.5214 0.9638 2.5734 0.8874
+
+0.4239 0.2041 0.3368 0.0665
+0.5164 0.3244 0.3987 0.0738
+
+aWhen only the exterior orientation parameters of the cameras were considered, while the interior
+orientation information was neglected. bWhen both the smartphone interior orientation parameters and exterior orientation parameters
+were considered. cWhen only the GCPs were considered in SIR, and the interior orientation parameters of the smart-
+phone cameras were neglected. dWhen both the interior orientation parameters of the smartphones and the GCP data were con-
+sidered in SIR. eWhen only the GCPs were considered, and the interior orientation parameters of the metric cameras
+were neglected. fWhen both the interior orientation parameters of the metric cameras and the GCP data were
+considered.
+
+522
+
+S. Lee et al.
+
+Geometric Image Correction Geometric correction of a single pair of images captured over a 10-min interval was accomplished using six different procedures. First, four procedures were carried out, considering only GCP data and neglecting camera calibration data, and considering both GCP data and camera calibration data, for each of the smartphones and metric cameras. Next, two procedures were conducted, one in which both camera calibration data and exterior orientation parameters (X0, Y0, Z0, /, h, and w) were considered, and one in which only exterior orientation parameters were considered (unlike the GCP triangulation method). Among the exterior orientation parameters of each smartphone camera, the camera location (X0, Y0, Z0) was based on the results of the geodetic GPS survey. The SIR software developed in this study was applied to images taken by the smartphones and images with GCP-based geometric corrections. The RMS errors at different times are presented in Table 7 and Figure 6 for geometric corrections calculated by each of the six procedures. Unlike the smartphone
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+FIGURE 6 Comparison of RMS errors at different times for each procedure. aWhen only the exterior
+orientation parameters of the cameras were considered, while the interior orientation information was neglected. bWhen both the smartphone interior orientation parameters and exterior orientation parameters were considered. cWhen only the GCPs were considered in SIR, and the interior orientation parameters of the smartphone cameras were neglected. dWhen both the interior orientation parameters of the smartphones and the GCP data were considered in SIR. eWhen only the GCPs were considered, and the interior orientation parameters of the metric cameras were neglected. fWhen both the interior
+orientation parameters of the metric cameras and the GCP data were considered.
+
+Smartphone Technology for Environmental Monitoring
+
+523
+
+cameras, the metric cameras did not provide 3D orientation information,
+and hence the procedures considering exterior orientation parameters
+were not applied to them. The results of Inverseb showed approximately an 88% improvement in
+accuracy when smartphone camera calibration data were taken into
+account, compared to the results obtained when these data were neglected. Likewise, the results of SIRd showed approximately a 72% improvement when camera calibration data were taken into account. The GCPf results
+also showed an approximately 86% improvement in accuracy when metric
+camera calibration data were taken into account. These results demonstrate
+the importance of camera calibration in monitoring. The RMS errors of Inverseb were about 1.5 times those of SIRd, which may have been due to
+errors in the 3D location of the projection center and errors in the Inverse
+procedure.
+In general, the accuracy of geometric correction by GCPs in the Argus monitoring system is less than 1 pixel,[10] which is equivalent to 0.5 m of
+ground accuracy in the cross-shore direction and 5 m in the along-shore
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+TABLE 8 DEM Elevation Results and Differences Generated from Images Geometrically Corrected by the Six Procedures Proposed in This Study (Unit: m)
+
+Smartphone Camera
+
+TLS DEM Inversea Inverseb
+
+SIRc
+
+SIRd
+
+Metric Camera
+
+GCPe
+
+GCPf
+
+Elevation Minimum Maximum Average SD
+Diffrenceg Minimum Maximum Average SD
+
+3.3048 3.5907 3.4339 0.0906
+
+2.1993 3.1842 2.7869 0.2202
+À0.4034 0.5812 0.0469 0.1834
+
+3.0230 3.5734 3.3334 0.1238
+À0.3660 0.3338
+À0.0499 0.1403
+
+2.8309 3.5545 3.3036 0.1615
+À0.3631 0.3946
+À0.0201 0.1929
+
+2.9247 3.4671 3.3195 0.1089
+À0.2591 0.3007
+À0.0360 0.1298
+
+3.2420 3.4558 3.3680 0.0448
+À0.0959 0.2652 0.0657 0.0937
+
+3.2392 3.4411 3.3722 0.0384
+À0.1008 0.2861 0.0610 0.1007
+
+aWhen only the exterior orientation parameters of the cameras were considered, while the interior
+orientation information was neglected. bWhen both the smartphone interior orientation parameters and exterior orientation parameters
+were considered. cWhen only the GCPs were considered in SIR, and the interior orientation parameters of the smart-
+phone cameras were neglected. dWhen both the interior orientation parameters of the smartphones and the GCP data were con-
+sidered in SIR. eWhen only the GCPs were considered, and the interior orientation parameters of the metric cameras
+were neglected. fWhen both the interior orientation parameters of the metric cameras and the GCP data were con-
+sidered. gDifferences between the DEMs generated from images geometrically corrected by each procedure
+and the TLS DEM.
+
+524
+
+S. Lee et al.
+
+direction, from the center of a 2-km area.[51] Because the resolution of the
+smartphone camera used in this study was three times the resolution of the metric camera, the results from SIRd and GCPf are very good.
+RMS errors were calculated for each of the GCPs (Table 6 and Figure 6).
+For the smartphones, accuracy was improved by approximately 88% with Inverseb and 82% with SIRd compared to the results of SIRc. For the metric cameras, the results of GCPf showed approximately an 85% improvement in accuracy compared to GCPe. The RMS errors of Inverseb were approximately 1.5 times those of SIRd, while the RMS errors of SIRd were approximately 1.8 times those of GCPb. These results suggest that smartphone
+images are adequate for monitoring purposes. It is also expected that
+relevant studies of smartphones will increase in the future.
+
+DEM Generation
+DEMs were created by ERDAS LPS from geometrically corrected images provided by the six geometric correction methods. The accuracy of the DEM generated with stereo images was assessed in terms of the difference from the DEM generated by TLS data (Table 8 and Figure 8).
+For GCPa and GCPb, the difference was within 10 cm. The difference for Inverseb and SIRb was approximately 15 cm, while the difference for
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+FIGURE 7 Comparison of RMS errors at different GCPs for each procedure. See Figure 6 for legend.
+
+Smartphone Technology for Environmental Monitoring
+
+525
+
+Inversea and SIRa was about 20 cm. In addition, the standard deviations were around 20 cm in all cases. In a previous study, Chandler et al.[45] generated DEMs using a calibrated stereo pair captured within a distance of 0.9 m with three low-priced digital cameras (Sony DSC-P10, Olympus C3030, and Nikon Coolpix 3100) and assessed their accuracy. They reported a standard deviation of 8.7 mm (¼ 0.0087 m) for the Sony DSC-P10, 8.7 mm (¼ 0.0087 m) for the Olympus C3030, and 8.3 mm (¼ 0.0083 m) for the Nikon Coolpix 3100.
+In the present work, the accuracies (in terms of standard deviation) of the DEM generated by each of the six procedures were 0.1834 m, 0.1403 m, 0.1929 m, 0.1298 m, 0.0937 m, and 0.1007 m, respectively. However, the images used here were captured at a height of approximately 28 m. The standard deviations reported by Chandler et al.,[45] adjusted to an image-taking distance of 27.1 m, were 0.261 m, 0.261 m, and 0.249 m. Thus, the results of the present study are relatively good in comparison to the previous results.
+The differences between the TLS DEM and the DEMs generated by the six methods used in this study were calculated, and the results are presented
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+FIGURE 8 DEM obtained by TLS technology and DEMs generated with images geometrically corrected by each of the six procedures used in this study. See Figure 6 for legend. (color figure available online.)
+
+526
+
+S. Lee et al.
+
+in Table 8. The standard deviations of the DEM differences were 0.1834 m and 0.1403 m for Smartphone Inverse DEMa and Smartphone Inverse DEMb, 0.1929 m and 0.1298 m for Smartphone SIRc DEM and Smartphone SIR DEMd, and 0.0937 m and 0.1007 m for Metric Camera GCP DEMe and Metric Camera GCP DEMf, respectively. The accuracy of the DEMs generated by the six procedures was greatest for Metric Camera GCP DEMf, followed by Smartphone SIR DEMc and Smartphone Inverse DEMb.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+CONCLUSIONS
+We developed a monitoring system using smartphone-based technology, and assessed its applicability. The use of traditional monitoring systems may be restricted in terms of location (e.g., by the availability of power facilities, Internet access), and thus we developed a system capable of operating in any location and able to quantitatively analyze data and images provided by smartphones. A smartphone-based monitoring technology offers the advantages of high-resolution images, 3D location information, and 3D orientation information provided by the built-in camera, A-GPS, accelerometer, and self-sensing sensor on a real-time basis and transmitted via 3 G networks. This technology also allows a monitoring system to be established at relatively low cost.
+The inexpensive sensors built into a smartphone have limited accuracy compared to more expensive sensors. Therefore, this study assessed the accuracy of the data obtained from each sensor. To correct the distortion of the lenses built into the smartphones, camera calibration was carried out. The smartphone cameras exhibited lower accuracy than the metric cameras, but the results were relatively satisfactory in comparison to studies using other inexpensive cameras. On the other hand, the smartphone A-GPS produced somewhat larger deviations for measurement purposes, even though its accuracy is superior to that of other existing mobile phones. These results suggest that if a more accurate location can be determined by the A-GPS, the exterior orientation parameters may be automatically determined without the traditional use of GCPs.
+The results obtained when camera calibration data were taken into account showed approximately an 82% improvement in accuracy compared to results that neglected these data, which verifies that camera calibration has a considerable effect on the accuracy of geometric correction. It would be necessary to determine the exterior orientation parameters more accurately for automatic geometric correction using smartphone-based technology. Finally, if the location accuracy of smartphones is improved, a monitoring system based on smartphone technology will be adequate for remote monitoring studies.
+
+Smartphone Technology for Environmental Monitoring
+
+527
+
+ACKNOWLEDGMENTS
+This research was a part of the project (No. D10503311H4100001E0) titled Yeongnam Seagrant funded by the Ministry of Land, Transport and Maritime Affairs, Korea. Also, this work was partially researched by the supporting project to educate GIS.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+REFERENCES
+1. Claridge, A. W.; Mifsud, G.; Dawson, J.; Saxon, M. J. Use of infrared digital cameras to investigate the behaviour of cryptic species. Wildlife Res. 2004, 31, 645–650.
+2. Hinkler, J.; Pedersen, S. B.; Rasch, M.; Hansen, B. U. Automatic snow cover monitoring at high temporal and spatial resolution, using images taken by a standard digital camera. Int. J. Remote Sens. 2002, 23, 4669–4682.
+3. Bertucco, L.; Coltelli, M.; Nunnari, G.; Occhipinti, L. Cellular neural networks for real-time monitoring of volcanic activity. Comput. Geosci. 1999, 25, 101–117.
+4. Ando`, B.; Pecora, E. An advanced video-based system for monitoring active volcanoes. Comput. Geosci-UK 2006, 32, 85–91.
+5. Huntley, D.; Stive, M. CoastView special issue foreword. Coastal Eng. 2007, 54, 461–462. 6. Plant, N. G.; Holman, R. A. Intertidal beach profile estimation using video images. Mar. Geol. 1997,
+140, 1–24. 7. Madsen, A. J.; Plant, N. G. Intertidal beach slope predictions compared to field data. Mar. Geol.
+2001, 173, 121–139. 8. Stefan, G. J.A.; Turner, I. L.; Dronkers, T. D.T.; Caljouw, M.; Nipius, L. A video-based technique for
+mapping intertidal beach bathymetry. Coastal Eng. 2003, 49, 275–289. 9. Turner, I. L.; Aarninkhof, S. G. J.; Holman, R. A. Coastal imaging applications and research in
+Australia. J. Coastal Res. 2006, 22, 37–48. 10. Holman, R. A.; Stanley, J. The history and technical capabilities of Argus. Coastal Eng. 2007, 54,
+477–491. 11. York, E. C.; Moruzzi, T. L.; Fuller, T. K.; Organ, J.; Sauvajot, R. M.; DeGraaf, R. M. Description and
+evaluation of a remote camera and triggering system to monitor carnivores. Wildl. Soc. B. 2001, 29, 1228–1237. 12. Newbery, K. B.; Southwell, C. An automated camera system for remote monitoring in polar environments. Cold Reg. Sci. Technol. 2009, 55, 47–51. 13. Kako, S.; Isobe, A.; Magome, S. Sequential monitoring of beach litter using Webcams. Mar. Pollut. Bull. 2010, 60, 775–779. 14. Bater, C. W.; Coops, N. C.; Wulder, M. A.; Hilker, T.; Nielsen, S. E.; McDermid, G.; Stenhouse, G. B. Using digital time-lapse cameras to monitor species-specific understorey and overstorey phenology in support of wildlife habitat assessment. Environ. Monit. Assess. 2011, 180, 1–13. 15. Arebey, M.; Hannan, M. A.; Basri, H.; Begum, R. A.; Abdullah, H. Integrated technologies for solid waste bin monitoring system. Environ. Monit. Assess. 2011, 177, 399–408. 16. Takeuchi, K.; Kennelly, P. J. iSeismometer: A geoscientific iPhone application. Comput. Geosci. 2010, 36, 573–575. 17. Poduri, S.; Nimkar, A.; Sukhatme, G. S. Visibility monitoring using mobile phones. 2010. http:// robotics.usc.edu/~mobilesensing/visibility/MobileAirQualitySensing.pdf. Accessed 16 June 2011. 18. Langlotz, T.; Degendorfer, C.; Mulloni, A.; Schall, G.; Reitmayr, G.; Schmalstieg, D. Robust detection and tracking of annotations for outdoor augmented reality browsing. Comput. Graph. 2011, 35, 831–840. 19. Lee, S. K.; Kim, J. S.; Kim, Y. S.; Choi, C. U. Development of android smartphone app for camerabased remote monitoring system. J. Korean Spatial Inf. Soc. 2011, 19(5), 87–96 (in Korean). 20. Lee, S. K.; Jin, C. G.; Kim, J. S.; Choi, C. U. Development of a smartphone application for environmental monitoring. In Proceedings of the ASPRS Annual Conference, Sacramento, California, 19–23 March 2012 (on CD-ROM).
+
+528
+
+S. Lee et al.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+21. Hartley, R.; Zisserman, A. Multiple View Geometry in Computer Vision; Cambridge University Press: Cambridge, UK, 2000.
+22. Zhang, Z. A flexible new technique for camera calibration. IEEE Transactions on Pattern Analysis and Machine Intelligence 2000, 22, 1330–1334.
+23. Wolf, P. R.; Dewitt, B. A. Elements of Photogrammetry with Applications in GIS; McGraw-Hill Book Company: New York, 2000.
+24. Ricolfe-Viala, C.; Sa´nchez-Salmero´n, A. J. Using the camera pin-hole model restrictions to calibrate the lens distortion model. Opt. Laser Technol. 2011, 43, 996–1005.
+25. Prescott, B.; McLean, G. F. Line-based correction of radial lens distortion. Graph Model Im. Proc. 1997, 59, 39–47.
+26. Pedersini, F.; Sarti, A.; Tubaro, S. Accurate and simple geometric calibration of multi-camera systems. Signal Process. 1999, 77, 309–334.
+27. Vedaldi, A. SIFT for MATLAB. 2011. http://www.vlfeat.org/~vedaldi/code/sift.html. Accessed 17 June 2011.
+28. Lowe, D. G. Distinctive image features from scale-invariant keypoints. Int. J. Comput. Vision 2004, 60, 91–110. 29. Fischler, M. A.; Bolles, R. C. Random sample consensus: a paradigm for model fitting with applica-
+tions to image analysis and automated cartography. Commun. ACM 1981, 24, 381–395. 30. Kovesi, P. MATLAB and octave functions for computer vision and image processing. 2011. http://
+www.csse.uwa.edu.au/~pk/research/matlabfns/. Accessed 10 June 2011. 31. Fusiello, A.; Irsara, L. Quasi-Euclidean epipolar rectification of uncalibrated images. In Mach. Vision
+Appl. 2011, 22, 663–670. 32. Fusiello, A.; Trucco, E.; Verri, A. Uncalibrated Rectification Kit. http://profs.sci.univr.it/~fusiello/
+demo/rect/. Accessed 10 June 2011. 33. NGII. National base network service. 2011. http://nbns.ngii.go.kr/gcp2/jsp/main/main.jsp.
+Accessed 10 June 2011. 34. Wawerla, J.; Marshall, S.; Mori, G.; Rothley, K.; Sabzmeydani, P. BearCam: Automated wildlife moni-
+toring at the Arctic circle. Mach. Vision Appl. 2009, 20, 303–317. 35. Bater, C. W.; Coops, N. C.; Wulder, M. A.; Nielsen, S. E.; McDermid, G.; Stenhouse, G. B. Design and
+installation of a camera network across an elevation gradient for habitat assessment. Instrum. Sci. Technol. 2011, 39, 231–247. 36. KHOA (Korea Hydrographic and Oceanographic Administration). Establishment of Coastal Erosion Monitoring System IV; KHOA: Incehon, 2006 (in Korean). 37. KHOA (Korea Hydrographic and Oceanographic Administration). Establishment of Coastal Erosion Monitoring System VI; KHOA: Incheon, 2008 (in Korean). 38. KHOA (Korea Hydrographic and Oceanographic Administration). Establishment of Coastal Erosion Monitoring System VII; KHOA: Incheon, 2009 (in Korean). 39. Goshtasby, A. Correction of mage deformation from lens distortion using Bezier patches. Comput. Vision Graph. 1989, 47, 385–394. 40. Rieke-Zapp, D. H.; Nearing, M. A. Digital close range photogrammetry for measurement of soil erosion. Photogramm. Rec. 2005, 20, 69–87. 41. D’Amelio, S.; Brutto, M. L. Close range photogrammetry for measurement of paintings surface deformations. In ISPRS International Workshop 3D-ARCH 2009 3D Virtual Reconstruction and Visualization of Complex Architectures, International Archives of Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume XXXVIII-5=W1, Trento, Italy, February 25–28, 2009, pp. 1–6. 42. Kim, J. S.; Jin, C. G., Lee, S. K.; Lee, S. G.; Choi, C. U. Geometric calibration and accuracy evaluation of smartphone camera. Journal of Korean Society for Geospatial Information Systems, 2011, 19(3), 115–125 (in Korean). 43. Hinz, S.; Stephani, M.; Schiemann, L.; Zeller, K. An image engineering system for the inspection of transparent construction materials. ISPRS J. Photogramm. Remote Sens. 2009, 64, 297–307. 44. Akca, D.; Gruen, A. Comparative geometric and radiometric evaluation of mobile phone and still video cameras. Photogramm. Rec. 2009, 24, 217–245. 45. Chandler, J. H.; Fryer, J. G.; Jack, A. Metric capabilities of low-cost digital cameras for close range surface measurement. Photogramm. Rec. 2005, 20, 12–26. 46. Parian, J. A.; Gruen, A. Sensor modeling, self-calibration and accuracy testing of panoramic cameras and laser scanners. ISPRS J. Photogramm. Remote Sens. 2010, 65, 60–76.
+
+Smartphone Technology for Environmental Monitoring
+
+529
+
+47. Lagu¨ ela, S.; Gonza´lez-Jorge, H.; Armesto, J.; Arias, P. Calibration and verification of thermographic cameras for geometric measurements. Infrared Phys. Technol. 2011, 54, 92–99.
+48. Meier, R. Professional Android 2 Application Development; Indianapolis, Indiana: Wiley Publishing, 2010.
+49. Ba¨umker, M.; Heimes, F. J. New calibration an computing method for direct georeferencing of image and scanner data using the position and angular data of an hybrid inertial navigation system. In Proceedings of the OEEPE Workshop on Integrated Sensor Orientation, Hannover, September 17–18, 2001 (on CD-ROM).
+50. NOAA. World Magnetic Model. 2011. http://www.ngdc.noaa.gov/geomagmodels/IGRFWMM.jsp? defaultModel=WMM. Accessed 10 June 2011.
+51. Turner, I. L.; Whyte, D.; Ruessink, B. G.; Ranasinghe, R. Observations of rip spacing, persistence and mobility at a long, straight coastline. Mar. Geol. 2007, 236, 209–221.
+
+Downloaded by [Pukyong National University] at 23:23 12 November 2012
+
+View publication stats
+

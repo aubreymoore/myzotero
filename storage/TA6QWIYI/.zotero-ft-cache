@@ -1,0 +1,1602 @@
+CSIRO PUBLISHING Invertebrate Systematics, 2012, 26, 506–514 http://dx.doi.org/10.1071/IS12025
+DNA barcoding invasive insects: database roadblocks
+
+Laura M. Boykin A,D, Karen Armstrong A, Laura Kubatko B and Paul De Barro C
+ABio-Protection Research Centre, PO Box 84, Lincoln University, Lincoln 7647, New Zealand. BDepartments of Statistics and Evolution, Ecology, and Organismal Biology, The Ohio State University, Columbus, OH 43210, USA. CCSIRO Ecosystem Sciences, GPO Box 2583, Brisbane, Qld 4001, Australia. DCorresponding author. Email: lboykin@mac.com
+
+Abstract. This study examines the genetic data coverage and availability in the Barcode of Life Database (BOLD), versions 2.5 and 3.0, and GenBank for the 88 invasive insects listed in the Global Invasive Species Database (http://www.issg.org). No data are recorded in either BOLD or GenBank for seven of those species. As a dedicated repository of curated barcode data BOLD is either missing data or contains inaccessible private data for 37 (42%) of the species while no data are available in GenBank for nine (8%) of the species. An evaluation of the Barcode Identiﬁcation Number (BIN) scheme in BOLD ver. 3.0 was also evaluated and in 41% of cases the BIN contained more than one species. This essentially arose due to the 1% delimitation thresholds associated with the BINs and would result in misidentiﬁcations. Overall, more information is available from GenBank for the 88 invasive species listed on the Global Invasive Species Database, but quality checking is required to ensure that the data extracted from GenBank are of sufﬁcient quality to make it useful. The implications of these results are discussed, with investment in parallel data silos suggested to be both costly and potentially an inefﬁcient use of resources that may lead to loss of data if the means needed to maintain these databases become unavailable.
+Additional keywords: Barcode of Life Database (BOLD), Bemisia tabaci Gennadius, CBOL, iBOL, QBOL.
+Received 13 April 2012, accepted 16 September 2012, published online 19 December 2012
+
+Introduction
+Invasive pests are a major threat to biodiversity, conservation and agriculture (Mack et al. 2000). The rapid and accurate identiﬁcation of recent arrivals or recently established populations of such species is essential to maximise the likelihood of favourable biosecurity outcomes such as successful eradication. Many molecular-based methods for identifying such organisms, using various tools and target loci, have been developed for this purpose where conventional approaches are ineffective (Clarke et al. 2005; De Barro et al. 2011). However, consistent methods that can be applied to a range of targets are desirable to deal with the considerable increase in and globalisation of potential targets for identiﬁcation (Bonants et al. 2010). In this respect, DNA barcoding has been promoted as a standard tool for the identiﬁcation of economically important arthropods (Floyd et al. 2010). The strength of the method is use of the same genetic region to obtain DNA sequences that uniquely characterise each species (Hebert et al. 2003). Using this to distinguish native from invasive biota for habitats across the world would be of signiﬁcant beneﬁt to biosecurity, but its potential can only be realised with the appropriate level of species and global population coverage of data availability in DNA barcode libraries.
+Armstrong and Ball (2005) were the ﬁrst to publish a DNA barcoding–based study for species identiﬁcation in a biosecurity
+Journal compilation Ó CSIRO 2012
+
+context and they concluded, among other things, that an agreed framework for the sharing and quality control of sequence data needed to be given serious consideration for adoption in such a critical application. Since then, numerous campaigns have continued to collect and register DNA barcodes (see Table 1), all of which are closely associated with the key consortia, being the Consortium for the Barcode of Life (CBOL, http://www. barcodeoﬂife.org/), the International Barcode of Life Project (iBOL, http://ibol.org/) and the Barcode of Life Database Systems (BOLD, http://www.barcodeoﬂife.org/), the latter being the common repository for data generated as well as an online workbench that aids collection, management, analysis, and use of DNA barcodes (Ratnasingham and Hebert 2007). Several of these campaigns incorporate groups of highly invasive species e.g. Tephritid Barcode Initiative (TBI), Quarantine Barcode of Life (QBOL), Mosquito Barcode Initiative (MBI) and HealthBOL focusing on vectors, pathogens, and parasites related to human health. Of these, QBOL has an overt biosecurity focus, aiming to obtain DNA barcode data for key species of plant health biosecurity signiﬁcance, as based on European Union quarantine target lists across fungi, arthropods, bacteria, nematodes, viruses and phytoplasmas (Bonants et al. 2010). In addition, the working group for Agricultural and Forestry Pests and their Parasitoids in iBOL are planning to barcode a total of 25 000 species, including aphids, thrips, true fruit ﬂies,
+www.publish.csiro.au/journals/is
+
+DNA barcoding database roadblocks
+
+Invertebrate Systematics 507
+
+Table 1. List of DNA barcoding campaigns compiled from sources collected on 7 March 2012
+
+Project Name
+Source: http://www.barcodeoﬂife.org/: CBOL Protist Working Group (ProWG) Lepidoptera Barcode of Life Trichoptera Barcode of Life (TrichopteraBOL) Tephritid Barcode Initiative (TBI) Sponge Barcoding Project (SpongeBOL) Shark Barcode of Life (SharkBOL) Quarantine Barcode of Life (QBOL) Polar Barcode of Life (PolarBOL) Mosquito Barcode Initiative (MBI) Marine Barcode of Life (MarBOL) Mammalia Barcode of Life Campaign HealthBOL Fish Barcode of Life Campaign (FISH-BOL) European Consortium for the Barcode of Life (ECBOL) Coral Reef Barcode of Life Bee Barcode of Life Initiative (Bee-BOL) CBOL Fungal Working Group All Birds Barcoding Initiative (ABBI)
+Source: http://lepbarcoding.org/: Formicidae barcode of life Termitidae Barcode of life
+Source: http://ibol.org/about-us/campaigns/: Tipulidae Barcode of Life Odonata Barcode of Life Ephemeroptera Barcode of Life Lumbricidae Barcode of Life
+
+Target Species
+Protists Butterﬂies and moths Caddisﬂies Fruit Flies Sponges Sharks Plant pathogenic quarantine organisms Bioinventory Arctic and Antarctic Mosquitos Marine species Mammals Vectors, pathogens, and parasites Fish DNA barcoding in Europe Reef species Bees Fungus Birds
+Ants Termites
+Crane ﬂies Dragonﬂies and damselﬂies Mayﬂies Earthworms
+
+Website
+unable to locate electronically http://lepbarcoding.org/ http://trichopterabol.org/ unable to locate electronically http://www.spongebarcoding.org/ http://www.sharkbol.org/ http://www.qbol.org/UK/ unable to locate electronically unable to locate electronically http://www.marinebarcoding.org/ http://www.mammaliabol.org/ http://www.healthbol.org/ (no content) http://www.ﬁshbol.org/ http://www.ecbol.org/ http://www.reefbarcoding.org/ http://www.bee-bol.org/ http://www.fungalbarcoding.org/ http://www.barcodingbirds.org/
+http://www.formicidaebol.org/ coming soon
+coming soon coming soon coming soon coming soon
+
+scale insects, sawﬂies and gall wasps (http://ibol.org/about-us/ campaigns/), all of which are of biosecurity interest.
+DNA barcoding has great potential as a species identiﬁcation tool because it is practical and affordable to perform and, more often than not, shows species-level separations (Ross et al. 2008) that mirror established taxonomy. This is despite its use being subject to criticism, for example within the context of DNA taxonomy (Will et al. 2005; Rubinoff et al. 2006), the evolutionary pitfalls of mitochondrial DNA (Galtier et al. 2009), misidentiﬁcations based on distance thresholds (Cameron et al. 2006), single versus multiple loci (Elias et al. 2007), and its potential technological obsolescence (Taylor and Harris 2012), all of which could affect its utility for the identiﬁcation of invasive species. Not least, however, is the lack of sufﬁcient taxonomic coverage in the reference datasets leading to vulnerability to Type II errors (misidentiﬁcation of queries without conspeciﬁcs in the database). This risk was a key concern in a recent study testing the performance of DNA barcoding and BOLD across insect orders (Virgilio et al. 2010). A subsequent study on invasive African fruit ﬂies tested the identiﬁcation of an unknown using an incomplete DNA barcode library (Virgilio et al. 2012). They outlined a general working strategy to deal with incomplete libraries. However, this relied heavily on the matching criteria chosen and still produced an error rate of 5%, which in biosecurity is likely to be unacceptably high when decisions on market access are to be made.
+Given the need for appropriate taxonomic coverage of reliable reference barcodes, how useful are current databases for identifying species of biosecurity concern? To explore this, the
+
+current utility of two key global databases, the Barcode of Life Database (BOLD vers 2.5 and 3.0) and GenBank as sources of data relevant to invasive insect species are examined. Given that there are many thousands of invasive species, we limit our assessment to the 88 highly invasive insect species listed in the Global Invasive Species Database (http://www.issg.org).
+Materials and methods
+Databases
+All 88 insect species listed in the Global Invasive Species Database (http://www.issg.org/) as highly invasive were included in this study. BOLD ver. 2.5 (http://www. boldsystems.org), BOLD ver. 3.0 (http://v3.boldsystems.org/) and GenBank (Taxonomy search) were queried for availability of all DNA sequence data for each of the species listed in Table 2. BOLD ver. 2.5 was replaced by ver. 3.0 in April 2012. Data collected from BOLD ver. 2.5 included numbers of specimen records, specimens with sequences, specimens with barcodes, and public records. BOLD ver. 3.0 data collection included, in addition to the ver. 2.5 dataset, the public Barcode Identiﬁcation Number (BIN) and the number of times a BIN contained a species that was not the query sequence (possibly leading to misidentiﬁcation). GenBank taxonomy browser data collected included the number of GenBank nucleotide records and all gene regions. Species with no records in BOLD, GenBank or both were investigated for synonyms that might be misleading the search for DNA sequences. Subsequent synonyms were searched in both databases and no sequence data
+
+508 Invertebrate Systematics
+
+Table 2. Sequence data available (complied March 2012) in BOLD versions 2.5 and 3.0 and GenBank for the 88 most invasive insects identiﬁed by the global invasive species database (http://www. issg.org/)
+** indicates there are no sequences in GenBank or BOLD
+
+Species
+Acnemia biﬁda Zaitzev** Acromyrmex octospinosus Reich Adelges piceae Ratzeburg Adelges tsugae Annand
+Aedes aegypti Linnaeus Aedes albopictus Skuse Agrilus planipennis Fairmaire Anopheles quadrimaculatus Say Anoplolepis gracilipes Fr. Smith
+Anoplophora chinensis Forster Anoplophora glabripennis Motchulsky
+Anthonomus grandis Boheman Apis mellifera scutellata Lepeletier Aulacaspis yasumatsui Takagi Bactrocera tryoni Froggatt
+Bemisia tabaci Gennadius Brontispa longissima Gestro Cactoblastis cactorum Berg Calliphora vicina Robineau-Desvoidy Ceratitis capitata Wiedemann
+Cinara cupressi Buckton Compsilura concinnata Meigen Coptotermes formosanus Shiraki Culex quinquefasciatus Say
+Dendroctonus valens LeConte Dendrolimus sibiricus Chetverikov Diaphorina citri Kuwayama
+Dysdera crocata C. L. Koch Gonipterus scutellatus Gyllenhal** Harmonia axyridis Pallas
+
+BOLD ver. 2.5: specimens
+with sequences
+
+BOLD ver. 2.5: public records
+
+BOLD ver. 3.0: specimens
+with sequences
+
+BOLD ver. 3.0: public sequences
+
+Difference between vers 2.5 and 3.0
+
+BOLD ver. 3.0: public
+BINs
+
+BOLD ver. 3.0: wrong species in BIN
+
+Gene regions in Genebank
+
+GenBank nucleotide
+records
+
+Difference in BOLD ver. 3.0 and GenBank
+public sequences
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+14
+
+13
+
+15
+
+13
+
+0
+
+174
+
+119
+
+174
+
+119
+
+0
+
+97
+
+31
+
+92
+
+31
+
+0
+
+77
+
+22
+
+76
+
+26
+
+4
+
+18
+
+3
+
+18
+
+4
+
+1
+
+94
+
+12
+
+94
+
+12
+
+0
+
+65
+
+25
+
+66
+
+26
+
+1
+
+5
+
+5
+
+5
+
+5
+
+0
+
+439
+
+430
+
+439
+
+430
+
+0
+
+23
+
+22
+
+23
+
+51
+
+0
+
+51
+
+0
+
+0
+
+0
+
+11
+
+3
+
+11
+
+22
+
+0
+
+46
+
+46
+
+0
+
+0
+
+3
+
+0
+
+200
+
+193
+
+199
+
+153
+
+-40
+
+0
+
+0
+
+0
+
+0
+
+0
+
+59
+
+1
+
+59
+
+1
+
+0
+
+30
+
+23
+
+30
+
+26
+
+3
+
+170
+
+108
+
+170
+
+122
+
+14
+
+1
+
+0
+
+2
+
+0
+
+0
+
+2
+
+0
+
+2
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+113
+
+33
+
+113
+
+34
+
+1
+
+8
+
+6
+
+8
+
+6
+
+0
+
+7
+
+6
+
+7
+
+6
+
+0
+
+211
+
+210
+
+211
+
+210
+
+0
+
+11
+
+7
+
+11
+
+7
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+75
+
+18
+
+78
+
+18
+
+0
+
+0
+
+0 None
+
+0
+
+0
+
+0
+
+0 Ef1a and COI-COII
+
+25
+
+–25
+
+1
+
+1 Barcode
+
+19
+
+–6
+
+4
+
+0 Barcode, COII, cytb, ND1,
+
+222
+
+–103
+
+EF1a, microsats
+
+3
+
+1 Many
+
+32 749
+
+–32 718
+
+1
+
+1 Many
+
+68 773
+
+–68 747
+
+0
+
+0 Barcode, microsats, 16S
+
+60
+
+–56
+
+1
+
+0 Barcode, single copy nt genes
+
+23
+
+–11
+
+1
+
+0 Barcode, EF1a, cytb, 28S,
+
+62
+
+–36
+
+wng, microsats
+
+1
+
+1 Barcode, 16S, COI-COII
+
+58
+
+–53
+
+1
+
+1 Barcode, 28S, 16S, COI-COII,
+
+469
+
+–39
+
+ND4, microsats
+
+0
+
+0 Many (ITS1 and 2, COI, COII)
+
+2785
+
+–2763
+
+1
+
+0 cytb, ITS1 and 2
+
+9
+
+37
+
+0
+
+0 Barcode, 28S, Ef1a
+
+3
+
+–3
+
+1
+
+1 Barcode, cytb, COII, CAD,
+
+161
+
+–158
+
+transposons, microsats
+
+8
+
+0 Many
+
+134 529 –134 376
+
+0
+
+0 microsats, COI, p450
+
+63
+
+–63
+
+0
+
+0 Barcode, COI
+
+136
+
+–135
+
+1
+
+1 Barcode, cytb, 16s 5.8s, ITS2
+
+239
+
+–213
+
+2
+
+1 Barcode, microsats, ND4,
+
+1144
+
+–1022
+
+ND5
+
+0
+
+0 Barcode, ATP6
+
+2
+
+–2
+
+0
+
+0 None
+
+0
+
+0
+
+0
+
+0 16s, COII, 18S, 5.8S, 12S
+
+292
+
+–292
+
+1
+
+1 Barcode, 28S, COI, COII,
+
+26 021
+
+–25 987
+
+microsats, EF1a, 5.8S, 28S
+
+0
+
+0 Barcode, COI, 5.8S, 28S
+
+171
+
+–165
+
+0
+
+0 Barcode, ITS2, COI
+
+24
+
+–18
+
+1
+
+1 Barcode, CYP4DB1, COI,
+
+360
+
+–150
+
+microsats
+
+2
+
+1 Barcode, 28S, H3, 16S
+
+23
+
+–16
+
+0
+
+0 Barcode
+
+0
+
+0
+
+1
+
+0 Barcode, 16S, 12S
+
+343
+
+–325
+
+(continued next page )
+
+L. M. Boykin et al.
+
+DNA barcoding database roadblocks
+
+Table 2. (continued )
+
+Species
+
+BOLD ver. 2.5: specimens
+with sequences
+
+BOLD ver. 2.5: public records
+
+BOLD ver. 3.0: specimens
+with sequences
+
+BOLD ver. 3.0: public sequences
+
+Difference between vers 2.5 and 3.0
+
+BOLD ver. 3.0: public
+BINs
+
+BOLD ver. 3.0: wrong species in BIN
+
+Gene regions in Genebank
+
+GenBank nucleotide
+records
+
+Difference in BOLD ver. 3.0 and GenBank
+public sequences
+
+Hemiberlesia pitysophila Takagi**
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 None
+
+0
+
+0
+
+Homalodisca vitripennis Germar
+
+9
+
+3
+
+5
+
+3
+
+0
+
+1
+
+0 Barcode, genes from an EST
+
+69
+
+–66
+
+library
+
+Hoplochelus marginalis Fairmaire**
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 None
+
+0
+
+0
+
+Hylastes ater Paykull
+
+4
+
+0
+
+4
+
+0
+
+0
+
+0
+
+0 28S
+
+2
+
+–2
+
+Hyphantria cunea Drury
+
+194
+
+69
+
+194
+
+69
+
+0
+
+2
+
+1 Barcode, pgi
+
+142
+
+–73
+
+Icerya purchasi Maskell
+
+6
+
+1
+
+6
+
+1
+
+0
+
+0
+
+0 Barcode, 18S, 28S, EF1a
+
+10
+
+–9
+
+Ips typographus DeGreer
+
+4
+
+1
+
+4
+
+1
+
+0
+
+1
+
+0 Barcode, mircrosats, COI, 12S
+
+117
+
+–116
+
+Lasius neglectus Van Loon
+
+19
+
+18
+
+19
+
+19
+
+1
+
+1
+
+0 Barcode, COI, microsats
+
+24
+
+–5
+
+Linepithema humile Mayr
+
+66
+
+22
+
+66
+
+25
+
+3
+
+1
+
+0 Genomic scaffold, wnt-1,
+
+6570
+
+–6545
+
+EF1a, 28S, 18S
+
+Lymantria dispar Linnaeus
+
+267
+
+6
+
+268
+
+193
+
+187
+
+1
+
+1 Barcode, COI
+
+333
+
+–140
+
+Lymantria mathura Moore
+
+26
+
+0
+
+26
+
+26
+
+26
+
+1
+
+1 Barcode
+
+28
+
+–2
+
+Lymantria monacha Linnaeus
+
+77
+
+4
+
+77
+
+63
+
+59
+
+1
+
+1 Barcode
+
+77
+
+–14
+
+Maconellicoccus hirsutus Green
+
+5
+
+1
+
+5
+
+5
+
+4
+
+1
+
+0 COI, microsats, EF1a
+
+342
+
+–337
+
+Monomorium destructor Jerdon
+
+59
+
+1
+
+59
+
+7
+
+6
+
+2
+
+2 Barcode, 28S
+
+13
+
+–6
+
+Monomorium ﬂoricola Jerdon
+
+114
+
+0
+
+114
+
+7
+
+7
+
+1
+
+1 Barcode
+
+7
+
+0
+
+Monomorium pharaonis Linnaeus
+
+48
+
+0
+
+48
+
+0
+
+0
+
+0
+
+0 microsats, EF1a
+
+11
+
+–11
+
+Myrmica rubra Linnaeus
+
+72
+
+64
+
+72
+
+64
+
+0
+
+1
+
+1 Barcode, EF1a, cytb, ITS1
+
+179
+
+–115
+
+Nylanderia (= Paratrechina) pubens Forel**
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 None
+
+0
+
+0
+
+Ochlerotatus japonicus japonicus Theobald
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 NADH, 28S, COII, microsats
+
+30
+
+–30
+
+Oopterus soledadinus Guerin-Méneville
+
+14
+
+14
+
+14
+
+14
+
+0
+
+0
+
+0 Barcode, 16S, microsat, COI
+
+75
+
+–61
+
+Oracella acuta (= Pseudococcus acutus) Lobdell**
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 None
+
+0
+
+0
+
+Orthezia insignis Browne
+
+5
+
+0
+
+5
+
+0
+
+0
+
+0
+
+0 None
+
+0
+
+0
+
+Orthotomicus erosus Wollaston
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 COI, EF1a,
+
+5
+
+–5
+
+Oryctes rhinoceros Linnaeus
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 Random genes
+
+14
+
+–14
+
+Pachycondyla chinensis Emery
+
+36
+
+34
+
+36
+
+34
+
+0
+
+2
+
+1 Barcode
+
+38
+
+–4
+
+Paratachardina pseudolobata Kondo & Gullan**
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 None
+
+0
+
+0
+
+Paratrechina longicornis Latreille
+
+104
+
+6
+
+104
+
+9
+
+3
+
+2
+
+2 Barcode, microsats, 18S, 28S,
+
+82
+
+–73
+
+CAD, EF1a
+
+Pheidole megacephala Fabricius
+
+233
+
+45
+
+233
+
+48
+
+3
+
+1
+
+1 Barcode, cytb, 28s, microsats
+
+81
+
+–33
+
+Philornis downsi Dodge & Aitken
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 microsats, 5.8S, 18S ITS1
+
+13
+
+–13
+
+and 2
+
+Polistes chinensis Perez
+
+5
+
+3
+
+5
+
+5
+
+2
+
+1
+
+0 Barcode, COII, microsat
+
+30
+
+–25
+
+Quadrastichus erythrinae Kim
+
+1
+
+1
+
+1
+
+1
+
+0
+
+0
+
+0 Barcode, COI
+
+7
+
+–6
+
+Radumeris tasmaniensis Saussure
+
+1
+
+0
+
+1
+
+1
+
+1
+
+1
+
+0 None
+
+0
+
+1
+
+Rhynchophorus ferrugineus Olivier
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0 Microsats, cytb, COI
+
+387
+
+–387
+
+Scolytus multistriatus Marsham
+
+9
+
+1
+
+9
+
+1
+
+0
+
+0
+
+0 Barcode, 18S
+
+3
+
+–2
+
+Scyphophorus acupunctatus Gyllenhal
+
+5
+
+1
+
+5
+
+1
+
+0
+
+1
+
+0 Barcode, 28S, EF1a
+
+3
+
+–2
+
+(continued next page )
+
+Invertebrate Systematics 509
+
+510 Invertebrate Systematics
+
+Table 2. (continued )
+
+Species
+Sirex noctilio Fabricius Solenopsis geminata Fabricius
+Solenopsis invicta Buren Solenopsis papuana Emery Solenopsis richteri Forel Tapinoma melanocephalum Fabricius Technomyrmex albipes Smith Tetropium fuscum Fabricius Thaumetopoea pityocampa Denis & Schiffermüller Tomicus piniperda Linnaeus
+Toumeyella parvicornis Cockerell Trechisibus antarcticus Dejean Trogoderma granarium Everts Vespa velutina de Buysson Vespula germanica Fabricius Vespula pensylvanica Rohwer Vespula vulgaris Linnaeus
+Wasmannia auropunctata Roger
+Xyleborus glabratus Eichhoff Xylosandrus compactus Eichhoff Xylosandrus mutilatus Blandford
+Total
+
+BOLD ver. 2.5: specimens
+with sequences
+17 100
+4 4 1 141 133 3 7 42
+2 21 4 7 12 0 14
+107
+0 0 0
+3957
+
+BOLD ver. 2.5: public records
+1 26
+1 0 0 0 26 0 0 41
+0 21 0 3 2 0 0
+90
+0 0 0
+1796
+
+BOLD ver. 3.0: specimens
+with sequences
+17 100
+4 4 1 141 133 3 7 42
+2 21 4 7 12 0 14
+107
+0 0 0
+3953
+
+BOLD ver. 3.0: public sequences
+1 27
+2 0 0 1 27 0 1 41
+0 21 0 3 2 0 1
+90
+0 0 0
+2134
+
+Difference between vers 2.5 and 3.0
+0 1
+1 0 0 1 1 0 1 0
+0 0 0 0 0 0 1
+0
+0 0 0 0 338
+
+BOLD ver. 3.0: public
+BINs
+1 1
+1 0 0 1 3 0 1 0
+0 0 0 0 1 0 1
+5
+0 0 0
+68
+
+BOLD ver. 3.0: wrong species in BIN
+0 1
+1 0 0 0 1 0 0 0
+0 0 0 0 1 0 1
+0
+0 0 0
+28
+
+Gene regions in Genebank
+Barcode, 16S, 18S Barcode, odorant binding
+protein, 5.8S, ITS1 and 2 Barcode, many None Barcode, genome EF1a, wing, 28S, COI Barcode, 18S, wing, Barcode, 5.8S, ITS1 and 2, 28S Barcode, microsats, COII, Barcode, 28S, COI, EF1a,
+COII None Barcode,16S Barcode, cytb Barcode Barcode, 28S, 16S 18S, 5.8S, ITS2 Barcode, other gene products,
+microsat Barcode, wing, EF1a,
+microsats, COII, cytb Barcode, CAD, 28S Barcode, CAD, EF1a, 28S CAD, EF1a, COI, 28S None
+
+GenBank nucleotide
+records
+14 59
+69 988 0 35 11 37 15
+148 161
+0 85 14 7 21 4 58
+171
+3 9 6
+348 303
+
+Difference in BOLD ver. 3.0 and GenBank
+public sequences
+–13 –32
+–69 986 0
+–35 –10 –10 –15 –147 –120
+0 –64 –14 –4 –19 –4 –57
+–81
+–3 –9 –6 0 –346 169
+
+L. M. Boykin et al.
+
+DNA barcoding database roadblocks
+
+Invertebrate Systematics 511
+
+were recovered for the synonyms listed in Table 2. The QBOL (Q-Bank: http://www.q-bank.eu/) database was excluded because the database is not fully populated and DNA sequence data cannot yet be extracted.
+Example query: Bemisia tabaci
+Of the species on the Global Invasive Species list, Bemisia tabaci (authorities are listed in Table 2 for all species) was selected as a test case for querying the BOLD and GenBank databases because there is substantial understanding of the biology, taxonomy and phylogeny of this species (Liu et al. 2007, 2012; Boykin et al. 2007, 2012; Dinsdale et al. 2010; De Barro and Ahmed 2011; De Barro et al. 2011) to assist in interpretation of the results. A known sequence from the global population alignment of B. tabaci (maintained by PDB and LMB) was extracted and used as the query specimen (MidEastAm1_Syria_Al_Hasakeh_Hap2_AB 473559) to test how well BOLD and GenBank identify it. Other information that could be extracted from the search results (for example: authors, host information, publication citation, etc) was also collected.
+Results
+There are more DNA sequences available in GenBank (348 303) than BOLD ver. 2.5 (3957) or BOLD ver. 3.0 (3953) for the 88 species described in Table 2. Twelve species have no GenBank records and 16 have no BOLD records, while seven have no DNA sequence records in either BOLD or GenBank (Table 2). In addition, there are 21 species in BOLD for which the sequences are private and were therefore classed as not being present for the purposes of this study; this increased the total to 37 of the 88 not being represented in BOLD (Table 2).
+BOLD vers 2.5 and 3.0
+GISD species missing data in BOLD include Acnemia biﬁda, Acromyrmex octospinosus, Brontispa longissima, Gonipterus scutellatus, Hemiberlesia pitysophila, Hoplochelus marginalis, Nylanderia (= Paratrechina) pubens, Ochlerotatus japonicus japonicus, Oracella acuta, Orthotomicus erosus, Oryctes rhinoceros, Paratachardina pseudolobata, Philornis downsi, Rhynchophorus ferrugineus, Vespula pensylvanica, Xylosandrus mutilates.
+GISD species with data in BOLD, but not open to the public include Apis mellifera scutellata, Aulacaspis yasumatsui, Cinara cupressi, Hylastes ater, Lymantria mathura, Monomorium ﬂoricola, Monomorium pharaonis, Orthezia insignis, Radumeris tasmaniensis, Solenopsis papuana, Solenopsis richteri, Tapinoma melanocephalum, Tetropium fuscum, Thaumetopoea pityocampa, Toumeyella parvicornis, Trogoderma granarium, Vespula vulgaris.
+Several issues were encountered when searching BOLD ver. 3.0. For example, the BIN numbers for each species are not consistent when using the ‘taxonomy’ and ‘BIN’ search options. The taxonomy search appears to be adding BINs to each species. Speciﬁcally, a taxonomy search for Aedes aegypti returns three BINs while the BIN search options reports two BINs only. There also appears to be an inconsistency with the results returned for the number of publically available sequences using the taxonomy and public data search options. For example, a taxonomy search in
+
+BOLD for L. dispar yielded six public sequences while the public database option search returned 193 sequences (see Table 3 for more examples). Another concern noted for BOLD ver. 3.0 was the number of times the BINs contained a species other than the query sequence. A total of 68 BINs were found for the 88 species and in 28 cases there was a species other than the query sequence in the BIN, meaning that 41% of the time a misidentiﬁcation of the query sequence could occur for these 88 species.
+For 21 species, BOLD ver. 3.0 has more sequence data than GenBank (Pheidole megacephala, Tapinoma melanocephalum, Monomorium ﬂoricola, Technomyrmex albipes, Anopheles quadrimaculatus, Hyphantria cunea, Monomorium destructor, Apis mellifera scutellata, Solenopsis geminate, Monomorium pharaonis, Paratrechina longicornis, Scolytus multistriatus, Orthezia insignis, Anoplolepis gracilipes, Solenopsis papuana, Sirex noctilio, Compsilura concinnata, Hylastes ater, Scyphophorus acupunctatus, Toumeyella parvicornis and Radumeris tasmaniensis), but data for 11 of these are private and so effectively unavailable.
+
+GenBank
+GISD species missing data in GenBank include Acnemia biﬁda, Compsilura concinnata, Hoplochelus marginalis, Nylanderia (= Paratrechina) pubens, Oracella acuta (= Pseudococcus acutus), Orthezia insignis, Paratachardina pseudolobata, Radumeris tasmaniensis, Solenopsis papuana, Toumeyella parvicornis.
+All GISD species with data in GenBank are publically available.
+GISD species with no records in either GenBank or BOLD include Acnemia biﬁda, Gonipterus scutellatus, Hemiberlesia pitysophila, Hoplochelus marginalis (= Empecta nudiplaga), Nylanderia (= Paratrechina) pubens, Oracella acuta (= Pseudococcus acutus), Paratachardina pseudolobata.
+
+DNA barcoding campaigns
+DNA barcoding campaigns are listed in Table 1. The following campaigns are of interest to this study: Lepidoptera Barcode of Life, the Tephritid Barcode Initiative, the Mosquito Barcode Initiative, Bee Barcode of Life Initiative, Formicidae Barcode of Life, Termitidae Barcode of Life. All of the data collected from these campaigns are, or will be, deposited in BOLD. Table 1 also
+
+Table 3. Species for which there is a discrepancy between the numbers of sequences available using the taxonomy search and public data search
+options (GenBank ver. 3.0)
+
+Species
+Lymantria dispar Lymantria mathura Lymantria monarcha Monomorium destructor Monomorium ﬂoricola Paratrechina longicornis Pheidole megacephala
+
+No. of sequences found using the taxonomy search option
+6 0 4 1 0 6 45
+
+No. of sequences found using the
+public data search option
+193 26 63
+7 7 9 48
+
+512 Invertebrate Systematics
+
+L. M. Boykin et al.
+
+contains the Quarantine Barcode of Life (QBOL) campaign that has its own database, Q-Bank, but this is not publically available. Peter Bonants (Coordinator QBOL and Q-bank) states, ‘The databases are meant for NPPOs (National Plant Protection Organisations) to correctly identify quarantine species using the Q-bank database’ (pers. comm.) and are therefore not available to the public.
+Example query: Bemisia tabaci
+As of 7 March 2012 there were 3127, 193 and 153 publically available mtCOI sequences in GenBank, BOLD ver. 2.5 and BOLD ver. 3.0, respectively. The query DNA sequence from the global population alignment of B. tabaci for MidEastAm1_Syria_Al_Hasakeh_Hap2_AB473559 resulted in the identiﬁcation results for BOLD vers 2.5 and 3.0 and GenBank. Beyond the ﬁrst few hits, the BOLD searches are substantially different from the GenBank results (data not shown). For example, all of the top hits in the GenBank search are B. tabaci in comparison to the BOLD results where other genera and species are listed, and likely reﬂects the fewer barcode sequences in BOLD than in GenBank. Second, B.tabaci is a cryptic species complex (Dinsdale et al. 2010; De Barro and Ahmed 2011; De Barro et al. 2011; Boykin et al. 2012) and so the additional information regarding the genetic groups can be obtained from the GenBank sequences via the author codes asigned to the sequences, while this information is lacking in BOLD. For the B. tabaci community, a database is needed to store all of the curated 30 COI data. This is the gene region that is used to identify unknowns and conduct phylogenetics – ignoring these data will lead to incorrect identiﬁcations.
+Discussion
+Change is needed for DNA barcoding to remain relevant to biosecurity, especially regarding data handling of invasive insects. Tables 1 and 2 show that there is room for improvement in species coverage and data availability for these 88 species for both BOLD and GenBank. Researchers query these databases for several reasons, but the two reason of interest for this study are (1) identiﬁcation of an unknown and (2) ability to obtain sequences to conduct further studies, i.e. phylogenetic analyses. Both of these reasons are affected by the quality and availability of the data in each database. The results of this study are clear: GenBank has more sequences available for the 88 invasive insects identiﬁed by the Global Invasive Species Database than BOLD (Table 2). It is important to note that the data that are set to private in BOLD are still used when identifying unknowns (Ratnasingham and Hebert 2007) regardless, there are still fewer sequences available.
+Identiﬁcation success using GenBank (Blast) and BOLD (distance-based identiﬁcation) has been analysed in detail via simulation and real data (Ross et al. 2008), which showed that no single method of species identiﬁcation was superior across the range of scenarios studied. In other words, using BOLD to identify unknowns is not superior to GenBank’s Blast for identiﬁcation of unknowns. In fact, successful identiﬁcation of plants (Lactuceace and Anthemideae) using only GenBank has been reported to be as high as 91% (Gemeinholzer et al. 2006) with the current quality of data. GenBank has also been used for
+
+successful identiﬁcations of Phytoseiidae (Acari : Mesostigmata) (Tixier et al. 2011). The degree to which species are genetically differentiated appears to be the critical determinant of success. Correct identiﬁcation is also dependent on representation in the reference dataset, but Ross et al. (2008) found that a correct identiﬁcation was possible, even in the absence of the species in the reference data, using a strict tree-based approach to identiﬁcation.
+In order to conduct a tree-based approach, data must be available and proper phylogenetic analyses must be carried out. Most of the criticism of DNA barcoding falls on the methods used by DNA barcoders, particularly distance-based tree-reconstruction methods (DeSalle et al. 2005; Prendini 2005; Will et al. 2005), but they continue to dominate the methods in BOLD and the DNA barcoding literature, beyond identiﬁcation (see ﬁg. 4 in Taylor and Harris 2012). The ability to obtain sequences to conduct further studies (i.e. phylogenetic analyses) is a second reason that researchers query these databases. Does the researcher choose quantity (GenBank) or quality (BOLD)? The argument for using BOLD is that it contains quality data (Ratnasingham and Hebert 2007), but quality data (BOLD) is not useful when 37 of the 88 highly invasive species have no data or the data are private (Table 2). With BOLD missing 42% of the invasive insect species included in this study, we are left to rely on GenBank data, of variable quality. This raises the further issue of GenBank and the presumption of quality, or lack thereof. Early assessment of the quality of data in GenBank includes a review of human mtDNA in GenBank (Forster 2003) where the study concluded that up to half of the sequences contained mistakes (Harris 2003). Sources of error include ampliﬁcation of numts (Song et al. 2008) and manual editing and sequencing errors (Harris 2003; Buhay 2009). A more recent review of ‘COI-LIKE’ sequences (the ‘like’ tag is given by GenBank staff when a stop codon is detected in the mtCOI region) shows that the tag ‘like’ is fairly common (22 of the 86 species included in the study) in Crustacean barcodes (Buhay 2009). There have been requests to GenBank to let users make changes themselves to the data, but GenBank’s managers are yet to grant this access (Pennisi 2008). Recent improvements to GenBank include the ‘barcode’ tag on associated DNA barcoding data (to indicate quality), and also the UNVERIFIED tag before odd sequences ﬂagged by GenBank staff (Benson et al. 2011, 2012). The user can also manage GenBank sequence quality. By way of example, De Barro and Ahmed (2011) downloaded 2325 B. tabaci mtCO1 sequences from GenBank and then removed any sequences with gaps, stop codons, short sequences or those with ambiguous bases to obtain a ﬁnal dataset of 1436 sequences. This demonstrates that one can manage quality (GenBank), but cannot do anything if the data are not available (BOLD or Q-bank).
+As outlined above, both databases have issues with either data quality (GenBank) or data availability (BOLD). For the 88 invasive insect species included in this study, conducting an identiﬁcation search or investigative search for DNA sequence data should include a GenBank search due to the lack of public sequences in BOLD. A GenBank search also provides more information on a particular species. For example, GenBank lists other gene regions that have been sequenced, author names, and author codes for each sequence, which are useful when going beyond identiﬁcation. In BOLD ver. 2.5, most of the author
+
+DNA barcoding database roadblocks
+
+Invertebrate Systematics 513
+
+information is private – all that is recovered is the author’s institution. BOLD ver. 3.0 is an improvement on ver. 2.5 as it includes author information for public and private sequence.
+Another issue that needs consideration is the wealth of data already available in non-barcoding regions. Table 2 shows that several highly invasive insects have more sequence data for regions other than the barcoding region. For example, B. tabaci has the most sequences listed in GenBank (Table 1) for any of the 88 invasive insect species considered in this study. A key component of this dataset is mtCOI, but in this case it is the 30 end as this was the region chosen by some of the earliest studies to consider the genetic diversity in what has now become known as a cryptic species complex (Frohlich et al. 1999; Boykin et al. 2007, 2012; Dinsdale et al. 2010; De Barro et al. 2011). It would be beneﬁcial for BOLD to link to the most recent papers on the identiﬁcation and genetic research for a given species, even if these studies do not include the barcoding region of mtCOI.
+Considering the diversity of campaigns listed in Table 1, there is no doubt that there is considerable interest in the application of the barcoding approach. Many of the campaigns include invasive species and some have an overt focus on biosecurity. So again, there is clear evidence that the philosophy behind barcoding encompasses a biosecurity focus. The key limiting issue is availability of data and the need for coordination to ensure that effort is appropriately targeted. QBOL is the campaign designed to handle invasive species through the development of Q-Bank. This initiative does not appear to contain data for the included invasive species, even though there is information in both BOLD and GenBank. If Q-Bank were to become useful to the biosecurity community, it would need to include all the data available in BOLD and also that from other gene regions, not just barcoding data (GenBank). The fracturing of the data from GenBank to BOLD to Q-Bank might lead to lack of enthusiasm (researchers having to submit data multiple times) and funding. A key issue that needs to be considered in the context of biosecurity is whether a stand-alone database is necessarily the best option. Q-Bank is a stand-alone database that delivers to QBOL, a project ﬁnanced by the 7th Framework Program of the European Union. Once this project is completed, funding will cease and the question remains as to whether future funding can be secured to maintain the Q-Bank. If long-term funding is not secured it will fail to become useful. One argument for establishing Q-Bank as a stand-alone database is the particular need for security of data in the context of biosecurity regulation. However, there are other mechanisms of securing data without resorting to setting up a database de novo. Another example of the consequences of the lack of long-term funding on the usefulness and availability of data is the Inﬂuenza Sequence Database (Macken et al. 2001). This database began as an open access resource, but subsequent lack of funding forced the transition to fee for access. Conversely, there are several very successful sequence databases such as the HIV sequence database (Gaschen et al. 2001), the hepatitis C sequence database (Kuiken et al. 2005), and FlyBase (Ashburner and Drysdale 1994), that have maintained funding for over 20 years. One common theme across these is that they are not restricted to one gene region. Rather, they each encompass a broad range of regions and include biological data. Such an approach may improve the utility and relevance of databases such as Q-Bank and BOLD, which will help ensure their long-term viability. One can argue that this is
+
+also behind the success of GenBank and is a challenge for BOLD to overcome.
+In summary, BOLD is a relatively new database but for it to remain beneﬁcial to the biosecurity community the following suggestions should be considered:
+* All data in BOLD should be available to the public. * When there is a positive identiﬁcation of an unknown or query
+that falls within one of the campaign initiatives (Table 1), a link from BOLD to the campaign would be useful. * Percentage thresholds (or BINs) should be avoided in identiﬁcation of invasive insects as it is misleading and may lead to unintended biosecurity outcomes (Boykin et al. 2012). * Creation of compartments for non-barcoding regions in BOLD would be useful for invasive species. * Links to phylogenetic software from the BOLD website would be helpful for those wanting to go beyond identiﬁcation and build more complex phylogenetic trees (Taylor and Harris 2012). * Q-bank needs to incorporate all data from BOLD and GenBank for these invasive insects, regardless of gene region.
+Acknowledgements
+The Tertiary Education Commission of New Zealand funded KA and LMB. LMB thanks Rupert Collins, The Bio-Protection Research Centre, Lincoln University, Lincoln, New Zealand for helpful discussions regarding BINs in BOLD.
+References
+Armstrong, K. F., and Ball, S. L. (2005). DNA barcodes for biosecurity: invasive species identiﬁcation. Philosophical Transactions of the Royal Society of London B Biological Science 360, 1813–1823.
+Ashburner, M., and Drysdale, R. (1994). FlyBase – the Drosophila genetic database. Development 120, 2077–2079.
+Benson, D. A., Karsch-Mizrachi, I., Lipman, D. J., Ostell, J., and Sayers, E. W. (2011). GenBank. Nucleic Acids Research 39, D32–D37. doi:10.1093/ nar/gkq1079
+Benson, D. A., Karsch-Mizrachi, I., Clark, K., Lipman, D. J., Ostell, J., and Sayers, E. W. (2012). GenBank. Nucleic Acids Research 40, D48–D53. doi:10.1093/nar/gkr1202
+Bonants, P., Groenewald, E., Rasplus, J. Y., Maes, M., Vos, P. D., Frey, J., Boonham, N., Nicolaisen, M., Bertacini, A., Robert, V., Barker, I., Kox, L., Ravnikar, M., Tomankova, K., Cafﬁer, D., Li, M., Armstrong, K., Freitas-Astúa, J., Stefani, E., Cubero, J., and Mostert, L. (2010). QBOL: a new EU project focusing on DNA barcoding of Quarantine organisms. EPPO Bulletin 40. doi:10.1111/j.1365-2338.2009.02350.x
+Boykin, L. M., Shatters, R. G. Jr, Rosell, R. C., McKenzie, C. L., Bagnall, R. A., De Barro, P., and Frohlich, D. R. (2007). Global relationships of Bemisia tabaci (Hemiptera: Aleyrodidae) revealed using Bayesian analysis of mitochondrial COI DNA sequences. Molecular Phylogenetics and Evolution 44, 1306–1319. doi:10.1016/j.ympev.2007.04.020
+Boykin, L. M., Armstrong, K. F., Kubatko, L., and De Barro, P. (2012). Species delimitation and global biosecurity. Evolutionary Bioinformatics 8, 1–37.
+Buhay, J. E. (2009). “COI-LIKE” sequences are becoming problematic in molecular systematic and DNA barcoding studies. Journal of Crustacean Biology 29, 96–110. doi:10.1651/08-3020.1
+Cameron, S., Rubinoff, D., and Will, K. (2006). Who will actually use DNA barcoding and what will it cost? Systematic Biology 55, 844–847. doi:10.1080/10635150600960079
+
+514 Invertebrate Systematics
+
+L. M. Boykin et al.
+
+Clarke, A. R., Armstrong, K. F., Carmichael, A. E., Milne, J. R., Raghu, S., Roderick, G. K., and Yeates, D. K. (2005). Invasive phytophagous pests arising through a recent tropical evolutionary radiation: the Bactrocera dorsalis complex of fruit ﬂies. Annual Review of Entomology 50, 293–319. doi:10.1146/annurev.ento.50.071803.130428
+De Barro, P., and Ahmed, M. (2011). Genetic networking of the Bemisia tabaci cryptic species complex reveals pattern of biological invasions. PLoS Biology 6, e25579.
+De Barro, P. J., Liu, S. S., Boykin, L. M., and Dinsdale, A. B. (2011). Bemisia tabaci: a statement of species status. Annual Review of Entomology 56, 1–19. doi:10.1146/annurev-ento-112408-085504
+DeSalle, R., Egan, M. G., and Siddall, M. (2005). The unholy trinity: taxonomy, species delimitation and DNA barcoding. Proceedings of the Royal Society of London. Series B. Biological Sciences 360, 1905–1916.
+Dinsdale, A., Cook, L., Riginos, C., Buckley, Y. M., and De Barro, P. (2010). Reﬁned global analysis of Bemisia tabaci (Gennadius) (Hemiptera: Sternorrhyncha: Aleyroidea) mitochondrial CO1 to identify species level genetic boundries. Annals of the Entomological Society of America 103, 196–208. doi:10.1603/AN09061
+Elias, M., Hill, R. I., Willmott, K. R., Dasmahapatra, K. K., Brower, A. V., Mallet, J., and Jiggins, C. D. (2007). Limited performance of DNA barcoding in a diverse community of tropical butterﬂies. Proceedings. Biological Sciences 274, 2881–2889. doi:10.1098/rspb.2007.1035
+Floyd, R., Lima, J., deWaard, J. R., Humble, L. M., and Hanner, R. H. (2010). Common goals: policy implications of DNA barcoding as a protocol for identiﬁcation of arthropod pests. Biological Invasions 12, 2947–2954. doi:10.1007/s10530-010-9709-8
+Forster, P. (2003). To err is human. Annals of Human Genetics 67, 2–4. doi:10.1046/j.1469-1809.2003.00002.x
+Frohlich, D. R., Torres-Jerez, I. I., Bedford, I. D., Markham, P. G., and Brown, J. K. (1999). A phylogeographical analysis of the Bemisia tabaci species complex based on mitochondrial DNA markers. Molecular Ecology 8, 1683–1691. doi:10.1046/j.1365-294x.1999.00754.x
+Galtier, N., Nabholz, B., Glemin, S., and Hurst, G. D. (2009). Mitochondrial DNA as a marker of molecular diversity: a reappraisal. Molecular Ecology 18, 4541–4550. doi:10.1111/j.1365-294X.2009.04380.x
+Gaschen, B., Kuiken, C., Korber, B., and Foley, B. (2001). Retrieval and onthe-ﬂy alignment of sequence fragments from the HIV database. Bioinformatics 17, 415–418. doi:10.1093/bioinformatics/17.5.415
+Gemeinholzer, B., Oberprieler, C., and Bachmann, K. (2006). Using GenBank data for plant identiﬁcation: possibilities and limitations using the ITS1 of Asteraceae species belonging to the tribes Lactuceae and Anthemidae. Taxon 55, 173–187. doi:10.2307/25065539
+Harris, J. D. (2003). Can you bank on GenBank? Trends in Ecology & Evolution 18, 317–319. doi:10.1016/S0169-5347(03)00150-2
+Hebert, P. D., Cywinska, A., Ball, S. L., and deWaard, J. R. (2003). Biological identiﬁcations through DNA barcodes. Proceedings of the Royal Society of London. Series B. Biological Sciences 270, 313–321. doi:10.1098/ rspb.2002.2218
+Kuiken, C., Yusim, K., Boykin, L., and Richardson, R. (2005). The Los Alamos hepatitis C sequence database. Bioinformatics 21, 379–384. doi:10.1093/bioinformatics/bth485
+
+Liu, S., De Barro, P., Jing, X., Luan, J. B., Zang, L. S., and Ruan, Y. M. (2007). Asymmetric mating interactions drive widespread invasion and displacement in a whiteﬂy. Science 318, 1769–1772. doi:10.1126/ science.1149887
+Liu, S. S., Colvin, J., and De Barro, P. (2012). Species concepts as applied to the whiteﬂy Bemisia tabaci systematics: how many species are there? Journal of Integrative Agriculture 11, 176–186. doi:10.1016/S2095-3119 (12)60002-1
+Mack, R. N., Simberloff, D., Lonsdale, W. M.,, Evans, H., Clout, M., and Bazzaz, F. A. (2000). Issues in ecology. Biotic invasions: causes, epidemiology, global consequences, and control. Ecological Applications 10, 689–710. doi:10.1890/1051-0761(2000)010[0689: BICEGC]2.0.CO;2
+Macken, C., Lu, H., Goodman, J., and Boykin, L. (2001). The value of a database in surveillance and vaccine selection. International Congress Series 1219, 103–106. doi:10.1016/S0531-5131(01)00330-2
+Pennisi, E. (2008). DNA data. Proposal to ‘Wikify’ GenBank meets stiff resistance. Science 319, 1598–1599. doi:10.1126/science.319.5870.1598
+Prendini, L. (2005). Identifying spiders through DNA barcodes. Canadian Journal of Zoology 83, 498–504. doi:10.1139/z05-025
+Ratnasingham, S., and Hebert, P. D. (2007). BOLD: The Barcode of Life Data system (http://www.barcodinglife.org). Molecular Ecology Notes 7, 355–364. doi:10.1111/j.1471-8286.2007.01678.x
+Ross, H. A., Murugan, S., and Li, W. L. (2008). Testing the reliability of genetic methods of species identiﬁcation via simulation. Systematic Biology 57, 216–230. doi:10.1080/10635150802032990
+Rubinoff, D., Cameron, S., and Will, K. (2006). A genomic perspective on the shortcomings of mitochondrial DNA for “barcoding” identiﬁcation. The Journal of Heredity 97, 581–594. doi:10.1093/jhered/esl036
+Song, H., Buhay, J. E., Whiting, M. F., and Crandall, K. A. (2008). Many species in one: DNA barcoding overestimates the number of species when nuclear mitochondrial pseudogenes are coampliﬁed. Proceedings of the National Academy of Sciences of the United States of America 105, 13486–13491. doi:10.1073/pnas.0803076105
+Taylor, H. R., and Harris, W. E. (2012). An emergent science on the brink of irrelevance: a review of the past 8 years of DNA barcoding. Molecular Ecology Resources 12, 377–388. doi:10.1111/j.1755-0998.2012.03119.x
+Tixier, M. S., Hernandes, F. A., Guichou, S., and Kreiter, S. (2011). The puzzle of DNA sequences of Phytoseiidae (Acari: Mesostigmata) in the public Genbank database. Invertebrate Systematics 25, 389–406. doi:10.1071/ IS11013
+Virgilio, M., Backeljau, T., Nevado, B., and De Meyer, M. (2010). Comparative performances of DNA barcoding across insect orders. BMC Bioinformatics 11, 206. doi:10.1186/1471-2105-11-206
+Virgilio, M., Jordaens, K., Breman, F. C., Backeljau, T., and De Meyer, M. (2012). Identifying insects with incomplete DNA barcode libraries, african fruit ﬂies (Diptera: Tephritidae) as a test case. PLoS ONE 7, e31581. doi:10.1371/journal.pone.0031581
+Will, K. W., Mishler, B. D., and Wheeler, Q. D. (2005). The perils of DNA barcoding and the need for integrative taxonomy. Systematic Biology 54, 844–851. doi:10.1080/10635150500354878
+
+www.publish.csiro.au/journals/is
+

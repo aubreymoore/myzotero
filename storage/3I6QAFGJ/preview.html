@@ -1,0 +1,2027 @@
+<html><head>
+				<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+				<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+				<title>Improving Coconut Rhinoceros Beetle Breeding Site Detection&nbsp;Using Harmonic Radar - ARPHA Writing Tool</title>
+				<meta name="description" content="">
+				<meta name="keywords" content="">
+				<meta name="distribution" content="global">
+				<meta name="robots" content="index, follow, all">
+				<link rel="shortcut icon" href="https://arpha.pensoft.net/favicon.ico">
+				<meta name="application-name" content="ARPHA Writing Tool">
+				<meta name="description" content="Online, collaborative, article-authoring tool">
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+				<link type="text/css" rel="stylesheet" href="bootstrap-tour-standalone.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="def.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="global.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="layout.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="ui.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="editor_rewrite.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="article_preview.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="editable_preview.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="comments.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="comments-cke.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="jquery-ui.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="perfect-scrollbar.css" media="all" title="default">
+				<link type="text/css" rel="stylesheet" href="layout-default-latest.css" media="all" title="default">
+	
+				
+		<script type="text/javascript" async="" src="ga.js"></script><script type="text/javascript" src="underscore.js"></script>
+		<script type="text/javascript" src="jquery_008.js"></script>
+		<script type="text/javascript" src="jquery_ui.js"></script>
+		<script type="text/javascript" src="jquery_002.js"></script>
+		<script type="text/javascript" src="perfect-scrollbar.js"></script>
+		<script type="text/javascript" src="jquery_010.js"></script>
+		<script type="text/javascript" src="jquery_015.js"></script>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery_009.js"></script>
+		<script type="text/javascript" src="jquery_form.js"></script>
+		<script type="text/javascript" src="jquery_011.js"></script>
+		<script type="text/javascript" src="jquery_012.js"></script>
+		<script type="text/javascript" src="jquery_003.js"></script>
+		<script type="text/javascript" src="jquery_004.js"></script>
+		<script type="text/javascript" src="jquery_013.js"></script>
+		<script type="text/javascript" src="jquery_005.js"></script>
+		<script type="text/javascript" src="spin.js"></script><style type="text/css"></style>
+		<script type="text/javascript" src="jquery_014.js"></script>	
+					
+				<script type="text/javascript" src="ajaxupload.js"></script>
+				<script type="text/javascript" src="tour.js"></script>
+				<script type="text/javascript" src="def.js"></script>
+				<script type="text/javascript" src="document_user_addresses.js"></script>	
+				<script type="text/javascript" src="refinder.js"></script>
+				<script type="text/javascript" src="changes_common.js"></script>
+				<script type="text/javascript" src="popup.js"></script>
+				<script type="text/javascript" src="taskspopup.js"></script>
+				<script type="text/javascript" src="figures.js"></script>
+				<script type="text/javascript" src="editable_preview.js"></script>
+				<script type="text/javascript" src="jquery_006.js"></script>
+				<script type="text/javascript" src="bowser.js"></script>
+				<script type="text/javascript" src="global.js"></script>
+				
+				<script type="text/javascript" src="rangy-core.js"></script>
+				<script type="text/javascript" src="rangy-classapplier.js"></script>
+				<script type="text/javascript" src="rangy-textrange.js"></script>
+				<script type="text/javascript" src="rangy-selectionsaverestore.js"></script>
+				
+				<script type="text/javascript" src="lite-interface.js"></script>	
+				<script type="text/javascript" src="ckeditor.js"></script><style>.cke{visibility:hidden;}</style>
+				<script type="text/javascript">CKEDITOR.timestamp = +new Date;</script>
+				<script type="text/javascript" src="jquery_007.js"></script>
+				
+				
+		
+		<script type="text/javascript" src="json2.js"></script>
+		<script type="text/javascript" src="backbone_003.js"></script>
+		<script type="text/javascript" src="backbone_004.js"></script>
+		<script type="text/javascript" src="backbone_002.js"></script>
+		<script type="text/javascript" src="backbone_005.js"></script>
+		<script type="text/javascript" src="backbone.js"></script>
+		<script type="text/javascript" src="handlebars-v3.js"></script>
+		<script type="text/javascript" src="handlebars-helper-x.js"></script>	
+	
+		<script id="nav-template" type="text/x-handlebars-template">
+<div class="P-Article-Structures">
+	<!--div class="P-Article-StructureHead">{{documentType}}</div-->
+	<div class="author-list">
+		<ul>
+			{{#if documentNotInSEReviewState}}
+			<li>
+				<a 
+				{{#if documentIsEditable}}
+				onclick="LayerGeneralPopUp('get_document_authors_popup', '&document_id={{documentId}}', 'gAuthorsSrv');"
+				{{/if}}
+				>
+				<div class="P-Icon-InviteContributors"></div><div class="P-Article-Holder P-Article-Authors-Holder">Authors</div>
+				</a>
+			</li>
+			<li>
+				<a 
+				{{#if documentIsEditable}}
+				onclick="LayerGeneralPopUp('get_document_contributors_popup', '&document_id={{documentId}}');"
+				{{/if}}
+				>
+				<div class="P-Icon-InviteContributors"></div><div class="P-Article-Holder P-Article-Contributors-Holder">Contributors</div>
+				</a>
+			</li>
+			{{/if}}
+		</ul>
+	</div>
+	<div class="nav-list">
+	
+	</div>
+	<div class="P-Article-Buttons" style="display:none;">
+		{{#if documentIsEditable}}
+			{{#if userIsAdmin}}
+				<!-- CrossRef - update Doi-->
+				<div class="P-Grey-Btn crossref_update_doi-btn action-btn"><div class="action-btn-text">Update DOIs</div></div>
+				<div class="P-Clear"></div>
+			{{/if}}
+					
+			{{#if documentIsDeleted}}
+				{{#if userIsAdmin}}					
+					<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="12"><div class="action-btn-text">Restore</div></div>
+					<div class="P-Clear"></div>					
+				{{/if}}
+			{{/if}}
+			
+			<!-- in case of resubmission -->
+			{{#if sourceDocumentId}}
+				{{#if documentSEid}}
+					{{#if documentNotInSEReviewState}}
+						<div class="P-Grey-Btn P-Validation validate-btn action-btn"><div class="action-btn-text">Validate</div></div>
+						<div class="show-validation-report-btn P-Hidden" title="Show last validation results"></div>
+						<div class="P-Clear"></div>
+						<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="9"><div class="final-statement-btn action-btn-text">Send for editorial decision</div></div>
+						<div class="P-Clear"></div>
+						{{#if userIsCreator}}
+							{{#if editorialDecision}}
+								{{#if finalStatementWaitingNotificationStatus}}
+									{{#if userIsCreator}}
+										<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="5"><div class="final-statement-btn action-btn-text">Request Final Statement</div></div>
+										<div class="P-Clear"></div>
+										<!-- show final statement warning -->
+										<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="8"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+										<div class="P-Clear"></div>
+									{{/if}}
+								{{else if finalStatementWaitingReviewersStatus}}
+									<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="6"><div class="action-btn-text">Return to draft</div></div>
+									<div class="P-Clear"></div>
+									<!-- show final statement warning -->
+									{{#if userIsCreator}}
+										<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="7"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+										<div class="P-Clear"></div>
+									{{/if}}
+								{{else if finalStatementsWarning}}
+									<!-- show final statement warning -->
+									{{#if userIsCreator}}
+										<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="7"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+										<div class="P-Clear"></div>
+									{{/if}}
+								{{else}}
+									{{#if userIsCreator}}
+										<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="3"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+										<div class="P-Clear"></div>
+									{{/if}}
+								{{/if}}
+								<!--
+								<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="10"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+								<div class="P-Clear"></div>
+								-->
+							{{/if}}
+						{{/if}}
+					{{/if}}
+				{{else}}
+					{{#if documentNotInSEReviewState}}
+						<div class="P-Grey-Btn P-Validation validate-btn action-btn"><div class="action-btn-text">Validate</div></div>
+						<div class="show-validation-report-btn P-Hidden" title="Show last validation results"></div>
+						<div class="P-Clear"></div>
+					{{/if}}
+					{{#if userIsCreator}}
+						{{#if finalStatementWaitingNotificationStatus}}
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="5"><div class="final-statement-btn action-btn-text">Request Final Statement</div></div>
+							<div class="P-Clear"></div>
+							<!-- show final statement warning -->
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="8"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+							<div class="P-Clear"></div>
+						{{/if}}
+						{{#if finalStatementWaitingReviewersStatus}}
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="6"><div class="action-btn-text">Return to draft</div></div>
+							<div class="P-Clear"></div>
+							<!-- show final statement warning -->
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="7"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+							<div class="P-Clear"></div>
+						{{/if}}
+						{{#if finalStatementsWarning}}
+							<!-- show final statement warning -->
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="7"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+							<div class="P-Clear"></div>
+						{{else if documentCanBeSubmitted}}
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="3"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+							<div class="P-Clear"></div>
+						{{/if}}
+					{{/if}}
+				{{/if}}
+			{{else}}
+				{{#if documentIsRejected}}
+					{{#if userIsAdmin}}					
+						<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="6"><div class="action-btn-text">Return to draft</div></div>
+						<div class="P-Clear"></div>					
+					{{/if}}
+				{{/if}}
+				{{#if documentNotInSEReviewState}}					
+					<div class="P-Grey-Btn P-Validation validate-btn action-btn"><div class="action-btn-text">Validate</div></div>
+					<div class="show-validation-report-btn P-Hidden" title="Show last validation results"></div>
+					<div class="P-Clear"></div>
+				{{/if}}
+				{{#if documentIsInNewState}}
+					{{#if userIsAdmin}}
+						<div class="P-Blue-Btn P-Validation submit-btn action-btn" data-submit-type="2"><div class="action-btn-text">Approve</div></div>
+						<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="1"><div class="action-btn-text-two-rows">Submit for technical review</div></div>
+					{{else}}
+						<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="1"><div class="action-btn-text-two-rows">Submit for technical review</div></div>
+					{{/if}}
+					<div class="P-Clear"></div>				
+				{{else}}
+					{{#if documentIsInPresubmitState}}
+						{{#if userIsAdmin}}
+							<div class="P-Flag-Dropdown-Content">
+								<div class="P-Blue-Btn P-TE-Flags">
+									<div class="P-Blue-Btn submit-btn action-btn">
+										<div class="action-btn-text">
+											<span class="P-Flag-Drop-Down"></span>
+											Flag
+										</div>
+									</div>
+								</div>
+								<div class="P-Flag-By-Type" style="display:none;"></div>
+							</div>
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="2"><div class="action-btn-text">Approve</div></div>
+							<div class="P-Clear"></div>
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="4"><div class="action-btn-text">Send feedback</div></div>
+							<div class="P-Clear"></div>							
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="11"><div class="action-btn-text">Reject</div></div>
+							<div class="P-Clear"></div>
+						{{else if canTechnicalApprove}}
+							<div class="P-Flag-Dropdown-Content">
+								<div class="P-Blue-Btn P-TE-Flags">
+									<div class="P-Blue-Btn submit-btn action-btn">
+										<div class="action-btn-text">
+											<span class="P-Flag-Drop-Down"></span>
+											Flag
+										</div>
+									</div>
+								</div>
+								<div class="P-Flag-By-Type" style="display:none;"></div>
+							</div>
+							{{#unless hideTechnicalDecisionBtns}}
+								<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="2"><div class="action-btn-text">Approve</div></div>
+								<div class="P-Clear"></div>
+							{{/unless}}
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="4"><div class="action-btn-text">Send feedback</div></div>
+							<div class="P-Clear"></div>
+							{{#unless hideTechnicalDecisionBtns}}
+								<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="11"><div class="action-btn-text">Reject</div></div>
+								<div class="P-Clear"></div>
+							{{/unless}}
+						{{else if userIsJournalAdmin}}
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="2"><div class="action-btn-text">Approve</div></div>
+							<div class="P-Clear"></div>
+						{{else if userIsTechnicalEvaluator}}
+							<div class="P-Flag-Dropdown-Content">
+								<div class="P-Blue-Btn P-TE-Flags">
+									<div class="P-Blue-Btn submit-btn action-btn">
+										<div class="action-btn-text">
+											<span class="P-Flag-Drop-Down"></span>
+											Flag
+										</div>
+									</div>
+								</div>
+								<div class="P-Flag-By-Type" style="display:none;"></div>
+							</div>
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="2"><div class="action-btn-text">Approve</div></div>
+							<div class="P-Clear"></div>
+						{{else}}
+							{{#if userIsCreator}}
+								<div class="P-Grey-Btn P-Validation action-btn"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+								<div class="P-Clear"></div>
+							{{/if}}
+						{{/if}}
+					{{else}}
+						{{#if finalStatementWaitingNotificationStatus}}
+							{{#if userIsCreator}}
+								<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="5"><div class="final-statement-btn action-btn-text">Request Final Statement</div></div>
+								<div class="P-Clear"></div>
+								<!-- show final statement warning -->
+								<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="8"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+								<div class="P-Clear"></div>
+							{{/if}}
+						{{/if}}
+						{{#if finalStatementWaitingReviewersStatus}}
+							<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="6"><div class="action-btn-text">Return to draft</div></div>
+							<div class="P-Clear"></div>
+							<!-- show final statement warning -->
+							{{#if userIsCreator}}
+								<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="7"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+								<div class="P-Clear"></div>
+							{{/if}}
+						{{/if}}
+						{{#if finalStatementsWarning}}
+							<!-- show final statement warning -->
+							{{#if userIsCreator}}
+								<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="7"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+								<div class="P-Clear"></div>
+							{{/if}}
+						{{else if documentCanBeSubmitted}}						
+							{{#if userIsCreator}}
+								<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="3"><div class="action-btn-text-two-rows">Submit to the journal</div></div>
+								<div class="P-Clear"></div>
+							{{/if}}
+						{{/if}}
+					{{/if}}
+				{{/if}}
+			{{/if}}
+		{{/if}}
+		{{#if documentIsIncompleteInPjs}}
+			{{#if userIsCreator}}
+				<div class="P-Blue-Btn submit-btn action-btn" onClick="redirectToPjs({{documentId}})"><div class="action-btn-text-two-rows">Complete submission</div></div>
+				<div class="P-Clear"></div>
+			{{/if}}
+		{{/if}}
+		<div class="P-Clear"></div>			
+	</div>
+</div>
+</script>
+
+<script id="nav-popup-template" type="text/x-handlebars-template">
+<div class="P-Article-Structures" style="position:static">
+<div class="nav-popup-list">
+	
+</div>
+</div>
+</script>
+
+<script id="nav-row-template" type="text/x-handlebars-template">
+	<div
+		class=" P-Article-Holder {{additionalClass}}" data-id="{{id}}">
+		{{#if hasChildren}}
+			<div class="P-Arrow"></div>
+		{{/if}}
+		<a>{{name}}</a>
+	</div>
+	{{#if hasChildren}}
+		<div class="children-list"></div>
+	{{/if}}	
+</script>
+
+<script id="te-flag-row-template" type="text/x-handlebars-template">
+	<div class="P-Single-Type-Flag unselectable P-Flag-By-Username">
+		<div class="P-Single-Type-Flag-Dropdown">
+			<label class="control control--checkbox control-arpha-flags">
+				{{name}}
+				<input type="checkbox" id="{{label_for}}" name="te_flag" value="{{id}}" class="flags_input" {{#if ischecked}} checked="checked" {{/if}}>
+				<div class="control__indicator control-arpha-flags"></div>
+			</label>
+		</div>
+	</div>
+</script>
+
+<script id="instance-actions-template" type="text/x-handlebars-template">
+	
+</script>
+
+<script id="validation-error-template" type="text/x-handlebars-template">
+	-{{#if instanceId}}
+		<a class="instance" data-instance-id="{{instanceId}}" data-action-type="{{actionType}}" data-filter-subinstance-id="{{filterSubInstanceId}}">{{error}}</a>
+	{{else}}
+		{{{error}}}
+	{{/if}}	 
+</script>
+
+<script id="validation-errors-by-type-template" type="text/x-handlebars-template">
+<div class="P-Document-Validation-Errs"><div class="P-Document-Validation-ErrType-Txt">{{type}}</div>
+	<ul class="errors-list">
+	</ul>
+</div>
+</script>
+
+<script id="validation-template" type="text/x-handlebars-template">
+			<div class="P-PopUp-Main-Holder">
+				<div class="P-PopUp-Close-Btn close-btn"></div>
+				<div class="P-PopUp-Content">
+					<div class="P-PopUp-Title {{validationClass}}">{{validationResult}}</div>
+					<div class="P-PopUp-Content-Inner-Tables New-Element-Reference-Popup P-Document-Validation-Page {{validationClass}}" >
+						<div class="validation-errors-list">
+						</div>
+						<div class="characters-count">
+							<div class="char_count_label">Number of characters (with spaces): </div> <span> {{charactersCount}}</span>
+								
+						</div>
+						<div class="P-Clear"></div>
+					</div>
+				</div>
+				<div class="P-PopUp-Footer-Holder {{validationClass}}">
+					<div class="P-Grey-Btn-Holder close-btn">
+						<div class="P-Grey-Btn-Middle">
+							Close
+						</div>
+					</div>
+					<div id="skip-warnings-btn" class="P-Green-Btn-Holder" style="display:none;float:right;">
+						<div class="P-Green-Btn-Middle" style="padding: 0px 25px;">Skip</div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+			</div>
+</script>
+
+<script id="import-job-single-detail-template" type="text/x-handlebars-template">
+	-{{name}} - {{state}} {{#if errorMsg}}
+		 - {{errorMsg}}
+	{{/if}}	 
+</script>
+
+<script id="import-job-template" type="text/x-handlebars-template">
+			<div class="P-PopUp-Main-Holder">
+				{{#if closeIsAllowed}}
+					<div class="P-PopUp-Close-Btn close-btn"></div>	
+				{{/if}}	 				
+				<div class="P-PopUp-Content">
+					<div class="P-PopUp-Title">{{name}}</div>
+					<div class="P-PopUp-Content-Inner-Tables New-Element-Reference-Popup Import-Report" >
+						<div class="import-state">
+							Status : {{stateName}} 
+							{{#if errorMsg}}
+								 - {{errorMsg}}
+							{{/if}}	 
+						</div>
+						<div class="progress-wrapper">
+							<div class="progress">
+							</div>
+							<div class="progress-summary">Processed {{processedDetailsCnt}} / {{allDetailsCnt}}
+							</div>
+						</div>
+						{{date}}
+						<div id="details-summary-holder">
+							<div class="progress-summary">	
+								{{summaryMsg}}
+							</div>
+							<div id="non-successfully-processed-list">
+							</div>
+						</div>
+						<div class="P-Clear"></div>												
+					</div>
+				</div>
+				{{#if closeIsAllowed}}
+					<div class="P-PopUp-Footer-Holder">
+						<div class="P-Grey-Btn-Holder close-btn">
+							<div class="P-Grey-Btn-Middle">
+								Close
+							</div>
+						</div>
+						<div class="P-Clear"></div>
+					</div>
+				{{/if}}	 
+			</div>
+</script>
+
+
+
+<script id="comment-layout-based" type="text/x-handlebars-template">
+	<div id="CommentsFreeze"></div>
+	<div class="P-Comments-Revisions-Content P-Comments-Content" id="P-Root-Comments-Holder"></div>
+</script>
+
+
+<script id="comments-filter" type="text/x-handlebars-template">
+	<div class="P-Comment-Txt" title="To add a comment please select text first(Ctrl+Alt+M)">Comments</div>
+	<div id="getMessageHeight"></div>
+	<div class="P-Filter-Checkboxes">
+		<div class="P-Single-Check-Filter">
+			<input style="display:none;" type="checkbox" id="comments_filter_resolved" class="comments_filter" data-filter="resolved" name="comments_filter_resolved" value="0">
+			<label for="comments_filter_resolved" class="unselectable">
+				Resolved
+			</label>
+		</div>
+		<div class="P-Single-Check-Filter">
+			<div class="P-Filter-Dropdown-Content">
+				<span class="P-Filter-Drop-Down"></span>
+				<span class="P-Filter-Drop-Down-Label unselectable">
+					Filter
+				</span>
+			</div>
+		</div>
+		<!-- div class="P-Single-Check-Filter">
+			<label class="unselectable">
+				<input type="checkbox" id="comments_filter_deleted" class="comments_filter" data-filter="deleted" name="comments_filter_deleted" value="0">Archived
+			</label>
+		</div -->
+		<div class="P-Filter-By-Type" style="display:none;">
+			<div class="P-Single-Type-Filter unselectable P-Filter-By-Username">
+				<div class="P-Single-Type-Filter-Dropdown">
+					<div class="P-Arrow-Icon"></div>
+					by user
+				</div>
+				<div class="P-Filter-By-Type-Content" style="display: none;">
+					<div class="filterInput filter_by_username"></div>
+				</div>
+			</div>
+			<div class="P-Single-Type-Filter unselectable P-Filter-By-Rounds">
+				<div class="P-Single-Type-Filter-Dropdown">
+					<div class="P-Arrow-Icon"></div>
+					by review round
+				</div>
+				<div class="P-Filter-By-Type-Content" style="display: none;">
+					<div class="filterInput filter_by_round"></div>
+				</div>
+			</div>
+			<div class="P-Single-Type-Filter unselectable P-Filter-By-Date">
+				<div class="P-Single-Type-Filter-Dropdown">
+					<div class="P-Arrow-Icon"></div>
+					by date
+				</div>
+				<div class="P-Filter-By-Type-Content" style="display: none;">
+					<div class="P-Single-Filter-Date">
+						<span class="label">From</span><input type="text" id="comments_filter_start_date" placeholder="from" class="P-Filter-Date-Input" name="comments_filter_start_date" value="">
+					</div>
+					<div class="P-Single-Filter-Date">
+						<span class="label">To</span><input type="text" id="comments_filter_end_date" placeholder="to" class="P-Filter-Date-Input" name="comments_filter_end_date" value="">
+					</div>
+				</div>
+			</div>
+			<div class="P-Filter-Close-Icon">clear filter</div>
+		</div>
+	</div>
+	<div class="P-Nav-Btns">
+		<img src="/i/filter/leftarrow.svg" alt="" class="left_arrow prev-comment-btn" style="display:none;" />
+		<img src="/i/filter/rightarrow.svg" alt="" class="right_arrow next-comment-btn" style="display:none;" />
+	</div>
+</script>
+
+<script id="comment-filter-users" type="text/x-handlebars-template">
+	<input type="checkbox" id="" name="filter_users" class="filter_users" value="{{usr_id}}">{{username}}
+</script>
+<script id="comment-filter-users-empty" type="text/x-handlebars-template">
+	no users
+</script>
+
+
+<script id="comment-filter-rounds" type="text/x-handlebars-template">
+	<input type="checkbox" id="" name="filter_rounds" class="filter_rounds" value="{{id}}">Round {{id}}
+</script>
+<script id="comment-filter-rounds-empty" type="text/x-handlebars-template">
+	no rounds
+</script>
+
+<!-- Comments templates -->
+<script id="show-comment-btn" type="text/x-handlebars-template">
+	<div class="P-Comment-Btn" id="P-Comment-Btn-Bubble" title="To add a comment please select text first(Ctrl+Alt+M)"></div>
+</script>
+
+<script id="new-preview-comment-form" type="text/x-handlebars-template">
+	<form name="commentpost" id="commentpost">
+		<input type="hidden" name="documentid" value="{{document_id}}" id="document_id">
+		<input type="hidden" name="start_instance_id" value="" id="comments_start_instance_id">
+		<input type="hidden" name="start_field_id" value="" id="comments_start_field_id">
+		<input type="hidden" name="start_offset" value="" id="comments_start_offset">
+		<input type="hidden" name="end_instance_id" value="" id="comments_end_instance_id">
+		<input type="hidden" name="end_field_id" value="" id="comments_end_field_id">
+		<input type="hidden" name="end_offset" value="" id="comments_end_offset">
+		<textarea id="textarea-new-preview-comment-form-{{id}}" name="message" ></textarea>		
+	</form>
+</script>
+
+<script id="edit-comment-form" type="text/x-handlebars-template">
+	<div class="P-Clear">&nbsp;</div>
+	<form name="commentpost" id="commentpost">
+		<!-- This hidden inputs will be remove -->
+		<input type="hidden" name="documentid" id="document_id" value="{{document_id}}">
+		<input type="hidden" name="start_instance_id" value="" id="comments_start_instance_id">
+		<input type="hidden" name="start_field_id" value="" id="comments_start_field_id">
+		<input type="hidden" name="start_offset" value="" id="comments_start_offset">
+		<input type="hidden" name="end_instance_id" value="" id="comments_end_instance_id">
+		<input type="hidden" name="end_field_id" value="" id="comments_end_field_id">
+		<input type="hidden" name="end_offset" value="" id="comments_end_offset">
+		<!-- This hidden inputs will be remove END -->
+		<textarea style="visibility:hidden; height:68px;" {{#if is_new}} placeholder="Add new comment" {{else}} placeholder="Edit comment" {{/if}}  name="message" id="textarea-edit-comment-form-{{id}}" data-id="{{id}}" class="P-Comments-Revisions-Txt">{{{striptags message}}}</textarea>		
+	</form>
+	<div class="P-Clear" style="margin-top: 5px;"></div>
+	<div id="btn-save-comment" style="float: left; padding: 0px 5px;" class="btnAddReply P-Comment-Btn-Green">{{#if is_new}}Comment{{else}}Save{{/if}}</div>
+	<div id="btn-cancel-comment" class="reply-cancel-btn btnCancelReply P-Comment-Btn-White">{{#if is_new}}Delete{{else}}Cancel{{/if}}</div>
+</script>
+
+<script id="new-reply-comment-form" type="text/x-handlebars-template">
+	<form id='form-new-reply-comment'>
+		<input type="hidden" name="instanceid" value="{{instance_id}}" id="instanceid">
+		<input type="hidden" name="commentid" value="{{id}}" id="commentid">
+		<input type="hidden" name="rootmsgid" value="{{rootid}}" id="rootmsgid">
+		<textarea placeholder="Reply to this comment..." name="message" id="textarea-new-reply-comment-form-{{comment_id}}" fldattr="0" class="P-Comments-Revisions-Txt">{{{striptags message}}}</textarea>
+	</form>
+	<div class="P-Clear" style="margin-top: 5px;"></div>
+	<div style="height:30px;">
+		<div style="float: left;" class="btnAddReply P-Comment-Btn-Green">Reply</div>
+		<div class="reply-cancel-btn btnCancelReply P-Comment-Btn-White">Cancel</div>
+	</div>
+	<div class="P-Clear"></div>
+</script>
+
+<script id="edit-reply-comment-form" type="text/x-handlebars-template">
+	<form id='form-edit-reply-comment'>
+		<textarea placeholder="Edit reply comment..." name="message"  id="textarea-edit-reply-comment-form-{{id}}"  fldattr="0" class="P-Comments-Revisions-Txt">{{{striptags message}}}</textarea>
+	</form>
+	<div class="P-Clear" style="margin-top: 5px;"></div>
+	<div id="btn-save-reply-comment" style="float: left;" class="btnAddReply P-Comment-Btn-Green">Save</div>
+	<div id="btn-cancel-reply-comment" class="reply-cancel-btn btnCancelReply P-Comment-Btn-White">Cancel</div>
+	<div class="P-Clear"></div>
+</script>
+
+<script id="no-comment-row" type="text/x-handlebars-template">
+</script>
+
+<script id="comment-message" type="text/x-handlebars-template">
+	<div class="P-Message">{{{striptags message}}}</div>
+	<div class='P-Comment-Message-ShowMore'>Show more</div>
+</script>
+
+<script id="resolve-view" type="text/x-handlebars-template">
+	{{#if is_resolved}}
+		Resolved by: {{resolve_fullname}} ({{resolve_date}})
+	{{/if}}
+</script>
+
+<!-- will include to .P-Comments-Content -->
+<script id="comment-row" type="text/x-handlebars-template">	
+		<div class="P-Root-Comment-Wrapper" >
+			<div id="P-Root-Comment-{{id}}" class="P-Root-Comment-Header uparrow">
+				{{#if is_deleted}}
+				<div class="P-Deleted-Comment-Header"><div style="float:left; font-size: 11px;">This comment is linked to deleted text</div> <div style="float:left; margin: 3px 0px 0px 6px;
+" class="arrow-position arrow-right"></div></div>
+				<div class="P-Deleted-Comment-Container" style="display:none;">{{{comment_selection}}}</div>
+				{{else}}
+					{{#if end_offset}}
+					{{else}}
+						{{#if is_new}}
+						{{else}}
+							<div class="P-General-Comment-Header"><div style="float:left; font-size: 11px;">Formal review</div></div>
+						{{/if}}
+					{{/if}}
+				{{/if}}
+				<div class="P-Comments-Info">
+					<div class="P-Comments-Info-l" {{#if can_edit}} {{else}} style="width:auto;" {{/if}}>
+						<div class="P-Comment-User-Pic">
+							{{#if is_disclosed}}
+								{{#if photo_id}}
+									<img border="0" alt="" height="38" width="38" src="/showimg.php?filename=c38x38y_{{photo_id}}.jpg" />
+								{{else}}
+									<img border="0" alt="" height="38" width="38" src="./i/user_no_img.png" />
+								{{/if}}
+							{{else}}
+								<img border="0" alt="" height="38" width="38" src="./i/user_no_img.png" />
+							{{/if}}
+						</div>
+						<div class="P-Comment-Text-Data">
+								<div class="P-Comment-UserName">
+									{{username}}
+								</div>
+								<div class="P-Comment-Date">
+									<span class="date-holder" title="{{createdate}}"></span>
+								</div>
+						</div>
+					</div>
+					<div class="P-Comments-Info-r">
+						{{#if canComment}}
+							<div class="P-Comment-Resolve-Layer">
+								<input type="checkbox" {{#if is_resolved}} checked="checked" {{/if}} name="is_resolved" class="is_resolved" id="chbx_resolve-{{id}}" value="1">
+								<label class="resolve_label" id="lb_resolve-{{id}}" for="chbx_resolve-{{id}}"></label>
+							</div>
+							{{#if can_edit}}
+								<div class="P-Comment-Toolbar-Menu">
+									<span class="P-Comment-Three-Dots">&nbsp;</span>
+								</div>
+							{{/if}}
+						{{/if}}
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+				<div class="P-Comments-Resolved"></div>
+			</div>
+			<div class="P-Comments-Item-Content">
+				<div class="P-Comments-Container">
+					<div class="P-Comments-Single-Row ">
+					    <!-- <div class="P-Comment-Msg"></div> -->
+					    <div class="P-Wrapper-Message"></div>
+					    <div class="P-Comment-Edit-Form-Wrapper"></div>
+					</div>
+					<!-- <div class="P-Comments-Show-More-Layout"></div> -->
+					<div class="P-Comments-Reply-Rows">REPLY COMMENTS</div>				
+				</div>	
+				
+
+				<!-- <div class="P-Inline-Line" style="width:100%; margin-left: 0px;"></div>	 -->
+				<div class="P-Comment-Root-Action-Btns">
+					<div class="P-Comment-Reply-Form-Wrapper">
+						<div class="P-Comment-Reply-Form"></div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+			</div>
+		</div>
+		{{#if is_deleted}} {{else}}{{#if end_offset}}<div class="triangle-with-shadow" style="display:none;"></div>{{/if}}{{/if}}
+		{{#if is_new}}{{#if end_offset}}{{else}}<div class="triangle-with-shadow" style="display:none;"></div>{{/if}}{{/if}}
+		{{#if canComment}}
+		{{#if can_edit}}
+			<div class="P-Comment-Toolbar-Dropdown">
+				<span class="P-Comment-Toolbar-Edit">&nbsp;</span>
+				<span class="P-Comment-Toolbar-Delete" data-confirm="1">&nbsp;</span>
+			</div>
+			{{/if}}
+		{{/if}}
+</script>
+<!-- Comments templates END -->
+
+<script id="comment-reply-form-wrapper" type="text/x-handlebars-template">
+</script>
+
+<script id="comment-reply-row" type="text/x-handlebars-template">
+	<div id="P-Comment-{{id}}" class="P-Comments-Single-Row  P-Comments-Single-Row-Non-Root ">
+		<div class="P-Comments-Info">
+			<div class="P-Comments-Info-l">
+				<div class="P-Comment-User-Pic">
+					{{#if is_disclosed}}
+						{{#if photo_id}}
+							<img border="0" alt="" height="38" width="38" src="/showimg.php?filename=c38x38y_{{photo_id}}.jpg" />
+						{{else}}
+							<img border="0" alt="" height="38" width="38" src="./i/user_no_img.png" />
+						{{/if}}
+					{{else}}
+						<img border="0" alt="" height="38" width="38" src="./i/user_no_img.png" />
+					{{/if}}
+				</div>
+				<div class="P-Comment-Text-Data">
+					<div class="P-Comment-UserName">{{username}}</div>
+					<div class="P-Comment-Date">
+						<span class="date-holder" title="{{createdate}}"></span>
+					</div>
+				</div>
+			</div>
+			<div class="P-Comments-Info-r">
+			{{#if canComment}}
+				{{#if can_edit}}
+					<div class="P-Comment-Toolbar-Menu" style="float:right;">
+						<span class="P-Comment-Three-Dots">&nbsp;</span>
+					</div>
+				{{/if}}
+			{{/if}}
+			</div>
+		</div>
+		<!-- <div class="P-Comment-Msg"></div> -->
+		<div class="P-Wrapper-Message"></div>
+		<!-- <div class="P-Comment-Reply-Msg" id="P-Comment-Msg-Holder"></div> -->
+		<!-- <div class="P-Comments-Reply-Show-More-Layout"></div> -->
+		{{#if canComment}}
+		{{#if can_edit}}
+			<div class="P-Comment-Toolbar-Dropdown" style="background: #ededed;">
+				<span class="P-Comment-Toolbar-Edit">&nbsp;</span>
+				<span class="P-Comment-Toolbar-Delete" data-confirm="1">&nbsp;</span>
+			</div>
+			{{/if}}
+		{{/if}}
+		<div id="P-Comment-Edit-Form" class="P-Comment-Reply-Edit-Form"></div>
+	</div>
+</script>
+
+<script id="document-type-template" type="text/x-handlebars-template">
+	<div class="P-Document-Type-Title" title="{{documentType}}">{{documentType}}</div>
+	<div class="P-Edit-Btn"><div class="instance-actions-inner"><div><div class="P-Edit-Document-Type-Action P-Instance-Action" title="Edit"></div><div class="P-Clear"></div></div></div></div>
+</script>		
+		<script type="text/javascript" src="preview-app.js"></script>
+		<script type="text/javascript" src="Behaviours.js"></script>
+		<script type="text/javascript" src="Models.js"></script>
+		<script type="text/javascript" src="Nav.js"></script>
+		<script type="text/javascript" src="Content.js"></script>
+		<script type="text/javascript" src="Actions.js"></script>
+		<script type="text/javascript" src="Validation.js"></script>
+		<script type="text/javascript" src="Import.js"></script>
+		<script type="text/javascript" src="Popup.js"></script>
+		<script type="text/javascript" src="Loading.js"></script>
+		<script type="text/javascript" src="Comments.js"></script>
+		<script type="text/javascript" src="preview.js"></script>
+	
+	
+	
+		<script>
+				StartPreviewApp(
+									13209, 
+									{"preview_can_be_edited":true,"can_comment":1,"current_user_id":12690,"current_photo_id":null,"current_user_name":"Aubrey Moore","document_type":"Research Idea","document_state":"1","pjs_document_state":"","track_changes":false,"current_user_is_admin":false,"current_user_is_creator":true,"current_user_is_journal_admin":false,"current_user_role":"2","final_statement_status":0,"can_technical_approve":false,"hide_technical_decision_btns":false,"is_rejected":0,"show_document_final_statements_warning":0,"submitted_reviews":0,"source_document_id":0,"document_se_id":0,"editorial_decision":0,"show_journal_subsections":false,"papertype_change_allowed":46,"ckeditor_config_date":1526387487,"te_flag_to_be_approved_is_checked":false,"te_flag_to_be_rejected_is_checked":false,"te_flag_to_do_is_checked":false}
+								);
+		</script>
+	
+				
+				
+		<link href="css.css" rel="stylesheet" type="text/css">
+	
+	
+				<script type="text/javascript">
+					$(window).load(function(){
+						gBrowserSession = bowser;
+						if(0 != 1 && 1 == 1) {
+							SetBrowserSession(gBrowserSession);
+						}
+						if(0 == 1 && 1 == 1) {
+							LayerGeneralPopUp('get_terms_agreement_popup');
+						}
+						gWindowIsLoaded = true;
+						loadLazyImages();
+
+						var el = document.querySelector(".P-Article-Structures");
+						Ps.initialize(el);
+
+						function msieversion() {
+							var ua = window.navigator.userAgent;
+							var msie = ua.indexOf("MSIE ");
+							if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
+								return true;
+							}else{
+								return false;
+							}
+							return false;
+						}
+						// this case is only for internet explorer (nav position and resize)
+						// issue: problem with position fixed &amp; overflow auto the scrollbar doesnt work
+						if(msieversion()){
+							el = $(".P-Article-Structures");
+							headerHeight = $(".P-Header").outerHeight(true) + $(".P-Sticky-Header").outerHeight(true);
+							el.css("position", "relative");
+							el.css("top", "0px");
+							var elementPosition = $("#navigation").offset();
+							var body = document.body,
+							html = document.documentElement;
+							documentМаxHeight = 0;
+							resizeNavMenu = function(){
+								documentHeight = $( window ).height();
+								if(documentHeight < 90){
+									el.hide();
+								}else{
+									navMenuHeight = documentHeight - headerHeight;
+									el.height(navMenuHeight);
+									documentМаxHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+										html.clientHeight, html.scrollHeight, html.offsetHeight );
+								}
+							}
+							resizeNavMenu();
+							$( window ).resize(function() {
+								resizeNavMenu();
+							});
+							$(window).scroll(function() {
+								var documentScrollHeight = $(document).scrollTop();
+								if( (documentScrollHeight + el.height()) > documentМаxHeight ){
+									return;
+								}
+								el.css("top", documentScrollHeight + "px");
+							});
+						}
+						/**
+						* Important!!!!
+						* Use this scroll event to position inline CKE toolbar in document preview
+						*/
+						$(window).scroll(function() {
+							var el = $("#previewIframe").contents().find("#editorToolbarSpacer");
+							if(el) {
+								el.css({
+									top: $(window).scrollTop()
+								});
+							}
+						});
+					});
+				</script>
+				
+		<script type="text/javascript" src="bootstrap-tour-standalone.js"></script>
+		
+		<script type="text/javascript">
+		
+		$(document).ready(function(){
+			// show on first time visit
+			var result = parseInt(569);
+				if(!result){
+					startTour(2, 60);
+				}
+		});
+		</script>
+	
+				<script async="" defer="defer" src="js" type="text/javascript"></script>
+			<script type="text/javascript" src="config.js"></script><link rel="stylesheet" type="text/css" href="editor.css"><script type="text/javascript" src="en.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="plugin_011.js"></script><script type="text/javascript" src="plugin_007.js"></script><script type="text/javascript" src="plugin.js"></script><script type="text/javascript" src="plugin_003.js"></script><script type="text/javascript" src="plugin_006.js"></script><script type="text/javascript" src="plugin_008.js"></script><script type="text/javascript" src="plugin_005.js"></script><script type="text/javascript" src="plugin_010.js"></script><script type="text/javascript" src="plugin_002.js"></script><script type="text/javascript" src="plugin_009.js"></script><script type="text/javascript" src="plugin_004.js"></script><link rel="stylesheet" type="text/css" href="scayt.css"><link rel="stylesheet" type="text/css" href="dialog.css"><link rel="stylesheet" type="text/css" href="tableselection.css"><script type="text/javascript" src="en_005.js"></script><script type="text/javascript" src="en_003.js"></script><script type="text/javascript" src="en_006.js"></script><script type="text/javascript" src="en_007.js"></script><script type="text/javascript" src="en_002.js"></script><script type="text/javascript" src="en_004.js"></script><script type="text/javascript" charset="UTF-8" src="common.js"></script><script type="text/javascript" charset="UTF-8" src="util.js"></script><script type="text/javascript" charset="UTF-8" src="AuthenticationService.Authenticate"></script></head>
+			<body onload="resizeMiddleContainer()" style="background: rgb(242, 242, 242);">
+			
+	
+			
+		
+		<script type="text/javascript">
+			$.browser.chrome = /chrom(e|ium)/.test(navigator.userAgent.toLowerCase());
+			
+			if( !$.browser.chrome && document.cookie.indexOf("ChromeWarningCookie") ===-1){
+				$("#chromeWarningCookie").show();
+			}else{
+				$("#chromeWarningCookie").remove();
+			}
+			
+			$("#removeChromeWarningCookie").click(function () {
+				SetCookie('ChromeWarningCookie','OK',365*10)
+				$("#chromeWarningCookie").remove();
+			});
+		</script>
+	
+			<div class="P-Baloon" id="ArticleBaloon"></div>
+				<div id="P-Wrapper-Preview" class="P-Wrapper P-Without-Bread-Crumbs htmlstartcontent-preview  ">
+					
+					<div class="P-Header">
+						<div class="P-Logo-Search-Holder">
+							<div class="P-Logo">
+								<a href="https://arpha.pensoft.net/">
+									<img src="arpha_logo.svg" alt="Pensoft Writing Tool">
+									<div class="authoring-tool-label">writing <br>tool</div>
+								</a>
+							</div>
+							<script type="text/javascript">
+								var penSearch = new searchDropDown('PensoftSearch', 'PensoftSearchSelectOptions');
+							</script>
+						</div>
+						<!-- div class="P-ViewReviews-Btns"> </div -->
+						<div class="P-SavePreview-Btns"> 
+							<div title="View dashboard" class="P-Fixed-Bottom-Line-Item P-Header-Buttons" id="email_button" onclick="window.location.href='/dashboard'">
+								<div class="P-Icon-View-Dashboard"></div>
+								<span class="inline_btn_text n_words_label">View dashboard</span>
+							</div>
+							
+							
+			<div title="Collections" class="P-Fixed-Bottom-Line-Item P-Header-Buttons" onclick="LayerGeneralPopUp('get_document_collections_popup', '&amp;document_id=13209');">
+				<div class="P-Icon-Collection"></div><span class="inline_btn_text">Collections</span>
+			</div>
+							
+							
+							
+							
+							
+							
+							
+			<div class="P-Fixed-Bottom-Line-Item P-Header-Buttons" id="" onclick="LayerGeneralPopUp('get_document_reviewers_popup', '&amp;document_id=13209');" title="Invite Reviewers">
+				<div class="P-Icon-InviteReviewers"></div>
+				<span class="inline_btn_text color_btn">Reviewers</span>
+			</div>
+		
+							
+							
+							
+							
+							<div title="Email contributors" class="P-Fixed-Bottom-Line-Item P-Header-Buttons" id="email_button" onclick="openEmailPopup('P-Project-Participants');">
+								<div class="P-Icon-Message"></div>
+								<span class="inline_btn_text n_words_label">Email contributors</span>
+							</div>
+							<div title="Feedback" class="P-Fixed-Bottom-Line-Item P-Header-Buttons" id="email_button" onclick="feedbackPopup('13209', '');">
+								<div class="P-Icon-Feedback"></div>
+								<span class="inline_btn_text">Helpdesk</span>
+							</div>
+							<div class="P-Fixed-Bottom-Line-Item P-Header-Buttons">
+								<a href="javascript:void(0)" title="Quick 'How to?'s with screenshots" onclick="TipsAndTricksPopUp('tips-and-tricks', 'get_tips_and_tricks_popup');">
+									<span class="P-Icon-TipsAndTricks"></span>
+									<span class="inline_btn_text n_words_label">
+										Tips and tricks
+									</span>
+								</a>
+							</div>
+							<div class="P-Fixed-Bottom-Line-Item P-Header-Buttons" id="tour">
+					<a href="" title="Tutorial" onclick="startTour(2, 60); return false;">
+						<div class="P-Icon-SiteTour"></div>
+						<span class="inline_btn_text">
+							Tutorial
+						</span>
+					</a>
+				</div>
+							<div class="P-Fixed-Bottom-Line-Item P-Header-Buttons">
+								<a href="https://arpha.pensoft.net/preview_revisions.php?document_id=13209" title="Revision history">
+									<span class="P-Icon-RevisionHistory"></span>
+									<span class="inline_btn_text">
+										Revision history
+									</span>
+								</a>  
+							</div>
+						</div>
+						<div class="P-Head-Profile-Wrapper">
+							<a href="javascript:void(0);" onclick="CommonPopUpAction('get_profile_identifiers_info_popup');" class="notification"><i class="profile-info icon" title="Link your research profiles"></i></a>
+							<div class="P-Head-Profile-Menu">
+								
+							<div class="userloggedmenu">
+								<a class="userloggedimageA" href="javascript:void(0)">
+									<img src="user_no_img.png" alt="" style="float: left" width="30" height="30">
+								</a>
+								<div class="userloggedimage">
+									<div class="username_left"></div>
+									<div class="username">Dr Aubrey Moore</div>
+									<div class="username_right"></div>
+								</div>
+								<div onmouseout="" onmouseover="" id="userLoggedMenu" class="userloggedmenulinks">
+									<div class="userloggedmenulinksTop"></div>
+									<div class="userloggedmenulinksMainInner">
+										<div class="userLoggedMenuLink">
+											<a id="userLoggedMenuLink_1" href="https://pensoft.net/profile/account/edit">Account settings</a>&nbsp;Login, Password
+										</div>
+										<div class="userloggedmenuSep"></div>
+										<div class="userLoggedMenuLink">
+											<a id="userLoggedMenuLink_2" href="https://pensoft.net/profile/edit">Profile</a>&nbsp;Name, Pictures, URL, ...
+										</div>
+										<div class="userloggedmenuSep"></div>
+										<div class="userLoggedMenuLink">
+											<a id="userLoggedMenuLink_3" href="https://pensoft.net/profile/alerts/edit">Email/RSS alerts</a>&nbsp;
+										</div>
+										<div class="userloggedmenuSep"></div>
+										<div class="userLoggedMenuLink">
+											<a id="userLoggedMenuLink_6" href="https://arpha.pensoft.net/login.php?logout=1">Logout</a>
+											<div class="P-Clear"></div>
+										</div>
+										<div class="P-Clear"></div>
+										<div class="userloggedmenuSep h15"></div>
+										<div class="P-Clear"></div>
+									</div>
+									<div class="userloggedmenulinksBottom"></div>
+								</div>
+							</div>
+	
+							</div>
+						</div>
+						<script type="text/javascript">
+							//<![CDATA[
+								$(document).ready(function(){
+									ShowHideProfileMenu();
+									//if(0) {
+										//LayerGeneralPopUp('get_document_create_text_popup', '&document_id=13209');
+									//}
+								});
+							//]]>
+						</script>
+					</div>
+					<div id="P-Registration-Content" style="display: none;"></div>
+					<div id="P-Registration-Content-Emails" style="display: none;"></div>
+					<!-- End P-Header -->
+	
+					
+		<div class="P-Sticky-Header">
+			<div class="P-Sticky-Header-Left">
+				<div id="P-Header-Document-Type"><div class="P-Header-Document-Type-Content">
+	<div class="P-Document-Type-Title" title="Research Idea">Research Idea</div>
+	<div class="P-Edit-Btn"><div class="instance-actions-inner"><div><div class="P-Edit-Document-Type-Action P-Instance-Action" title="Edit"></div><div class="P-Clear"></div></div></div></div>
+</div></div>
+			</div>
+			<div class="P-Sticky-Header-Middle">
+				<!-- div id="editorToolbarSpacer"></div -->
+			</div>
+			<div class="P-Sticky-Header-Right">
+				
+			</div>
+		</div>
+	
+					<div class="whiteSpace10px"></div>
+					<!-- div class="P-Fake-White-Content">
+						<div class="P-Fake-White-Content-Inner">
+							<div class="P-Fake-White-Rect"></div>
+						</div>
+					</div -->
+					<div class="P-Wrapper-Container html-start-content-preview htmlstartcontent-preview">
+	
+						<div class="P-Wrapper-Container-Left">
+							
+						<div id="document_tree_holder"><div>
+<div class="P-Article-Structures ps-container ps-theme-default ps-active-y" style="zoom: 1;" data-ps-id="c60020f1-7f21-0f58-ff7d-14408324f793">
+	<!--div class="P-Article-StructureHead">Research Idea</div-->
+	<div class="author-list">
+		<ul>
+			<li>
+				<a onclick="LayerGeneralPopUp('get_document_authors_popup', '&amp;document_id=13209', 'gAuthorsSrv');">
+				<div class="P-Icon-InviteContributors"></div><div class="P-Article-Holder P-Article-Authors-Holder">Authors</div>
+				</a>
+			</li>
+			<li>
+				<a onclick="LayerGeneralPopUp('get_document_contributors_popup', '&amp;document_id=13209');">
+				<div class="P-Icon-InviteContributors"></div><div class="P-Article-Holder P-Article-Contributors-Holder">Contributors</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="nav-list"><ul><li>
+	<div class=" P-Article-Holder  nav-5488390 " data-id="5488390">
+			<div class="P-Arrow P-Down-Arrow"></div>
+		<a>Article metadata</a>
+	</div>
+		<div class="children-list"><ul><li>
+	<div class=" P-Article-Holder  nav-5488391 " data-id="5488391">
+		<a>Title</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488392 " data-id="5488392">
+		<a>Abstract</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488393 " data-id="5488393">
+		<a>Keywords</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488394 " data-id="5488394">
+		<a>Funder</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488395 " data-id="5488395">
+		<a>Funding program</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488396 " data-id="5488396">
+		<a>Grant title</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488397 " data-id="5488397">
+		<a>Hosting institution</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488398 " data-id="5488398">
+		<a>Ethics and security</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488399 " data-id="5488399">
+		<a>Author contributions</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488400 " data-id="5488400">
+		<a>Conflicts of interest</a>
+	</div>
+</li></ul></div>
+</li><li>
+	<div class=" P-Article-Holder  nav--165  P-Available-Element " data-id="-165">
+		<a>Add section</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488407 " data-id="5488407">
+			<div class="P-Arrow P-Down-Arrow"></div>
+		<a>Overview and background</a>
+	</div>
+		<div class="children-list"><ul><li>
+	<div class=" P-Article-Holder  nav-5488413 " data-id="5488413">
+		<a>Coconut rhinoceros beetle biology and invasion history</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488420 " data-id="5488420">
+		<a>CRB eradication</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488423 " data-id="5488423">
+		<a>Techniques which have been used for locating CRB breeding sites</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488424 " data-id="5488424">
+		<a>Potential use of harmonic radar for locating CRB breeding sites</a>
+	</div>
+</li></ul></div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488408 " data-id="5488408">
+		<a>Objectives</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488409 " data-id="5488409">
+		<a>Impact</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488410 " data-id="5488410">
+		<a>Implementation</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488401 " data-id="5488401">
+		<a>Acknowledgements</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488402 nav-references" data-id="5488402">
+		<a>References</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488403 nav-supplementary" data-id="5488403">
+		<a>Supplementary files</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488404 P-Article-Figures" data-id="5488404">
+		<a>Figures</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488405 P-Article-Tables" data-id="5488405">
+		<a>Tables</a>
+	</div>
+</li><li>
+	<div class=" P-Article-Holder  nav-5488406 P-Article-Endnotes" data-id="5488406">
+		<a>Endnotes</a>
+	</div>
+</li></ul></div>
+	<div class="P-Article-Buttons" style="">
+					
+			
+			<!-- in case of resubmission -->
+					<div class="P-Grey-Btn P-Validation validate-btn action-btn"><div class="action-btn-text">Validate</div></div>
+					<div class="show-validation-report-btn P-Hidden" title="Show last validation results"></div>
+					<div class="P-Clear"></div>
+						<div class="P-Blue-Btn submit-btn action-btn" data-submit-type="1"><div class="action-btn-text-two-rows">Submit for technical review</div></div>
+					<div class="P-Clear"></div>				
+		<div class="P-Clear"></div>			
+	</div>
+<div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 952px; right: 3px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 742px;"></div></div></div>
+</div></div>
+	
+							<script type="text/javascript">
+								var articleStructure = new articleMenu('articleMenu', 'P-Right-Arrow' , 'P-Down-Arrow');
+							</script>
+						</div><!-- End P-Wrapper-Container-Left -->
+						<div class="P-Wrapper-Container-Middle">
+							
+		<div class="P-Bread-Crumbs  ">
+			
+			<!--  -->
+			<!-- <div class="P-Path"><a href="/dashboard.php"><img class="pathHomeImg" src="./i/home_path.png" alt="My manuscripts"/></a> <a href="/display_document.php?document_id=13209">Improving Coconut Rhinoceros Beetle...</a>  » <a href="/display_document.php?instance_id=5488390">Article metadata</a> » Title</div> -->
+			<div class="P-Clear"></div>
+		</div><!-- End P-Bread-Crumbs -->
+	
+							
+		
+		<form name="document_form" method="post" id="document_form">
+			<input name="document_id" value="13209" type="hidden">
+		</form>
+	
+		
+			<div id="docEditHeader" style="display: none; width: 894px;">
+                 
+				
+                    <div class="docEditHeader-holder">
+        				<div class="box clearBorder mid" style=" " id="changes_display_holder">
+        					<input id="changes" name="changes_display" checked="checked" value="1" style="margin-right: 4px; " type="radio"> 
+        					<label title="Show suggested changes" for="changes">Changes</label>
+        					<input id="final" name="changes_display" style="margin-left:16px; margin-right: 4px;" type="radio"> 
+        					<label title="Preview all suggested changes applied" for="final">Preview</label>
+        					<script type="text/javascript">
+        						if(typeof(checkIfPreviewAppIsEnabled) != 'undefined' && !checkIfPreviewAppIsEnabled()){
+        							$("#changes_display_holder :radio").bind("change", function(){
+        								$('#previewIframe')[0].contentWindow.toggleChangesDisplay();
+        							});
+        						}
+        					</script> 
+        				</div>  
+                        <div class="box_separator">&nbsp;</div>
+        				<div class="box mid">                               
+        					<div class="optionHolder">
+        						<a title="Accept change" href="#" onclick="AcceptRejectCurrentChange(1);return false;" id="P-Accept-Change-Btn-Id" class="P-Disabled-Btn">
+        							<img src="accept.png" alt="Accept current change">
+        							<span>Accept</span>
+        						</a>
+        					</div>
+        					<div class="optionHolder">
+        						<a title="Reject change" href="#" onclick="AcceptRejectCurrentChange();return false;" id="P-Reject-Change-Btn-Id" class="P-Disabled-Btn">
+        							<img src="decline.png" alt="Reject current change">
+        							<span>Reject</span>
+        						</a>
+        					</div>
+        					<div class="optionHolder" onclick="SelectPreviousNextChange(1);return false;">
+        						<a title="Go to previous change" href="#">
+        							<img src="docleftarrow.png" alt="Go to previous change">
+        							<span>Prev</span>
+        						</a>
+        					</div>
+        					<div class="optionHolder" onclick="SelectPreviousNextChange();return false;">
+        						<a title="Go to next change" href="#">
+                                                                <span>Next</span>
+        							<img src="docrightarrow.png" alt="Go to next change">
+        						</a>
+        					</div>
+        					
+        				</div>
+                        <div class="box_separator">&nbsp;</div>
+        				
+        				<div id="P-Legend-Btn-Id" class="legend">You must resolve all suggested changes to turn off "Track changes" mode and/or submit the manuscript.</div>
+                    </div>
+                
+                <script>InitChangeBtns()</script>
+                <div class="P-Clear"></div>
+                  
+	 
+			</div>
+	
+		<iframe src="/preview_src.php?document_id=13209&amp;template_xsl_path=GeneralFreeText_60&amp;track_figures=1&amp;document_has_unprocessed_changes=" id="previewIframe" class="previewIframe" scrolling="no" style="height: 3324px;" frameborder="0">
+		</iframe>
+		<input value="13209" name="document_id" type="hidden">
+		<script type="text/javascript">
+			InsertLoadingDivMarkup();		
+			blockUi();
+			$("#previewIframe").load(function(responseData){
+				resizePreviewIframe("previewIframe");
+				unblockUi();						
+			});
+			window.onresize = function() {
+				resizePreviewIframe("previewIframe");
+			}
+		</script>
+		
+		<div style="display: none;" class="P-PopUp" id="add-figure-popup" tabindex="-1">
+			<div onclick="popUp(POPUP_OPERS.close, 'add-figure-popup', 'add-figure-popup');" id="simplemodal-container"><a class="modalCloseImg simplemodal-close" title="Close"></a></div>
+			<div class="P-PopUp-Main-Holder">
+				<div class="P-PopUp-Content">
+					<div id="P-PopUp-Figures-Title" class="P-PopUp-Title">Add figure</div>
+					<div class="P-PopUp-Menu-Holder">
+						<ul id="popUp_nav">
+							<li class="P-Active">
+								<div class="P-PopUp-Menu-Elem-Left"></div>
+								<div class="P-PopUp-Menu-Elem-Middle" onclick="ChangeFiguresForm('image', 13209, 'P-PopUp-Content-Inner');">Image</div>
+								<div class="P-PopUp-Menu-Elem-Right"></div>
+							</li>
+							<li>
+								<div class="P-PopUp-Menu-Elem-Left"></div>
+								<div class="P-PopUp-Menu-Elem-Middle" onclick="ChangeFiguresForm('plate', 13209, 'P-PopUp-Content-Inner');">Multiple images (plate)</div>
+								<div class="P-PopUp-Menu-Elem-Right"></div>
+							</li>
+							<li>
+								<div class="P-PopUp-Menu-Elem-Left"></div>
+								<div class="P-PopUp-Menu-Elem-Middle" onclick="ChangeFiguresForm('video', 13209, 'P-PopUp-Content-Inner');">Video</div>
+								<div class="P-PopUp-Menu-Elem-Right"></div>
+							</li>
+							<div class="P-Clear"></div>
+						</ul>
+						<div class="P-Clear"></div>
+						<script type="text/javascript">
+							var menu = new popUpMenu('popUp_nav');
+						</script>
+						<input id="plate_id_value" name="plate_id" value="0" type="hidden">
+					</div>
+					<div class="P-PopUp-Content-Inner">
+
+					</div>
+				</div>
+				<div class="P-PopUp-Footer-Holder">
+					<div class="P-Green-Btn-Holder P-90" id="P-Figures-Save-Button" onclick="SavePlateData('photo_plate_description_textarea', 'plate_id', 'single_picture_id', 'plate_photo_form', 1);">
+						
+						<div class="P-Green-Btn-Middle">Save</div>
+						
+					</div>
+					<div class="P-Green-Btn-Holder P-90" style="display: none;" id="save_video_btn">
+						
+						<div class="P-Green-Btn-Middle">Save</div>
+						
+					</div>
+					<div class="P-HSpace-10"></div>
+					<div class="P-Grey-Btn-Holder" onclick="ShowDialogOnClose('#citation_flag');popUp(POPUP_OPERS.close, 'add-figure-popup', 'add-figure-popup'); ChangeFiguresForm('video', 13209, 'P-PopUp-Content-Inner', 1);">
+						
+						<div class="P-Grey-Btn-Middle"><div class="P-Btn-Icon"></div>Close</div>
+						
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+			</div>
+		</div>
+
+	
+		
+		<div style="display: none;" class="P-PopUp" id="add-table-popup">
+			<div class="P-PopUp-Main-Holder">
+
+			</div>
+		</div>
+	
+	
+						</div>	<div id="P-Ajax-Loading-Image"><img src="loading.gif" alt=""></div><!-- End P-Wrapper-Container-Middle -->
+						<div class="P-Wrapper-Container-Right">
+							
+							<div>
+								<div id="P-Comments-Fixed-Header">
+									<div id="P-Header-Comments-Filter"><div class="P-Header-Comments-Filter-Content">
+	<div class="P-Comment-Txt" title="To add a comment please select text first(Ctrl+Alt+M)">Comments</div>
+	<div id="getMessageHeight" style="">We could also add pictures here.&nbsp; I will send you a SLF picture (one with a HR tag).</div>
+	<div class="P-Filter-Checkboxes">
+		<div class="P-Single-Check-Filter">
+			<input style="display:none;" id="comments_filter_resolved" class="comments_filter" data-filter="resolved" name="comments_filter_resolved" value="0" type="checkbox">
+			<label for="comments_filter_resolved" class="unselectable">
+				Resolved
+			</label>
+		</div>
+		<div class="P-Single-Check-Filter">
+			<div class="P-Filter-Dropdown-Content">
+				<span class="P-Filter-Drop-Down"></span>
+				<span class="P-Filter-Drop-Down-Label unselectable">
+					Filter
+				</span>
+			</div>
+		</div>
+		<!-- div class="P-Single-Check-Filter">
+			<label class="unselectable">
+				<input type="checkbox" id="comments_filter_deleted" class="comments_filter" data-filter="deleted" name="comments_filter_deleted" value="0">Archived
+			</label>
+		</div -->
+		<div class="P-Filter-By-Type" style="display:none;">
+			<div class="P-Single-Type-Filter unselectable P-Filter-By-Username">
+				<div class="P-Single-Type-Filter-Dropdown">
+					<div class="P-Arrow-Icon"></div>
+					by user
+				</div>
+				<div class="P-Filter-By-Type-Content" style="display: none;">
+					<div class="filterInput filter_by_username"></div>
+				</div>
+			</div>
+			<div class="P-Single-Type-Filter unselectable P-Filter-By-Rounds">
+				<div class="P-Single-Type-Filter-Dropdown">
+					<div class="P-Arrow-Icon"></div>
+					by review round
+				</div>
+				<div class="P-Filter-By-Type-Content" style="display: none;">
+					<div class="filterInput filter_by_round"></div>
+				</div>
+			</div>
+			<div class="P-Single-Type-Filter unselectable P-Filter-By-Date">
+				<div class="P-Single-Type-Filter-Dropdown">
+					<div class="P-Arrow-Icon"></div>
+					by date
+				</div>
+				<div class="P-Filter-By-Type-Content" style="display: none;">
+					<div class="P-Single-Filter-Date">
+						<span class="label">From</span><input id="comments_filter_start_date" placeholder="from" class="P-Filter-Date-Input hasDatepicker" name="comments_filter_start_date" type="text"><img class="ui-datepicker-trigger" src="date.svg" alt="..." title="...">
+					</div>
+					<div class="P-Single-Filter-Date">
+						<span class="label">To</span><input id="comments_filter_end_date" placeholder="to" class="P-Filter-Date-Input hasDatepicker" name="comments_filter_end_date" type="text"><img class="ui-datepicker-trigger" src="date.svg" alt="..." title="...">
+					</div>
+				</div>
+			</div>
+			<div class="P-Filter-Close-Icon">clear filter</div>
+		</div>
+	</div>
+	<div class="P-Nav-Btns">
+		<img src="leftarrow.svg" alt="" class="left_arrow prev-comment-btn" style="">
+		<img src="rightarrow.svg" alt="" class="right_arrow next-comment-btn" style="">
+	</div>
+</div></div>
+									<!-- div id="P-Header-Comments-Nav"></div -->
+									<div id="P-Show-Comment-Btn"><div></div></div>
+								</div>
+								<div id="P-Layout-Base-Comment" style="min-height: 2335.62px;"><div class="content" style="padding-top: 0px; height: 100%;width:270px;">
+	<div id="CommentsFreeze"></div>
+	<div class="P-Comments-Revisions-Content P-Comments-Content" id="P-Root-Comments-Holder"><div class="P-Comment-Item-Root_"><div id="P-Root-Comment-Holder-228742" class="P-Root-Comment" style="top: 58px; left: 10px;">	
+		<div class="P-Root-Comment-Wrapper">
+			<div id="P-Root-Comment-228742" class="P-Root-Comment-Header uparrow">
+				<div class="P-Comments-Info">
+					<div class="P-Comments-Info-l" style="width:auto;">
+						<div class="P-Comment-User-Pic">
+									<img alt="" src="user_no_img.png" width="38" height="38" border="0">
+						</div>
+						<div class="P-Comment-Text-Data">
+								<div class="P-Comment-UserName">
+									Matthew Siderhurst
+								</div>
+								<div class="P-Comment-Date">
+									<span class="date-holder" title="9:03 PM 17.01.2020">9:03 PM 17.01.2020</span>
+								</div>
+						</div>
+					</div>
+					<div class="P-Comments-Info-r">
+							<div class="P-Comment-Resolve-Layer">
+								<input name="is_resolved" class="is_resolved" id="chbx_resolve-228742" value="1" type="checkbox">
+								<label class="resolve_label" id="lb_resolve-228742" for="chbx_resolve-228742"></label>
+							</div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+				<div class="P-Comments-Resolved"></div>
+			</div>
+			<div class="P-Comments-Item-Content">
+				<div class="P-Comments-Container">
+					<div class="P-Comments-Single-Row ">
+					    <!-- <div class="P-Comment-Msg"></div> -->
+					    <div class="P-Wrapper-Message"><div>
+	<div class="P-Message"><p>I want to show that we've worked on this before.&nbsp; Therefore the "improving" or maybe "enhancing"</p></div>
+	
+</div></div>
+					    <div class="P-Comment-Edit-Form-Wrapper"></div>
+					</div>
+					<!-- <div class="P-Comments-Show-More-Layout"></div> -->
+					<div class="P-Comments-Reply-Rows"><div><div>
+</div></div></div>				
+				</div>	
+				
+
+				<!-- <div class="P-Inline-Line" style="width:100%; margin-left: 0px;"></div>	 -->
+				<div class="P-Comment-Root-Action-Btns">
+					<div class="P-Comment-Reply-Form-Wrapper">
+						<div class="P-Comment-Reply-Form"></div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="triangle-with-shadow" style="display:none;"></div>
+		
+</div><div id="P-Root-Comment-Holder-227855" class="P-Root-Comment" style="top: 1529.5px; left: 10px;">	
+		<div class="P-Root-Comment-Wrapper">
+			<div id="P-Root-Comment-227855" class="P-Root-Comment-Header uparrow">
+				<div class="P-Comments-Info">
+					<div class="P-Comments-Info-l">
+						<div class="P-Comment-User-Pic">
+									<img alt="" src="user_no_img.png" width="38" height="38" border="0">
+						</div>
+						<div class="P-Comment-Text-Data">
+								<div class="P-Comment-UserName">
+									Aubrey Moore
+								</div>
+								<div class="P-Comment-Date">
+									<span class="date-holder" title="1:45 AM 10.01.2020">1:45 AM 10.01.2020</span>
+								</div>
+						</div>
+					</div>
+					<div class="P-Comments-Info-r">
+							<div class="P-Comment-Resolve-Layer">
+								<input name="is_resolved" class="is_resolved" id="chbx_resolve-227855" value="1" type="checkbox">
+								<label class="resolve_label" id="lb_resolve-227855" for="chbx_resolve-227855"></label>
+							</div>
+								<div class="P-Comment-Toolbar-Menu">
+									<span class="P-Comment-Three-Dots">&nbsp;</span>
+								</div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+				<div class="P-Comments-Resolved"></div>
+			</div>
+			<div class="P-Comments-Item-Content">
+				<div class="P-Comments-Container">
+					<div class="P-Comments-Single-Row ">
+					    <!-- <div class="P-Comment-Msg"></div> -->
+					    <div class="P-Wrapper-Message"><div>
+	<div class="P-Message"><p>the rest of this section is probably best done using a table</p></div>
+	
+</div></div>
+					    <div class="P-Comment-Edit-Form-Wrapper"></div>
+					</div>
+					<!-- <div class="P-Comments-Show-More-Layout"></div> -->
+					<div class="P-Comments-Reply-Rows"><div><div>
+</div></div></div>				
+				</div>	
+				
+
+				<!-- <div class="P-Inline-Line" style="width:100%; margin-left: 0px;"></div>	 -->
+				<div class="P-Comment-Root-Action-Btns">
+					<div class="P-Comment-Reply-Form-Wrapper">
+						<div class="P-Comment-Reply-Form"></div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="triangle-with-shadow" style="display:none;"></div>
+		
+			<div class="P-Comment-Toolbar-Dropdown">
+				<span class="P-Comment-Toolbar-Edit">&nbsp;</span>
+				<span class="P-Comment-Toolbar-Delete" data-confirm="1">&nbsp;</span>
+			</div>
+</div><div id="P-Root-Comment-Holder-228743" class="P-Root-Comment" style="top: 1918.5px; left: 10px;">	
+		<div class="P-Root-Comment-Wrapper">
+			<div id="P-Root-Comment-228743" class="P-Root-Comment-Header uparrow">
+				<div class="P-Comments-Info">
+					<div class="P-Comments-Info-l" style="width:auto;">
+						<div class="P-Comment-User-Pic">
+									<img alt="" src="user_no_img.png" width="38" height="38" border="0">
+						</div>
+						<div class="P-Comment-Text-Data">
+								<div class="P-Comment-UserName">
+									Matthew Siderhurst
+								</div>
+								<div class="P-Comment-Date">
+									<span class="date-holder" title="9:40 PM 17.01.2020">9:40 PM 17.01.2020</span>
+								</div>
+						</div>
+					</div>
+					<div class="P-Comments-Info-r">
+							<div class="P-Comment-Resolve-Layer">
+								<input name="is_resolved" class="is_resolved" id="chbx_resolve-228743" value="1" type="checkbox">
+								<label class="resolve_label" id="lb_resolve-228743" for="chbx_resolve-228743"></label>
+							</div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+				<div class="P-Comments-Resolved"></div>
+			</div>
+			<div class="P-Comments-Item-Content">
+				<div class="P-Comments-Container">
+					<div class="P-Comments-Single-Row ">
+					    <!-- <div class="P-Comment-Msg"></div> -->
+					    <div class="P-Wrapper-Message"><div>
+	<div class="P-Message"><p>Do we want to include some pictures here?&nbsp; Maybe that close-up one of the CRB with the tag and one of us searching?</p></div>
+	
+</div></div>
+					    <div class="P-Comment-Edit-Form-Wrapper"></div>
+					</div>
+					<!-- <div class="P-Comments-Show-More-Layout"></div> -->
+					<div class="P-Comments-Reply-Rows"><div><div>
+</div></div></div>				
+				</div>	
+				
+
+				<!-- <div class="P-Inline-Line" style="width:100%; margin-left: 0px;"></div>	 -->
+				<div class="P-Comment-Root-Action-Btns">
+					<div class="P-Comment-Reply-Form-Wrapper">
+						<div class="P-Comment-Reply-Form"></div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="triangle-with-shadow" style="display:none;"></div>
+		
+</div><div id="P-Root-Comment-Holder-228744" class="P-Root-Comment" style="top: 2228.62px; left: 10px;">	
+		<div class="P-Root-Comment-Wrapper">
+			<div id="P-Root-Comment-228744" class="P-Root-Comment-Header uparrow">
+				<div class="P-Comments-Info">
+					<div class="P-Comments-Info-l" style="width:auto;">
+						<div class="P-Comment-User-Pic">
+									<img alt="" src="user_no_img.png" width="38" height="38" border="0">
+						</div>
+						<div class="P-Comment-Text-Data">
+								<div class="P-Comment-UserName">
+									Matthew Siderhurst
+								</div>
+								<div class="P-Comment-Date">
+									<span class="date-holder" title="10:10 PM 17.01.2020">10:10 PM 17.01.2020</span>
+								</div>
+						</div>
+					</div>
+					<div class="P-Comments-Info-r">
+							<div class="P-Comment-Resolve-Layer">
+								<input name="is_resolved" class="is_resolved" id="chbx_resolve-228744" value="1" type="checkbox">
+								<label class="resolve_label" id="lb_resolve-228744" for="chbx_resolve-228744"></label>
+							</div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+				<div class="P-Comments-Resolved"></div>
+			</div>
+			<div class="P-Comments-Item-Content">
+				<div class="P-Comments-Container">
+					<div class="P-Comments-Single-Row ">
+					    <!-- <div class="P-Comment-Msg"></div> -->
+					    <div class="P-Wrapper-Message"><div>
+	<div class="P-Message"><p>We could also add pictures here.&nbsp; I will send you a SLF picture (one with a HR tag).</p></div>
+	
+</div></div>
+					    <div class="P-Comment-Edit-Form-Wrapper"></div>
+					</div>
+					<!-- <div class="P-Comments-Show-More-Layout"></div> -->
+					<div class="P-Comments-Reply-Rows"><div><div>
+</div></div></div>				
+				</div>	
+				
+
+				<!-- <div class="P-Inline-Line" style="width:100%; margin-left: 0px;"></div>	 -->
+				<div class="P-Comment-Root-Action-Btns">
+					<div class="P-Comment-Reply-Form-Wrapper">
+						<div class="P-Comment-Reply-Form"></div>
+					</div>
+					<div class="P-Clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="triangle-with-shadow" style="display:none;"></div>
+		
+</div></div></div>
+</div></div>
+								<div class="P-Clear"></div>
+							</div>	<!-- P-Wrapper-Right-Content -->
+								
+						</div><!-- End P-Wrapper-Container-Right -->
+						
+			
+					<script type="text/javascript">
+						if (typeof InsertLoadingDivMarkup == 'function') {
+						  InsertLoadingDivMarkup();
+						}
+					</script>
+					<div id="popup-wrapper" style="display:none" class="P-PopUp New-Element-Popup"><div class="popup-inner-wrapper"><div id="popup-nav"><div class="nav-popup-list"></div></div><div id="popup-content"></div><div class="P-Clear"></div></div></div></div> <!-- End P-Wrapper-Container -->
+				<div id="P-Ajax-Loading-Image" style="display: none;">
+					<img src="loading.gif" alt="">
+				</div>
+			
+				
+		<div style="display: none;" class="P-PopUp" id="tips-and-tricks">
+			<div class="P-PopUp-Main-Holder"></div>
+		</div>
+	
+				
+		
+			<div style="display:none;" class="P-PopUp" id="feedback">
+				<div class="P-PopUp-Main-Holder"></div>
+			</div>
+	
+				
+		<div style="display: none;" class="P-PopUp P-Email-PopUp" id="compose-new-message">
+			<div class="P-PopUp-Main-Holder">
+				<div class="P-PopUp-Content">
+					<div class="P-PopUp-Title">Compose Message</div>
+
+					<div class="P-PopUp-Content-Inner-Email">
+						<div class="input-title">Subject <span class="txtred">*</span></div>
+						<div class="P-Input-Full-Width">
+							<div class="P-Input-Inner-Wrapper">
+								<div class="P-Input-Holder">
+									<div class="P-Input-Middle">
+										<input id="email_subject" name="inputname" type="text">
+									</div>
+									<div class="P-Clear"></div>
+								</div>
+							</div>
+						</div>
+						<div class="P-Clear"></div>
+						<div class="P-VSpace-10"></div>
+						<div class="P-Clear"></div>
+						<div class="input-title">Recipients <span class="txtred">*</span></div>
+						<div class="P-Input-Full-Width">
+							<div class="P-Input-Inner-Wrapper">
+								<div class="P-Input-Holder">
+									<ul class="token-input-list-facebook"><li class="token-input-input-token-facebook"><input autocomplete="off" placeholder="" id="token-input-email_recipients" style="outline: none;" type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 12px; font-family: Arial; font-weight: 400; letter-spacing: normal; white-space: nowrap;"></tester></li></ul><input id="email_recipients" name="inputname1" style="display: none;" type="text">
+									<script type="text/javascript">
+										//<![CDATA[
+										$(document).ready(function () {
+											$("#email_recipients").tokenInput(gAutocompleteAjaxSrv + "?action=get_email_recipients",
+												{
+													minChars: 3,
+													theme: "facebook",
+													preventDuplicates: true,
+													queryParam: "term",
+													onResult: function(data){
+														return data;
+													},
+													onAdd: function(item){
+														$("#" + item.id).attr("checked", true);
+														var input = '<input class="email_recipients" id="email_recipients' + item.id + '_hiddenInp"  name="email_recipients[]" value="' + item.id + '" type="hidden"/>';
+														$(input).insertBefore( "#email_recipients" );
+													},
+													onDelete: function(item){
+														$("#email_recipients" + item.id + "_hiddenInp").remove();
+														$("#" + item.id).attr("checked", false);
+													}
+												}
+											);
+										});
+										//]]>
+									</script>
+									<div class="P-Clear"></div>
+								</div>
+							</div>
+						</div>
+						<div class="P-Clear"></div>
+						<div class="P-VSpace-10"></div>
+						<div class="P-Clear"></div>
+						<div class="P-Data-Resources-Control-Txt">
+							<div class="P-Data-Resources-Control-Left">
+								Message <span class="txtred">*</span>
+							</div>
+						</div>
+						<div class="P-Control-Textarea-Holder">
+							<textarea id="email_content_textarea" rows="10" cols="80" style="visibility: hidden; display: none;"></textarea><div id="cke_email_content_textarea" class="cke_1 cke cke_reset cke_chrome cke_editor_email_content_textarea cke_ltr cke_browser_webkit" dir="ltr" role="application" lang="en"><div class="cke_inner cke_reset" role="presentation"><span id="cke_1_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; user-select: none;"><span id="cke_7" class="cke_voice_label">Editor toolbars</span><span id="cke_1_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_7" onmousedown="return false;"><span id="cke_8" class="cke_toolbar" aria-labelledby="cke_8_label" role="toolbar"><span id="cke_8_label" class="cke_voice_label">Basic Styles</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_9" class="cke_button cke_button__bold cke_button_off" href="javascript:void('Bold')" title="Bold (Ctrl+B)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_9_label" aria-describedby="cke_9_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(0,event);" onfocus="return CKEDITOR.tools.callFunction(1,event);" onclick="CKEDITOR.tools.callFunction(2,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -24px;background-size:auto;">&nbsp;</span><span id="cke_9_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">Bold</span><span id="cke_9_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+B</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_10" class="cke_button cke_button__italic cke_button_off" href="javascript:void('Italic')" title="Italic (Ctrl+I)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_10_label" aria-describedby="cke_10_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(3,event);" onfocus="return CKEDITOR.tools.callFunction(4,event);" onclick="CKEDITOR.tools.callFunction(5,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -48px;background-size:auto;">&nbsp;</span><span id="cke_10_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">Italic</span><span id="cke_10_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+I</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_11" class="cke_button cke_button__underline cke_button_off" href="javascript:void('Underline')" title="Underline (Ctrl+U)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_11_label" aria-describedby="cke_11_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(6,event);" onfocus="return CKEDITOR.tools.callFunction(7,event);" onclick="CKEDITOR.tools.callFunction(8,this);return false;"><span class="cke_button_icon cke_button__underline_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -144px;background-size:auto;">&nbsp;</span><span id="cke_11_label" class="cke_button_label cke_button__underline_label" aria-hidden="false">Underline</span><span id="cke_11_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+U</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_12" class="cke_button cke_button__subscript cke_button_off" href="javascript:void('Subscript')" title="Subscript" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_12_label" aria-describedby="cke_12_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(9,event);" onfocus="return CKEDITOR.tools.callFunction(10,event);" onclick="CKEDITOR.tools.callFunction(11,this);return false;"><span class="cke_button_icon cke_button__subscript_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -96px;background-size:auto;">&nbsp;</span><span id="cke_12_label" class="cke_button_label cke_button__subscript_label" aria-hidden="false">Subscript</span><span id="cke_12_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_13" class="cke_button cke_button__superscript cke_button_off" href="javascript:void('Superscript')" title="Superscript" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_13_label" aria-describedby="cke_13_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(12,event);" onfocus="return CKEDITOR.tools.callFunction(13,event);" onclick="CKEDITOR.tools.callFunction(14,this);return false;"><span class="cke_button_icon cke_button__superscript_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -120px;background-size:auto;">&nbsp;</span><span id="cke_13_label" class="cke_button_label cke_button__superscript_label" aria-hidden="false">Superscript</span><span id="cke_13_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_14" class="cke_button cke_button__numberedlist cke_button_off" href="javascript:void('Insert/Remove%20Numbered%20List')" title="Insert/Remove Numbered List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_14_label" aria-describedby="cke_14_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(15,event);" onfocus="return CKEDITOR.tools.callFunction(16,event);" onclick="CKEDITOR.tools.callFunction(17,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -432px;background-size:auto;">&nbsp;</span><span id="cke_14_label" class="cke_button_label cke_button__numberedlist_label" aria-hidden="false">Insert/Remove Numbered List</span><span id="cke_14_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_15" class="cke_button cke_button__bulletedlist cke_button_off" href="javascript:void('Insert/Remove%20Bulleted%20List')" title="Insert/Remove Bulleted List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_15_label" aria-describedby="cke_15_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(18,event);" onfocus="return CKEDITOR.tools.callFunction(19,event);" onclick="CKEDITOR.tools.callFunction(20,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -384px;background-size:auto;">&nbsp;</span><span id="cke_15_label" class="cke_button_label cke_button__bulletedlist_label" aria-hidden="false">Insert/Remove Bulleted List</span><span id="cke_15_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_16" class="cke_button cke_button__specialchar cke_button_off" href="javascript:void('Insert%20Special%20Character')" title="Insert Special Character" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_16_label" aria-describedby="cke_16_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(21,event);" onfocus="return CKEDITOR.tools.callFunction(22,event);" onclick="CKEDITOR.tools.callFunction(23,this);return false;"><span class="cke_button_icon cke_button__specialchar_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/specialchar/icons/specialchar.png?t=1526387487');background-position:0 0px;background-size:16px;">&nbsp;</span><span id="cke_16_label" class="cke_button_label cke_button__specialchar_label" aria-hidden="false">Insert Special Character</span><span id="cke_16_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_17" class="cke_button cke_button__link cke_button_off" href="javascript:void('Link')" title="Link (Ctrl+L)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_17_label" aria-describedby="cke_17_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(24,event);" onfocus="return CKEDITOR.tools.callFunction(25,event);" onclick="CKEDITOR.tools.callFunction(26,this);return false;"><span class="cke_button_icon cke_button__link_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -312px;background-size:auto;">&nbsp;</span><span id="cke_17_label" class="cke_button_label cke_button__link_label" aria-hidden="false">Link</span><span id="cke_17_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+L</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_18" class="cke_button cke_button__unlink cke_button_disabled " href="javascript:void('Unlink')" title="Unlink" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_18_label" aria-describedby="cke_18_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(27,event);" onfocus="return CKEDITOR.tools.callFunction(28,event);" onclick="CKEDITOR.tools.callFunction(29,this);return false;"><span class="cke_button_icon cke_button__unlink_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -336px;background-size:auto;">&nbsp;</span><span id="cke_18_label" class="cke_button_label cke_button__unlink_label" aria-hidden="false">Unlink</span><span id="cke_18_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_19" class="cke_button cke_button__outdent cke_button_disabled " href="javascript:void('Decrease%20Indent')" title="Decrease Indent" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_19_label" aria-describedby="cke_19_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(30,event);" onfocus="return CKEDITOR.tools.callFunction(31,event);" onclick="CKEDITOR.tools.callFunction(32,this);return false;"><span class="cke_button_icon cke_button__outdent_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -240px;background-size:auto;">&nbsp;</span><span id="cke_19_label" class="cke_button_label cke_button__outdent_label" aria-hidden="false">Decrease Indent</span><span id="cke_19_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_20" class="cke_button cke_button__indent cke_button_off" href="javascript:void('Increase%20Indent')" title="Increase Indent" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_20_label" aria-describedby="cke_20_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(33,event);" onfocus="return CKEDITOR.tools.callFunction(34,event);" onclick="CKEDITOR.tools.callFunction(35,this);return false;"><span class="cke_button_icon cke_button__indent_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -192px;background-size:auto;">&nbsp;</span><span id="cke_20_label" class="cke_button_label cke_button__indent_label" aria-hidden="false">Increase Indent</span><span id="cke_20_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_21" class="cke_button cke_button__scayt cke_button_off" href="javascript:void('Spell%20Check%20As%20You%20Type')" title="Spell Check As You Type" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_21_label" aria-describedby="cke_21_description" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(36,event);" onfocus="return CKEDITOR.tools.callFunction(37,event);" onclick="CKEDITOR.tools.callFunction(38,this);return false;"><span class="cke_button_icon cke_button__scayt_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -480px;background-size:auto;">&nbsp;</span><span id="cke_21_label" class="cke_button_label cke_button__scayt_label" aria-hidden="false">Spell Check As You Type</span><span id="cke_21_description" class="cke_button_label" aria-hidden="false"></span><span class="cke_button_arrow"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_22" class="cke_button cke_button__undo cke_button_disabled " href="javascript:void('Undo')" title="Undo (Ctrl+Z)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_22_label" aria-describedby="cke_22_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(39,event);" onfocus="return CKEDITOR.tools.callFunction(40,event);" onclick="CKEDITOR.tools.callFunction(41,this);return false;"><span class="cke_button_icon cke_button__undo_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -624px;background-size:auto;">&nbsp;</span><span id="cke_22_label" class="cke_button_label cke_button__undo_label" aria-hidden="false">Undo</span><span id="cke_22_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+Z</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_23" class="cke_button cke_button__redo cke_button_disabled " href="javascript:void('Redo')" title="Redo (Ctrl+Y)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_23_label" aria-describedby="cke_23_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(42,event);" onfocus="return CKEDITOR.tools.callFunction(43,event);" onclick="CKEDITOR.tools.callFunction(44,this);return false;"><span class="cke_button_icon cke_button__redo_icon" style="background-image:url('https://arpha.pensoft.net/lib/editors/ckeditor_4.4/plugins/icons.png?t=H7HD');background-position:0 -576px;background-size:auto;">&nbsp;</span><span id="cke_23_label" class="cke_button_label cke_button__redo_label" aria-hidden="false">Redo</span><span id="cke_23_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+Y</span></a></span><span class="cke_toolbar_end"></span></span></span></span><div id="cke_1_contents" class="cke_contents cke_reset" role="presentation" style="height: 220px;"><iframe src="" class="cke_wysiwyg_frame cke_reset" tabindex="0" allowtransparency="true" style="width: 100%; height: 100%;" frameborder="0"></iframe></div></div></div>
+						</div>
+						<script type="text/javascript">
+			//<![CDATA[
+		CKEDITOR.config.contentsCss = '/lib/css/editor_iframe.css?v=1491403596' ;
+		CKEDITOR.config.language = 'en';
+        CKEDITOR.timestamp = '1526387487';
+		CKEDITOR.on('instanceReady', function(ev){
+			ev.editor.on('paste', function(evt) {
+				if(typeof(evt.data["html"]) !== 'undefined' && evt.data["html"] != null) {
+					// remove empty tags, e.g. <p></p>
+					evt.data["html"] = (evt.data["html"]).replace(/<[^\/>][^>]*><\/[^>]+>/, '');
+					evt.data["html"] = cleanHTML(evt.data["html"], 0);
+				}
+			}, null, null, 9);			
+			MarkCKEditorAsLoaded("email_content_textarea");
+		});
+
+		var instance = CKEDITOR.instances['email_content_textarea'];
+
+		if(instance){
+			//instance.destroy(true);
+		}
+		SaveCKEditorConfig('email_content_textarea', {
+			extraAllowedContent: {
+				'insert' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'delete' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'accepted-insert' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'accepted-delete' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'fake-insert' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'fake-delete' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'fig-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'copied-fig-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'xref' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'tbls-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+			    'copied-tbls-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+			    'endnote-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+			    'copied-endnote-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'reference-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'copied-reference-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'cite' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'copied-cite' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'tn' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'tn-part' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'sup-files-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'copied-sup-files-citation' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'mark' : {
+					attributes : '*',
+					classes : '*',
+					styles : '*'
+				},
+				'table' : {
+			     attributes : '*',
+			     classes : '*',
+			     styles : '*'
+			    },
+			    'tbody' : {
+
+			     attributes : '*',
+			     classes : '*',
+			     styles : '*'
+			    },
+			    'tr' : {
+			     attributes : '*',
+			     classes : '*',
+			     styles : '*'
+			    },				
+			    'th' : {
+			     attributes : '*',
+			     classes : '*',
+			     styles : '*'
+			    },
+			    'td' : {
+			     attributes : '*',
+			     classes : '*',
+			     styles : '*'
+			    }
+			},
+			extraPlugins : 'indentblock,undo,widget,lineutils,mathjax,justify,removeformat,clipboard,scayt,paste_custom,autosave,sharedspace,tableresize,tableselection,specialchar',
+			on: {
+				instanceReady: function( evt ) {
+					var leditor = evt.editor;
+					fixEditorMaximizeBtn(leditor);
+					SetupCKEditorIframeCitationElementsSelectionEvents(leditor);
+				}
+			},
+			toolbar : 'ModerateToolbar',
+			floatingtools : 'Basic',
+			removePlugins: 'elementspath,resize,colordialog,flash,find,form,iframe,image,pagebreak,preview,showblocks,smiley,templates,wsc',
+			height: 220,
+			autoGrow_minHeight: 220,
+			autoGrow_onStartup: true,
+			lite : {
+				isTracking : false,
+				tooltips : {
+					show : false
+				},				
+			},
+			autoGrow_maxHeight: 360 //fixed for popup editing
+			
+
+		});
+		ReloadCKEditor('email_content_textarea');
+		//]]>
+	</script>
+						<div class="P-Clear"></div>
+						<div class="P-VSpace-20"></div>
+						<div class="P-Clear"></div>
+						<div class="P-Green-Btn-Holder P-90" onclick="ajaxSendMessage('email_subject','email_recipients','email_content_textarea');" style="margin-top: 91px; left: 0">
+							
+							<div class="P-Green-Btn-Middle">Send</div>
+							
+						</div>
+						<div class="P-HSpace-10"></div>
+						<div class="P-Grey-Btn-Holder" onclick="popUp(POPUP_OPERS.close, 'compose-new-message', 'compose-new-message');" style="margin-top: 110px; left: 130px">
+							
+							<div class="P-Grey-Btn-Middle"><div class="P-Btn-Icon"></div>Close</div>
+							
+						</div>
+						<div class="P-Clear"></div>
+					</div>
+				</div>
+				<div class="P-Project-Participants">
+
+
+				</div>
+			</div>
+		</div>
+	
+				
+		<div style="display: none;" class="P-PopUp P-Email-PopUp" id="review_popup">
+			<div class="P-PopUp-Main-Holder P-PopUp-Main-Holder-Review">
+			</div>
+		</div>
+	
+				
+		<div style="display: none;" class="P-PopUp P-Email-PopUp" id="te_feedback_popup">
+			<div class="P-PopUp-Main-Holder P-PopUp-Main-Holder-Review">
+			</div>
+		</div>
+	
+				
+		<div style="display: none;" id="P-General-Popup-Content" class="P-PopUp"></div>
+		<div style="display: none;" class="P-PopUp P-Email-PopUp" id="general_popup">
+			<div class="P-PopUp-Main-Holder"></div>
+		</div>
+	
+				
+		<div style="display: none;width:600px;" class="P-PopUp P-Email-PopUp" id="error_popup">
+			<div class="P-PopUp-Main-Holder"></div>
+		</div>
+	
+				<div id="layerbg" style="display: none;"></div>
+				<script type="text/javascript">
+					resizeMiddleContainer();
+					autoSaveField();
+				</script>
+				<script type="text/javascript">
+				/* Google Analytics */
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-34109634-1']);
+				_gaq.push(['_trackPageview']);
+				(function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();
+			</script>
+				
+	  <!-- Default Statcounter code for PWT  -->
+		<script type="text/javascript">
+		var sc_project=9253683; 
+		var sc_invisible=1; 
+		var sc_security="70e13945"; 
+		</script>
+		<script type="text/javascript" src="counter.js" async=""></script>
+		<noscript><div class="statcounter"><a title="Web Analytics
+		Made Easy - StatCounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="a.gif" alt="Web Analytics Made Easy -
+		StatCounter"></a></div></noscript>
+		<!-- End of Statcounter Code -->
+        
+			
+		
+	
+	
+	<div class="showCommentBtnBubble" id="showCommentBtnBubble">
+	<div class="P-Comment-Btn" id="P-Comment-Btn-Bubble" title="To add a comment please select text first(Ctrl+Alt+M)"></div>
+</div></div><div class="token-input-dropdown-facebook" style="display: none;"></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

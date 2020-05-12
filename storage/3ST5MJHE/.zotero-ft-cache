@@ -1,0 +1,466 @@
+Navigation
+PyImageSearch PyImageSearch Be awesome at learning OpenCV, Python, and computer vision
+Home
+Main Menu
+
+    Start Here
+    Practical Python and OpenCV
+    PyImageSearch Gurus
+    OpenCV 3 Tutorials
+    FREE OpenCV Crash Course
+    About
+    Contact
+
+Return to Content
+Image Pyramids with Python and OpenCV
+By Adrian Rosebrock on March 16, 2015 in Machine Learning , Tutorials
+Twitter 0
+Facebook 9
+Google+ 3
+LinkedIn 7
+
+pyramid_adrian_scale30
+
+It’s too damn cold up in Connecticut  — so cold that I had to throw in the towel and escape for a bit.
+
+Last week I took a weekend trip down to Orlando, FL just to escape. And while the weather wasn’t perfect (mid-60 degrees Fahrenheit, cloudy, and spotty rain, as you can see from the photo above), it was exactly 60 degrees warmer than it is in Connecticut  — and that’s all that mattered to me.
+
+While I didn’t make it to Animal Kingdom or partake in any Disney adventure rides, I did enjoy walking Downtown Disney and having drinks at each of the countries in Epcot.
+
+Sidebar: Perhaps I’m biased since I’m German, but German red wines are perhaps some of the most under-appreciated wines there are. Imagine having the full-bodied taste of a Chianti, but slightly less acidic. Perfection. If you’re ever in Epcot, be sure to check out the German wine tasting.
+
+Anyway, as I boarded the plane to fly back from the warm Florida paradise to the Connecticut tundra, I started thinking about what the next blog post on PyImageSearch was going to be.
+
+Really, it should not have been that long (or hard) of an exercise, but it was a 5:27am flight, I was still half asleep, and I’m pretty sure I still had a bit of German red wine in my system.
+
+After a quick cup of (terrible) airplane coffee, I decided on a 2-part blog post:
+
+    Part #1:  Image Pyramids with Python and OpenCV.
+    Part #2:  Sliding Windows for Image Classification with Python and OpenCV.
+
+You see, a few months ago I wrote a blog post on utilizing the Histogram of Oriented Gradients image descriptor and a Linear SVM to detect objects in images. This 6-step framework can be used to easily train object classification models.
+
+A critical aspect of this 6-step framework involves image pyramids and sliding windows .
+
+Today we are going to review two ways to create image pyramids using Python, OpenCV, and sickit-image. And next week we’ll discover the simple trick to create highly efficient sliding windows.
+
+Utilizing these two posts we can start to glue together the pieces of our HOG + Linear SVM framework so you can build object classifiers of your own!
+
+Read on to learn more…
+
+Looking for the source code to this post?
+Jump right to the downloads section.
+What are image pyramids?
+Figure 1: An example of an image pyramid. At each layer of the pyramid the image is downsized and (optionally) smoothed.
+
+Figure 1: An example of an image pyramid. At each layer of the pyramid the image is downsized and (optionally) smoothed ( image source ).
+
+An “image pyramid” is a multi-scale representation of an image.
+
+Utilizing an image pyramid allows us to find objects in images at different scales of an image. And when combined with a sliding window we can find objects in images in various locations.
+
+At the bottom of the pyramid we have the original image at its original size (in terms of width and height). And at each subsequent layer, the image is resized (subsampled) and optionally smoothed (usually via Gaussian blurring).
+
+The image is progressively subsampled until some stopping criterion is met, which is normally a minimum size has been reached and no further subsampling needs to take place.
+Method #1: Image Pyramids with Python and OpenCV
+
+The first method we’ll explore to construct image pyramids will utilize Python + OpenCV.
+
+In fact, this is the exact same image pyramid implementation that I utilize in my own projects!
+
+Let’s go ahead and get this example started. Create a new file, name it helpers . py  , and insert the following code:
+
+Image Pyramids with Python and OpenCV
+Python
+# import the necessary packages import imutils def pyramid(image, scale=1.5, minSize=(30, 30)): # yield the original image yield image # keep looping over the pyramid while True: # compute the new dimensions of the image and resize it w = int(image.shape[1] / scale) image = imutils.resize(image, width=w) # if the resized image does not meet the supplied minimum # size, then stop constructing the pyramid if image.shape[0] < minSize[1] or image.shape[1] < minSize[0]: break # yield the next image in the pyramid yield image
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+	
+# import the necessary packages
+import imutils
+ 
+def pyramid ( image , scale = 1.5 , minSize = ( 30 , 30 ) ) :
+# yield the original image
+yield image
+ 
+# keep looping over the pyramid
+while True :
+# compute the new dimensions of the image and resize it
+w = int ( image . shape [ 1 ] / scale )
+image = imutils . resize ( image , width = w )
+ 
+# if the resized image does not meet the supplied minimum
+# size, then stop constructing the pyramid
+if image . shape [ 0 ] < minSize [ 1 ] or image . shape [ 1 ] < minSize [ 0 ] :
+break
+ 
+# yield the next image in the pyramid
+yield image
+
+We start by importing the imutils   package which contains a handful of image processing convenience functions that are commonly used such as resizing, rotating, translating, etc. You can read more about the  imutils   package here . You can also grab it off my GitHub . The package is also pip-installable:
+Image Pyramids with Python and OpenCV
+Shell
+$ pip install imutils
+1
+	
+$ pip install imutils
+
+Next up, we define our pyramid   function on Line 4 . This function takes two arguments. The first argument is the scale  , which controls by how much the image is resized at each layer. A small scale   yields more layers in the pyramid. And a larger scale   yields less layers.
+
+Secondly, we define the minSize  , which is the minimum required width and height of the layer. If an image in the pyramid falls below this minSize  , we stop constructing the image pyramid.
+
+Line 6 yields the original image in the pyramid (the bottom layer).
+
+From there, we start looping over the image pyramid on Line 9 .
+
+Lines 11 and 12 handle computing the size of the image in the next layer of the pyramid (while preserving the aspect ratio). This scale is controlled by the scale   factor.
+
+On Lines 16 and 17 we make a check to ensure that the image meets the minSize   requirements. If it does not, we break from the loop.
+
+Finally, Line 20 yields our resized image.
+
+But before we get into examples of using our image pyramid, let’s quickly review the second method.
+Method #2: Image pyramids with Python + scikit-image
+
+The second method to image pyramid construction utilizes Python and scikit-image. The scikit-image library already has a built-in method for constructing image pyramids called pyramid_gaussian   , which you can read more about here .
+
+Here’s an example on how to use the pyramid_gaussian   function in scikit-image:
+
+Image Pyramids with Python and OpenCV
+Python
+# METHOD #2: Resizing + Gaussian smoothing. for (i, resized) in enumerate(pyramid_gaussian(image, downscale=2)): # if the image is too small, break from the loop if resized.shape[0] < 30 or resized.shape[1] < 30: break # show the resized image cv2.imshow("Layer {}".format(i + 1), resized) cv2.waitKey(0)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+	
+# METHOD #2: Resizing + Gaussian smoothing.
+for ( i , resized ) in enumerate ( pyramid_gaussian ( image , downscale = 2 ) ) :
+# if the image is too small, break from the loop
+if resized . shape [ 0 ] < 30 or resized . shape [ 1 ] < 30 :
+break
+# show the resized image
+cv2 . imshow ( "Layer {}" . format ( i + 1 ) , resized )
+cv2 . waitKey ( 0 )
+
+Similar to the example above, we simply loop over the image pyramid and make a check to ensure that the image has a sufficient minimum size. Here we specify downscale = 2   to indicate that we are halving the size of the image at each layer of the pyramid.
+Image pyramids in action
+
+Now that we have our two methods defined, let’s create a driver script to execute our code. Create a new file, name it pyramid . py  , and let’s get to work:
+
+Image Pyramids with Python and OpenCV
+Python
+# import the necessary packages from pyimagesearch.helpers import pyramid from skimage.transform import pyramid_gaussian import argparse import cv2 # construct the argument parser and parse the arguments ap = argparse.ArgumentParser() ap.add_argument("-i", "--image", required=True, help="Path to the image") ap.add_argument("-s", "--scale", type=float, default=1.5, help="scale factor size") args = vars(ap.parse_args()) # load the image image = cv2.imread(args["image"]) # METHOD #1: No smooth, just scaling. # loop over the image pyramid for (i, resized) in enumerate(pyramid(image, scale=args["scale"])): # show the resized image cv2.imshow("Layer {}".format(i + 1), resized) cv2.waitKey(0) # close all windows cv2.destroyAllWindows() # METHOD #2: Resizing + Gaussian smoothing. for (i, resized) in enumerate(pyramid_gaussian(image, downscale=2)): # if the image is too small, break from the loop if resized.shape[0] < 30 or resized.shape[1] < 30: break # show the resized image cv2.imshow("Layer {}".format(i + 1), resized) cv2.waitKey(0)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+	
+# import the necessary packages
+from pyimagesearch . helpers import pyramid
+from skimage . transform import pyramid_gaussian
+import argparse
+import cv2
+ 
+# construct the argument parser and parse the arguments
+ap = argparse . ArgumentParser ( )
+ap . add_argument ( "-i" , "--image" , required = True , help = "Path to the image" )
+ap . add_argument ( "-s" , "--scale" , type = float , default = 1.5 , help = "scale factor size" )
+args = vars ( ap . parse_args ( ) )
+ 
+# load the image
+image = cv2 . imread ( args [ "image" ] )
+ 
+# METHOD #1: No smooth, just scaling.
+# loop over the image pyramid
+for ( i , resized ) in enumerate ( pyramid ( image , scale = args [ "scale" ] ) ) :
+# show the resized image
+cv2 . imshow ( "Layer {}" . format ( i + 1 ) , resized )
+cv2 . waitKey ( 0 )
+ 
+# close all windows
+cv2 . destroyAllWindows ( )
+ 
+# METHOD #2: Resizing + Gaussian smoothing.
+for ( i , resized ) in enumerate ( pyramid_gaussian ( image , downscale = 2 ) ) :
+# if the image is too small, break from the loop
+if resized . shape [ 0 ] < 30 or resized . shape [ 1 ] < 30 :
+break
+# show the resized image
+cv2 . imshow ( "Layer {}" . format ( i + 1 ) , resized )
+cv2 . waitKey ( 0 )
+
+We’ll start by importing our required packages. I put my personal pyramid   function in a helpers   sub-module of pyimagesearch   for organizational purposes.
+
+You can download the code at the bottom of this blog post for my project files and directory structure.
+
+We then import the scikit-image pyramid_gaussian  function, argparse   for parsing command line arguments, and cv2   for our OpenCV bindings.
+
+Next up, we need to parse some command line arguments on Lines 9-11 . Our script requires only two switches, -- image  , which is the path to the image we are going to construct an image pyramid for, and -- scale  , which is the scale factor that controls how the image will be resized in the pyramid.
+
+Line 14 loads then our image from disk.
+
+We can start utilize our image pyramid Method #1 (my personal method) on Lines 18-21 where we simply loop over each layer of the pyramid and display it on screen.
+
+Then from Lines 27-34 we utilize the scikit-image method (Method #2) for image pyramid construction.
+
+To see our script in action, open up a terminal, change directory to where your code lives, and execute the following command:
+
+Image Pyramids with Python and OpenCV
+Shell
+$ python pyramid.py --image images/adrian_florida.jpg --scale 1.5
+1
+	
+$ python pyramid .py -- image images / adrian_florida .jpg -- scale 1.5
+
+If all goes well, you should see results similar to this:
+Figure 2: Constructing an image pyramid with 7 layers and no smoothing.
+
+Figure 2: Constructing an image pyramid with 7 layers and no smoothing (Method #1).
+
+Here we can see that 7 layers have been generated for the image.
+
+And similarly for the scikit-image method:
+Figure 3: Generating 4 layers of the image pyramid with scikit-image.
+
+Figure 3: Generating 4 layers of the image pyramid with scikit-image (Method #2).
+
+The scikit-image pyramid generated 4 layers since it reduced the image by 50% at each layer.
+
+Now, let’s change the scale factor to 3.0   and see how the results change:
+
+Image Pyramids with Python and OpenCV
+Shell
+$ python pyramid.py --image images/adrian_florida.jpg --scale 1.5
+1
+	
+$ python pyramid .py -- image images / adrian_florida .jpg -- scale 1.5
+
+And the resulting pyramid now looks like:
+Increase the scale factor from 1.5 to 3.0 has reduced the number of layers generated.
+
+Figure 4: Increase the scale factor from 1.5 to 3.0 has reduced the number of layers generated.
+
+Using a scale factor of 3.0  , only 3 layers have been generated.
+
+In general, there is a tradeoff between performance and the number of layers that you generate. The smaller your scale factor is, the more layers you need to create and process — but this also gives your image classifier a better chance at localizing the object you want to detect in the image.
+
+A larger scale factor will yield less layers, and perhaps might hurt your object classification performance; however, you will obtain much higher performance gains since you will have less layers to process.
+Summary
+
+In this blog post we discovered how to construct image pyramids using two methods.
+
+The first method to image pyramid construction used Python and OpenCV and is the method I use in my own personal projects. Unlike the traditional image pyramid, this method does not smooth the image with a Gaussian at each layer of the pyramid, thus making it more acceptable for use with the HOG descriptor.
+
+The second method to pyramid construction utilized Python + scikit-image and did apply Gaussian smoothing at each layer of the pyramid.
+
+So which method should you use?
+
+In reality, it depends on your application. If you are using the HOG descriptor for object classification you’ll want to use the first method since smoothing tends to hurt classification performance.
+
+If you are trying to implement something like SIFT or the Difference of Gaussian keypoint detector, then you’ll likely want to utilize the second method (or at least incorporate smoothing into the first).
+Downloads:
+If you would like to download the code and images used in this post, please enter your email address in the form below. Not only will you get a .zip of the code, I’ll also send you a FREE 11-page Resource Guide on Computer Vision and Image Search Engines, including exclusive techniques that I don’t post on this blog! Sound good? If so, enter your email address and I’ll send you the code immediately!
+
+Email address:
+
+Resource Guide (it’s totally free).
+
+[Get your FREE 11-page Image Search Engine Resource Guide PDF]
+Enter your email address below to get my free 11-page Image Search Engine Resource Guide PDF . Uncover exclusive techniques that I don't publish on this blog and start building image search engines of your own!
+
+classification , histogram of oriented gradients , hog , image pyramids , machine learning , object detection
+Capturing mouse click events with Python and OpenCV
+Sliding Windows for Object Detection with Python and OpenCV
+14 Responses to Image Pyramids with Python and OpenCV
+
+    Oliver March 17, 2015 at 2:40 am #
+
+    Actually in option one you should smooth the image with a gaussian filter to remove high frequencies before down scaling and to prevent aliasing effects.
+    Reply
+        Adrian Rosebrock March 17, 2015 at 6:39 am #
+
+        Hi Oliver, thanks for the comment. However, as mentioned in the Summary section of this article, Method #1 is intended to be used for object classification using HOG + Linear SVM. As demonstrated by Dalal and Triggs in their Histogram of Oriented Gradients for Human Detection paper, applying Gaussian smoothing (even to remove high frequency noise) prior to extracting HOG features actually hurts classification performance. So when using HOG, it’s actually best to just subsample and avoid the Gaussian smoothing.
+        Reply
+            Tomasz Malisiewicz March 21, 2015 at 10:20 am #
+
+            I’m going to agree with Adrian. Gaussian smooth during downscaling seems like a good idea when you read the signal processing literature, but for features like HOG it doesn’t really matter.
+
+            With HOG it’s all about speed. The fewer operations your perform before the classifier hits the pixels, the better off you’ll be.
+
+            If you implement your own HOG (only loosely following Navneet Dalal’s recipe), you should build a test suite which measures your computation time and descriptor/classifier performance, and iterate. I can envision a variant of HOG that benefits from smoothing, but experiments should have the final word.
+            Reply
+                Adrian Rosebrock March 21, 2015 at 11:11 am #
+
+                Hey, thanks for the comment Tomasz. I could not agree with you more — experiments should always have the final word.
+                Reply
+    jenn T June 29, 2015 at 1:23 pm #
+
+    Hi!, that’s exactly what I am looking for, thank you so much for doing this post. I was reading about the use of Gaussian smooth during downscaling and now i am wondering if for haar-like features it should be used or not. thank you again.
+    Reply
+        Adrian Rosebrock June 29, 2015 at 2:46 pm #
+
+        Haar features are normally scaled in the feature space rather than the image space to avoid (unnecessarily) recomputing the integral images. I would refer to the original Viola-Jones paper on Haar cascades to read more about their sampling scheme.
+        Reply
+    Mau August 6, 2015 at 2:54 pm #
+
+    Why don’t simply use Pyrup and Pyrdown from opencv?
+    Reply
+        Adrian Rosebrock August 7, 2015 at 7:07 am #
+
+        OpenCV’s implementation of pyramids don’t give enough control. For example, one of my primary use cases for image pyramids is for object detection using Histogram of Oriented Gradients . It’s well known that applying Gaussian blurring prior to extracting HOG feature vectors can actually hurt performance — which is something OpenCV’s implementation of pyramids do, hence the scikit-image implementation is a better choice (at least in my opinion).
+        Reply
+    BlackDragon December 6, 2015 at 2:44 am #
+
+    Hi Adrian, i have a question: The scale parameter will resized at each subsequent layer, so when will the parameter will stop?
+    Reply
+        Adrian Rosebrock December 6, 2015 at 7:11 am #
+
+        Take a look at Line 4 where we define the minSize argument to the pyramid function. Once the image falls below minSize , we break from the loop.
+        Reply
+            BlackDragon December 6, 2015 at 11:07 am #
+
+            awww sorry my bad, by the way can you explain to me how does the scale parameter work?
+            i read it from http://www.pyimagesearch.com/2015/11/16/hog-detectmultiscale-parameters-explained/ but i still nervous. please!
+            Reply
+                Adrian Rosebrock December 6, 2015 at 11:17 am #
+
+                The scale simply controls the number of levels that are ultimately generated by the image pyramid. The smaller the scale, more layers in the image pyramid are generated. The larger the scale, the less pyramids are generated. I would suggest downloading the source code to this post and running the examples with varying scale parameters to convince yourself of this.
+                Reply
+
+Trackbacks/Pingbacks
+
+    Sliding Windows for Object Detection with Python and OpenCV - PyImageSearch - March 23, 2015
+
+    […] in last week’s blog post we discovered how to construct an image […]
+    Detecting cats in images with OpenCV - PyImageSearch - June 20, 2016
+
+    […] scaleFactor  of our image pyramid used when detecting cat faces. A larger scale factor will increase the speed of the detector, but […]
+
+Leave a Reply Click here to cancel reply.
+
+Comment
+
+Name (required)
+
+Email (will not be published) (required)
+
+Website
+
+Resource Guide (it’s totally free).
+[Get your FREE 11-page Image Search Engine Resource Guide PDF]
+
+Click the button below to get my free 11-page Image Search Engine Resource Guide PDF . Uncover exclusive techniques that I don't publish on this blog and start building image search engines of your own.
+Download for Free!
+You can detect faces in images & video.
+[Learn how to detect faces in images and video]
+
+Are you interested in detecting faces in images & video? But tired of Googling for tutorials that never work? Then let me help! I guarantee that my new book will turn you into a face detection ninja by the end of this weekend. Click here to give it a shot yourself.
+
+PyImageSearch Gurus: NOW ENROLLING!
+
+The PyImageSearch Gurus course is now enrolling! Inside the course you'll learn how to perform:
+
+    Automatic License Plate Recognition (ANPR)
+    Deep Learning
+    Face Recognition
+    and much more!
+
+Click the button below to learn more about the course, take a tour, and get 10 (FREE) sample lessons .
+
+Hello! I’m Adrian Rosebrock.
+
+I'm an entrepreneur and Ph.D who has launched two successful image search engines, ID My Pill and Chic Engine . I'm here to share my tips, tricks, and hacks I've learned along the way.
+Learn computer vision in a single weekend.
+[Become an OpenCV guru]
+
+Want to learn computer vision & OpenCV? I can teach you in a single weekend . I know. It sounds crazy, but it’s no joke. My new book is your guaranteed, quick-start guide to becoming an OpenCV Ninja. So why not give it a try? Click here to become a computer vision ninja.
+
+Subscribe via RSS
+[PyImageSearch RSS Feed]
+
+Never miss a post! Subscribe to the PyImageSearch RSS Feed and keep up to date with my image search engine tutorials, tips, and tricks
+
+    Popular
+
+    Install OpenCV and Python on your Raspberry Pi 2 and B+ February 23, 2015
+    Home surveillance and motion detection with the Raspberry Pi, Python, OpenCV, and Dropbox June 1, 2015
+    How to install OpenCV 3 on Raspbian Jessie October 26, 2015
+    Install OpenCV 3.0 and Python 2.7+ on Ubuntu June 22, 2015
+    Accessing the Raspberry Pi Camera with OpenCV and Python March 30, 2015
+    Install OpenCV 3.0 and Python 2.7+ on OSX June 15, 2015
+    Basic motion detection and tracking with Python and OpenCV May 25, 2015
+
+Search
+Find me on Twitter , Facebook , Google+ , and LinkedIn .
+
+© 2016 PyImageSearch. All Rights Reserved.
+Free 21-day crash course on computer vision & image search engines
+×
+Free 21-day crash course on computer vision & image search engines
+Interested in computer vision and image search engines, but don't know where to start? Let me help. I've created a free, 21-day crash course that is hand-tailored to give you the best possible introduction to computer vision. Sound good? Enter your email below to start your journey to becoming a computer vision master.
+
+Email Address
+
+×
+Almost There...
+
+To start your free 21-day crash course, confirm your email address by clicking the link in the email I just sent you.
+7960fd4dacde1462303655-optin.png
+I hate SPAM and promise to keep your email address safe.
+Yes, I Want Access! No Thanks
+×
+Thanks for subscribing! Please check your email for further instructions.

@@ -1,0 +1,67 @@
+
+Open in app
+Post management tools menu
+Aubrey Moore
+Fitting Curves to COVID-19 Data from Guam and Hawaii
+Aubrey Moore
+Aubrey Moore
+Apr 1 · 5 min read
+
+I am an entomologist working on invasive species arriving on the tropical island of Guam, a territory of the United States. I use simple models to describe population dynamics of invasive insects arriving on the island.
+
+A recent Medium article describing how to access global COVID-19 data maintained by Johns Hopkins University Center for Systems Science and Engineering inspired me to download the Guam data to see if I could apply my simple models to this latest invasive “bug”. I started out by writing a Python script contained in a Jupyter notebook to facilitate downloading and plotting cumulative daily counts of confirmed COVID-19 cases reported from anywhere in the US. Figure 1 shows the latest raw data I grabbed for Guam and Hawaii.
+Figure 1: COVID-19 time series data downloaded from the Johns Hopkins University Center for Systems Science and Engineering. Click here for most recent plots.
+Fitting Linear and Exponential Curves
+
+A quick glance at the plotted data indicated that a simple straight line might be a good fit for the Guam data and an exponential function might be a good fit for the Hawaii data. To test this, I wrote a second Jupyter notebook to fit some curves using a Python function called scipy.optimize.curve_fit .
+
+To evaluate how well each curve fits the data I calculated the root mean squared error (RMS error). RMS error is essentially the average vertical distance between data points and a fitted curve. A curve passing through all data points will yield an RMS error of zero, indicating a perfect fit.
+
+Figure 2 shows that my hunch was correct. The RMS error values indicate that a straight line is better fit for the Guam data and an exponential curve is a better fit for the Hawaii data.
+Figure 2. Click here for most recent plots.
+Fitting Logistic Growth Curves
+
+Obviously, straight lines and exponential functions are not very realistic models of the daily number of COVID-19 cases detected: the linear model describes continuous increase at a fixed rate, while the exponential model describes continuous increase at a forever escalating rate. At some point, the rate of discovery of new cases will slow down. But perhaps more importantly, if we extrapolate into the future, both models are unlimited. The fitted exponential curve for Guam predicts 22,912,294 cases in 90 days from now. That is not going to happen: Guam’s population is only 179,000 people.
+
+Logistic curves are commonly used to model animal population growth. These curves are sigmoid (s-shaped) and are limited to an upper limit, usually referred to as the carrying capacity (k). Logistic curves fit the Guam and Hawaii data better than the linear and exponential models (Figure 3). In addition, these curves yield some useful estimates:
+
+    The fitted parameter, k, is an estimate of the total number of cases that will be confirmed (Guam: 64 cases, Hawaii: 235 cases)
+    The derivative of the logistic curve can be used to estimate the number of cases confirmed per day (Guam: 6 cases confirmed on the 8th day after the first case was confirmed; Hawaii: 17 cases confirmed on the 17th day after the first case was confirmed)
+
+These estimates are probably not realistic. See below.
+Figure 3. Fitted logistic curves and their derivatives. Click here for most recent plots.
+Can These Fitted Curves be Used for Forecasting?
+
+The dotted part of the curves in my plots indicates a 10 day extrapolation. However, I caution against using these models even for short-term forecasting because the time series is still very short and underlying conditions are highly unstable. I won’t comment about the Hawaii situation, but here are is the current Guam situation:
+
+    The Government of Guam has been very proactive in responding to the corona virus pandemic. Gov. Lou Leon Guerrero on March 14 declared a public health emergency suspending non-essential government operations and banning large gatherings for two weeks. Emergency measures have now been extended until April 16.
+    Currently, only about 20 to 40 corona virus tests are being done each day by GovGuam and only people belonging to defined priority groups are being tested.
+    The data I use is the number of confirmed cases for Guam recorded in the Johns Hopkins data repository. There is a large US military presence on Guam and it appears that there are many cases confirmed by the Department of Defense that are not included in the data repository. DOD is currently testing 5,000 sailors after 36 tested positive aboard the USS Roosevelt, an aircraft carrier currently docked on Guam.
+
+I expect that the number of confirmed cases on Guam will jump significantly within the next few weeks as testing becomes more available to a broader population and as emergency measures are relaxed. My simple models are based entirely on existing data, so predictions will change rapidly as new data arrives. However, predictions will get better as new data arrives, just as do predictions of typhoon trajectories.
+
+We will just have to wait and see what happens.
+Resources
+
+If you are interested in grabbing the latest COVID19 data for Guam or Hawaii and want to see newly fitted curves these are available in my GitHub repository at https://github.com/aubreymoore/Guam-Corona-Virus-Data . Data and images in this repo are automatically updated daily at 11:15 AM ChST (UTC+10).
+
+You may be interested in an article by Milan Batista at the University of Ljubljana, Slovenia entitled Estimation of the final size of the coronavirus epidemic by the logistic model (update 4) .
+
+If you are technically inclined you might be interested in Kaggle coding competitions aimed at forecasting COVID19 .
+Aubrey Moore
+
+Written by
+Aubrey Moore
+Write the first response
+Discover Medium
+Welcome to a place where words matter. On Medium , smart voices and original ideas take center stage - with no ads in sight. Watch
+Make Medium yours
+Follow all the topics you care about, and we’ll deliver the best stories for you to your homepage and inbox. Explore
+Explore your membership
+Thank you for being a member of Medium . You get unlimited access to insightful stories from amazing thinkers and storytellers. Browse
+About
+Help
+Legal
+Get the Medium app
+A button that says 'Download on the App Store', and if clicked it will lead you to the iOS App store
+A button that says 'Get it on, Google Play', and if clicked it will lead you to the Google Play store

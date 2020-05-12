@@ -1,0 +1,148 @@
+­
+Tahsin Abrar's WebLog
+Think different.. Be Passionate!
+
+    Blog
+    Portfolio
+    Resume
+    About me
+    Contact
+
+HowTo: Open a Microsoft Access .accdb file in Ubuntu
+May 20, 2015 Posted by Tahsin Abrar Software Development 6 comments
+
+Recently, I need to run a .accdb file in Ubuntu. I use ubuntu 14.04 LTS version. I tried to run with LibreOffice Base. But failed. And thanks to AskUbuntu. I got the solution from there.
+
+ 
+
+We can use the UCanAccess JDBC driver to connect to Access databases (.mdb and .accdb) in LibreOffice Base. Here’s how I did it on a clean install of Ubuntu 14.04 LTS.
+
+First, I installed LibreOffice Base itself
+
+ sudo apt-get install libreoffice-base  
+
+Then I downloaded UCanAccess to my Downloads folder and unzipped it.
+
+I launched LibreOffice (not Base, just LibreOffice itself)
+
+LibreOffice.png
+
+and chose Tools > Options
+
+ToolsOptions.png
+
+On the Advanced tab I clicked the “Class Path…” button
+
+ClassPath.png
+
+and then added the following five (5) JAR files using the “Add Archive…” button:
+
+ /home/abrar/Downloads/UCanAccess-2.0.9.5-bin/ucanaccess-2.0.9.5.jar /home/abrar/Downloads/UCanAccess-2.0.9.5-bin/lib/commons-lang-2.6.jar /home/abrar/Downloads/UCanAccess-2.0.9.5-bin/lib/commons-logging-1.1.1.jar /home/abrar/Downloads/UCanAccess-2.0.9.5-bin/lib/hsqldb.jar /home/abrar/Downloads/UCanAccess-2.0.9.5-bin/lib/jackcess-2.1.0.jar  
+
+AddArchive.png
+
+Note that you must close and re-open LibreOffice for the new Class Path values to take effect.
+
+Then I launched LibreOffice Base, and in Step 1 of the wizard I chose “Connect to an existing database (JDBC)”
+
+ExistingDatabase.png
+
+The Access file I wanted to manipulate was named “baseTest.accdb” in my Downloads folder, so in Step 2 the “Datasource URL” was
+
+ jdbc:ucanaccess:///home/abrar/Downloads/baseTest.accdb  
+
+and the “JDBC driver class” was
+
+ net.ucanaccess.jdbc.UcanaccessDriver  
+
+JdbcConnection.png
+
+In Step 3, I left the “User name” field empty and just clicked “Next >>”.
+
+In Step 4, I saved the LibreOffice Base database as “accdbTest.odb” in my Documents folder.
+
+When the wizard completed it opened my LibreOffice database and I could see the tables in the .accdb file
+
+Tables.png
+
+ 
+
+This solution is collected from here . Thanks Gord Thompson , you helped me a lot.
+Share this:
+
+    Click to share on Twitter (Opens in new window)
+    Share on Facebook (Opens in new window)
+    Click to share on Google+ (Opens in new window)
+
+Related
+
+Install Unijoy in Ubuntu December 24, 2014 In "Computer"
+
+Setting up my Ubuntu for Web Development August 13, 2015 In "Computer"
+
+Install SQLite on Ubuntu March 17, 2015 In "Learning"
+6 Comments
+
+    Reply Rhett | September 2nd, 2015
+
+    this does not work so good if the file is on a remote system. is there any other way to do this?
+    Reply Gaspar Calix | April 19th, 2016
+
+    Work just Fine! thanks!
+    Reply Philippe Docq | September 25th, 2016
+
+    Excellent, thank you very much for a very clear explanation.
+    Reply Tom | November 26th, 2016
+
+    Brilliant dude! Thanks!!!
+    Reply Rey | June 24th, 2017
+
+    Thanks ! :D
+    Reply KR | July 31st, 2017
+
+    Thank you. It works well with tables!
+
+Post a comment
+
+Click here to cancel reply.
+
+    Your Name*:
+    Your Mail*:
+    Your Website*:
+    Your comment*:
+
+    Notify me of follow-up comments by email.
+
+    Notify me of new posts by email.
+
+About Me
+Tahsin Abrar
+Tahsin Abrar
+View Tahsin Abrar's profile on LinkedIn Google
+Recent Posts
+
+    Install LAMP Stack on Ubuntu
+    Using MySQL database via command line
+    Setting up my Ubuntu for Web Development
+    Funny story : The Story of Mr. McArthur Wheeler
+    HowTo: Open a Microsoft Access .accdb file in Ubuntu
+
+Archives
+
+    October 2015
+    August 2015
+    July 2015
+    May 2015
+    March 2015
+    December 2014
+    November 2014
+    October 2014
+    August 2014
+    July 2014
+
+Follow Me
+Tweets by @TahsinAbrar
+
+
+Copyright @2015 TahsinAbrar. All rights reserved.
+:) 

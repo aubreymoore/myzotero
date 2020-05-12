@@ -1,0 +1,73 @@
+Skip to main content
+Toggle navigation Aubrey Moore
+
+    Archive
+    Tags
+    RSS feed
+
+    Source
+
+Install web2py in a Conda Virtual Environment
+
+Aubrey Moore
+
+2017-02-21 13:01
+
+Source
+
+Here's how to get web2py installed in a virtual environment using conda instead of virtualenv .
+
+Info on conda environments is available here: https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/
+Step 1. Create a directory for our web2py project.
+
+  cd  Devel
+mkdir playpen
+cd  playpen
+
+Step 2. Create a virtual environment and activate it.
+
+Note that web2py runs under python 2, not python 3.
+
+  conda create -n playpen python = 2.7
+source  activate playpen
+
+Step 3. Download and install web2py.
+
+  wget https://mdipierro.pythonanywhere.com/examples/static/web2py_src.zip
+unzip web2py_src.zip
+rm web2py_src.zip
+
+Step 3. Install pygraphwiz (used to visualize models).
+
+  pip install pygraphviz
+
+Step 4 -- Open web2py in a browser
+
+  ( playpen )  aubreymoore@aubreymoore-Aspire-7750Z:~/Devel/playpen/web2py$ python web2py.py
+
+Step 5 -- Open web2py in a python shell
+
+  (playpen) aubreymoore@aubreymoore-Aspire-7750Z:~/Devel/playpen/web2py$ python web2py.py -S pestlist/default -M
+
+Step 6. At the end of a session, the virtual environment can be deactivated.
+
+  source  deactivate playpen
+
+Step 7. To undo everything:
+
+  conda remove -n playpen --all
+cd  ..
+rm -rf playpen
+
+    Anaconda
+    python
+    virtualenv
+    web2py
+
+    Previous post
+    Next post
+
+Contents © 2017 Aubrey Moore - Powered by Nikola
+×
+Search Results:
+Close

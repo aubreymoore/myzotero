@@ -1,0 +1,373 @@
+SYSTEMATICS
+Automated Identiﬁcation of Optically Sensed Aphid (Homoptera: Aphidae) Wingbeat Waveforms
+A. MOORE1 AND R. H. MILLER2
+
+Ann. Entomol. Soc. Am. 95(1): 1Ð8 (2002) ABSTRACT An optical sensor was used to make digital recordings of wingbeat waveforms for the Þve most common aphids found on Guam: Aphis craccivora Koch, A. gossypii Glover, A. nerii Fonscolombe, Pentalonia nigronervosa Coquerel, and Toxoptera citricida (Kirkaldy). Wingbeat frequencies for each species overlapped all other species. However, mean wingbeat frequencies were signiÞcantly different for all species. Wingbeat frequencies and harmonic patterns were extracted from the recordings and submitted to cluster analysis, which failed to separate species completely. Several nearest neighbor and probabilistic neural network classiÞers were built using time series, frequency spectra, wingbeat frequencies, and harmonic patterns as input variables. These classiÞers were evaluated by having them identify wingbeat waveforms from aphids collected and recorded after their construction. The best performing classiÞer model was a probabilistic artiÞcial neural network trained using 256-bin frequency spectra as input. Sixty-nine percent of the waveforms presented to this network were identiÞed correctly. This study demonstrates the feasibility of developing an insect ßight monitor that automatically counts and identiÞes individual ßying insects. Essential components of the monitoring system are a photosensor, a multimedia personal computer, and software that identiÞes wingbeat frequency spectra using an artiÞcial neural network.
+KEY WORDS insect wingbeat frequency, insect ßight monitor, artiÞcial neural network, nearest neighbor classiÞer, automated classiÞcation, aphid
+
+ACQUISITION OF BIOLOGICAL Þeld data are usually expensive, in terms of time and labor, due to the lack of automated instrumentation systems, such as those developed for continuous monitoring of meteorological variables. Lack of instrumentation for measuring insect ßight activity limits understanding of the impact of movement on the population dynamics of pest species (Stinner et al. 1983). InsufÞcient near real-time information on the abundance of insect pests and associated predators and parasites is often an impediment to development of integrated pest management and biological control programs.
+Richards (1955) discovered that a photocell exposed to the sun detected transient waveforms caused by reßections from the wings of individual insects ßying in front of the solar disk. Each waveform contained a harmonic series, with the wingbeat frequency as the fundamental. Richards (1955) suggested that his discovery “might be turned to account by workers interested in the ßight habits of insects, and particularly in variations in insect density during daylight hours.”
+Moore et al. (1986) digitally recorded two species of mosquitoes with a photosensor based on an optical tachometer developed by Unwin and Ellington
+1 57 Belmont Avenue, Ottawa, Ontario, Canada K1S 0V2. 2 College of Agriculture and Life Sciences, University of Guam, Mangilao, Guam 96923 (e-mail: rmiller@uog.edu).
+
+(1979). Spectral analysis of the mosquito wingbeat waveforms using a fast Fourier transform revealed a harmonic series with the wingbeat frequency as the fundamental. Moore et al. (1986) suggested that automated instrumentation could be designed to discriminate among species of ßying insects by recognizing spectral patterns formed by these harmonics, analogous to the way in which the human ear and brain discriminate among musical instruments by recognizing patterns of harmonics in the sounds they generate. Frequency spectra derived from the mosquito data were used to train an artiÞcial neural network (Moore 1991). The trained network identiÞed the species and sex of mosquitoes with 92% accuracy. When the network was trained and tested using only wingbeat frequencies, the mean absolute error for the network increased by 33%, indicating that the harmonic patterns contributed signiÞcant species-speciÞc information.
+Moore (1998) developed an optical sensor and data acquisition system for automated monitoring of ßying insects in the Þeld. Here, we report on our attempts to use this system to automate identiÞcation of alate aphids in the laboratory.
+Materials and Methods Aphids. Colonies of Aphis craccivora Koch, A. gossypii Glover, A. nerii Fonscolombe, Pentalonia nigron-
+
+0013-8746/02/0001Ð0008$02.00/0 ᭧ 2002 Entomological Society of America
+
+Downloaded from https://academic.oup.com/aesa/article-abstract/95/1/1/2759125 by ESA Member Access user on 07 December 2017
+
+2
+
+ANNALS OF THE ENTOMOLOGICAL SOCIETY OF AMERICA
+
+Vol. 95, no. 1
+
+Fig. 1. Apparatus for digital recording of insect wingbeat waveforms.
+
+ervosa Coquerel, and Toxoptera citricida (Kirkaldy) were collected from various locations on the island of Guam. Aphids on cuttings of host plants were collected in the Þeld and maintained in the laboratory at 22ЊC for a maximum of 3 d. Aphids used in waveform analysis tests were preserved in 70% ethanol and identiÞed using published taxonomic keys (Blackman and Eastop 1984).
+Digital Recording of Wingbeat Waveforms. For each recording session, Ϸ12 alate aphids from a single colony were transferred from a rearing container into a transparent plastic cookie jar (SnapWare, FloTool International, Tustin, CA) measuring 20 by 17 by 13 cm and Þtted with a Þne muslin top (Fig. 1). We chose 12 as the number of aphids to use for each recording session to ensure that we would record a large number of waveforms during a recording session (1 to 3 h duration), while minimizing the probability that more than one aphid would ßy simultaneously. The container was placed in a cabinet between a halogen lamp (Type EYJ, 12V 75W, General Electric, Cleveland, OH) and a photosensor (Qubit Systems, Kingston, Ontario, Canada). The cabinet shielded the sensor from optical noise caused by AC-powered room lighting, which ßashes at 120 Hz. The halogen lamp was powered by a regulated DC power supply (7W 13.8V regulated power supply, TrippLite, Chicago, OH).
+
+The photosensor was connected to the microphone input jack of a 16-bit sound card installed in a personal computer (Pentium 200 MMX, 48 MB RAM). Air temperature within the cookie jar ranged from 24 Ð30ЊC during the recording sessions. A transient waveform recorder program (WfRec, Qubit Systems 1999) was used to sample the sound card input at 8,000 samples per s. The waveform recorderÕs adaptive trigger was set to record 512-sample waveforms whenever the input signal exceeded six standard deviations above the mean ambient noise level. WfRecÕs cepstrum Þlter was set to reject waveforms that were low in harmonic content, i.e., those with a peak cepstrum amplitude of Ͻ0.06 within the 100 Ð200 Hz frequency band.
+Wingbeat waveform recordings were separated into two groups. Group 1 contained recordings of aphids collected and recorded between 11 March and 13 May 1999. This group was used for training nearest neighbor and artiÞcial neural network classiÞers. Group 2, from aphids collected and recorded between 19 May and 25 May 1999, was used only for evaluating the classiÞers.
+Data Reduction. The transient waveform recorder program, WfRec, represented recorded waveforms at three levels of abstraction. First, the raw data were saved as a wingbeat waveform time series, X1, . . ., X512, which contains the signal amplitude at discrete
+
+Downloaded from https://academic.oup.com/aesa/article-abstract/95/1/1/2759125 by ESA Member Access user on 07 December 2017
+
+January 2002
+
+MOORE AND MILLER: USING WINGBEAT WAVEFORMS TO IDENTIFY APHIDS
+
+3
+
+Fig. 2. Digital processing for calculation of a waveform signature starts with a time series of 512 data points sampled at 8,000 samples per second (A). A fast Fourier transform produces a frequency spectrum (B) which contains a harmonic series. A second fast Fourier transform, applied to the frequency spectrum produces a cepstrum (C) that has a peak at the fundamental frequency of the waveform. The amplitude of the peak is a measure of the total harmonic content of the waveform. Areas area under the spectrum within frequency bands centered on the Þrst 16 harmonics are calculated and scaled to produce a waveform signature (D). time steps of 1/8000 s. Second, a fast Fourier transform generated a wingbeat waveform spectrum, S1, [ellipsis], S256, which contained the relative energy in each of 256 frequency bins ranging from 0 Hz to 4 kHz. Third, the waveform recorder encoded spectral information as a series of 17 numbers, F, H1, [ellipsis], H16, referred to as the wingbeat waveform signature (Fig. 2). The Þrst number in the signature, F, is the fundamental frequency (ϭwingbeat frequency) measured in Hz. This is followed by a series of 16 integers, H1 to H16, which have values between 0 and 7. These integers represent a histogram of the relative power contained within frequency bands centered on the Þrst through the 16th harmonic of each waveform.
+Cluster Analysis. Hierarchical agglomerative clustering using Euclidean distances and WardÕs method for linkages (Virtual Institute of Analytical Sciences 1999) was applied to wingbeat waveform signatures for the group 1 data. Each variable was standardized to zero mean and unit variance before analysis. Wingbeat waveform data from recordings of two aphid
+
+parasitoids: an introduced aphidiid, Diaeretiella rapae (McIntosh), and an unidentiÞed, locally collected aphidiid species were included in this analysis as outclasses for comparison of scale in cluster separation. Results are presented as dendrograms.
+Nearest Neighbor Classiﬁcation. Nearest neighbor classiÞcation models (Virtual Institute of Analytical Sciences 1999) were built using wingbeat waveform time series, frequency spectra, and signatures for the group 1 data (6,228 waveforms) and evaluated using the group 2 data (2,273 waveforms). Each input variable was standardized to zero mean and unit variance before analysis. Five nearest neighbor classiÞers were built. Each used aphid wingbeat waveform data presented at a different level of abstraction: middle half of the time series (X129, . . ., X384); frequency spectrum (S1, . . ., S256); signature (F, H1, . . ., H16); harmonics alone (H1, . . ., H16); and wingbeat frequency alone (F).
+Artiﬁcial Neural Network Classiﬁcation. A commercial artiÞcial neural network package, NeuroShell 2 (Ward Systems Group 1996), was used to construct, train, and test probabilistic networks to classify aphid wingbeat waveforms. We used the same data sets as in the nearest neighbor analysis. Five networks were built to accept input data in the form of a time series, frequency spectrum, signature, harmonics alone, and wingbeat frequency alone. These networks had one neuron for each input variable: 256, 256, 17, 16, and one input neurons, respectively. All networks had Þve output neurons, one output for each aphid species. There was also a single hidden layer with 4,983 neurons. Waveform data from group 1 were normalized so that the values of each variable ranged between zero and 1. Waveforms were then selected at random to be members of a training set (n ϭ 4983) and a test set (n ϭ 1,245). The test set was used for internal calibration of the network to prevent overtraining. During training, the network was presented with a waveform data as input, and a Þve-digit code consisting of a one and four zeros to indicate the species of aphid that produced the signature (e.g., 0 1 0 0 0 represented Aphis gossypii). After training, the group 2 data were classiÞed by presenting waveform data to the network. Each waveform was classiÞed as the aphid species corresponding to the output neuron having the highest excitation (Fig. 3).
+Results Cluster Analysis. When the complete wingbeat waveform signature were included in the analysis (Fig. 4A), recordings of aphids and aphid parasitoids fell into two very distinct clusters. The aphid branch contained many mixed-species clusters. Note, however, that all the aphid clusters containing only two aphid colonies are conspeciÞc. The analysis based only upon the relative amplitudes of harmonics (Fig. 4B) produced almost identical results to those from the complete signatures, whereas analysis based only on wingbeat frequency (Fig. 4C) showed little separation among clusters.
+
+Downloaded from https://academic.oup.com/aesa/article-abstract/95/1/1/2759125 by ESA Member Access user on 07 December 2017
+
+4
+
+ANNALS OF THE ENTOMOLOGICAL SOCIETY OF AMERICA
+
+Vol. 95, no. 1
+
+Fig. 3. Probabilistic artiÞcial neural network for classifying aphids based on wingbeat waveform signatures. Inputs are fundamental frequency, F, and relative power in frequency bands centered on the Þrst 16 harmonics, S1 through S16. Values shown are for recording number 679, Aphis gossypii, 21 IV 1999.
+
+Automated Classiﬁcation. Mean wingbeat frequencies were signiÞcantly different for all Þve species of aphids (Table 1). However, wingbeat frequency alone was not very useful for identifying individuals due to a high degree of overlap among species (Table 1). The most accurate classiÞcation model of several that were tested (Table 2) was a probabilistic neural network using waveform data presented as a 256-bin frequency
+
+spectrum (Table 3). The proportion of waveforms that were correctly classiÞed was 69%, ranging from 94% for Aphis gossypii down to 41% for A. craccivora.
+Discussion The literature contains little information on aphid wingbeat frequencies. Sotavalta (1947) listed only one
+
+Downloaded from https://academic.oup.com/aesa/article-abstract/95/1/1/2759125 by ESA Member Access user on 07 December 2017
+
+January 2002
+
+MOORE AND MILLER: USING WINGBEAT WAVEFORMS TO IDENTIFY APHIDS
+
+5
+
+Fig. 4. Cluster analyses for components of wingbeat waveform signatures of aphids and aphid parasitoids. Species codes are: pDr for the aphid parasitoid Diaeretiella rapae, pUs for an unidentiÞed aphid parasitoid, Ac for Aphis craccivora, Tc for Toxoptera citricida, An for A. nerii, Pn for Pentalonia nigronervosa, and Ag for A. gossypii. Numbers indicate separate colonies.
+Downloaded from https://academic.oup.com/aesa/article-abstract/95/1/1/2759125 by ESA Member Access user on 07 December 2017
+
+6
+
+ANNALS OF THE ENTOMOLOGICAL SOCIETY OF AMERICA
+
+Vol. 95, no. 1
+
+Table 1. Distribution of wingbeat frequencies for aphids recorded on Guam between 11 March and 13 May 1999 (group 1)
+
+Frequency bin (Hz)
+108 111 114 118 121 125 129 133 138 143 148 154 160 167 174 182 190 200
+No. of waveforms Median frequency (Hz)
+
+Aphis craccivora
+3 3 6 11 34 46 59 46 41 47 31 11 2
+340 133a
+
+Toxoptera citricida
+
+Species Aphis nerii
+
+Pentalonia nigronervosa
+
+2
+
+2
+
+3
+
+23
+
+7
+
+108
+
+34
+
+293
+
+68
+
+490
+
+124
+
+342
+
+151
+
+82
+
+96
+
+14
+
+19
+
+1,356
+
+502
+
+143b
+
+148c
+
+4 16 83 162 195 108 91 40 6
+705 154d
+
+Aphis gossypii
+1 1 6 6 9 11 49 132 278 347 647 1,035 715 83 4 1 3,325 167e
+
+Medians followed by different letters are signiÞcantly different at P Ͻ 0.05, DunnÕs method.
+
+aphid in his table of wingbeat frequencies for over 200 insect species. He reported Cryptomyzus galeopsidis (Kaltenbach) as having a wingbeat frequency between 82 and 87 Hz. This measurement was made without instrumentation. Sotavalta relied solely on his keen hearing and musical gift of perfect pitch. Byrne et al. (1988) used an optical tachometer (Unwin and Ellington 1979) to measure wingbeat frequencies for 10 individuals from each of Þve aphid species ßying in a greenhouse at 24 Ϯ 3ЊC. Mean wingbeat frequencies for Aphis nerii and A. gossypii were not signiÞcantly different (118.1 and 123.4 Hz). In contrast, we measured much higher, signiÞcantly different mean wingbeat frequencies for Aphis nerii and A. gossypii (145.6 and 162.7 Hz). It is likely that our wingbeat frequency measurements are higher because our aphids were ßying at higher temperatures, 24 Ð30ЊC.
+The objective of our study was to investigate the feasibility of using optically sensed insect wingbeat
+
+waveforms for automated classiÞcation of aphids at the species or subspecies level. Our approach is to use the wingbeat waveform as a signature rather than extracting the wingbeat frequency as a single character. The proportion of waveforms that were correctly classiÞed by species using a neural network presented with the whole waveform spectra as input was 69%, ranging from 94% for Aphis gossypii down to 41% for A. craccivora. The precision of identiÞcation was limited because of large variances among waveforms recorded for each species. We suspect that the withinspecies variance among the waveforms was large due to two reasons. First, many of the recordings were triggered by aphids that where not in ßight. We observed aphids buzzing their wings while walking inverted on the test chamber mesh. Second, differences in waveforms may have been due to differences in the orientation of aphids with respect to the sensor and light source. Farmery (1981) showed that, while the
+
+Table 2. Performance of classiﬁcation models
+
+ClassiÞcation model
+Expected values
+Nearest neighbor
+Probabilistic neural network
+
+Input variables
+Time series (X129, . . ., X384) Spectrum (S1, . . . , S256) Signature (F, H1, . . ., H16) Harmonics (H1, . . ., H16) Wingbeat frequency (F) Time series (X129, . . ., X384) Spectrum (S1, . . ., S256) Signature (F, H1, . . , H16) Harmonics (H1, . . , H16) Wingbeat frequency (F)
+
+Aphis craccivora
+20 31 25 13 7 3 37 41 18 13 43
+
+% of waveforms classiÞed correctly
+
+Aphis gossypii
+
+Pentalonia nigronervosa
+
+Aphis nerii
+
+Toxoptera citricida
+
+20
+
+20
+
+20
+
+20
+
+82
+
+50
+
+17
+
+65
+
+91
+
+59
+
+26
+
+61
+
+92
+
+45
+
+16
+
+45
+
+76
+
+39
+
+10
+
+33
+
+98
+
+14
+
+18
+
+14
+
+71
+
+68
+
+22
+
+63
+
+94
+
+84
+
+54
+
+66
+
+84
+
+64
+
+44
+
+31
+
+62
+
+62
+
+34
+
+25
+
+96
+
+44
+
+0
+
+86
+
+All species
+20 45 51 43 34 36 47 69 54 43 43
+
+All models were trained using wingbeat waveform signatures for aphids collected and recorded on Guam between 11 March and 13 May 1999 and all were evaluated using data from a separate group of aphids collected and recorded on Guam between 19 May and 25 May 1999. See text for full description of input variables.
+
+Downloaded from https://academic.oup.com/aesa/article-abstract/95/1/1/2759125 by ESA Member Access user on 07 December 2017
+
+January 2002
+
+MOORE AND MILLER: USING WINGBEAT WAVEFORMS TO IDENTIFY APHIDS
+
+7
+
+Table 3. Probabilistic artiﬁcial neural network classiﬁcation of optically sensed aphid wingbeat waveforms
+
+Actual Species
+A. craccivora A. gossypii P. nigronervosa A. nerii T. citricida
+
+Aphis craccivora
+59b 2 1 110 26
+
+Network classiÞcation (no. of waveforms)
+
+Aphis gossypii
+
+Pentalonia nigronervosa
+
+Aphis nerii
+
+0
+
+12
+
+40
+
+540b
+
+23
+
+4
+
+15
+
+285b
+
+14
+
+1
+
+192
+
+516b
+
+0
+
+3
+
+59
+
+Toxoptera citricida
+32 3 24 140 172b
+
+Proportion correct, %
+41 94 84 54 66
+
+Probabilitya
+Ͻ0.00001 Ͻ0.00001 Ͻ0.00001 Ͻ0.00001 Ͻ0.00001
+
+Input data for each waveform were values from a 256-bin frequency spectrum ranging from 0 to 4 kHz. The network was trained with data from aphids collected and recorded on Guam between 11 March and 13 May 1999, and tested with aphids collected and recorded on Guam between 19 May and 25 May 1999.
+a Probability of observed proportion correct being due to chance. Each probability was estimated by 100,000 Monte Carlo trials in which waveforms were assigned to each of the Þve species at random.
+b Correct classiÞcations.
+
+wingbeat frequency stays constant, the harmonic pattern of optically sensed wingbeat waveforms changes radically when the orientation of the insect with respect to the sensor is varied. This is due to changes in angles of reßection and changes in visibility of body parts. It may be possible to reduce the within-species variance in waveforms by eliminating waveforms from aphids buzzing while not in ßight, and by restricting the orientation of ßying aphids with respect to the sensor and light source by modifying the apparatus so that the photosensor records aphids ßying down a length of transparent tube.
+Although all aphid species were not identiÞed with high accuracy, the artiÞcial neural network correctly identiÞed Aphis gossypii waveforms with 94% accuracy (Table 3). The error rate for automated identiÞcation of waveforms made by this species was only 3% for false positives and 6% for false negatives. This indicates that it should be possible to build an automated Þeld ßight monitor for this species, which is the most numerous and important aphid pest species on Guam and other PaciÞc islands.
+Our results show that the relative amplitudes of wingbeat waveform harmonics (H1, .., H16) contain species-speciÞc information, in addition to the wingbeat frequency. The cluster analysis clearly shows that patterns of harmonics abstracted from insect wingbeat waveforms contain species-speciÞc information, even when frequency information is removed. Nearest neighbor and neural network classiÞcation models worked equally well with wingbeat frequency (F) or harmonic pattern (H1, .., H16) as input variables. Our discovery that of insect wingbeat waveform harmonics contain information useful for automated identiÞcation is signiÞcant, as this may allow accurate identiÞcation of insects in which the wingbeat frequency changes with temperature, as has been reported for many insects including locusts (Foster and Robertson 1992, Robertson et al. 1996, Xu and Robertson 1996), beetles (Oertli 1989), armyworm moths (Farmery 1982), bees (Unwin and Corbet 1984, Harrison et al. 1996, Roberts et al. 1998), and ßies (Unwin and Corbet 1984). Although the current study was performed at a constant temperature, we expect the harmonic pattern to remain constant, even if the wingbeat frequency changes.
+
+This study demonstrates the feasibility of developing an insect ßight monitor that automatically counts and identiÞes individual ßying insects. Essential components of the monitoring system are a photosensor, sound board equipped personal computer, and software that identiÞes wingbeat frequency spectra using an artiÞcial neural network.
+Acknowledgments We thank Nenita Dumaliang, Olivia Idechiil, Hideya Osada, and Bernard Bermudes for technical assistance. Thanks also to John Brown, Mac MacCarter, John Obrycki, and Steve Yaninek for reviewing early drafts of the manuscript, and to Keith Pike and Petr Stary for conÞrming identiÞcation of aphids and aphid parasitoids. We also appreciate useful comments from anonymous reviewers. This work was supported in part by funds for Regional Research Project W-185, Biological Control in Plant Systems.
+References Cited Blackman, R. L., and V. F. Eastop. 1984. Aphids on the
+worldÕs crops. Wiley, Singapore. Byrne, D. N., S. L. Buchmann, and H. G. Spangler. 1988.
+Relationship between wing loading, wingbeat frequency and body mass in homopterous insects. J. Exp. Biol. 135: 9 Ð23. Farmery, M. J. 1981. Optical studies of insect ßight at low altitude. Ph.D. dissertation, York University, York, UK. Farmery, M. J. 1982. The effect of air temperature on wingbeat frequency of naturally ßying armyworm moth (Spodoptera exempta). Entomol. Exp. Appl. 32: 193Ð194. Foster, J. A., and R. M. Robertson. 1992. Temperature dependency of wing-beat frequency in intact and deafferented locusts. J. Exp. Biol. 162: 295. Harrison, J. F., J. H. Fewell, S. P. Roberts, and H. G. Hall. 1996. Achievement of thermal stability by varying metabolic heat production in ßying honeybees. Science 274: 88 Ð90. Moore, A. 1991. ArtiÞcial neural network trained to identify mosquitoes in ßight. J. Insect Behav. 4: 391Ð395. Moore, A. 1998. Development of a data acquisition system for long-term outdoor recording of insect ßight activity using a photosensor. 13th Conference on Aerobiology and Biometeorology, American Meteorological Society, Albuquerque, NM.
+
+Downloaded from https://academic.oup.com/aesa/article-abstract/95/1/1/2759125 by ESA Member Access user on 07 December 2017
+
+8
+
+ANNALS OF THE ENTOMOLOGICAL SOCIETY OF AMERICA
+
+Vol. 95, no. 1
+
+Moore, A., J. R. Miller, B. E. Tabashnik, and S. H. Gage. 1986. Automated identiÞcation of ßying insects by analysis of wingbeat frequencies. J. Econ. Entomol. 79: 1703Ð1706.
+Oertli, J. J. 1989. Relationship of wing beat frequency and temperature during take-off ßight in temperate-zone beetles. J. Exp. Biol. 145: 321.
+Qubit Systems. 1999. WfRec transient waveform recorder. Kingston, ON, Canada.
+Richards, I. R. 1955. Photoelectric cell observations of insects in ßight. Nature (Lond.) 175: 128 Ð129.
+Roberts, S. P., J. F. Harrison, and N. F. Hadley. 1998. Mechanisms of thermal balance in ßying Centris pallida (Hymenoptera: Anthophoridae). J. Exp. Biol. 201: 2321Ð31.
+Robertson, R. M., H. Xu, K. L. Shoemaker, and K. DawsonScully. 1996. Exposure to heat shock affects thermosensitivity of the locust ßight system. J. Neurobiol. 29: 367Ð 83.
+Sotavalta, O. 1947. The ßight-tone (wing-stroke frequency) of insects (Contributions to the problem of insect ßight 1.). Acta Entomol. Fenn. 4: 1Ð114.
+
+Stinner, R. E., C. S. Barﬁeld, J. L. Stimac, and L. Dohse. 1983. Dispersal and movement of insect pests. Annu. Rev. Entomol. 9: 115Ð121.
+Unwin, D. M., and S. A. Corbet. 1984. Wingbeat frequency, temperature and body size in bees and ßies. Physiol. Entomol. 9: 115Ð121.
+Unwin, D. M., and C. P. Ellington. 1979. An optical tachometer for measurement of the wing-beat frequency of freeßying insects. J. Exp. Biol. 82: 377Ð378.
+Virtual Institute of Analytical Sciences. 1999. Teach/Me data analysis, beta test version. Virtual Institute of Analytical Sciences, Vienna, Austria.
+Ward Systems Group. 1996. NeuroShell 2. Ward Systems Group, Frederick, MD.
+Xu, H., and R. M. Robertson. 1996. Neural parameters contributing to temperature compensation in the ßight CPG of the locust, Locusta migratoria. Brain Res. 734: 213Ð22. Received for publication 30 September 1999; accepted 9
+September 2001.
+
+Downloaded from https://academic.oup.com/aesa/article-abstract/95/1/1/2759125 by ESA Member Access user on 07 December 2017
+

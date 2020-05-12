@@ -1,0 +1,282 @@
+
+Skip to content
+
+PADT, Inc. – The Blog
+
+We Make Innovation Work
+Search for Search
+Menu
+
+    Home
+    News
+        Fun
+    The Focus
+    Podcast
+    Product Development
+        PADT Medical
+    Additive Manufacturing
+        3D Printing Glossary
+    Publications
+    Privacy Policy for the PADT Blog
+
+Questions Decision Makers Should Ask About Computer Simulations
+
+by Eric Miller
+
+September 6, 2013
+
+8:12 am
+
+Leave a comment on Questions Decision Makers Should Ask About Computer Simulations
+
+The Focus
+
+Best Practices , FEA , FEM , Simulation
+‘TRUST BUT VERIFY’
+A guest posting from Jack Thornton , MINDFEED Marcomm, Sante Fe, NM
+
+image.png The computerization of engineering (and everything else) has imposed new burdens on managers and executives who must make critical decisions. Where once they struggled with too little information they now struggle with too much. Until roughly three decades ago, time and money were plowed into searching for more and better information. Today, time and money disappear are plowed into making sense of myriad computer simulations.
+
+For all but the best-organized decision makers, these opposite situations have proven equally frustrating. For nearly all of engineering history, critical decisions were based on a few pieces of seemingly credible data, a handful of measurements, and hand-drawn sketches a la Leonardo DaVinci—leavened with hands-on experience and large dollops of intuition.
+
+Computer simulations are now everywhere in engineering. They have greatly speeded up searches for information, as well as creating it in the first place, and endlessly multiplying it. What has been lost are transparency and traceability—what was done when, by whom and why. Since transparency and traceability are vital to making sound engineering decisions in today’s intensely collaborative technical environments, decision makers and managers say this loss is a big one.
+
+This is not some arcane, hidden war waged by experts, geeks and professors. This is about designing machinery, components, physical systems and assemblies that are globally competitive—and turn a profit doing so. The complexity of modern components, assemblies and systems has been exhaustively and repeatedly described.
+
+Nor is this something engineers and first-line managers can afford to ignore. Given the shortages of engineering talent, relatively inexperienced engineers are constantly being handed responsibility for making key decisions.
+
+Users of computerized simulation systems continually seek ways to answer the inevitable question, “How do we know this or that or whatever to be true?” Several expert users of finite element analysis (FEA), the basic computational toolset of engineering simulation and analysis, were interviewed for this article. Each interviewee is a licensed professional engineer (PE) and each has been recommended by a leading FEA software vendor.
+
+For decision makers, a simulation FEA or otherwise really presents only three options:
+
+    Signing off on the production of a component or assembly. If it proves to be flawed, warranty claims, recalls, and perhaps much worse may result.
+    Shelving a promising new product, perhaps at the behest of fretful engineers. The investment is written off or expensed as R&D. The marketplace opportunity (amnd its revenue) may be lost forever.
+    Remanding the project to the analysts even while knowing that “paralysis by analysis” will push development costs too high or cause too big a delay in getting to market.
+
+Since executives and other upper-echelon corporate decision makers rarely possess much understanding or FEA, let alone have time to develop it, a “trust but verify” strategy is the only reasonable approach.
+
+The verify part is easy. FEA modelers and solvers have been well wrung-out over the past 10 to 20 years. All of the FEA software vendors will share details of their in-house tests of their commercial code, the experiences of customers doing similar work, and investigations by reviewers who are often on engineering-school faculties. The same is true for industry-specific “home grown” code.
+
+It’s the trust part that’s so challenging, as in FEA trust depends on understanding some very complicated matters.
+
+Analysis experts note that unless the builders of FEA models are questioned, they rarely spell out the model’s underlying assumptions. Even less frequently (and clearly) described is the reasoning behind the dozens or hundreds of choices they made that are dictated by those assumptions.
+
+And worse, these choices are not always clarified when model builders do provide this detail—quite the opposite, in fact. When pressed for explanations, model builders may simply present the mathematical formulas they use to characterize the physics of their work.
+
+Analysis experts are quick to point out that these equations often confuse and intimidate. Decision makers should insist on commonsense explanations and not equations. And every FEA model builder will try earnestly to explain (often at great length) the model’s implications to anyone who takes the time to look.
+
+In the context of FEA and other simulations, “physics” means the real-world forces to be withstood by a printed circuit board, a pump, an engine mount, a turbine, an aircraft wing or engine nacelle, the energy-absorbing structure of a car, or anything else that is mechanically complex and highly stressed.
+
+This is why transparency and traceability are so important in FEA. Analysts note that some of this is codified in the guidelines for simulation and computational analysis in the ASME / ANSI verification and validation standards. Further support comes from company best practices developed by FEA users and managers, although enforcement is rarely consistent, and voluntary industry standards whose applicability varies widely.
+
+The transparency and traceability challenge is that building a model—again, a subset of the real world—requires dozens of assumptions about the mechanical capabilities that the object or assembly must have to meet its requirements. After these basic assumptions have been coded into the model, hundreds of follow-on choices are needed to represent the physical phenomena in the model.
+
+Analysts urge decision makers to question the stated values and ranges of any of the model’s parameters—and in particular values and ranges that have been estimated. Decision makers are routinely urged to probe whether these parameters’ values are statistically significant, and whether those values are even needed in the model.
+
+A survey of experts turns up numerous aspects of FEA and other computerized simulations that decision makers should probe as part of a trust-but-verify approach. Among many examples:
+
+    Incoming geometry—usually from solid modeling systems used by product designers— and the topologies and boundaries they have chosen.
+    The numerical values representing physical properties such as yield strengths of the chosen materials.
+    Mechanical components and assemblies. How accurately represented are the bolts and welds that hold the assemblies together?
+    The stiffness of structures.
+    The number of load steps. Is the range broad enough? Are there enough intermediate steps so nothing will be missed? How true-to-life are the load vectors?
+    The accuracy of modal analyses. Resonating harmonic frequencies—vibration—can shake things apart and lead to catastrophic failures.
+    Boundary conditions, or where the object being modeled meets “the rest of the world” in the analysis. Are the specifics of the object’s physical and mechanical requirements—the geometry—accurately represented and, again, how do we know?
+    Types of analysis, which range from small, simple linear static to large, highly complex nonlinear dynamic. Should a smaller simpler analysis have been used? Could physical measurements suffice instead of analyses?
+    In fluid dynamics, how well characterized are the flows, volumes, and turbulence? How do we know? In fluid dynamics, representations of flows, volumes, and turbulence are the numerical counterparts of the finite elements used in analyses of solids.
+    Post-processing the results, i.e., making the numerical outputs, the results of the analysis, comprehensible to non-experts.
+
+Underlying all these are the geometric and analytical components that are found in all simulations. In FEA, this means the mesh of elements that embodies the physics of the component or assembly being modeled. Decision makers should always question the choice of elements as there are hundreds to pick from.
+
+Some models use only a handful of elements while a few use tens of millions. Also to be questioned is the sensitivity of those elements to the forces, or loads, that push or pull on the model. A caveat: this gets deeply into the inner workings of FEA, e.g. explanations of the points or nodes where adjacent elements connect, the tallies of degrees of freedom (DOFs) represented by each pair of nodes, and the huge number of partial differential equations required.
+
+The trust-but-verify is valuable in all of the engineering disciplines—mechanical, structural, electrical / electronic, nuclear, fluid dynamics, heat transfer, aerodynamics, noise/ vibration / harshness as well as for sensors, controls, systems, and any embedded software.
+
+Developers of FEA and other simulation systems are working hard to simplify finding these answers or at least make trust-but-verify determinations less taxing. See Sidebar, “Software Vendors Tackle Transparency and Traceability in FEA.”
+Proven approaches
+
+A proven approach to understanding FEA models is offered by Eric Miller, co-owner of Phoenix Analysis & Design Technologies or PADT, in Tempe, Ariz. “A decision maker with some understanding of the management of the data in an FEA analysis will ask about how specific inputs affect the results. Such a decision maker will lead the model builder and analyst think more deeply about those inputs. Ultimately a more accurate simulation will be created.”
+
+Miller offers a caveat: “This questioning should be approached as an additional set of eyes looking at the problem from the outside to determine the accuracy of results. The key is to not become adversarial and question the integrity or knowledge of the analyst.”
+
+Jeffrey Crompton, principal of AltaSim Technologies, Columbus, Ohio, goes straight to the heart of the matter: “Let’s start out with the truth – all models are wrong until proven otherwise. Despite all the best attempts of engineers, scientists and computer code developers,” he explained, “a computational model does not give the right answer until you can categorically demonstrate its agreement with reality.”
+
+“Categorically” is a high standard, a term with almost no wiggle room. Unfortunately, given the complexity of simulations, agreement with reality is often not easy to demonstrate. Hence the probing and questioning recommended by FEA experts and engineers.
+
+Secondly, despite tsunamis of data cascading from one engineering department to another, a great deal of the physical world still remains imprecisely quantified. Demonstrating agreement with reality “becomes increasingly difficult,” Crompton added, “when you may not know the value of some parameters, or lack real-world measurements to compare against, or are uncertain exactly how to set up the physics of the problem.”
+
+The challenge for decision makers uncomfortable with the results of FEA analyses is neatly summed up by Gene Mannella, vice president and FEA expert at GB Tubulars Inc. in Houston. “Without a basic understanding of what FEA is, what it can and cannot do, and how to interpret its results, one can easily make bad and costly decisions,” he points out. “FEA results are at best indicators. They were never intended to be accepted” at face value.
+
+As Mannella, Crompton and other FEA consultants regularly remind their clients, an analysis is an approximation. It is an abstraction, a forecast, a prediction. There will always be some margin of error, some irreducible risk. This is the unsettling truth behind the gibe that “all models are bad but some are useful.” No FEA model or analysis can ever be treated as “gospel.” And this is why analysts strive ceaselessly to minimize margins of error, to make sure that every remaining risk is pointed out, and to clearly explain the ramifications.
+
+“To be understood, FEA results must be supplemented by the professional judgment of qualified personnel,” Mannella added. His point is that decision makers relying on the results of FEA analyses should never forget that what they “see” on computer monitor, no matter how visually impressive, is an abstraction of reality. Every analysis is a small subset of one small part the real world, which is constrained by deadlines, budgets, and the boundaries of human comprehension.
+
+Mannella’s work differs from that of most other FEA shops: it is highly specialized. GB Tubulars makes connectors for drilling and producing oil and gas in extreme environments. Its products go into oil and gas projects several miles underground and also often beneath a mile or more of seawater. Pressures are extreme, bordering on the incalculable. The risk of a blowout with massive damage to equipment and the environment is ever-present.
+
+The analysts also stressed probing the correlation with the results of physical experiments. Tests in properly equipped laboratories by qualified experimentalists are single best way to ensure that the model actually does reflect physical reality. Which brings us to the FEA challenge of extrapolations.
+
+Often the most relevant test data is not available because physical testing is slow and costly. The absence of relevant data makes it necessary to extrapolate among the results of similar experiments. Extrapolations can have large impacts on models, so they too should be questioned and understood.
+
+To deal with these difficulties, Crompton and the others analysts recommend, first, managing the numbers with statistical process control (SPC) methods and, second, devising the best ways to set up the model and its analyses with design-of-experiments simulations. Both should be reviewed by decision makers—ideally with a qualified engineer looking over their shoulders.
+
+“Our mantra in this situation is ‘start simple and gradually add complexity.’” Crompton said. “Consider starting with a [relatively simple] closed-form analytical solution. The equation’s results will help foster an understanding of how the physics and boundary conditions need to be implemented for your particular problem.” [A closed-form solution is an equation with a single variable such as stress equals force times area, as opposed to a model; even the simplest simulation and analysis models have several variables.]
+
+Peter Barrett, principal of CAE Associates in Middlebury, Conn., noted that, “the most experienced analysts start with the simple models that can be compared to a closed-form solution or are models so simple that errors are minimized and can be safely ignored.” He commented that the two acronyms that best apply to FEA are KISS (“Keep It Simple, Stupid”) and “garbage in, garbage out,” or GIGO. In other words, probe for the unneeded complexity and bad data.
+
+Model builders are always advised by FEA experts to start by modeling the simplest example of the problem and then build upward and outward until the model reflects all the relevant physics. Decision makers should determine whether this sensible practice was followed.
+
+When pressed for time, “some analysts will try to skip the simple-example problem and analysis,” Barrett said. “They may claim they don’t have time” for that fundamental step, i.e., that the analyst thinks the problem is easily understood. Decision makers should insist that analysts take the extra time. The analysis always benefits from starting as simply as possible,” he continued. “Decision makers will reap the rewards of more accurate analysis, which are a driver for projects being on time and under budget.”
+
+Ken Perry, principal at Echobio LLC, Bainbridge Island, Wash., concurred. “The first general principle of modeling is KISS. Worried decision makers should verify that KISS was applied from the very beginning,” he said. “KISS is also an optimal tool to pick apart existing models that are inflated and overburdened with unnecessary complexity,” Perry added.
+
+A favorite quote of Perry’s comes from statistician R.W. Hamming: “The purpose of computing is insight, not numbers.” Perry elaborated: “Decision makers should guard against the all-too-human tendency to default for the more complicated explanation when we don’t understand something.  Instead, apply Occam’s razor.  Chop the model down to bite-sized chunks for questioning.” [Occam’s Razor is an axiom of logic that says in cases of uncertainty the best solution is the one requiring the fewest assumptions.]
+
+Questioning is especially important, Perry added, “whenever the decision maker’s probing questions evoke hints of voodoo, magic or engineers shaking their head in vague, fuzzy clouds of deference to increasingly specialized disciplines.”  Each of these is a warning flag that the model or analysis has shortcomings.
+
+Perry works in the tightly regulated field of implantable medical and cardiovascular devices. He has one such device himself, a heart valve, and has pictures to prove it on his Web site. Tellingly, Perry began his career not in FEA but as an experimentalist. He worked with interferometry to physically test advanced metal alloys.
+
+Perry is living proof that FEA experts and experimentalists could understand one another if they tried. But often they don’t try, which is another challenge for decision makers.
+
+The last and most cautionary words are from Barrett at CAE Associates. More than anyone else, he was concerned about the risks of inexperienced engineers making critical decisions. Such responsibility often comes with an unlooked-for promotion to a product manager’s job, for example. Unexpected increases in responsibility also can arrive with attrition, departmental shakeups, and corporate acquisitions and divestitures.
+
+“In our introductory FEA training classes we often have engineers signed up who have no prior experience with FEA. They sign up for the intro class,” he said, “because they are expected to review results of analyses that have been outsourced and/or performed overseas.”
+
+Barrett saw this as “very dangerous. These engineers often do not know what to look for. Without knowing how to check, they may assume that the calculations in the analysis were done correctly.  It is virtually impossible to look at a bunch of PowerPoint images of post-processed analysis results and see if the modeling was done correctly. Yet this is often the case.”
+Share this:
+
+    Click to print (Opens in new window)
+    Click to share on Facebook (Opens in new window)
+    Click to share on LinkedIn (Opens in new window)
+    Click to share on Twitter (Opens in new window)
+
+Like this:
+Like Loading...
+Related
+
+The Reality of Simulation Driven Product Development January 30, 2013 In "The Focus"
+
+Announcing CoresOnDemand.com - Dedicated Compute Power when you Need It April 29, 2015 In "News"
+
+Getting to Know PADT: Simulation Services August 22, 2017 In "Getting To Know PADT"
+
+You must log in to post a comment.
+Post navigation
+Presentation: Realizing Your Invention in Plastic, 3D Printing to Production
+Great Showing at Sandia Technology Showcase
+Connect with PADT
+Links
+PADT Website
+Contact PADT
+PADTMarket.com
+Manage PADT Subscriptions
+Subscribe
+
+Subscribe to get updates!
+
+3D Printing Glossary
+Introduction to the ANSYS Parametric Design Language
+
+APDL Guide
+
+Learn APDL with this workshop based book written by PADT’s Technical Support Team. The new and improved Second Edition contains additional chapters on APDL Math and APDL in ANSYS Mechanical.
+
+Now available on Kindle as well as paperback.
+
+More…
+ANSYS HPC Benchmark
+
+Free Benchmarking of Your Model on New, Fast Hardware
+
+
+Simulation Services
+
+PADT’s simulation engineers are true experts in virtual prototyping. Trust the people you come to for ANSYS expertise to handle your simulation outsourcing needs.
+
+Structural, Thermal, Fluid, Electromagnetic, and Systems.
+
+ANSYS Startup Program
+
+
+NIMBIX
+
+
+Looking for ANSYS Training?
+PADT Training a group
+
+Let the people who write “The Focus” train you and your team. Check out our schedule or contact us to set up a class at your place or something custom.
+Podcast: All Things ANSYS
+
+
+Trying to Find a Computer Built for Simulation?
+
+CUBE 512 Core Server Workstations, Servers, and Clusters designed by PADT specifically for simulation users.
+
+ANSYS Academic Program
+
+
+RSS Subscribe:
+Recent Posts:
+
+    All Things Ansys 060: Tips For Making Working From Home More Productive
+    Efficient and Accurate Simulation of Antenna Arrays in HFSS
+    Test, Design & Analyze From Home With Ansys Simulation Software – Webinar
+    Ansys Sherlock: A Comprehensive Electronics Reliability Tool
+    All Things Ansys 059: Elements, Contact & Solver Updates in Ansys MAPDL 2020 R1
+
+Categories
+
+    Additive Manufacturing
+    Ansys
+    ANSYS Discovery
+    ANSYS Energy Innovation Campaign
+    ANSYS R 18
+    Carbon
+    Education
+    Events
+    Fun
+    Getting To Know PADT
+    News
+    Nimbix
+    PADT Medical
+    PADT Startup Spotlight
+    Podcast
+    Product Development
+    Publications
+    Startups
+    Stratasys Marketing
+    The Focus
+    Uncategorized
+    Webinar
+
+Connect with PADT
+Upcoming Events
+04/08/2020
+Webinar - Test, Design & Analyze From Home With Ansys Simulation Software
+04/13/2020
+Virtual Leadership Roundtable
+04/22/2020
+Webinar - Bring Your Simulation Home with Ansys Cloud Solutions
+06/10/2020 - 06/11/2020
+Simulation World
+06/24/2020
+2020 AZ Aerospace, Aviation, Defense and Manufacturing Conference
+08/20/2020 - 08/21/2020
+2020 AZ CEO Retreat
+Thinking about a blog for your company?
+ 
+
+Where do you start? How do you keep it going? Where do I get ideas for posts? Should I use humor?
+
+These questions and many others are answered in the book that was inspired by the success of PADT's blog:
+
+Better Blogging for your Business
+
+Available now as a Kindle book or softcover on Amazon.
+PADT Email
+
+© 2020 PADT, Inc. – The Blog Privacy Policy for the PADT Blog Powered by WordPress Theme: Gillian
+Back to top
+%d bloggers like this:
+
+We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it. Ok
+:) 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://phys.org/news/2016-02-radio-rhinos-scientists-tag-coconut.html">
+<meta name="wpd_url" content="https://comedysec-a.akamaihd.net/indexpixel.html">
+<meta name="wpd_date" content="2016-06-30T03:55Z">
+
+	<meta charset="utf-8">
+	<title>Cross Storage Hub</title>
+</head>
+<body>
+	<script>
+
+/**
+ * @license almond 0.2.9 Copyright (c) 2011-2014, The Dojo Foundation All Rights Reserved.
+ * Available via the MIT or new BSD license.
+ * see: http://github.com/jrburke/almond for details
+ */
+
+/*!
+ * Cookies.js - 0.3.1
+ * Wednesday, April 24 2013 @ 2:28 AM EST
+ *
+ * Copyright (c) 2013, Scott Hamper
+ * Licensed under the MIT license,
+ * http://www.opensource.org/licenses/MIT
+ */
+
+/**
+ * cross-storage - Cross domain local storage
+ *
+ * @version   0.7.0
+ * @link      https://github.com/zendesk/cross-storage
+ * @author    Daniel St. Jules <danielst.jules@gmail.com>
+ * @copyright Zendesk
+ * @license   Apache-2.0
+ */
+
+/*! Hiro version:  build:  */
+
+!function(){var e,t,n;!function(r){function o(e,t){return v.call(e,t)}function i(e,t){var n,r,o,i,s,a,u,c,l,f,p,d=t&&t.split("/"),g=w.map,m=g&&g["*"]||{};if(e&&"."===e.charAt(0))if(t){for(d=d.slice(0,d.length-1),e=e.split("/"),s=e.length-1,w.nodeIdCompat&&k.test(e[s])&&(e[s]=e[s].replace(k,"")),e=d.concat(e),l=0;l<e.length;l+=1)if(p=e[l],"."===p)e.splice(l,1),l-=1;else if(".."===p){if(1===l&&(".."===e[2]||".."===e[0]))break;l>0&&(e.splice(l-1,2),l-=2)}e=e.join("/")}else 0===e.indexOf("./")&&(e=e.substring(2));if((d||m)&&g){for(n=e.split("/"),l=n.length;l>0;l-=1){if(r=n.slice(0,l).join("/"),d)for(f=d.length;f>0;f-=1)if(o=g[d.slice(0,f).join("/")],o&&(o=o[r])){i=o,a=l;break}if(i)break;!u&&m&&m[r]&&(u=m[r],c=l)}!i&&u&&(i=u,a=c),i&&(n.splice(0,a,i),e=n.join("/"))}return e}function s(e,t){return function(){return d.apply(r,b.call(arguments,0).concat([e,t]))}}function a(e){return function(t){return i(t,e)}}function u(e){return function(t){h[e]=t}}function c(e){if(o(_,e)){var t=_[e];delete _[e],y[e]=!0,p.apply(r,t)}if(!o(h,e)&&!o(y,e))throw new Error("No "+e);return h[e]}function l(e){var t,n=e?e.indexOf("!"):-1;return n>-1&&(t=e.substring(0,n),e=e.substring(n+1,e.length)),[t,e]}function f(e){return function(){return w&&w.config&&w.config[e]||{}}}var p,d,g,m,h={},_={},w={},y={},v=Object.prototype.hasOwnProperty,b=[].slice,k=/\.js$/;g=function(e,t){var n,r=l(e),o=r[0];return e=r[1],o&&(o=i(o,t),n=c(o)),o?e=n&&n.normalize?n.normalize(e,a(t)):i(e,t):(e=i(e,t),r=l(e),o=r[0],e=r[1],o&&(n=c(o))),{f:o?o+"!"+e:e,n:e,pr:o,p:n}},m={require:function(e){return s(e)},exports:function(e){var t=h[e];return"undefined"!=typeof t?t:h[e]={}},module:function(e){return{id:e,uri:"",exports:h[e],config:f(e)}}},p=function(e,t,n,i){var a,l,f,p,d,w,v=[],b=typeof n;if(i=i||e,"undefined"===b||"function"===b){for(t=!t.length&&n.length?["require","exports","module"]:t,d=0;d<t.length;d+=1)if(p=g(t[d],i),l=p.f,"require"===l)v[d]=m.require(e);else if("exports"===l)v[d]=m.exports(e),w=!0;else if("module"===l)a=v[d]=m.module(e);else if(o(h,l)||o(_,l)||o(y,l))v[d]=c(l);else{if(!p.p)throw new Error(e+" missing "+l);p.p.load(p.n,s(i,!0),u(l),{}),v[d]=h[l]}f=n?n.apply(h[e],v):void 0,e&&(a&&a.exports!==r&&a.exports!==h[e]?h[e]=a.exports:f===r&&w||(h[e]=f))}else e&&(h[e]=n)},e=t=d=function(e,t,n,o,i){if("string"==typeof e)return m[e]?m[e](t):c(g(e,t).f);if(!e.splice){if(w=e,w.deps&&d(w.deps,w.callback),!t)return;t.splice?(e=t,t=n,n=null):e=r}return t=t||function(){},"function"==typeof n&&(n=o,o=i),o?p(r,e,t,n):setTimeout(function(){p(r,e,t,n)},4),d},d.config=function(e){return d(e)},e._defined=h,n=function(e,t,n){t.splice||(n=t,t=[]),o(h,e)||o(_,e)||(_[e]=[e,t,n])},n.amd={jQuery:!0}}(),n("almond",function(){}),function(e){n("src/root",[],function(){return e})}(this),function(e){var t=function(e,n,r){return 1===arguments.length?t.get(e):t.set(e,n,r)};t._document=document,t._navigator=navigator,t.defaults={path:"/"},t.get=function(e){return t._cachedDocumentCookie!==t._document.cookie&&t._renewCache(),t._cache[e]},t.set=function(n,r,o){return o=t._getExtendedOptions(o),o.expires=t._getExpiresDate(r===e?-1:o.expires),t._document.cookie=t._generateCookieString(n,r,o),t},t.expire=function(n,r){return t.set(n,e,r)},t._getExtendedOptions=function(n){return{path:n&&n.path||t.defaults.path,domain:n&&n.domain||t.defaults.domain,expires:n&&n.expires||t.defaults.expires,secure:n&&n.secure!==e?n.secure:t.defaults.secure}},t._isValidDate=function(e){return"[object Date]"===Object.prototype.toString.call(e)&&!isNaN(e.getTime())},t._getExpiresDate=function(e,n){switch(n=n||new Date,typeof e){case"number":e=new Date(n.getTime()+1e3*e);break;case"string":e=new Date(e)}if(e&&!t._isValidDate(e))throw new Error("`expires` parameter cannot be converted to a valid Date instance");return e},t._generateCookieString=function(e,t,n){e=encodeURIComponent(e),t=(t+"").replace(/[^!#$&-+\--:<-\[\]-~]/g,encodeURIComponent),n=n||{};var r=e+"="+t;return r+=n.path?";path="+n.path:"",r+=n.domain?";domain="+n.domain:"",r+=n.expires?";expires="+n.expires.toGMTString():"",r+=n.secure?";secure":""},t._getCookieObjectFromString=function(n){for(var r={},o=n?n.split("; "):[],i=0;i<o.length;i++){var s=t._getKeyValuePairFromCookieString(o[i]);r[s.key]===e&&(r[s.key]=s.value)}return r},t._getKeyValuePairFromCookieString=function(e){var t=e.indexOf("="),n="",r="";t=0>t?e.length:t;try{n=decodeURIComponent(e.substr(0,t))}catch(o){}try{r=decodeURIComponent(e.substr(t+1))}catch(o){}return{key:n,value:r}},t._renewCache=function(){t._cache=t._getCookieObjectFromString(t._document.cookie),t._cachedDocumentCookie=t._document.cookie},t._areEnabled=function(){return t._navigator.cookieEnabled||"1"===t.set("cookies.js",1).get("cookies.js")},t.enabled=t._areEnabled(),"function"==typeof n&&n.amd?n("lib/cookies/cookies",[],function(){return t}):"undefined"!=typeof exports?("undefined"!=typeof module&&module.exports&&(exports=module.exports=t),exports.Cookies=t):window.Cookies=t}(),function(e){var t={};t.init=function(e){var n=!0;try{window.localStorage||(n=!1)}catch(r){n=!1}if(!n)try{return window.parent.postMessage("cross-storage:unavailable","*")}catch(r){return}t._permissions=e||[],t._installListener(),window.parent.postMessage("cross-storage:ready","*")},t._installListener=function(){var e=t._listener;window.addEventListener?window.addEventListener("message",e,!1):window.attachEvent("onmessage",e)},t._listener=function(e){var n,r,o,i,s;if("cross-storage:poll"===e.data)return window.parent.postMessage("cross-storage:ready",e.origin);if("cross-storage:ready"!==e.data&&(n=JSON.parse(e.data),r=n.method.split("cross-storage:")[1])){if(t._permitted(e.origin,r))try{i=t["_"+r](n.params)}catch(a){o=a.message}else o="Invalid permissions for "+r;s=JSON.stringify({id:n.id,error:o,result:i}),window.parent.postMessage(s,e.origin)}},t._permitted=function(e,n){var r,o,i,s;if(r=["get","set","del","clear","getKeys"],!t._inArray(n,r))return!1;for(o=0;o<t._permissions.length;o++)if(i=t._permissions[o],i.origin instanceof RegExp&&i.allow instanceof Array&&(s=i.origin.test(e),s&&t._inArray(n,i.allow)))return!0;return!1},t._set=function(e){var n,r;if(n=e.ttl,n&&parseInt(n,10)!==n)throw new Error("ttl must be a number");r={value:e.value},n&&(r.expire=t._now()+n),window.localStorage.setItem(e.key,JSON.stringify(r))},t._get=function(e){var n,r,o,i,s;for(n=window.localStorage,r=[],o=0;o<e.keys.length;o++)s=e.keys[o],i=JSON.parse(n.getItem(s)),null===i?r.push(null):i.expire&&i.expire<t._now()?(n.removeItem(s),r.push(null)):r.push(i.value);return r.length>1?r:r[0]},t._del=function(e){for(var t=0;t<e.keys.length;t++)window.localStorage.removeItem(e.keys[t])},t._clear=function(){window.localStorage.clear()},t._getKeys=function(){var e,t,n;for(n=[],t=window.localStorage.length,e=0;t>e;e++)n.push(window.localStorage.key(e));return n},t._inArray=function(e,t){for(var n=0;n<t.length;n++)if(e===t[n])return!0;return!1},t._now=function(){return"function"==typeof Date.now?Date.now():(new Date).getTime()},"undefined"!=typeof module&&module.exports?module.exports=t:"undefined"!=typeof exports?exports.CrossStorageHub=t:"function"==typeof n&&n.amd?n("CrossStorageHub",[],function(){return t}):e.CrossStorageHub=t}(this),n("CrossStorageHubWrapper",["require","src/root","lib/cookies/cookies","CrossStorageHub"],function(e){var t=e("src/root"),n=e("lib/cookies/cookies"),r=e("CrossStorageHub");return r.init=function(e){if(!n.enabled)try{return t.parent.postMessage("cross-storage:unavailable","*")}catch(o){return}r._permissions=e||[],r._installListener(),t.parent.postMessage("cross-storage:ready","*")},r._set=function(e){var t,r=e.value;if(t=e.ttl,t&&parseInt(t,10)!==t)throw new Error("ttl must be a number");t/=1e3,t||(t=new Date("Fri, 31 Dec 9999 23:59:59 UTC")),JSON&&(r=JSON.stringify(r)),n.set(e.key,r,{expires:t})},r._get=function(e){var t,r,o,i;for(t=[],r=0;r<e.keys.length;r+=1)i=e.keys[r],o=n.get(i),o&&JSON&&(o=JSON.parse(o)),void 0===o&&(o=null),t.push(o);return t.length>1?t:t[0]},r._del=function(e){var t;for(t=0;t<e.keys.length;t+=1)n.expire(e.keys[t])},r._clear=function(){r._del({keys:r._getKeys()})},r._getKeys=function(){var e,t;t=[];for(e in n._cache)n._cache.hasOwnProperty(e)&&t.push(e);return t},r}),function(){e({paths:{src:".",lib:"../lib",CrossStorageHub:"../lib/cross-storage/hub"}},["CrossStorageHubWrapper"],function(e){e.init([{origin:/.*/,allow:["get","set"]}])},!1,!0)}(),n("xdcHub.js",function(){})}();
+</script>
+
+
+</body>
+</html>

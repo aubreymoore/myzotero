@@ -1,0 +1,911 @@
+Navigation
+PyImageSearch PyImageSearch Be awesome at learning OpenCV, Python, and computer vision
+Home
+Main Menu
+
+    Start Here
+    Practical Python and OpenCV
+    PyImageSearch Gurus
+    OpenCV 3 Tutorials
+    FREE OpenCV Crash Course
+    About
+    Contact
+
+Return to Content
+Pedestrian Detection OpenCV
+By Adrian Rosebrock on November 9, 2015 in Object Detection , Tutorials
+Twitter 0
+Facebook 53
+Google+ 9
+LinkedIn 51
+
+pedestrian_detection_person_175
+
+I’ve met a lot of amazing, uplifting people over the years. My PhD advisor who helped get me through graduate school. My father who was always there for me as a kid — and still is now. And my girlfriend who has always been positive, helpful, and supportive (even when I probably didn’t deserve it).
+
+I’ve also met some demoralizing, discouraging ones. Family members who have gone out of their way to deter me from being an entrepreneur and working for myself. Colleagues who either disliked me or my work and chose to express their disdain in a public fashion. And then there are those who have said some pretty disheartening things over email, Twitter, and other internet outlets.
+
+We’re all familiar with these types of people. Yet regardless of their demeanor (whether positive or negative), we’re all built from the same genetic material of four nucleobases: cytosine, guanine, adenine, and thymine.
+
+These base pairs are combined in such a way that our bodies all have the same basic structure regardless of gender, race, or ethnicity. At the most structural level we all have a head , two arms , a torso , and two legs .
+
+We can use computer vision to exploit this  semi-rigid structure and extract features to quantify the human body. These features can be passed on to machine learning models that when trained can be used to  detect and  track humans in images and video streams. This is especially useful for the task of  pedestrian detection , which is the topic we’ll be talking about in today’s blog post.
+
+Read on to find out how you can use OpenCV and Python to perform pedestrian detection.
+
+Looking for the source code to this post?
+Jump right to the downloads section.
+Pedestrian Detection OpenCV
+
+Did you know that OpenCV has  built-in methods to perform pedestrian detection?
+
+OpenCV ships with a pre-trained HOG + Linear SVM model that can be used to perform pedestrian detection in both images and video streams. If you’re not familiar with the Histogram of Oriented Gradients and Linear SVM method, I suggest you read this blog post where I discuss the 6 step framework .
+
+If you’re already familiar with the process (or if you just want to see some code on how pedestrian detection with OpenCV is done), just open up a new file, name it detect . py  , and we’ll get coding:
+Pedestrian Detection OpenCV
+Python
+# import the necessary packages from __future__ import print_function from imutils.object_detection import non_max_suppression from imutils import paths import numpy as np import argparse import imutils import cv2 # construct the argument parse and parse the arguments ap = argparse.ArgumentParser() ap.add_argument("-i", "--images", required=True, help="path to images directory") args = vars(ap.parse_args()) # initialize the HOG descriptor/person detector hog = cv2.HOGDescriptor() hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+	
+# import the necessary packages
+from __future__ import print_function
+from imutils . object_detection import non_max_suppression
+from imutils import paths
+import numpy as np
+import argparse
+import imutils
+import cv2
+ 
+# construct the argument parse and parse the arguments
+ap = argparse . ArgumentParser ( )
+ap . add_argument ( "-i" , "--images" , required = True , help = "path to images directory" )
+args = vars ( ap . parse_args ( ) )
+ 
+# initialize the HOG descriptor/person detector
+hog = cv2 . HOGDescriptor ( )
+hog . setSVMDetector ( cv2 . HOGDescriptor_getDefaultPeopleDetector ( ) )
+
+Lines 2-8 start by importing our necessary packages. We’ll import print_function   to ensure our code is compatible with both Python 2.7 and Python 3 (this code will also work for OpenCV 2.4.X and OpenCV 3). From there, we’ll import the non_max_suppression   function from my imutils package.
+
+If you do not have imutils   installed, let pip   install it for you:
+Pedestrian Detection OpenCV
+Shell
+$ pip install imutils
+1
+	
+$ pip install imutils
+
+If you  do   have imutils   installed, you’ll need to upgrade to the latest version ( v0.3.1 ) which includes the implementation of the non_max_suppression   function, along with a few other minor updates:
+Pedestrian Detection OpenCV
+Shell
+$ pip install --upgrade imutils
+1
+	
+$ pip install -- upgrade imutils
+
+I’ve talked about non-maxima suppression twice on the PyImageSearch blog, once in this introductory post , and again in this post on implementing a faster NMS algorithm . In either case, the gist of the non-maxima suppression algorithm is to take  multiple, overlapping bounding boxes and reduce them to only a single bounding box:
+Figure 3: (Left) Multiple bounding boxes are falsely detected for the person in the image. (Right) Apply non-maxima suppression allows us to suppress overlapping bounding boxes, leaving us with the correct final detection.
+
+Figure 1: (Left) Multiple bounding boxes are falsely detected for the person in the image. (Right) Applying non-maxima suppression allows us to suppress overlapping bounding boxes, leaving us with the correct final detection.
+
+This helps reduce the number of false-positives reported by the final object detector.
+
+Lines 11-13 handle parsing our command line arguments. We only need a single switch here, -- images  , which is the path to the directory that contains the list of images we are going to perform pedestrian detection on.
+
+Finally,  Lines 16 and 17 initialize our pedestrian detector. First, we make a call to hog = cv2 . HOGDescriptor ( )   which initializes the Histogram of Oriented Gradients descriptor. Then, we call the setSVMDetector   to set the Support Vector Machine to be pre-trained pedestrian detector, loaded via the cv2 . HOGDescriptor_getDefaultPeopleDetector ( )   function.
+
+At this point our OpenCV pedestrian detector is fully loaded, we just need to apply it to some images:
+Pedestrian Detection OpenCV
+Python
+# import the necessary packages from __future__ import print_function from imutils.object_detection import non_max_suppression from imutils import paths import numpy as np import argparse import imutils import cv2 # construct the argument parse and parse the arguments ap = argparse.ArgumentParser() ap.add_argument("-i", "--images", required=True, help="path to images directory") args = vars(ap.parse_args()) # initialize the HOG descriptor/person detector hog = cv2.HOGDescriptor() hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector()) # loop over the image paths for imagePath in paths.list_images(args["images"]): # load the image and resize it to (1) reduce detection time # and (2) improve detection accuracy image = cv2.imread(imagePath) image = imutils.resize(image, width=min(400, image.shape[1])) orig = image.copy() # detect people in the image (rects, weights) = hog.detectMultiScale(image, winStride=(4, 4), padding=(8, 8), scale=1.05) # draw the original bounding boxes for (x, y, w, h) in rects: cv2.rectangle(orig, (x, y), (x + w, y + h), (0, 0, 255), 2) # apply non-maxima suppression to the bounding boxes using a # fairly large overlap threshold to try to maintain overlapping # boxes that are still people rects = np.array([[x, y, x + w, y + h] for (x, y, w, h) in rects]) pick = non_max_suppression(rects, probs=None, overlapThresh=0.65) # draw the final bounding boxes for (xA, yA, xB, yB) in pick: cv2.rectangle(image, (xA, yA), (xB, yB), (0, 255, 0), 2) # show some information on the number of bounding boxes filename = imagePath[imagePath.rfind("/") + 1:] print("[INFO] {}: {} original boxes, {} after suppression".format( filename, len(rects), len(pick))) # show the output images cv2.imshow("Before NMS", orig) cv2.imshow("After NMS", image) cv2.waitKey(0)
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+	
+# loop over the image paths
+for imagePath in paths . list_images ( args [ "images" ] ) :
+# load the image and resize it to (1) reduce detection time
+# and (2) improve detection accuracy
+image = cv2 . imread ( imagePath )
+image = imutils . resize ( image , width = min ( 400 , image . shape [ 1 ] ) )
+orig = image . copy ( )
+ 
+# detect people in the image
+( rects , weights ) = hog . detectMultiScale ( image , winStride = ( 4 , 4 ) ,
+padding = ( 8 , 8 ) , scale = 1.05 )
+ 
+# draw the original bounding boxes
+for ( x , y , w , h ) in rects :
+cv2 . rectangle ( orig , ( x , y ) , ( x + w , y + h ) , ( 0 , 0 , 255 ) , 2 )
+ 
+# apply non-maxima suppression to the bounding boxes using a
+# fairly large overlap threshold to try to maintain overlapping
+# boxes that are still people
+rects = np . array ( [ [ x , y , x + w , y + h ] for ( x , y , w , h ) in rects ] )
+pick = non_max_suppression ( rects , probs = None , overlapThresh = 0.65 )
+ 
+# draw the final bounding boxes
+for ( xA , yA , xB , yB ) in pick :
+cv2 . rectangle ( image , ( xA , yA ) , ( xB , yB ) , ( 0 , 255 , 0 ) , 2 )
+ 
+# show some information on the number of bounding boxes
+filename = imagePath [ imagePath . rfind ( "/" ) + 1 : ]
+print ( "[INFO] {}: {} original boxes, {} after suppression" . format (
+filename , len ( rects ) , len ( pick ) ) )
+ 
+# show the output images
+cv2 . imshow ( "Before NMS" , orig )
+cv2 . imshow ( "After NMS" , image )
+cv2 . waitKey ( 0 )
+
+On  Line 20 we start looping over the images in our -- images   directory.  The examples in this blog post (and the additional images included in the source code download of this article) are samples form the popular INRIA Person Dataset (specifically, from the GRAZ-01 subset).
+
+From there,  Lines 23-25  handle loading our image off disk and resizing it to have a maximum width of 400 pixels. The reason we attempt to reduce our image dimensions is two-fold:
+
+    Reducing image size ensures that less sliding windows in the image pyramid need to be evaluated (i.e., have HOG features extracted from and then passed on to the Linear SVM), thus reducing detection time (and increasing overall detection throughput).
+    Resizing our image also improves the overall accuracy of our pedestrian detection (i.e., less false-positives).
+
+Actually detecting pedestrians in images is handled by  Lines 28 and 29  by making a call to the detectMultiScale   method of the hog   descriptor. The detectMultiScale   method constructs an image pyramid with scale = 1.05   and a sliding window step size of ( 4 , 4 )   pixels in both the x and  y direction, respectively.
+
+The size of the sliding window is fixed at 64 x 128 pixels , as suggested by the seminal Dalal and Triggs paper,  Histograms of Oriented Gradients for Human Detection .  The detectMultiScale   function returns a 2-tuple of rects  , or the bounding box  (x, y) -coordinates of each person in the image, and weights  , the confidence value returned by the SVM for each detection.
+
+A larger scale   size will evaluate  less layers in the image pyramid which can make the algorithm faster to run. However, having  too large of a scale (i.e., less layers in the image pyramid) can lead to pedestrians not being detected. Similarly, having  too small of a scale   size dramatically  increases the number of image pyramid layers that need to be evaluated. Not only can this be computationally wasteful, it can also dramatically increase the number of false-positives detected by the pedestrian detector. That said, the scale   is one of the most important parameters to tune when performing pedestrian detection. I’ll perform a more thorough review of each of the parameters to detectMultiScale   in a future blog post.
+
+Lines 32 and 33 take our initial bounding boxes and draw them on our image.
+
+However, for some images you’ll notice that there are  multiple, overlapping bounding boxes detected for each person (as demonstrated by  Figure 1 above).
+
+In this case, we have two options. We can detect if one bounding box is  fully contained within another (as one of the OpenCV examples implements). Or we can apply non-maxima suppression  and  suppress  bounding boxes that overlap with a significant threshold — and that’s exactly what  Lines 38 and 39 do.
+
+Note: If you’re interested in learning more about the HOG framework and non-maxima suppression, I would start by reading this introductory post on the 6-step framework . From there, check out this post on simple non-maxima suppression followed by an updated post that implements the optimized  Malisiewicz method .
+
+After applying non-maxima suppression, we draw the finalized bounding boxes on  Lines 42 and 43 , display some basic information about the image and number of bounding boxes on  Lines 46-48 , and finally display our output images to our screen on  Lines 51-53 .
+Results of pedestrian detection in images
+
+To see our pedestrian detection script in action, just issue the following command:
+Pedestrian Detection OpenCV
+Shell
+$ python detect.py --images images
+1
+	
+$ python detect .py -- images images
+
+Below I have provided a sample of results from the detection script:
+Figure 1: The first result of our pedestrian detection script.
+
+Figure 2 : The first result of our pedestrian detection script.
+
+Here we have detected a single person standing next to a police car.
+Figure 2: Detecting a single person in the foreground and another person in the background.
+
+Figure 3: Detecting a single person in the foreground and another person in the background.
+
+In the above example we can see a man detected in the foreground of the image, while a woman pushing a baby stroller is detected in the background.
+Figure 3: An example of why applying non-maxima suppression is important.
+
+Figure 4: An example of why applying non-maxima suppression is important.
+
+The above image serves an example of why applying non-maxima suppression is important. The detectMultiScale   function falsely detected two bounding boxes (along with the correct bounding box), both overlapping the true person in the image. By applying non-maxima suppression we were able to suppress the extraneous bounding boxes, leaving us with the true detection
+Figure 4: A second example demonstrating non-maxima suppression in action.
+
+Figure 5: A second example demonstrating non-maxima suppression in action.
+
+Again, we see that multiple false bounding boxes are detected, but by applying NMS we can remove them, leaving us with the true detection in the image.
+Figure 5: Detecting pedestrians in a shopping mall.
+
+Figure 6: Detecting pedestrians in a shopping mall.
+
+Here we are detecting pedestrians in a shopping mall. Notice two people are walking  away from the camera while another is walking towards the camera. In either case, our HOG method is able to detect the people. The larger overlapThresh   in the non_maxima_suppression   function ensures that the bounding boxes are not suppressed, even though they do partially overlap.
+Figure 6: Detecting people in a blurred image.
+
+Figure 7: Detecting people in a blurred image.
+
+I was particularly surprised by the results of the above image. Normally the HOG descriptor does not perform well in the presence of motion blur, yet we are still able to detect the pedestrians in this image.
+Figure 7: Detecting pedestrians outdoors, walking along the street.
+
+Figure 8: Detecting pedestrians outdoors, walking along the street.
+
+This is another example of multiple, overlapping bounding boxes, but due to the larger overlapThresh   they are not suppressed, leaving us with the correct person detections.
+Figure 8: Detecting four members of a family.
+
+Figure 9: Detecting four members of a family.
+
+The above image shows the versatility of our HOG + SVM pedestrian detector. We are not only able to detect the adult male, but also the three small children as well. (Note that the detector is not able to find the other child hiding behind his [presumed to be] father).
+Figure 9: Detecting a depiction of pedestrians.
+
+Figure 10: Detecting a depiction of pedestrians.
+
+I include this image last simply because I find it amusing. We are clearly viewing a road sign, likely used to indicate a pedestrian crossing. However, our HOG + SVM detector marks the two people in this image as positive classifications!
+Summary
+
+In this blog post we learned how to perform pedestrian detection using the OpenCV library and the Python programming language.
+
+The OpenCV library actually ships with a  pre-trained  HOG + Linear SVM detector  based on the Dalal and Triggs method to  automatically detect pedestrians in images.
+
+While the HOG method tends to be more accurate than its Haar counter-part, it still requires that the parameters to detectMultiScale   be set properly. In future blog posts, I’ll review each of the parameters to detectMultiScale  , detail how to tune each of them, and describe the trade-offs between accuracy and performance.
+
+Anyway, I hope you enjoyed this article! I’m planning on doing more object detection tutorials in the future, so if you want to be notified when these posts go live, please consider subscribing to the newsletter using the form below.
+
+I also cover object detection using the HOG + Linear SVM method in detail inside the PyImageSearch Gurus course , so be sure to take a look!
+Downloads:
+If you would like to download the code and images used in this post, please enter your email address in the form below. Not only will you get a .zip of the code, I’ll also send you a FREE 11-page Resource Guide on Computer Vision and Image Search Engines, including exclusive techniques that I don’t post on this blog! Sound good? If so, enter your email address and I’ll send you the code immediately!
+
+Email address:
+
+Resource Guide (it’s totally free).
+
+[Get your FREE 11-page Image Search Engine Resource Guide PDF]
+Enter your email address below to get my free 11-page Image Search Engine Resource Guide PDF . Uncover exclusive techniques that I don't publish on this blog and start building image search engines of your own!
+
+histogram of oriented gradients , hog , linear svm , object detection , pedestrian detection , svm
+Watershed OpenCV
+HOG detectMultiScale parameters explained
+97 Responses to Pedestrian Detection OpenCV
+
+    Eugenio November 9, 2015 at 11:40 am #
+
+    Dude, you´re an inspiration. Aside from that, what a magnificient blog this is, keep up the good work man!
+    Reply
+        Adrian Rosebrock November 9, 2015 at 12:20 pm #
+
+        Thanks Eugenio! ⬚⬚
+        Reply
+    Dan November 9, 2015 at 1:39 pm #
+
+    Hey Adrian,
+
+    Love the blog, and the books! Question for you: I haven’t tried this out yet, but I was curious how long it takes for this algorithm to run on the example images for a given platform. I’d like to get it running on a Pi2, but wasn’t sure if it’d run in a ‘reasonable’ time (maybe a couple Hz).
+
+    Thanks!
+    Dan
+    Reply
+        Adrian Rosebrock November 9, 2015 at 4:14 pm #
+
+        The time it takes per image is really dependent on how fast your system is. I’ll be doing a full blog post on the tradeoffs between speed and accuracy next week, but for reasonably size images (in the range of 400-600px) it can take anywhere between 0.1s and 1.5s to process the image. But again, this is highly dependent on your choice of scale and window stride.
+        Reply
+            Dan November 10, 2015 at 10:06 am #
+
+            Got it, thanks! Hoping to try this out in the next few days.
+            Reply
+    Carlos November 9, 2015 at 2:46 pm #
+
+    So cool!
+    Reply
+    Gadget/Steve November 9, 2015 at 3:45 pm #
+
+    Erratic results for this one – some images it did very well but it didn’t cope with rotated photographs, (i.e. taken with the camera rotated), well, thought an A board was a pedestrian but none of the pedestrians were and best of all thought that a church spire & gravestone were 2 people.
+    Can I suggest a couple of minor items, add the hash bang at the beginning of each example, preferably with the encoding i.e.:
+
+    #!/usr/bin/env python
+    #coding:utf-8
+
+    and use the if __name__ == “__main__”: construct – just to get people who are new to python into the habit.
+
+    An interesting blog which I am sure will get more people using python and OpenCV – keep it up, always look forward to the next.
+    Reply
+        Adrian Rosebrock November 9, 2015 at 4:19 pm #
+
+        The Histogram of Oriented Gradients descriptor is not rotation invariant, hence it not detecting people in a rotated image (and why it was also confused by other objects in the images). You can read more about HOG in this post .
+        Reply
+    Federico November 9, 2015 at 6:34 pm #
+
+    Many thanks Adrian. Do you thing that is posible to use it with video from Pi camera?
+    Reply
+        Adrian Rosebrock November 10, 2015 at 6:22 am #
+
+        Absolutely, just realize that the HOG + Linear SVM method is a bit slow of the parameters are tuned right so it likely won’t run in full real-time on teh Raspberry Pi.
+        Reply
+    Filip November 12, 2015 at 2:39 pm #
+
+    Could not find a version that satisfies the requirement imutils (from versions: ) No matching distribution found for imutils
+    :(
+    :(
+    :(
+    Reply
+        Adrian Rosebrock November 13, 2015 at 5:41 am #
+
+        Hey Filip — Are you sure you’re installing with:
+
+        $ pip install imutils
+        Reply
+    liuhengli November 22, 2015 at 12:11 pm #
+
+    what to do can use it with video and real-time detection pedestrian
+    Reply
+        Adrian Rosebrock November 23, 2015 at 6:37 am #
+
+        Please see my followup post on tuning the parameters to detectMultiScale .
+        Reply
+    Charles TRESSENS November 23, 2015 at 3:44 am #
+
+    Hey,
+    I have an issue with this code :
+    I downloaded it and tried to execute it with the VM and a Raspberry Pi but I still got the same issue : it goes back to the shell without doing anything.
+
+    I tried with “python detect.py -i images/person_010.bmp”.
+
+    Thanks,
+    Reply
+        Adrian Rosebrock November 23, 2015 at 6:41 am #
+
+        Please see the example “USAGE” at the top of the script. You need to specify the path to the directory of images, not just the path to a single image . If you execute the script using this command, it will work:
+
+        $ python detect.py --images images
+        Reply
+            Charles TRESSENS November 23, 2015 at 6:46 am #
+
+            Thank you, it works perfectly,
+
+            Have a great day,
+            Reply
+                Adrian Rosebrock November 23, 2015 at 11:27 am #
+
+                No problem Charles!
+                Reply
+    JJ November 29, 2015 at 12:08 pm #
+
+    Thanks for this! really interesting. I am wondering if this can be applied to real time webcam data? Thanks!
+    Reply
+        Adrian Rosebrock November 30, 2015 at 6:32 am #
+
+        It definitely can, but you’ll want to make sure you have the parameters tuned properly for real-time performance . You’ll want want to look into using the cv2.VideoCapture function to read frames from your camera/video file, like I do in this post .
+        Reply
+            JJ November 30, 2015 at 6:45 pm #
+
+            Thanks a lot! Will research a bit more! thanks for all the info!
+            Reply
+    Jonathan Marcelino December 4, 2015 at 10:43 pm #
+
+    Thank you for your hard work. I’m in high school and you tutorials inspire me to work on my python programming skills.
+    Reply
+        Adrian Rosebrock December 5, 2015 at 6:22 am #
+
+        Hey Jonathan! Thanks for the comment — I’m glad the tutorials are helpful to you. Have an awesome day :-)
+        Reply
+    zhuxuekui December 14, 2015 at 12:51 am #
+
+    thks
+    Reply
+    Erick Dominguez December 14, 2015 at 12:35 pm #
+
+    Hi Adrian, May I find differences between 2.4.9 or 3.0.0 opencv when I try out this code examples (code differences)? Won’t affect the version of openCV when I try your example?
+
+    And by the way…. thank your for keeping posting amazing stuff on this blog! greetings!
+    Reply
+        Adrian Rosebrock December 14, 2015 at 5:31 pm #
+
+        Hey Erick — the main difference you’ll run into is with the cv2.normalize function and the cv2.findContours method. You can read more about this here .
+        Reply
+    Sainandan December 15, 2015 at 11:28 pm #
+
+    Hey Adrian,just so you know,you’re doing a great job for us IP/CV noobs out here.Keep it up.
+
+    My doubt was regarding the ready-made LSVM Detector in OpenCV used for ped-detection.
+
+    Can you explain using what type of images and how many images,approximately was it pre-trained behind the scenes ?
+    Reply
+        Adrian Rosebrock December 16, 2015 at 6:36 am #
+
+        The implementation itself is based on Dalal and Triggs paper, Histogram of oriented gradients for human detection . The documentation is not clear on what dataset they used to train the detector. They mention the publication multiple times which gives me the impression they used the same dataset as Dalal and Triggs, but that could easily be wrong.
+        Reply
+    Qew7 January 28, 2016 at 7:52 am #
+
+    Hi, im new to opencv
+    I used your example to detect people on video, now i need to know is there a way how to tracke them, i know about camshift and meanshift, but i dk how to implement them an implement them to multiple people just detected, can you please help me?
+    Reply
+        Adrian Rosebrock January 28, 2016 at 3:38 pm #
+
+        CamShift and MeanShift can get quite complicated for multiple objects. It’s honestly too much to try to explain in a single comment. I’ll try to do a blog post on this topic in the near future. In the meantime, you might want to look at correlation tracking which is part of the dlib library .
+        Reply
+    Dan John February 24, 2016 at 5:02 am #
+
+    Hi Adrian
+
+    May i know if the same can be done for a video input from webcam?
+    If so what are the necessary changes to be made? If you have already done this, would you mind sharing the code here.
+
+    Thanks in advance. :)
+    Reply
+        Adrian Rosebrock February 24, 2016 at 4:34 pm #
+
+        Yes, this code can certainly be modified to run via a webcam. I don’t have any code pre-updated, but you can update it yourself by using either the VideoStream class or the cv2.VideoCapture function. If you’re just getting started with OpenCV, you should check out Practical Python and OpenCV to get you started reading frames from a video stream.
+        Reply
+    suresh February 25, 2016 at 8:30 am #
+
+    can i get c++ opencv code for pedestrain counter and detection
+    Reply
+        Adrian Rosebrock February 25, 2016 at 4:40 pm #
+
+        Sorry, I only have Python code at the moment.
+        Reply
+    FilipeNunes March 4, 2016 at 1:04 pm #
+
+    Hello,
+
+    When i run python detect.py –images images it simple did nothing. any clue about the problem?
+    Reply
+        Adrian Rosebrock March 6, 2016 at 9:20 am #
+
+        Make sure that (1) you have downloaded the source code + images to this post using the “Downloads” form and (2) ensure that the detect.py script is in the same directory as images .
+        Reply
+    Sattra Rattanopas March 17, 2016 at 6:52 am #
+
+    Dear Mr.Adrian Rosebrock
+
+    Is it possible to count passing cars (back, left and right) by putting an action camera on the car’s roof?
+    I’m doing a research on “How effective is car wrap advertising?” and i’m looking for a method to count the number of views.
+
+    Thank you :)
+    Reply
+        Adrian Rosebrock March 17, 2016 at 10:35 am #
+
+        So if I understand your question correctly, you would like to mount a camera on top of the roof of car, then take this car for a drive, and then count the number of cars that pass it as it’s driving around?
+
+        That is indeed possible with computer vision — but it’s also a very challenging project since you’ll need to train a machine learning classifier to recognize cars at various viewing angles.
+        Reply
+    Kju March 22, 2016 at 1:23 am #
+
+    @Adrian: Could you do pedestrian detection with KCF (Kernel correlation filters) tracking?
+    Reply
+        Adrian Rosebrock March 22, 2016 at 4:23 pm #
+
+        Yes, this is something that I plan on doing in the future :-)
+        Reply
+            Kju March 24, 2016 at 10:58 pm #
+
+            Yep, awesome.
+            Reply
+    RIJUL PAUL March 30, 2016 at 1:12 am #
+
+    Hi Adrian, could you just suggest me what I have to do to run this python script on Android Device/Platform
+    Reply
+        Adrian Rosebrock March 30, 2016 at 12:50 pm #
+
+        I personally haven’t done any Android development, but you won’t be able to get a Python + OpenCV script to run on an Android device. You’ll need to rewrite the program to use Java + OpenCV.
+        Reply
+    Namith April 1, 2016 at 1:21 pm #
+
+    When I run the program, I get an error as follows
+
+    Traceback (most recent call last):
+    ImportError: No module named imutils.object_detection
+
+    Pls help
+    Reply
+        Adrian Rosebrock April 1, 2016 at 3:11 pm #
+
+        Hey Namtih, as the blog post mentions, make sure that you have imutils installed:
+
+        $ pip install imutils
+
+        If you do already have imutils installed, make sure you have upgraded to the latest version:
+
+        $ pip install --upgrade imutils
+        Reply
+            Namith April 3, 2016 at 3:37 am #
+
+            Hello. I installed imutils correctly.
+            Now I have a problem with the –images part, which is the path to the directory that contains the list of images we are going to perform pedestrian detection on. The images I want to test on are in a a folder on the desktop. So how to do that?
+            Reply
+                Adrian Rosebrock April 3, 2016 at 10:21 am #
+
+                You need to open up a command line and execute your script, supplying the path to the folder on your desktop:
+
+                $ python detect.py --images /path/to/your/desktop
+                Reply
+    baddrudge April 14, 2016 at 3:35 pm #
+
+    I tried using this concept to build a porn detector by first using the pedestrian detector code to find rectangular regions that contain people then searching those rectangular regions to see if there’s a high concentration of pixels that correspond to skin hues.
+
+    Unfortunately, this library doesn’t seem to detect people in porn images very well.
+    Reply
+        Adrian Rosebrock April 14, 2016 at 4:37 pm #
+
+        In general, it’s going to be very challenging to train a HOG detector to detect pornographic images. Even relying on skin hues will be prone to errors. I would instead suggest utilizing deep learning; specifically, Convolutional Neural Networks for this task.
+        Reply
+    RIJUL PAUL April 26, 2016 at 1:17 am #
+
+    Hey Adrian, I want to stop VideoCapture and cv2.imshow window without using cv2.waitKey(). Is there any way you could suggest??
+    Reply
+        Adrian Rosebrock April 26, 2016 at 5:14 pm #
+
+        Calling cv2.destroyAllWindows will close any windows. Then, you just need to call .release() on the VideoCapture object.
+        Reply
+    RIJUL PAUL April 26, 2016 at 2:00 pm #
+
+    Hello Adrian,Can this code be used for Real time captured Images? What are factors I have to tune for that??
+    Reply
+        Adrian Rosebrock April 26, 2016 at 5:07 pm #
+
+        It certainly can. I cover how to tune the parameters for real-time video in the followup blog post .
+        Reply
+            RIJUL PAUL April 27, 2016 at 9:19 am #
+
+            Thanks man.It really helped a lot :).
+            Reply
+            RIJUL PAUL May 3, 2016 at 2:29 am #
+
+            Thank you for your previous advice.It really worked for me. Can you please give me a way out how to write/rewrite video in append mode??
+            Reply
+                Adrian Rosebrock May 3, 2016 at 5:47 pm #
+
+                I’m not sure how to append frames to a pre-existing video, but I would start with this blog post on writing video to file .
+                Reply
+    Robert May 4, 2016 at 2:58 pm #
+
+    Great post! Im wondering how hard it is to track pedestrians? What I mean is: you have a camera stream with pedestrians. Assuming the above script works fine, I’m able to mark pedestrians.
+    The question is how can I track individual personas? I want to mark them as numbers and track them as long as they’re visible. Once they’re gone, they’re gone. When a new pedestrian appears it bumps the counter and starts tracking that person…
+
+    How to tackle that?
+    Reply
+        Adrian Rosebrock May 4, 2016 at 3:17 pm #
+
+        Tracking is a bit more challenging, but absolutely doable. I would suggest starting with basic CamShift . However, the biggest downside is that CamShift (by definition) utilizes the histogram of the ROI (in this case, the histogram of the person region). This can easily fail. So, a better approach would be to use MOSSE or correlation trackers — I’ve been meaning to do a blog post on them, but just haven’t had the time.
+
+        Finally, the easiest method that I suggest doing is computing the centroid of each ROI between frames. Compute the Euclidean distances between the centroid sets between frames. The centroid that minimizes the distance between the consecutive frames is thus your “match”. You can use this method to “track” objects as they enter and leave view of the camera.
+        Reply
+            Robert May 7, 2016 at 12:37 pm #
+
+            Thanks a bunch :) This sound a little bit like magic to me (a the moment :) ).
+            I’m new in the CV and very enyoing your blog. I’m buying your book very shortly as well and will start going deeper and deeper.
+
+            My plan is to have an app that counts how many people enter a place… Like shop for example, or a house. The stretch goal is to detect faces and to check if that person Has visited the place before. It will be challenging but I hope that goal will let me enter the CV world. This is why I’m asking about tracking as I’ll have to know the “object” path and be sure that objects are counted correctly.
+
+            But starting with your book, then applying a simple face recognition should give me confidence that I can achieve my personal goal.
+
+            Looking forward to see more posts and to be selected to join search Gurus!
+            Reply
+                Adrian Rosebrock May 7, 2016 at 12:39 pm #
+
+                That’s a great project Robert! Enjoy Practical Python and OpenCV. And I’ll be sure to let you know when I do object tracking tutorials in the future.
+                Reply
+    Markus Reuter May 10, 2016 at 8:21 am #
+
+    Hello Adrian!
+
+    First of all, i´m a huge fan of your blog! Really helped me a lot in understanding computer vision ! :)
+
+    I have a problem, i´m trying to do a pedestrian detection in realtime on a raspberry pi2 + picamera .
+
+    I tried to use your code and change it in a way that it is possible to do live-detection of pedestrians with the picamera.
+
+    But i get a lot of errors in my code that i dont understand, would it be possible to explain which part of the code one hast to change to get a real-time Pedestrian Detection? :)
+
+    I wil say thank you in advance! ⬚⬚
+    Reply
+        Adrian Rosebrock May 10, 2016 at 8:24 am #
+
+        In order to modify the pedestrian detection code to run on video streams (rather than single images), you first need to access your webcam/Raspberry Pi camera module. I would start by going through this blog post so you can access your camera.
+
+        From there, you need to move the detectMultiScale and bounding box code to within your main loop that polls for new frames from the camera sensor. This can be accomplished by removing the code that loops over the paths of images on disk with the code that reads new frames. You’ll also need to change the cv2.imread function so that it reads the frame from the camera (again, discussed in the post linked to above). Other than that, not much else has to change.
+        Reply
+    parkjungki May 26, 2016 at 2:01 pm #
+
+    i’m very happy to study python with opencv .
+
+    i saw that pi camera can’t use to this method but , i really hope to using pi camera.
+
+    are there any way to use it?
+    Reply
+        Adrian Rosebrock May 27, 2016 at 1:31 pm #
+
+        You can certainly use the Pi Camera for this code. All you need to do is access the video stream and then apply the pedestrian detector to each frame.
+        Reply
+    Siva Krishna May 29, 2016 at 4:35 am #
+
+    Hello Adrian,
+    I am trying to implement and accelerate a detector for fallen people using HOG. So, as a part of that I have implemented HOG as in Dalal and Triggs paper. I used INRIA dataset and got good results. So, for fallen people I have taken the detection window as 128×64 and remaining parameters same as of standard HOG. I have collected some data set and trained. I have done hard mining also. The problem comes here. When I test it for a image(i.e. HOG is applied as a whole image) there were no detection’s at all. But, when I cut and save each possible(128×64) window of that image and applied HOG on those 128×64 sized images. Surprisingly there are many detection’s on that image. I don’t understand why this is happening. Any suggestions thanks in advance.
+    Reply
+        Adrian Rosebrock May 29, 2016 at 1:53 pm #
+
+        So if I understand your question correctly, you cannot detect people in the original image? But if you crop out the person from the original image, all of a sudden you’re getting your detections? If so, you need to tune your detectMultiScale parameters . Specifically, your image pyramid size seems off.
+        Reply
+    Nathasha May 31, 2016 at 4:49 am #
+
+    Hello Adrian,
+
+    First of all, thank you for your great post!
+
+    As you mentioned in your post, we may have false-positives reported by the final object detector. Is it possible to extract the degree of uncertainty of detection from the HogDescriptor? or the probability that the detected object is a person? (i. e. the detected object is a person with x%)
+
+    Thank you in advance.
+
+    Regards,
+    Reply
+        Adrian Rosebrock May 31, 2016 at 3:41 pm #
+
+        OpenCV won’t give you raw probabilities of the bounding boxes, but you can try checking the weights variable and thresholding them to ensure they are sufficiently large (where “sufficiently large” needs to be manually defined by you).
+        Reply
+            Nathasha June 1, 2016 at 6:10 am #
+
+            Thank you very much for answering my question.
+
+            Since “weights” gives the confidence value returned by the SVM for each detection, it can be considered as the degree of uncertainty of detection, right?
+
+            Could you please kindly explain to me what do you mean by thresholding weights to ensure they are sufficiently large?
+            Do I need to modify hitThreshold like this for example:
+            (rects, weights) = hog.detectMultiScale(image, hitThreshold=1)
+
+            Regards,
+            Reply
+                Adrian Rosebrock June 1, 2016 at 3:20 pm #
+
+                Yes, you are correct — you can consider it as a degree of uncertainty. I would actually loop over the rects and weights individually and then check that way:
+
+                for (rect, weight) in zip(rects, weights): if weight >= YOUR_DEFINED_THRESHOLD: # execute code here
+                1
+                2
+                3
+                	
+                for ( rect , weight ) in zip ( rects , weights ) :
+                     if weight >= YOUR_DEFINED_THRESHOLD :
+                         # execute code here
+
+                You’ll need to manually define the YOUR_DEFINED_THRESHOLD
+                Reply
+                    Nathasha June 2, 2016 at 5:20 am #
+
+                    Great!
+                    Thank you very much for your help!
+
+                    Regards
+                    Adrian Rosebrock June 3, 2016 at 3:10 pm #
+
+                    No problem, happy I could help :-)
+    Bastronaut June 3, 2016 at 3:45 am #
+
+    Thanks a lot Adrian, your posts are incredibly helpful to get started with opencv. I’ve hooked up the code to a video feed and intend to do a detection every n-th frame and experiment with the performance of real-time tracking I can obtain.
+    Reply
+    Romanzo June 9, 2016 at 11:47 pm #
+
+    Hey Adrian, I was wondering if you have pushed your HOG study a bit further and measure some accuracies using the INRIA dataset (as the images in used in your zip file are pretty easy)? And if yes which kinda of results you got at the end.
+
+    I’ve computed some accuracies using DET curve with the INRIA dataset. The pyramid detection parameters in the paper and in default OpenCV are different.
+    Using the HOG INRIA parameters (scale 1.2, window strides 8×8) gives poor results on the INRIA dataset.
+    Using HOG OpenCV default parameters (scale 1.05, window strides 4×4) gives better results but not that great. I don’t really understand how they managed to get good results with a scale 1.2 which is really high. Maybe their code is different but this is just a scale.
+
+    Anyway the the best i could get with OpenCV default value was (for FNR = FPPW) 0.35.
+
+    I’ll appreciate if you could share any of your results! Thanks!
+    Reply
+        Adrian Rosebrock June 12, 2016 at 9:42 am #
+
+        Great question, thanks for asking Romanzo. I personally have not benchmarked the OpenCV pedestrian detector against the INRIA dataset. This would make for a great experiment, as you suggested.
+        Reply
+            Romanzo June 13, 2016 at 9:01 pm #
+
+            Ok no worries. If anyone else wants to share his results please let me know!
+            Reply
+    tommy June 19, 2016 at 9:06 pm #
+
+    How about the a disable human or an old whom bend over?
+    Reply
+        Adrian Rosebrock June 20, 2016 at 5:28 pm #
+
+        You would need to train your own custom detector to detect someone who has fallen over or who has bent over. The default OpenCV pedestrian detector does not handle that.
+        Reply
+    Chris June 27, 2016 at 12:18 am #
+
+    Hi Adrian,
+    First of all, thanks your great post. I used very source code from your blog to debug on my raspberry pi.
+    I try to do a pedestrian detection in real time on raspberry pi 2 and picamera. but I have a problem:
+    i use this code ( http://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/ ) to view picamera, when i use image = cv2.imread(frame) it return error -> so i change to image = np.uint8(frame) it run but can’t detect any pedestrian in my frame.
+    hope you explain why it can’t detect any pedestrian?
+    thank you so much!!
+    Reply
+        Adrian Rosebrock June 28, 2016 at 10:58 am #
+
+        If you’re accessing frames via the Picamera module, you don’t need to use the cv2.imread function as the image itself is stored in image.array read from the capture_continuous function.
+        Reply
+    Mark P June 30, 2016 at 2:37 pm #
+
+    Your idea to reduce the size of the image to reduce false positives really helped! Thanks!
+    Reply
+        Adrian Rosebrock July 1, 2016 at 2:59 pm #
+
+        Fantastic, glad to hear it Mark!
+        Reply
+    Manish August 5, 2016 at 11:02 pm #
+
+    Hi,
+
+    Can I use it in combination with Arduino UNO to detect number of people in a room?
+    What hardware would I need?
+    Reply
+        Adrian Rosebrock August 7, 2016 at 8:16 am #
+
+        I personally have not used the Arduino Uno before, so I’m not sure about the required hardware. I will leave this comment here in hopes that another PyImageSearch reader can help you out.
+        Reply
+    Alishba August 12, 2016 at 3:58 am #
+
+    I downloaded the datasets and applied this code some of the results were inaccurate what’s the reason??
+    Reply
+        Adrian Rosebrock August 12, 2016 at 10:46 am #
+
+        Hey Alishba — I’m honestly not sure why that may be. If you used the exact code and images from this post, you should be getting the same results. Which version of OpenCV are you using?
+        Reply
+    Mona Jalal August 15, 2016 at 5:21 pm #
+
+    Hi Adrian,
+
+    Do you know how can I find an approximately large UAV/drone dataset for both low flying drones as well as high-flying drones?
+
+    Thanks for the tutorial!!
+    Reply
+        Adrian Rosebrock August 16, 2016 at 1:00 pm #
+
+        Hmmm, I’m not sure of such a dataset. If I ever run into any, I’ll be sure to let you know.
+        Reply
+    Mona Jalal August 16, 2016 at 5:23 pm #
+
+    Hi Adrian,
+    I ran your algorithm on this photo http://imgur.com/a/Z7vL7 and it just detects two of the people. What are some of your suggestions for improving it to detect all of the people? Also I’d like to know why HOG+SVM can’t detect everyone here if you could share any insight.
+    This is the output of the algorithm: http://imgur.com/a/KVyr5
+    Thanks,
+    Mona
+    Reply
+        Adrian Rosebrock August 17, 2016 at 12:04 pm #
+
+        See my followup blog post on detectMultiScale parameters .
+        Reply
+    Henry August 22, 2016 at 10:25 pm #
+
+    Is it possible to create a cheap system based on Arduino or similar to get the x- axis coordinates of pedestrians walking by?
+    With or without OpenCV (have no experience in OpenCV)
+
+    The camera resolution can be very low, resulting in about 20 coordinate positions in the field of view. Frame rate can be as low as 2 per seconds.
+
+    Where could I get code in C for that?
+    Reply
+    Chris August 26, 2016 at 2:05 am #
+
+    Hi Adrian. first of all, i very thanks your post.
+    i have applied your detection to run my script. but i have an error while detecting people lower than 100 with height. do you have any idea to fix this issue. i very very thanks so much your response.
+    Reply
+        Adrian Rosebrock August 29, 2016 at 2:10 pm #
+
+        Keep in mind that the HOG detector was trained on 64 x 128 images, so if your image is smaller than 100 pixels, you’ll need to resize it to make it larger.
+        Reply
+    Wanderson September 1, 2016 at 12:10 am #
+
+    Hi Adrian,
+
+    How do I evaluate the true positive rate (TP), TN, FP and FN segmentation. I’ve read quite a lot, but could not get something practical, that is, the programming aspect. Can you help me with some idea?
+    Reply
+        Adrian Rosebrock September 1, 2016 at 10:59 am #
+
+        To evaluate these criteria you would need a training set and a testing set to evaluate against. Most object detection challenges provide testing datasets to evaluate this criteria — they also normally include scripts that you can use to measure TP, TN, FP, and FN using the “intersection over union” criteria.
+        Reply
+            Wanderson Souza September 8, 2016 at 9:49 pm #
+
+            Thank you!
+            Reply
+
+Trackbacks/Pingbacks
+
+    HOG detectMultiScale parameters explained - PyImageSearch - November 16, 2015
+
+    […] Last week we discussed how to use OpenCV and Python to perform pedestrian detection. […]
+
+Leave a Reply Click here to cancel reply.
+
+Comment
+
+Name (required)
+
+Email (will not be published) (required)
+
+Website
+
+Resource Guide (it’s totally free).
+[Get your FREE 11-page Image Search Engine Resource Guide PDF]
+
+Click the button below to get my free 11-page Image Search Engine Resource Guide PDF . Uncover exclusive techniques that I don't publish on this blog and start building image search engines of your own.
+Download for Free!
+You can detect faces in images & video.
+[Learn how to detect faces in images and video]
+
+Are you interested in detecting faces in images & video? But tired of Googling for tutorials that never work? Then let me help! I guarantee that my new book will turn you into a face detection ninja by the end of this weekend. Click here to give it a shot yourself.
+
+PyImageSearch Gurus: NOW ENROLLING!
+
+The PyImageSearch Gurus course is now enrolling! Inside the course you'll learn how to perform:
+
+    Automatic License Plate Recognition (ANPR)
+    Deep Learning
+    Face Recognition
+    and much more!
+
+Click the button below to learn more about the course, take a tour, and get 10 (FREE) sample lessons .
+
+Hello! I’m Adrian Rosebrock.
+
+I'm an entrepreneur and Ph.D who has launched two successful image search engines, ID My Pill and Chic Engine . I'm here to share my tips, tricks, and hacks I've learned along the way.
+Learn computer vision in a single weekend.
+[Become an OpenCV guru]
+
+Want to learn computer vision & OpenCV? I can teach you in a single weekend . I know. It sounds crazy, but it’s no joke. My new book is your guaranteed, quick-start guide to becoming an OpenCV Ninja. So why not give it a try? Click here to become a computer vision ninja.
+
+Subscribe via RSS
+[PyImageSearch RSS Feed]
+
+Never miss a post! Subscribe to the PyImageSearch RSS Feed and keep up to date with my image search engine tutorials, tips, and tricks
+
+    Popular
+
+    Install OpenCV and Python on your Raspberry Pi 2 and B+ February 23, 2015
+    Home surveillance and motion detection with the Raspberry Pi, Python, OpenCV, and Dropbox June 1, 2015
+    How to install OpenCV 3 on Raspbian Jessie October 26, 2015
+    Install OpenCV 3.0 and Python 2.7+ on Ubuntu June 22, 2015
+    Accessing the Raspberry Pi Camera with OpenCV and Python March 30, 2015
+    Install OpenCV 3.0 and Python 2.7+ on OSX June 15, 2015
+    Basic motion detection and tracking with Python and OpenCV May 25, 2015
+
+Search
+Find me on Twitter , Facebook , Google+ , and LinkedIn .
+
+© 2016 PyImageSearch. All Rights Reserved.
+Free 21-day crash course on computer vision & image search engines
+×
+Free 21-day crash course on computer vision & image search engines
+Interested in computer vision and image search engines, but don't know where to start? Let me help. I've created a free, 21-day crash course that is hand-tailored to give you the best possible introduction to computer vision. Sound good? Enter your email below to start your journey to becoming a computer vision master.
+
+Email Address
+
+×
+Almost There...
+
+To start your free 21-day crash course, confirm your email address by clicking the link in the email I just sent you.
+7960fd4dacde1462303655-optin.png
+I hate SPAM and promise to keep your email address safe.
+Yes, I Want Access! No Thanks
+×
+Thanks for subscribing! Please check your email for further instructions.

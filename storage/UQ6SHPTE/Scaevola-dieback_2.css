@@ -1,0 +1,67 @@
+
+/* ::::: null ::::: */
+
+body { margin: 0px; background: transparent none repeat scroll 0% 0%; overflow: hidden; }
+.truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.flickr-embed { position: relative; font-family: "Helvetica Neue",helvetica,arial,sans-serif; background: rgb(255, 255, 255) none repeat scroll 0% 0%; box-shadow: 0px 0px 0px 1px rgb(238, 238, 238) inset; -moz-user-select: none; }
+.flickr-embed a { text-decoration: none; }
+.flickr-embed.is-slideshow .slide { display: none; }
+.flickr-embed.is-slideshow .slide[data-is-current-slide] { display: block; transform: rotate(0deg); }
+.flickr-embed .flickr-embed-header { height: 46px; }
+.flickr-embed .flickr-embed-header .avatar { width: 30px; height: 30px; border-radius: 100%; overflow: hidden; margin-right: 15px; float: left; margin-top: 8px; background-size: cover; }
+.flickr-embed .flickr-embed-header .branding { float: right; width: 50px; margin: 6px 15px 0px; white-space: normal; height: 38px; }
+.flickr-embed .flickr-embed-header .branding svg { fill: rgb(152, 152, 152); pointer-events: none; height: 38px; }
+.flickr-embed .flickr-embed-header .branding a { display: block; }
+.flickr-embed .flickr-embed-header .attribution { font-size: 15px; margin: 0px 0px 0px 15px; line-height: 46px; }
+.flickr-embed .flickr-embed-header .attribution a { color: rgb(152, 152, 152); }
+.flickr-embed .flickr-embed-photo { display: flex; -moz-box-align: center; align-items: center; -moz-box-pack: center; justify-content: center; position: relative; background: black none repeat scroll 0% 0%; }
+.flickr-embed .flickr-embed-photo > a { display: block; }
+.flickr-embed .flickr-embed-photo a { color: white; }
+.flickr-embed .flickr-embed-photo img { margin-bottom: -3px; pointer-events: none; }
+.flickr-embed .flickr-embed-photo canvas { z-index: 1; cursor: move; top: 0px; right: 0px; bottom: 0px; left: 0px; }
+.flickr-embed .flickr-embed-photo .instructions-overlay { position: absolute; color: white; top: 50%; margin-top: -25px; left: 0px; right: 0px; height: 50px; width: 100%; text-align: center; line-height: 1.5em; }
+.flickr-embed .flickr-embed-photo .instructions-overlay p { margin-top: 10px; }
+.flickr-embed .flickr-embed-photo .branding, .flickr-embed .flickr-embed-photo .flickr-embed-photo-footer, .flickr-embed .flickr-embed-photo .sharing { position: absolute; opacity: 0; transition: opacity 150ms ease-in-out 0s; z-index: 2; }
+.flickr-embed .flickr-embed-photo .sharing { position: absolute; top: 0px; left: 0px; width: 260px; pointer-events: auto; z-index: 2; }
+.flickr-embed .flickr-embed-photo .sharing .share-logo { width: 35px; height: 35px; float: left; margin-right: 15px; }
+.flickr-embed .flickr-embed-photo .sharing svg { pointer-events: none; fill: white; width: 35px; height: 35px; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer { bottom: 15px; left: 15px; top: 15px; right: 15px; pointer-events: none; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer.is-video { bottom: 35px; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .title-and-attribution, .flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .license { position: absolute; bottom: 0px; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .title-and-attribution { width: 100%; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .attribution, .flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .title { text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3); color: white; font-size: 14px; left: 0px; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .attribution a, .flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .title a { pointer-events: initial; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .title { width: 50%; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .attribution { font-size: 12px; margin-top: 5px; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer .license { right: 0px; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3); color: white; font-size: 10px; pointer-events: none; display: inline-block; line-height: 1.6em; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer.is-narrow .title-and-attribution { bottom: 20px; }
+.flickr-embed .flickr-embed-photo .flickr-embed-photo-footer.is-narrow .license { left: 0px; }
+.flickr-embed .flickr-embed-photo .branding { top: 5px; right: 15px; width: 80px; }
+.flickr-embed .flickr-embed-photo .branding svg { fill: white; stroke: black; stroke-width: 0.2; }
+.flickr-embed .flickr-embed-photo:hover .flickr-embed-photo-footer, .flickr-embed .flickr-embed-photo:hover .branding, .flickr-embed .flickr-embed-photo:hover .sharing, .flickr-embed .flickr-embed-photo:hover .navigation { opacity: 1; }
+.flickr-embed .flickr-embed-photo .navigation { position: absolute; display: block; width: 40px; height: 80px; margin-top: -40px; background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%; top: 50%; border-radius: 5px; opacity: 0; transition: opacity 150ms ease-in-out 0s; z-index: 2; }
+.flickr-embed .flickr-embed-photo .navigation::before { content: ""; position: absolute; width: 16px; height: 16px; top: 29px; transform: rotate(45deg); }
+.flickr-embed .flickr-embed-photo .navigation.previous { left: 15px; }
+.flickr-embed .flickr-embed-photo .navigation.previous::before { left: 14px; border-left: 4px solid white; border-bottom: 4px solid white; }
+.flickr-embed .flickr-embed-photo .navigation.next { right: 15px; }
+.flickr-embed .flickr-embed-photo .navigation.next::before { left: 5px; border-top: 4px solid white; border-right: 4px solid white; }
+.flickr-embed .flickr-embed-photo .navigation[disabled="disabled"]::before { border-color: rgb(68, 68, 68); }
+.flickr-embed .flickr-embed-photo .navigation:hover:not([disabled="disabled"]), .flickr-embed .flickr-embed-photo .navigation:active { cursor: pointer; background: rgba(0, 0, 0, 0.7) none repeat scroll 0% 0%; opacity: 1; }
+.flickr-embed .flickr-embed-photo .play-button { position: absolute; top: 50%; left: 50%; width: 90px; height: 60px; margin: -45px 0px 0px -45px; background: white none repeat scroll 0% 0%; border-radius: 5px; box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3); z-index: 10; display: block; pointer-events: none; }
+.flickr-embed .flickr-embed-photo .play-button::after { content: ""; position: absolute; top: 50%; left: 50%; margin: -16px 0px 0px -12px; border-top: 16px solid transparent; border-bottom: 16px solid transparent; border-left: 24px solid black; z-index: 20; }
+.flickr-embed .flickr-embed-photo .slide[data-is-playing] .play-button { display: none; }
+.flickr-embed .flickr-embed-photo:hover { cursor: pointer; }
+.flickr-embed .flickr-embed-photo:hover .play-button { background: rgb(237, 237, 237) none repeat scroll 0% 0%; }
+.flickr-embed .flickr-embed-footer { padding: 15px; }
+.flickr-embed .flickr-embed-footer a { color: rgb(33, 33, 36); }
+.flickr-embed .flickr-embed-footer h1 { font-size: 16px; font-weight: 600; margin: 0px; }
+.flickr-embed .flickr-embed-footer.has-description h1 { margin: 0px 0px 15px; }
+.flickr-embed .flickr-embed-footer.is-truncated { padding-bottom: 5px; }
+.flickr-embed .flickr-embed-footer .description, .flickr-embed .flickr-embed-footer .description-full { font-size: 14px; line-height: 20px; position: static; }
+.flickr-embed .flickr-embed-footer .description-full { display: none; }
+.flickr-embed .flickr-embed-footer .truncated-dots { display: block; width: 100%; height: 15px; padding: 10px 0px 0px; }
+.flickr-embed .flickr-embed-footer .truncated-dots:hover { cursor: pointer; }
+.flickr-embed .flickr-embed-footer .truncated-dots .dots, .flickr-embed .flickr-embed-footer .truncated-dots .dots::before, .flickr-embed .flickr-embed-footer .truncated-dots .dots::after { pointer-events: none; width: 5px; height: 5px; background: rgb(173, 173, 173) none repeat scroll 0% 0%; border-radius: 50%; margin: 0px auto; content: ""; display: block; position: relative; }
+.flickr-embed .flickr-embed-footer .truncated-dots .dots::before { left: -8px; }
+.flickr-embed .flickr-embed-footer .truncated-dots .dots::after { left: 8px; top: -5px; }
+.flickr-embed[data-initial-fade] .navigation, .flickr-embed[data-initial-fade] .branding, .flickr-embed[data-initial-fade] .sharing, .flickr-embed[data-initial-fade] .flickr-embed-photo-footer { opacity: 1; }

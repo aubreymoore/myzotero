@@ -1,0 +1,826 @@
+So Near and Yet So Far: Harmonic Radar Reveals Reduced Homing Ability of Nosema Infected Honeybees
+Stephan Wolf1,2*, Dino P. McMahon3,4, Ka S. Lim1, Christopher D. Pull1,5, Suzanne J. Clark6, Robert J. Paxton3,4, Juliet L. Osborne1,7
+1 Department of Agro-Ecology, Rothamsted Research, Harpenden, Hertfordshire, United Kingdom, 2 School of Biological and Chemical Sciences, Queen Mary University of London, London, United Kingdom, 3 School of Biological Sciences, Queen’s University Belfast, Belfast, Northern Ireland, United Kingdom, 4 Institute for Biology, MartinLuther-Universita¨t Halle-Wittenberg, Halle/Saale, Germany, 5 IST Austria (Institute of Science and Technology Austria), Klosterneuburg, Austria, 6 Department of Computational and Systems Biology, Rothamsted Research, Harpenden, Hertfordshire, United Kingdom, 7 Environment and Sustainability Institute, University of Exeter, Falmouth, Cornwall, United Kingdom
+Abstract
+Pathogens may gain a fitness advantage through manipulation of the behaviour of their hosts. Likewise, host behavioural changes can be a defence mechanism, counteracting the impact of pathogens on host fitness. We apply harmonic radar technology to characterize the impact of an emerging pathogen - Nosema ceranae (Microsporidia) - on honeybee (Apis mellifera) flight and orientation performance in the field. Honeybees are the most important commercial pollinators. Emerging diseases have been proposed to play a prominent role in colony decline, partly through sub-lethal behavioural manipulation of their hosts. We found that homing success was significantly reduced in diseased (65.8%) versus healthy foragers (92.5%). Although lost bees had significantly reduced continuous flight times and prolonged resting times, other flight characteristics and navigational abilities showed no significant difference between infected and non-infected bees. Our results suggest that infected bees express normal flight characteristics but are constrained in their homing ability, potentially compromising the colony by reducing its resource inputs, but also counteracting the intra-colony spread of infection. We provide the first high-resolution analysis of sub-lethal effects of an emerging disease on insect flight behaviour. The potential causes and the implications for both host and parasite are discussed.
+Citation: Wolf S, McMahon DP, Lim KS, Pull CD, Clark SJ, et al. (2014) So Near and Yet So Far: Harmonic Radar Reveals Reduced Homing Ability of Nosema Infected Honeybees. PLoS ONE 9(8): e103989. doi:10.1371/journal.pone.0103989
+Editor: Nigel E. Raine, University of Guelph, Canada
+Received January 10, 2014; Accepted July 4, 2014; Published August 6, 2014
+Copyright: ß 2014 Wolf et al. This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+Funding: This study was funded jointly by a grant from BBSRC, Defra, NERC, the Scottish Government and the Wellcome Trust, under the Insect Pollinators Initiative (grant numbers BB/I00097/1 and BB/I000100/1). Rothamsted Research is a national institute of bioscience strategically funded by the UK Biotechnology and Biological Sciences Research Council (BBSRC). The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+Competing Interests: The authors have declared that no competing interests exist.
+* Email: s.wolf@qmul.ac.uk
+
+Introduction
+Behavioural changes in the host in response to infection, whether as a side-effect of infection or an active manipulation by the pathogen or a behavioural response of the host, can have profound direct and indirect effects on both parasite and host [1]. Such behavioural effects may actively facilitate the transmission of the pathogen, such as by active exposure to susceptible hosts or navigational deficits leading to higher encounter rates with new prospective hosts (e.g. ‘drifting’ of honeybees between colonies) (reviewed in [1]). Likewise, pathogen-induced behaviours may be a defence mechanism of the host limiting the spread of the pathogen (e.g. [2]). Thus behavioural changes may be important in shaping host-parasite interactions beyond its immediate effects on both the host and the parasite.
+Social insects typically live at high density in a relatively homogenous environment in the colony and are in many cases genetically closely related; these provide ideal conditions for many pathogens (e.g. [3]). In the honeybee alone, 71 parasite species have been identified [1]. Therefore, social insects are a prime model to study the behavioural effects of pathogens and their consequences, additionally emphasised by the enormous economic
+
+and ecological roles some of these species have as pests (e.g. ant species, termites) and as pollinators (e.g. bees).
+Honeybees (Apis mellifera L. 1758) are the most intensively managed insect pollinators [4–6] and are important for the pollination of many crops [7]. As an example, over one million hives alone are used per year to pollinate almonds in California and sustain the Californian almond industry, which is valued at around $2 billion per year [8]. Although the pollination service provided by honeybees may be compensated by wild pollinators in some agricultural systems [6,9–11], the absence of honeybees may lead to substantial reductions in yield of up to 50% or more [4,12] and would cause dramatic agricultural and economic impacts.
+The importance of the honeybee, however, is harshly contrasted by continued high death rates of colonies, especially in North America and Europe (e.g. [8,13–16]), which have become the focus of intensive scientific scrutiny (e.g. [16,17]). As yet, no single explanatory factor for the observed high losses of honeybee colonies has been identified, and the current consensus is that colony failure is a complex problem, with a multitude of interacting factors being responsible [18]. Emergent and exotic pests and diseases such as Varroa destructor and Nosema ceranae
+
+PLOS ONE | www.plosone.org
+
+1
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+are thought to be one such component in driving colony losses (e.g. [8,16,19]).
+Effective mitigation strategies crucially depend on an understanding of the effects of pathogens on the performance of individual bees and colonies. However, only sometimes do these effects manifest themselves with obvious clinical symptoms, as in American foulbrood (Paenibacillus larvae larvae; [20]) that kills larvae. More often, pathogens affect their hosts in more subtle and cryptic but nonetheless pernicious ways. Such sub-lethal effects are notoriously difficult to study and can often only be quantified in controlled laboratory experiments. This is particularly true for effects on the ‘‘power house’’ of a colony, its foraging worker force. Foragers spend considerable time outside of the hive and disperse widely in the landscape, limiting time and opportunities for the collection of high quality data.
+Nosema ceranae is a microsporidian gut parasite first found in the Eastern Honeybee (Apis cerana; [21]) that has successfully invaded colonies of A. mellifera as an alternative host after being anthropogenically dispersed across the world (e.g. [22–24]). In some regions it is suggested to be a major cause of A. mellifera colony losses [22,25,26]. Though N. ceranae may arguably be more virulent than its European counterpart N. apis [25,27–29] (but see [30]) and even fatal for colonies when at high prevalence, its effects on both individual and colony are generally more subtle, with no obvious symptoms before death [29].
+This pathogen has, however, been demonstrated to have discernible effects on individual honeybee behaviour [31–33]. Investigating the physiology of Nosema-infected bees, Mayack & Naug (2009) [32] showed an increase in energy consumption, lowering response thresholds to different concentrations of sucrose (a proxy measure for hunger) and significantly shortening honeybee lifespan when energy limited. Energetic stress also affected intra-colonial social behaviour; infected bees shared proportionally less food with their nest-mates as compared to uninfected bees [33]. At the colony level, less interactive bees may represent a host defensive response compromising pathogen transmission. Dussaubat et al. (2013) [34] also found increased flight activity in Nosema-infected bees, arguing that this may help to counteract within-colony transmission. Kralj & Fuchs (2009) [31] reported significantly increased losses and prolonged homing times for infected foragers on forced homing flights as short as 30 m, again potentially limiting within-colony pathogen transmission; they also showed that infected bees approach decoy entrances significantly more often than uninfected foragers, suggesting an impairment of the bees’ orientation abilities [31], potentially enhancing transmission of Nosema into other colonies in the vicinity.
+In this study, we explore the impact of pathogen infection on homing performance and navigation of honeybee foragers, which are vitally important to colony welfare and growth [35]. We conduct a homing flight experiment, which is a simple yet effective method for investigating the abilities of bees to find their colony using memorized landscape features (reviewed in [36]; [37–39]). Using harmonic radar, we were able to go beyond just the result of the flight (namely homing success and homing time) and study the entirety of a honeybee’s flight, including its navigational performance. Radar tracking has been successfully employed to study recruitment precision [40], orientation flights [41–45], search patterns [46–48], spatial scale [49], optimization of bee flights [50], bee homing performance following pesticide exposure [51] and flight patterns of butterflies [52,53]. However, this technology has so far not been utilized to specifically study the flight performance of bees in the context of their disease burden. Employing radar tracking technology, here we provide a novel
+
+insight into the sub-lethal effects of N. ceranae on the flight patterns of free flying honeybee foragers.
+We expected to find that Nosema-induced energetic stress, previously demonstrated in the laboratory [32], also affect freeflying bees, resulting in slower flights and/or a more pronounced flight discontinuity, ultimately limiting the bee’s ability to return to the hive and thus limiting within-colony spore transmission. We also expected Nosema-infected bees to show signs of disorientation [31], such as taking flights in the wrong direction, intensified searching behaviour or reduced ability to use natural landmarks for orientation, compared to healthy bees, potentially facilitating transmission of the pathogen to new host colonies.
+Materials and Methods
+Bees All experimental bees originated from three quarantined (see file
+S1 for details) donor colonies (DCs) from the Isle of Colonsay, UK (56u 39 560 N, 6u 129 240 W), which is currently devoid of Varroa destructor so that potentially confounding effects of this mite or its associated viruses were minimized. Regular inspections for Varroa and Nosema ensured the continual absence of these parasites in the quarantined DCs throughout the season.
+Experimental bees were obtained from mature capped brood frames taken from DCs and transferred into an incubator (34.5uC) until the bees emerged. Two to three-day old worker bees were collected from these brood frames, randomly allocated to one of three treatment groups and marked individually with Opalith numbered labels (Bienen-Voigt and Warnholz GmbH and Co. KG, Germany). Each bee received a 10ml treatment-specific inoculum (see below) and was transferred to one of three holding cages in an incubator. After a minimum of two hours, all three groups of bees were introduced into a medium sized A. mellifera host colony (HC), where they could develop into foragers under natural conditions and Nosema can establish in the host. The HC was equipped with a Perspex entrance tunnel with several shutters, allowing for better visual detection, separation and access to foraging experimental bees. The HC was regularly monitored for the presence of the queen, brood and stores. With typical foraging activity and expected colony build-up, this colony showed no sign of atypical behaviour that could have interfered with the experiment during the course of observations.
+Treatments Nosema ceranae spores were extracted from the guts of 5–7
+infected workers. After purification and quantification (see file S1 for detailed description), the spore solution was mixed with a 40% sucrose solution (w/w), forming the treatment inoculum (hereafter Nc). Then 100,000 N. ceranae spores (ca. 10 ml solution) were fed using a pipette to a bee harnessed in a cage. The spore samples were repeatedly checked for Nosema species identity using a species-specific PCR [54].
+We employed two different control treatments. First we used Nosema-free gut-extracts (GE), potentially containing traces of the natural gut flora of bees. Purification and preparation of the parasite-free gut extract inoculum (hereafter CGE) was carried out in parallel to the Nc-inoculum, following an identical protocol. All CGE-samples were carefully examined microscopically to ensure the absence of Nosema spores before being added to a sucrose solution. The second control group received 10ml of pure 40% sucrose solution (CS).
+Post-hoc Nosema screening of all tracked and retrieved bees (see below) was carried out microscopically. Only screening of the
+
+PLOS ONE | www.plosone.org
+
+2
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+spore loads from the dissected mid-gut was carried out as defecation potentially reduces spore loads in the hind-gut.
+Harmonic Radar The tracking of a bee’s flight relies on a 16 mm long dipole
+aerial with a Schottky diode, forming a transponder that is vertically attached to the thorax of the bee [55]. At ca. 12–15 mg, the weight of the transponder is considerably lighter than a typical nectar or pollen load carried by a bee [41].
+The transponder is excited by microwaves emitted from a stationary, horizontally scanning radar system (9.41 GHz-transmitter, 3 kHz pulse repetitive frequency (PRF)) and returns a microwave of a harmonic frequency of the original wave for which the experimental arena is specifically scanned. With the radar system turning at 20 rpm, this provides a positional record of a bee flying within a range of 900 m every 3 seconds [55,56]. The transponder signals are not uniquely identified and only one individual can be tracked at a time. Radar tracking relies on a clear line-of-sight between the radar and the tracked object. Obscuring landscape features like high vegetation, buildings or high terrain may prevent the continuous recording of positional information [49].
+Experimental Design The experiment was undertaken in favourable weather condi-
+tions (ambient temperature on average .15uC, no rain, no or light wind) between 15th July and 27th September 2011 across a flat and harvested wheat field at Rothamsted Farm, UK (51u 48947.440 N, 0u 229 45.740 W), providing ideal conditions for unobstructed radar tracking over several hundred metres. Positions of the host colony (HC), the radar (R) and the release site (RS) are given in Fig. 1a. The host colony was located at a field margin where it was sheltered by a hedge but sufficiently prominent to allow bee tracking even close to the entrance of the hive. The release site (RS) was located 120 m across a harvested wheat field from the hive. Though within the familiar landscape, the exact position of the RS did not provide any visual cue that the bees could have learned as a conspicuous landmark prior to tracking.
+Marked returning foragers (treated and control) were collected from the entrance tunnel using a small cage, and we ensured an approximately even contribution of groups throughout the day. A caged bee was placed in a dark box and transferred to the release site, where the bee was equipped with the transponder and released immediately. By using returning foragers, bees were naturally motivated to return to the colony and unload collected nectar and pollen, ensuring tracked bees performed a flight towards the colony rather than embarking on a foraging flight. This approach also allowed us to account for the behavioural age of the bees (first forging flights typically occur 12 days after emergence, [57]), reducing the chances of tracking inexperienced bees. Active foraging typically commences only after a period of close range orientation during which the landscape features around the hive are learned [41]. Therefore, incoming foragers can be assumed to have a well established memory of the colony position in the surrounding landscape.
+The time required to catch, displace and prepare the bee (hereafter referred to as ‘handling time’) was recorded using a stopwatch. Despite the coordinates of the release site remaining constant throughout the experiment, we ensured a bee’s start position was recorded by the radar prior to release to radar-record the actual bee position, to ensure the functionality of the transponder and to provide an accurate start point for each track. During homing flights, the entrance of the colony was closely monitored. Bees that successfully returned to the HC (Fig. 2) were
+
+caught before they entered the hive and the transponder was removed. All tracked and successfully retrieved bees were kept in individual 50 ml plastic pots and provided with 40% sucrose solution until they could be transferred to a –80uC freezer at the end of each tracking day, to be analysed later for their disease status and, if diseased, pathogen load.
+Data Analysis Based on the recorded radar signals, tracks were manually
+digitalized using a custom-made TAS - Track Analysis Software V1.0 (by Shane Hatty, Rothamsted Research 2008). Positional information was transformed from polar coordinates (range, angle) to Cartesian coordinates (x, y) for further analysis.
+From the tracks we extracted two types of parameter using Matlab V7 (www.mathworks.com): 1) parameters related to the actual flight characteristics of the bee irrespective of its homing success (hereafter Flight parameter: mean and maximum flight speed, mean and maximum acceleration, track straightness with reference to the last track coordinate, mean and maximum turning angle, proportion of flight time of total track duration, and number of stops (defined as tracking discontinuities longer than 10 seconds and with a distance between last recorded position and position of re-emergence smaller than 10 m) and 2) parameters characterizing the spatial and temporal dimensions of the track itself (hereafter Track parameter: track length, track duration (i.e. homing time), total flight time, directionality towards the hive measures as both ‘‘Approachiness’’ and bearing angles after half of the homing distance (see below and file S1 for further details)).
+As track parameters, in contrast to flight parameters, are affected by homing success, we only compared track parameters between treatment groups for bees that successfully returned to the colony. Total and mean stop duration qualified as both track and flight parameters and were therefore included in the analysis of both parameters types.
+In a recent homing-experiment using Radar tracking, Fischer et al. (2014) [51] used bearing angles to assess navigational performance of homing bees. After displacement pre-trained bees typically exhibited a two-component flight path composed of a vector flight (the established flight route prior to replacement) and a homing flight after re-orientation [51]. In contrast, the foragers in this study were freely foraging in the landscape exhibiting homing flights comparable to the homing-component of Fischer et al. (2014) [51]. We thus analysed the heading direction (Figs. 3–5) when the bee fist flew beyond 60 m from the release site (half of the homing distance) or at the last known position in cases where the tracks did not progress beyond 60 m (n = 5). This approach allowed a comparison of the spatial distribution of returning and non-returning bees on the homing flight accounting for initial reorientation loops.
+Additionally we assessed the navigational abilities of the tracked bees through the goal-directedness of the entire homing flights towards the hive (goal). We used mean goal directedness of the entire track (hereafter referred to as ‘‘Approachiness’’ A) based on the angle (a) formed between a bee’s position (tn), the position of the hive and the next recorded bee position (tn+1). Using the difference of maximal and realized angle divided by the maximal angle for every consecutive pair coordinates A results in A = 1 (a = 0u) for a direct approach, A = 21 (a = 180u) for flights away from the hive and A = 0 (a = maximal for the respective distance between the two focal positions of the bee) for equidistant orbiting flights. The individual A-values were multiplied by the percentage of the total track length that was covered between the two positions (tn to tn+1) to adjust for potentially different contributions of each track-section to the overall bee movement. The mean of all
+
+PLOS ONE | www.plosone.org
+
+3
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+Figure 1. Study area. a) Schematic map of the study area indicating the positions of the experimental colony (hive-symbol), the release site (star) and the radar (red arrow) in the agricultural landscape (non-flowering crop/harvested fields: light green; field margins: solid black line; field tracks: brown; hedges: green, dashed black outline; woodland: dark green, solid black outline). Areas with impaired radar tracking are shown in horizontal stripes. b) Graphical representation of a homing flight track (circles) and the two hypothetical flight scenarios in a radar-centred x-y-coordinate system (unit = metres): S1) straight homing flight from the release site (star) to the colony (red) and S2) flight along available field margin connecting the release site and the hive (blue), both represented by the coordinates of 100 points evenly distributed along either path. The distance of the realized homing flight to either scenario was used as a proxy measure of the utilization of landscape features by bees of the different treatments to orientate towards the colony. doi:10.1371/journal.pone.0103989.g001
+
+distance-adjusted A-values per track were used as measure for flight directionality.
+We also tested the utilization of available landmarks by the bees as a proximate measure of orientation ability. We compared the actual flight paths to two hypothetical homing flight scenarios: S1) the direct (straight) flight from the release site (RS) to the hive, and S2) a flight along the available landmarks following the field margin connecting release site to hive (Fig. 1b). For both hypothetical paths, we calculated the coordinates of 100 equidistantly spaced markers representing the path. Using the coordinates of the bee’s position during the homing flight, we determined the distance to the nearest possible marker under either scenario. Both shortest total and mean distances (i.e. minimum deviation from either S1 or S2) of a bee’s flight under either scenario were used to assign the realized flight to one of these two hypothetical flight paths. During the initial orientation loops the nearest reference points to either scenario were typically centred on the release site were both hypothetical flight path differ only marginally (Figs. 1 and 3, 4) and assignment to either scenario was only possible once the bees embarked on the homebound flight. The vast majority of the directional homing flights following the orientation loop(s) was observed within close proximity to the hypothetical flight paths (Figs. 1 and 3) allowing for a representative matching of the flight paths of the different treatment groups to either hypothetical flight path.
+Statistics All statistical analyses were performed using the statistical
+software GenStat V14.1. (VSN International, 2011). Radar-inferred parameters were compared among treatment
+groups using a linear mixed model (LMM) fitted by restricted maximum likelihood (REML), with a crossed fixed model (treatment 6 homing success) and a nested random model
+
+(tracking day 6 bee). Where necessary, parameters were transformed to achieve homogeneity of variances and normality. All results are reported as predicted or back-transformed (geometric) means with 95% confidence intervals. However, these individual analyses did not account for potential interactions among the recorded parameters and the magnitude and direction such interactions might have on the different treatment groups. Thus, to complement LMM analyses we used normalized and standardized track data to separately analyse pooled track parameters, pooled flight parameters and the full set of parameters using Canonical Variate Analysis (CVA).
+The effects of ambient temperature, handling time and spore load on track and flight parameters were assessed for each treatment group separately using simple linear regression (SLR) on normalized data. The separation of treatment groups allowed assessment of the effects of a variable within a treatment group, overcoming the confounding effects of the treatment per se, which were appropriately analysed through the LMM-analyses. The effects of infection intensity (spore load) on bee flights were undertaken for Nc-bees only, as only these were found to be infected with Nosema spores.
+Results
+Experimental Bees Over the course of the experiment we introduced a total of 2030
+bees to the host colony (HC), of which 713 were inoculated with N. ceranae (Nc). The 1317 control bees were treated with either Nosema-free gut extract (CGE: 624) or 40% sucrose (CS: 693). As bees of all three treatment groups originated from a common brood-frame and developed within the same colony environment, the age groups of these bees was assumed to be similar across treatments.
+
+PLOS ONE | www.plosone.org
+
+4
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+Figure 2. Homing performance. Percentage of non-returning bees during homing flights per treatment group (sample sizes: Nc: 38; CGE: 32; CS: 35). A significantly higher proportion (X2 = 12.3, d.f. = 2, p = 0.002) of bees inoculated with Nosema ceranae failed to return to the colony as compared to the control bees. doi:10.1371/journal.pone.0103989.g002
+
+All tests of Nosema species composition in the inocula showed the exclusive presence of N. ceranae. Likewise both control inocula were confirmed to be Nosema-negative. Overall we tested the homing ability of 105 bees (Nc: 38, CGE: 32, CS: 35). Of these, we successfully recorded flight tracks of 33 Nosema-inoculated bees (Nc), 30 CGE bees and 33 CS bees. These tracks either ended at the colony for successfully homing bees, or were truncated suggesting that the bee stopped flying before reaching the hive.
+Handling Time The mean handling times (mean 6 SD) per treatment group
+were Nc: 322s6128s (range: 142s–699s), CGE: 300s6104s (range:
+
+158s–573s) and CS: 322s6122s (range: 148s–590s) and did not statistically differ among treatment groups (Kruskal-Wallis ANOVA: H = 0.223, d.f. = 2, p = 0.894). We found no significant effect of handling time on any of the flight or track parameters, even after excluding data points identified through Cook’s influence statistics (Ci,[58]) as strongly affecting the overall outcome (see file S1).
+Spore Load All tracked bees that returned to the hive and could be captured
+on their return (76 bees (Nc: 23; CGE: 26; CS: 27)) were screened for their Nosema load. Nosema spores were exclusively found in the
+
+PLOS ONE | www.plosone.org
+
+5
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+Figure 3. Flight paths of returned bees. Graphical representation of all recorded flight paths of successfully homed bees: a) sucrose-control bees (CS), b) gut-extract-control bees (CGE) and c) Nosema-inoculated (Nc). The release site is located at the origin of the axes and the hive position indicated by the white arrow. The grey circle illustrates the 60 m perimeter at which track heading direction was assessed and which is illustrated in the inserts (black arrow: overall mean heading direction). doi:10.1371/journal.pone.0103989.g003
+
+mid-guts of bees from the inoculated Nc-group, while both control groups were Nosema free, confirming both successful spore inoculation and no cross-contamination after the application of the treatments.
+Within the Nc-group, spore loads varied from 2.376106 to 4.706107 spores per midgut, with a mean spore load of 1.826107 (69.646106: SD), which compares well to the spore loads of bees in naturally infected colonies [25].
+Homing Success Of the 105 tested bees, 87 (82.9%) successfully returned to the
+colony. Homing success significantly differed between the Nosemainoculated group (Nc), of which 13 of 38 (34.2%) did not return to the hive, and the Nosema-free control bees (X2 = 12.3, d.f. = 2, p = 0.002), of which consistently no more than 10% (CGE: 3 of 32, CS: 2 of 35; X2 = 0.13, d.f. = 1, p = 0.72) failed to return home (Fig. 2).
+Of the 105 tested individuals, we were only able to successfully radar track 96 due to technical errors during recording. In total, eighty-three of these 96 bees (86.5%) were homing bees, reducing the overall number of non-returning bees whose initial flights could be recorded to 8, 3 and 2, Nc, CGE and CS respectively. Examining the pre-release conditions, we found no significant differences in the handling times of bees that failed to return (306s6120s (range: 150s–600s)) and those that successfully returned to the hive (315s6119s (range: 142s–699s)) (H = 0.122, d.f. = 1, p = 0.73). Likewise there was no significant difference in the ambient temperatures during the homing flights of nonreturning and homed bees; temperatures ranged from 12.5uC to 22.0uC (Tmean = 17.3uC) and 13.0uC to 22.0uC (Tmean = 16.6uC), respectively (U19, 87 = 640.5, p = 0.127).
+Homing Time Homing time (HT), i.e. track duration of returning bees, in all
+three treatment groups showed considerable variation, ranging from less than one minute up to well over 30 min (Table 1), but did not vary between treatments (FHT2, 71.5 = 0.85, p,0.433). On average, bees in the different treatment groups required 184 s (C.I.: 118, 288), 196 s (C.I.: 131, 292) and 227 s (C.I.: 149, 344) for Nc, CS and CGE, respectively, to return to the colony.
+
+Flight and Track Characteristics Overall, flight characteristics varied widely within treatment
+groups (TR) and none of the parameters differed significantly between the Nosema infected bees and the control bees (Table 1) even if returning and non-returning bees were analysed separately (Table S1). This indicates that an infection with N. ceranae does not affect the characteristics of the flight itself. Analysing all flight parameters together using a multivariate approach (Canonical Variate Analysis (CVA)) confirmed that flight parameters do not allow a clear separation of the treatment groups (Fig. 6a).
+For the track parameters, we found a similar pattern. Approachiness (a measure of directionality of hive approach) was the only parameter that showed a highly significant reduction from 0.30 and 0.42, for CGE and CS bees respectively, to 0.11 in the Ncgroup (FTR2, 86.3 = 9.98, p,0.001) (Tables 1 and S1). This effect is expected as the overall Approachiness value increases towards the end of a successful homing flight and thus we expect reduced values for non-returning bees, which were heavily represented in the Nc-group. In comparison with all other parameters, only ‘‘Approachiness’’ and actual total flight time showed some separation of the Nc-group from the controls (Fig. 6b). Both of these parameters are greatly affected by homing success.
+Track Continuity To assess flight energetics, we measured i) the number, total
+duration and mean duration of flight interruptions (stops) and ii) interrupted flights, as well as continuous, uninterrupted flight time and corresponding distances (Table 1). Again, all of these parameters showed high variation independent of treatment and were not significantly different among treatments (Table 1).
+Non-returning bees were characteristically different from returning bees. They exhibited a reduced continuous flight time (FHS1, 143.8 = 8.94, p = 0.003) and distance between ‘‘stops’’ (FHS1, 130.6 = 8.55, p = 0.004) and an increase in continuous stop duration (FHS1, 115.0 = 4.50, p = 0.036) compared to homed bees (Table 1).
+Navigational Abilities We found that a significant majority (Nc: 65.6%, CGE: 70.0%,
+CS: 63.6%, total: 66.3%) of experimentally displaced bees more closely followed the available landmarks back to their hive (S2 -
+
+PLOS ONE | www.plosone.org
+
+6
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+Figure 4. Flight path of non-returned bees. Graphical representation of all recorded flight paths of non-retuning bees and the spatial distribution of the final bee positions (CS: double black line, white diamonds, end-position = white cross; CGE: grey line, light grey markers, endposition = grey cross; Nc: black line, black markers, end-position = black cross). The release site is located at the origin of the axes and the hive position indicated by the white arrow. The grey circle illustrates the 60 m perimeter at which track heading direction was assessed and which is illustrated in the inserts (black arrow: overall mean heading direction). doi:10.1371/journal.pone.0103989.g004
+
+flights) rather than using a direct route (S1 - flights) (X2 = 10.12,
+d.f. = 1, p = 0.0015), with no significant difference in the frequency of S1–flights and S2–flights between the treatment groups (X2 = 0.295, d.f. = 2, p = 0.86).
+Successfully homing bees, independent of treatment group,
+predominantly took a flight path with mean heading directions at 60m from the release site of 284.3u 634.4u for the CS-control, 259.2u 659.0u for the CGE-control and 268.8u 636.9u for the Nosema-inoculated bees. The heading directions of the nonreturning bees were 315.2u 652.3u(CS), 231.3u 661.3u(CGE) and 261.3u 679.5u(Nc). This is in line with our findings on the utilized flight paths as this bearing angle matches the route of the field
+track represented in the first part of flight scenario S2 (Fig. 1).
+Neither treatment (TR), homing success (HS) nor the interaction
+of both (TR*HS) revealed differences in the mean heading
+
+direction (FTR2, 89.0 = 3.05, p.0.05; FHS1, 89.0 = 0.16, p.0.69; FTR*HS2, 89.0 = 0.83, p.0.44) (Figs. 3–5).
+Of the non-returning bees, the majority flew approximately along the landmarks (e.g. successfully returning bees) but did not arrive at the colony either because the flight path was truncated before the colony was reached or because the bee overshot along the hedgerow, and did not manage to return to the hive afterwards. With the exception of one bee assuming a long and straight flight path in the wrong direction (and leaving the range of the radar, not to return), all bees that did not follow landmarks immediately assumed flight paths that were interpreted as the initial part of an orientation loop, as seen in successfully homed bees. Thus, apart from one bee, the track information of the nonreturning bees provides no clear signs of disorientation (Fig. 4).
+
+PLOS ONE | www.plosone.org
+
+7
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+Figure 5. Flight direction. Box plots (box: median (central line) 6 quartiles; whiskers: minimum – maximum values) of heading direction of homed and non-returning bees within each treatment (Nc = Nosema-inoculated, CGE = bee gut-extract-control, CS = sucrose-control) group after crossing the 60 m perimeter around the release site. The direction of the hive is indicated by the central dashed line. As the majority of the bees followed the available landmarks rather than assuming a direct approach to the hive, heading directions after 60 m from the release site generally deviate from the ideal direction. Using a linear mixed model (LMM) fitted by restricted maximum likelihood (REML), there was neither a statistically significant difference between homed and non-returning bees nor among the treatment groups. doi:10.1371/journal.pone.0103989.g005
+
+Effects of Infection Intensity Though we found no significant differences in flight and track
+parameters between the inoculated bees and the control bees (see above), we also tested whether spore load might explain withintreatment variation in flight parameters. Using simple linear regression (SLR) on Nosema-inoculated bees (Nc-group), we found no significant relationship between infection intensity (measured as
+
+both spores per mid-gut and spore density (spores/ml)) and the flight and track parameters. However, there was a positive, yet non-significant, trend between normalized spore load and both mean and total stop duration (spore density vs. mean stop duration/total stop duration: d.f. regression, total = 1, 20/1, 20; s.s. = 1.661/2.28; v.r. = 3.55/3.33; p = 0.075/0.084) (Fig. S1), sug-
+
+PLOS ONE | www.plosone.org
+
+8
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+PLOS ONE | www.plosone.org
+
+Table 1. Summary of flight parameters.
+
+9
+
+treatment
+home sample size track length [m]* homing time [s]* total flight time [s] continual flight time [s] mean stop time [s]** total stop time [s]** continual stop time [s] mean number of stops continual flight distance [m] mean flight speed [ms21] max flight speed [ms21] mean acceleration [ms22] max acceleration [ms22] approachiness track straightness*
+nonreturning
+sample size track length [m]* homing time [s]* total flight time [s] continual flight time [s] mean stop time [s]** total stop time [s]**
+
+N.c. mean
+25 249.00 105.89 101.05 36.50
+22.48
+31.95 41.38
+1.24
+72.78
+2.98
+7.21
+0.98
+3.22
+0.37 0.52
+8 47.47 13.68
+52.41 107.61
+
+CGE
+
+CS
+
+total
+
+295% C.I. +95% C.I. mean 295% C.I. +95% C.I. mean 295% C.I. +95% C.I. mean
+
+201.40 75.41 73.87 25.99
+8.99
+11.95 26.94
+0.79
+47.23
+2.55
+6.35
+0.83
+2.75
+0.29 0.43
+
+307.90 148.70 138.20 51.22
+54.2
+32.80 63.60
+1.80
+112.20
+3.42
+8.19
+1.13
+3.76
+0.46 0.62
+
+28 250.10 205.50 90.44 65.85 84.38 63.77 32.28 23.49
+36.54 15.21
+59.25 22.68 70.17 46.74
+1.43 0.96
+70.89 47.33
+3.42 3.02
+7.28 6.49
+1.16 1.02
+3.40 2.96
+0.40 0.33 0.55 0.47
+
+304.30 124.20 111.70 44.36
+85.90
+152.30 105.30
+2.00
+106.20
+3.83
+8.17
+1.30
+3.91
+0.48 0.65
+
+30 225.40 186.60 88.10 64.43 87.49 65.55 28.47 21.12
+20.43 8.88
+29.01 11.80 76.49 51.73
+1.12 0.73
+51.62 35.34
+3.18 2.78
+7.72 6.87
+1.06 0.92
+3.68 3.18
+0.43 0.36 0.59 0.51
+
+272.30 120.50 116.80 38.36
+45.5
+69.40 113.10
+1.59
+75.40
+3.57
+8.69
+1.19
+4.26
+0.50 0.68
+
+83 90.70 32.24
+25.6
+38.06 60.56
+1.26
+64.34
+3.19
+7.40
+1.07
+2.56
+0.40 0.55
+
+28.85 8.06
+11.35 19.85
+
+78.10 23.23
+230.00 564.80
+
+2 9.82 3.76 27.81 12.90
+64.72 2.60 83.81 2.12
+
+25.70 59.94
+
+3 131.68 49.94 9.64 1.91
+
+1199.90 2300.70
+
+5.46 6.07
+
+20.65 20.74
+
+347.20 48.58
+116.80 190.90
+
+13 39.45 15.42
+27.30 39.23
+
+LMM (REML)-variance component analyses
+
+295% C.I. +95% C.I. total home vs. total lost
+
+F
+
+d.d.f. (n.d.f. = 1) p
+
+73.59 26.82 15.03 22.13 46.62 0.99 50.90 2.86 6.75 0.96 1.96 0.35 0.50
+
+111.78 38.76 43.26 65.00 78.70 1.55 81.32 3.53 8.12 1.17 3.38 0.45 0.61
+
+12.27 8.48
+0.33
+0.48 6.55
+0.01
+8.42
+0.16
+0.52
+0.04
+1.00
+39.82 -
+
+89.8 51.3 83.2 86.0 112.6 90.0 48.7 89.6 89.9 90.0 86.6 89.5
+
+,0.01 ,0.01 0.57 0.49 0.01 0.94 ,0.01 0.69 0.47 0.84 0.32 ,0.001
+
+24.05 8.28
+5.56 6.72
+
+64.72 28.74
+121.03 280.60
+
+Flight Performance of Nosema-Infected Honeybees
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+PLOS ONE | www.plosone.org
+
+Table 1. Cont.
+
+10
+
+total
+
+treatment
+continual stop time [s] mean number of stops continual flight distance [m] mean flight speed [ms21] max flight speed [ms21] mean acceleration [ms22] max acceleration [ms22] approachiness
+sample size track length [m]* homing time [s]* total flight time [s] continual flight time [s] mean stop time [s]** total stop time [s]** continual stop time [s] mean number of stops continual flight distance [m] mean flight speed [ms21] max flight speed [ms21] mean acceleration [ms22] max acceleration [ms22]
+
+N.c. mean 120.42 1.59 23.48 3.14 7.87 1.07 3.56 20.16
+33 249.00 105.89 69.26 22.34 34.41 58.82 70.59 1.41 41.34 3.06 7.53 1.02 3.39
+
+CGE
+
+CS
+
+total
+
+295% C.I. +95% C.I. mean 295% C.I. +95% C.I. mean 295% C.I. +95% C.I. mean
+
+61.01
+
+237.70
+
+116.18 48.46
+
+278.50 44.50 3.56
+
+556.80
+
+85.38
+
+0.74
+
+2.86
+
+1.45 0.11
+
+4.42
+
+0.41 20.36
+
+2.13
+
+1.08
+
+12.02
+
+45.90
+
+37.41 14.38
+
+97.30
+
+37.63 4.65
+
+304.40
+
+32.09
+
+2.51
+
+3.76
+
+2.54 1.35
+
+3.73
+
+3.01 1.86
+
+4.16
+
+2.90
+
+6.50
+
+9.53
+
+5.31 3.71
+
+7.60
+
+5.82 4.04
+
+8.40
+
+6.24
+
+0.84
+
+1.30
+
+0.79 0.34
+
+1.24
+
+1.05 0.61
+
+1.49
+
+0.97
+
+2.72
+
+4.66
+
+2.13 1.25
+
+3.64
+
+2.23 1.30
+
+3.80
+
+3.43
+
+20.29
+
+20.03
+
+0.20 20.05
+
+0.46
+
+0.40 0.15
+
+0.66
+
+0.15
+
+201.40 75.41 50.85 16.32
+14.02 22.18 46.78
+0.92
+27.75
+2.63
+6.65
+0.88
+2.89
+
+307.90 148.70 94.30 30.59
+82.50 153.40 106.50
+2.03
+61.58
+3.49
+8.53
+1.17
+3.96
+
+30 250.10 205.50 90.44 65.85 28.79 17.30 29.96 19.77
+48.67 9.90 70.48 11.86 90.29 55.41
+1.44 0.62
+51.50 30.65
+2.98 2.34
+6.22 5.12
+0.97 0.74
+2.69 2.04
+
+304.30 124.20 47.90 45.40
+225.30 396.30 147.10
+2.68
+86.54
+3.63
+7.56
+1.21
+3.54
+
+33 225.40 186.60 88.10 64.43 107.34 64.37 16.57 7.28
+10.77 1.60 13.57 1.65 58.34 16.20
+0.73 0.15
+44.07 15.23
+3.09 2.45
+6.71 5.51
+1.05 0.82
+2.86 2.17
+
+272.30 120.50 179.00 37.70
+52.20 79.10 210.10
+1.60
+127.51
+3.73
+8.16
+1.30
+3.78
+
+LMM (REML)-variance component analyses
+
+295% C.I. +95% C.I. total home vs. total lost
+
+33.78
+
+215.8
+
+0.39
+
+2.09
+
+14.45
+
+71.30
+
+2.27
+
+3.52
+
+5.17
+
+7.55
+
+0.74
+
+1.20
+
+3.13
+
+3.75
+
+0.02
+
+0.28
+
+total N.c. vs. total CGE vs. total CS
+
+F
+
+d.d.f. (n.d.f. = 2) p
+
+0.30
+
+77.7
+
+0.74*
+
+0.28
+
+76.4
+
+0.75*
+
+0.73
+
+85.0
+
+0.48
+
+0.30
+
+70.1
+
+0.75
+
+0.36
+
+83.2
+
+0.55
+
+0.87
+
+86.0
+
+0.42
+
+1.08
+
+147.1
+
+0.34
+
+0.69
+
+90.0
+
+0.50
+
+0.45
+
+68.6
+
+0.64
+
+0.68
+
+89.6
+
+0.41
+
+0.49
+
+89.9
+
+0.49
+
+1.35
+
+85.3
+
+0.27
+
+0.38
+
+88.2
+
+0.68
+
+Flight Performance of Nosema-Infected Honeybees
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Table 1. Cont.
+
+LMM (REML)-variance component analyses
+
+treatment approachiness track straightness*
+
+N.c. mean 0.11 0.52
+
+CGE
+
+CS
+
+total
+
+PLOS ONE | www.plosone.org
+
+295% C.I. +95% C.I. mean 295% C.I. +95% C.I. mean 295% C.I. +95% C.I. mean
+
+295% C.I. +95% C.I. total home vs. total lost
+
+0.03
+
+0.19
+
+0.30 0.17
+
+0.44
+
+0.42 0.28
+
+0.55
+
+9.98
+
+86.3
+
+0.001 0.55*
+
+0.43
+
+0.62
+
+0.55 0.47
+
+0.65
+
+0.59 0.51
+
+0.68
+
+0.60
+
+77.1
+
+Table of sample sizes, predicted means and 95% confidence intervals (C.I.) of the analysed flight characteristics, and statistics for homed bees, non-returning bees and the total dataset. Parameters were compared using linear mixed models (LMM) fitted by restricted maximum likelihood (REML), with a crossed fixed model (treatment 6 homing success) and a nested random model (tracking day 6 bee). Denominator degrees of freedom (d.d.f.) are reported individually whereas the test-wide unvaried nominator degree of freedom (n.d.f.) is given in the heading. Parameters marked with an asterisk (*) were only for successfully homed bees (see also Table S1). Parameters marked with two asterisks (**) were assessed excluding composite tracks (n = 3) consisting of two sub-tracks recorded over a long period of time i.e. putative non-returning bees re-emerging on the radar screen after a long period of discontinuous radar-tracking (tracking of other bees interspersed with non-tracking times while bees were prepared and displaced), characterized by one very long putative stop separating the two track-components. doi:10.1371/journal.pone.0103989.t001
+
+Flight Performance of Nosema-Infected Honeybees
+
+gesting these relationships warrant closer attention in future studies.
+Discussion
+The performance of a honeybee colony is governed by the performance of its members. Changes to the foraging behaviour and success of its individuals may compromise the colony as a whole. Likewise such changes may have important implications for other intra- and inter-specific interactions. Looking at the effects of an emerging bee pathogen, Nosema ceranae, on homing performance of foraging bees, we aimed to gain a better understanding of how this invasive pathogen affects the behaviour of individual bees and may ultimately shape the performance of the entire colony, and of how this pathogen might enhance its own transmission.
+In line with previous reports (e.g. [31]), we find that the homing abilities of Nosema-inoculated bees are strongly compromised. The proportion of non-returning bees is quantitatively similar to that detected by Kralj & Fuchs (2010) [31], who reported a loss of approximately 19% of infected bees compared to 7% of a clean control group, at a homing distance of only 30 m, which is very short compared to even conservative estimates of honeybee foraging distances (e.g. mean foraging distance: 1000m (May), 5500m (August) [59]; mean: 1543m (range: 62–10,000m) [60]). Testing returning foragers on a 120 m homing flight, as we carried out here, is likely to provide a more realistic estimate of Nosemainduced losses in foragers.
+The striking effect on homing success was, surprisingly, not reflected in the flight characteristics that we measured. Of the bees that returned home, we did not find any differences in the time required to return to the colony, in contrast to the findings of Kralj & Fuchs (2010) [31]. The latter study released and compared return times of bees only in discrete pairs and did not account for within group variability across the experiment, thus considerably reducing the variability of their data set. In our study, even after statistically accounting for daily and individual variation, homing times varied greatly among and within treatment groups, though neither handling times nor ambient temperature had a significant effect on homing time.
+Nosema apis may accelerate the age-polyethism of bees, i.e. bees have an earlier onset of foraging and age more quickly [1]. N. ceranae is likely to cause similar effects. Though not experimentally controlled, tracking day (i.e. the bee’s physical and behavioural age) as a source of variation was taken into account in the statistical analyses. As the experiment was conducted over several weeks, all three treatment groups comprised a widely overlapping range of differently experienced and aged foragers. The overall effects on homing performance may be differentially affected by both experience and old age, and are unlikely to be solely caused by an accelerated behavioural schedule. However, as our observations on flight performance are restricted to Nosema infected bees that developed into foragers we may underestimate the colony-level effects of Nosema on honeybees as Nosema infection may cause some bees not even to commence foraging.
+Detailed analysis of the flight parameters measured by the radar likewise revealed no differences in performance among treatments. Nosema-inoculated bees neither exhibited reduced flight speed, acceleration, continuous flight times, continuously covered flight distances nor increased numbers of stops or stopping times, as compared to control groups. Apart from a high proportion of bees failing to return home (Fig. 4), our data show no clear effect of N. ceranae on a bee’s flight performance, even for infection levels as high as 46.96106 spores per midgut.
+
+11
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+Figure 6. Comparison of flight performance. Biplots of a Canonical Variate Analysis (CVA) of a) normalized and standardized flight parameters (a: max. acceleration, b: mean acceleration, c: max. velocity, d: mean velocity, e: mean gap duration, f: total gap-duration, g: straightness) and b) normalized and standardized track parameters (h: actual total flight-time, i: Approachiness, j: total track duration, k: track length, f: total gap duration,
+N e: mean gap duration; h and f coincident). Treatment mean scores+95% C.I. (solid circles) and circumferential polygons are given as follows: sucrose-
+control CS: m, dotted line; gut-extract control CGE: , solid line; Nosema-inoculated Nc: ., dashed line. Both graphs show a low discriminative power of both types of parameter in separating Nosema-infected and uninfected bees, with only Approachiness (i), highly affected by homing success, allowing some separation of the infected non-returning bees from the rest. doi:10.1371/journal.pone.0103989.g006
+
+Kralj & Fuchs (2010) [31] showed significant disorientation of Nosema-infected bees when challenged with a short-range displace-release-entrance choice experiment (6–10 m). They suggested these orientation deficits contribute to the reduction in homing success and an increased disease spread to adjacent colonies through the drift of infected workers to those colonies.
+
+Our analyses of the flight patterns and heading directions on 120 m homing flights revealed no pernicious effect of N. ceranae on a bees’ ability to utilize available landmarks for orientation in a real world setting. Several of the non-returning bees actually appeared to follow the landmarks but did not manage to home in on the colony. The challenge of distinguishing an unexpected
+
+PLOS ONE | www.plosone.org
+
+12
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+dummy entrance from the real colony entrance, as opposed to the challenge of utilizing known landmarks to re-orientate towards the hive, might explain the discrepancy in the results of Kralj & Fuchs (2010) [31] and this study.
+Two thirds of the bees from each treatment group were clearly navigating along field margins typical for honeybees (e.g. [61,62]) (Figs. 3 and 4). The remarkable consistency of this pattern despite the significantly different representation of non-returning bees among the groups suggests a minor, if any, effect of N. ceranae on the orientation abilities of foragers. This is supported by the fact that all but one (n = 13) non-returning bee showed flight tracks well matching the initial parts of the flight paths observed in successfully homed bees.
+The significant reduction in directionality of the approach to the colony (Approachiness) of infected bees, which at first glance indicated an impaired orientation, can be explained by parameter dependency on homing success, with non-returning bees typically achieving low Approachiness scores. When taking homing success into account, no differences were found. Likewise, both homed and non-returning bees did not differ significantly in the overall heading direction, after covering 60 m from the release site.
+With no clear evidence of Nosema affecting flight characteristics and navigational abilities, Nosema-induced energetic limitation [32,33] provides a plausible, alternative explanation for the observed losses of infected bees in the field. Honeybee flight is energetically costly and is fuelled by relatively low energy reserves. The increased energetic demands imposed by Nosema on bees [32] could compromise a bee’s ability to compensate for small displacements on the returning flight. The extended flight burden imposed by our experimental displacement of 120 m, a detour likely to occur naturally through wind drift, was apparently sufficient to impact on homing success of the Nosema-infected bees.
+For the non-returning bees, which were mostly inoculated, we found a significant reduction of continuously sustained flight times and vastly increased stop durations the latter being also weakly associated with infection intensity in successfully returned bees (Fig. S1). Though we could not test the infection levels of nonreturning bees, it is reasonable to assume that at least all nonreturning bees from the Nc - group were infected, given that all returning bees from this group were infected with Nosema (spore loads from 7.96103 to 1.576105 spores/ml).
+In addition to Nosema infected bees being unable to return to the colony, possible increased energetic demands in foragers through Nosema infection may have more far-reaching effects for the colony. Honeybee foraging is energetically optimized by a trade off between energy delivery and associated expenditure costs, thus maximizing energy efficiency [63]. Increases in costs may lead to inefficient foraging, either through reducing crop loads in order to minimize flight costs (thus not adequately exploiting available resources), or over-investing in the transport of a normal cropload. Though this remains to be studied in detail, both scenarios would reduce the net energy influx into the colony, therefore lowering the resources crucial for colony growth. Also a reduced willingness of Nosema-infected bees to share food within the hive, as demonstrated by Naug & Gibbs (2009) [33], may contribute to an energetic deprivation of the colony, causing pronounced colony level effects of Nosema.
+Though the energetics of the bees was not tested in this study, our data can be plausibly explained by energetic stress imposed by a Nosema infection. However, the lack of a clear difference between treatment groups in flight performance and the considerable spore loads found in some successfully returning bees of the Nc-treatment group also indicate that the interactions between the
+
+host and the parasite may be more complex, and may not readily affect host bee flight behaviour.
+By limiting the probability of an infected bee returning to its hive, Nosema may limit its spread within the host bee’s colony but promote its spread to con-specific and hetero-specific hosts because pathogens may be transmitted by foragers on shared floral resources [64,65]. However, the behavioural effects that we detected seem, if anything, to limit the further spread of Nosema spores between colonies and heterospecific hosts; though our data suggest that infected bees fail to return to their host colony after experimental displacement, such bees seems to be forced to permanently stop on their path back to the colony, and may be therefore unlikely to transmit spores. Further studies of the foraging behaviour of infected and non-returning bees is needed to test determine their role in potentially enhancing the transmission of the parasite.
+In summary, our study shows that Nosema-induced homing deficits on displaced bees are mostly expressed in reduced flight performance rather than through a compromised navigation. As suggested by truncated flight paths, Nosema-infected bees seem to be challenged by sustained periods of flight, leading to increased mortality of bees en route to their home colony. Beyond these pernicious effects for the host, this has marked implications for the pathogen. Whereas navigational deficits may potentially facilitate the spread of spores to new host colonies through drifting, bees physically incapable of reaching any hive on a return flight from foraging grounds might also compromise the survival of the pathogen. This would suggest a non-directional host-response to the infection rather than an active behavioural manipulation by Nosema to facilitate its transmission. Further research is needed to explore both the details of the trade-off between these effects on the host and the pathogen, especially in commercial apiaries with high colony densities, and the underlying mechanisms (physiological constraints, navigational deficits) causing the behavioural effects in N. ceranae infected bees.
+Supporting Information
+Figure S1 Correlation of pathogen-load and stop-duration. Simple linear regression plots and 95% confidence limits of a bee’s log-mean and total stop duration (s) and spore load (spores/ ml) for Nosema-infected bees successively excluding those data points (a, b), which have been identified as having a disproportionately strong effect on the overall regression by Cook-statistics. Though non-significant for the full data set, the exclusion of either one or both of the outliers returned a significant positive relationship between stop time and Nosema-level within the infected group. The predictive power of spore load increased from around 10% (full data set) to a maximum of over 40% (both outliers excluded). (TIF)
+Table S1 Summary of flight parameters for home vs. non-returning bees. Table of predicted means and 95% confidence intervals (C.I.) of the analysed flight characteristics for both homing and non-returning bees per treatment group (CS = sucrose-control, CGE = bee gut-extract-control, Nc = Nosema-inoculated). Within each homing group (home, non-returning) parameters were compared between treatment groups using linear mixed models (LMM) fitted by restricted maximum likelihood (REML), with treatment as fixed model and a nested random model (tracking day 6 bee). Denominator degrees of freedom (d.d.f.) are reported individually whereas the test-wide unvaried nominator degree of freedom (n.d.f.) is given in the heading. Due to data specific characteristics the p-value labelled
+
+PLOS ONE | www.plosone.org
+
+13
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+with an asterisk (*) is given as Wald-statistic (Wald-statistic; d.f.; Chi-probability) calculated from the LMM (REML). As straightness of the track is calculated from the shortest vs. the realized flight path from the release site to the hive, this parameter could not be analysed for non-returning bees. (DOCX)
+File S1 Supporting information. Detailed description of the experimental prodedures, data analyses and additional statistical analyses of the results. (DOCX)
+References
+1. Schmid-Hempel P (1998) Parasites in social insects: Princeton University Press. 2. Mu¨ller CB, Schmid-Hempel P (1993) Exploitation of cold temperature as
+defence against parasitoids in bumblebees. Nature 363: 65–67. 3. Sherman PW, Seeley TD, Reeve HK (1998) Parasites, pathogens, and polyandry
+in honeybees. The American Naturalist 151: 392–396. 4. Klein AM, Vaissiere BE, Cane JH, Steffan-Dewenter I, Cunningham SA, et al.
+(2007) Importance of pollinators in changing landscapes for world crops. Proceedings of the Royal Society B: Biological Sciences 274: 303–313. 5. Aizen MA, Garibaldi LA, Cunningham SA, Klein AM (2009) How much does agriculture depend on pollinators? Lessons from long-term trends in crop production. Annals of Botany 103: 1579–1588. 6. Rader R, Howlett BG, Cunningham SA, Westcott DA, Newstrom-Lloyd LE, et al. (2009) Alternative pollinator taxa are equally efficient but not as effective as the honeybee in a mass flowering crop. Journal of Applied Ecology 46: 1080– 1087. 7. Gallai N, Salles J-M, Settele J, Vaissie`re BE (2009) Economic valuation of the vulnerability of world agriculture confronted with pollinator decline. Ecological Economics 68: 810–821. 8. Ratnieks FLW, Carreck NL (2010) Clarity on honeybee collapse? Science 327: 152–153. 9. Winfree R, Bartomeus I, Cariveau DP (2011) Native pollinators in anthropogenic habitats. Annual Review of Ecology, Evolution, and Systematics 42: 1–22. 10. Aizen MA, Harder LD (2009) The global stock of domesticated honeybees is growing slower than agricultural demand for pollination. Current Biology 19: 915–918. 11. Garibaldi LA, Steffan-Dewenter I, Winfree R, Aizen MA, Bommarco R, et al. (2013) Wild pollinators enhance fruit set of crops regardless of honeybee abundance. Science 339: 1608–1611. 12. Southwick EE, Southwick Jr L (1992) Estimating the economic value of honeybees (Hymenoptera: Apidae) as agricultural pollinators in the United States. Journal of Economic Entomology 85: 621–633. 13. vanEngelsdorp D, Hayes J, Jr., Underwood RM, Pettis JS (2008) A survey of honeybee colony losses in the U.S., Fall 2007 to Spring 2008. PLoS One 3: e4071. 14. Moritz RFA, de Miranda JR, Fries I, Le Conte Y, Neumann P, et al. (2010) Research strategies to improve honeybee health in Europe. Apidologie 41: 227– 242. 15. Neumann P, Carreck NL (2010) Honeybee colony losses. Journal of Apicultural Research 49: 1–6. 16. Potts SG, Biesmeijer JC, Kremen C, Neumann P, Schweiger O, et al. (2010) Global pollinator declines: trends, impacts and drivers. Trends in Ecology & Evolution 25: 345–353. 17. Becher MA, Osborne JL, Thorbek P, Kennedy PJ, Grimm V (2013) Towards a systems approach for understanding honeybee decline: a stocktaking and synthesis of existing models. Journal of Applied Ecology 50: 868–880. 18. Oldroyd BP (2007) What’s killing American honeybees? PLoS Biology 5: e168. 19. Vanbergen AJ, Insect Pollinator Initiative (2013) Threats to an ecosystem service: pressures on pollinators. Frontiers in Ecology and the Environment 11: 251–259. 20. Hansen H, Brødsgaard C (1999) American foulbrood: a review of its biology, diagnosis and control. Bee World 80: 5–23. 21. Fries I, Feng F, da Silva A, Slemenda SB, Pieniazek NJ (1996) Nosema ceranae n. sp. (Microspora, Nosematidae), morphological and molecular characterization of a microsporidian parasite of the Asian honeybee Apis cerana (Hymenoptera, Apidae). European Journal of Protistology 32: 356–365. 22. Higes M, Martin R, Meana A (2006) Nosema ceranae, a new microsporidian parasite in honeybees in Europe. Journal of Invertebrate Pathology 92: 93–95. 23. Klee J, Besana AM, Genersch E, Gisder S, Nanetti A, et al. (2007) Widespread dispersal of the microsporidian Nosema ceranae, an emergent pathogen of the western honeybee, Apis mellifera. Journal of Invertebrate Pathology 96: 1–10. 24. Bollan K, Hothersall JD, Moffat C, Durkacz J, Saranzewa N, et al. (2013) The microsporidian parasites Nosema ceranae and Nosema apis are widespread in
+
+Acknowledgments
+We thank Andrew Abrahams for providing experimental bee colonies. We are grateful to J. Swain, P. Tomkins, P. M. Wells, I. Denholm and A. M. Reynolds for support and fruitful discussions. We also thank the staff of Rothamsted Farm for their instrumental support. We thank the editor and anonymous reviewers for constructive comments that helped improve earlier versions of the manuscript.
+Author Contributions
+Conceived and designed the experiments: JLO RJP SW KSL. Performed the experiments: SW KSL DPM CDP. Analyzed the data: SW KSL SJC DPM. Contributed reagents/materials/analysis tools: SW DPM KSL SJC. Wrote the paper: SW. Revised the manuscript: SW DPM KSL CDP SJC RJP JLO.
+honeybee (Apis mellifera) colonies across Scotland. Parasitology Research 112: 751–759. 25. Higes M, Martin-Hernandez R, Botias C, Bailon EG, Gonzalez-Porto AV, et al. (2008) How natural infection by Nosema ceranae causes honeybee colony collapse. Environmental Microbiology 10: 2659–2669. 26. Paxton RJ (2010) Does infection by Nosema ceranae cause ‘‘Colony Collapse Disorder’’ in honeybees (Apis mellifera). Journal of Apicultural Research 49: 80– 84. 27. Higes M, Garcia-Palencia P, Martin-Hernandez R, Meana A (2007) Experimental infection of Apis mellifera honeybees with Nosema ceranae (Microsporidia). Journal of Invertebrate Pathology 94: 211–217. 28. Paxton RJ, Klee J, Korpela S, Fries I (2007) Nosema ceranae has infected Apis mellifera in Europe since at least 1998 and may be more virulent than Nosema apis. Apidologie 38: 558–565. 29. Fries I (2010) Nosema ceranae in European honeybees (Apis mellifera). Journal of Invertebrate Pathology 103 Suppl 1: S73–79. 30. Forsgren E, Fries I (2010) Comparative virulence of Nosema ceranae and Nosema apis in individual European honeybees. Veterinary Parasitology 170: 212–217. 31. Kralj J, Fuchs S (2010) Nosema sp. influences flight behaviour of infected honeybee (Apis mellifera) foragers. Apidologie 41: 21–28. 32. Mayack C, Naug D (2009) Energetic stress in the honeybee Apis mellifera from Nosema ceranae infection. Journal of Invertebrate Pathology 100: 185–188. 33. Naug D, Gibbs A (2009) Behavioral changes mediated by hunger in honeybees infected with Nosema ceranae. Apidologie 40: 595–599. 34. Dussaubat C, Maisonnasse A, Crauser D, Beslay D, Costagliola G, et al. (2013) Flight behavior and pheromone changes associated to Nosema ceranae infection of honeybee workers (Apis mellifera) in field conditions. Journal of Invertebrate Pathology 113: 42–51. 35. Bryden J, Gill RJ, Mitton RAA, Raine NE, Jansen VAA (2013) Chronic sublethal stress causes bee colony failure. Ecology Letters 16: 1463–1469. 36. Goulson D, Osborne JL (2009) Foraging range and the spatial distribution of worker bumblebees. In: Jarau S, Hrncir M, editors. Food exploitation by social insects: ecological, behavioral, and theoretical approaches. Boca Raton, FL [etc.]: CRC Press. 97–114. 37. Pahl M, Zhu H, Tautz J, Zhang S (2011) Large scale homing in honeybees. PLoS One 6: e19669. 38. Henry M, Beguin M, Requier F, Rollin O, Odoux J-F, et al. (2012) A common pesticide decreases foraging success and survival in honeybees. Science 336: 348–350. 39. Cresswell JE, Thompson HM (2012) Comment on "A common pesticide decreases foraging success and survival in honeybees". Science 337: 1453; author reply 1453. 40. Riley JR, Greggers U, Smith AD, Reynolds DR, Menzel R (2005) The flight paths of honeybees recruited by the waggle dance. Nature 435: 205–207. 41. Capaldi EA, Smith AD, Osborne JL, Fahrbach SE, Farris SM, et al. (2000) Ontogeny of orientation flight in the honeybee revealed by harmonic radar. Nature 403: 537–540. 42. Menzel R, Greggers U, Smith AD, Berger S, Brandt R, et al. (2005) Honeybees navigate according to a map-like spatial memory. Proceedings of the National Academy of Sciences of the United States of America 102: 3040–3045. 43. Menzel R, Kirbach A, Haass W-D, Fischer B, Fuchs J, et al. (2011) A common frame of reference for learned and communicated vectors in honeybee navigation. Current Biology 21: 645–650. 44. Menzel R, Lehmann K, Manz G, Fuchs J, Koblofsky M, et al. (2012) Vector integration and novel shortcutting in honeybee navigation. Apidologie 43: 229– 243. 45. Osborne JL, Smith A, Clark SJ, Reynolds DR, Barron MC, et al. (2013) The ontogeny of bumblebee flight trajectories: from naive explorers to experienced foragers. PLoS One 8: e78681.
+
+PLOS ONE | www.plosone.org
+
+14
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Flight Performance of Nosema-Infected Honeybees
+
+46. Reynolds AM (2009) Levy flight patterns are predicted to be an emergent property of a bumblebees’ foraging strategy. Behavioral Ecology and Sociobiology 64: 19–23.
+47. Reynolds AM, Smith AD, Menzel R, Greggers U, Reynolds DR, et al. (2007) Displaced honeybees perform optimal scale-free search flights. Ecology 88: 1955–1961.
+48. Reynolds AM, Smith AD, Reynolds DR, Carreck NL, Osborne JL (2007) Honeybees perform optimal scale-free searching flights when attempting to locate a food source. Journal of Experimental Biology 210: 3763–3770.
+49. Osborne JL, Clark SJ, Morris RJ, Williams IH, Riley JR, et al. (1999) A landscape-scale study of bumblebee foraging range and constancy, using harmonic radar. Journal of Applied Ecology 36: 519–533.
+50. Lihoreau M, Raine NE, Reynolds AM, Stelzer RJ, Lim KS, et al. (2012) Radar tracking and motion-sensitive cameras on flowers reveal the development of oollinator multi-destination routes over large spatial scales. PLoS Biology 10: e1001392.
+51. Fischer J, Mu¨ller T, Spatz A-K, Greggers U, Gru¨newald B, et al. (2014) Neonicotinoids interfere with specific components of navigation in honeybees. PLoS One 9: e91364.
+52. Cant E, Smith A, Reynolds DR, Osborne JL (2005) Tracking butterfly flight paths across the landscape with harmonic radar. Proceedings of the Royal Society B: Biological Sciences 272: 785–790.
+53. Ovaskainen O, Smith AD, Osborne JL, Reynolds DR, Carreck NL, et al. (2008) Tracking butterfly movements with harmonic radar reveals an effect of population age on movement distance. Proceedings of the National Academy of Sciences 105: 19090–19095.
+54. Fries I, Chauzat M-P, Chen Y-P, Doublet V, Genersch E, et al. (2013) Standard methods for Nosema research. Journal of Apicultural Research 52: 1–28.
+
+55. Riley JR, Smith AD, Reynolds DR, Edwards AS, Osborne JL, et al. (1996) Tracking bees with harmonic radar. Nature 379: 29–30.
+56. Riley JR, Smith AD (2002) Design considerations for an harmonic radar to investigate the flight of insects at low altitude. Computers and Electronics in Agriculture 35: 151–169.
+57. Becher MA, Scharpenberg H, Moritz RFA (2009) Pupal developmental temperature and behavioral specialization of honeybee workers (Apis mellifera L.). Journal of Comparative Physiology A 195: 673–679.
+58. Lane PW, Cunningham R, Donnelly C (2011) RCHECK procedure. Checks the fit of a linear, generalized linear or nonlinear regression. In: Payne RW, editor. GenStat Release 14 Reference Manual: VSN International.
+59. Beekman M, Ratnieks FLW (2000) Long range foraging by the honeybee, Apis mellifera L. Functional Ecology 14: 490–496.
+60. Steffan-Dewenter I, Kuhn A (2003) Honeybee foraging in differentially structured landscapes. Proceedings of the Royal Society of London Series B: Biological Sciences 270: 569–575.
+61. Dyer FC (1994) Spatial cognition and navigation in insects. Behavioral mechanisms in evolutionary ecology: University of Chicago Press. 66–98.
+62. Dyer FC (1996) Spatial memory and navigation by honeybees on the scale of the foraging range. Journal of Experimental Biology 199: 147–154.
+63. Schmid-Hempel P, Kacelnik A, Houston AI (1985) Honeybees maximize efficiency by not filling their crop. Behavioral Ecology and Sociobiology 17: 61– 66.
+64. Durrer S, Schmid-Hempel P (1994) Shared use of flowers leads to horizontal pathogen transmission. Proceedings of the Royal Society B-Biological Sciences 258: 299–302.
+65. Fu¨rst M, McMahon DP, Osborne JL, Paxton RJ, Brown MJF (2014) Disease associations between honeybees and bumblebees as a threat to wild pollinators. Nature 506: 364–366.
+
+PLOS ONE | www.plosone.org
+
+15
+
+August 2014 | Volume 9 | Issue 8 | e103989
+
+Copyright of PLoS ONE is the property of Public Library of Science and its content may not be copied or emailed to multiple sites or posted to a listserv without the copyright holder's express written permission. However, users may print, download, or email articles for individual use.
+

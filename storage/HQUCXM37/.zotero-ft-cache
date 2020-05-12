@@ -1,0 +1,507 @@
+Navigation
+PyImageSearch PyImageSearch Be awesome at learning OpenCV, Python, and computer vision
+Home
+Main Menu
+
+    Start Here
+    Practical Python and OpenCV
+    PyImageSearch Gurus
+    OpenCV 3 Tutorials
+    FREE OpenCV Crash Course
+    About
+    Contact
+
+Return to Content
+Sliding Windows for Object Detection with Python and OpenCV
+By Adrian Rosebrock on March 23, 2015 in Machine Learning , Tutorials
+Twitter 0
+LinkedIn 11
+
+sliding_window_example
+
+So in last week’s blog post we discovered how to construct an image pyramid.
+
+And in today’s article we are going to extend that example and introduce the concept of a sliding window . Sliding windows play an integral role in object classification, as they allow us to localize exactly  “where” in an image an object resides.
+
+Utilizing both a sliding window and an image pyramid we are able to detect objects in images at various scales and locations.
+
+In fact, both sliding windows and image pyramids are both used in my 6-step HOG + Linear SVM object classification framework!
+
+To learn more about the role sliding windows play in object classification and image classification, read on. By the time you are done reading this blog post, you’ll have an excellent understanding on how image pyramids and sliding windows are used for classification.
+
+Looking for the source code to this post?
+Jump right to the downloads section.
+
+OpenCV and Python versions:
+This example will run on  Python 2.7/Python 3.4+ and OpenCV 2.4.X/OpenCV 3.0+ .
+What is a sliding window?
+
+In the context of computer vision (and as the name suggests), a sliding window is rectangular region of fixed width and height that “slides” across an image, such as in the following figure:
+Figure 2: Example of the sliding a window approach, where we slide a window from left-to-right and top-to-bottom.
+
+Figure 1: Example of the sliding a window approach, where we slide a window from left-to-right and top-to-bottom.
+
+For each of these windows, we would normally take the window region and apply an image classifier to determine if the window has an object that interests us — in this case, a face.
+
+Combined with image pyramids we can create image classifiers that can recognize objects at varying scales and locations in the image.
+
+These techniques, while simple, play an absolutely critical role in object detection and image classification.
+Sliding Windows for Object Detection with Python and OpenCV
+
+Let’s go ahead and build on your image pyramid example from last week .
+
+Remember the helpers . py   file? Open it back up and insert the sliding_window   function:
+
+Sliding Windows for Object Detection with Python and OpenCV
+Python
+# import the necessary packages import imutils def pyramid(image, scale=1.5, minSize=(30, 30)): # yield the original image yield image # keep looping over the pyramid while True: # compute the new dimensions of the image and resize it w = int(image.shape[1] / scale) image = imutils.resize(image, width=w) # if the resized image does not meet the supplied minimum # size, then stop constructing the pyramid if image.shape[0] < minSize[1] or image.shape[1] < minSize[0]: break # yield the next image in the pyramid yield image def sliding_window(image, stepSize, windowSize): # slide a window across the image for y in xrange(0, image.shape[0], stepSize): for x in xrange(0, image.shape[1], stepSize): # yield the current window yield (x, y, image[y:y + windowSize[1], x:x + windowSize[0]])
+22
+23
+24
+25
+26
+27
+	
+def sliding_window ( image , stepSize , windowSize ) :
+# slide a window across the image
+for y in xrange ( 0 , image . shape [ 0 ] , stepSize ) :
+for x in xrange ( 0 , image . shape [ 1 ] , stepSize ) :
+# yield the current window
+yield ( x , y , image [ y : y + windowSize [ 1 ] , x : x + windowSize [ 0 ] ] )
+
+The sliding_window   function requires three arguments. The first is the image   that we are going to loop over. The second argument is the stepSize  .
+
+The stepSize indicates how many pixels we are going to “skip” in both the (x, y) direction. Normally, we would not want to loop over each and every pixel of the image (i.e.   stepSize = 1  ) as this would be computationally prohibitive if we were applying an image classifier at each window.
+
+Instead, the stepSize   is determined on a per-dataset basis and is tuned to give optimal performance based on your dataset of images. In practice, it’s common to use a stepSize   of 4 to 8 pixels. Remember, the smaller your step size is, the more windows you’ll need to examine.
+
+The last argument windowSize   defines the width and height (in terms of pixels) of the window we are going to extract from our image  .
+
+Lines 24-27 are fairly straightforward and handle the actual “sliding” of the window.
+
+Lines 24-26 define two for   loops that loop over the (x, y) coordinates of the image, incrementing their respective  x   and  y   counters by the provided step size.
+
+Then, Line 27 returns a tuple containing the x   and y   coordinates of the sliding window, along with the window itself.
+
+To see the sliding window in action, we’ll have to write a driver script for it. Create a new file, name it sliding_window . py  , and we’ll finish up this example:
+
+Sliding Windows for Object Detection with Python and OpenCV
+Python
+# import the necessary packages from pyimagesearch.helpers import pyramid from pyimagesearch.helpers import sliding_window import argparse import time import cv2 # construct the argument parser and parse the arguments ap = argparse.ArgumentParser() ap.add_argument("-i", "--image", required=True, help="Path to the image") args = vars(ap.parse_args()) # load the image and define the window width and height image = cv2.imread(args["image"]) (winW, winH) = (128, 128)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+	
+# import the necessary packages
+from pyimagesearch . helpers import pyramid
+from pyimagesearch . helpers import sliding_window
+import argparse
+import time
+import cv2
+ 
+# construct the argument parser and parse the arguments
+ap = argparse . ArgumentParser ( )
+ap . add_argument ( "-i" , "--image" , required = True , help = "Path to the image" )
+args = vars ( ap . parse_args ( ) )
+ 
+# load the image and define the window width and height
+image = cv2 . imread ( args [ "image" ] )
+( winW , winH ) = ( 128 , 128 )
+
+On Lines 2-6 we import our necessary packages. We’ll use our pyramid   function from last week to construct our image pyramid. We’ll also use the sliding_window   function we just defined. Finally we import argparse   for parsing command line arguments and cv2   for our OpenCV bindings.
+
+Lines 9-12 handle parsing our command line arguments. We only need a single switch here, the -- image   that we want to process.
+
+From there, Line 14 loads our image off disk and Line 15 defines our window width and height to be 128 pixels, respectfully.
+
+Now, let’s go ahead and combine our image pyramid and sliding window:
+
+Sliding Windows for Object Detection with Python and OpenCV
+Python
+# import the necessary packages from pyimagesearch.helpers import pyramid from pyimagesearch.helpers import sliding_window import argparse import time import cv2 # construct the argument parser and parse the arguments ap = argparse.ArgumentParser() ap.add_argument("-i", "--image", required=True, help="Path to the image") args = vars(ap.parse_args()) # load the image and define the window width and height image = cv2.imread(args["image"]) (winW, winH) = (128, 128) # loop over the image pyramid for resized in pyramid(image, scale=1.5): # loop over the sliding window for each layer of the pyramid for (x, y, window) in sliding_window(resized, stepSize=32, windowSize=(winW, winH)): # if the window does not meet our desired window size, ignore it if window.shape[0] != winH or window.shape[1] != winW: continue # THIS IS WHERE YOU WOULD PROCESS YOUR WINDOW, SUCH AS APPLYING A # MACHINE LEARNING CLASSIFIER TO CLASSIFY THE CONTENTS OF THE # WINDOW # since we do not have a classifier, we'll just draw the window clone = resized.copy() cv2.rectangle(clone, (x, y), (x + winW, y + winH), (0, 255, 0), 2) cv2.imshow("Window", clone) cv2.waitKey(1) time.sleep(0.025)
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+	
+# loop over the image pyramid
+for resized in pyramid ( image , scale = 1.5 ) :
+# loop over the sliding window for each layer of the pyramid
+for ( x , y , window ) in sliding_window ( resized , stepSize = 32 , windowSize = ( winW , winH ) ) :
+# if the window does not meet our desired window size, ignore it
+if window . shape [ 0 ] != winH or window . shape [ 1 ] != winW :
+continue
+ 
+# THIS IS WHERE YOU WOULD PROCESS YOUR WINDOW, SUCH AS APPLYING A
+# MACHINE LEARNING CLASSIFIER TO CLASSIFY THE CONTENTS OF THE
+# WINDOW
+ 
+# since we do not have a classifier, we'll just draw the window
+clone = resized . copy ( )
+cv2 . rectangle ( clone , ( x , y ) , ( x + winW , y + winH ) , ( 0 , 255 , 0 ) , 2 )
+cv2 . imshow ( "Window" , clone )
+cv2 . waitKey ( 1 )
+time . sleep ( 0.025 )
+
+We start by looping over each layer of the image pyramid on Line 18 .
+
+For each layer of the image pyramid, we’ll also loop over each window in the sliding_window   on Line 20 . We also make a check on Lines 22-23  to ensure that our sliding window has met the minimum size requirements.
+
+If we were applying an image classifier to detect objects, we would do this on Lines 25-27 by extracting features from the window and passing them on to our classifier (which is done in our 6-step HOG + Linear SVM object detection framework ).
+
+But since we do not have an image classifier, we’ll just visualize the sliding window results instead by drawing a rectangle on the image indicating where the sliding window is on Lines 30-34 .
+Results
+
+To see our image pyramid and sliding window in action, open up a terminal and execute the following command:
+
+Sliding Windows for Object Detection with Python and OpenCV
+Shell
+$ python sliding_window.py --image images/adrian_florida.jpg
+1
+	
+$ python sliding_window .py -- image images / adrian_florida .jpg
+
+If all goes well you should see the following results:
+Figure 2: An example of applying a sliding window to each layer of the image pyramid.
+
+Figure 2: An example of applying a sliding window to each layer of the image pyramid.
+
+Here you can see that for each of the layers in the pyramid a window is “slid” across it. And again, if we had an image classifier ready to go, we could take each of these windows and classify the contents of the window. An example could be “does this window contain a face or not?”
+
+Here’s another example with a different image:
+
+Sliding Windows for Object Detection with Python and OpenCV
+Shell
+$ python sliding_window.py --image images/stick_of_truth.jpg.jpg
+1
+	
+$ python sliding_window .py -- image images / stick_of_truth .jpg .jpg
+
+Figure 3: A second example of applying a sliding window to each layer of the image pyramid.
+
+Figure 3: A second example of applying a sliding window to each layer of the image pyramid.
+
+Once again, we can see that the sliding window is slid across the image at each level of the pyramid. High levels of the pyramid (and thus smaller layers) have less windows that need to be examined.
+Summary
+
+In this blog post we learned all about sliding windows and their application to object detection and image classification.
+
+By combining a sliding window with an image pyramid we are able to localize and detect objects in images at multiple scales and locations .
+
+While both sliding windows and image pyramids are very simple techniques, they are absolutely critical in object detection.
+
+You can learn more about the more global role they play in this blog post , where I detail my framework on how to use the Histogram of Oriented Gradients image descriptor and a Linear SVM classifier to build a custom object detector.
+Downloads:
+If you would like to download the code and images used in this post, please enter your email address in the form below. Not only will you get a .zip of the code, I’ll also send you a FREE 11-page Resource Guide on Computer Vision and Image Search Engines, including exclusive techniques that I don’t post on this blog! Sound good? If so, enter your email address and I’ll send you the code immediately!
+
+Email address:
+
+Resource Guide (it’s totally free).
+
+[Get your FREE 11-page Image Search Engine Resource Guide PDF]
+Enter your email address below to get my free 11-page Image Search Engine Resource Guide PDF . Uncover exclusive techniques that I don't publish on this blog and start building image search engines of your own!
+
+classification , histogram of oriented gradients , hog , image pyramid , linear svm , machine learning , object detection , sliding window
+Image Pyramids with Python and OpenCV
+Accessing the Raspberry Pi Camera with OpenCV and Python
+33 Responses to Sliding Windows for Object Detection with Python and OpenCV
+
+    joe May 11, 2015 at 3:16 pm #
+
+    hey Adrian, wonderful article. Just wondering about when you say “Remember, the larger your step size is, the more windows you’ll need to examine.” . Shouldn’t this be “the smaller the stepsize, the more windows”?
+    Maybe i misunderstood something, but it looks to me as if each sliding window would move of pixels, so – as you say a few lines above that comment – having a stepSize=1 makes it prohibitive.
+    Thanks for the article
+    Reply
+        Adrian Rosebrock May 11, 2015 at 4:53 pm #
+
+        Hey Joe, you’re absolutely right. Thanks for catching that typo. I have updated it now. Thanks again!
+        Reply
+    Rish May 14, 2015 at 12:38 am #
+
+    Hi Adrian,
+
+    I have had some discussions with you in other topic threads. Your tutorials has helped me create a object detector though in C++ with ease.
+
+    I am new to this object recognition field. I was wondering other than sliding window for object search in the image space, what other methods are there. One of the biggest issue for me in Sliding Window is that incrementing the sliding window by small pixel margin gives the best results (say about 50 – 75% overlap to the previous window). In a normal image frame this is quite exhaustive search.
+
+    I am just curious if there are other better or faster method for object search?
+    Reply
+        Adrian Rosebrock May 14, 2015 at 6:41 am #
+
+        There are indeed other methods to using sliding windows, but the sliding window is pretty much the “default”. Take a look at the comments of this post to see a discussion of some faster variants of the standard sliding window.
+
+        However, I will say that the exhaustive image search is actually a good thing. If our classifier is working correctly, then it will provide positive classifications for regions surrounding our object. We can then apply non-maxima suppression to select only the most probable bounding box.
+        Reply
+    abbas June 4, 2015 at 2:06 am #
+
+    hi Adrian
+    i am working on HOG descriptor i train svm on 64*128 positive negative images output is good but i have a problem in large image human detection so u can help me because i start research in computer vission
+    Reply
+        Adrian Rosebrock June 4, 2015 at 6:24 am #
+
+        If the human you are trying to detect is substantially larger than your 64×128 window, then you should apply an image pyramid . This way the image becomes smaller at each layer of the pyramid, while your 64×128 window remains fixed, allowing you to detect larger objects (in this case, humans).
+        Reply
+    Hoon October 26, 2015 at 12:29 am #
+
+    Thanks for the wonderful article!
+    I am wondering that I should change each of the step size when the resolution of the image changes because of image pyramid.
+    Thanks in advance.
+    Reply
+        Adrian Rosebrock October 26, 2015 at 6:13 am #
+
+        No, the step size of the sliding window normally stays constant across levels of the image pyramid.
+        Reply
+            Hoon October 26, 2015 at 11:11 pm #
+
+            Thank you!
+            Can I ask one more?
+            Should I calculate the entire hog features for each image of different resolution?
+            I am assuming the following steps.
+
+            1) calculate HOG features of the original image
+            2) collect regions that have high similarities (ROI) into a list or something
+            3) resize the original image (down-size)
+            4) calculate HOG features again
+            …
+            ..
+            n) Draw rectangles by referring to the list.
+
+            And plus, how do I extract original location of ROI in down-sized images?
+
+            Thank you very much!
+            Reply
+                Adrian Rosebrock October 27, 2015 at 4:48 am #
+
+                I think reading this post on using HOG and Linear SVM for object detection should really help you out and answer all your questions :-)
+                Reply
+    bob January 6, 2016 at 4:43 pm #
+
+    Wow, what great examples. Thanks. I have a question. Let’s say you have a classifier with K classes and you call the classifier for each of the N sliding windows on the current image. You essentially have a matrix with N rows and K columns. How do you process that matrix in some sensible way to report which windows have a meaningful object in them?
+    Reply
+        Adrian Rosebrock January 6, 2016 at 6:35 pm #
+
+        You would simply maintain a list of bounding boxes for each of the unique classes reported by the SVM. From there, you would apply non-maxima suppression for each set of bounding boxes.
+        Reply
+    Bob Zigon March 9, 2016 at 3:51 pm #
+
+    Adrian, I have a question about your NMS logic. I applied a classifier to each of N sliding windows. I then extracted the subset of windows associated with class = 1 and passed them through the NMS. There was only 2 instances of object 1 in the FOV. Their dimension is approximately 280×200. The sliding window was 140×100. This is also the size of patches that I trained with. I was expecting the NMS to “merge” the 140×100 windows into a bounding box that more closely approximated the 280×200 of the actual objects. The NMS reported 5 objects and not 2.
+
+    Am I using the NMS wrong? I can’t train on images that are 280×200 because I want to be able to identify the object when it is sliding out of the FOV. That is why I extracted a bunch of random 140×100 patches from the 280×200 object and trained that way.
+    Reply
+        Adrian Rosebrock March 9, 2016 at 4:36 pm #
+
+        NMS is meant to merge overlapping bounding boxes, either based on their spatial dimensions, or the probability returned by your SVM (where higher probabilities are preferred over the lower ones). If your bounding boxes are not overlapping, then NMS will not suppress them. From your comment, it’s not clear if bounding boxes were overlapping?
+        Reply
+            Bob Zigon March 14, 2016 at 12:38 am #
+
+            Yes, the boxes were overlapping. (I wish there was a way to embed a graphic in these comments, it would be easier to describe the situation.)
+
+            Let me ask the question a different way. If you train your classifier with images that are 140×100 (these are random subsets of the 280×200 target image), how do you get a bounding box around the target image with the NMS?
+            Reply
+                Adrian Rosebrock March 14, 2016 at 3:23 pm #
+
+                If you want like to include an image, I would suggest uploading the image to Imgur and then posting the link in the comment.
+
+                As for the bounding boxes, please see my previous comment. You would take the entire set of bounding boxes and apply NMS based on either (1) the bounding box coordinates (such as the bottom-right corner) or (2) the probability associated with the bounding box.
+
+                Again, NMS isn’t used to actually generate the bounding box surrounding an object, it’s used to suppress bounding boxes that have heavy overlap.
+                Reply
+    Bob Zigon March 14, 2016 at 10:43 pm #
+
+    Hmmm .. ok. The distinction seems subtle. Is it fair to say that the bounding box (with a target size of 280×200) is just the union of the 140×100 boxes in physical proximity to each other that overlap some small amount?
+    Reply
+        Adrian Rosebrock March 15, 2016 at 4:36 pm #
+
+        I’m not sure I understand your question. If you can provide visual examples, I can try to answer further.
+        Reply
+    Vinit March 16, 2016 at 2:34 pm #
+
+    Hey Adrian,
+
+    I have been reading your blogs recently and they are very helpful for my work. However I am still not able to figure out, how I am going to train the SVM for the classification.
+
+    I got to detect humans in image so I am using INRIA dataset for training but i can’t figure out one issue that in one image I can see many persons. Right now I am just taking the hog features of the whole image once its resized to certain dimensions and then send it to train svm. But the data contains multiple human images not only single one. So can you please help me out here. Also it would be great if you can make a small post on training svm too for this object detection part.
+
+    Thanks in advance
+    Reply
+        Adrian Rosebrock March 17, 2016 at 10:42 am #
+
+        You mentioned resizing your image to a fixed size, extracting HOG features, and then passing it to your SVM — this is partly correct, but you’re missing a few critical steps. To start, I would suggest reading through a description of the entire HOG + Linear SVM pipeline .
+
+        Instead, you need to utilize a sliding window (detailed in this post). This window is a fixed size that “slides” across your input image. At each stop along the window, you extract HOG features, and then pass them to your SVM for classification. In this way, you can detect not only a single person but multiple people at various locations in image. Combined with an image pyramid , you can recognize objects both multiple scales AND multiple locations.
+
+        As for a source code implementation of such an object detector, please see the PyImageSearch Gurus course , where I detail how to code an object detector in detail.
+        Reply
+    Mohamed Ben Arbia April 5, 2016 at 5:59 am #
+
+    Hey Adrian,
+
+    Excellent post. This is really helpful and straightforward. Thanks!
+    Reply
+        Adrian Rosebrock April 6, 2016 at 9:14 am #
+
+        I’m glad you found it helpful Mohamed! :-)
+        Reply
+            Mohamed Ben Arbia June 20, 2016 at 6:41 am #
+
+            Hi Adran,
+
+            I have encountered one issue during my project concerning the object detection. What if there are rotated versions of the object we would like to detect ?
+
+            What would be the best approach ta tackle this ? Would you use rotated versions of the sliding windows ? Or would you define rotated versions of the image containing the object (And probably rotated version of the object) as the image pyramids for scaling ?
+
+            Thanks !
+            Reply
+                Adrian Rosebrock June 20, 2016 at 5:23 pm #
+
+                Rotated objects can be a real pain in the ass to detect, depending on your problem. I would suggest training a detector for each rotated version of your image. Or better yet, try to utilize algorithms that are more invariant to changes in rotation. Keypoint detection and local invariant descriptors tend to work well here as well.
+                Reply
+                    Mohamed June 21, 2016 at 4:09 am #
+
+                    Thanks for your response Adrian :)
+                    Yes, I think using algorithms that are invariant to changes in rotation is a good approach.
+                    Concerning my problem, here is a link to a screen shot to the image where I have my rotated objects: https://drive.google.com/file/d/0B9xjuFiZNvo4RHg1RnEyNjlSUlU/view?usp=sharing . The goal is to detect the footprints in the image.
+
+                    Thanks!
+                    Adrian Rosebrock June 23, 2016 at 1:31 pm #
+
+                    Why not just apply a dilation or closing morphological operation to close the gaps in between the footprints? From there, thresholding and contour detection will give you the footprint regions.
+    farah May 6, 2016 at 4:38 am #
+
+    When we run our classifier on sliding windows then it will fetch many bounding boxes.I want to show these bounding boxes on the original image. How to change the coordinates of the bounding boxes from the different sized windows to the original scale to be shown on the original window.
+    Reply
+        Adrian Rosebrock May 6, 2016 at 4:32 pm #
+
+        Hey Farah — I assume you’re also talking about using image pyramids as well? As the image pyramid code demonstrates, you can keep track of the current scale of the pyramid and use that to give you the location of the of the original image.
+        Reply
+    Farah May 10, 2016 at 1:28 am #
+
+    Sir to get to the original scale should I multiply the coordinates by the respective scaling factor used in resizing the window i.e if I am downscaling by 1.5 in both x and y direction then I just multiply the bounding boxes coordinates at this layer by 1.5.
+    Reply
+        Adrian Rosebrock May 10, 2016 at 8:06 am #
+
+        Hey Farah — please see my previous comment. If you’re using sliding windows in conjunction with image pyramids, you need to keep track of ratio of the original image height to the current pyramid height. You can use this scale to multiply the bounding box coordinates and obtain them for the original image size. I cover this in more detail PyImageSearch Gurus .
+
+        In this case, if you resize your image to be 1.5x smaller than the original, then yes, you would multiply your bounding boxes (obtained by the new, resized image) by this 1.5 factor to obtain the coordinates relative to the original image.
+        Reply
+    Farah May 10, 2016 at 11:57 pm #
+
+    Thanks Adrian for resolving my query
+    Reply
+    Aka July 23, 2016 at 5:28 am #
+
+    Hi Adrian,
+
+    Nice post !
+
+    I was wondering if the sliding window could be parallelised ? With a classifier which has a really low false positive rate and if the search need to be exhaustive, I feel sliding window is the best option. But say for a very large image it will be very slow. So if the sliding can be parallelised so that a list will have all the detections ( the order in which they get appended does not matter for NMS) , won’t it help speed up the detection process ?
+
+    What do you think ? Do you know of such an implementation ?
+    Reply
+        Adrian Rosebrock July 27, 2016 at 2:47 pm #
+
+        Yes, you can absolutely make the sliding window run in parallel. However, I instead recommend making the image pyramid run in parallel such that you have one process running for each of the layers of the pyramid. If you are only processing a small set of pyramid layers (or just one layer), then yes, absolutely make the sliding window run in parallel.
+
+        I don’t have any implementations of this, but I do review how to build your own custom object detector inside the PyImageSearch Gurus course .
+        Reply
+
+Leave a Reply Click here to cancel reply.
+
+Comment
+
+Name (required)
+
+Email (will not be published) (required)
+
+Website
+
+Resource Guide (it’s totally free).
+[Get your FREE 11-page Image Search Engine Resource Guide PDF]
+
+Click the button below to get my free 11-page Image Search Engine Resource Guide PDF . Uncover exclusive techniques that I don't publish on this blog and start building image search engines of your own.
+Download for Free!
+You can detect faces in images & video.
+[Learn how to detect faces in images and video]
+
+Are you interested in detecting faces in images & video? But tired of Googling for tutorials that never work? Then let me help! I guarantee that my new book will turn you into a face detection ninja by the end of this weekend. Click here to give it a shot yourself.
+
+PyImageSearch Gurus: NOW ENROLLING!
+
+The PyImageSearch Gurus course is now enrolling! Inside the course you'll learn how to perform:
+
+    Automatic License Plate Recognition (ANPR)
+    Deep Learning
+    Face Recognition
+    and much more!
+
+Click the button below to learn more about the course, take a tour, and get 10 (FREE) sample lessons .
+
+Hello! I’m Adrian Rosebrock.
+
+I'm an entrepreneur and Ph.D who has launched two successful image search engines, ID My Pill and Chic Engine . I'm here to share my tips, tricks, and hacks I've learned along the way.
+Learn computer vision in a single weekend.
+[Become an OpenCV guru]
+
+Want to learn computer vision & OpenCV? I can teach you in a single weekend . I know. It sounds crazy, but it’s no joke. My new book is your guaranteed, quick-start guide to becoming an OpenCV Ninja. So why not give it a try? Click here to become a computer vision ninja.
+
+Subscribe via RSS
+[PyImageSearch RSS Feed]
+
+Never miss a post! Subscribe to the PyImageSearch RSS Feed and keep up to date with my image search engine tutorials, tips, and tricks
+
+    Popular
+
+    Install OpenCV and Python on your Raspberry Pi 2 and B+ February 23, 2015
+    Home surveillance and motion detection with the Raspberry Pi, Python, OpenCV, and Dropbox June 1, 2015
+    How to install OpenCV 3 on Raspbian Jessie October 26, 2015
+    Install OpenCV 3.0 and Python 2.7+ on Ubuntu June 22, 2015
+    Accessing the Raspberry Pi Camera with OpenCV and Python March 30, 2015
+    Install OpenCV 3.0 and Python 2.7+ on OSX June 15, 2015
+    Basic motion detection and tracking with Python and OpenCV May 25, 2015
+
+Search
+Find me on Twitter , Facebook , Google+ , and LinkedIn .
+
+© 2016 PyImageSearch. All Rights Reserved.
+Free 21-day crash course on computer vision & image search engines
+×
+Free 21-day crash course on computer vision & image search engines
+Interested in computer vision and image search engines, but don't know where to start? Let me help. I've created a free, 21-day crash course that is hand-tailored to give you the best possible introduction to computer vision. Sound good? Enter your email below to start your journey to becoming a computer vision master.
+
+Email Address
+
+×
+Almost There...
+
+To start your free 21-day crash course, confirm your email address by clicking the link in the email I just sent you.
+7960fd4dacde1462303655-optin.png
+I hate SPAM and promise to keep your email address safe.
+Yes, I Want Access! No Thanks
+×
+Thanks for subscribing! Please check your email for further instructions.

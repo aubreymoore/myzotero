@@ -1,0 +1,234 @@
+Visualization of Trap Catch Data
+Aubrey Moore
+Guam Coconut Rhinoceros Beetle Eradication Project
+Generated 2014-06-10 18:56:16 Path: C:/Documents and Settings/Administrator/My Documents/CRB monthly surveillance reports/map dev
+R script: makeMaps.R Brew ﬁle: makeBeamer.txt
+
+Introduction
+The following frames show spatial-temporal changes in numbers of CRB adults caught in pheromone traps. Note that trap catches on Guam are very low: the scale runs from 0 to only 0.02 beetles per trap day, a trap rate of only one beetle every 50 days.
+
+Methods
+Interpolated raster maps were made using an R script which: 1. Accesses georeferenced data stored in the CRB project’s online MySQL database. 2. Processes the data using the GRASS6 GIS 3. Writes the LATEX code which generated this PDF document.
+
+90 day trapping period ending on 01 May 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2014
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2014
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2014
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2014
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2014
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2014
+Mean number of beetles caught per trap-day
+

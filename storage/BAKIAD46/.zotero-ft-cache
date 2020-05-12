@@ -1,0 +1,56 @@
+Portable Schistosomiasis Egg Counting and Diagnosis
+Daniel Fernandes
+
+I. INTRODUCTION
+Schistosomiasis, also known as Bilharzia, is a parasitic disease caused by waterborne snails that generally occurs in tropical countries, most notably in Sub-saharan Africa. The parasitic snail lays larvae in freshwater and these larvae burrow into the skin of the patient and enter the blood circulation. After the larvae mature into adults and mate, the females go on to lay eggs that infect the feces and urine of the patient. Through bad sanitation practice, human waste may enter the freshwater and complete the cycle, causing snails to infect the water once again.
+
+the Olympus Air had an open API that allowed full access to the camera for developers. Furthermore, the Olympus Air is a micro four-thirds camera with a sensor size of 21.60 x 13 mm compared to the TG4’s 1/2.3” Type sensor of size 6.17 x 4.56 mm. The Olympus Air was equipped with a M.Zuiko Digital ED 60mm f/2.8 Macro Lens, while the TG-4 used its internal f/2.3 lens. The much larger optics of the M.Zuiko lens allowed for a correspondingly much larger working distance on the order of inches rather than centimeters. For these reasons, the Olympus Air was chosen over the TG-4.
+B. Camera Mount
+The camera was mounted using 3D printed parts designed in Solidworks CAD software. Using the 3D designs provided by Olympus as a basis [1], four interlocking parts were designed and printed in black ABS plastic on a Makerbot Replicator 2X. The top part holds the camera through a interlocking mechanism, facing downwards to the bottom part that holds the slide and provides an aperture for transmissive light illumination.
+
+The disease is diagnosed by passing the urine of a patient through a polycarbonate ﬁlter and counting the number of oval-shaped eggs. Currently, an aid-worker or technician would take this circular (13 mm diameter) ﬁlter, place it under a microscope, and pan around to count the number of eggs. While this would be ﬁne for only a few patients, since schistosomiasis is a water-borne disease, generally it is entire villages that are infected at once. The time-crunch is panning around to count the eggs. Several works have been published related to automatic egg detection [3], [4], [5], [6]. These eggs are small, on the order of 100 to 60 microns, but can be imaged with a macro lens. Since the eggs have a ﬁnite shelf life, 100 µm polystyrene beads are used as a phantom to prototype.
+II. METHODS
+A. Camera
+To build this system two cameras were evaluated: The Olympus Air A01 and Olympus TG-4. While both systems had WiFi connectivity and the ability to take macro images,
+
+Fig. 1. View of 3D parts from bottom
+C. Illumination Illumination is provided by a Rainbowduino LED Matrix
+from Seeedstudio [2]. The illumination is conﬁgured in a Rheinberg illumination pattern. Rheinberg illumination uses two separate colors of light: one for oblique illumination and another for the unscattered light. In our case, we choose complementary colors red and green, to easily threshold once the image is projected from RGB to HSV space.
+D. Algorithm The algorithm pipeline is divided into two stages: ﬁlter de-
+tection and bead detection. Initial prototypes were designed
+
+in MATLAB and fully implemented in OpenCV for Windows and Android.
+
+Fig. 3. Green Hue Extraction
+
+Fig. 2. Image Processing Pipeline
+The ﬁrst step is to take the original image and detect where the polycarbonate ﬁlter is in the ﬁeld of view. To do this, the image is ﬁrst converted to 8-bit grayscale and blurred with a σ = 2 Gaussian kernel, then a Hough Circle Transform is applied. The Hough Circle Transform is analogous to the original Hough transform, except with a circular model instead of a line model. Even though the ﬁlter is not perfectly circular, it still ends up meeting the threshold requirements and is correctly detected.
+Next, the original RGB image is Gaussian blurred with the same kernel as before, and converted into Hue-SaturationValue (or HSV) space. The Hue channel is extracted and thresholded around green, resulting in a binary image. The polystyrene beads used for detection cause the green light to be scattered at the edges of the bead, resulting in a green halo.
+The image is then slightly dilated with a circular structuring element (3 pixel diameter). By observation, the size of our 100 µM beads correspond to a green ring that has a 40 pixel outer diameter and a 20 pixel inner diameter. The image is too noisy in some areas to use a simple hit-miss ﬁlter and
+
+not all the rings can be completed through simple dilation. Instead, the algorithm will use cross correlation template matching to ﬁnd ’ring-like’ elements in the ﬁeld of view. Speciﬁcally, the kernel will be deﬁned as below:
+−1 r ≤ innerRadius  kernel(r) = 1 innerRaidus ≤ r ≤ outerRadius 0 r ≥ outerRadius
+The binary image is then converted to ﬂoating point and given an offset of -0.5. By deﬁning the template and the image this way, we ensure that the correlation is only occurring upon the support of the kernel, values outside the outer radius of the ring are zero and therefore do not contribute to the result of the cross correlation summation.
+Next, the result of the normalized cross correlation is thresholded at about two-thirds (speciﬁcally 0.68). Binary connected components are extracted and the centroid deﬁnes the location of the bead.
+
+Fig. 4. Template Matching Result
+
+Fig. 5. Zoomed in result on template match
+
+III. RESULTS
+The algorithm was implemented and tested on Android with OpenCV. For the toy example given below, there were 33 connected components detected, with 20 true positives, 13 false positives, 4 false negatives, and (4608x3456)-33 true negatives (corresponding to all the remaining pixels). This yields an sensitivity of 83.33% and speciﬁcity of 100.00%.
+
+Fig. 7. Before and After
+
+the ﬁlter. Second, we could use more modern segmentation methods that use Convolutional Neural Nets. Finally, the imaging setup could be improved so that the illumination from the LEDs is more uniform, or possibly HDR imaging could be employed to reduce noise in the darker regions.
+
+Fig. 6. Detected connected components (green squares)
+IV. DISCUSSION & FUTURE DIRECTIONS This algorithm works fairly well for the simple methods that it uses. There are clearly many ways forward to improve the algorithm. First, the algorithm could be improved by automatically generating the kernel based on the size of
+
+REFERENCES
+[1] https://opc.olympus-imaging.com/en/tools/ tools3d/
+[2] http://wiki.seeed.cc/Rainbowduino_v3.0/ [3] Coulibaly, J. T., Ouattara, M., DAmbrosio, M. V., Fletcher, D.
+A., Keiser, J., Utzinger, J., Bogoch, I. I. (2016). Accuracy of Mobile Phone and Handheld Light Microscopy for the Diagnosis of Schistosomiasis and Intestinal Protozoa Infections in Cte dIvoire. PLOS Neglected Tropical Diseases, 10(6), e0004768. https://doi.org/10.1371/journal.pntd.0004768 [4] Linder, E., Grote, A., Varjo, S., Linder, N., Lebbad, M., Lundin, M., Lundin, J. (2013). On-Chip Imaging of Schistosoma haematobium Eggs in Urine for Diagnosis by Computer Vision. PLoS Neglected Tropical Diseases, 7(12), e2547. https://doi.org/10.1371/journal.pntd.0002547 [5] Li, Z., Gong, H., Zhang, W., Chen, L., Tao, J., Song, L., & Wu, Z. (2015). A robust and automatic method for human parasite egg
+
+recognition in microscopic images. Parasitology Research, 114(10), 38073813. https://doi.org/10.1007/s00436-015-4611-z [6] Zhang, J., Lin, Y., Liu, Y., Li, Z., Li, Z., Hu, S., Wu, Z. (2014). Cascaded-Automatic Segmentation for Schistosoma japonicum eggs in images of fecal samples. Computers in Biology and Medicine, 52, 1827. https://doi.org/10.1016/j.compbiomed.2014.05.012
+

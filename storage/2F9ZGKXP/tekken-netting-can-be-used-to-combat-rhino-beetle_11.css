@@ -1,0 +1,21 @@
+
+/* ::::: null ::::: */
+
+#WN-national-promobox { width: 300px; height: 150px; padding: 0px; margin: 0px; position: relative; overflow: hidden; background-color: rgb(255, 255, 255); color: rgb(38, 38, 38); font-family: "Arial",sans-serif; font-weight: normal; box-sizing: border-box; border: 1px solid rgb(235, 235, 235); }
+#WN-national-promobox .header { border-top: 2px solid rgb(235, 235, 235); border-bottom: 1px solid rgb(235, 235, 235); padding: 0px 10px; margin: 0px; font-size: 16px; font-weight: bold; line-height: 28px; }
+#WN-national-promobox .content { padding: 8px 10px; margin: 0px; overflow: hidden; font-size: 11px; }
+#WN-national-promobox .content.sponsor-false { padding-top: 15px; }
+#WN-national-promobox .content.thumb-false.sponsor-false { padding-top: 27px; }
+#WN-national-promobox .thumbnail { float: left; margin: 0px 10px 0px 0px; width: 84px; height: 84px; display: block; }
+#WN-national-promobox .thumbnail.thumb-false { display: none; }
+#WN-national-promobox .links { float: left; padding: 0px; margin: 0px; list-style: outside none none; font-size: 12px; width: 182px; }
+#WN-national-promobox .links.thumb-false { float: none; padding: 0px; margin: 0px; width: 278px; }
+#WN-national-promobox .link { width: 182px; white-space: nowrap; overflow: hidden; line-height: 1.1; margin-top: 5px; text-overflow: ellipsis; display: none; }
+#WN-national-promobox .links.thumb-false .link { width: 272px; }
+#WN-national-promobox .link::before { content: "•"; padding-right: 5px; }
+#WN-national-promobox .link:first-child { margin-top: 0px; }
+#WN-national-promobox .link a { color: rgb(38, 38, 38); text-decoration: none; }
+#WN-national-promobox .link a:hover { color: rgb(38, 38, 38); text-decoration: underline; }
+#WN-national-promobox .sponsor { position: absolute; bottom: 10px; right: 10px; font-size: 10px; color: rgb(112, 112, 112); }
+#WN-national-promobox .sponsor.sponsor-false { display: none; }
+#WN-national-promobox .sponsor-image { width: 100px; height: 30px; border: medium none; vertical-align: text-bottom; margin-bottom: -5px; }

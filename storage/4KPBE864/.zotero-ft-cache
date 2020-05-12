@@ -1,0 +1,184 @@
+Structured Data Darwin Core Archives
+
+    Getting Started
+    Plan Your Data Export
+    EOL Subject Types
+    Classifications/Names
+    Contribute content via Darwin Core Archive 
+    Contribute structured data via Darwin Core Archive
+    Contribute via Spreadsheet
+    Contribute via EOL XML
+    Publish Your Data on EOL
+
+Thank you for sharing your biodiversity dataset with EOL! Below are instructions for preparing a resource file to load your data to TraitBank . If you need additional information, your EOL contact will be happy to help you along the way. Don’t have a contact yet on the EOL staff? Contact us !
+
+To learn more about TraitBank, please have a look at our TraitBank paper: 
+
+Parr , C. S., K. S Schulz, J. Hammock, N. Wilson, P. Leary, J. Rice, and R. J. Corrigan, Jr. in press. TraitBank: Practical semantics for organism attribute data. Semantic Web Journal.  download
+
+Your dataset will probably contain four types of information:
+
+    Measurement Types - the traits that you measured or determined
+    Measurement Values - the number or category you found for each trait
+    Taxon Names - which organisms you measured/assessed
+    Metadata - this may include time, location, sample size, life stage, sex and other context for the measurement; also, source and attribution data. You may have metadata types that we haven’t thought of yet. Don’t worry; we can add them to our data model if you  get in touch with us .
+
+EOL will map parts of your dataset using Uniform Resource Identifiers (URIs), which link to precisely defined terms in appropriate ontologies and vocabularies, so that consumers of your data will know exactly what you meant by “ feeding type ”, “ body mass ”, " age at maturity ", etc. All your Measurement Types will be mapped, and for categorical data, where the value of the trait is not a number but a term (“raptorial”, “nocturnal”, “spherical”, etc.), so will your Measurement Values . Certain metadata will also be mapped to URIs, including units (e.g.,  grams ,  meters 2 ,  years ) and statistical methods (e.g.,  max ,  min ,  median ). Have a look at the EOL Data Glossary to see terms already in use by TraitBank. If your data are already mapped to URIs, please send us this information, so we can make sure your terms and definitions are represented in the TraitBank URI registry when we harvest your data. If you are still developing the semantic mappings for your data, we will be happy to consult with you on the best ontologies and terms to use.
+
+The preferred format for uploading structured data to EOL is a  Darwin Core Archive . If you have shared text or image content with EOL using a Darwin Core Archive before, you can add structured data to your existing archive using several new extensions. If you are creating an archive for structured data only, the files you will need are the taxa  file (which is usually the core file), and the occurrences , references , measurements or facts and/or associations extension files.
+
+Here is an example structured data resource  in Darwin Core Archive format. It's from a single scientific paper, and the data is displayed on data tabs of the EOL species pages in this list: http://eol.org/collections/96599
+
+If you are wrangling a small amount of data by hand, you may prefer to use our spreadsheet template , which includes a worksheet for each file in the Darwin Core Archive. The instructions below apply just the same to this format.
+Taxa: identify the taxa in your dataset
+
+In the taxa file you provide the Scientific Name for each taxon in your dataset, along with any higher taxonomic information you have for it. Minimally, specifying a Kingdom in each taxon record is strongly advised and goes a long way toward preventing mis-mapping of your data due to homonyms. See the EOL basic DwC-A requirements for a complete list of fields supported for  taxa .
+
+You must assign an Identifier to each taxon. If you have taxon ID codes in your system, it is wise to use them here. If not, including the scientific name in the taxon ID is common practice, as it helps human readability in the occurrences extension.  Make sure that each of your identifiers is unique. 
+Occurrences: provide occurrence-level metadata
+
+In our data model, data are not directly attached to taxa but rather to a particular occurrence of the taxon in nature, in a collection, in a dataset (specimen, observation, etc.), or in a publication. In the occurrences file, you can provide data about the parameters that define each occurrence.  For example, you may have measured body length, feeding habit, and preferred habitat for several samples of Calanus sinicus copepods.  Multiple records in your Measurements or Facts file can then be attached to an occurrence record that specifies spatio-temporal parameters e.g., (from the North Sea) (from 2000-2004) and/or other variables like sex or lifestage, e.g.  (males) (juveniles) . 
+
+In many cases, like the example archive above, there may be very few or even no metadata for a given occurrence. Where there are none, you can use only one occurrence of each taxon, and you can simply record a single Occurrence ID for each, along with its Taxon ID , and move on to the other extensions. However, you may want to use separate occurrences to group data by parameters like  Sex , Life Stage , Reproductive Condition , Behavior , Establishment Means , Individual Count , Field Notes , Sampling Protocol , Sampling Effort , Event Date , Locality , Latitude , Longitude , Elevation , Preparations , Institution or  Catalog number .   For additional information see the  Darwin Core Occurrence extension .
+
+Occurrence IDs can be anything, provided each is unique within your archive, but the best practice is to construct Occurrence IDs using occurrence information that is meaningful in your system or dataset.
+The Measurements or Facts extension file is for data (quantitative or qualitative facts) pertaining to a particular occurrence record .
+
+A basic data record includes five fields -- an Occurrence ID , a Measurement ID , a Measurement Type (as a URI, eg: Habitat , or Body Mass ), and a Measurement Value (eg: marine pelagic , or 77 grams ). Also, you need to specify http://eol.org/schema/measurementOfTaxon = true for all primary data records (see 3. below for more information about the measurementOfTaxon field). Most records will include more information than the five basic above. There are several ways to add metadata to a measurement record, but the first two will probably address nearly all of your needs.
+
+    The Measurements or Facts extension supports the following additional fields:  Unit , Accuracy , Statistical Method (is it a mean, max, median, etc.) Determined Date , Measurement Method , Remarks , and several credit and attribution fields. 
+    Any metadata you specify in the Occurrences extension will attach to each Measurements or Facts record from that occurrence and will be delivered as metadata for these records.
+    You can use  MeasurementOfTaxon=false to create additional unconstrained metadata records in the Measurements or Facts extension.
+        A MeasurementOfTaxon=false record with an Occurrence ID will be interpreted as metadata at the occurrence level, i.e., the data you enter with MeasurementOfTaxon=false (e.g., ocean depth from which a sample of copepods were collected) will be delivered as metadata for all primary (MeasurementOfTaxon=true) data records (e.g., body length, body mass, prosome length, prosome width, etc.) associated with the occurrence. 
+        A MeasurementOfTaxon=false record with a blank Occurrence ID and an entry in the  Parent Measurement ID  ** field that points to another record in the Measurements or Facts extension (via its  Measurement ID ) will be interpreted as metadata for that particular primary data record. For example, you could use this method to create a "standard error" metadata record for a primary "body length" record.
+
+The Associations extension file is for predator-prey, host-pollinator, and other biotic interactions connecting two occurrence records .
+
+It works much like the Measurements or Facts extension file. It's also based on occurrences, so that larvae of  Calanus sinicus can be prey of adult  Calanus sinicus , etc. A basic association record includes an Occurrence ID , an Association Type and a Target Occurrence ID . The list of Association Types in current use on EOL is in flux; check the  EOL Data Glossary  and communicate with your EOL contact for guidance on defining the association types in your dataset.
+
+The same metadata fields available in the Measurements or Facts extension file can be used here (except those for numerical values -- unit, accuracy, statistical method). If additional metadata is needed for fields that are not provided, you can use the  MeasurementOfTaxon=false method   in the Measurements or Facts extension as described above, using the Association ID of the primary record for the Parent Measurement ID.
+Attribution Fields:
+
+    Who identified this organism? Identified By in the Occurrences extension file can display one name or a concatenated list.
+    Who made this measurement? Determined By in the Measurements or Facts extension file can display one name or a concatenated list.
+    Who helped? Contributor in the Measurements or Facts extension file can display one name or a concatenated list.
+    Where is this data record available online? Source in the Measurements or Facts extension file is for a url to be displayed alongside the data point, so EOL visitors can click through to an online resource where the data originated. This might be a dataset stored at an online repository, a taxon page on a website, or any other online location.
+    What shall I cite if I use this data record in a publication? BibliographicCitation in the Measurements or Facts extension file is for the suggested citation format for a user of this dataset to include in a references list or bibliography .  Even if the data record or dataset have never been published elsewhere, we recommend that you craft an appropriate citation so others can provide proper credit.
+    If the dataset is from a literature review, and one or more references are available for individual data points, these references should be recorded in the References extension and listed by their Reference IDs in the ReferenceID field of the Measurements or Facts extension file, see below.   
+
+No individual one of these fields is required; however, EOL cannot host your data unless you provide at least one form of attribution.
+The References extension file is for literature or other primary sources your dataset relies on, if applicable.
+
+If you have a list of citable sources from which your dataset was compiled, and you wish to list particular references for each data record, all of the references should be recorded in the References extension and given Reference IDs , to be referred to from the Measurements or Facts extension. Multiple references can be included  in a semicolon-separated list.  Each reference can be represented by a full bibliographic citation in the Full Reference  ** field, OR in several structured bibliographic fields. For details see the EOL References Extension .
+
+** We know that this uri currently doesn’t resolve, so don't be concerned.
+
+Become part of the EOL community— sign up for the EOL Newsletter today
+Encyclopedia of Life
+Global Navigation
+
+    Education
+    Help
+    What is EOL?
+    EOL News
+    Donate
+
+English
+
+    bahasa Melayu
+    Deutsch
+    English
+    español
+    français
+    Galego
+    Italiano
+    Nederlands
+    Norsk bokmål
+    Occitan
+    português do Brasil
+    Svenska
+    Tagalog
+    македонски
+    српски језик
+    українська мова
+    ‫العربية
+    简体中文
+    繁體中文
+    한국어
+
+Search the site
+Search EOL
+Login or Create Account
+
+Become part of the EOL community!
+
+Join EOL now
+
+Already a member? Sign in
+Site information
+About EOL
+
+    What is EOL?
+    What is TraitBank?
+    The EOL Blog
+    Education
+    Statistics
+    Glossary
+    Podcasts
+    Donate
+    Citing EOL
+    Help
+    Terms of Use
+    Contact Us
+
+Learn more about
+
+        Animals
+        Mammals
+        Birds
+        Amphibians
+        Reptiles
+        Fishes
+        Invertebrates
+        Crustaceans
+        Mollusks
+        Insects
+        Spiders
+        Worms
+        Plants
+        Flowering Plants
+        Trees
+        Fungi
+        Mushrooms
+        Molds
+        Bacteria
+        Algae
+        Protists
+        Archaea
+        Viruses
+
+Biodiversity Heritage Library
+
+Visit the Biodiversity Heritage Library
+
+    Twitter
+    Facebook
+    Flickr
+    YouTube
+    Pinterest
+    Vimeo
+    <span class= Google Plus" src="//ssl.gstatic.com/images/icons/gplus-32.png" />
+
+Tell me more
+
+    What is biodiversity?
+    What is a species?
+    How are species discovered?
+    How are species named?
+    What is a biological classification?
+    What is an invasive species?
+    What is an indicator species?
+    What is a model organism?
+    How can I contribute to research?
+    What is evolution?
+

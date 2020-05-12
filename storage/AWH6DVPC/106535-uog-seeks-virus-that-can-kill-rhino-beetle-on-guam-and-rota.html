@@ -1,0 +1,1182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" slick-uniqueid="3" lang="en-gb"><head>
+    <script src="cbgapi.loaded_1" async=""></script><script src="cbgapi.loaded_0" async=""></script><script id="facebook-jssdk" src="all"></script><script type="text/javascript" async="" src="cse"></script><script type="text/javascript">
+var siteurl='/';
+var tmplurl='/templates/ja_teline_iv/';
+var isRTL = false;
+</script>
+
+  <!-- base href="http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota" -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="keywords" content="Saipan, Marianas, marianas, saipan, CNMI, cnmi, Saipan News, CNMI News, Tinian, tinian, Rota, rota, Marianas Variety, marianas variety, Variety, variety, Northern Mariana Islands, Younis Arts Studio, Younis">
+  <meta name="rights" content="Content cannot be used unless given permission by Marianas Variety or Younis Arts Studios. ">
+  <meta name="author" content="Marianas Variety">
+  <meta name="description" content="Marianas Variety - News &amp; Views - Micronesia's Leading Newspaper Since 1972 - Saipan's 1st Interactive News Website.">
+  <meta name="generator" content="Joomla! - Open Source Content Management">
+  <title>Marianas Variety - UOG seeks virus that can kill rhino beetle on Guam and Rota</title>
+  <link rel="stylesheet" href="index.css" type="text/css">
+  <link rel="stylesheet" href="index_003.css" type="text/css">
+  <link rel="stylesheet" href="index_002.css" type="text/css">
+  <style type="text/css">
+#ty2udate287 {}
+  </style>
+  <script src="index.php" type="text/javascript"></script>
+  <script type="text/javascript">
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+						window.addEvent('load',function(){
+							// Smooth Scroll
+							new SmoothScroll({
+								duration: 500
+							});
+						});
+					
+JCEMediaObject.init('/', {flash:"10,0,22,87",windowmedia:"5,1,52,701",quicktime:"6,0,2,0",realmedia:"7,0,0,0",shockwave:"8,5,1,0"});JCEMediaBox.init({popup:{width:1024,height:768,legacy:0,lightbox:0,shadowbox:0,resize:1,icons:0,overlay:1,overlayopacity:0.8,overlaycolor:"#000000",fadespeed:500,scalespeed:500,hideobjects:0,scrolling:"scroll",close:2,labels:{'close':'Close','next':'Next','previous':'Previous','cancel':'Cancel','numbers':'{$current} of {$total}'}},tooltip:{className:"tooltip",opacity:0.8,speed:150,position:"tr",offsets:{x: 16, y: 16}},base:"/",imgpath:"plugins/system/jcemediabox/img",theme:"light",themecustom:"",themepath:"plugins/system/jcemediabox/themes"});
+			Date.prototype.stdTimezoneOffset = function() {
+				var jan = new Date(this.getFullYear(), 0, 1);
+				var jul = new Date(this.getFullYear(), 6, 1);
+				return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+			};
+			Date.prototype.dst = function() {
+				return this.getTimezoneOffset() < this.stdTimezoneOffset();
+			};
+
+			function ISO8601Local287(date) {
+			// handles years from 0000 to 9999 only
+				var offset287 = date.getTimezoneOffset();
+				var offsetSign287 = "-";
+				if (offset287 <= 0) {
+					offsetSign287 = "+";
+					offset287 = -offset287;
+				};
+				var offsetHours287 = Math.floor(offset287 / 60);
+				var offsetMinutes287 = offset287 - offsetHours287 * 60;
+				return ("000" + date.getFullYear()).slice(-4) +
+				"-" + ("0" + (date.getMonth() + 1)).slice(-2) +
+				"-" + ("0" + date.getDate()).slice(-2) +
+				"T" + ("0" + date.getHours()).slice(-2) +
+				":" + ("0" + date.getMinutes()).slice(-2) +
+				":" + ("0" + date.getSeconds()).slice(-2) +
+				"," + ("00" + date.getMilliseconds()).slice(-3) +
+				offsetSign287 + ("0" + offsetHours287).slice(-2) +
+				":" + ("0" + offsetMinutes287).slice(-2);
+			};
+		
+			var ISO8601287 = "0";
+		
+			function clock287() {
+				var newdate287 = new Date();
+		
+				if(ISO8601287 == "1") {
+		
+					var time287 = ISO8601Local287(newdate287);
+		
+				} else {
+		
+					var day287="";
+					var month287="";
+					var myweekday287="";
+					var year287="";
+					var mydate287 = new Date();
+					var dston287  = new Date("March 14, 1999 2:59:59");
+					var dstoff287 = new Date("/November 7, 1999 2:59:59");
+					dston287.setFullYear(newdate287.getFullYear());
+					dstoff287.setFullYear(newdate287.getFullYear());
+		
+					var dst287 = "0";
+					var myzone287 = newdate287.getTimezoneOffset();
+		
+					var zone287 = parseInt(10);
+					
+					// zone is negative so convert to positive to do calculations
+					if (zone287 <= 0) {
+						zoneb287 = -zone287;
+					} else {
+						zoneb287 = zone287;
+					};
+					if (mydate287 > dston287 && mydate287 < dstoff287 && dst287 == "1") {
+					//date is between dst dates and dst adjust is on.
+						zonea287 = zoneb287 - 1;
+						var houradjust287 = 0;
+					} else {
+						zonea287 = zoneb287;
+						var houradjust287 = -1;
+					};
+		
+					newtime287=newdate287.getTime();
+		
+					var newzone287 =  (zonea287*60*60*1000);
+		
+					// convert zone back to negative if it was negative originally
+					if (zone287 <= 0) {
+						newzone287 = -newzone287;
+					};
+					newtimea287 = newtime287+(myzone287*60*1000)+newzone287;
+		
+					mydate287.setTime(newtimea287);
+					myday287 = mydate287.getDay();
+					mymonth287 = mydate287.getMonth();
+					myweekday287= mydate287.getDate();
+					myyear287= mydate287.getYear();
+					year287 = myyear287;
+		
+					if (year287 < 2000) year287 = year287 + 1900;
+					myhours287 = mydate287.getHours();
+
+					var mm287 = "A.M.";
+					if (myhours287 > 12 + houradjust287)
+						mm287 = "P.M.";
+					if (myhours287 > 12 + houradjust287)
+						myhours287 -= 12;
+					if (myhours287 == 0) myhours287 = 12;
+
+					myminutes287 = mydate287.getMinutes();
+		
+					if (myminutes287 < 10) {
+						mytime287 = "0" + myminutes287;
+					} else {
+						mytime287 = "" + myminutes287;
+					};
+		
+					myseconds287 = mydate287.getSeconds();
+		
+					if (myseconds287 < 10) {
+						myseconds287 = "0" + myseconds287;
+					} else {
+						myseconds287 = "" + myseconds287;
+					};
+		
+					arday287 = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+					armonth287 = new Array("January","February","March","April","May","June","July","August","September", "October","November","December");
+					ardate287 = new Array("0th","1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd","24th","25th","26th","27th","28th","29th","30th","31st");
+					
+				myweekday287 = parseInt(myweekday287);
+				var time287 = (""+arday287[myday287]+","+" "+armonth287[mymonth287]+" "+myweekday287+","+" "+year287+"-"+""+""+myhours287+":"+mytime287+":"+myseconds287+mm287+"");
+					};
+					
+					document.getElementById("ty2udate287").innerHTML  = time287;
+		
+					setTimeout("clock287()", 1000);
+		
+			};
+			listen("load", window, clock287);
+
+  </script>
+  <meta property="fb:app_id" content="373788246027539">
+  <meta property="og:title" content="UOG seeks virus that can kill rhino beetle on Guam and Rota">
+  <meta property="og:type" content="ogtypes">
+  <meta property="og:url" content="http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota">
+  <meta property="og:site_name" content="Marianas Variety">
+
+<!--[if ie]><link href="/plugins/system/jat3/jat3/base-themes/default/css/template-ie.css" type="text/css" rel="stylesheet" /><![endif]--> 
+<!--[if ie]><link href="/templates/ja_teline_iv/css/template-ie.css" type="text/css" rel="stylesheet" /><![endif]--> 
+<!--[if ie 7]><link href="/plugins/system/jat3/jat3/base-themes/default/css/template-ie7.css" type="text/css" rel="stylesheet" /><![endif]--> 
+<!--[if ie 7]><link href="/templates/ja_teline_iv/css/template-ie7.css" type="text/css" rel="stylesheet" /><![endif]--> 
+
+
+
+
+<link href="http://www.mvariety.com/templates/ja_teline_iv/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    
+    <style type="text/css">
+/*dynamic css*/
+
+    body.bd .main {width: 980px;}
+    body.bd #ja-wrapper {min-width: 980px;}
+</style><script type="text/javascript" async="" src="embed"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f5f6f7;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:-webkit-sticky;top:0}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://z-m-static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style><script type="text/javascript" charset="utf-8" async="" src="button.js"></script><script src="https://www.google.com/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22search%22%2C%22version%22%3A%221.0%22%2C%22callback%22%3A%22__gcse.scb%22%2C%22style%22%3A%22https%3A%2F%2Fwww.google.com%2Fcse%2Fstatic%2Fstyle%2Flook%2Fv2%2Fdefault.css%22%2C%22language%22%3A%22en%22%7D%5D%7D" type="text/javascript"></script><link rel="prefetch" href="https://c.disquscdn.com/next/embed/styles/lounge.fda8427fde61b6f55d19bcd47d8c54b0.css"><link rel="prefetch" href="https://c.disquscdn.com/next/embed/common.bundle.e63a160a6bfb2f2953b5059c50baaf15.js"><link rel="prefetch" href="https://c.disquscdn.com/next/embed/lounge.bundle.d9de07e390c24c083ffd3c2c531d3ebf.js"><link rel="prefetch" href="https://disqus.com/next/config.js"></head>
+
+<body id="bd" class="bd fs5 com_content">
+<a name="Top" id="Top"></a>
+<div id="ja-wrapper">
+
+
+                <div id="ja-header" class="wrap ">
+                   <div class="main clearfix">
+           <h1 class="logo">
+		<a href="http://www.mvariety.com/index.php" title="Marianas Variety"><span>Marianas Variety</span></a>
+	</h1>
+		
+	<div class="ja-header-r">
+		
+
+<div class="custom">
+	<script>
+  (function() {
+    var cx = '008021793823546679917:qjf4zowrlcs';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only></div>
+
+	</div>
+
+	<div class="ja-header-clock">
+                
+        </div>            </div>
+                        </div>
+            <div id="ja-topmegamenu" class="wrap ">
+                   <div class="main clearfix">
+           <div id="ja-topnav" class="clearfix">
+	<div class="ja-megamenu clearfix" id="ja-topmega">
+<ul class="megamenu level0"><li class="mega first haschild nav-facebook"><a href="#" class="mega first haschild nav-facebook" id="menu351" title="Facebook Like"><span class="menu-title">Facebook Like</span></a><div class="childcontent cols1 " style="width: 375px; height: 42px; display: none;">
+<div class="childcontent-inner-wrap" style="width: 355px;">
+<div class="childcontent-inner clearfix" style="width: 353px;">	<div class="ja-moduletable moduletable  clearfix" id="Mod318">
+						<div class="ja-box-ct clearfix">
+		<style>.fbInner{width:340px;}</style><div class="fbInner"><div class="textwidget"><script src="all"></script><fb:fan profile_id="266082993493810" width="340" height="520" connections="25" stream="0" logobar="1" css="http://www.mvariety.com/modules/mod_myfanbox_facebook/myfanbox.php?fanBoxColor=%23FFFFFF&amp;textColor=%23000000&amp;countFansSize=21&amp;imgWidth=45&amp;betweenImg=2&amp;textShadow=0&amp;fanLinkColor=%23000000&amp;fanBoxinternalColor=%23FFFFFF&amp;borderColor=%23000000&amp;rand=178" class=" fb_iframe_widget" fb-xfbml-state="parsed" fb-iframe-plugin-query="app_id=&amp;connections=25&amp;container_width=0&amp;height=520&amp;locale=en_GB&amp;profile_id=266082993493810&amp;sdk=joey&amp;stream=false&amp;width=340"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f35f44efe0103f8" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:fan Facebook Social Plugin" style="border: medium none; visibility: hidden;" src="https://www.facebook.com/plugins/fan.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FQX17B8fU-Vm.js%3Fversion%3D42%23cb%3Df27b1e257b12bd8%26domain%3Dwww.mvariety.com%26origin%3Dhttp%253A%252F%252Fwww.mvariety.com%252Ff2b5cab6cbc28ee%26relation%3Dparent.parent&amp;connections=25&amp;container_width=0&amp;height=520&amp;locale=en_GB&amp;profile_id=266082993493810&amp;sdk=joey&amp;stream=false&amp;width=340" height="520px" frameborder="0" width="340px"></iframe></span></fb:fan><div dir="ltr" style="text-align: left;" trbidi="on"><div style="text-align: center;">
+<span style="font-family: Verdana, sans-serif; font-size: xx-small;"></span></div>
+</div></div></div> <noscript>JavaScript must be enabled in order for you to use the facebook Like Box. However, it seems JavaScript is either disabled or not supported by your browser. To use the facebook Like Box, enable JavaScript by changing your browser options, then <a href="http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota">try again.</a></noscript>		</div>
+    </div>
+	</div>
+</div></div></li><li class="mega nav-feeds"><a href="http://www.mvariety.com/?format=feed&amp;type=rss" target="_blank" class="mega nav-feeds" id="menu365" title="RSS"><span class="menu-title">RSS</span></a></li><li class="mega last nav-youtube"><a href="http://www.youtube.com/mvariety" target="_blank" class="mega last nav-youtube" id="menu249" title="Youtube"><span class="menu-title">Youtube</span></a></li></ul>
+</div>            <script type="text/javascript">
+                var megamenu = new jaMegaMenuMoo ('ja-topmega', {
+                    'bgopacity': 0,
+                    'delayHide': 300,
+                    'slide'    : 1,
+                    'fading'   : 0,
+                    'direction': 'down',
+                    'action'   : 'mouseover',
+                    'tips'     : false,
+                    'duration' : 300,
+                    'hidestyle': 'fastwhenshow'
+                });
+            </script>
+            </div>
+            </div>
+                        </div>            <div id="ja-mainnav" class="wrap ">
+                   <div class="main clearfix">
+           <div class="ja-megamenu clearfix" id="ja-megamenu">
+<ul class="megamenu level0"><li class="mega first haschild home"><a href="http://www.mvariety.com/" class="mega first haschild home" id="menu137" title="Home"><span class="menu-title">Home</span></a><div class="childcontent cols1 " style="width: 222px; height: 80px; display: none;">
+<div class="childcontent-inner-wrap" style="width: 202px;">
+<div class="childcontent-inner clearfix" style="width: 200px;"><div class="megacol column1 first" style="width: 200px;"><ul class="megamenu level1"><li class="mega first"><a href="http://www.mvariety.com/home-sp-445/about-us" class="mega first" id="menu220" title="About Us"><span class="menu-title">About Us</span></a></li></ul></div></div>
+</div></div></li><li class="mega haschild active"><a href="http://www.mvariety.com/cnmi" class="mega haschild active" id="menu138" title="CNMI"><span class="menu-title">CNMI</span></a><div class="childcontent cols3 " style="width: 922px; height: 459px; display: none;">
+<div class="childcontent-inner-wrap" style="width: 902px;">
+<div class="childcontent-inner clearfix" style="width: 900px;"><div class="megacol column1 first" style="width: 200px;"><ul class="megamenu level1"><li class="mega first group"><div class="group"><div class="group-title"><a href="#" class="mega first group" id="menu211" title="CNMI News"><span class="menu-title">CNMI News</span></a></div><div class="group-content"><ul class="megamenu level1"><li class="mega first active"><a href="http://www.mvariety.com/cnmi/cnmi-news/local" class="mega first active" id="menu107" title="Local"><span class="menu-title">Local</span></a></li><li class="mega"><a href="http://www.mvariety.com/cnmi/cnmi-news/editorials" class="mega" id="menu108" title="Editorials &amp; Columns"><span class="menu-title">Editorials &amp; Columns</span></a></li><li class="mega"><a href="http://www.mvariety.com/cnmi/cnmi-news/letters-to-the-editor" class="mega" id="menu112" title="Letters to the Editor"><span class="menu-title">Letters to the Editor</span></a></li><li class="mega"><a href="http://www.mvariety.com/cnmi/cnmi-news/sports" class="mega" id="menu109" title="Sports"><span class="menu-title">Sports</span></a></li><li class="mega"><a href="http://www.mvariety.com/cnmi/cnmi-news/corrections" class="mega" id="menu152" title="Corrections"><span class="menu-title">Corrections</span></a></li><li class="mega"><a href="http://www.mvariety.com/cnmi/cnmi-news/obituaries" class="mega" id="menu193" title="Obituaries"><span class="menu-title">Obituaries</span></a></li><li class="mega last"><a href="http://www.mvariety.com/cnmi/cnmi-news/photo-gallery" class="mega last" id="menu208" title="Photo Gallery"><span class="menu-title">Photo Gallery</span></a></li></ul></div></div></li></ul></div><div class="megacol column2" style="width: 350px;"><ul class="megamenu level1"><li class="mega first group"><div class="group"><div class="group-title"><a href="#" class="mega first group" id="menu212" title="Latest News"><span class="menu-title">Latest News</span></a></div><div class="group-content">	<div class="ja-moduletable moduletable_mega  clearfix" id="Mod210">
+						<div class="ja-box-ct clearfix">
+		<div class="ja-bulletin-wrap">
+	<ul class="ja-bulletin_mega clearfix">
+				<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106903-governor-declares-all-clear-for-saipan-and-tinian-agrihan-pagan-and-alamagan-maintain-typhoon-condition-i" class="mostread-image">
+						<img src="trafficLightGreen02_30_30.jpg" alt="Governor declares ‘all clear’ for Saipan and Tinian; Agrihan, Pagan and Alamagan maintain Typhoon Condition I" title="Governor declares ‘all clear’ for Saipan and Tinian; Agrihan, Pagan and Alamagan maintain Typhoon Condition I">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106903-governor-declares-all-clear-for-saipan-and-tinian-agrihan-pagan-and-alamagan-maintain-typhoon-condition-i" class="mostread">Governor declares ‘all clear’ for Saipan and Tinian; Agrihan, Pagan and Alamagan maintain Typhoon Condition I</a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106932-structure-fire-in-chalan-kanoa" class="mostread-image">
+						<img src="fire_30_30.jpg" alt="Structure fire in Chalan Kanoa" title="Structure fire in Chalan Kanoa">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106932-structure-fire-in-chalan-kanoa" class="mostread">Structure fire in Chalan Kanoa</a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/special-features/special-events/106924-guma-sakman-a-source-of-pride-and-inspiration" class="mostread-image">
+						<img src="guma_30_30.jpg" alt="GuMA Sakman: A source of pride and inspiration" title="GuMA Sakman: A source of pride and inspiration">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/special-features/special-events/106924-guma-sakman-a-source-of-pride-and-inspiration" class="mostread">GuMA Sakman: A source of pride and inspiration</a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106921-last-screening-of-manamko-fundraising-film" class="mostread-image">
+						<img src="movie_30_30.jpg" alt="Last screening of manamko’ fundraising film" title="Last screening of manamko’ fundraising film">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106921-last-screening-of-manamko-fundraising-film" class="mostread">Last screening of manamko’ fundraising film</a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106918-saipan-video-game-competition-ongoing" class="mostread-image">
+						<img src="video_30_30.jpg" alt="Saipan video-game competition ongoing" title="Saipan video-game competition ongoing">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106918-saipan-video-game-competition-ongoing" class="mostread">Saipan video-game competition ongoing</a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			</ul>
+</div><script type="text/javascript">
+  var Ja_direction = '';
+  var cookie_path = '/';
+  var cur_template_name = 'ja_teline_iv';
+  window.addEvent('load', function(){
+
+		   if(typeof(tmpl_name) =='undefined')
+		   {
+			  cookie_path = "ja_teline_iv_direction";
+		   }
+		   else
+		   {
+			  cookie_path = tmpl_name+"_direction";
+		   }
+		   Ja_direction = Cookie.read(cookie_path);
+		   if(!Ja_direction)
+		   {
+				cookie_path = cookie_path.replace("_direction","_profile");
+			   Ja_direction = Cookie.read(cookie_path);
+		   }
+		   var style_l_value = 'auto';
+		   if(Ja_direction == 'rtl')
+			{
+			  			//	var ul_wrapper = $('Mod210').getElement("ul.ja-bulletin");
+			//	ul_wrapper.getElements("li img").each();
+			}
+	});
+</script>
+<script type="text/javascript" language="javascript">
+ function setStyleLinkWithRTLDirection()
+ {
+    var links = document.getElementsByTagName ('link');
+		var script = document.createElement('link');
+	script.setAttribute('type', 'text/css');
+	script.setAttribute('rel', 'stylesheet');
+	script.setAttribute('href', 'http://www.mvariety.com/modules/mod_jabulletin/assets/mod_jabuletin_rtl.css');
+	document.getElementsByTagName("head")[0].appendChild(script);
+ }
+</script>		</div>
+    </div>
+	</div></div></li></ul></div><div class="megacol column3 last" style="width: 350px;"><ul class="megamenu level1"><li class="mega first group"><div class="group"><div class="group-title"><a href="#" class="mega first group" id="menu229" title="Most Read This Week"><span class="menu-title">Most Read This Week</span></a></div><div class="group-content">	<div class="ja-moduletable moduletable_mega  clearfix" id="Mod241">
+						<div class="ja-box-ct clearfix">
+		<div class="ja-bulletin-wrap">
+	<ul class="ja-bulletin_mega clearfix">
+				<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/advertising/special-advertising-feature-2/106777-grilling-by-sunset" class="mostread-image">
+						<img src="saltys_30_30.jpg" alt="Grilling by sunset" title="Grilling by sunset">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/advertising/special-advertising-feature-2/106777-grilling-by-sunset" class="mostread">Grilling by sunset</a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/advertising/special-advertising-feature-2/106813-tasi-shave-ice-s-heat-buster-concoctions" class="mostread-image">
+						<img src="waff_30_30.jpg" alt="Tasi Shave Ice’s heat-buster concoctions" title="Tasi Shave Ice’s heat-buster concoctions">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/advertising/special-advertising-feature-2/106813-tasi-shave-ice-s-heat-buster-concoctions" class="mostread">Tasi Shave Ice’s heat-buster concoctions</a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/regional-news/106895-empty-hotels-idle-boats-what-happens-when-a-pacific-island-upsets-china" class="mostread-image">
+						<img src="palau_30_30.jpg" alt="Empty hotels, idle boats: What happens when a Pacific island upsets China" title="Empty hotels, idle boats: What happens when a Pacific island upsets China">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/regional-news/106895-empty-hotels-idle-boats-what-happens-when-a-pacific-island-upsets-china" class="mostread">Empty hotels, idle boats: What happens when a Pacific island upsets China</a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/advertising/special-advertising-feature-2/106824-12-happy-hours-at-tapochau-bar" class="mostread-image">
+						<img src="bar_30_30.jpg" alt="12 happy hours at Tapochau Bar " title="12 happy hours at Tapochau Bar ">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/advertising/special-advertising-feature-2/106824-12-happy-hours-at-tapochau-bar" class="mostread">12 happy hours at Tapochau Bar </a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			<li class="clearfix">
+												<div class="box-left">
+			
+									<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106926-cpa-wants-to-help-revive-japanese-tourism-market" class="mostread-image">
+						<img src="japanMarianas01_30_30.jpg" alt="CPA wants to help revive Japanese tourism market" title="CPA wants to help revive Japanese tourism market">					</a>
+								
+				</div>
+								<div style="padding-left:40px" class="box-right">
+				<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106926-cpa-wants-to-help-revive-japanese-tourism-market" class="mostread">CPA wants to help revive Japanese tourism market</a>
+				<br>
+				
+					<span class="post-date">	
+										
+				
+								</span>
+                        	
+				</div>
+		</li>
+			</ul>
+</div><script type="text/javascript">
+  var Ja_direction = '';
+  var cookie_path = '/';
+  var cur_template_name = 'ja_teline_iv';
+  window.addEvent('load', function(){
+
+		   if(typeof(tmpl_name) =='undefined')
+		   {
+			  cookie_path = "ja_teline_iv_direction";
+		   }
+		   else
+		   {
+			  cookie_path = tmpl_name+"_direction";
+		   }
+		   Ja_direction = Cookie.read(cookie_path);
+		   if(!Ja_direction)
+		   {
+				cookie_path = cookie_path.replace("_direction","_profile");
+			   Ja_direction = Cookie.read(cookie_path);
+		   }
+		   var style_l_value = 'auto';
+		   if(Ja_direction == 'rtl')
+			{
+			  					setStyleLinkWithRTLDirection();
+						//	var ul_wrapper = $('Mod241').getElement("ul.ja-bulletin");
+			//	ul_wrapper.getElements("li img").each();
+			}
+	});
+</script>
+<script type="text/javascript" language="javascript">
+ function setStyleLinkWithRTLDirection()
+ {
+    var links = document.getElementsByTagName ('link');
+		var script = document.createElement('link');
+	script.setAttribute('type', 'text/css');
+	script.setAttribute('rel', 'stylesheet');
+	script.setAttribute('href', 'http://www.mvariety.com/modules/mod_jabulletin/assets/mod_jabuletin_rtl.css');
+	document.getElementsByTagName("head")[0].appendChild(script);
+ }
+</script>		</div>
+    </div>
+	</div></div></li></ul></div></div>
+</div></div></li><li class="mega"><a href="http://www.mvariety.com/regional-news" class="mega" id="menu210" title="Regional News"><span class="menu-title">Regional News</span></a></li><li class="mega"><a href="http://www.mvariety.com/community-bulletin-sp-595" class="mega" id="menu123" title="Community Bulletins"><span class="menu-title">Community Bulletins</span></a></li><li class="mega haschild"><a class="mega haschild" id="menu158" title="Variety Features"><span class="menu-title">Variety Features</span></a><div class="childcontent cols1 " style="width: 222px; height: 292px; display: none;">
+<div class="childcontent-inner-wrap" style="width: 202px;">
+<div class="childcontent-inner clearfix" style="width: 200px;"><div class="megacol column1 first" style="width: 200px;"><ul class="megamenu level1"><li class="mega first"><a href="http://www.mvariety.com/special-features/green-tips" class="mega first" id="menu159" title="Green Tips"><span class="menu-title">Green Tips</span></a></li><li class="mega"><a href="http://www.mvariety.com/special-features/health-matters" class="mega" id="menu142" title="Health Matters"><span class="menu-title">Health Matters</span></a></li><li class="mega"><a href="http://www.mvariety.com/special-features/home-garden" class="mega" id="menu445" title="Home &amp; Garden"><span class="menu-title">Home &amp; Garden</span></a></li><li class="mega"><a href="http://www.mvariety.com/special-features/my-marianas" class="mega" id="menu241" title="My Marianas"><span class="menu-title">My Marianas</span></a></li><li class="mega"><a href="http://www.mvariety.com/special-features/special-advertising-feature" class="mega" id="menu202" title="Special Advertising Features"><span class="menu-title">Special Advertising Features</span></a></li><li class="mega"><a href="http://www.mvariety.com/special-features/special-events" class="mega" id="menu200" title="Special Events"><span class="menu-title">Special Events</span></a></li><li class="mega last"><a href="http://www.mvariety.com/special-features/special-supplements-pdf" class="mega last" id="menu466" title="Special Supplements (PDF)"><span class="menu-title">Special Supplements (PDF)</span></a></li></ul></div></div>
+</div></div></li><li class="mega haschild"><a href="#" class="mega haschild" id="menu195" title="Advertising"><span class="menu-title">Advertising</span></a><div class="childcontent cols1 " style="width: 222px; height: 216px; display: none;">
+<div class="childcontent-inner-wrap" style="width: 202px;">
+<div class="childcontent-inner clearfix" style="width: 200px;"><div class="megacol column1 first" style="width: 200px;"><ul class="megamenu level1"><li class="mega first"><a href="http://www.mvariety.com/advertising/ad-rates" class="mega first" id="menu132" title="Ad Rates"><span class="menu-title">Ad Rates</span></a></li><li class="mega"><a href="http://www.mvariety.com/advertising/classifieds" class="mega" id="menu439" title="Classifieds"><span class="menu-title">Classifieds</span></a></li><li class="mega"><a href="http://www.mvariety.com/advertising/rfp-ifb" class="mega" id="menu446" title="RFP &amp; IFB"><span class="menu-title">RFP &amp; IFB</span></a></li><li class="mega"><a href="http://www.mvariety.com/advertising/special-advertising-feature-2" class="mega" id="menu451" title="Special Advertising Features"><span class="menu-title">Special Advertising Features</span></a></li><li class="mega last"><a href="http://www.mvariety.com/advertising/subscription" target="_blank" class="mega last" id="menu116" title="Subscription"><span class="menu-title">Subscription</span></a></li></ul></div></div>
+</div></div></li><li class="mega"><a href="http://www.mvariety.com/contacts-sp-124" class="mega" id="menu228" title="Contact Us"><span class="menu-title">Contact Us</span></a></li><li class="mega last"><a href="http://www.postguam.com/" class="mega last" id="menu453" title="Guahan News"><span class="menu-title">Guahan News</span></a></li></ul>
+</div>            <script type="text/javascript">
+                var megamenu = new jaMegaMenuMoo ('ja-megamenu', {
+                    'bgopacity': 0,
+                    'delayHide': 300,
+                    'slide'    : 1,
+                    'fading'   : 0,
+                    'direction': 'down',
+                    'action'   : 'mouseover',
+                    'tips'     : false,
+                    'duration' : 300,
+                    'hidestyle': 'fastwhenshow'
+                });
+            </script>
+            <!-- jdoc:include type="menu" level="0" / -->
+
+
+<ul class="no-display">
+    <li><a href="#ja-content" title="Skip to content">Skip to content</a></li>
+</ul>            </div>
+                        </div>
+                        <div id="ja-topbar" class="wrap ">
+                   <div class="main clearfix">
+           <!--
+	<p class="ja-day clearfix">
+	  <span class="day">Tue</span><span class="month">08</span><span class="date">21</span><span class="year">2018</span>	</p>-->
+	 
+	<p class="ja-updatetime"><span>Last update</span><em>Thu, 23 Aug 2018 12am</em></p>
+	
+			<div class="ja-healineswrap">
+		
+<div class="ja-headelines-buttons">
+	<a class="ja-headelines-pre" onclick="return false;" href="http://www.mvariety.com/"><span>PREVIOUS</span></a>
+    <a class="ja-headelines-next" onclick="return false;" href="http://www.mvariety.com/"><span>NEXT</span></a> 
+</div>
+	
+	<em>Headlines:</em>
+	<div id="jalh-modid198" class="ja-headlines " style="width: 593px;">
+		<div style="white-space:nowrap; " id="jahl-wapper-items-jalh-modid198">
+		<!-- HEADLINE CONTENT -->
+								<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; z-index: 33; width: 372px;">
+					<a title="THE 6JMS Terminators and Jonny’s Roil Soil will see action in the opening round of the 2018 SEDA Dart League A Division Bud Light Cup title this week." href="http://www.mvariety.com/cnmi/cnmi-news/sports/106904-terminator-roil-soil-in-seda-a-division-bud-light-cup-opener"><span>Terminator, Roil Soil in SEDA A Division Bud Light Cup opener</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 32; width: 254px;">
+					<a title="FILTAGA Golfers Association’s William Retardo has yet to sign up for this year’s Annual Governor’s Tourism Cup Golf Tournament but he will register soon to defend his title." href="http://www.mvariety.com/cnmi/cnmi-news/sports/106905-retardo-aims-for-3-peat-in-governor-s-cup"><span>Retardo aims for 3-peat in Governor’s Cup</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 31; width: 278px;">
+					<a title="THE organizers of the 2018 Emon Lodge No. 179 Brotherhood Basketball League are ready to kick off the event at the Koblerville Basketball Gym on September 1, Saturday at 6:00 p.m. with IT&amp;E as the major sponsor of this league." href="http://www.mvariety.com/cnmi/cnmi-news/sports/106906-brotherhood-basketball-league-set-for-sept-1"><span>Brotherhood Basketball League set for Sept. 1</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 30; width: 366px;">
+					<a title="NEW YORK (Reuters) — Huawei Technology Co.’s coming U.S. launch of a solar-panel control device is expected to collide with new Trump administration tariffs on Chinese electronics, undermining a product that analysts had seen as challenging rivals on pricing." href="http://www.mvariety.com/regional-news/106907-us-tariffs-cast-a-cloud-over-huawei-s-solar-electronics-launch"><span>US tariffs cast a cloud over Huawei’s solar electronics launch</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 29; width: 374px;">
+					<a title="TOKYO (Reuters) —&nbsp; Daikin Industries, the world’s largest maker of air-conditioning equipment, is turning to Africa for further expansion, 10 years after a successful gamble on sharing its key technology with a Chinese company." href="http://www.mvariety.com/regional-news/106908-japan-s-daikin-thriving-in-asia-and-india-sets-sights-on-africa"><span>Japan’s Daikin, thriving in Asia and India, sets sights on Africa</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 28; width: 368px;">
+					<a title="BEIJING/TAIPEI (Reuters) — Taiwan lost another ally to Beijing on Tuesday when diplomatic ties with El Salvador were severed, the third country to swap allegiances from the self-ruled island to China this year." href="http://www.mvariety.com/regional-news/106909-taiwan-loses-el-salvador-to-china-in-fresh-diplomatic-setback"><span>Taiwan loses El Salvador to China in fresh diplomatic setback</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 27; width: 313px;">
+					<a title="WASHINGTON (Reuters) — President Donald Trump said on Monday he would “most likely” meet again with North Korean leader Kim Jong Un, while defending his efforts to convince Pyongyang to give up its nuclear weapons." href="http://www.mvariety.com/regional-news/106910-trump-most-likely-to-meet-north-korea-s-kim-again"><span>Trump ‘most likely’ to meet North Korea’s Kim again</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 26; width: 320px;">
+					<a title="MANILA (Philippine Star) — President Rodrigo Duterte Monday denied that he is seriously ill and assailed Communist leader Jose Maria “Joma” Sison for saying that he is in a coma." href="http://www.mvariety.com/regional-news/106911-duterte-goes-live-on-facebook-to-dispel-coma-rumors"><span>Duterte goes live on Facebook to dispel coma rumors</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 25; width: 455px;">
+					<a title="HAGÅTÑA (The Guam Daily Post) — Many parents know that good grades and success in school are highly dependent on their children’s study habits." href="http://www.mvariety.com/cnmi/cnmi-news/editorials/106912-helping-your-child-succeed-good-study-habits-are-key-to-academic-success-2018-08-22"><span>Helping your child succeed: Good study habits are key to academic success</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 24; width: 193px;">
+					<a title="MANILA — The political science scholar Segundo Romero calls it a “political capital that rests on an illusion of invincibility, infallibility and omnipotence.”" href="http://www.mvariety.com/cnmi/cnmi-news/editorials/106913-opinion-why-davao-is-bogus"><span>OPINION: Why Davao is bogus</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 23; width: 400px;">
+					<a title="THE terrorist Ernesto “Che” Guevara met his karmic end, executed without a trial in a muddy hut by CIA-trained Bolivian operatives, in 1967.&nbsp; Since that moment, however, his life has been endlessly romanticized by the Left — a trend that doesn’t seem to be abating." href="http://www.mvariety.com/cnmi/cnmi-news/editorials/106914-opinion-hey-buzzfeed-che-guevara-was-a-bloodthirsty-terrorist"><span>OPINION: Hey BuzzFeed, Che Guevara was a bloodthirsty terrorist</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 22; width: 448px;">
+					<a title="(MINA) — Micronesia Islands Nature Alliances announces the addition of Tan Holdings Corporation and Tan Siu Lin Foundation as Title Sponsors for the upcoming Green Gala." href="http://www.mvariety.com/cnmi/cnmi-news/local/106915-tan-holdings-tan-siu-lin-foundation-sign-up-as-green-gala-title-sponsors"><span>Tan Holdings, Tan Siu Lin Foundation sign up as Green Gala Title Sponsors</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 21; width: 333px;">
+					<a title="KNOWING our past helps us understand the present day. Clan histories in Micronesia provide a rich source of indigenous information that explains cultural traditions from pre-historic to the present times." href="http://www.mvariety.com/regional-news/106916-clan-histories-and-traditional-place-names-in-micronesia"><span>Clan histories and traditional place names in Micronesia</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 20; width: 291px;">
+					<a title="ROTARY Club of Saipan president Greg Borja invited basketball players to participate in the “Summer Shootout” this Saturday." href="http://www.mvariety.com/cnmi/cnmi-news/local/106917-rotaract-to-hold-summer-shootout-on-saturday"><span>Rotaract to hold ‘Summer Shootout’ on Saturday</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 19; width: 241px;">
+					<a title="A COMPETITION for video-gamers, including children, is being held on Saipan, Velma Lore of&nbsp; eSports Micronesia told members of the Rotary Club during its weekly meeting at the Hyatt on Tuesday." href="http://www.mvariety.com/cnmi/cnmi-news/local/106918-saipan-video-game-competition-ongoing"><span>Saipan video-game competition ongoing</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 18; width: 264px;">
+					<a title="REPRESENTATIVE Lorenzo “Larry” I Deleon Guerrero emphasizes the importance of voters getting involved in the November general elections." href="http://www.mvariety.com/cnmi/cnmi-news/local/106919-lawmaker-encourages-voters-to-vote-wisely"><span>Lawmaker encourages voters to vote wisely</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 17; width: 571px;">
+					<a title="WASHINGTON (Press Release) — Doug Domenech, U.S. Department of the Interior assistant secretary for insular and international affairs, this week announced $1,488,890 in fiscal year 2018 grants to combat invasive species and protect natural resources in the U.S. territories of American Samoa, Guam,..." href="http://www.mvariety.com/cnmi/cnmi-news/local/106920-interior-provides-1-5m-to-combat-invasive-species-and-protect-natural-resources-in-insular-areas"><span>Interior provides $1.5M  to combat invasive species and protect natural resources in insular areas</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 16; width: 266px;">
+					<a title="TODAY, Wednesday, the last screening of the manamko’s fundraising movie, “The Forgotten Island,”will take place at the Regal Cinemas Saipan." href="http://www.mvariety.com/cnmi/cnmi-news/local/106921-last-screening-of-manamko-fundraising-film"><span>Last screening of manamko’ fundraising film</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 15; width: 219px;">
+					<a title="IN August or September 2018, the&nbsp; Commonwealth Utilities Corp. pipeline will be inspected using in-line inspection or a “smart pig,” according to Russell Mechen II, U.S. Environmental Protection Agency designated technical representative and project coordinator for Stipulated Order 2." href="http://www.mvariety.com/cnmi/cnmi-news/local/106922-epa-cuc-pipeline-will-be-inspected"><span>EPA: CUC pipeline will be inspected</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 14; width: 235px;">
+					<a title="INDIGENOUS Affairs Office Resident Executive Roman Tudela Jr. expressed support for House Bill 20-180, saying it will “further maximize the utilization of the elderly who have vast knowledge of Chamorro and Carolinian cultures.”" href="http://www.mvariety.com/cnmi/cnmi-news/local/106923-iao-supports-cultural-expert-legislation"><span>IAO supports cultural-expert legislation</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 13; width: 362px;">
+					<a title="(Press Release) —&nbsp; Saipan International School is pleased to announce that Mr. Steven Beyer has been selected as the new elementary/middle school principal effective Aug. 13, 2018. SIS has just hit another all-time high enrollment and is looking forward to the increase in student services tha..." href="http://www.mvariety.com/cnmi/cnmi-news/local/106925-steven-beyer-named-sis-elementary-middle-school-principal"><span>Steven Beyer named SIS elementary/middle school principal</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 12; width: 307px;">
+					<a title="A COMMONWEALTH Ports Authority board member said the priority right now is the revival of the Japanese tourism market and the addition of new flights to Hawaii and the U.S. mainland." href="http://www.mvariety.com/cnmi/cnmi-news/local/106926-cpa-wants-to-help-revive-japanese-tourism-market"><span>CPA wants to help revive Japanese tourism market</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 11; width: 283px;">
+					<a title="A FORMER Commonwealth Utilities Corp. employee and CUC have reached a settlement agreement, with both parties asking the federal court to dismiss Zaji Zajradhara’s discrimination lawsuit with prejudice." href="http://www.mvariety.com/cnmi/cnmi-news/local/106927-cuc-ex-employee-settle-discrimination-lawsuit"><span>CUC, ex-employee settle discrimination lawsuit</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 10; width: 389px;">
+					<a title="A LAWYER says he does not object to the dismissal of his clients’ lawsuit against U.S. Citizenship and Immigration Services as long as the federal court&nbsp; retains jurisdiction to award fees and costs." href="http://www.mvariety.com/cnmi/cnmi-news/local/106928-lawyer-in-immigration-case-responds-to-court-s-show-cause-order"><span>Lawyer in immigration case responds to court’s show-cause order</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 9; width: 372px;">
+					<a title="THE Commonwealth Ports Authority Airport Facilities Committee will adopt a policy on car-rental concessions at the airport so the CPA board can move forward with the request-for-proposals process for car-rental booths." href="http://www.mvariety.com/cnmi/cnmi-news/local/106929-ports-authority-panel-to-adopt-policy-on-car-rental-concessions"><span>Ports authority panel to adopt policy on car-rental concessions</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 8; width: 176px;">
+					<a title="INTERIM Education Commissioner Glenn Muna on Tuesday announced that public school classes on Saipan and Tinian will resume today, Wednesday, Aug. 22, 2018." href="http://www.mvariety.com/cnmi/cnmi-news/local/106930-pss-resumes-classes-today"><span>PSS resumes classes today</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 7; width: 291px;">
+					<a title="DESPITE opposition from the prosecution, rape defendant Joseph Aquino Saimon was released by the Superior Court to a third-party custodian, his father." href="http://www.mvariety.com/cnmi/cnmi-news/local/106931-rape-defendant-released-to-third-party-custodian"><span>Rape defendant released to third-party custodian</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 6; width: 184px;">
+					<a title="(DFEMS) — On Tuesday, Aug. 21, 2018, at 11:38 a.m., the Department of Fire and Emergency Medical Services received a call from DPS 911 reporting a structure fire in Chalan Kanoa, District II." href="http://www.mvariety.com/cnmi/cnmi-news/local/106932-structure-fire-in-chalan-kanoa"><span>Structure fire in Chalan Kanoa</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 5; width: 264px;">
+					<a title="THE Department of Community and Cultural Affairs-Child Care Development Fund or CCDF will receive an additional $2.1 million in fiscal year 2018, DCCA Secretary Robert Hunter said." href="http://www.mvariety.com/cnmi/cnmi-news/local/106933-more-funding-for-dcca-s-child-care-program"><span>More funding for DCCA’s child-care program</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 4; width: 180px;">
+					<a title="DAYS after Marco Teng stepped down as board chairman of Imperial Pacific International, Cai Lingli resigned as executive director of IPI and&nbsp; chairwoman of the board’s executive committee." href="http://www.mvariety.com/cnmi/cnmi-news/local/106934-ipi-executive-director-resigns"><span>IPI executive director resigns</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 3; width: 285px;">
+					<a title="POLICE have identified Esekiel “Easy” Smith as the driver of a vehicle that fatally struck 21-year-old Melton Agulto Jr. on Sunday, Aug. 19, 2018. The victim died due to severe head trauma." href="http://www.mvariety.com/cnmi/cnmi-news/local/106935-driver-in-fatal-hit-and-run-charged-with-homicide"><span>Driver in fatal hit-and-run charged with homicide</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 2; width: 593px;">
+					<a title="(Office of the Governor) —&nbsp; As Typhoon Cimaron continues to move away from the Marianas and no longer poses a threat to the islands, Gov. Ralph D.L.G. Torres has declared “all clear” for Saipan and Tinian as of 7 Tuesday morning. But a Typhoon Watch still remains in effect for Agrihan, Pa..." href="http://www.mvariety.com/cnmi/cnmi-news/local/106903-governor-declares-all-clear-for-saipan-and-tinian-agrihan-pagan-and-alamagan-maintain-typhoon-condition-i"><span>Governor declares ‘all clear’ for Saipan and Tinian; Agrihan, Pagan and Alamagan maintain Typhoo...</span>
+					</a> 
+				</div>
+						<div class="ja-headlines-item jahl-horizontal" style="visibility: visible; opacity: 0; z-index: 1; width: 220px;">
+					<a title="WITHOUT swing and sweat, the CK Bears took the pennant championship title in the Saipan Baseball League over the Falcons in a forfeited game on Friday last week." href="http://www.mvariety.com/cnmi/cnmi-news/sports/106877-ck-bears-easily-win-pennant-in-sbl"><span>CK Bears easily win pennant in SBL </span>
+					</a> 
+				</div>
+						<!-- //HEADLINE CONTENT -->
+		</div>	
+	</div>
+	
+</div>
+<script type="text/javascript">
+// options setting
+var options = { box:$('jalh-modid198'),
+				items: $$('#jalh-modid198 .ja-headlines-item'),
+				mode: 'horizontal',
+				wrapper:$('jahl-wapper-items-jalh-modid198'),
+				buttons:{next: $$('.ja-headelines-next'), previous: $$('.ja-headelines-pre')},
+				interval:3000,
+				fxOptions : { duration: 500,
+							  transition: Fx.Transitions.linear ,
+							  wait: false }	};
+
+var jahl = new JANewSticker( options );
+</script>
+
+		
+	
+	         <div id="ja-headtools" class="ja-headtool">
+  <ul>             
+        
+
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<span id="ty2udate287"><div style="margin:0px auto;width:auto;text-align:right;">Wednesday,&nbsp;August&nbsp;22,&nbsp;2018-7:49:52P.M.</div></span>
+
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+    </ul>
+</div>            </div>
+                        </div>
+            <div id="ja-cpanel-wrapper">
+<div id="ja-cpanel">
+	<div id="ja-cpanel-main">
+		<div class="ja-cpanel-head clearfix">
+		</div>
+		<div class="ja-cpanel-tools clearfix">
+		 
+			<h3>Font Size</h3>
+
+<div class="ja-box-usertools">
+  <ul class="ja-usertools-font clearfix">
+      <li class="font-inc">
+      <a title="Increase font size" onclick="switchFontSize('ja_teline_iv_font', 'inc');return false;">
+        <span>Increase font size</span>
+      </a>
+    </li>
+      <li class="font-dec">
+      <a title="Decrease font size" onclick="switchFontSize('ja_teline_iv_font', 'dec');return false;">
+        <span>Decrease font size</span>
+      </a>
+    </li>
+      <li class="font-reset">
+      <a title="Default font size" onclick="switchFontSize('ja_teline_iv_font', 'reset');return false;">
+        <span>Default font size</span>
+      </a>
+    </li>
+    </ul>
+</div>
+<script type="text/javascript">
+  var DefaultFontSize=parseInt('5');
+  var CurrentFontSize=parseInt('5');
+</script>														</div>
+		<div class="ja-cpanel-action clearfix">
+			<a href="#" onclick="cpanel_apply();return false;" class="button" title="Apply setting"><span>Apply</span></a>
+			<a href="#" onclick="cpanel_reset();return false;" title="Reset to default setting"><span>Reset</span></a>
+		</div>
+	</div>
+	<a href="#" id="ja-cpanel-toggle"><span>Settings</span></a>
+</div>
+</div>
+
+<script type="text/javascript">
+	var tmpl_name = 'ja_teline_iv';
+	window.addEvent('load', function () {
+		$('ja-cpanel-toggle').status == 'close';
+		$('ja-cpanel-toggle').slider = new Fx.Slide('ja-cpanel-main', {duration: 400});
+		$('ja-cpanel-toggle').slider.hide();
+		$('ja-cpanel').setStyle ('top', 0);
+		$('ja-cpanel-toggle').addEvent ('click', function (e) {
+			this.slider.toggle();
+			if (this.hasClass ('open')) {
+				this.removeClass ('open').addClass ('close');
+			} else {
+				this.removeClass ('close').addClass ('open');
+			}
+			new Event(e).stop();
+		});
+
+	});
+</script>            <div id="ja-slideshow2" class="wrap ">
+                   <div class="main clearfix">
+           
+
+<div class="custom">
+	
+
+
+
+
+<script src="jquery-1.js"></script>
+<script src="jquery.js"></script>
+<script type="text/javascript" language="javascript">
+	$( window ).load ( function () { 
+		$( "#photoSlideShow98" ).cycle( { 
+			fx: 			"fade", 
+			pause: 			1, 
+			random: 		0, 
+			speed: 			1000, 
+			timeout: 		5000,
+			pager:  		""
+		}); 
+	}); 
+
+</script>
+<div id="wrapSlideShow98">
+  <div id="photoSlideShow98">
+<p style="text-align: center;"><a class="jcepopup" target="_blank" href="http://www.mvariety.com/2018_Ads/August/torres&amp;palacios_new.jpg" rel=""><img src="torrespalacios_new.jpg" alt="" width="100%"></a></p>
+  </div>
+</div>
+</div>
+            </div>
+                        </div>
+            
+    <!-- MAIN CONTAINER -->
+    <div id="ja-container" class="wrap ja-r1">
+               <div class="main">
+                           <div class="main-inner1 clearfix">
+                        <div id="ja-mainbody" style="width:83%">
+            <!-- CONTENT -->
+            <div id="ja-main" style="width:100%">
+            <div class="inner clearfix">
+
+                
+<div id="system-message-container">
+</div>
+                
+                <div id="ja-contentwrap" class="clearfix ">
+                    <div id="ja-content" class="column" style="width:100%">
+                        <div id="ja-current-content" class="column" style="width:100%">
+                            
+                                                        <div id="ja-content-main" class="ja-content-main clearfix">
+                                <div class="item-page">
+	<h2 class="contentheading">
+			<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota">
+		UOG seeks virus that can kill rhino beetle on Guam and Rota</a>
+		</h2>
+
+	
+<div class="article-tools clearfix">
+	<ul class="actions">
+						<li class="print-icon">
+			<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota?tmpl=component&amp;print=1&amp;layout=default&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="printButton.png" alt="Print"></a>			</li>
+		
+					<li class="email-icon">
+			<a href="http://www.mvariety.com/component/mailto/?tmpl=component&amp;template=ja_teline_iv&amp;link=de2598e57b20ed5f77287d930d67f760046adac4" title="Email" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="emailButton.png" alt="Email"></a>			</li>
+				
+				
+		
+	</ul>
+
+
+
+	<dl class="article-info">
+	<dt class="article-info-term"></dt>
+	<dd class="create ja-blog-date">
+			<div class="inner clearfix">
+								<span class="date">07</span>
+				<span class="month-year">
+					<strong>Aug</strong>
+					<strong>2018</strong>
+				</span>
+							</div>
+	</dd>
+	<dd class="createdby"> 
+				By Lori Lyn C. Lirio - lyn@mvariety.com - Variety News Staff		</dd>
+	
+	</dl>
+</div>
+	<div class="bt-social-share bt-social-share-above"><div class="bt-social-share-button bt-facebook-share-button"><img class="fb-share" src="share.png" onclick="window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent('http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota')+'&amp;t='+encodeURIComponent('UOG seeks virus that can kill rhino beetle on Guam and Rota'),'sharer','toolbar=0,status=0,left='+((screen.width/2)-300)+',top='+((screen.height/2)-200)+',width=600,height=360');" href="javascript:%20void(0)"></div><div class="bt-social-share-button bt-facebook-like-button"><fb:like send="false" colorscheme="light" font="arial" href="http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota" layout="button_count" width="70" show_faces="true" action="like" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;color_scheme=light&amp;container_width=0&amp;font=arial&amp;href=http%3A%2F%2Fwww.mvariety.com%2Fcnmi%2Fcnmi-news%2Flocal%2F106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota&amp;layout=button_count&amp;locale=en_GB&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=70"><span style="vertical-align: bottom; width: 66px; height: 20px;"><iframe name="f18b8538bda0726" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" style="border: medium none; visibility: visible; width: 66px; height: 20px;" src="https://www.facebook.com/plugins/like.php?action=like&amp;app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FQX17B8fU-Vm.js%3Fversion%3D42%23cb%3Df19c1cee6c2971e%26domain%3Dwww.mvariety.com%26origin%3Dhttp%253A%252F%252Fwww.mvariety.com%252Ff2b5cab6cbc28ee%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=0&amp;font=arial&amp;href=http%3A%2F%2Fwww.mvariety.com%2Fcnmi%2Fcnmi-news%2Flocal%2F106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota&amp;layout=button_count&amp;locale=en_GB&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=70" class="" height="1000px" frameborder="0" width="70px"></iframe></span></fb:like></div><div class="bt-social-share-button bt-twitter-button" style="width:80px"><iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered" style="position: absolute; visibility: hidden; width: 0px; height: 0px;" title="Twitter Tweet Button" src="https://platform.twitter.com/widgets/tweet_button.1025be460f33762a866ea882e1687ff4.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fwww.mvariety.com%2Fcnmi%2Fcnmi-news%2Flocal%2F106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota&amp;size=m&amp;text=Marianas%20Variety%20-%20UOG%20seeks%20virus%20that%20can%20kill%20rhino%20beetle%20on%20Guam%20and%20Rota&amp;time=1534921835774&amp;type=share&amp;url=http%3A%2F%2Fwww.mvariety.com%2Fcnmi%2Fcnmi-news%2Flocal%2F106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota&amp;via=Marianas%20Variety" frameborder="0"></iframe><a href="http://twitter.com/share" class="twitter-share-button" data-via="Marianas Variety" data-url="http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota" data-size="medium" data-lang="en" data-count="horizontal" data-twitter-extracted-i1534921835050415397="true">Twitter</a></div><div class="bt-social-share-button bt-googleplus-button"><div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 57px; height: 20px;" id="___plus_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 57px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I0_1534921835074" name="I0_1534921835074" src="https://apis.google.com/se/0/_/+1/sharebutton?plusShare=true&amp;usegapi=1&amp;action=share&amp;annotation=bubble&amp;height=20&amp;hl=en-GB&amp;origin=http%3A%2F%2Fwww.mvariety.com&amp;url=http%3A%2F%2Fwww.mvariety.com%2Fcnmi%2Fcnmi-news%2Flocal%2F106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_US.FOUII-PoLSE.O%2Fam%3DwQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNt6sH0moVvACpVfJmwWDm4b0L3WA%2Fm%3D__features__#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1534921835074&amp;_gfid=I0_1534921835074&amp;parent=http%3A%2F%2Fwww.mvariety.com&amp;pfname=&amp;rpctoken=18121552" data-gapiattached="true" title="G+" frameborder="0" width="100%"></iframe></div></div></div>
+
+<!-- JoomlaWorks "DISQUS Comments for Joomla!" (v3.2) starts here -->
+
+<span id="startOfPage"></span>
+
+
+<p style="text-align: justify;">THE University of Guam is exploring the 
+possibility of introducing a virus that can kill the coconut rhinoceros 
+beetle or CRB on Rota, Guam, Hawaii and other Pacific islands.</p>
+ 
+<p style="text-align: justify;">In an interview during the 35th 
+Agricultural Fair at the Civic Center in Susupe on Saturday, UOG 
+entomologist Ross Miller said the university sent CRB specialist and 
+entomologist Aubrey Moore to Asia to look for such a virus.</p>
+<table align="right"><caption><span style="font-size: x-small;"><em><strong>Click to enlarge</strong></em></span></caption>
+<tbody>
+<tr>
+<td><a class="jcepopup" target="_blank" title="Entomologist Ross Miller of the University of Guam talks about insects at the recently held 35th Agricultural Fair in Susupe.  Photo by Lori Lyn C. Lirio " href="http://www.mvariety.com/images/photos/2018/08-Aug/07/virus2.jpg" rel=""><img src="virus2.jpg" alt="Entomologist Ross Miller of the University of Guam talks about insects at the recently held 35th Agricultural Fair in Susupe.  Photo by Lori Lyn C. Lirio " height="100" width="140"></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">“In Guam, the rhino beetle is there to 
+stay. There is no solution for it at the moment. We are going around 
+Asia looking for diseases that we can bring back to Guam that could kill
+ the beetle. Once we find that, we will bring that as well to Rota,” 
+Miller said.</p>
+<p style="text-align: justify;">Rhino beetles have been infesting Guam 
+for almost eight years now,&nbsp; he said, adding that the island has 
+already lost 25 percent of its coconut trees. Another 30 to 40 percent 
+have been attacked and damaged, he said.</p>
+<p style="text-align: justify;">“It is possible that we could lose 80 to 90 percent of the coconuts,” Miller said.</p>
+<p style="text-align: justify;">He added that other islands, like Palau,
+ lost 100 percent of their coconut trees. “It happened after World War 
+II. They have had these beetles for a long time. The Philippines has 
+them. They are common throughout the Pacific.”</p>
+<p style="text-align: justify;">On Rota, the rhino beetle has 
+established a colony in the old copra plantation down by the Wedding 
+Cake Hill in the southern part of the island.</p>
+<p style="text-align: justify;">“The workers have tried to cut all the 
+trees that are infested. They cut down many of those trees and destroyed
+ them with the idea of eradicating the beetle. But there are still 
+beetles flying around there, and it is not clear whether or not they 
+have been eradicated or not. It is really hard to eradicate an insect 
+once it has established its domain,” Miller said.</p>
+<p style="text-align: justify;">Earlier, Department of Lands and Natural
+ Resources Secretary Anthony Benavente reported that they were close to 
+eradicating the coconut rhino beetle on Rota.</p>
+<p style="text-align: justify;">Miller advised the people on Rota to remain vigilant for possible new infestations.</p>
+<p style="text-align: justify;">“It is really hard to eradicate them. 
+Once the beetles are out, they are very hard to find because they can 
+fly for miles. It could be that [DLNR has] controlled the infestation in
+ a coconut plantation, but it could be that the beetles have gotten 
+away. The people will have to be very vigilant for many years to make 
+sure that the beetle has not spread.”</p>
+<p style="text-align: justify;">The long-term solution, Miller said, is to find a viral control agent such as a fungus or virus that can kill the beetle.</p>
+<p style="text-align: justify;">&nbsp;“We just haven’t found it yet. 
+That is the only solution to the rhino beetle problem,” Miller added. 
+“The idea is to find the disease and release it. It will spread 
+naturally and the beetles will spread it among themselves. It will kill 
+the beetles. It doesn’t get rid of them, but it reduces the population 
+to a point where they won’t be a problem anymore. That is the goal.”</p>
+<p style="text-align: justify;">&nbsp;The rhino beetles found on Guam, 
+Hawaii and Rota are immune to every eradication process they have so far
+ tried, Miller said.</p>
+<p style="text-align: justify;">“Nothing works. We have to find a disease that will control the beetle on these islands,” he reiterated.</p>
+<!-- DISQUS comments block -->
+<div class="jwDisqusForm">
+<hr>
+<img src="addacomment.png">
+	
+			<div id="disqus_thread"><iframe id="dsq-app5551" name="dsq-app5551" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px ! important; min-width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 0px ! important;" src="https://disqus.com/embed/comments/?base=default&amp;f=mvariety&amp;t_i=d8d2d98882_id106535&amp;t_u=http%3A%2F%2Fwww.mvariety.com%2Fcnmi%2Fcnmi-news%2Flocal%2F106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota&amp;t_d=Marianas%20Variety%20-%20UOG%20seeks%20virus%20that%20can%20kill%20rhino%20beetle%20on%20Guam%20and%20Rota&amp;t_t=Marianas%20Variety%20-%20UOG%20seeks%20virus%20that%20can%20kill%20rhino%20beetle%20on%20Guam%20and%20Rota&amp;s_o=default&amp;l=#version=195734f552399ce2847dc11918da175b" frameborder="0" width="100%"></iframe></div>
+			<script type="text/javascript">
+				//<![CDATA[
+				var disqus_shortname = 'mvariety';
+				var disqus_url = 'http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota';
+				var disqus_identifier = 'd8d2d98882_id106535';
+				var disqus_developer = '0';
+				var disqus_config = function(){
+					this.language = '';
+				};
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+				//]]>
+			</script>
+			<noscript>
+				<a href="http://mvariety.disqus.com/?url=ref">View the discussion thread.</a>
+			</noscript>
+				<div id="jwDisqusFormFooter">
+		<a target="_blank" href="http://disqus.com/" class="dsq-brlink">
+			blog comments powered by <span class="logo-disqus">DISQUS</span>
+		</a>
+		<a id="jwDisqusBackToTop" href="http://www.mvariety.com/cnmi/cnmi-news/local/106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota#Top">
+			back to top		</a>
+		<div class="clr"></div>
+	</div>
+</div>
+
+<div class="clr"></div>
+
+
+<!-- JoomlaWorks "DISQUS Comments for Joomla!" (v3.2) ends here -->
+<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) {return;}
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script><script src="widgets.js" type="text/javascript"></script><script type="text/javascript" src="plusone.js" gapi_processed="true">{lang: 'en-GB'}</script>	
+	</div>                            </div>
+                            
+                                                    </div>
+
+                                            </div>
+
+                    
+                </div>
+
+                            </div>
+            </div>
+            <!-- //CONTENT -->
+            
+        </div>
+                <!-- RIGHT COLUMN-->
+        <div id="ja-right" class="column sidebar" style="width:17%">
+
+            
+                        <div class="ja-colswrap clearfix ja-r1">
+                                <div id="ja-right1" class="ja-col  column" style="width:100%">
+                    	<div class="ja-moduletable moduletable  clearfix" id="Mod253">
+						<h3><span>More News</span></h3>
+				<div class="ja-box-ct clearfix">
+		<ul class="latestnews">
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106915-tan-holdings-tan-siu-lin-foundation-sign-up-as-green-gala-title-sponsors">
+			Tan Holdings, Tan Siu Lin Foundation sign up as Green Gala Title Sponsors</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106917-rotaract-to-hold-summer-shootout-on-saturday">
+			Rotaract to hold ‘Summer Shootout’ on Saturday</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106918-saipan-video-game-competition-ongoing">
+			Saipan video-game competition ongoing</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106919-lawmaker-encourages-voters-to-vote-wisely">
+			Lawmaker encourages voters to vote wisely</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106920-interior-provides-1-5m-to-combat-invasive-species-and-protect-natural-resources-in-insular-areas">
+			Interior provides $1.5M  to combat invasive species and protect natural resources in insular areas</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106921-last-screening-of-manamko-fundraising-film">
+			Last screening of manamko’ fundraising film</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106922-epa-cuc-pipeline-will-be-inspected">
+			EPA: CUC pipeline will be inspected</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106923-iao-supports-cultural-expert-legislation">
+			IAO supports cultural-expert legislation</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106925-steven-beyer-named-sis-elementary-middle-school-principal">
+			Steven Beyer named SIS elementary/middle school principal</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106926-cpa-wants-to-help-revive-japanese-tourism-market">
+			CPA wants to help revive Japanese tourism market</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106927-cuc-ex-employee-settle-discrimination-lawsuit">
+			CUC, ex-employee settle discrimination lawsuit</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106928-lawyer-in-immigration-case-responds-to-court-s-show-cause-order">
+			Lawyer in immigration case responds to court’s show-cause order</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106929-ports-authority-panel-to-adopt-policy-on-car-rental-concessions">
+			Ports authority panel to adopt policy on car-rental concessions</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106930-pss-resumes-classes-today">
+			PSS resumes classes today</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106931-rape-defendant-released-to-third-party-custodian">
+			Rape defendant released to third-party custodian</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106932-structure-fire-in-chalan-kanoa">
+			Structure fire in Chalan Kanoa</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106933-more-funding-for-dcca-s-child-care-program">
+			More funding for DCCA’s child-care program</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106934-ipi-executive-director-resigns">
+			IPI executive director resigns</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106935-driver-in-fatal-hit-and-run-charged-with-homicide">
+			Driver in fatal hit-and-run charged with homicide</a>
+	</li>
+	<li>
+		<a href="http://www.mvariety.com/cnmi/cnmi-news/local/106903-governor-declares-all-clear-for-saipan-and-tinian-agrihan-pagan-and-alamagan-maintain-typhoon-condition-i">
+			Governor declares ‘all clear’ for Saipan and Tinian; Agrihan, Pagan and Alamagan maintain Typhoon Condition I</a>
+	</li>
+</ul>
+		</div>
+    </div>
+	                </div>
+                
+                            </div>
+                                </div>
+        <!-- //RIGHT COLUMN-->
+                            </div>
+                            </div>
+                </div>
+        <!-- //MAIN CONTAINER -->
+
+                <div id="ja-footer" class="wrap ">
+                   <div class="main">
+                           <div class="main-inner1 clearfix">
+                <div class="ja-footnav">
+		
+<ul class="menu-nav">
+<li class="item-231"><a href="http://www.mvariety.com/">Home</a></li><li class="item-232"><a href="http://www.mvariety.com/cnmi-sp-769">CNMI</a></li><li class="item-236"><a href="#">Regional News</a></li><li class="item-230"><a href="http://www.mvariety.com/community-bulletin-sp-950">Community Bulletin</a></li><li class="item-233"><a href="http://www.mvariety.com/special-features-sp-395">Variety Features</a></li><li class="item-235"><a href="#">Advertising</a></li><li class="item-204"><a href="http://www.mvariety.com/contact-us">Contact Us</a></li><li class="item-203"><a href="http://www.mvariety.com/user-content-posting-rules">User Content Posting Rules</a></li></ul>
+
+				<ul class="ja-links">
+						<li class="top"><a href="#Top" title="Back to Top">Top</a></li>
+		</ul>
+		
+		<ul class="no-display">
+			<li><a href="#ja-content" title="Skip to content">Skip to content</a></li>
+		</ul>
+	</div>
+		
+	<div class="ja-copyright">
+		
+
+<div class="custom">
+	
+
+
+
+
+<p><small>Copyright © 2013 Marianas Variety. All Rights Reserved. Published by Younis Art Studio Inc.</small></p>
+
+</div>
+
+	</div>                </div>
+                            </div>
+                        </div>
+            
+</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="https://staticxx.facebook.com/connect/xd_arbiter/r/QX17B8fU-Vm.js?version=42#channel=f2b5cab6cbc28ee&amp;origin=http%3A%2F%2Fwww.mvariety.com" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+
+
+
+
+
+<iframe scrolling="no" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.1025be460f33762a866ea882e1687ff4.html?origin=http%3A%2F%2Fwww.mvariety.com&amp;settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings&amp;widgetOrigin=http%3A%2F%2Fwww.mvariety.com%2Fcnmi%2Fcnmi-news%2Flocal%2F106535-uog-seeks-virus-that-can-kill-rhino-beetle-on-guam-and-rota" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe><iframe name="oauth2relay490385702" id="oauth2relay490385702" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=http%3A%2F%2Fwww.mvariety.com&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en_US.FOUII-PoLSE.O%2Fam%3DwQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCNt6sH0moVvACpVfJmwWDm4b0L3WA%2Fm%3D__features__#rpctoken=358300348&amp;forcesecure=1" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe><iframe style="display: none;"></iframe></body></html>

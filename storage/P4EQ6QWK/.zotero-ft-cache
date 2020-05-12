@@ -1,0 +1,40 @@
+Guam Coconut Rhinoceros Project Technical Report
+OrNV Witch’s Brew Experiment 1: A Last Ditch Attempt to Find Virus Pathogenetic for the Guam Cocoonut Rhinoceros Beetle Genotype
+Aubrey Moore, Ian Iriarte and Roland Quitugua
+December 2, 2015
+Bioassays of several isolates of Oryctes nudivirus provided by AgriResearch New Zealand failed to result in signiﬁcant pathogenicity for the Guam CRB genotype. In a ’last ditch’ attempt we made a ’witches brew’ slurry containing all frozen dead beetles from previous bioassays plus frozen virus samples in vials. Forty adult beetles were forced to swim in the slurry for 30 minutes on January 22, 2015. A control group of 41 beetles were forced to swim in water. Beetles were checked weekly.
+By April 10, 2015, mortality of the virus treated beetles (78%) was signiﬁcantly greater than that of the control group (54%). Treatment mortality corrected for experimental control mortality by Abbott’s formula was 51%.
+Methods
+Frozen, dead beetles from previous bioassays were added to one liter of water and made into an aqueous slurry using a blender. Vials containing remnants of virus samples from AgResearch New Zealand were agitated in 500 ml of water, and this suspension was added to the blender. The slurry was poured into a small pail and forty beetles were made to swim in this for thirty minutes. A control group of beetles was made to swim in water for thirty minutes.
+Beetles were kept in a large container ﬁlled with moist, commercially blended steer manure and soil. All beetles were checked weekly. Dead beetles were recorded and frozen.
+Analysis
+Data were analyzed using an IPython notebook (ﬁle name = ’OrNV.ipynb’). Signiﬁcance of differences in mortality were determined using a Fisher’s exact test, and ﬁnal mortality was adjusted using Abbott’s formula.
+1
+
+1.0 virus control
+0.8
+
+proportion dead
+
+0.6
+
+0.4
+
+0.2
+
+0.0 Jan 26 2015
+
+Feb 09 2015
+
+Feb 23 2015 Mar 09 2015 Mar 23 2015
+observation date
+
+Apr 06 2015
+
+Figure 1: Cumulative mortality.
+
+Results and Discussion
+Cumulative mortality of virus-treated beetles (78%) on April 10 (Fig. 1) was signiﬁcantly greater than that of control beetles (54%); (p = 0.0005; Fisher’s exact test). Treatment mortality corrected for experimental control mortality by Abbott’s formula was 51%.
+
+2
+

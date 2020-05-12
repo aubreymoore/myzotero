@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class=" js flexbox no-touch csstransforms inlinesvg" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://liuyi.co/xmlrpc.php">
+
+<title>Passenger WSGI setup with pyenv on Dreamhost for Web2Py – LiuYi.co</title>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="LiuYi.co » Feed" href="https://liuyi.co/feed/">
+<link rel="alternate" type="application/rss+xml" title="LiuYi.co » Comments Feed" href="https://liuyi.co/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="LiuYi.co » Passenger WSGI setup with pyenv on Dreamhost for Web2Py Comments Feed" href="https://liuyi.co/passenger-wsgi-setup-with-pyenv-on-dreamhost-for-web2py/feed/">
+		<script type="text/javascript" async="" src="analytics.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/liuyi.co\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="collapseomatic-css-css" href="light_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="parent-style-css" href="style.css" type="text/css" media="all">
+<link rel="stylesheet" id="decode-style-css" href="style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="decode-font-stylesheet-css" href="css.css" type="text/css" media="all">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-migrate.js"></script>
+<link rel="https://api.w.org/" href="https://liuyi.co/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://liuyi.co/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://liuyi.co/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Add Bluetooth or Inline Remote Mic Cable to Koss KSC75 Headphone" href="https://liuyi.co/add-bluetooth-or-inline-remote-mic-cable-to-koss-ksc75-headphone/">
+<link rel="next" title="Securing Web2py with Let’s Encrypt / Certbot" href="https://liuyi.co/securing-web2py-with-lets-encrypt-certbot/">
+<meta name="generator" content="WordPress 4.9.4">
+<link rel="canonical" href="https://liuyi.co/passenger-wsgi-setup-with-pyenv-on-dreamhost-for-web2py/">
+<link rel="shortlink" href="https://liuyi.co/?p=220">
+<link rel="alternate" type="application/json+oembed" href="https://liuyi.co/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fliuyi.co%2Fpassenger-wsgi-setup-with-pyenv-on-dreamhost-for-web2py%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://liuyi.co/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fliuyi.co%2Fpassenger-wsgi-setup-with-pyenv-on-dreamhost-for-web2py%2F&amp;format=xml">
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="" src="js.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-8563606-1');
+</script>
+    		<!-- Decode Custom Colors CSS -->
+		<style type="text/css">
+					</style>
+				<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="post-template-default single single-post postid-220 single-format-standard sidebar-style-closing sidebar-style-left">
+	
+<div id="page" class="hfeed site">
+	
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	
+				
+				<button id="sidebar-link" class="sidebar-link SidebarLink left" title="Show sidebar">
+				<svg width="100%" height="100%" viewBox="0 0 240 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+					<g class="menu-icon" fill-rule="evenodd">
+						<path d="M0,160 L0,200 L240,200 L240,160 L0,160 Z M0,160"></path>
+						<path d="M0,80 L0,120 L240,120 L240,80 L0,80 Z M0,80"></path>
+						<path d="M0,0 L0,40 L240,40 L240,0 L0,0 Z M0,0"></path>
+					</g>
+				</svg>
+			</button>
+					<header id="masthead" class="site-header" role="banner">
+				
+		<div class="site-branding">
+				
+											
+						
+				<h1 class="site-title">
+				<a href="https://liuyi.co/" title="LiuYi.co" rel="home">LiuYi.co</a>
+				</h1>
+						
+											<h2 class="site-description">Science . Industry . Creativity</h2>
+										
+		</div><!-- .site-branding -->
+		
+		
+		<nav id="header-menu" class="menu horizontal-menu header-menu" role="navigation"><ul><li id="menu-item-10156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-10156"><a href="https://liuyi.co/">About Me</a></li>
+<li id="menu-item-10155" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-10155"><a href="https://liuyi.co/blog/">Blog</a></li>
+<li id="menu-item-10157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10157"><a href="https://liuyi.co/archives/">Archives</a></li>
+<li id="menu-item-10152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10152"><a href="https://liuyi.co/quotes/">Quotes</a></li>
+<li id="menu-item-10153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10153"><a href="https://liuyi.co/book/">Book</a></li>
+<li id="menu-item-10158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10158"><a href="http://shalongla.com/luoye/">Salon</a></li>
+<li id="menu-item-10154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10154"><a href="https://liuyi.co/%e5%85%b3%e4%ba%8e%e6%88%91/">关于我</a></li>
+</ul></nav><!-- #header-menu -->		
+				
+	</header><!-- #masthead -->
+	
+			
+		
+	<div id="content" class="site-content">
+		
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+
+	
+		
+
+			<article id="post-220" class="post-220 post type-post status-publish format-standard hentry category-tech-web tag-dreamhost tag-passenger tag-pyenv tag-web2py">
+				
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="https://liuyi.co/passenger-wsgi-setup-with-pyenv-on-dreamhost-for-web2py/" rel="bookmark">Passenger WSGI setup with pyenv on Dreamhost for Web2Py</a></h1>					</header><!-- .entry-header -->
+		
+		<div class="entry-content">
+			<p>I have been using <code>fastcgi+flup</code> (<a href="http://www.web2pyslices.com/slice/show/1401/web2py-on-shared-hosting-hostmonster-with-fastcgi">link</a>) to run my web2py apps on shared Dreamhost hosting. But the speed was really mediocre. Dreamhost recommends <a href="https://help.dreamhost.com/hc/en-us/articles/215769578-Passenger-overview">Passenger WSGI for python</a> application.</p>
+<p>After hours of research and testing, I would like to share my experience using <code>pyenv + passenger wsgi + web2py</code> on Dreamhost shared hosting as of 08.2017</p>
+<p>What I did differently than most guides online is that I only have to edit <code>.htaccess</code> file (in domain root folder) with: (Credit: <a href="https://help.asmallorange.com/index.php?/Knowledgebase/Article/View/316/9/creating-a-python-hello-world-application-with-flask-for-aso-shared-hosting">ASO</a>)</p>
+<pre>PassengerEnabled on
+PassengerAppRoot /home/%USER%/
+PassengerPython /home/%USER%/.pyenv/shims/python</pre>
+<p>Most importantly and strangely, I didn’t need to modify <code>passenger_wsgi.py</code> (handlers/wsgihandler.py) at all. Most guides online (<a href="https://help.dreamhost.com/hc/en-us/articles/215769548-Passenger-and-Python-WSGI">this</a>; <a href="https://nokyotsu.com/qscripts/2015/05/deploy-a-python-web-application-on-dreamhost-with-pyenv.html">this</a>; and many others) require adding two lines after <code>import os</code>, such as this one:</p>
+<pre>INTERP = "/home/%USER%/.pyenv/shims/python"
+#INTERP is present twice so that the new Python interpreter knows the actual executable path
+if sys.executable != INTERP: os.execl(INTERP, INTERP, *sys.argv)</pre>
+<p>But I couldn’t make it work if I modify <code>passenger_wsgi.py</code>. It seems <code>.htaccess</code> is sufficient to specify pyenv environment.</p>
+<p>Some guides also suggest make a pyenv “virtualenv” within app folder, I found it is not required.</p>
+<p>Assuming you already know:</p>
+<ol>
+<li>how to use web2py</li>
+<li>how to use <a href="https://github.com/pyenv/pyenv">pyenv</a> on Dreamhost</li>
+<li>Read about <a href="https://help.dreamhost.com/hc/en-us/articles/216385637-How-do-I-enable-Passenger-on-my-domain-">Passenger on Dreamhost</a></li>
+</ol>
+<p>This is what I did:</p>
+<ol>
+<li><a href="https://help.dreamhost.com/hc/en-us/articles/216385637-How-do-I-enable-Passenger-on-my-domain-">Enable passenger on Dreamhost panel</a>. A folder <code>public</code> will be created. Don’t worry.</li>
+<li>Put web2py files into your domain root folder, which is parent folder of <code>public</code></li>
+<li><code>cp handlers/wsgihandler.py passenger_wsgi.py</code></li>
+<li>Create/modify <code>.htaccess</code> in domain root folder as described above.</li>
+<li>Created <code>tmp/</code> folder under my web root folder, did a <code>touch restart.txt</code> to get passenger to reload</li>
+</ol>
+<p>Your web2py site should now load in your browser. If you use free 
+“Let’s Encrypt” SSL from Dreamhost panel, you should be able to verify 
+your pyenv python environment from admin interface by accessing https. I
+ did verify mine.</p>
+<p>I am not sure <a href="http://www.web2pyslices.com/slice/show/1396/ssh-tunnel-to-admin">ssh tunnel method</a> could serve as verification, because you are serving admin from a separate web2py instance running from your shell.</p>
+<p>Hope this will help fellow web2py users. Thank all the web2py team for providing web2py.</p>
+		</div>
+		
+				
+		<footer class="entry-footer">
+						
+						
+			<div class="entry-meta">
+				<p class="tags">Tagged as: <a href="https://liuyi.co/tag/dreamhost/" rel="tag">Dreamhost</a>, <a href="https://liuyi.co/tag/passenger/" rel="tag">Passenger</a>, <a href="https://liuyi.co/tag/pyenv/" rel="tag">pyenv</a>, <a href="https://liuyi.co/tag/web2py/" rel="tag">web2py</a></p>
+				<p class="categories">Categorized in: <a href="https://liuyi.co/category/tech-web/" rel="category tag">Tech&amp;Web</a></p>
+									<p class="date"><span class="posted-on">Posted on <a href="https://liuyi.co/passenger-wsgi-setup-with-pyenv-on-dreamhost-for-web2py/" rel="bookmark"><time class="entry-date published" datetime="2017-08-26T16:53:43+00:00">August 26, 2017</time><time class="updated screen-reader-text" datetime="2017-09-11T02:14:19+00:00">September 11, 2017</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://liuyi.co/author/laviex/">Yi Liu</a></span></span></p>
+							</div>
+		</footer><!-- .entry-footer -->
+		
+			</article><!-- #post-220 -->
+		
+		
+		 
+	<div id="comments" class="comments-area">
+
+	
+		
+		
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://liuyi.co/passenger-wsgi-setup-with-pyenv-on-dreamhost-for-web2py/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://liuyi.co/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" size="30" maxlength="245" aria-required="true" required="required" type="text"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required" type="email"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" size="30" maxlength="200" type="url"></p>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="220" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="278e6ee803" type="hidden"></p><p style="display: none;"></p>			<input id="ak_js" name="ak_js" value="1519025462468" type="hidden"></form>
+			</div><!-- #respond -->
+		
+		
+	
+</div><!-- #comments -->
+	
+	
+	</main><!-- #main -->
+	
+	
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://liuyi.co/add-bluetooth-or-inline-remote-mic-cable-to-koss-ksc75-headphone/" rel="prev">Add Bluetooth or Inline Remote Mic Cable to Koss KSC75 Headphone</a></div><div class="nav-next"><a href="https://liuyi.co/securing-web2py-with-lets-encrypt-certbot/" rel="next">Securing Web2py with Let’s Encrypt / Certbot</a></div></div>
+	</nav>
+</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+	
+	<footer id="colophon" class="site-footer" role="contentinfo">
+	
+	
+		
+		<div class="theme-info">
+		<p><a href="http://scotthsmith.com/projects/decode/" rel="designer">Decode</a> by Scott Smith</p>
+	</div><!-- .theme-info -->
+		
+	</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+
+	
+<div id="sidebar" class="sidebar left">
+	<div id="sidebar-top" class="sidebar-top SidebarTop">
+		<button id="sidebar-close" class="sidebar-close SidebarClose" title="Hide sidebar">
+			<svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<path class="close-icon" d="M0,172.881356 L72.8813559,100 L1.0658141e-14,27.1186441 L27.1186441,-2.84217094e-14 L100,72.8813559 L172.881356,0 L200,27.1186441 L127.118644,100 L200,172.881356 L172.881356,200 L100,127.118644 L27.1186441,200 Z M0,172.881356" fill="#444444"></path>
+			</svg>
+		</button>
+	</div>
+	<div class="sidebar-content">
+
+		
+		<div class="widget-area" role="complementary">
+	
+				<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://liuyi.co/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input class="search-field" placeholder="Search …" name="s" type="search">
+				</label>
+				<input class="search-submit" value="Search" type="submit">
+			</form></aside><aside id="meta-2" class="widget widget_meta"><h2 class="widgettitle">Meta</h2>
+			<ul>
+						<li><a href="https://liuyi.co/wp-login.php">Log in</a></li>
+			<li><a href="https://liuyi.co/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://liuyi.co/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widgettitle">Categories</h2>
+		<ul>
+	<li class="cat-item cat-item-4"><a href="https://liuyi.co/category/book/">Book</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="https://liuyi.co/category/cleveland/">Cleveland</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="https://liuyi.co/category/entertain/">Entertain</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="https://liuyi.co/category/science/">Science</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="https://liuyi.co/category/tech-web/">Tech&amp;Web</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="https://liuyi.co/category/%e5%85%b3%e4%ba%8e%e8%87%aa%e5%b7%b1/">关于自己</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="https://liuyi.co/category/%e5%a4%a9%e6%96%b9%e4%b9%9f%e8%b0%88/">天方也谈</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="https://liuyi.co/category/%e6%96%87%e6%b5%b7%e6%8b%be%e9%81%97/">文海拾遗</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="https://liuyi.co/category/%e8%a5%bf%e7%89%9b%e8%b4%ba%e6%b4%b2/">西牛贺洲</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="https://liuyi.co/category/%e9%82%a3%e6%97%b6%e8%8a%b1%e5%bc%80/">那时花开</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="https://liuyi.co/category/%e9%ab%98%e5%b1%b1%e6%b5%81%e6%b0%b4/">高山流水</a>
+</li>
+		</ul>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widgettitle">Recent Posts</h2>
+		<ul>
+											<li>
+					<a href="https://liuyi.co/seasons-of-los-angeles-%e6%b4%9b%e5%9f%8e%e5%9b%9b%e5%ad%a3/">Seasons of Los Angeles 洛城四季</a>
+									</li>
+											<li>
+					<a href="https://liuyi.co/template-rendered-html-email-for-web2py-email-verification-and-password-reset/">Template rendered html email for Web2py email verification and password reset</a>
+									</li>
+											<li>
+					<a href="https://liuyi.co/force-ssl-https-non-www-in-web2py/">Force SSL/HTTPS and non-www in web2py</a>
+									</li>
+											<li>
+					<a href="https://liuyi.co/china-vibe/">China Vibe</a>
+									</li>
+											<li>
+					<a href="https://liuyi.co/securing-web2py-with-lets-encrypt-certbot/">Securing Web2py with Let’s Encrypt / Certbot</a>
+									</li>
+					</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widgettitle">Recent Comments</h2>
+<ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href="https://fortunmagnetj.wordpress.com/" rel="external nofollow" class="url">J.</a></span> on <a href="https://liuyi.co/switch-to-wordpress/#comment-961">转移阵地</a></li><li class="recentcomments"><span class="comment-author-link"><a href="https://fortunmagnetj.wordpress.com/" rel="external nofollow" class="url">J.</a></span> on <a href="https://liuyi.co/switch-to-wordpress/#comment-960">转移阵地</a></li><li class="recentcomments"><span class="comment-author-link"><a href="https://fortunmagnetj.wordpress.com/" rel="external nofollow" class="url">J.</a></span> on <a href="https://liuyi.co/switch-to-wordpress/#comment-959">转移阵地</a></li><li class="recentcomments"><span class="comment-author-link"><a href="https://fortunmagnetj.wordpress.com/" rel="external nofollow" class="url">J.</a></span> on <a href="https://liuyi.co/switch-to-wordpress/#comment-958">转移阵地</a></li><li class="recentcomments"><span class="comment-author-link"><a href="https://fortunmagnetj.wordpress.com/" rel="external nofollow" class="url">J.</a></span> on <a href="https://liuyi.co/switch-to-wordpress/#comment-957">转移阵地</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h2 class="widgettitle">Archives</h2>
+		<ul>
+			<li><a href="https://liuyi.co/2018/02/">February 2018</a></li>
+	<li><a href="https://liuyi.co/2018/01/">January 2018</a></li>
+	<li><a href="https://liuyi.co/2017/11/">November 2017</a></li>
+	<li><a href="https://liuyi.co/2017/09/">September 2017</a></li>
+	<li><a href="https://liuyi.co/2017/08/">August 2017</a></li>
+	<li><a href="https://liuyi.co/2016/12/">December 2016</a></li>
+	<li><a href="https://liuyi.co/2016/10/">October 2016</a></li>
+	<li><a href="https://liuyi.co/2016/09/">September 2016</a></li>
+	<li><a href="https://liuyi.co/2016/04/">April 2016</a></li>
+	<li><a href="https://liuyi.co/2014/12/">December 2014</a></li>
+	<li><a href="https://liuyi.co/2013/10/">October 2013</a></li>
+	<li><a href="https://liuyi.co/2011/10/">October 2011</a></li>
+	<li><a href="https://liuyi.co/2009/05/">May 2009</a></li>
+	<li><a href="https://liuyi.co/2009/04/">April 2009</a></li>
+	<li><a href="https://liuyi.co/2009/03/">March 2009</a></li>
+	<li><a href="https://liuyi.co/2009/02/">February 2009</a></li>
+	<li><a href="https://liuyi.co/2009/01/">January 2009</a></li>
+	<li><a href="https://liuyi.co/2008/12/">December 2008</a></li>
+	<li><a href="https://liuyi.co/2008/11/">November 2008</a></li>
+	<li><a href="https://liuyi.co/2008/10/">October 2008</a></li>
+	<li><a href="https://liuyi.co/2008/09/">September 2008</a></li>
+	<li><a href="https://liuyi.co/2008/08/">August 2008</a></li>
+	<li><a href="https://liuyi.co/2008/07/">July 2008</a></li>
+	<li><a href="https://liuyi.co/2008/06/">June 2008</a></li>
+	<li><a href="https://liuyi.co/2008/05/">May 2008</a></li>
+	<li><a href="https://liuyi.co/2008/04/">April 2008</a></li>
+	<li><a href="https://liuyi.co/2008/03/">March 2008</a></li>
+	<li><a href="https://liuyi.co/2008/02/">February 2008</a></li>
+	<li><a href="https://liuyi.co/2008/01/">January 2008</a></li>
+	<li><a href="https://liuyi.co/2007/12/">December 2007</a></li>
+	<li><a href="https://liuyi.co/2007/11/">November 2007</a></li>
+	<li><a href="https://liuyi.co/2007/10/">October 2007</a></li>
+	<li><a href="https://liuyi.co/2007/09/">September 2007</a></li>
+	<li><a href="https://liuyi.co/2007/08/">August 2007</a></li>
+	<li><a href="https://liuyi.co/2007/07/">July 2007</a></li>
+	<li><a href="https://liuyi.co/2007/06/">June 2007</a></li>
+	<li><a href="https://liuyi.co/2007/05/">May 2007</a></li>
+	<li><a href="https://liuyi.co/2007/04/">April 2007</a></li>
+	<li><a href="https://liuyi.co/2007/03/">March 2007</a></li>
+	<li><a href="https://liuyi.co/2007/02/">February 2007</a></li>
+	<li><a href="https://liuyi.co/2007/01/">January 2007</a></li>
+	<li><a href="https://liuyi.co/2006/12/">December 2006</a></li>
+	<li><a href="https://liuyi.co/2006/11/">November 2006</a></li>
+	<li><a href="https://liuyi.co/2006/10/">October 2006</a></li>
+	<li><a href="https://liuyi.co/2006/09/">September 2006</a></li>
+	<li><a href="https://liuyi.co/2006/08/">August 2006</a></li>
+	<li><a href="https://liuyi.co/2006/07/">July 2006</a></li>
+	<li><a href="https://liuyi.co/2006/06/">June 2006</a></li>
+	<li><a href="https://liuyi.co/2006/05/">May 2006</a></li>
+	<li><a href="https://liuyi.co/2006/04/">April 2006</a></li>
+	<li><a href="https://liuyi.co/2006/03/">March 2006</a></li>
+	<li><a href="https://liuyi.co/2006/02/">February 2006</a></li>
+	<li><a href="https://liuyi.co/2006/01/">January 2006</a></li>
+	<li><a href="https://liuyi.co/2005/12/">December 2005</a></li>
+	<li><a href="https://liuyi.co/2005/11/">November 2005</a></li>
+	<li><a href="https://liuyi.co/2005/10/">October 2005</a></li>
+	<li><a href="https://liuyi.co/2005/09/">September 2005</a></li>
+		</ul>
+		</aside>				
+	</div><!-- .widget-area -->
+		
+	</div>
+</div><!-- #sidebar -->
+
+<script type="text/javascript">
+var colomatduration = 'fast';
+var colomatslideEffect = 'slideFade';
+var colomatpauseInit = '';
+var colomattouchstart = '';
+</script><script type="text/javascript" src="collapse.js"></script>
+<script type="text/javascript" src="decode.js"></script>
+<script type="text/javascript" src="comment-reply.js"></script>
+<script type="text/javascript" src="wp-embed.js"></script>
+<script async="async" type="text/javascript" src="form.js"></script>
+
+
+
+
+
+
+</body></html>
+<!-- Dynamic page generated in 0.049 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2018-02-18 23:24:32 -->
+<!-- super cache -->

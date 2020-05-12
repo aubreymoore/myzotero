@@ -1,0 +1,99 @@
+
+/* ::::: null ::::: */
+
+body, td, div, span, p { font-family: arial,sans-serif; }
+a { color: rgb(0, 0, 204); }
+a:visited { color: rgb(85, 26, 139); }
+a:active { color: rgb(255, 0, 0); }
+body { margin: 0px; padding: 0px; background-color: white; }
+
+/* ::::: http://cdn.els-cdn.com/gadgets/prod/iPlots/jquery.jqplot.min.css ::::: */
+
+.jqplot-target { position: relative; color: rgb(102, 102, 102); font-family: "Trebuchet MS",Arial,Helvetica,sans-serif; font-size: 1em; }
+.jqplot-axis { font-size: 0.75em; }
+.jqplot-xaxis { margin-top: 10px; }
+.jqplot-x2axis { margin-bottom: 10px; }
+.jqplot-yaxis { margin-right: 10px; }
+.jqplot-y2axis, .jqplot-y3axis, .jqplot-y4axis, .jqplot-y5axis, .jqplot-y6axis, .jqplot-y7axis, .jqplot-y8axis, .jqplot-y9axis, .jqplot-yMidAxis { margin-left: 10px; margin-right: 10px; }
+.jqplot-axis-tick, .jqplot-xaxis-tick, .jqplot-yaxis-tick, .jqplot-x2axis-tick, .jqplot-y2axis-tick, .jqplot-y3axis-tick, .jqplot-y4axis-tick, .jqplot-y5axis-tick, .jqplot-y6axis-tick, .jqplot-y7axis-tick, .jqplot-y8axis-tick, .jqplot-y9axis-tick, .jqplot-yMidAxis-tick { position: absolute; white-space: pre; }
+.jqplot-xaxis-tick { top: 0px; left: 15px; vertical-align: top; }
+.jqplot-x2axis-tick { bottom: 0px; left: 15px; vertical-align: bottom; }
+.jqplot-yaxis-tick { right: 0px; top: 15px; text-align: right; }
+.jqplot-yaxis-tick.jqplot-breakTick { right: -20px; margin-right: 0px; padding: 1px 5px; z-index: 2; font-size: 1.5em; }
+.jqplot-y2axis-tick, .jqplot-y3axis-tick, .jqplot-y4axis-tick, .jqplot-y5axis-tick, .jqplot-y6axis-tick, .jqplot-y7axis-tick, .jqplot-y8axis-tick, .jqplot-y9axis-tick { left: 0px; top: 15px; text-align: left; }
+.jqplot-yMidAxis-tick { text-align: center; white-space: nowrap; }
+.jqplot-xaxis-label { margin-top: 10px; font-size: 11pt; position: absolute; }
+.jqplot-x2axis-label { margin-bottom: 10px; font-size: 11pt; position: absolute; }
+.jqplot-yaxis-label { margin-right: 10px; font-size: 11pt; position: absolute; }
+.jqplot-yMidAxis-label { font-size: 11pt; position: absolute; }
+.jqplot-y2axis-label, .jqplot-y3axis-label, .jqplot-y4axis-label, .jqplot-y5axis-label, .jqplot-y6axis-label, .jqplot-y7axis-label, .jqplot-y8axis-label, .jqplot-y9axis-label { font-size: 11pt; margin-left: 10px; position: absolute; }
+.jqplot-meterGauge-tick { font-size: 0.75em; color: rgb(153, 153, 153); }
+.jqplot-meterGauge-label { font-size: 1em; color: rgb(153, 153, 153); }
+table.jqplot-table-legend { margin: 12px; }
+table.jqplot-table-legend, table.jqplot-cursor-legend { background-color: rgba(255, 255, 255, 0.6); border: 1px solid rgb(204, 204, 204); position: absolute; font-size: 0.75em; }
+td.jqplot-table-legend { vertical-align: middle; }
+td.jqplot-seriesToggle:hover, td.jqplot-seriesToggle:active { cursor: pointer; }
+.jqplot-table-legend .jqplot-series-hidden { text-decoration: line-through; }
+div.jqplot-table-legend-swatch-outline { border: 1px solid rgb(204, 204, 204); padding: 1px; }
+div.jqplot-table-legend-swatch { width: 0px; height: 0px; border-width: 5px 6px; border-style: solid; }
+.jqplot-title { top: 0px; left: 0px; padding-bottom: 0.5em; font-size: 1.2em; }
+table.jqplot-cursor-tooltip { border: 1px solid rgb(204, 204, 204); font-size: 0.75em; }
+.jqplot-cursor-tooltip { border: 1px solid rgb(204, 204, 204); font-size: 0.75em; white-space: nowrap; background: rgba(208, 208, 208, 0.5) none repeat scroll 0% 0%; padding: 1px; }
+.jqplot-highlighter-tooltip, .jqplot-canvasOverlay-tooltip { border: 1px solid rgb(204, 204, 204); font-size: 0.75em; white-space: nowrap; background: rgba(208, 208, 208, 0.5) none repeat scroll 0% 0%; padding: 1px; }
+.jqplot-point-label { font-size: 0.75em; z-index: 2; }
+td.jqplot-cursor-legend-swatch { vertical-align: middle; text-align: center; }
+div.jqplot-cursor-legend-swatch { width: 1.2em; height: 0.7em; }
+.jqplot-error { text-align: center; }
+.jqplot-error-message { position: relative; top: 46%; display: inline-block; }
+div.jqplot-bubble-label { font-size: 0.8em; padding-left: 2px; padding-right: 2px; color: rgb(51, 51, 51); }
+div.jqplot-bubble-label.jqplot-bubble-label-highlight { background: rgba(230, 230, 230, 0.7) none repeat scroll 0% 0%; }
+div.jqplot-noData-container { text-align: center; background-color: rgba(245, 245, 245, 0.3); }
+
+/* ::::: null ::::: */
+
+body { font-family: Arial; font-size: 12px; width: 273px; }
+#outer-frame { border: 0px none; margin: 0px; padding: 0px; position: relative; width: 273px; }
+#heading-bar { color: rgb(92, 92, 92); height: 30px; white-space: nowrap; width: 271px; }
+#heading-bar-left { color: rgb(92, 92, 92); font-size: 13px; font-weight: bold; font-family: Arial,Verdana,sans-serif; margin-left: 7px; float: left; white-space: nowrap; }
+#newwindow { cursor: pointer; padding-left: 6px; }
+#mainContent { border-top: medium none; margin-top: 5px; }
+#moreInfo { text-decoration: none; }
+a { color: rgb(92, 92, 92); }
+a:visited { color: rgb(92, 92, 92); }
+#moreInfoContainer { padding: 10px 0px 0px 10px; }
+#thumbContainer { width: 271px; overflow: hidden; }
+#thumbnails { padding: 5px 9px; overflow: hidden; min-width: 250px; height: 65px; position: relative; }
+#thumbnails div { float: left; }
+.unselectedThumb { border: 1px solid rgb(215, 215, 215); margin: 1px; }
+.selectedThumb { border: 1px solid rgb(236, 212, 127); margin: 1px; }
+#leftArrow { background-color: rgb(255, 255, 255); cursor: pointer; height: 64px; left: 1px; position: absolute; top: 38px; width: 8px; z-index: 1000; display: none; }
+#leftArrow img { margin-top: 26px; margin-right: 2px; }
+#rightArrow { background-color: rgb(255, 255, 255); cursor: pointer; float: right; height: 69px; margin-top: -69px; position: relative; top: 0px; width: 8px; padding-left: 1px; display: none; }
+#rightArrow img { margin-top: 27px; }
+#tabArea { clear: both; margin-top: 10px; }
+#tabMenu { border-bottom: 1px solid rgb(215, 215, 215); }
+#chartMenuTab { float: left; }
+#chartMenuTab, #tableMenuTab { text-decoration: none; padding: 5px 40px; border-width: 1px; border-style: solid; border-color: rgb(215, 215, 215) rgb(215, 215, 215) rgb(255, 255, 255); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-top-left-radius: 3px; border-top-right-radius: 3px; display: inline-block; margin-left: 3px; color: rgb(46, 46, 46); margin-bottom: 0px; }
+#chartMenuTab {  }
+#tableMenuTab { border-bottom: medium none; background-color: rgb(241, 243, 246); }
+#chartTab, #tableTab { clear: both; }
+#controlArea { clear: both; padding: 0px 9px; }
+#chartArea { padding: 9px; }
+.button-reset { float: right; color: rgb(49, 108, 157); text-decoration: none; font-size: 0.9em; }
+#resetHolder { padding: 0px 0px 22px; }
+.button-reset:visited { color: rgb(49, 108, 157); }
+#tableTab { width: 93%; overflow: auto; padding: 9px; }
+#tableTab table { border-left: 1px solid rgb(236, 242, 246); width: 99%; }
+#tableTab th, td { border-right: 1px solid rgb(236, 242, 246); border-bottom: 1px solid rgb(236, 242, 246); }
+#tableTab table td { color: rgb(46, 46, 46); }
+#dataTable { font-family: Arial; font-size: 12px; }
+#controlArea div { color: rgb(46, 46, 46); }
+#xTitle { clear: both; }
+#xTitle, #yTitle { float: left; }
+#xAxisList, #yAxisList { margin-left: 43px; padding-bottom: 18px; }
+#xAxisOptions { width: 200px; padding: 0px; margin: 0px; }
+#yAxisList div input { float: left; }
+.chartLegend { width: 10px; height: 10px; margin: 3px; float: left; }
+.clear { clear: both; }
+#downloadCsv { color: rgb(49, 108, 157); padding-left: 9px; font-size: 0.9em; text-decoration: none; }
+#roundText { font-size: smaller; display: none; margin-top: 5px; }

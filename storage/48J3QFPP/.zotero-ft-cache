@@ -1,0 +1,117 @@
+Skip to main content
+Toggle navigation Aubrey Moore
+
+    Archive
+    Tags
+    RSS feed
+
+    Source
+
+Finding Lost Parents
+
+Aubrey Moore
+
+2017-05-01 13:01
+
+Source
+Finding Missing Parents in a Child-Parent Self-Referencing Table ¶
+In [1]:
+
+  import  pymysql 
+from  sqlalchemy  import  * 
+import  getpass 
+
+Pattern: Find items in one list which does not occur in a second list ¶
+In [2]:
+
+  # To find parent_tids which do not have corresponding tids, 
+# convert lists to sets and calculate the difference. 
+
+tid  =  [ "a" ,  "b" ,  "c" ,  "d" ,  "e" ] 
+parent_tid  =  [ "a" ,  "f" ,  "c" ,  "m" ] 
+list ( set ( parent_tid )  -  set ( tid )) 
+
+Out[2]:
+
+ ['m', 'f']
+
+Repeat using data from database ¶
+In [3]:
+
+  password  =  getpass . getpass ( 'Database password: ' ) 
+
+ Database password: ········
+
+In [5]:
+
+  s  =  'mysql+pymysql://aubreymoore:{}@localhost/pestlist' . format ( password ) 
+db  =  create_engine ( s ) 
+
+In [6]:
+
+  rs  =  db . execute ( "select tid, parent_tid from taxon2;" ) 
+tid_list  =  [] 
+parent_tid_list  =  [] 
+for  r  in  rs : 
+    tid_list . append ( r . tid ) 
+    parent_tid_list . append ( r . parent_tid ) 
+
+In [7]:
+
+  tid_list [: 10 ] 
+
+Out[7]:
+
+ ['6',
+ '7707728',
+ '196',
+ '1169',
+ '7683',
+ '2766430',
+ '2766636',
+ '220',
+ '407',
+ '6688']
+
+In [8]:
+
+  parent_tid_list [: 10 ] 
+
+Out[8]:
+
+ ['#',
+ '6',
+ '7707728',
+ '196',
+ '1169',
+ '7683',
+ '2766430',
+ '7707728',
+ '220',
+ '407']
+
+In [9]:
+
+  missing_parents  =  list ( set ( parent_tid_list )  -  set ( tid_list )) 
+missing_parents 
+
+Out[9]:
+
+ ['2002379', '#', '1890281']
+
+Results ¶
+
+There are two missing parent_tids. Note that '#' is the parent of root nodes, so this is OK.
+
+A constraint needs to be added to the taxon2 table to prevent entry of a parent_tid which does not match an existing tid .
+In [ ]:
+
+   
+
+    Previous post
+    Next post
+
+Contents © 2017 Aubrey Moore - Powered by Nikola
+×
+Search Results:
+Close

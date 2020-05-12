@@ -1,0 +1,676 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/330041812
+
+Monitoring, Detection and Control Techniques of Agriculture Pests and Diseases using Wireless Sensor Network: A Review
+
+Article in International Journal of Advanced Computer Science and Applications · December 2018
+DOI: 10.14569/IJACSA.2018.091260
+
+CITATION
+1
+7 authors, including:
+Saeed Azfar Federal Urdu University of Arts, Science and Technology 4 PUBLICATIONS 19 CITATIONS
+SEE PROFILE
+
+READS
+100
+Adnan Nadeem Islamic University of Medina 54 PUBLICATIONS 430 CITATIONS
+SEE PROFILE
+
+Kamran Ahsan Federal Urdu University of Arts, Science and Technology 48 PUBLICATIONS 240 CITATIONS
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects: Project No.6 View project A Framework for real-time smart Fall Detection and Risk Estimation System for Elderly View project
+
+All content following this page was uploaded by Saeed Azfar on 01 January 2019. The user has requested enhancement of the downloaded file.
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+Monitoring, Detection and Control Techniques of Agriculture Pests and Diseases using Wireless Sensor
+Network: A Review
+
+S.Azfar1
+Department of Computer Science, Federal Urdu University of Arts, Science & Technology
+Karachi, PAKISTAN
+A.Nadeem2, A.B. Alkhodre*3
+Department of information technology Faculty of Computer Science and Information System,
+Islamic University, Medina, KSA
+
+K.Ahsan4, N. Mehmood5
+Department of Computer Science, Federal Urdu University of Arts, Science & Technology,
+and University of Karachi, Karachi, PAKISTAN
+T.Alghmdi6, Y.Alsaawy7
+Department of Computer Science Faculty of Computer Science and Information System,
+Islamic University, Medina, KSA
+
+Abstract—Wireless sensor network technology is widely used in the western world for improving agriculture output. However, in the developing countries, the adaptation of technology is very slow due to various factors such as cost and unawareness of farmers with the technology. There are reports in the literature related to the precision agriculture and hopefully, this paper will add to the knowledge of the use of Wireless sensor network (WSN) for monitoring agriculture fields for pest detection. The literature related to pest monitoring and detection using wireless sensor networking technologies are reviewed. Then, the advanced sensing technologies are currently in use for the detection of a pest has been described. The existing techniques about pest detection and disease monitoring are evaluated on the basis of some key parameters such as the type of sensors used, their cost, processing tools, etc. Finally, the sensing technologies and the possibility of using third generation sensing technology for monitoring and detection of cotton crops are analyzed.
+Keywords—Component; pest monitoring and detection; Wireless Sensor Network; pests; agriculture; sensing technology
+I. INTRODUCTION
+To prevent the crops from pests and their related diseases is a difficult task for farmers. The pests can harm crop, reduce yields and also impact negatively on crop quality. Conventional farmers use a lot of techniques to kill the pests. Identification of pest disease is necessary before treatment. Without identifications, the use of pesticides causes many negative results such as pest can develop immunity to pesticides leading to changed results and stronger pesticides, along with harmful pests it also kills many beneficial pests and natural enemies of pests causing an increase in the insect population. The use of pesticides affects crops that are insect pollinated population resulting in their failure to develop fruits.
+Cotton, with its green juicy leaves, its large open flowers, nectarines, and its large fruits attract and support various insects and mites. Over 1000 type of cotton pests has been recorded across the world. Nearly 125 species have been
+
+reported to attack cotton crops in India [1] and United States [2]. More than 93 species of insects and mites are reported damaging the cotton crops in Pakistan [3].
+In the present paper, the research has focused on developing countries such as India, Pakistan, Bangladesh was the use of wireless sensor network technology is rare. It considers Pakistan as an example where wheat, rice, cotton, and sugarcane are major crops. These four crops produce 33 percent of the total value of agriculture production in Pakistan. Some minor crops contribute 11.1 percent in country's overall agricultural income. Even though agriculture has been playing a pivotal role in the economy of Pakistan since its creation but in the last three decades income, growth and exports of our agri-related products have declined.
+The use of wireless sensor network technology is shown in Fig. 1. Monitoring and managing pest could significantly improve the production and quality of crops in developing countries. It has compiled the existing literature to determine the feasibility of using wireless sensor network technology in developing countries.
+Fig. 1. Structure of Wireless Sensor Network
+
+www.ijacsa.thesai.org
+
+424 | P a g e
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+
+In the literature, there are only a few reviews on the subject of precision agriculture using WSN where authors have demonstrated the effective use of sensors in agriculture. In [15] authors performed a survey of plant disease detection using WSN and image processing while in [18] authors discussed to pest monitoring and detection techniques. In [25 and 26] authors reviewed sensing technologies available for agriculture and food industry and their future trends. In [31 and 32] authors focused on precision agriculture using WSN and they classified existing remote monitoring and control systems. The last review paper was published four years ago. Moreover, these reviews are crop specific. This paper includes reviews of the WSN application in agriculture and covers many valuable parameters. . For that reason, each and every aspect of this domain which presents several pest detection methods, disease monitoring schemes and current and future sensing technologies for agriculture within single review paper has been covered.
+In the rest of the paper: at the outset, in Section II, the existing literature associated to pest monitoring and some disease detection work already done in Europe have reviewed, India, Saudi Arab, and Sri Lanka. Also, the comparison of the characteristics of different sensing technologies with reference to their implementation is presented. In Section III, analysis of the use of sensing technology for pest monitoring and detection is presented. Finally, in Section IV, a summary of the paper and future work plan is presented.
+II. WORK-RELATED USING WSN IN PEST MONITORING AND DETECTION
+Mostly the farmers do not like to use chemical on crops. It is for this reason most suitable pest management strategies should be designed based on accurate information about pest and disease. Normally, detection and identification of pests is the farmer's fundamental responsibility for which he relies mostly on his visual judgment randomly. The fields are huge and the farmer cannot cover the overall fields at a time. Farmer often reaches pest infestation too late. Some automatic detecting system is desired for quick assessment of pest infestation in an early stage. There are two different agriculture domains in which we are currently using wireless sensor network.
+A. Pest Detection
+Pest detection directly through WSN: in which we use an acoustic sensor. We rely heavily on acoustic devices. This is non-destructive, remotely operating and also very useful for automatic detection of hidden insect infestation.
+In [4] authors proposed a monitoring system to detect caterpillars of red palm weevil (RPW) through acoustic sensor
+
+devices. The authors mentioned that acoustic detection of this pest is the best and most cost-effective solution among all. The proposed system is to monitor the sugarcane crop. The system is based on an acoustic sensor for monitoring the produced sound level of the Pest. Whenever the sound level crosses the defined threshold, it will make the farmer to take the notice of the specific area where the infestation is occurring. By using this technology, the farmer's job to go to each and every part of the crop and perform survey can be reduced significantly.
+The acoustic sensor node will be connected to the base station to which each sensor will transmit the noise levels whenever the noise level crosses a predefined threshold level. The base then transmits the information to the control room computer which indicates to the farm where the infestation is occurring so that the necessary action can be undertaken. After successful identification, a farmer can take the necessary measures to spray insecticides over the crops. This detection will also help the farmers to curb infestation at a very early stage and consequently it reduced the high percentage of annual destruction of Sugarcane crops. The proposed monitoring method may cover relatively a big area with low energy consumption.
+In [5] the authors proposed an efficient protection mechanism of palms from RPW larvae. The feeding habit of the RPW is concealed, very much like a termite in wood. They can be detected acoustically by the noise emitting from them. Normally, the infestation is detected at the last stage only and when the farmer comes to know the recovery time is almost over and a plant‟s one foot in the grave. In the detection phase, the sensor with their propagating modules (transceiver) is attached to a plant and connected to the network by accessing nearby access points. In proposed topology, every access point is connected and receives information from 8 other devices located in its radio range.
+In [6], the writers presented a solution for detection of date palm tree (Phoenix dactylifera L) hidden infestation by their designed sensor. They used acoustic sensors to detect the presence of red date palm weevil (RDPW) pest in an early stage; which is usually considered a damaging insect, normally called the red date palm weevil (Rhynchophorus ferruginous) Oliver. They recorded acoustic emission produced by the RDPW that infect date palm trees and then used signal processing method to analyze it. Special probe holding acoustic sensor is injected within the stem of a palm tree to listen and record their voice. It can record the sound of its early stages of life which is known as larvae. In the larval stage of RPW insects perform so many noisy activities like feeding trunk and chewing generating the noise at maximum level. Our recording device near insects works round the clock and records the sound produced by insects easily.
+
+www.ijacsa.thesai.org
+
+425 | P a g e
+
+[12] Mankin (2016)
+
+[11] Chandan K (2018)
+
+[10] BV Laar (2002)
+
+[9] Ferro (2013)
+
+[8] Sriwardena (2008)
+
+[7] Miguel (2013)
+
+[6] AlMaine 2007
+
+[5] Srinivas 2013
+
+[4] Srivastava
+2013
+
+Author
+
+2nd
+
+2nd
+
+1st
+
+2nd
+
+1st
+
+2nd
+
+1st
+
+3rd
+
+2nd
+
+Sensor Generation
+
+TABLE I.
+
+Major Contributions
+
+Create a pest monitoring & control system using WSN.
+
+Designed a Prototype to
+
+prevented Palm plantation from
+
+RPW Larvae.
+
+They used acoustic sensors with
+
+some special probe with analysis
+
+of the signal processing method.
+
+Designing of a self-operative
+
+bioacoustics sensor that can be
+
+installed within a tree and capable
+
+of capturing audio signals, for a
+
+long period of time.
+
+Develop a portable, smart and
+
+efficient acoustic device for
+
+monitoring.
+
+Custom made Housing to catch
+
+snails with photoelectric sensor
+
+operated by solar cells, an
+
+Arduino FIO board with ZigBee
+
+device for communication
+
+Developed ultrasound gate hard
+
+drive recording system that can measure sound activity from 50
+
+Hz to 250 KHz
+
+Proposed a system for paddy crop
+
+field insects with the help of Drone and an Optical sensor with
+
+MATLAB image processing tool.
+
+Acoustic signal collected from
+
+trees and orchard to perform
+
+analyses on their spectral and temporal pattern of sound
+
+impulses and develop their signal
+
+analyses to detect them.
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+PEST MONITORING AND DETECTION SYSTEMS WITH THE SENSOR NETWORK
+
+www.ijacsa.thesai.org
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Data Transfer manually
+
+Local and Cloud Servers
+
+Data Transferred Arduino board with
+
+Data
+
+Manually
+
+ZigBee Device Transfer manually
+
+ZigBee with
+Dongle
+
+Sony DCD T-10
+
+Medium
+
+High
+
+Medium
+
+High
+
+Signal Analysis Program (DAVIS)
+
+PC with MATLAB / Image Processing Software.
+
+LAAR/Avisoft SAS Lab pro
+
+PC, Snail Shelter prototype with IR Camera in Field
+
+Saudi Arab
+
+India
+
+Germany
+
+Spain
+
+Medium
+PC with MATLAB Facility.
+Sri Lanka
+
+Medium
+
+Medium
+
+Sensor Deployme nt software
+with Laptop along with
+GPS Support.
+
+MATLAB
+
+Spain
+
+Saudi Arab
+
+Acoustic
+
+Optical
+
+Acoustic
+
+Acoustic
+
+Acoustic
+
+Acoustic
+
+Acoustic
+
+Yes
+FM Transmitter
+Medium
+MATLAB / SP tool and
+NS2 Simulator
+India
+Acoustic
+
+Yes
+
+Treatment Suggested
+
+ZigBee / FFT
+Waveform Monitor
+
+Communication Technologies
+
+Medium
+
+Price
+
+FFT Waveform Monitor
+
+Processing Tool
+
+India Acoustic
+
+Testing Country
+Sensing
+
+Red Palm Weevil and Scarabaeidae.
+
+Paddy Field Insects
+
+Palm Weevil
+
+Date Palm
+
+Paddy Crop Fields Palm Trunks
+
+Snail pest Many Crops
+
+Palm Weevil Larvae
+Red Palm
+
+Palm Weevil
+
+Palm Weevil Palm Weevil
+
+Borer and White flies
+
+Pests Type
+
+Red Palm Date Palm
+
+Coconut Palm
+
+Sugar Cane
+
+Crop
+
+426 | P a g e
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+
+Fig. 2. Block diagram of proposed RPW bioacoustics Sensor. [7]
+In [7] entomologists detected Red Palm Weevil (RPW) acoustically in the field. They perform experiments to detect (RPW, Thnchophorus ferrugineus) which is critical to detect early (shown in Fig. 2). Authors proposed a system which is able to monitor and record acoustic emissions of the adult Palm (Thnchophorus ferrugineus). They used an audio probe, which has an acoustic sensor that is in charge of acquisition of noise generated by RPW. It is also capable of amplifying the captured voice signal and to make it possible to process by an algorithm. Low power processor, which runs the algorithm and a wireless interface to send detected signals remotely. First, the system digitalizes the audio signals and then execute in real time to detect RPW activity or its presence. It is small in size that could be mounted on the appropriate location of any particular palm tree.
+In [8] researchers described a handy and, a smart audio device with its possible use in the field for diseased palms. Their device contained a sensor that could be to mount on the palm tree. It has a facility to get the sound of red palm weevil larvae. It comprised of an automatic processing element, a processing unit to process the acquired sound and the earphone set to receive the audio output through recording device and the hearer. This is a battery-driven portable user-friendly device.
+In [9, 11] scientists reviewed the current research and recent development states on Red palm weevil (Rhynchophorus ferrugineus). Oliver and monitored them to get the information about their early infestation. Some intensive efforts have been put into the development of detection through visual and acoustic methods. Pros and cons of all methods have been presented here with their comparisons. It is also concluded that considerable efforts are still required to improve the efficiency and sensitivity of existing acoustic methods with another tool.
+In [10] authors developed a handheld detector device with some special acoustic sensors to probe. The developed device is specially designed to detect a tiny sound vibration which is a usual activity of RPW. It is tested also on German beetle species living in the wood. Laar [10], invented “ultrasound gate hard disk recording system” and with this device, he measured sound activity from 50 Hz up to 250 kHz.
+In [12] researchers developed an acoustic model to capture the sound of fruit flies (Ceratitis capitata). They conducted a large number of tests with this acoustic model on the Mediterranean fruit fly. It was tested in high noise as well as in
+
+the worst traffic environment. The only male strain of Ceratitis capititata was used in experiments. The first experiment was conducted in a quiet environment with a group of 25 males in 20- by 21- by 22.5 screened cage. A Sony camcorder (DCRTRV27) was used to get a distant observation of verification flight. Then some tests for flight detection had been conducted in noisy surroundings, which contained more male with relatively big cage. They were visually monitoring their flights in the field cage throughout recording sessions. The recommended flight monitoring system is a handy model apparatus modified from a mobile-pre USB preamplifier along with the audio interface. It may provide 40-70db amplification through two variable adjustment gain control. Signal input provided to an AT 803B unidirectional lavaliere microphone. The signal was transferred to a laptop by a universal serial bus and processed by customized software which runs under MATLAB. The produced noise by insect (C. Capitata) flights through a microphone is naturally concise and easily identifiable.
+In [13] scientists detected adult and larva of Oryctes chinoceros acoustically in dead and alive palm trees in island territory of Micronesia. They also monitored and detected Nasutitermes luzonicus Oshima and some sound generating tiny insects. A large and active O. rhinoceros usually generates low frequency, long duration sound impulse trains. There are some soaring frequencies low impulses trains generated by N. luzonicuz. Their unique ghostly and sequential pattern of producing noise made it possible to identify suppressing surroundings sound easily.
+In this part, some early pest infestation techniques as mentioned in Table has been reviewed 1. It is also compared with respect to their target crops, with those sensing technologies heavily used in agriculture field by means of WSN. Early detection of infestation plays a vital role in the recovery of attack.
+B. Disease Detection
+In this portion illustrates crop/plant disease detection with the help of WSN and image processing with its analysis that involve color histogram, edge detection, and some other processing tools.
+In [14] authors used the internet of things (IoT) technology to design a platform for detecting diseases. Their main focus was on general diseases. They use an IOT to turn it into the key system to acquire data with communication because it is the most important technology among others. In their system; detecting sensor is used to obtain data that is compared and synchronized. After analyzing the collected data they finally carry out an immediate action without any human involvement. They applied this process to the whole data related to pest plant disease and insect pests. They used global information system (GIS) software to manage and present data for linking it to the exact location. WSN and ZigBee with land mobile (GSM) are largely used networks in the precision agriculture field. They designed a platform which includes administrators, experts and common visitors with computers and mobile phones. It also includes an information system for agriculture disease and insect pests' disaster information monitoring system.
+
+www.ijacsa.thesai.org
+
+427 | P a g e
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+
+[17] Tripathy A (2013)
+
+[16] 2014Dater S.
+()
+
+[15] Wang J (2014)
+
+[14] Prevostini (2011)
+
+Autho r
+
+Groundnut Bud Necrosis Virus
+(BNV) Groundnut
+
+Downy Mildew Grapes
+
+General Plant Disease
+
+Flavescence Doree
+
+Disease Cro p
+
+General
+
+Grapevine
+
+WSN with Data Mining Technique
+India
+
+WSN with Web Based
+GPR S system. India
+
+Multimedia WSN with Image
+Processing tools. Korea
+
+WSN to take air temperature
+and other weather paGrearmmeatenrys.
+
+Technology / Tool
+Experiment Country
+
+TABLE II. DISEASE DETECTION WITH WIRELESS SENSOR NETWORK
+Contribution
+Prototype of a small Wireless sensor network as well as on an algorithm that could be used to calculate the spread of
+the disease vector.
+Perform a Survey for applications of Image processing in Disease detection and conduct an
+experiment with multimedia wireless sensor network and other image processing tools to detect specific disease. Developed a Web application which provide a forecast on the basis of weather parameters like humidity, temperature and
+wind speed They tried to understand the hidden relationship among interrelated disease
+/ Pests and weather parameters and develop a
+web base system for forecasting groundnut
+disease.
+The system is capable to capture an image and send them to a remote control station with specific event stipulated through an application. Basically, these image sensors monitor and count inhabitants (pests) with relatively advanced resolution. However, there seem to be no intelligent image processing activities. During this monitoring process, no human intervention is required. According to the authors, there is a significant reduction in monitoring cost as well.
+The main focus of this work is red palm weevil (RPW, Rhynchophorus ferrugineus. Oliver) but it is not limited to that pest. It could be used to monitor many other similar pests. A trap monitoring process which works on unattended mode has some extra benefits such as it reduces the monitoring cost, it is programmable and has high resolution monitoring data. In addition, real-time data can be retrieved at any time by the web portal.
+There have been a number of valuable studies to monitor pest insect using latest technologies. However, none of these studies is able to provide a self-sufficient information system totally relied on inexpensive image sensors covering areas with very low energy utilization. High scalability with low power consumption made it possible to deploy this system both in greenhouses and larger plantations.
+It is also used for several kinds of insects instead of some specific insects. Using an image recognition algorithm; that is capable to identify RPW insects with a higher success rate up
+
+to 95%. The system is smart and its corresponding Metadata, timestamp, GPS coordinates, and results etc. are duly saved in the main monitoring station. Anyone can have access to the data in real time through the internet which is obtainable from the location of the main control.
+In [15] authors conducted a survey to detect crop disease using image processing with the wireless multimedia sensor network. Pest related diseases have now become a recent predicament. It is the main cause of the significant decline in product quality and quantity as well. Nowadays the efficient and accurate detection of diseases has become one of the major issues in the agro-industry. Scientists used machine vision approach, with some morphological features like size, shape, texture with pest's color. Also, they applied some locationbased attribute to monitor and detect infected plants and leaves.
+In [16] authors proposed a solution to detect specific disease (downy mildew) in grapes in India at a very early stage. The current system that detects disease (downy mildew) is based just upon collected update climate information. In the proposed system architecture, there is a remote node which is inexpensive and the user has to keep secure only an isolated node (which is remote) as a replacement for the main node which is located in control station. A central server can be accessed through web applications to get all details of current weather conditions and disease forecast, which depends strongly on a climate of the farm.
+Monitoring and Detection of pests and disease
+
+94 71 23 1
+
+84
+
+MONITORING DETECTION WITH TOOLIMPLEMENTATION
+
+Pests Diseases
+
+Fig. 3. Available features of reviewed applications and systems.
+The existing systems which have been described are mostly implementation based but some are simulation based too. Some authors [6, 8, 11, 12 and 15] performed implementation with different types of data or signal processing tools as shown in figure 3. The system proposed in [4, 7, 9,10,14,16 and 17] are also proposed design with real deployed.
+In [17] the authors' reviewed the weather relation with pest and crops along with data mining and WSN. They focused on peanut crops pest and disease interaction in India. They conducted an experiment to examine the crop with climate and insect relation using WSN. They also reviewed independent pest and disease dynamics of peanut crops. To turn the data into useful information they used a smart technique of data mining to draw relation among crop/ pest/disease and climate field. They tried to comprehend the concealed association between interrelated insect and disease with climate parameters. In the end, they developed a collective prediction model, which could help the farmer to improve measures with this prediction model in the future.
+
+www.ijacsa.thesai.org
+
+428 | P a g e
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+
+Fig. 4. Insects detection and monitoring acoustically, Publication since 1900. [13]
+As mentioned in Table 2, some existing disease detection techniques which are used with the help of a type of WSN are reviewed. Early detection of diseases is as important as pest detection to prevent heavy crop loss.
+In [13, 18, 19 and 20] researchers have been highlighted research on acoustic detection of insects with their management and control techniques (see Fig 4). Also, it has been explained how we use olfaction, vision, noise, and hearing capabilities of insects as their destroyers. It is a remote, non-deleterious, automated observing tool for farmers and researchers to find concealed „insect invasion'. A few milligrams of pheromone in the right context can attract a male moth to its mate. Similarly, a flash of penlight can attract a firefly male from 30 meters.
+It is very old technology and we have been using it since the start of the century as mentioned in Table 3. In recent year's various kinds of sound catching equipment are being widely used in the market to monitor crops. The efficacies of acoustic devices are limited. They are only used for sound generating cryptic insects and estimate population density while silent killers are beyond its domain. Success rate depends on the different type of parameters such as sensors, the range of frequencies, substratum structure, the correlation among the substrate, time and duration, crop field with size and behavior of insects, and also the distance between sensor and insect.
+We got significant success in the field of passive acoustic devices to monitor grain, palm/wood insets i.e. Red palm weevil. The microphone is useful for airborne signals while vibration sensors are very useful for those signals which are produced in a solid substrate. Ultrasonic sensors are practically very effective to detect wood-boring pests [13, 20 and 21]. Complexities in distinguishing sounds of target insects are major restrictions in using acoustic devices. Currently, some other tools like signal processing and smart sensors have greatly increased the acoustic use and its reliability.
+Some early infestation techniques which are heavily used with the help of WSN in the agriculture field are reviewed. Early detection of infestation is important to the recovery of attack. So it, not just WSN, but also so many other techniques such as image processing, canny edge with color histogram [22
+
+and 23] and laser induces breakdown spectroscopy [24] are used.
+III. ANALYSIS OF SENSING TECHNOLOGIES FOR AGRICULTURE SENSOR NETWORKS
+Every remote technique which could be used in wireless sensor network depends on the electromagnetic propagation or acoustic energy between the sensor and a target pest. It must use some motion/vibration sensors, which are highly sensitive as they can capture even tiny pulsation of pests in the field. It is also could use such acoustic sensors which are able to record some special frequencies produced by pests. Although, it is difficult to identify directly by using these sensors yet at least it is possible to point out the presence of some insects in a specific area of our field. Image analysis and processing with other advanced computer technologies also exist to identify pests directly. Some digital automated identification systems (DAISY) are used to identify special pests [25, 26, 27, 28, 29 and 30]. A detailed review of every aspect of the sensing of the insects, geographical terrain is the scope of this paper.
+Favorable/unfavorable climate for target insects is out of the scope of this paper..
+In the market, there are various sensor products for agricultural monitoring i. e MOTE, Field Server, SUNSPOT [63, 64 and 65]. There are advanced products with wireless IR, ZigBee (IEEE802.15.4), ultrasonic [33-34] technologies are also used.
+Our main concern is on the development of locally made, an affordable device which would be a good and adaptable addition in industry. Many technologies mentioned in this paper have been verified in past and will be used in the future as well (see Figure 5). Some other technologies also exist but yet to be applied in entomology. Following are some possible sensing technologies that can be used to detect and monitor cotton pest specially bollworms in Pakistan.
+Major Sensing technologies used to detect pests
+
+12
+
+8
+
+ACOUSTIC ULTRASONIC
+
+6 LASER
+
+11
+OPTICAL / INFRARED
+
+Fig. 5. Major Sensing technologies used in agriculture reviewed by this paper.
+A. Acoustic Detection
+In theories, there is a rule of thumb that distant monitoring must contain the transmission and reception of electromagnetic waves from the sensor to target and vice-versa. Researches [4, 5, 6, 7, 8, 9, 10, 11 and 12) have done enough work see table 1 to develop passive acoustic devices to detect insects that are out of our site, and are found hidden in stored commodities as well as around plants, timber, and fruits. Insects are detected usually through low strength (0.5- 150 kHz) incidental sounds
+
+www.ijacsa.thesai.org
+
+429 | P a g e
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+
+Sensing Technologies
+Range Accuracy
+Cost Outdoor Performance Sensitivity Complexity of Support Electronics
+
+which they generate during flying, feeding or calling their opponent gender. There are many factors that are involved in the use of acoustic devices such as interference and noise ratio, background noise, distortion and attenuation during travel in the medium and uniqueness of voice example from a nontarget and separate organism [35]. Sensing elements include transducers (condenser / piezoelectric microphones), vibration transducers, mobile or fixed in any hard media such as timber, stone and underground. Some atmospheric sound detection and ranging (SODAR) devices are also provided meteriological data to monitor pests migrations [36]. Similarly research has been done in [37] where simple non doppler sodar machine is used for verification and the actual observing height of the night climate data. It also determines the best altitude for netting above ground level accordingly.
+TABLE III. SESNING TECHNOLOGIES AND THEIR CHARACTERISTIC‟S COMPARISON [4-9,18,19,22,29,35-37,40-43,49-61 AND 62] .
+
+Acoustic Optical Laser Ultrasonic
+
+Medium Medium
+High High
+
+Medium Medium
+High High
+
+Low Medium
+High Medium
+
+Medium Medium
+High High
+
+Medium Medium
+High High
+
+Medium Low Low
+Medium
+
+B. Ultrasonic
+Another technology called ultrasonic sensing has also been used in the past and can be used in the future as well to monitor crops and pest closely. We have been using ultrasonic technology in crop production since 1988 [38]; where researcher used commercial ultrasonic range transducer to measure some specific parameters. This system was mounted and tested with an air blast sprayer and its results were used to optimize the sprayer in future. Later on the same scientists [63]; investigated spray volume saving using an ultrasonic measurement and results varied greatly depending on target crop morphology.
+Group of researchers [39, 40, 41, 42 and 43] conducted some studies in different aspects of ultrasonic sensing, its applications and drew a comparison between a laser and ultrasonic transducers for crop constraints and canopy volume measurements of citrus trees. The laser sensors performed relatively better than ultrasonic since they had a higher resolution. Author invented a model sprayer which could calculate the size of the target and approaching density using ultrasonic sensing [44].
+Segment array is used and also suggested to use [45] with the combination of ultrasonic systems which might be very helpful to track small insects in short range (e.g. Aphids and whiteflies) those are in the flying range of a crop shades. In their studies, a web of more than a dozen ultrasonic transmitters emits pulses of over 40 KHz. These pulses are delayed by their phase to make it possible for the system to cover entire volume which needs to be sensed (2.5 long x 1.5
+
+width x 2 hight in meters). Echos those returns after hitting to the bugs are picked by multiple installed observer which also boost their energy and send them to the digital signal processing capable machine. The actual position of insects with movement direction within the tracking space could be predictable and also displayed in real time. Until now the complete system has not been operated below the real condition of the field but a small individual device was tried to determine how it copes with more than one objective (Target) with high background noise.
+These types of studies are very important and vital to develop a smart, portable ultrasonic device to monitor insects/pest in the field. Big gap still exists in this domain to predict crop disease and presence of insects in the agricultural fields.
+C. Laser
+The LASER is used since 1970, in many areas, however, it was late 80‟s when the laser was used for forest biomass detection and crop production [46], in which scientist implemented an airborne pulsed laser system to access forest biomass and temper volume. The same scanning techniques could be applied to detect pest and tiny bugs. Later on, in the early ‟90s [47], a laser altimeter was used to quantify vegetation properties and their results showed a variation in the canopy heights between two to six meters. Collected data is connected and compared to similar data which is gained from other methods. This study also exposed to us that a similar application can be applied to detect disease in any type of crop. Some other laser [48], was also used with the combination of Lidar and satellite imagery which was also very useful to monitor changes. In the recent era, a newly developed laser sensing system was applied [49] to citrus crop to measure height and width of trees and covering capacity. The system has been tested to calculate its resolution and high accuracy and with less than 5% error. Further, the same authors in [50], implemented scanning system based on the laser to calculate vegetation thickness. Results also revealed good occurrence and of less than 3% avg. the coefficient of variation (CV). Recently [51] also utilized a laser system with the implementation of rangefinder technology to estimate the location of precise foliage factors, such as the height of the plant, its coverage besides biomass solidity which could be a major factor in optimizing crop harvesting method.
+Sensing Technologies and characteristic's comparison
+80% 60% 40% 20%
+0%
+Acoustic Optical Laser Ultrasonic
+Fig. 6. Sensing Technologies and their unique features [4-9, 18, 19, 22, 29, 33, 35-37, 40-43, 49-61 and 62]
+
+www.ijacsa.thesai.org
+
+430 | P a g e
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+
+These studies are very useful in future developments. Also, use some new technologies and build a prototype which may help us to protect crops from insect and disease can be used.
+D. Optical Sensor with Trapping
+Optical sensors are also used to get the exact time of entry of pests into the trap as well as exit recording. Such as in [36, 52 and 53] it was some extra facilities provided by them to assign captured insects to different classes according to their morphology. It is due to different momentary of insects over an irradiated exposure of light scattered. Sometimes this might show good enough to substitute that trap altogether [37].
+a) Night Vision Devices
+These devices are used to observe and monitor insect movement at night when human vision cannot work adequately. The capabilities of these devices can be amplified by some extra devices such as a telescope. In the night vision device, light consists of photocathode which later releases electrons! The total number of following lights is significantly increased by some form of light voltage, as a result, some electrons are used to reproduce the duplicate on phosphors canopy [38]. These devices are divided into three generation which extends the operational life of this device. Occasional entomological uses of graphic intensification tool mentioned in [54, 55 and 56] i. e. specific Helicoverpa moth low elevated flights are tracked through an observer. The observer uses night vision goggles and inferior red light illuminators. They ride on special 4 wheeled vehicles. Their experiment proved that when observer follows the moth, he is able to see them up to 100-meter heights. [55]
+b) Optical-Electronics Devices
+Some more specialized devices for insect monitoring and specialized optoelectronics devices are crossed- beam infrared detectors [57 and 58]. When pests move over-designed capture capacity, they are sensed. Frequencies of their wing beat are also recorded. These systems are specifically designed for Spodoptera exempta and Helicoverpa armigera moths monitoring while they fly underneath detector shadow. Farmery‟s apparatus is not useful in dusk and daylight.
+This article showed the wide variety of researches to monitor and detect pests and disease so far. However, some techniques with their pros and cons are mentioned and also an overview of crop insects are given, their, favorable weather parameters and disease indications. The standalone technique can be very useful but research workers also use the combination of sensing technologies. Such as, the pheromone light traps have been used.
+We have drawn a comparison of existing technologies as a result of their review (See table 3 and Figure 6.) that are already being used in sensing of pests or diseases in wireless sensor networks. As a result of the present review, we can go further and develop more accurate sensors to target pest or diseases. Our recommendations on the use of sensor technology are presented in the next section.
+IV. CONCLUSION AND FUTURE WORK PLAN
+A comprehensive assessment of numerous solutions and efforts has been presented in this paper as regarding wireless
+
+sensor network in agriculture pest monitoring and disease detection domain. Since the pest monitoring field is based on the situation and environment so the potential of using sensors and WSN is very high. We conclude the following notable issues which are faced in the developing Asian countries:
+
+ Lack of technology awareness in farmers
+
+ The extra cost is involved
+
+ Prospect solution is complex to adopt or implement and require full technical support in all aspects
+
+ Difficulties in making a general solution for different problems due to variant situations
+
+ Main research works present the solutions in parts: some are focused on data processing and storage while others are data acquisition or context modeling
+
+ Complex or sometimes unavailability interlinks parts reduce the adaptability ratio of solution
+
+Therefore, there is a need to increase the application of WSN and sensors-based solution on an industrial scale. For this purpose, the following drastic steps should be taken
+
+ Development of local, resilient and extreme low-cost sensors
+
+ Crop-based generalized solutions to solve different problems which may include single or combination of sensing technologies
+
+ There is an opportunity for us to build a complete common framework from weather data acquisition for modeling and implementation to conclusion support
+
+ Segment solution must be encouraged but we have to work on comprehensive and detailed compatible interlink procedures which can make our planned solution comprehensive and accurate.
+
+In our future work, it is planned to investigate some more solutions specifically for developing countries. We are working on a special locally made wireless sensor mote to monitor and detect bollworm in a cotton crop, as it is mentioned above. Digital image processing is one of the options that can be used with the above-mentioned prototype module in order to identify pests more accurately. Also, it is intended to develop a high-level collaboration among agriculture industry, technology stakeholders and academia that will be beneficial for farmers of the underdeveloped agriculture industry and overall the country.
+
+REFERENCES
+
+[1] Vennila S., Cotton pests, predators and parasitoids: Descriptions and seasonal dynamics, Central Institute of Cotton Research, Research Notes. India, 2013.
+
+[2] Robert E. P. Fundamental of Applied Entomology. 6th Ed. The Macmillan Company; Printed in the USA. pp. 343, USA, 1971.
+
+[3] Agriculture
+
+Knowledgebase,
+
+accessed
+
+in
+
+2014,
+
+http://www.seetoptens.com/cottoninsectspakistan
+
+[4] Srivastav N, G. Chopra, P. Jain, B. Khatter. Pest Monitor and control system using WSN with special reference to Acoustic Device; ICEEE, India, 27th Jan. 2013.
+
+www.ijacsa.thesai.org
+
+431 | P a g e
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+
+[5] Srinivas S, Harsha K.S, Sujatha A and N. Kumar, Efficient protection of palms from RPW Larvae using WSN: IJCSI Vol 10, Issue 3,.India, 2 May. 2013.
+[6] Al-Manie M. A., M. I. Al-Khanhal. Acoustic detection of the Red Date Palm Weevil, International Journal of Electrical, Robotics, Electronics and communication Engineering Vol: 1 No. 2, KSA, 2007.
+[7] Miguel M. R, H. M. Gomis, O. L. Granado, M. Perez, A. Marti and J. Jose Serrano. , Journal of Economic Entomology, 2013. On the design of a Bioacoustic Sensor for the early detection of the Red Palm Weevil, 1706-1729, Sensors 2013
+[8] Siriwardena K.A.P, L.C.P. Fernando. Portable acoustic device for detection of coconut palms infested by Rynchophorus ferruginous, Crop Protection 25-29., UK, 2010
+[9] E. Ferro, V.M. Brea, D. Cabello, Pl Lopez, J. Iglesias, J. Castillejo, “Wireless Sensor Mote for Snail Pest Detection – IEEE. 2014
+[10] Laar B. V, The bioacoustics detection of the Red Palm Weevil, Gut Klein Gornow, Germany. 2002
+[11] Chandan K. S. P. K. Sethy and S. K. Behera, “ Sensing technology for detecting insects in a paddy crop Field Using Optical Sensor, Springer Nature Singopore, 2018.
+[12] Mankin, RW and Al-Ayedh, HY and Aldryhim, Y and Rohde, B. “Acoustic detection of Rhynchophorus ferrugineus (Coleoptera: Dryophthoridae) and Oryctes elegans (Coleoptera: Scarabaeidae) in Phoenix dactylifera (Arecales: Arecacae) trees and offshoots in Saudi Arabian orchards”, Journal of economic entomology, vol 109-2, Pages 622-628, Oxford University Press, 2016
+[13] Mankin R. W., D. W. Hagstrum, M. T. Smith. Perspective and Promise: A century of Insect Acoustic Detection and Monitoring, American Enologist Springer. FL, USA, 2011
+[14] Mauro P. “Wireless Sensor Network for Pest Control”, Commission for Technology and Innovation (CTI), 2011
+[15] Jinpeng W, Yibo C. Jean-Pierre C. An integrated Survey in Plant Disease Detection for precision agriculture using Image Processing and wireless multimedia sensor network (ICACEEE 2014) France, 2014.
+[16] Datir S., Sanjeev W. Monitoring and detection of agriculture disease using WSN. IJCA (0975 -8887) Vol. 87. India, 2014.
+[17] Tripathy A.K, J. Adinarayana, D. Sudharsan, K. Vijayalakshmi, S. N. Merchant, U. B. Desai. Data Mining and Wireless Sensor Network for Groundnut Pest / Disease Interaction and Prediction –A Preliminary Study ISSN 2150-7988 Volume 5, India, 2013.
+[18] Azfar S., A. Nadeem. Pest detection and Control Techniques using wireless sensor networks, Journal of Entomology and Zoology studies, JEZS; 3 (2) 92-99, INDIA, 2015.
+[19] Walker. T. J. Acoustic methods of monitoring and manipulating insect pests and their natural enemies, Entomology and nematology department, University of Florida, USA, 1996.
+[20] Alexander R. D. Sound production and associated behavior in Insects, The Ohio Journal of Science 57 (2): 101, USA, 1957
+[21] Bohmfalk G. T., R.E. Frisbie. Identification, Biology and Sampling of Cotton Insects, the Texas A&M University System. (Cotton Pest Study), USA, 2011.
+[22] Shital B. , Plant Disease Detection techniques using canny edge detection & Color histogram in Image Processing, International Journal of Computer Science and Information technologies Vo. 5 (2), 1165 – 1168, India, 2013
+[23] Jongman C. junghyeon C, Mu Q, Automatic Identification of Whiteflies, aphids and thrips in greenhouse base on Image analysis. International Journal of Mathematics and Computers in Simulations. Korea, 2007.
+[24] Farooq W. A., Application of Laser Induced Break down Spectrophy in Early infestation of Red Palm Weevil: (Rhynchophorus ferrugineus) Infestation in Date Palm “, Plasma Science and Technology, Vol 17, No. 11, KSA, 2015
+[25] Wang N., N. Zhang. Wireless sensors in agriculture and food industryRecent development and future perspective (Review), Computer and Electronics in Agriculture, 50 1-14, Canada, 2006
+[26] Lee W.S., V. Alchanatis. Sensing Technologies for precision specialty crop production, Computer and Electronics in Agriculture 2-33. FL, USA, 2010
+
+[27] Dorge, T., J. Michael. Direct identification of pure Penicillium species using image analysis, Journal of Microbiological Methods, Elsevier, UK, 2000.
+[28] Watson A.T, M. A. O‟Neill, I.J. Kitching, Automated Identification of Live moths using Automated Identification System (DAISY), Systematic and biodiversity 1 (3), 287-300, UK, 2003.
+[29] Faria F. A, F. Perre. Automatic identification of Fruit flies (Diptera: Tephritidae), Journal of Visual Communication and Image representation, SP, Brazil, 2014.
+[30] Mayo M., A. T Watson. Automatic Species Identification of Live Moths, Dept. Computer Science, the University of Waikato, Hamilton, pp 58-71, New Zealand,2007.
+[31] Gangurde P, Manisha Bhende, A review on precision agriculture using WSN, International Journal of Engineering trends and technologie (IJETT) – volume 23 No. 9, India May 2015
+[32] Awasthi A and S.R.N Ready, Monitoring for precision Agriculture using wireless sensor network – A review, Global Journal of computer science and technology network, Web and Security, Vol. 13, No 7, Ver. 1, Global Journals Inc USA, 2013
+[33] Aqeel-ur-Rehman, Abu Zafar, Noman I, Zubair Shaikh, A review of wireless sensors and network application in Agriculture, Computer Standards & Interfaces, 36, Elsevier, 2014
+[34] [34] Commercial Sensor‟s web portal, http:// www.zigbee.org , Accessed in May, 2016
+[35] [35] Wei J., M. Salyani, Development of a laser scanner for measuring tree canopy characteristics: Phase 2. Foliage density measurement.” Trans. ASAE 48 (4), 1595-1601, Michigan, USA, 2005.
+[36] Ehlert D., H. Horn. Measuring crop biomass density by laser triangulation”, Compute. Electron. Agric. 61, 117-125, Netherland, 2008.
+[37] Skatulla U., E. Fiecht. Observations of the flight behavior of Lymantria monacha L. (Lep. Lymantriidae) to pheromone baited traps. Journal of Applied Entomology 119. Freising, Germany, 1995.
+[38] [38] Reynolds D. R., J.R. Riley. Remote-sensing, telemetric and computer based technologies for investigating insect movement: A survey of existing and potential techniques”, Elsevier Journal of Comp. and elect in agriculture. UK, 2002.
+[39] Manijeh K, A. Deljoo, “A wireless sensor network solution for precision agriculture based on Zigbee Technology”, Scientific Research Journal/ Wireless Sensor Network, Vol.4, 25-30, 2012.
+[40] Giles D. K, M. J. Delwiche, Electronics measurement of tree canopy volume, Trans. ASAE 31 (1), USA, 264-272, 1988.
+[41] Giles D. K., M. Delwiche, and M. Dodd. “Sprayer control by sensing orchard crop characteristics: Orchard architecture and spray liquid saving. J. Agriculture Eng. research, 43, 271-289., Davis, USA, 1989.
+[42] Molto E., B. Martin, Pesticides loss reduction by automatic adaptation of spraying on globular trees, J. Agri. Eng. Res. 78 (1) 35-41.Valencia, Spain, 2001
+[43] Solanelles F., A. Escola. An electronic control system for proportional pesticide application to the canopy volume in tree crops”, proceeding of joint congress on IT and Agriculture, EFITA / WCCA July. Spain, 2005
+[44] Gil E. A. Escola,” Variable rate application of Plant protection products in vineyard using ultrasonic sensors”, Crop protect. 26 (8) 1287-1297 2007.
+[45] Tumbo S. D, Masoud S. Investigation of Laser and ultrasonic ranging sensors for measurements of Citrus Canopy Volume”, Appl. Engineering in Agriculture, Vol 18 (3): 367-372, Florida, USA, 2002.
+[46] Balsari P., G. Doruchowski, A system for adjusting the spray application to the target characteristics”, Agri. Engi. Intl. Vol. X.,Italy, 2008
+[47] Isard S. I., S. H. Gage. Flow of life in the atmosphere: An airspace approach to understanding invasive organisms. Michigan State University Press., USA, 2001
+[48] Nelson R., Estimation forest biomass and volume using airborne laser data”, Remote Sens. Environ. 24 (2), 247-267, 1998.
+[49] Ritchie J. C. Measuring canopy structure with an airborne laser altimeter, Trans. ASAE 36 (4), 1235-1238., Michigan, USA. 1993.
+[50] Nilsson M., Estimation of Tree heights and stand volume using an airborne LIDAR system”, Remote Sens. Environ. 56 (1), 1-7. 1996.
+
+www.ijacsa.thesai.org
+
+432 | P a g e
+
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 9, No. 12, 2018
+
+[51] Wei J., M. Salyani. Development of a laser scanner for measuring tree canopy characteristics: Phase 1. Prototype development. Trans. ASAE 47 (6), 2101-2107, Michigan, USA, 2004.
+[52] Mankin R. W., Acoustic detection and identification of insects in soil”, Proceeding of the 16th International congress of Acoustic and the 135th annual meeting of the acoustical Society of America, pp 685-686, USA, 1998.
+[53] Hendrik D. E, Development of an electronic system for detecting Heloothis sp. Moths (Lepidptera: Nottuidae) and transferring incident information from the field to a computer.” Journal of Economics Entomology. USA, 1989.
+[54] Waggington K. D., The effects of season, pertaining, and scent on the efficiency of traps for capturing recruited honey bees (Hymenoptera: Apidae). Journal of Insect Behavior 9. USA, 1996.
+[55] Schouest L.P. Automated pheromone traps show male pink bollworm (Lepidoptera: Gelechiidae) mating response is dependent on weather conditions”. Journal of Econ. Entomology. 87. 965 – 974, USA 1994
+[56] Lingreen P. Night vision equipment, reproductive biology, and nocturnal behavior: Importance to studies of insect flight, dispersal and migration”, Springer, Germany, 1986.
+[57] Lingreen P. D., Flight behavior of corn earworm (Lepidoptera: Noctuidae) moths under low wind speed conditions”, Environ, Entomol, 24, USA, 1995.
+
+[58] Fitt G.P., G.S. Boyan. Methods for studying behavior. In: Zalucki, M.P. (Ed). Heliothis: Research method and prospects, Springer, New York., USA, 1991.
+
+[59] Mankin R. W., R. Machan. Field testing of a Prototype acoustic device for detection of Mediterranean Fruit Flies Flying into traps, proceeding of the 7th Intl. Symposium on Fruit Flies of Economic Importance, FL, USA, 2006
+
+[60] Farmery M. J, Optical studies of insect flight at low altitude, Thesis, University of York., UK, 1981.
+
+[61] Schaefer G.W., G.A. Bent. An infra-red remote sensing system for the active detection and automatic determination of insect flight trajectories (IRADIT). Bull. Entomol. Research, pp. 261 – 278, UK, 1984
+
+[62] Kirankumar Y. B, J. D. Mallapur, “Advanced remote monitoring of a crop in agriculture using WSN Topologies”, International Journal of Electronics and communication engineering & Technology, Vol, 6, issue 9, pp. 30 – 38, September 2015.
+
+[63] Commercial Sensor‟s web portal, https:\\www.xbow.com Accessed in May, 2016 ,
+
+[64] Commercial Sensor‟s web portal http:// www.elab-experience.com Accessed in May, 2016
+
+[65] Sensor‟s web portal http:// www.tauzero.com /rob-tow/Sun-spots-sensor-
+
+networks
+
+, Accessed in May, 2016
+
+View publication stats
+
+www.ijacsa.thesai.org
+
+433 | P a g e
+

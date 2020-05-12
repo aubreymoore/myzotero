@@ -1,0 +1,343 @@
+RESEARCH
+
+Downloaded from https://academic.oup.com/ae/article-abstract/50/4/212/2389671 by guest on 11 March 2019
+
+Tracking Insects with Harmonic Radar: a Case Study
+M. E. O’Neal, D. A. Landis, E. Rothwell, L. Kempel, and D. Reinhard
+
+ABSTRACT: Harmonic radar technology can be used to track the dispersal of tagged insects. The tag consists of a wire antenna attached to a Schottky diode, which uses the original radar signal as an energy source, re-emitting a harmonic of the transmitted wavelength. Two forms of harmonic radar use this basic technology to study insect movement. The more sophisticated form consists of a ground-based scanning radar station that tracks the movement of a tagged insect on a circular radar display. A simpler, “off-the-shelf” form of harmonic radar is a commercially available, light-weight, handheld transmitter/receiver from RECCO Rescue Systems. We brieﬂy review both of these forms and describe our experience monitoring the movement of carabid beetles in agricultural habitats with the handheld transmitter/receiver. We identiﬁed a commercial source of diodes compatible with the RECCO transmitter/receiver and tested several diode and wire combinations. We found that a tag built with a diode attached to a single section of 8-cm wire (monopole) was more appropriate for marking carabids. Tags built from ﬂexible Teﬂon-coated wires were an improvement on tags built with stiff, aluminum wire, but beetle movement was still hindered. In corn and soybean ﬁelds, large carabids (Scarites quadriceps Chaudoir and Harpalus pennsylvanicus, (DeG.) Coleoptera: Carabidae) could be recaptured even when they burrowed out of sight 3 to 9 cm below the soil surface. We discuss the trade-offs between tag detection and durability that occur when designing a tag for a given organism. Although the technique shows promise, producing a tag that does not hinder movement of the target insect in the ﬁeld will require further development.
+Pest and beneﬁcial insects constantly move and disperse within agricultural ecosystems. Although a thorough understanding of this movement is critical for pest management, studying insect dispersal in the ﬁeld is often difﬁcult. Direct observation, remote sensing (Riley 1989), and mark-and-recapture techniques (Hagler and Jackson 2001) are standard tools in dispersal studies; however, each has signiﬁcant limitations. To the envy of entomologists, biologists studying larger organisms are able to track them with radio transmitters (Amlaner and Macdonald 1980).
+
+Advances in electronic miniaturization have made it possible to radio-track some large ﬂightless insects (Hayashi and Nakane 1989, Riecken and Raths 1996), as well as a large scarab capable of ﬂight (Hedin and Ranius 2002). However, these radio transmitters still require an onboard power supply, which increases their weight to 0.48 g (Hedin and Ranius 2002) and precludes their use on all but the largest insects. Harmonic radar technology allows smaller, moderate-sized insects (Table 1, see also Boiteau and Colpitts 2004.) to be tracked in the ﬁeld with many of the same advantages of radio transmitters.
+
+Table 1. Details of prior use of harmonic radar to track insect dispersal.
+Species (weight) Dispersal mode Tag weight (length) Reference
+
+Coleoptera
+Pterostichus melanarius (160 mg)
+P. cupreus (70 mg)
+
+Walking “
+
+P. niger (220 mg)
+
+“
+
+Lepidoptera
+Parnassius sminthius (350 mg)
+Malacosoma disstria (200 mg)
+Erebia epipsodea (150 mg)
+Diptera
+Arachnidomyia aldrichi (55 mg)
+Patelloa pachypyga (45 mg)
+
+Flying “ “
+“ “
+
+3–8 x 10–2 g (20 cm) “
+“
+4 x10–4 g (8 cm) “
+“
+
+Wallin and Ekbom 1988 Mascanzoni and Wallin 1986 Wallin and Ekbom 1994
+Roland et al. 1996 Caldwell 1997
+Caldwell 1997
+
+“
+
+Roland et al.
+
+1996
+
+“
+
+Roland et al.
+
+1996
+
+212
+
+American Entomologist • Winter 2004
+
+Downloaded from https://academic.oup.com/ae/article-abstract/50/4/212/2389671 by guest on 11 March 2019
+
+In traditional radar, a transmitted electromagnetic pulse is directed into an uncluttered environment such as the sky. Reﬂected signals can indicate the location, size, and distance of remote objects. Traditional radar, however, is not useful for objects on or near the ground; the reﬂected signal of soil, plants, etc., makes target identiﬁcation impossible.
+With harmonic radar, a tag is attached to the target object that allows for its location to be determined within a cluttered environment. The tag consists of two principal components, a low-barrierheight Schottky barrier diode (SBD) and a wire antenna. The tag uses the original radar signal as a source of energy and re-emits a harmonic of the transmitted wavelength, making it possible to emit a signal without an on-board energy source. Tuning the receiver to the harmonic frequency allows the tagged target to be identiﬁed from background clutter.
+Two forms of harmonic radar use this basic technology to study insect movement. The more sophisticated form consists of a groundbased scanning radar station in which the movement of a tagged insect is tracked on a circular radar display (reviewed in detail in Riley and Smith 2002). This form of harmonic radar is comparable to other methods of remote sensing, where observations are made from a device some distance from the target. It has been successfully used to study honeybee foraging behavior (Capaldi et al. 2000) and mating disruption of a noctuid (Svensson et al. 2001). These tags are 16 mm long and weigh 0.8 to 12 mg in the former case and 8 mg in the later. Both studies were conducted at IACR-Rothamsted, Harpenden, England, using equipment capable of detection ranges up to 900 m with a transmitted wavelength of 3.2 cm at 25 kW Riley and Smith (2002).
+The cost and technological expertise required to develop this technology are not trivial and limit its accessibility. Another drawback, shared with all harmonic radar systems, is the inability for tags to produce unique signals. Therefore, it is not possible to separate multiple targets.
+A more “off-the-shelf” form of harmonic radar exists in a commercially available, light-weight (1.6 kg), handheld transmitter/receiver (RECCO Rescue Systems, Lidingo Sweden; www.recco.com). These units are designed to locate avalanche victims (i.e., to reach a snow-covered skier) wearing tags on their clothing. Unlike the harmonic radar system of Riley and Smith (2002), the RECCO units transmit at a longer wavelength (Fig. 1) that can penetrate snow, vegetation, and soil. We were able to detect RECCO built tags 1m below the soil, and the 16-cm tags that we built were detectable 30 cm below the soil surface.
+The longer wavelength is lower in power, and so detection range of tags built for tracking insects using the RECCO technology is considerably shorter than that used by the remote-sensing form of harmonic radar. In general, the tags used with the RECCO system are longer and heavier (Table 1) than those used by Riley and Smith (2002). The detection distances for tags held above the ground range from 30 to 50 m and are even shorter (<10 m) when the tag is on the ground (Mascanzoni and Wallin 1986).
+
+RECCO frequency range
+
+104 106 108 1010 1012 1014 1016 1018 1020
+
+Frequency in cycles/second Visible light
+
+1015 1013 1011 109 107 105 103 10 1
+
+AM Radio Microwaves
+
+Ultraviolet
+
+TV, FM Radio
+
+Infrared
+
+X-Rays
+
+Wavelength in nm
+
+Fig. 1. Location of harmonic radar signal used by the RECCO unit (dotted vertical line) within the electromagnetic spectrum.
+
+from the study habitat. Wallin and Ekbom (1994) used harmonic radar tags to determine the effect of hunger status on the movement of three Pterostichus species in oat ﬁelds with varying populations of aphid. Previously, Wallin and Ekbom (1988) successfully tracked these same carabids in cereal ﬁelds. The position of tagged carabids was determined every 5 min for an hour. All species were observed to
+
+a
+
+b
+
+Tracking Carabids with Harmonic Radar Tracking insects with the RECCO unit is similar to a mark-and-
+recapture technique, in which an organism is tagged, released, and recaptured (Hagler and Jackson 2001). The movement of a tagged organism is estimated based on the location at each recapture point. The few examples in which harmonic radar has been used beyond methods development have involved tracking carabids (Wallin and Ekbom 1988, 1994).
+Carabid beetles are ideal for study with harmonic radar because they can move relatively long distances (up to 90 m/day), but do not move so rapidly that they are impossible to track or are easily lost
+
+Fig. 2. (A) Top view of a RECCO unit, showing the 5-element yagi antenna that transmits the initial 917 MHz signal. (B) From the side view, the operator holds the second 4-element antenna that receives the 1834 MHz reﬂected signal.
+
+American Entomologist • Volume 50, Number 4
+
+213
+
+Downloaded from https://academic.oup.com/ae/article-abstract/50/4/212/2389671 by guest on 11 March 2019
+
+disperse through the ﬁeld, some crossing plant rows. The maximum net displacement recorded was 9 m for Pterostichus cupreus. (L.) Wallin and Ekbom (1994) did not report observing any alterations in the behavior of any Pterostichus species due to the 20-cm long tags. During initial methods’ development, Mascanzoni and Wallin (1986) reported little difference in the rate of recapture between untagged beetles and beetles tagged with a 3-cm long antenna.
+To investigate the logistics of harmonic radar use in the ﬁeld, we obtained a RECCO transmitter/receiver and applied it to ongoing research on the movement of beneﬁcial insects in annual crop landscapes. Earlier work by Carmona and Landis (1999), Lee et al. (2001), and Lee and Landis (2002) have shown that refuge habitats in annual crop ﬁelds harbor larger numbers of beneﬁcial carabid beetles, including Pterostichus species, and that these predators move into the crop ﬁelds where they consume insect pests (Lee et al. 2001) and weed seeds (White 2000).
+We have been unable to answer how far individual carabid beetles move, when, and how they use the refuges. Answering these questions would help determine how refuge habitats should be distributed to improve biological control in and around crop ﬁelds. Our objective was to design a tag that was compatible with the RECCO transmitter/receiver and suitable for tracking carabids between annual ﬁeld crops and refuge habitats.
+RECCO Transmitter/ Receiver. We purchased a RECCO transmitter/receiver unit in May 2000 for $7,500. The RECCO unit uses a 5-element yagi antenna for transmission and a 4-element patch array for reception (Fig. 2). To locate a tag, the unit is held in front of the user and rotated 90° to ensure the tag receives the polarized signal. Electronic equipment, metal objects, and even an invertebrate (Hemideina crassidens Blanchard, Orthoptera: Stenopelmatidae; see Lövei, et al. 1997) can produce detectable signals (false-positives). Before using the RECCO unit, we scanned the area to identify and remove the source of any such false-positives. Although we did not ﬁnd any false-positives within our study site, in preliminary testing, metal objects such as a metal rabbit trap and cell phones produced a signal.
+To reduce tag length and increase detection range, we tried to modify the RECCO unit. We attempted to increase the range of the system by replacing the 5-element yagi with a higher gain, 10-element yagi. However, no improvement in range was achieved, probably because of mismatched antenna impedance (E.R., unpublished data). We did not attempt any further modiﬁcation of the antenna because such changes are difﬁcult with the current design of the RECCO transmitter/receiver.
+It is theoretically possible to decrease tag antenna length by increasing the transmitted frequency. The relationship between antenna length and transmission frequency is L = c/(2f), where c = speed of light (300,000,000 m/s) and f = frequency in Hz. Thus, the antenna length could be cut in half if the transmission frequency were doubled. We were not able to alter the transmission or receiving frequency of the RECCO unit (E.R., unpublished data). Therefore, our attempts to optimize the RECCO system for tracking carabids focused on the tag design.
+Tag Design and Range Testing. Modiﬁcation of the tag has included varying the diode (Lövei et al. 1997), antenna wire (Roland et al. 1996), wire–diode conﬁguration (Mascanzoni and Wallin 1986), and wire conﬁguration (single strand, circle, and oval; Lövei et al. 1997). To date, Roland et al. (1996) have constructed the lightest detectable tag (0.4 mg), although the longevity of this design in the ﬁeld may be limited. There are signiﬁcant trade-offs between tag detection and durability that occur when designing a tag for a target organism.
+With our initial purchase of a RECCO transmitter/receiver, we received 10 SBDs used in commercial tags. With the RECCO-supplied
+
+range (m)
+
+80
+70
+60
+50
+40
+30
+20
+10
+0 0 5 10 15 20 25 30 35 40 45 50 55 dipole antenna length (cm)
+Fig. 3. Relationship between dipole wire tag length and detection range. Initial length of wire tag was 52 cm with the range measured after 2 cm of wire was removed from wire on each end of the diode.
+SBDs, we tested the general relationship between antenna length and reﬂected signal strength. We identiﬁed the detection range by placing a tag 1.5 m off the ground on a plastic pole and walking away from the tag until the signal was silent. We tested the relationship between range detection and antenna length for a dipole tag (wire on either side of diode). Starting with 26 cm of aluminum wire attached to either side of the diode, the range of the reﬂected signal was measured after 2 cm was trimmed from each side of the diode.
+We determined that a 16-cm long tag provided optimal detection (Fig. 3). This length is one-half the wavelength of the 917 MHz transmitting frequency. Interestingly, when the 16 cm tag was placed on the ground, its detection range was reduced to 10 m. In a second experiment, we explored the effect of antenna length and detection starting with a 16-cm dipole tag and sequentially removing 0.5 cm
+60
+50
+40
+30
+20
+10
+0 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 wire tag length (cm)
+Fig. 4. Detection range of a 16 cm dipole wire tag shortened at each end by 0.5 cm. Final length of the tag was 1.0 cm, with 0.5 cm of wire on each end of the diode.
+
+214
+
+American Entomologist • Winter 2004
+
+Downloaded from https://academic.oup.com/ae/article-abstract/50/4/212/2389671 by guest on 11 March 2019
+
+from both ends (i.e., a single tag that decreased in length by 1 cm at each testing).
+As antenna length decreased, we observed a drop-off in range detection (Fig. 4) and also a plateau between 12 and 8 cm. An 8cm antenna represents one-half the wavelength of the 1834 MHz receiving frequency. Again, when the-8 cm dipole was placed on the ground, its detection range was only 10 m. Mascanzoni and Wallin (1986) also reported detection ranges of 10 m for 10–13-cm long tags placed on the ground. Why the detection range decreases when tags are placed on the ground is not clear. It may be that the diode receives less power from the transmitting signal because of interception or interaction with the ground.
+To improve the range of a monopole design, we conducted a third experiment in which several tag designs were built. A dipole design has greater range than a monopole (wire on one side of diode) because a dipole antenna conducts the current through the diode more efﬁciently. However, a dipole has disadvantages when used on ground-dwelling carabids. Preliminary ﬁeld tests with a dipole tag indicated that the diode catches on plant and soil material and impedes natural insect movement. Also, connecting the diode to two sections of wire increased susceptibility for breaking. Attaching the diode to the elytra in a monopole design strengthened the connection of the diode to the wire and the tag to the insect.
+We compared the range of a 16-cm dipole antenna (8 cm on either side of the diode) with a series of tags in which one end of this initial tag design is increased by 0.5 cm, and the other is decreased by 0.5 cm. We built 14 tags in the series, and the ﬁnal tag was built with 15 cm and 1 cm sections of wire on opposite ends of the diode. As the dipole tag was gradually changed to a monopole, we observed a linear decrease in detection range (Fig. 5). In a separate test, an 8-cm monopole had the same range as an 8-cm dipole (10 m); therefore, we ﬁeld-tested 8 cm monopole tags.
+Diode Selection. RECCO did not reveal the commercial source of diodes used in their tags. Therefore, we looked for a separate source of SBDs that were compatible with the RECCO detector. In selecting a diode, we focused on the following attributes: small size and weight, electrostatic protection, low capacitance, and low turn-on voltage.
+
+a
+
+b
+
+Fig. 6. A packaged low-barrier Schottky diode in a dipole wire tag (a) and unpackaged diode placed on the penny at the end of the word ‘Trust’ (b). The unpackaged diode was not used as it lacked electrostatic protection.
+At ﬁrst, we tried unpackaged SBDs (i.e., not covered in a protective plastic covering; Fig. 6A). We selected an unpackaged lowbarrier-height SBD (Micrometrics CS-11) that measures 380 × 380 × 130 µm and weighs ≈44 µg. In contrast, commercially available tags produced by RECCO employed a 4.6 mg packaged SBD. Tags built with unpackaged diodes were very susceptible to static electricity. We were able to connect wire antennas to the unpackaged diodes, but these tags were not functional when taken out of the lab and no longer grounded. Therefore we concluded that current unpackaged diodes do not have a sufﬁcient static protection to be a viable option.
+As a side note, the size of unpackaged diodes makes it very difﬁcult to connect them to wire antenna. If we were to use such a small diode, a wire-bonder would make it easier to connect the diode to a wire without using an excessive amount of solder. The cost of a wire-bonder is greater than a common soldering iron.
+
+70
+60
+50
+40
+30
+20
+10
+0 87654321 Length of short end of dipole (cm)
+Fig. 5. Detection range for a series of dipoles wire tags in which one end is shortened by 0.5 cm and the other end is increased by 0.5 cm to maintain a total length of 16 cm. We began with a dipole wire tag (8 cm of wire on either end of the diode) and essentially ﬁnished with a monopole wire tag (15.5 cm and 0.5 cm on either end of the diode).
+American Entomologist • Volume 50, Number 4
+
+Fig. 7. Schematic diagram illustrating how bends in harmonic radar tags reduce linear length and subsequently their detection range.
+215
+
+ﬁeld tests of tags built with this rigid wire suggested it had limited
+
+usefulness. Bends in the tag signiﬁcantly reduced detection distance
+
+because the linear length of the wire antenna deﬁnes its detection
+
+range (Fig. 7). For ﬁeld tests, we therefore explored ﬂexible wires that
+
+would not remain bent when dragged behind a carabid. We chose a
+
+ﬁne gauge (0.07 mm diam) Teﬂon-coated aluminum wire for its low
+
+weight, durability, and ﬂexibility (product # TFIR-003-50, Omega
+
+Engineering, www.omega.com).
+
+Tagging Beetles. We tested several glues to attach tags to carabids.
+
+We found that glue used for hot glue guns (Arrow Fastener, Saddle
+
+Brook NJ) worked better than cyanoacrylate-based super glues (Duro
+
+Quick Gel, Rocky Hill, CT). The super glues were slow to dry and
+
+did not provide additional support/protection for the diode-wire
+
+a
+
+connection. Using the hot glue gun, we coated the diode and imme-
+
+diately attached it to the beetle’s elytra. Tagged beetles were placed
+
+inside an enamel pan and observed for 30 min to verify successful
+
+attachment. All carabids were tagged 24 h before release and kept
+
+in individual containers ﬁlled with moist potting soil.
+
+Field Testing. In the June 2002, we released 10 Scarites quadriceps
+
+in a cornﬁeld at 1600 h. Beetles were tagged with an 8 cm, 0.091 g
+
+Downloaded from https://academic.oup.com/ae/article-abstract/50/4/212/2389671 by guest on 11 March 2019
+
+b
+
+Fig. 8. Wire tagged
+
+Scarites quadriceps
+
+adults released
+
+in a cornﬁeld and
+
+recovered after
+
+18 hr. Five of the
+
+ten beetles were
+
+recovered partially or
+
+completely covered
+
+in soil. The beetle
+
+pictured above (A)
+
+was completely out
+
+of site and is shown
+
+after the soil was
+
+c
+
+cleared from the wire
+
+tag. The tag was still
+
+attached and the
+
+insect still alive.
+
+We next obtained SBDs that more closely matched the packaged diodes supplied by RECCO. In selecting a packaged SBD, our criteria were: low forward voltage drop (approximately 200 mV at 1 mA of current); low zero-bias capacitance (preferably less than or equal to approximately 1 pF); electrostatic discharge protection. We purchased a candidate (SBD101BWS, purchased from Allied Electronics; www.alliedele.com) whose parameters for these features fell within the range of the RECCO-provided SBD (200 mV forward voltage drop and a capacitance of about 1 pF, D. R. unpublished data). All ﬁeld tested tags were built with this diode, which had an average mass of 0.0043 g (n = 10 diodes).
+Wire selection. We used an aluminum wire for testing the range of diodes and different wire-diode conﬁgurations. However, preliminary
+
+Fig. 9. Wire tagged Scarites quadriceps adults released and recovered after 18 h. Two of the 10 beetles recovered were pinned under weed foliage (A and B), with tags still attached.
+
+216
+
+American Entomologist • Winter 2004
+
+Downloaded from https://academic.oup.com/ae/article-abstract/50/4/212/2389671 by guest on 11 March 2019
+
+monopole tag constructed from the Teﬂon-coated wire and the commercially available SBD. We recaptured 7 of the 10 S. quadriceps after 18 h. Recaptured beetles averaged a total displacement of 2.5 m, ranging from 0.48 m to 7.82 m. Five of the seven beetles recovered were buried completely out of sight, one buried 9 cm into the soil (Fig. 8). In one case, after determining the source of the signal (Fig. 8A), we were able to clear the soil and reveal the intact tag (Fig. 8B) still attached to the beetle (Fig. 8C). We replicated this experiment a week later with 4 cm monopole tags on 10 S. quadriceps in the same cornﬁeld. However, we were unable to recover any beetles after 18 h. Given the reduced detection range of a 4-cm monopole tag (Fig. 4), it is likely that we were unable to locate tagged beetles within the cornﬁeld. However, tag failure or beetles leaving the ﬁeld may have contributed to our inability to locate and recapture beetles.
+In August 2002, we released ﬁve H. pennsylvanicus with 8 cm, 0.026 g monopole Teﬂon tags at 1030 hours in a soybean ﬁeld. Of the ﬁve tagged H. pensylvanicus, we recovered four 3 h later and three 48 h later. All H. pensylvanicus beetles were recovered on the soil surface within 1 m of the release site. For both species, those that were not found buried in the soil were found unable to move with tags bent or caught on plant debris (Figs. 9A and B).
+Conclusion Our initial objective was to design a tag compatible with the
+RECCO transmitter/receiver and suitable for tracking carabids between annual ﬁeld crops and refuge habitats. We successfully built tags that could be detected with the RECCO unit, and using these tags we were able to relocate carabids in annual crops. However, tag interaction with crop and weed vegetation indicate the limited usefulness of this technique for tracking carabid in refuge habitats
+
+used in or adjacent to annual crop systems with a simpler vegetative structure.
+Previous published reports have indicated the potential usefulness of harmonic radar (see references in Table 1) but have neglected its limitations. Although we were disappointed that we could not use the tags to study carabid movement, we have identiﬁed some key constraints that must be addressed. We built and tested harmonic radar tags that weighed as little as 26 mg and determined the advantages and limitations of various materials and tag designs. The optimal distance for tag detection was with 16-cm dipoles (Fig. 4), but 8-cm monopoles were still detectable in the ﬁeld. We found that lighter unpackaged diodes were not viable in the ﬁeld because they did not provide static protection. However, replacing a packaged SBD with an unpackaged one of similar size with static protection only reduced tag weight to 21.6 mg. Further weight reductions require lighter yet durable antenna wires, and/or a change in the initial signal strength or frequency so that shorter antenna lengths can be used. With the current design of the RECCO unit, the latter method may not be possible.
+One limitation of any harmonic radar technology is the inability to generate a unique signal to differentiate tagged individuals. Radio-telemetry has been used to track a ﬂying insect (Hedin and Ranius 2002), but the weight of these tags is still considerably heavier than that used for harmonic radar. Because of its relatively long wavelength, the RECCO unit has the potential for tracking insects that move through vegetation. Because the 16-cm tag length has the longest detection range, the RECCO unit may be limited for tracking large ﬂying insects. Using the RECCO transmitter/receivers, Williams et al. (2004) successfully marked Asian longhorned beetles (Anoplophora glabripennis (Motschulsky)) with a 15-cm dipole and
+
+American Entomologist • Volume 50, Number 4
+
+217
+
+Downloaded from https://academic.oup.com/ae/article-abstract/50/4/212/2389671 by guest on 11 March 2019
+
+successfully recaptured them in willow trees as far as 100 m from the release site. They noted that tags were broken or twisted, reducing their detection range. We found that inﬂexible antenna wires resulted in bends that decreased detection range. Flexible Teﬂon-coated wires had fewer bends, but they still caught on plant debris and hindered beetle movement.
+While producing a lighter tag that does not hinder beetle movement in the ﬁeld will require further development, the technique may be promising for speciﬁc, carefully designed studies. Chrysomelid larvae tagged with small stainless steel strips (1 mm, 0.35 mg) were located with a metal detector 7 cm below the soil surface (Piper and Compton 2002). Similar study of soil-dwelling insects may be facilitated with the RECCO unit, since we were able to locate tagged carabids buried 3–9 cm below the soil surface, with the potential detection range at 30 cm for a 16 cm dipole tag.
+Acknowledgments We thank Ben Wilmhoff and Anthony Grant for technical as-
+sistance in building our harmonic radar tags, and Christy Gould for assistance in the ﬁeld. We also thank the Michigan Agricultural Experiment Station, the Michigan State University Extension, and the Michigan Department of Agriculture for ﬁnancial support through Project GREEEN.
+References Cited Amlaner, D. I., Jr., and D. W. Macdonald. 1980. Handbook on biotelemetry
+and radiotracking. Pergamon Press, Oxford, U.K. Boiteau G, and B. Colpitts 2004. The potential of portable harmonic radar
+technology for the tracking of beneﬁcial insects. Int. J. Pest Management 50 (3): 233-242.
+Identification and Geographical Distribution of the Mosquitoes of North America, North of Mexico
+Richard F. Darsie Jr. and Ronald A. Ward Greatly anticipated and sorely needed, this book updates the successful guide to North American mosquitoes published by the American Mosquito Control Association in 1981. It includes 12 new species that have since been added to the North American mosquito fauna, revised distribution maps of all species, and revised and completely illustrated identification keys for the adult females and fourth instar larvae of all 174 species and subspecies known to occur in North America, north of Mexico.
+“A must-have for anyone involved with mosquitoes. This is the only key that incorporates the recent changes in nomenclature and new species listings with their respective distribution.”—Dennis Moore, director, Pasco County (Florida) Mosquito Control District
+416pp, 1,045 b&w illustrations, 168 distribution maps, 4 tables. Cloth $75.00 Order through full-service booksellers, our website at www.upf.com,
+or with VISA, American Express, or M/C toll free: 1-800-226-3822
+
+Caldwell, M. 1997. The wired butterﬂy. The world’s tiniest radar tags are making a Rocky Mountain butterﬂy and its ecology a lot easier to follow. Discover 40: 40–48.
+Capaldi, E. A., A. D. Smith, J. L. Osborne, S. E. Fahrbach, S. M. Farris, D. R. Reynolds, A. S. Edwards, A. Martin, G. E. Robinson, G. M. Poppy, and J. R. Riley. 2000. Ontogeny of orientation ﬂight in the honeybee revealed by harmonic radar. Nature 403: 537–540.
+Carmona, D. M., and D. A. Landis. 1999. Inﬂuence of refuge habitats and cover crops on seasonal activity-density of ground beetles (Coleoptera: Carabidae) in ﬁeld crops. Environ. Entomol. 28: 1145–1153.
+Hagler, J. R., and C. G. Jackson. 2001. Methods for marking insects: current techniques and future prospects. Annu. Rev. Entomol. 46: 511–543.
+Hayashi, F., and M. Nakane. 1989. Radio tracking and activity monitoring of the Dobsonﬂy larva, Protohermes grandis (Megaloptera, Corydalidae). Oecologia 78: 468–472.
+Hedin, J., and T. Ranius. 2002. Using radio telemetry to study dispersal of the beetle Osmoderma eremita, an inhabitant of tree hollows.
+Lee, J. C., and D. A. Landis. 2002. Non-crop habitat management for carabid beetles, pp. In J. Holland [Ed.]. Carabid beetles and agriculture. Intercept, Andover, U.K.
+Lee, J. C., F. B. Menalled, and D. A. Landis. 2001. Refuge habitats modify impact of insecticide disturbance on carabid beetle communities. J. Appl. Ecology. 38: 472–483.
+Lövei, G. L., I. A. N. Stringer, C. D. Devine, and M. Cartellieri. 1997. Harmonic radar: a method using inexpensive tags to study invertebrate movement on land. N. Zealand J. Ecol. 21: 187–193.
+Mascanzoni, D., and E. Wallin. 1986. The harmonic radar: a new method of tracing insects in the ﬁeld. Ecol. Entomol. 11: 387–390.
+Piper, R. W., and S. G. Compton. 2002. A novel technique for relocating concealed insects. Ecol. Entomol. 27: 251–253.
+Riecken, U., and U. Raths. 1996. Use of radio telemetry for studying dispersal and habitat use of Carabus coriaceus L. Ann. Zool. Fenn. 33: 1109–1116.
+Riley, J. R. 1989. Remote sensing in entomology. Annu. Rev. Entomol. 34: 24–71.
+Riley, J. R., and A. D. Smith. 2002. Design considerations for a harmonic radar to investigate the ﬂight of insects at low altitude. Comput. Electron. Agric. 35: 151–169.
+Roland, J., Mc Kinnon, G., Backhouse, C., and D. Taylor. 1996. Even smaller radar tags on insects. Nature 381: 120.
+Svensson, G. P., P. G. Valuer, D. R. Reynolds, A. D. Smith, J. R. Riley, T. C. Baker, G. M. Poppy, and C. Lofstedt. 2001. Mating disruption in Agrotis segetum monitored by harmonic radar. Entomol. Exp. Appl. 101: 111–121.
+Wallin, H., and B. Ekbom. 1988. Movements of carabid beetles (Coleoptera: Carabidae) inhabiting cereal ﬁelds: a ﬁeld tracing study. Oecologia 77: 39–43.
+Wallin, H., and B. Ekbom. 1994. Inﬂuence of hunger level and prey densities on movement patterns in three species of Pterostichus beetles (Coleoptera: Carabidae). Environ. Entomol. 23: 1171–1181.
+White, S. S. 2000. Weed seed predation in agroecosystems. M.S. Thesis. Department of Crop and Soil Science. Michigan State University, East Lansing.
+Williams, D. W., G. Li, and R. Gao. 2004. Tracking movements of individual Anoplophora glabripennis (Coleoptera: Cerambycidae) adults: application of harmonic radar. Environ. Entomol. 33: 644–649.
+
+UNIVERSITY PRESS OF
+Gainesville, Tallahassee, Tampa, Boca Raton, Pensacola, Orlando, Miami, Jacksonville, Fort Myers
+
+M.E. O’Neal is an assistant professor in the Department of Entomol-
+
+ogy at Iowa State University, Ames, IA 50011 (mailto:oneal@iastate.
+
+edu>oneal@iastate.edu). D. A. Landis is a professor in the Depart-
+
+ment of Entomology at Michigan State Univeristy, East Lansing, MI
+
+48824. Drs. E. Rothwell, L. Kempel and D. Reinhard are professors in
+
+the Department of Electrical and Computer Engineering at Michigan
+
+State University, East Lansing, MI 48824
+
+
+
+218
+
+American Entomologist • Winter 2004
+

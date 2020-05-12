@@ -1,0 +1,30 @@
+/*
+ Theme Name:   myDecode
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  decode Child Theme
+ Author:       John Doe
+ Author URI:   http://example.com
+ Template:     decode
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-fifteen-child
+*/
+
+figure { margin: 0 0 1em; }
+
+#icons {
+	width: 700px; 
+	margin: auto; 
+	max-width:100%;
+	position:relative; 
+	padding-bottom: 40%;
+}
+
+.1icon {
+	float: left; 
+	margin-right: auto;
+}
+
+code {background-color:#eee;}

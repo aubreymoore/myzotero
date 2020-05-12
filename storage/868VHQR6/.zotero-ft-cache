@@ -1,0 +1,74 @@
+Guam Coconut Rhinoceros Beetle Project Technical Report CRB-2014-09-11
+Adding CRB Breeding Site Material to Barrel Traps Does Not Increase Trap Catch
+Prepared by Aubrey Moore and Roland Quitugua University of Guam Cooperative Extension Service
+Updated October 1, 2014
+Addition of CRB breeding material substrate to barrels supporting pan traps equipped with lures, UVLEDs and cones did not increase trap catch.
+1 Introduction
+This experiment was run to test the idea that CRB breeding site material added as substrate in a barrel benath a pan trap will increase attractiveness of the trap, resulting in increased trap catch.
+2 Methods
+We used 31 pan traps sitting upon empty barrels already in operation at the Yigo experiment station. These traps were equipped with lures, UVLEDs and cones. For substrate, we chipped decaying coconut material from sanitation of the station, including a dead standing coconut which was generating adults. The pile of chipped substrate was thoroughly mixed using a back hoe. About half of the barrels were ﬁlled with substrate. These were selected by ordering trap locations by trap catch over the month previous month and then selecting all the odd ranked locations. Barrels at these locations were ﬁlled with substrate.
+1
+
+The experiment was run from July 22 to October 1, 2014. Beetles in pan traps were counted on August 2, August 17, August 24, August 31, September 8, September 18, September 24, and October 1.
+Analysis was done using an IPython notebook (Listing 1).
+3 Results
+Addition of breeding material substrate beneath pan traps did not change the trap rate (Figure 1). Mean number of beetles captured per day was 0.27 for pan traps above empty barrels and 0.25 for pan traps above barrels ﬁlled with substrate. The diﬀerence was not signiﬁcant (t-test; t = 0.3670; p = 0.7163).
+2
+
+40
+
+Boxplot gtrroauppCedatbcyhsubstrate
+
+35
+
+30
+
+25
+
+20
+
+15
+
+10
+
+5
+
+0
+
+n
+
+y
+
+[substrate]
+
+Figure 1: Number of beetles caught per trap between July 22 and October 1, 2014.
+
+3
+
+Listing 1: ipynb
+
+# c o d i n g : u t f −8
+
+# In [ 1 ] :
+
+import pymysql import pandas import m a t p l o t l i b . pyplot as p l t get ipython () . magic (u ' matplotlib
+
+inline ')
+
+conn = pymysql . c o n n e c t ( h o s t= ' mysql . g u a m i n s e c t s . n e t ' , u s e r= ' r e a d o n l y g u e s t ' , passwd= ' r e a d o n l y p a s s w o r d ' , db= ' o r y c t e s ' )
+sql = ””” SELECT b a r r e l I D , s u b s t r a t e , SUM( males+f e m a l e s ) AS trapCatch from YigoBarrelObs WHERE s t a r t d a t e >= '2014 −07 −22 ' AND endDate <= '2014 −10 −01 ' GROUP BY b a r r e l I D ORDER BY s u b s t r a t e , b a r r e l I D ; ””” df = pandas . io . sql . read frame ( sql , conn ) df . tail ()
+
+# In [ 2 ] :
+d f . b o x p l o t ( column= ' trapCatch ' , by= ' s u b s t r a t e ' ) plt . savefig ( ' boxplot . pdf ' )
+
+# In [ 3 ] :
+from d a t e t i m e import date d0 = date (2014 , 7 , 22) d1 = date (2014 , 10 , 1) d e l t a = d1−d0 days = delta . days
+
+# In [ 4 ] :
+from s c i p y . s t a t s import t t e s t i n d
+c a t 1 = d f [ d f [ ' s u b s t r a t e ' ]== ' n ' ] c a t 2 = d f [ d f [ ' s u b s t r a t e ' ]== ' y ' ]
+print c a t 1 [ ' trapCatch ' ] . mean ( ) / days print c a t 2 [ ' trapCatch ' ] . mean ( ) / days
+ttest ind ( cat1 [ ' trapCatch ' ] , cat2 [ ' trapCatch ' ])
+
+4
+

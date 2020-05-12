@@ -1,0 +1,758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="bg" lang="bg"><head>
+			<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+			<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+			<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+			<title>Liberating links between datasets using lightweight data publishing: an example using plant names and the taxonomic literature</title>
+            <!-- base href="https://bdj.pensoft.net/" -->
+                
+			<link rel="SHORTCUT ICON" href="https://bdj.pensoft.net/i/ico/bdj.ico">
+			<link type="text/css" rel="stylesheet" href="global.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="def.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="layout.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="jquery-ui-1.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="article.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="flexboxgrid.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="highlight.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="editor_rewrite.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="flags.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="global.css" media="all" title="default">
+	
+			<link type="text/css" rel="stylesheet" href="journal_1.css" media="all" title="default">
+	
+
+			<script async="" src="analytics.js"></script><script type="text/javascript" src="jquery_1_10_2.js"></script>
+	
+			<script type="text/javascript" src="jquery_ui_1_10_2.js"></script>
+	
+			<script type="text/javascript" src="jquery_form.js"></script>
+	
+			<script type="text/javascript" src="jquery_005.js"></script>
+	
+			
+			<!-- CKEditor BEGIN -->
+			<script type="text/javascript" src="lite-interface.js"></script>
+	
+			<script type="text/javascript" src="ckeditor.js"></script><style>.cke{visibility:hidden;}</style>
+	
+			<script type="text/javascript" src="jquery_004.js"></script>
+				
+	
+			<script type="text/javascript" src="def.js"></script>
+	
+			<script type="text/javascript" src="jquery_003.js"></script>
+	
+			<script type="text/javascript" src="article.js"></script>
+	
+			<script type="text/javascript" src="bowser.js"></script>
+	
+			<script type="text/javascript" src="global.js"></script>
+	
+			<script type="text/javascript" src="js"></script>
+			
+			<script type="text/javascript" src="MathJax.js"></script>
+			<script type="text/javascript">
+			  MathJax.Hub.Config({
+				  config: ["MMLorHTML.js"],
+				  jax: ["input/TeX","input/MathML","input/AsciiMath","output/SVG", "output/PreviewHTML"],
+				  extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[a11y]/accessibility-menu.js"],
+				  TeX: {
+					extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+				  }
+				});
+			</script>
+			<script type="text/javascript" src="article_formulas.js"></script>
+	
+			
+			
+    	<script type="text/javascript" src="jquery_002.js"></script>
+	
+		<script type="text/javascript" src="jqplot.js"></script>
+	
+		<script type="text/javascript" src="jqplot_006.js"></script>
+	
+		<script type="text/javascript" src="jqplot_005.js"></script>
+	
+		<script type="text/javascript" src="jqplot_002.js"></script>
+	
+		<script type="text/javascript" src="jqplot_003.js"></script>
+	
+		<script type="text/javascript" src="jqplot_004.js"></script>
+		
+    			
+			
+		<meta name="description" content="Constructing a biodiversity knowledge graph will require making millions of cross links between diversity entities in different datasets. Researchers trying to bootstrap the growth of the biodiversity knowledge graph by constructing databases of links between these entities lack obvious ways to publish these sets of links. One appealing and lightweight approach is to create a &quot;datasette&quot;, a database that is wrapped together with a simple web server that enables users to query the data. Datasettes can be packaged into Docker containers and hosted online with minimal effort. This approach is illustrated using a dataset of links between globally unique identifiers for plant taxonomic namesand identifiers for the taxonomic articles that published those names.">
+	<meta name="keywords" content="datasette, linked data, data publishing, biodiversity knowledge graph, taxonomic names,">
+	<meta name="author" content="Roderic Page">
+	<meta name="distribution" content="global">
+	<meta name="robots" content="index, follow, all">
+	<meta property="og:image" content="https://bdj.pensoft.net/showimg.php?filename=c106x106y_218512.jpg">
+	<meta property="og:title" content="Liberating links between datasets using lightweight data publishing: an example using plant names and the taxonomic literature">
+	<meta property="og:url" content="https://bdj.pensoft.net/article/27539/">
+	<meta property="og:site_name" content="Biodiversity Data Journal">
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@BioDataJournal">
+	<meta name="twitter:title" content="Liberating links between datasets using lightweight data publishing: an example using plant names and the taxonomic literature">
+	<meta name="twitter:description" content="Constructing a biodiversity knowledge graph will require making millions of cross links between diversity entities in different datasets. Researchers trying to bootstrap the growth of the biodiversity knowledge graph by constructing databases of links between these entities lack obvious ways to publish these sets of links. One appealing and lightweight approach is to create a &quot;datasette&quot;, a database that is wrapped together with a simple web server that enables users to query the data. Datasettes can be packaged into Docker containers and hosted online with minimal effort. This approach is illustrated using a dataset of links between globally unique identifiers for plant taxonomic namesand identifiers for the taxonomic articles that published those names.">
+	<meta name="twitter:image" content="https://bdj.pensoft.net/showimg.php?filename=c106x106y_218512.jpg">
+	<meta name="twitter:url" content="https://bdj.pensoft.net/article/27539/">
+	<meta name="dc.title" content="Liberating links between datasets using lightweight data publishing: an example using plant names and the taxonomic literature">
+	<meta name="dc.type" content="Forum Paper">
+	<meta name="dc.source" content="">
+	<meta name="dc.date" content="23/07/2018 16:45:18">
+	<meta name="dc.identifier" content="doi:10.3897/BDJ.6.e27539">
+	<meta name="dc.publisher" content="Pensoft Publishers">
+	<meta name="dc.rights" content="">
+	<meta name="dc.format" content="text/html">
+	<meta name="dc.language" content="en">
+	<meta name="prism.publicationName" content="Liberating links between datasets using lightweight data publishing: an example using plant names and the taxonomic literature">
+	<meta name="prism.issn" content="1314-2828">
+	<meta name="prism.publicationDate" content="23/07/2018 16:45:18">
+	<meta name="prism.volume" content="6">
+	<meta name="prism.doi" content="10.3897/BDJ.6.e27539">
+	<meta name="prism.section" content="Forum Paper">
+	<meta name="prism.startingPage" content="e27539">
+	<meta name="prism.copyright" content="2019Roderic Page">
+	<meta name="prism.rightsAgent" content="bdj@pensoft.net">
+	<meta name="eprints.title" content="Liberating links between datasets using lightweight data publishing: an example using plant names and the taxonomic literature">
+	<meta name="eprints.type" content="Forum Paper">
+	<meta name="eprints.datestamp" content="23/07/2018 16:45:18">
+	<meta name="eprints.ispublished" content="pub">
+	<meta name="eprints.date" content="2019">
+	<meta name="eprints.date_type" content="published">
+	<meta name="eprints.publication" content="Pensoft Publishers">
+	<meta name="eprints.volume" content="6">
+	<meta name="eprints.pagerange" content="e27539">
+	<meta name="citation_journal_title" content="Biodiversity Data Journal">
+	<meta name="citation_publisher" content="Pensoft Publishers">
+	<meta name="citation_title" content="Liberating links between datasets using lightweight data publishing: an example using plant names and the taxonomic literature">
+	<meta name="citation_volume" content="6">
+	<meta name="citation_pdf_url" content="https://bdj.pensoft.net/article/27539/download/pdf/">
+	<meta name="citation_firstpage" content="e27539">
+	<meta name="citation_doi" content="10.3897/BDJ.6.e27539">
+	<meta name="citation_issn" content="1314-2828">
+	<meta name="citation_date" content="23/07/2018 16:45:18">
+	<meta name="citation_issue" content="">
+	<meta itemprop="name" content="Liberating links between datasets using lightweight data publishing: an example using plant names and the taxonomic literature">
+	<meta name="dc.creator" content="Roderic Page">
+	<meta name="dc.contributor" content="Roderic Page">
+	<meta name="citation_author" content="Roderic Page">
+	<meta name="eprints.creators_name" content="Roderic Page">
+	
+	
+			
+		<link href="css.css" rel="stylesheet" type="text/css">
+        <link href="css_002.css" rel="stylesheet">
+	
+			
+			<script type="text/javascript">
+				$(window).load(function(){
+				    init_lang_switcher()
+					gBrowserSession = bowser;
+					
+					gWindowIsLoaded = true;
+				});
+			</script>
+			<!-- Start of CREDIT Script -->
+                <script src="credit.js"></script>
+			<!-- End of Script -->
+    
+		<link rel="sidebar" href="https://hypothes.is/app.html" type="application/annotator+html"><link rel="hypothesis-client" href="https://cdn.hypothes.is/hypothesis/1.219.0/build/boot.js" type="application/annotator+javascript"><script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="annotator.js"></script><link rel="stylesheet" type="text/css" href="icomoon.css"><link rel="stylesheet" type="text/css" href="annotator.css"><link rel="stylesheet" type="text/css" href="pdfjs-overrides.css"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+		<body class="journal_1  pensoft"><div id="MathJax_Message" style="display: none;"></div>
+		
+		<script type="application/json" class="js-hypothesis-config">
+		
+		{
+			"showHighlights": false, 
+			"openSidebar": false,
+			"theme": "clean"
+		}
+
+		</script>
+
+		<script src="embed" async=""></script>
+
+			<!---->
+	
+			<div id="container" class="AOF" style="height: 235px; overflow-y: auto;">
+				<div id="header" class="no-annotations">
+					
+         <div id="nav" class="P-Nav-Article">
+			<div class="constrained">
+				
+        <a target="_blank" href="https://bdj.pensoft.net/"><img src="AOF_bdj_logo.svg" alt="logo" class="logo"></a>
+                                
+				
+			<div id="menu" class="journal">
+				
+	<a class="menu_btn" target="_blank" href="">Home</a><a class="menu_btn" target="_blank" href="https://bdj.pensoft.net/articles">Articles</a><a class="menu_btn" target="_blank" href="https://bdj.pensoft.net/about">About</a>
+			</div>
+	 
+				
+			<div id="menu" class="pensoft">
+				
+	<a class="menu_btn" target="_blank" href="http://www.pensoft.net/about.php">About Pensoft</a><a class="menu_btn" target="_blank" href="http://www.pensoft.net/books/">Books</a><a class="menu_btn" target="_blank" href="http://www.pensoft.net/e-books/">E-Books</a><a class="menu_btn" target="_blank" href="http://blog.pensoft.net/">Blog</a><a class="menu_btn" target="_blank" href="http://journals.pensoft.net/">Journals</a>
+			</div>
+	
+				
+				<div class="login_wrapper">    
+					
+					                                            	
+					<div class="combine_cart_profile">
+						
+						
+						<div class="loginOrRegister">
+							<a href="https://pensoft.net/register.php?register=1&amp;gotourl=bdj.pensoft.net">Register</a> |
+							<a href="https://bdj.pensoft.net/login.php?redirurl=%2Farticles.php%3Fid%3D27539">Login</a>
+						</div>
+	                        
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="P-Clear"></div>
+    
+				</div><!-- END header -->
+				
+			
+			<script type="text/javascript">SetArticleId(27539);</script>
+			<!-- div class="articlePath">
+				<div class="articlePath-links"><a href="">Journal home</a> <a href="about">About</a> <a href="articles">Browse articles</a></div>
+			</div -->
+			<div class="Main-Content">
+				<div class="P-Article-Content-Wrapper">
+					
+					
+					<div id="article-head" class="no-annotations">
+					    <div class="row middle-xs between-xs m0">
+					        
+                            <div>
+                                <div class="PaperType">Forum Paper</div>
+                                <div id="article-id">
+                                    Biodiversity Data Journal 6: e27539
+                                    <br> 
+                                    <a class="article-id-doi" href="https://doi.org/10.3897/BDJ.6.e27539">https://doi.org/10.3897/BDJ.6.e27539</a> (23 Jul 2018)
+                                </div>
+                            </div>					                                                
+                            
+
+                            <div>
+                                
+                                <div class="P-Article-Type-Holder">                           
+                                    
+                                    
+                                    <div class="P-Article-Previous-Versions">
+                                        <div class="P-Article-Versions-Title">Other versions:</div>
+                                        
+                                    </div>																
+                                </div>
+                                                                
+                            </div>
+                            
+                            <div style="float:right" id="info_menu-id" onclick="showInfoBar();" class="icon-mobile-menu"></div>
+                            
+                        </div>
+					</div>
+					
+					<div id="article-preview" style="height: 0px;">
+						<iframe data-showpdf="" src="article_preview.php?id=27539" enable-annotation="" id="articleIframe" name="articleIframe" style="height: 0px;"></iframe>
+						
+						
+						
+		
+		<div class="footerContentWrapper">
+			
+    		<footer>
+				<nav>
+					<div class="f_content">
+						<div class="row top-xs between-md container-fluid" id="footer-accordion">
+							<div class="col-xs-12 col-sm-10 f_left_content">
+								<div class="row">
+									<div class="col-md col-sm col-xs-12">
+										<div class="footer_menuholder">
+											<h1 class="about_foot footer-accordion-toggle">ABOUT PENSOFT</h1>  
+											<ul class="footer-accordion-content">
+												<li><a href="https://pensoft.net/about#Company-Profile">Company profile</a></li>
+												<li><a href="https://pensoft.net/books">Book publishing</a></li>
+												<li><a href="https://pensoft.net/journals">Journal publishing</a></li>
+												<li><a href="https://pensoft.net/about#Innovations">Innovations</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md col-sm col-xs-12">
+										<div class="footer_menuholder padding_right">
+											<h1 class="products_foot footer-accordion-toggle">PRODUCTS</h1>  
+											<ul class="footer-accordion-content">
+												<li><a href="http://arphahub.com/">ARPHA publishing platform</a></li>
+												<li><a href="https://ab.pensoft.net/">Advanced books</a></li>
+												<li><a href="https://books.pensoft.net/">Books</a></li>
+												<li><a href="https://pensoft.net/browse_journals">Journals</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md col-sm col-xs-12">
+										<div class="footer_menuholder">
+											<h1 class="other_foot footer-accordion-toggle">PROJECTS</h1>  
+											<ul class="footer-accordion-content">
+												<li><a href="https://pensoft.net/projects#Projects">Research projects</a></li>
+												<li><a href="https://pensoft.net/projects#Services">Services</a></li>
+												<li><a href="https://pensoft.net/projects#Partners">Partners</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md col-sm col-xs-12">
+										<div class="footer_menuholder">
+											<h1 class="other_foot footer-accordion-toggle">RESOURCES</h1>  
+											<ul class="footer-accordion-content">
+												<li><a href="https://pensoft.net/media">Media center</a></li>
+												<li><a href="http://arphahub.com/manual">Manual</a></li>
+												<li><a href="https://pensoft.net/terms">Terms of use</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							
+							</div>
+							<div class="col-xs-12 col-sm-2  f_right_content">
+								<div class="footer_menuholder">
+									<h1 class="contact_foot footer-accordion-toggle">GET IN TOUCH</h1>  
+									<ul class="footer-accordion-content">
+										<li><a href="https://pensoft.net/contacts">Contacts</a></li>
+										<li>
+											<div class="row middle-xs follow_us">
+												Follow PENSOFT
+												<div class="tw">
+													<a class="facebook" title="Facebook" target="_blank" href="https://www.facebook.com/Pensoft/"></a>
+												</div>
+												<div class="fb">
+													<a class="twitter" title="Twitter" target="_blank" href="https://twitter.com/Pensoft"></a>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="">
+												<a href="https://blog.pensoft.net/">Blog</a>
+												<a href="https://blog.pensoft.net/#email-subscribers-form-2" class="textbox_button">Subscribe</a>
+											</div>
+										</li>
+										<li><a href="https://pensoft.net/oai-pmh">Web services (OAI-PMH)</a></li>
+									</ul>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</nav>
+			</footer>
+    
+		</div>
+	
+		<div id="footer"><p>Website design and publishing framework <span class="bold"> © 2019 Pensoft Publishers</span></p></div>
+	
+						<script type="text/javascript">
+							$(document).ready(function(){
+								showInfoBar(2);
+							});
+							clickOutSideOfInfoBar();
+							SetArticleOnLoadEvents(0);
+						</script>
+						<div class="P-Baloon" id="ArticleBaloon"></div>
+						
+					</div>
+				</div>
+				<div class="P-Article-Info-Bar" id="P-Article-Info-Bar">                    
+					<div class="P-Article-Info-header">
+                        <!-- ul class="PostPubRevButton">
+                            
+						</ul -->
+                        
+			<div class="P-Article-Share row middle-xs">
+                <div class="P-Article-Downloads-Holder col_no_padding col-xs-4 start-xs">
+                    
+			<div class="row middle-xs">
+	            <div class="col-xs browse_button"><a target="_blank" title="XML" href="https://bdj.pensoft.net/article/27539/download/xml/">XML</a></div>
+				<div class="col-xs browse_button"><a href="https://bdj.pensoft.net/article/27539/download/pdf/" title="PDF">PDF</a></div>
+				<a class="cart col-xs" title="Order reprints: € 2,60" onclick="javascript:addToCart(27539, 3, 1)"><img class="cart_art" src="cart-new.png" alt="cart"></a>
+			</div>
+        
+                </div>
+                <div class="P-Article-Share-Holder col_no_padding col-xs-8 end-xs">
+                    <div class="P-Article-Hypothesis-Annotations">
+                        <div title="Annotations" class="hypothesis-opener speech-bubble" data-behaviour="SpeechBubble HypothesisOpener" data-hypothesis-trigger="" data-behaviour-initialised="true"><span data-hypothesis-annotation-count="0">&nbsp;</span></div>&nbsp;
+                    </div>                  
+                    <div class="P-Article-Share-Row">
+    					<a target="_blank" title="Share this article on Twitter" href="http://www.twitter.com/home?status=%23BioDataJournal%3A+Liberating+links+between+datasets+using+lightweight+data+publishing%3A+an+example+using+plant+names+and+the+taxonomic+literature+https%3A%2F%2Fdoi.org%2F10.3897%2FBDJ.6.e27539">
+    						<div class="P-Article-Share-Row-Icon">
+                                <span class="P-Article-Share-Row-Icon-T"></span>							
+    							<span class="P-Article-Share-Row-Icon">
+    								Twitter
+    							</span>
+    						</div>
+    					</a>
+    				</div>
+                    <div class="P-Article-Share-Row">
+    					<a target="_blank" title="Share this article on Facebook" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://bdj.pensoft.net/articles.php?id=27539','facebook-share-dialog', 'width=550,height=450'); return false;">
+    						<div class="P-Article-Share-Row-Icon">
+                                <span class="P-Article-Share-Row-Icon-F"></span>
+    							<span class="P-Article-Share-Row-Icon">
+    								Facebook
+    							</span>
+    						</div>
+    					</a>
+    				</div>
+                    <div class="P-Article-Share-Row">
+    					<div class="P-Article-Share-Row-Icon">
+    						<a target="_blank" title="Share this article on Mendeley" href="#" onclick="javascript:window.open('http://www.mendeley.com/import/?url=https://bdj.pensoft.net/articles.php?id=27539', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=550,width=450');return false;">							
+                                <span class="P-Article-Share-Row-Icon-M"></span>
+    							<span class="P-Article-Share-Row-Icon">
+    								Mendeley
+    							</span>
+    						</a>
+    					</div>
+    				</div>                   
+					<div class="P-Article-Share-Row">
+    					<div class="P-Article-Share-Row-Icon">
+    						<a title="Share this article on Reddit" href="https://www.reddit.com/submit?url=https://bdj.pensoft.net/articles.php?id=27539&amp;title=Liberating%20links%20between%20datasets%20using%20lightweight%20data%20publishing:%20an%20example%20using%20plant%20names%20and%20the%20taxonomic%20literature&amp;sr=article" target="_blank">							
+                                <span class="P-Article-Share-Row-Icon-R"></span>
+    							<span class="P-Article-Share-Row-Icon">
+    								Reddit
+    							</span>
+    						</a>
+    					</div>
+    				</div>
+					<div class="P-Article-Share-Row">
+    					<div class="P-Article-Share-Row-Icon">
+    						<a title="Share this article on Cite-U-Like" href="http://www.citeulike.org/posturl?bml=popup&amp;url=doi:10.3897/BDJ.6.e27539" target="_blank">							
+                                <span class="P-Article-Share-Row-Icon-C"></span>
+    							<span class="P-Article-Share-Row-Icon">
+    								Cite-U-Like
+    							</span>
+    						</a>
+    					</div>
+    				</div>
+                    <div class="P-Article-Share-Row">
+    					<div class="P-Article-Share-Row-Icon">
+    						<a href="mailto:?Subject=Paper%20published%20in%20the%20Biodiversity%20Data%20Journal&amp;body=Hi%2C%0A%0AHere%20is%20an%20interesting%20paper%20published%20in%20Biodiversity%20Data%20Journal%3A%0A%0APage%20R%20%282018%29%20Liberating%20links%20between%20datasets%20using%20lightweight%20data%20publishing%3A%20an%20example%20using%20plant%20names%20and%20the%20taxonomic%20literature.%20Biodiversity%20Data%20Journal%206%3A%20e27539.%20DOI%3A%20https%3A%2F%2Fdoi.org%2F10.3897%2FBDJ.6.e27539">							
+                                <span class="P-Article-Share-Row-Icon-E"></span>
+    							<span class="P-Article-Share-Row-Icon">
+    								Notify a colleague
+    							</span>
+    						</a>
+    					</div>
+    				</div>
+				</div> 
+			</div>
+		
+						<ul class="P-Info-Menu leftBar">
+							<li data-info-type="1" class="P-Active-Menu"><span class="hyper unselectable">Contents</span><span class="hidden-bold unselectable">Contents</span></li><li data-info-type="8"><span class="hyper unselectable">Article&nbsp;Info</span><span class="hidden-bold unselectable">Article&nbsp;Info</span></li><li data-info-type="9"><span class="hyper unselectable">Citation</span><span class="hidden-bold unselectable">Citation</span></li><li data-info-type="11"><span class="hyper unselectable">Metrics</span><span class="hidden-bold unselectable">Metrics</span></li><li data-info-type="13"><span class="hyper unselectable">Comment</span><span class="hidden-bold unselectable">Comment</span></li><li data-info-type="10"><span class="hyper unselectable">Related</span><span class="hidden-bold unselectable">Related</span></li>
+						</ul>						
+						<ul class="P-Info-Menu bottomBar"><li data-info-type="2"><span class="hyper unselectable">Figs</span><span class="hidden-bold unselectable">Figs</span></li><li data-info-type="3"><span class="hyper unselectable">Tabs</span><span class="hidden-bold unselectable">Tabs</span></li><li data-info-type="7"><span class="hyper unselectable">Taxa</span><span class="hidden-bold unselectable">Taxa</span></li><li data-info-type="4"><span class="hyper unselectable">Refs</span><span class="hidden-bold unselectable">Refs</span></li><li data-info-type="18"><span class="hyper unselectable">Cited</span><span class="hidden-bold unselectable">Cited</span></li>
+			</ul>
+					</div>
+					<div class="P-Info-Content" style="height: 0px;">
+						
+		<div class="AOF-Content-holder">
+			<ul id="AOF-articleMenu">
+	
+
+	
+			<li id="i4387806">
+				<div class="3" onclick="LoadArticleContentsSection('/article/27539/instance/4387806/', 4387806);return false;">Article metadata</div>
+				<ul class="">
+					
+				</ul>
+			</li>
+	
+			<li id="i4387823">
+				<div class="2" onclick="LoadArticleContentsSection('/article/27539/instance/4387823/', 4387823);return false;">Introduction</div>
+			</li>
+	
+			<li id="i4387824">
+				<div class="3" onclick="LoadArticleContentsSection('/article/27539/instance/4387824/', 4387824);return false;">Materials and methods</div>
+				<ul class="">
+					
+			<li id="i4387825">
+				<div class="2" onclick="LoadArticleContentsSection('/article/27539/instance/4387825/', 4387825);return false;">Datasette</div>
+			</li>
+	
+				</ul>
+			</li>
+	
+			<li id="i4387826">
+				<div class="2" onclick="LoadArticleContentsSection('/article/27539/instance/4387826/', 4387826);return false;">Results</div>
+			</li>
+	
+			<li id="i4387827">
+				<div class="2" onclick="LoadArticleContentsSection('/article/27539/instance/4387827/', 4387827);return false;">Discussion</div>
+			</li>
+	
+			<li id="i4387817">
+				<div class="2" onclick="LoadArticleContentsSection('/article/27539/instance/4387817/', 4387817);return false;">Acknowledgements</div>
+			</li>
+	
+			<li id="i4387818">
+				<div class="2" onclick="LoadArticleContentsSection('/article/27539/instance/4387818/', 4387818);return false;">References</div>
+			</li>
+	
+
+	
+			</ul>
+		</div>
+	
+						
+						<script>
+							gMenuActiveElementType = 1;
+							MarkActiveMenuElement();
+							RegisterInitialState("\r\n\t\t<div class=\"AOF-Content-holder\">\r\n\t\t\t<ul id=\"AOF-articleMenu\">\r\n\t\r\n\r\n\t\r\n\t\t\t<li id=\"i4387806\" >\r\n\t\t\t\t<div class=\"3\" onclick=\"LoadArticleContentsSection('\/article\/27539\/instance\/4387806\/', 4387806);return false;\">Article metadata<\/div>\r\n\t\t\t\t<ul class=\"\">\r\n\t\t\t\t\t\r\n\t\t\t\t<\/ul>\r\n\t\t\t<\/li>\r\n\t\r\n\t\t\t<li id=\"i4387823\" >\r\n\t\t\t\t<div class=\"2\" onclick=\"LoadArticleContentsSection('\/article\/27539\/instance\/4387823\/', 4387823);return false;\">Introduction<\/div>\r\n\t\t\t<\/li>\r\n\t\r\n\t\t\t<li id=\"i4387824\" >\r\n\t\t\t\t<div class=\"3\" onclick=\"LoadArticleContentsSection('\/article\/27539\/instance\/4387824\/', 4387824);return false;\">Materials and methods<\/div>\r\n\t\t\t\t<ul class=\"\">\r\n\t\t\t\t\t\r\n\t\t\t<li id=\"i4387825\" >\r\n\t\t\t\t<div class=\"2\" onclick=\"LoadArticleContentsSection('\/article\/27539\/instance\/4387825\/', 4387825);return false;\">Datasette<\/div>\r\n\t\t\t<\/li>\r\n\t\r\n\t\t\t\t<\/ul>\r\n\t\t\t<\/li>\r\n\t\r\n\t\t\t<li id=\"i4387826\" >\r\n\t\t\t\t<div class=\"2\" onclick=\"LoadArticleContentsSection('\/article\/27539\/instance\/4387826\/', 4387826);return false;\">Results<\/div>\r\n\t\t\t<\/li>\r\n\t\r\n\t\t\t<li id=\"i4387827\" >\r\n\t\t\t\t<div class=\"2\" onclick=\"LoadArticleContentsSection('\/article\/27539\/instance\/4387827\/', 4387827);return false;\">Discussion<\/div>\r\n\t\t\t<\/li>\r\n\t\r\n\t\t\t<li id=\"i4387817\" >\r\n\t\t\t\t<div class=\"2\" onclick=\"LoadArticleContentsSection('\/article\/27539\/instance\/4387817\/', 4387817);return false;\">Acknowledgements<\/div>\r\n\t\t\t<\/li>\r\n\t\r\n\t\t\t<li id=\"i4387818\" >\r\n\t\t\t\t<div class=\"2\" onclick=\"LoadArticleContentsSection('\/article\/27539\/instance\/4387818\/', 4387818);return false;\">References<\/div>\r\n\t\t\t<\/li>\r\n\t\r\n\r\n\t\r\n\t\t\t<\/ul>\r\n\t\t<\/div>\r\n\t", 1);
+						</script>
+					</div>
+					<div class="previewPageSubscribe" style="width: 444px;"><div class="subscribeForEmail">
+					<div class="title">Subscribe to email alerts for articles from similar categories</div>
+					
+		<div class="formWrapper">
+		<form enctype="multipart/form-data" action="" method="post" name="subscribe_for_email" id="subscribe_for_email">
+			
+			<input name="form_name" value="subscribe_for_email" type="hidden">
+	
+			<input name="selfurl" value="" type="hidden">
+	
+			<input name="backurl" value="" type="hidden">
+	
+	
+		<div class="loginFormRegErrHolder"><b>
+			<span id="ajax_field_error_holder_email" style="display:none" class="errstr">
+	
+			</span>
+	
+			<span id="ajax_field_error_holder_journal_id" style="display:none" class="errstr">
+	
+			</span>
+	
+			<span id="ajax_field_error_holder_subscribe" style="display:none" class="errstr">
+	
+			</span>
+	
+			<span id="ajax_field_error_holder_form_name" style="display:none" class="errstr">
+	
+			</span>
+	
+			<span id="ajax_field_error_holder_backurl" style="display:none" class="errstr">
+	
+			</span>
+	
+			<span id="ajax_field_error_holder_selfurl" style="display:none" class="errstr">
+	
+			</span>
+	
+			<span id="ajax_field_error_holder_new" style="display:none" class="errstr">
+	
+			</span>
+	</b></div>
+		
+			<input name="journal_id" value="1" type="hidden">
+	
+		<div class="subscribeInput">
+			
+			<input name="email" placeholder="Email" type="text">
+	
+		</div>
+		<div class="subscribeButton">
+			
+			<input name="tAction" value="Subscribe" onclick="if(confirm('Please confirm Email subscription.')) { return true;} else {return false;}" type="submit">
+	
+		</div>
+	
+		</form>
+		</div>
+	
+				</div></div>
+					<div class="poweredBy" style="position: sticky; width: 444px;">Powered by <a target="_blank" href="http://arphahub.com/"><span class="arphalogo"></span></a> </div>
+					<script type="text/javascript">InitArticleMenuEvents()</script>
+				</div>
+				<script type="text/javascript">
+					resizeContentHolders();
+					$( window ).resize(function() {
+					  resizeContentHolders();
+					});
+				</script>
+				
+				<div class="P-Clear"></div>
+			</div>
+			
+			<div class="P-Article-References-For-Baloon">
+			</div>
+		
+			</div>
+			<div id="P-Post-Review-Form-Poll"></div>
+		
+		<div id="P-General-Popup-Content" class="P-PopUp"></div>
+		<div class="popup-background" style="display:none"></div>
+		
+		
+		
+		<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+//<![CDATA[
+var sc_project=8203866; 
+var sc_invisible=1; 
+var sc_security="12a78f73"; 
+//]]>
+</script>
+<script type="text/javascript" src="counter_xhtml.js"></script>
+<noscript><div class="statcounter"><a title="hits counter"
+href="http://statcounter.com/free-hit-counter/"
+class="statcounter"><img class="statcounter"
+src="http://c.statcounter.com/8203866/0/12a78f73/1/"
+alt="hits counter" /></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+        <!-- analytics start -->
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37733696-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        <!-- analytics end -->
+	
+		<script type="text/javascript">
+			function setStat(name, value, threshold) {
+				if (value > threshold){
+					$("#" + name).css("color", "red");
+				}
+				$("#" + name).html(value + "ms");
+			}
+			if (typeof performance !== "undefined"){
+				setStat("statsDomLoad", new Date().getTime() - performance.timing.navigationStart, 500);
+			}
+	
+			window.onload = function(){
+				setTimeout(function(){
+					if (typeof performance !== "undefined"){
+					    var t = performance.timing;
+						setStat("statsLoad", t.loadEventEnd - t.navigationStart, 1000);
+					}
+				}, 0);
+			}
+		</script>
+
+
+	<div style="display: none;" class="annotator-frame annotator-outer annotator-frame--drop-shadow-enabled annotator-collapsed"><div class="annotator-toolbar"><ul><li><button href="" title="Close Sidebar" name="sidebar-close" class="annotator-frame-button annotator-frame-button--sidebar_close h-icon-close" style="display: none;"></button></li><li></li><li></li><li></li></ul></div><iframe name="hyp_sidebar_frame" allowfullscreen="" seamless="" src="https://hypothes.is/app.html?config=%7B%22annotations%22%3Anull%2C%22assetRoot%22%3Anull%2C%22branding%22%3Anull%2C%22clientUrl%22%3A%22https%3A%2F%2Fcdn.hypothes.is%2Fhypothesis%2F1.219.0%2Fbuild%2Fboot.js%22%2C%22enableExperimentalNewNoteButton%22%3Anull%2C%22group%22%3Anull%2C%22focus%22%3Anull%2C%22theme%22%3A%22clean%22%2C%22usernameUrl%22%3Anull%2C%22onLayoutChange%22%3Anull%2C%22openSidebar%22%3Afalse%2C%22query%22%3Anull%2C%22requestConfigFromFrame%22%3Anull%2C%22services%22%3Anull%2C%22showHighlights%22%3A%22never%22%2C%22subFrameIdentifier%22%3Anull%2C%22externalContainerSelector%22%3Anull%7D" title="Hypothesis annotation viewer" class="h-sidebar-iframe"></iframe></div><hypothesis-adder style="display: block; position: absolute; top: 0px; z-index: 999;"><hypothesis-adder-toolbar class="annotator-adder" style="visibility: hidden;">
+  <hypothesis-adder-actions class="annotator-adder-actions">
+    <button class="annotator-adder-actions__button h-icon-annotate js-annotate-btn">
+      <span class="annotator-adder-actions__label" data-action="comment">Annotate</span>
+    </button>
+    <button class="annotator-adder-actions__button h-icon-highlight js-highlight-btn">
+      <span class="annotator-adder-actions__label" data-action="highlight">Highlight</span>
+    </button>
+  </hypothesis-adder-actions>
+</hypothesis-adder-toolbar>
+</hypothesis-adder></body></html>

@@ -1,0 +1,174 @@
+International Journal of Recent Technology and Engineering (IJRTE) ISSN: 2277-3878, Volume-8 Issue-2S6, August 2019
+
+Combining of Transfer Learning with Faster-RCNN For Aedes Aegyti Larvae
+Detection
+
+M.A.M Fuad, F.N. Zohedi, M.R.A. Ghani, R. Ghazali, T.A. Izzuddin
+
+ Abstract: The dengue epidemiology episode has become one of
+the global phenomena especially the rain forest countries including Malaysia. Environmental management, the used of chemical and biological environment are control strategies that has been proposed and practiced by World Health Organization. However, based on statistic al of dengue cases, there is still no concrete solution in curbing this problem especially at non-accessible places. This paper proposed a study on detection Aedes Aegypti larvae in water storage tank by combining transfer learning with Faster-RCNN. The purpose of the study is to acquire train and validation losses along with detection performance metrics. The experimental results disclose that the probability detection has scored 97.01% while false alarm has scored 5.97%. Those significant value has depicted that the trained model has high detection accuracies.
+Keywords : Aedes Aegypti larvae detection, Transfer learning, water storage tank.
+I. INTRODUCTION
+Dengue is acute febrile diseases that has reached
+alarming rate which haunts Malaysia population. From the statistical published by Malaysia ministry of science technology and innovation, Malaysia had suffered twice increment of dengue cases from the last 3 years [1]. In fact, World Health Organization has proposed and practised many methods of vector control through environmental management, chemical and biological method[2], yet there is still no concrete solution in curbing this problem. It is also found that, the most critical part to be heeded are non-accessible places like artificial container and water storage [3]. Hence, this study proposed a detection of Aedes Aegypti larvae in water storage tank using transfer learning with Faster-RCN detector. Thus, the objective of the study was to acquire train and validation losses along with detection performance metrics.
+A lot of efforts and discoveries has been put in by many
+Revised Manuscript Received on July 22, 2019. M.A.M Fuad, Post-Graduate Candidate, Faculty of Electrical
+Engineering, Universiti Teknikal Malaysia Melaka, Hang Tuah Jaya, 76100 Durian Tunggal, Melaka, Malaysia. Email: aqil.inodea@gmail.com
+F.N.Zohedi, M.R.A.Ghani, R.Ghazali, T.A.Izzuddin, Control, Instrumentation and Automation, Faculty of Electrical Engineering, Universiti Teknikal Malaysia Melaka, Hang Tuah Jaya, 76100 Durian Tunggal, Melaka, Malaysia. Email: fauzal@utem.edu.my, dpdruddin@utem.edu.my, rozaimi.ghazali@utem.edu.my, tarmizi@utem. edu.my
+
+researchers to combat this problem. Many methods are discovered including the utilize of neural network in control strategies. Neural network has been utilize to recognize and predict dengue confirmed case, where it capable to recognize and predict based on four important characteristics, which are sum of rainfall, average temperature, average relative humidity and sum of dengue confirmed cases [4] [5]. Besides, neural network also capable to prognosticate defeverscene of fever in dengue haemorrgic fever and dengue fever [6]. Not just that, neural network also has been utilized to identify various type of insects wingbeat frequencies in flight [7].
+Machine learning has started it widely used when an architecture of classifier based on convolutional neural network has successfully trained [8]. Nevertheless, convolutional neural network has been an enormous success in object detection application. In object detection, the first advance detector is overfeat, overfeat is a sliding window algorithm of convolutional neural network base [9]. However, this technique is computational expensive since it convolves every pixel in the image. From the problem, region proposal method is introduced where the algorithm has several approaches in detecting object in images includes create bounding box in region of interest and classify it using support vector machine. This technique is known as region based convolutional neural network or R-CNN [10].
+Just after R-CNN, this technique has evolved which Fast-RCNN is introduced, yet, Faster-RCNN is introduced where it has better performance, fast and high accuracy than the previous version technique. Object detection is not only bounded with region proposal methods, there also others methods that been discovered by other researchers include YOLO and SSD [11] [12]. YOLO is an algorithm based on convolutional neural network which used simple pipeline and resulted in high speed detection in real time application. Meanwhile, SSD is a technique that been developed to performs object localization and classification task in single forward pass of the network. As the result, SSD is effective in time processing and offer high accuracy in detection. Although, SSD can offer effective time processing with high accuracy but SSD incapable to process dataset with different sizes pixels. Since the datasets is various of sizes, thus, this paper has implemented Faster-RCNN in the study.
+
+Retrieval Number:B11450782S619/2019©BEIESP DOI:10.35940/ijrte.B1145.0782S619
+
+Published By:
+
+Blue Eyes Intelligence Engineering
+
+779
+
+& Sciences Publication
+
+Combining of Transfer Learning with Faster-RCNN For Aedes Aegyti Larvae Detection
+
+II. METHODOLOGY
+This section focuses on the development process of Aedes Aegypti larvae inside water storage tank. Transfer learning becoming one of the popular techniques in machine leaning due to its advantages [13]. In this study, transfer learning of Inception V2 classifier with Faster-RCNN detector are applied to detect the present of Aedes Aegypti larvae in the water storage tank. Transfer learning is an application of implementing the pre-trained model on performing new task. It is improvement of new task, where the learned weight and bias of previous training are used in the new task. The used pre-trained model has beneficial in training cost and there is no need a lot of data in developing new model of different task.
+To acquire training and test patch images, the images containing of Aedes Aegypti larvae is first annotate. The purpose of annotate the Aedes Aegypti larvae region in images is to create the ground so that the model could be learned the localization during the training or validation. In this study, 446 annotated images of Aedes Aegypti larvae were used with size of 680 pixels x 510 pixels. Yet it divided into 3 parts, where 406 images were used for training 10 images for validation and 20 images for the test. The validation technique of holdback validation was applied in the studied. Fig. 1 and Fig. 2 illustrate the overall of the experiments flow chart and the annotation process of Aedes Aegypti larvae images in creating the datasets.
+
+Faster-RCNN with
+inception_v2 COCO
+
+Aedes Aegypti Larvae Images
+Annotation of Data
+
+Splitting Data
+
+Training and
+
+Test
+
+Validation
+
+Fig. 2: Annotation process of Aedes Aegypti larvae images
+Faster-RCNN is a state-of-the-art of object detection which rely on region proposal network algorithms to hypothesize the object locations. Region proposal network or RPN is an algorithm develop based on fully-convolutional network that predicts objectness score and object bounds at each position at same time [14]. By combining the transfer learning of Inception V2 COCO with the Faster-RCNN, object detection is possible to be made. After trained model were obtained, the model was test for it ability in generalization by feeding it with unseen and unobserved images so that the model performance can be measure. As the result of detection, the model is able to classify and localize the Aedes Aegypti larvae.
+III. RESULT AND DISCUSSION
+The following Fig.s show the result and analysis from the Aedes Aegypti detection model via transfer learning. Fig. show the total loses and the average precision of Faster-RCNN
+
+Model Learning
+Trained Model
+Aedes Aegypti Larvae in Bounding
+Box Fig. 1: Flow chart of overall process
+
+Fig. 3: Train and validation loss of the model
+
+Retrieval Number:B11450782S619/2019©BEIESP DOI:10.35940/ijrte.B1145.0782S619
+
+Published By:
+
+Blue Eyes Intelligence Engineering
+
+780
+
+& Sciences Publication
+
+International Journal of Recent Technology and Engineering (IJRTE) ISSN: 2277-3878, Volume-8 Issue-2S6, August 2019
+
+Fig. 3 showed result of the total losses of the learned model. The losses are including box classification, box localization, RPN classification and RPN objectness losses. The losses are also compared between train and validation losses. The purpose of comparing the losses are to ensure the training had enough capacity in training so that it can perform with the maximal accuracy [15]. From the plot, it showed that the train losses have decline drastically from 1.25 to 0.4 in only 500 training steps, Then, it remains decreasing slowly until 1700 training step before it starts to increase back. Meanwhile, the validation set also showed the good result in decreasing it cross-entropy error. The losses have drastically reduced from 1.7 to 0.4 in 500 steps. Then it persistent slowly decrease until 2500 steps.
+
+N false _ larva F  a
+Ntotal _ larva
+
+Where Ndetect_larva is the number of detected larva, Nfalse_larva is the number of false detected larva and Ntotal_larva is the total of larva in the images based on the annotated ground truth.
+
+Table 1: Floating-point operations necessary to classify a sample
+
+Model
+
+Ntotal_ Ndetect_ Nfalse_
+
+Pd
+
+Fa
+
+FasterRCNN
+
+larva
+
+larva
+
+larva
+
+134 130 8 0.9701 0.059
+
+7
+
+The results showed that the number of detected larvae is 130, the number of false detected larvae is 8 and the total larvae in the 20 images is 134. Based on the probabilities formulation, it is clearly depicted that the learned model is good model, which the probability of detection is greater than probability of false alarm, where 97.01% against 5.97%. Although, there is false alarm in the detection, it can neglect since the value are small. Fig. 5 shows the learned model in performing detection of Aedes Aegypti larvae.
+
+Fig. 4: Result of the average precision for validation set
+Fig. 4 showed the result of the average precision of Faster-RCNN for the validation set. Average precision is one of the metrics used to measure the accuracy of the detection. It is the average maximum precision at different recall values [16]. From the graph, the average precision of the model is continuously increase up to 1 until 1900 training step before it starts to saturated. To define a good train model, it is based on the losses and precision plot of the learned model.
+In the losses graph, it showed that the train losses start to increase at training step of 1900 while the validation losses are remaining decreased. In this case, the training is over fitting where the model starts to learn noises. There is close relationship between the losses and average precision. As the model over fitting, the average precision of the learning model cannot be increase anymore. Thus, the optimal capacity can be adapted into model is the weight and bias at 1900 where the generalization gap is smaller.
+There are many ways to test object detection performance. In this study, probability of detection, Pd and probability of false alarm, Fa are widely adopted to evaluate detection performances. A good detection model is defined of high Pd and low Fa. The probabilities are formulated as [17]
+Ndet ect _ larva P  d
+Ntotal _ larva
+
+Fig. 5: Learned model in performing detection of Aedes Aegypti larvae
+
+Retrieval Number:B11450782S619/2019©BEIESP DOI:10.35940/ijrte.B1145.0782S619
+
+Published By:
+
+Blue Eyes Intelligence Engineering
+
+781
+
+& Sciences Publication
+
+Combining of Transfer Learning with Faster-RCNN For Aedes Aegyti Larvae Detection
+
+IV. CONCLUSION
+To conclude, trained inference graph has successfully produced to detect and localize Aedes Aegypti larvae in images. Faster-RCNN detector is used with transfer learning to perform the Aedes Aegypti larvae detection. The results reveal that the model has achieved satisfactory probability of detection and performed better in probability of false alarm. Further study should focus on detecting small objects in image to improve detection of Aedes Aegypti larvae.
+ACKNOWLEDGMENT
+This study is supported by a grant of PJP High Impact from University Teknikal Malaysia Melaka (UTeM), VOT number PJP/2017/FKE-CERIA/S01557. Sincere compliments to Faculty of Electrical Engineering (FKE), Universiti Teknikal Malaysia Melaka (UTeM) for its support. Deepest gratitude to Unit of Medical Entomology, Institute Medical for Research (IMR) in providing the training, research and related respective programs.
+REFERENCES
+1. DEPARTMENT OF STATISTICS MALAYSIA, “PRESS RELEASE CURRENT POPULATION ESTIMATES , MALAYSIA, 2016-2017,” 2017. [Online]. Available: https://www.dosm.gov.my/v1/index.php?r=column/cthemeByCat&cat= 155&bul_id=a1d1UTFZazd5ajJiRWFHNDduOXFFQT09&menu_id=L0pheU43N WJwRWVSZklWdzQ4TlhUUT09.
+2. B. Kay, “Dengue vector surveillance and control.,” Curr. Opin. Infect. Dis., vol. 12, no. 5, pp. 48–59, 1999.
+3. S. N. R. Saleeza, Y. Norma-Rashid, and M. S. Azirun, “Mosquitoes Larval Breeding Habitat in Urban and Suburban Areas , Peninsular Malaysia,” World Acad. Sci. Eng. Technol., vol. 58, no. 10, pp. 569–573, 2011.
+4. H. M. Aburas, B. G. Cetiner, and M. Sari, “Dengue confirmed-cases prediction: A neural network model,” Expert Syst. Appl., vol. 37, no. 6, pp. 4256–4260, 2010.
+5. B. G. Cetiner, M. Sari, and H. M. Aburas, “Recognition of Dengue Disease Patterns Using Artificial,” no. May 2014, pp. 13–16, 2009.
+6. F. Ibrahim, M. N. Taib, W. A. B. W. Abas, C. C. Guan, and S. Sulaiman, “A novel dengue fever (DF) and dengue haemorrhagic fever (DHF) analysis using artificial neural network (ANN),” Comput. Methods Programs Biomed., vol. 79, no. 3, pp. 273–281, 2005.
+7. A. Moore, “Artificial neural network trained to identify mosquitos in flight,” J. Insect Behav., vol. 4, no. 3, pp. 391–395, 1991.
+8. A. Krizhevsky, I. Sutskever, and H. Geoffrey E., “ImageNet Classification with Deep Convolutional Neural Networks,” Adv. Neural Inf. Process. Syst. 25, pp. 1–9, 2012.
+9. P. Sermanet, D. Eigen, X. Zhang, M. Mathieu, R. Fergus, and Y. LeCun, “OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks,” 2013.
+10. R. Girshick, J. Donahue, T. Darrell, and J. Malik, “Rich feature hierarchies for accurate object detection and semantic segmentation,” Proc. IEEE Comput. Soc. Conf. Comput. Vis. Pattern Recognit., pp. 580–587, 2014.
+11. Redmon, S. Divvala, R. Girshick, and A. Farhadi, “You Only Look Once: Unified, Real-Time Object Detection,” arxiv, 2015.
+12. W. Liu et al., “SSD : Single Shot MultiBox Detector,” in European conference on computer vision, 2016, pp. 21–37.
+13. Y. Bengio, “Deep Learning of Representations for Unsupervised and Transfer Learning,” JMLR Work. Conf. Proc., vol. 7, pp. 1–20, 2011.
+14. S. Ren, K. He, R. Girshick, and J. Sun, “Faster R-CNN : Towards Real-Time Object Detection with Region Proposal Networks,” in Advances in neural information processing systems, 2015, pp. 91–99.
+15. Ian Goodfellow, Yoshua Bengio, and Aaron Courville, Deep Learning. 2016. 16. K. Kishida, “Property of average precision and its generalization: An examination of
+evaluation indicator for information retrieval experiments,” NII Tech. Reports, vol. 2005, no. 14, pp. 1–19, 2005. 17. Y. Wang, C. Wang, H. Zhang, C. Zhang, and Q. Fu, “Combininng Single Shot Multibox Detector with Transfer Learning for Ship Detection using Chinese Gaofen-3 Images,” in Progress in Electromagnetics Research Symposium, 2017, pp. 712–716.
+
+AUTHORS PROFILE
+Mohamad Aqil Mohd Fuad is a Master Degree candidate at UTeM. He graduated bachelor degree in Control Instrumentation and Automation from Universiti Teknikal Malaysia Melaka in 2016. His area of interest are machine learning and artificial intelligence.
+
+AuPhoto
+
+Fauzal Naim Zohedi is a lecturer at UTeM since 2012. He graduated bachelor degree in electrical engineering (electronics) from Universiti Malaysia Pahang. He graduated his Master Degree at University Of Malaya in 2012. He is a certified professional engineer in electronic field and his research area are Control, Instrument & Automation.
+
+Mohd ruddin Ab. Ghani is a senior professor at UTeM since 2000. He graduated bachelor degree in electrical engineering from UTM. He graduated his Master Degree and PhD at University Of London and UMIST in 1978 and 1989. His field and his research area are Control, Instrument & Automation.
+Rozaimi Ghazali is an associate professor at UTeM. He graduated bachelor degree in in electrical engineering (Control and Instrumentation) from Universiti Teknologi Malaysia. He proceeds his PhD at the same university and completed successfully in 2013. His area of Interest are Adaptive Robust Control, Sliding Mode Control, System Identification, Hydraulic and Pneumatic Systems, Motion Control, Biomedical Engineering.
+Tarmizi Ahmad Izzuddin is a lecturer at UTeM
+since 2012. He graduated bachelor degree in Electronic Control System Engineering from University of Shimane University, Japan. He graduated his Master Degree at
+University Of Malaya in 2012. His area of interest are
+Electronic Control System, Artificial Intelligence.
+
+Retrieval Number:B11450782S619/2019©BEIESP DOI:10.35940/ijrte.B1145.0782S619
+
+Published By:
+
+Blue Eyes Intelligence Engineering
+
+782
+
+& Sciences Publication
+

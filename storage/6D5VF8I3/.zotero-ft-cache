@@ -1,0 +1,585 @@
+| | Received: 16 May 2018    Revised: 7 August 2018    Accepted: 7 September 2018
+DOI: 10.1111/mec.14879
+ORIGINAL ARTICLE
+Transpacific coalescent pathways of coconut rhinoceros beetle biotypes: Resistance to biological control catalyses resurgence of an old pest
+
+Jonathan Bradley Reil1  | Camiel Doorenweerd1  | Michael San Jose1  |  Sheina B. Sim1,2  | Scott M. Geib2  | Daniel Rubinoff1
+
+1Department of Plant and Environmental Protection Sciences, University of Hawaii at Manoa, Honolulu, Hawaii 2Tropical Crop and Commodity Protection Research Unit, Daniel K Inouye U.S. Pacific Basin Agricultural Research Center, USDA, Agricultural Research Services, Hilo, Hawaii
+Correspondence Daniel Rubinoff, Department of Plant and Environmental Protection Sciences, University of Hawaii at Manoa, Honolulu, HI. Email: rubinoff@hawaii.edu
+Funding information USDA Farm Bill, Grant/Award Number: FY16 3.0392.03 and FY17 3.0497.01; ARCS Foundation; USDA National Institute of Food and Agriculture; Agriculture and Food Research Initiative; Education and Literacy Initiative, Grant/Award Number: 2017-67012-26087 (FY17-FY19); University of Hawaii at Manoa College of Tropical Agriculture and Human Resources and USDA Cooperative State Research, Education and Extension, Grant/Award Number: HAW00942-H
+
+Abstract Biological control agents have several advantages over chemical control for pest management, including the capability to restore ecosystem balance with minimal non-­target effects and a lower propensity for targets to develop resistance. These factors are particularly important for invasive species control. The coconut rhinoceros beetle (Oryctes rhinoceros Linnaeus) is a major palm pest that invaded many Pacific islands in the early 20th century through human-­mediated dispersal. Application of the Oryctes nudivirus in the 1960s successfully halted the beetle’s first invasion wave and made it a textbook example of successful biological control. However, a recently discovered O. rhinoceros biotype that is resistant to the nudivirus appears to be correlated with a new invasion wave. We performed a population genomics analysis of 172 O. rhinoceros from seven regions, including native and invasive populations, to reconstruct invasion pathways and explore correlation between recent invasions and biotypes. With ddRAD sequencing, we generated data sets ranging from 4,000 to 209,000 loci using stacks and ipyrad software pipelines and compared genetic signal in downstream clustering and phylogenetic analyses. Analysis suggests that the O. rhinoceros resurgence is mediated by the nudivirus-­ resistant biotype. Genomic data have been proven essential to understanding the new O. rhinoceros biotype’s invasion patterns and interactions with the original biotype. Such information is crucial to optimization of strategies for quarantine and control of resurgent pests. Our results demonstrate that while invasions are relatively rare events, new introductions can have significant ecological consequences, and quarantine vigilance is required even in previously invaded areas.
+KEYWORDS biological control resistance, biotypes, invasion dynamics, Oryctes nudivirus, Oryctes rhinoceros, RADseq
+
+1 | INTRODUCTION
+Understanding the pathways and ecological interactions governing biological invasions and post-­invasion success are fundamental to
+
+excluding exotic species, mitigating their damage and anticipating future invasions. Biological control agents, including natural predators, parasitoids and pathogens, have the potential to restore balance in disturbed ecosystems with minimal non-­target impacts (Hajek,
+
+Molecular Ecology. 2018;27:4459–4474.
+
+wileyonlinelibrary.com/journal/mec © 201  8 John Wiley & Sons Ltd  |  4459
+
+| 4460      
+
+REIL et al.
+
+McManus, & Junior, 2007; Hoddle, 2004; Lacey, Frutos, Kaya, & Vail, 2001). Evolution of resistance to biological control is thought to be less common than resistance to synthetic pesticides, because biocontrol agents exert weaker selective pressures, retain the potential for co-­evolution and exhibit modus operandi that require multiple genome changes to counter (Holt & Hochberg, 1997; Hufbauer & Roderick, 2005; Jervis, 1997; Tomasetto, Tylianakis, Reale, Wratten, & Goldson, 2017). Nevertheless, biocontrol-­resistant pest biotypes have arisen in several systems (e.g., Bravo, Likitvivatanavong, Gill, & Soberón, 2011; Di Giallonardo & Holmes, 2015; Tomasetto et al., 2017), and the sustainability of biological control agents remains heavily debated (Glare et al., 2012; Hajek et al., 2016; Lacey et al., 2001, 2015; Messing & Wright, 2006). A detailed understanding of mechanisms by which an invasive pest species develops resistance to established biological control is a critical aspect of long-­term management since the acquisition of resistance allows pests to resurge, resulting in range expansion and increasing damage (Furlong, Wright, & Dosdall, 2013; Owen & Zelaya, 2005; Romero, Potter, Potter, & Haynes, 2007).
+Biotypes are conspecifics that appear similar but exhibit variation in one or more functional traits, such as host preference or pathogen resistance (Diehl & Bush, 1984), and the term is now widely applied (González-­Torralva, Brown, & Chivasa, 2017; Majtánová et al., 2016; Pekár et al., 2012). When biotypes are identified in pest species, tracking and containment of these different types become critical for management. Biotypes with varying levels of resistance to control agents may carry other traits that facilitate range expansion and secondary invasion waves, as seen in both plants (Erfmeier, Böhnke,
+
+& Bruelheide, 2011) and insects (Delatte et al., 2009; Dennehy et al., 2010; Horowitz, Kontsedalov, Khasdan, & Ishaaya, 2005). In agricultural systems, for example, biotypic variation can facilitate expansion across a landscape of crop strains and cultivars (Hartman et al., 2001; Hill, Crull, Herman, Voegtlin, & Hartman, 2010). When multiple biotypes invade a region, hybridization between previously controlled populations and new invaders can generate recombinant biotypes with enhanced plasticity, fostering increased virulence and invasiveness (Ellstrand & Schierenbeck, 2000). Thus, even in previously invaded regions, novel biotype introductions may prove economically and environmentally damaging.
+The coconut rhinoceros beetle Oryctes rhinoceros (Linnaeus) is a major palm pest which has been spread by human commerce and travel to many parts of the tropical Pacific and Indian Oceans (reviewed in Bedford, 1980). Adult beetles feed on developing palm fronds, leading to nutrient deficiency, delayed maturity and, in cases of severe infestation, tree death (Hinckley, 1966, 1973; Liau & Ahmad, 1991; Young, 1975). Yield loss in agricultural settings can be severe, with regional palm tree mortality reaching 50–100% (Dhileepan, 1992; Gressitt, 1953; Khoo, Ooi, & Ho, 1991; Manjeri, Muhamad, & Tan, 2014). The beetle also damages tourist economies indirectly by degrading the palm-d­ ependent tropical aesthetic that tourism industries rely on in destinations such as Guam and Hawaii (Smith & Moore, 2008).
+Originally native to a region between India and Indonesia, the Philippines, parts of Southern China, and Taiwan (Bedford, 1980; Catley, 1969), O. rhinoceros has spread widely (Figure 1). In the early 1900s, the beetle began invading Pacific island nations, including
+
+Hawaii ca. 2013
+
+Thailand
+
+Taiwan Hainan
+
+Guam ca. 2007 Presumed Early 2000’s Palau ca. 1942
+
+Sampled Regions
+Reported Native Range Invasive Range
+First Invasion Wave Second Invasion Wave
+
+Nudivirus Known Native Range
+Nudivirus Introduced Range
+
+American Samoa ca. 1909
+
+F I G U R E 1   Map of the Pacific and Indian oceans displaying rhinoceros beetle sampling location, basic details of known invasion events and Oryctes nudivirus distribution. Areas in green are in the beetle’s native range; regions in dark blue include areas in the beetle’s invasive range [Colour figure can be viewed at wileyonlinelibrary.com]
+
+REIL et al.
+
+|       4461
+
+American Samoa (Bedford, 1980; Jepson, 1912), Palau (Gressitt, 1953) and Fiji (Swaine, 1966), facilitated by increased trade and military activity in the region. To control this spread, the Oryctes nudivirus (OrNV) was isolated from Malaysian populations and distributed in the early 1960s (Bedford, 2013; Huger, 2005). Successful establishment of the virus and declines in beetle damage throughout islands in the South Pacific and Indian Ocean lead to it being hailed as a biocontrol success, allowing many impacted regions to recover (Huger, 2005; Jackson, 2009; Lacey et al., 2001). However, in the last two decades, this biocontrol system has apparently broken down (Jackson, 2009; Jackson, Crawford, & Glare, 2005), and there is a modern resurgence of O. rhinoceros including newly established populations in Guam (Smith & Moore, 2008) and Oahu, Hawaii (Hawaii Department of Agriculture, 2014). In 2017, interceptions occurred as far east as Mexico (Jiménez et al., 2017). Coincidentally, an OrNV-­resistant O. rhinoceros biotype was recently described and identified throughout much of the beetle’s native and invasive range (Marshall, Moore, Vaqalo, Noble, & Jackson, 2017).
+The resurgence of Oryctes rhinoceros provides a special opportunity to investigate the mechanisms and biogeographic patterns of novel resistance leading to a biological control breakdown after decades of successful suppression. Understanding the distribution of a resistant biotype and its interactions with established susceptible biotypes is essential to elucidating the dynamics of biotypes and resistance in the context of controlling and preventing future invasions by species following the same paradigm. Ideally, to best understand this phenomenon, we would study a resurgent invasion associated with a novel biotype as it is occurring, revealing the patterns of genomic interaction between new, resistant and older, susceptible, genotypes. Island systems provide an optimal substrate since timing of both initial and secondary invasion waves is available and islands provide inherent isolation between invaded regions. Oryctes rhinoceros presents a special case for understanding biotype-­level invasion dynamics because the original invasion, subsequent control and recent release from control are all well documented. This beetle is especially relevant because it maintains invasive populations that are still susceptible to the original biological control which can be contrasted with native range populations and invasive populations now exhibiting resistance. Using both Sanger and genomic sequencing techniques, we examine the relationships between beetle populations across the native and invasive range of the insect to understand (a) How are beetle populations related to each other and what are the patterns of invasion? (b) What is the association between the resistant biotype and invasion resurgence? (c) What is the interaction between old susceptible and newly introduced, resistant, biotypes?
+2 | MATERIALS AND METHODS
+2.1 | Sample collection
+We gathered 172 O. rhinoceros adults and larvae from the beetle’s current range (Figure 1), including samples from native populations
+
+in Thailand; Hainan Province, China; and Taiwan (Nantou and Kaohsiung counties), and introduced populations from the Republic of Palau; American Samoa; Guam; and Oahu, Hawaii (Supporting Information Table S1). All samples were collected by collaborators and were either placed immediately into ethanol or within 24 hr after mortality. In some cases, pre-­dissected adult or larval legs (2–4 legs per sample) were provided in 70–90% EtOH. Samples were stored at −20°C prior to DNA extraction.
+2.2 | DNA extraction and library preparation
+DNA extraction was performed on adult or larval legs using previously published methods (Sim & Geib, 2017). A single leg, or two in the case of larvae, was homogenized in tissue lysis buffer using a 2010 Geno/Grinder Automated Tissue Homogenizer and Cell Lyser (SPEX SamplePrep, Metuchen, NJ, USA) for 30 s at 1500 rpm. The homogenate was then incubated in a 55°C water bath for 3 hr. Incubation was followed by extraction on a Kingfisher Flex 96 automated extraction instrument (Thermo Scientific, Waltham, MA, USA) using standard protocols with a NucleoMag Tissue Kit (MACHEREY-­ NAGEL, Düren, Germany). The quantity and quality of the extracted DNA sample were determined using the High Sensitivity Genomic DNA Analysis Kit on a Fragment Analyzer (Advanced Analytical, Ankeny, IA, USA).
+Samples were used to construct double-­digest restriction-­site-­ associated DNA libraries following Peterson, Weber, Kay, Fisher, and Hoekstra (2012). To prepare a library, 175 ng of DNA from each individual was digested using the restriction enzymes NlaIII and MluCI. One of 48 uniquely barcoded adapters was ligated to the restriction overhang, generating inline barcodes. Sub-­pools of samples containing these 48 barcodes were generated and size-­selected using a 1.5% agarose gel cassette on a Blue Pippin electrophoresis unit (Sage Science, Beverly, MA, USA) with a target size selection of “narrow 400 bp.” The final PCR amplification step was run for 10 cycles, during which a second barcode was added in the Illumina i7 location for each sub-­pool, and PCR products were cleaned using solid-­phase reversible immobilization (SPRI) beads at a 1.5:1 ratio of PEG containing bead solution to sample volume (DeAngelis, Wang, & Hawkins, 1995; Rohland & Reich, 2012). The final libraries were analysed for quantity and size distribution using the NGS Fragment Analysis Kit on a Fragment Analyzer and pooled at equal molar ratios to generate the final library. Four libraries were created in this manner, including a total of 172 unique samples. The ddRAD libraries were each subjected to 100-­bp single-­end sequencing on a single lane of an Illumina HiSeq 4000 sequencer.
+2.3 | Read clustering and Loci and SNP selection
+Twenty-­one of the original 172 individual beetles were excluded from our analyses based on a 75% missing data threshold across all loci. Raw Illumina sequencing reads were then processed using stacks v. 1.35 (Catchen, Hohenlohe, Bassham, Amores, & Cresko, 2013) and ipyrad v. 0.7.13 (Eaton & Overcast, 2016) pipelines, which differ in
+
+| 4462      
+
+REIL et al.
+
+Sample ID
+
+(a)
+
+CRB_105_A 62_1 BR6_1
+CRB_120_A BR2_1 4M_B 80
+CRB_121_A 59_1 58_1 83 70_1
+CRB_122_A 67_1 BR4_1 74_1 3M_A 64_1
+CRB_128_A CRB_127_A
+79 5M_A 4F_A CRB_170
+85 CRB_135
+71_1 53_1 CRB_140 56_1 77_1 75_1 CRB_192 CRB_187 CRB_119_A 57_1 51_1 CRB_107_A CRB_123_A CRB_217 63_1 CRB_152 CRB_212 CRB_205 CRB_219 CRB_209 CRB_145 CRB_118_A CRB_102_B 6M_B 3F_A 69_1 CRB_197
+82 CRB_159
+73_1 CRB_144 CRB_141 CRB_148 CRB_129_A CRB_203 CRB_136
+54_1 CRB_166 CRB_164 CRB_193 CRB_196 CRB_206 CRB_213 CRB_115_A CRB_214 CRB_99A CRB_160 CRB_211 CRB_163 CRB_110_A
+76_1 CRB_194 CRB_208 CRB_138
+60_1 CRB_210
+81 CRB_188 CRB_204 CRB_153
+6F_A CRB_147 CRB_195
+68_1 CRB_223 CRB_215 CRB_199 CRB_198 CRB_207 CRB_228 CRB_154 CRB_216
+78_1 CRB_202 CRB_165 CRB_218 CRB_158 CRB_114_A
+65_1 CRB_225 CRB_181 CRB_172 CRB_200
+1F_A CRB_201 CRB_103_B CRB_227 CRB_222
+2F_A CRB_104_A CRB_109_B
+CRB_224 CRB_167 CRB_100_A CRB_237 CRB_230 CRB_168 CRB_146 CRB_142 CRB_180 CRB_149 CRB_112_A
+66_1 1M_A CRB_101_B CRB_175 CRB_189 CRB_174 CRB_169 CRB_220 CRB_111_A CRB_240 CRB_231 CRB_126_A CRB_125_A CRB_143 CRB_185 CRB_190 52_1 CRB_232 CRB_161 CRB_98_A 55_1 CRB_241 CRB_117_A
+
+0.0e+00
+
+Oahu Guam Taiwan Palau S1 Palau S2 American Samoa Hainan Thailand
+
+(b)
+
+CRB_105_A 62_1 BR6_1
+CRB_120_A BR2_1 4M_B 80
+CRB_121_A 59_1 58_1 83 70_1
+CRB_122_A 67_1 BR4_1 74_1 3M_A 64_1
+CRB_128_A CRB_127_A
+79 5M_A 4F_A CRB_170
+85 CRB_135
+71_1 53_1 CRB_140 56_1 77_1 75_1 CRB_192 CRB_187 CRB_119_A 57_1 51_1 CRB_107_A CRB_123_A CRB_217 63_1 CRB_152 CRB_212 CRB_205 CRB_219 CRB_209 CRB_145 CRB_118_A CRB_102_B 6M_B 3F_A 69_1 CRB_197
+82 CRB_159
+73_1 CRB_144 CRB_141 CRB_148 CRB_129_A CRB_203 CRB_136
+54_1 CRB_166 CRB_164 CRB_193 CRB_196 CRB_206 CRB_213 CRB_115_A CRB_214 CRB_99A CRB_160 CRB_211 CRB_163 CRB_110_A
+76_1 CRB_194 CRB_208 CRB_138
+60_1 CRB_210
+81 CRB_188 CRB_204 CRB_153
+6F_A CRB_147 CRB_195
+68_1 CRB_223 CRB_215 CRB_199 CRB_198 CRB_207 CRB_228 CRB_154 CRB_216
+78_1 CRB_202 CRB_165 CRB_218 CRB_158 CRB_114_A
+65_1 CRB_225 CRB_181 CRB_172 CRB_200
+1F_A CRB_201 CRB_103_B CRB_227 CRB_222
+2F_A CRB_104_A CRB_109_B
+CRB_224 CRB_167 CRB_100_A CRB_237 CRB_230 CRB_168 CRB_146 CRB_142 CRB_180 CRB_149 CRB_112_A
+66_1 1M_A CRB_101_B CRB_175 CRB_189 CRB_174 CRB_169 CRB_220 CRB_111_A CRB_240 CRB_231 CRB_126_A CRB_125_A CRB_143 CRB_185 CRB_190 52_1 CRB_232 CRB_161 CRB_98_A 55_1 CRB_241 CRB_117_A
+
+2.5e+06 5.0e+06 7.5e+06 1.0e+07
+
+0e+00
+
+Raw Reads Count
+
+1e+05
+
+2e+05
+
+iPyrad Count
+
+(c)
+
+CRB_105_A 62_1 BR6_1
+CRB_120_A BR2_1 4M_B 80
+CRB_121_A 59_1 58_1 83 70_1
+CRB_122_A 67_1 BR4_1 74_1 3M_A 64_1
+CRB_128_A CRB_127_A
+79 5M_A 4F_A CRB_170
+85 CRB_135
+71_1 53_1 CRB_140 56_1 77_1 75_1 CRB_192 CRB_187 CRB_119_A 57_1 51_1 CRB_107_A CRB_123_A CRB_217 63_1 CRB_152 CRB_212 CRB_205 CRB_219 CRB_209 CRB_145 CRB_118_A CRB_102_B 6M_B 3F_A 69_1 CRB_197
+82 CRB_159
+73_1 CRB_144 CRB_141 CRB_148 CRB_129_A CRB_203 CRB_136
+54_1 CRB_166 CRB_164 CRB_193 CRB_196 CRB_206 CRB_213 CRB_115_A CRB_214 CRB_99A CRB_160 CRB_211 CRB_163 CRB_110_A
+76_1 CRB_194 CRB_208 CRB_138
+60_1 CRB_210
+81 CRB_188 CRB_204 CRB_153
+6F_A CRB_147 CRB_195
+68_1 CRB_223 CRB_215 CRB_199 CRB_198 CRB_207 CRB_228 CRB_154 CRB_216
+78_1 CRB_202 CRB_165 CRB_218 CRB_158 CRB_114_A
+65_1 CRB_225 CRB_181 CRB_172 CRB_200
+1F_A CRB_201 CRB_103_B CRB_227 CRB_222
+2F_A CRB_104_A CRB_109_B
+CRB_224 CRB_167 CRB_100_A CRB_237 CRB_230 CRB_168 CRB_146 CRB_142 CRB_180 CRB_149 CRB_112_A
+66_1 1M_A CRB_101_B CRB_175 CRB_189 CRB_174 CRB_169 CRB_220 CRB_111_A CRB_240 CRB_231 CRB_126_A CRB_125_A CRB_143 CRB_185 CRB_190 52_1 CRB_232 CRB_161 CRB_98_A 55_1 CRB_241 CRB_117_A
+
+0
+
+2000
+
+4000
+
+6000
+
+Stacks Count
+
+F I G U R E 2   Graphical summary of data included in this study across different data sets. Coloured boxes along the y-­axis are used to help illustrate the different sampling regions. (a) Raw read counts obtained from ddRAD sequencing for 151 retained samples. (b) ipyrad loci or SNP counts for various data sets and analyses. Loci recovered from ipyrad at minimum shared taxa value 4 when all 151 samples were included (dark grey); loci recovered from ipyrad at minimum shared taxa value 4 for the 44-­sample subset (pink); SNPs recovered from ipyrad for variable loci at minimum shared taxa value 4 for the 44-­sample subset (dark blue). (c) stacks SNP counts for various data sets. SNPs recovered from stacks for all 151 retained samples (dark grey); SNPs recovered from stacks for the 44-­sample subset (red) [Colour figure can be viewed at wileyonlinelibrary.com]
+
+locus assembly procedures. Whereas stacks filtering is stricter, not allowing indels and utilizing an “off-­by-­N” similarity threshold when assembling loci, or “stacks” (Catchen, Amores, Hohenlohe, Cresko, & Postlethwait, 2011), ipyrad is more lenient, allowing for indels and variable numbers of nucleotide polymorphisms in the resulting loci (Eaton, 2014; Eaton & Overcast, 2016). We sought to recover loci informative across ecological and evolutionary timescales to fully explore the data, with stacks theoretically geared to the former and ipyrad the latter. Figure 2 provides an overview of the different data sets produced for subsequent population genetic and phylogenetic analyses. All data matrices are available at Dryad https://doi. org/10.5061/dryad.f4g56.
+Reads were processed using ipyrad to conduct a de novo assembly of loci suited for comparisons across variable samples by allowing for indels and lower similarity thresholds in the retained loci (Eaton, 2014). Due to this more extensive locus recovery and
+
+associated downstream computational limitations, the ipyrad data sets were only produced for a 44-­taxon subset selected by choosing the seven individuals for each region with the highest overall raw read counts. All available individuals were included for Hainan (n = 5) and Thailand (n = 2). The selection was reiterated when we found that Palau exhibited multiple, distinct, population signatures and the best individuals from each of these groups (minimum three) were included for a total of seven individuals (Figure 2b,c; coloured bars). The pipeline was completed using default parameter settings, which enforces minimum stack depth of six. ipyrad was also run on the full set of 151 samples, but this information was only used to investigate overall locus recovery when processing the full set versus a subset of samples (Figure 2b; grey versus pink bars). At a minimum of four shared taxa per locus (sh4), ipyrad recovered 312,021 filtered loci compiled into both a full-­loci data matrix (IPY.sh4loci) (Figure 2b; pink bars) and a SNP data matrix (IPY.sh4snp) (Figure 2b; blue bars).
+
+REIL et al.
+
+|       4463
+
+209,493 sites were retained in the final SNP matrix from polymorphic loci, selecting the site with the highest coverage. A secondary data matrix of loci was pursued with a strict locus-­sharing parameter (IPY.sh35loci) such that a minimum of 35 shared taxa were required for a locus to be preserved (sh35). This resulted in a more evenly distributed coverage across samples, allowing us to test proportions of shared loci between populations.
+In stacks, de novo assembly of loci was completed using the denovo_map.pl wrapper program. For initial cataloguing of loci, a minimum of three identical reads was required to form a “stack,” allowing two mismatches between loci for a given individual during processing and three mismatches. The stacks core program populations was used for additional filtering and to call a single SNP from each locus. SNP-­ level filters were used to extract variable sites, set minimum stack depth (n > 10) and set minimum proportion population participation (prop. pop. >0.5) for any given locus. SNPs with call rates <80% were removed. The primary stacks data matrix (STA.151) included 7,907 SNP sites for the full set of 151 retained samples (Figure 2c). A secondary data matrix for the 44-­taxon subset (STA.44) was also generated for comparison with the ipyrad data set. Both geneious v. 7.1.9 (Kearse et al., 2012) and pgdspider v. 2.1.1.2 (Lischer & Excoffier, 2011) were used to convert data between different file formats.
+2.4 | Biotype assessment
+Two O. rhinoceros biotypes are described in the literature, with biotype G exhibiting resistance to the Oryctes nudivirus while biotype S remains susceptible (Marshall et al., 2017). Marshall et al. (2017) identified a single diagnostic SNP able to discern O. rhinoceros biotype S and biotype G. Using previously described methods (Reil, San Jose, & Rubinoff, 2016), we targeted this SNP—an A > G transition within the COI region—using primers LCO1490 (5′-­GCT CAA CAA ATC ATA AAG ATA TTG G-­3′) and HCO2198 (5′-­TAA ACT TCA GGG TGA CCA AAA AAT CA-­3′) which amplify 658 base pairs including the polymorphism (Folmer, Black, Hoeh, Lutz, & Vrijenhoek, 1994). All individuals were genotyped, except for Oahu where a total of 60 samples were available, and the first 30 samples received were genotyped (see Supporting Information Table S1). For individuals shared between this and the Reil et al. (2016) study, Sanger sequences for the COI region were available. Individuals unique to this study were sequenced from extracts obtained for genomic library prep. Both forward and reverse primers were supplied for sense and antisense sequencing. Sequencing services were used for all samples, either through Eurofins (www.eurofins.com) or the ASGPB Laboratory at the University of Hawaii Manoa (www.hawaii.edu/microbiology/ asgpb). We failed to obtain sequences for two individuals from Guam and four individuals from Hawaii. DNA sequences for all other individuals were aligned in geneious, followed by biotype assessment.
+2.5 | Shared loci and descriptive statistics
+Using IPY.sh4loci and IPY.sh35loci, locus-­sharing plots were generated in r v. 3.2.2 (R Core Team 2015) with the radami v. 1.1-­2 package
+
+(Hipp, 2017) to visualize the proportions of shared loci among individuals and populations. A principal component analysis (Supporting Information Figure S1) was conducted in r v. 3.2.2 on STA.151 using the snprelate package (Zheng et al., 2012). Genetic variability for each population was assessed on a per-­locus basis by determining mean allele number (A), mean number of effective alleles (Ae), observed heterozygosity (Ho), expected heterozygosity (He) and unbiased expected heterozygosity (uHe) calculated in genalex v. 6.503 (Peakall & Smouse, 2006, 2012). Population pairwise Fst was also estimated in genalex using an AMOVA approach with STA.151.
+2.6 | Population assignment
+Population structure was analysed with the STA.151 data matrix using both structure v. 2.3.4 (Pritchard, Stephens, & Donnelly, 2000) and faststructure v. 1.0 (Raj, Stephens, & Pritchard, 2014), the latter of which uses an algorithm adjusted for large SNP counts. In structure, a range of K values 1 to 10 was explored using 100 runs for each value. faststructure subsets—single replicates for a range of K values—were run 10 times for all K values 1 to 10 using a simple prior. The optimal K values for each subset were determined using faststructure’s built-­in chooseK function. The most commonly designated K values were selected for a comprehensive analysis involving 100 clustering runs per value, again with a simple prior. For structure, optimal cluster assignment was determined using Evanno’s method (Evanno, Regnaut, & Goudet, 2005). Post-­run processing and visualization were performed in r v. 3.4.1 using the pophelper package v. 2.2.1 (Francis, 2017). clumpp (Jakobsson & Rosenberg, 2007) was used to realign clusters across multiple faststructure and structure runs and to generate consensuses among the 100 runs for each of the optima values. Bar plots were constructed from the resulting consensus file.
+2.7 | Network and phylogenetic analyses
+Using the STA.151 data matrix, we performed a NeighborNet analysis (Bryant & Moulton, 2004) implemented in splitstree4 v. 4.14.5 (Huson & Bryant, 2006) to generate an unrooted genetic network. This method uses aspects of Neighbor-­Joining (Saitou & Nei, 1987) and SplitsTree to create a network that visualizes multiple hypotheses simultaneously. Phylogenetic trees were generated for the STA.44, STA.151 and IPY.sh4snp data matrices using a maximum-­ likelihood approach in raxml v. 8.2.10 (Stamatakis, 2014). raxml was run on the CIPRES computing cluster (Miller, Pfeiffer, & Schwartz, 2010) with the RAxML-HPC2 Workflow on XSEDE tool. Given that each of these data matrices used only a single SNP from each locus, data were analysed under a GTRCAT model with site-­specific evolutionary rate categories and a Lewis correction for ascertainment bias (Lewis, 2001). Ambiguous and undefined sites within a data matrix can lead to apparently variable sites being modelled as invariable by raxml; since ascertainment bias likelihood correction assumes a complete lack of invariable sites, these sites must be removed for raxml to proceed without error. This was achieved in r v. 3.2.2 (R
+
+| 4464      
+
+REIL et al.
+
+Core Team 2015) using the phrynomics v. 2.0 (Banbury & Leache, 2014) and phylotools v. 0.1.2 (Zhang, Pei, & Mi, 2012) packages to convert phylip formatted data matrices into “snp” objects which can be filtered to remove potentially invariable sites and converted back to phylip format for use in raxml. Best tree calculations were performed 10 times, and the tree with the highest likelihood was chosen for optimization and use as the final best tree. Branch support was determined for each tree via bootstrapping under the same model. The extended majority rule consensus criterion was used to terminate the bootstrapping process, up to a maximum of 1,000 replicates. Unaddressed parameters were left at default settings.
+Variation in maximum-­likelihood phylogenies for the different data sets indicated potential gene tree incongruity, specifically among O. rhinoceros from Palau. To investigate this, svdquartets analyses (Chifman & Kubatko, 2014, 2015) implemented in paup* v. 4.0b (Swofford, 2003) were performed on the CIPRES computing cluster (Miller et al., 2010) for STA.44 and IPY.sh4snp. Quartet-­based approaches are resilient to missing data and improve phylogenetic inference under varied coalescent models (Eaton, Spriggs, Park, & Donoghue, 2017). svdquartets analysed 101,813 quartets (75% of combinations possible with 44 taxa) with branch support determined from 500 standard bootstrap replicates; remaining parameters were left at default settings.
+2.8 | Migration and demographic history
+treemix analysis was used to assess gene flow and migration patterns between populations using the STA.151 data set for model scenarios from 0 to 10 migration events (numk = 0 to 10) (Pickrell & Pritchard, 2012). Block size was set to 50; chromosome number was not used as a variable in our analysis. As the most centrally situated region in the O. rhinoceros native range, Thailand was selected as the outgroup for purposes of rooting. Variance was calculated using the script TreemixVarianceExplained.R (https://github.com) and graphed in r v. 3.2.2 to evaluate the optimal number of migrations necessary to explain the data. We used moments to explore demographic history, population growth patterns and migration in the two distinct Palau populations (Jouganous, Long, Ragsdale, & Gravel, 2017). A simple demographic model was constructed in moments which estimates the relative time the two populations diverged (T1), effective population sizes (nu1 and nu2) and relative migration rates between the two populations (m12 and m21). Both simple and growth restricted models were tested. Pairwise comparisons were run for 100 replicates with random starting points for the five parameters estimated. From each model, the replicate with the highest log-­likelihood score was selected and its parameter estimates used as a starting point for 100 additional replicates. To estimate statistical support, we ran bootstrap analyses for each model using Godambe information matrix implemented in moments.
+3   |   R E S U LT S
+Illumina sequencing generated 415,428,692 raw reads, with an average read count of 2,415,283 per individual. The ipyrad
+
+pipeline, used on the 44 taxa subset, assembled the ddRAD reads into 471,066 pre-­filtered loci. After filtering, 312,021 loci were retained and compiled into the three different ipyrad data sets. The SNP site with the highest coverage from each polymorphic locus was included in the ipyrad SNP data matrix comprised of 209,493 SNPs. Stacks assembled raw reads into 2,450,740 catalogued loci. The first variable site from each of the polymorphic loci that passed filtration was retained providing an alignment with 7,907 SNPs. Stacks produced smaller data sets on average due to more rigorous filtering and assembly but had more evenly distributed coverage across taxa (Figure 2c). ipyrad coverage appeared to be strongly correlated with raw read count for most individuals (Figure 2b). The overall proportion of missing data for data sets IPY.sh4snp, STA.151 and STA.44 is 65.8%, 28.1% and 27.6%, respectively.
+3.1 | Population structure
+The optimal number of clusters for structure runs was K = 2 or 7 based on Evanno’s method (Evanno et al., 2005). Under K = 2, structure included all individuals from Guam and Oahu in one cluster and placed the remaining populations into a second (Figure 3), with minor admixture. At K = 7, structure assigns all but one invasive population (Palau), as well as Taiwan and Hainan, to discrete clusters (Figure 3). Individuals from Thailand had alleles admixed with at least five clusters, though they shared a majority of their diversity with the Hainan cluster. In Palau, five of twenty-­three individuals formed a separate cluster with minor admixture from a second cluster that included the region’s remaining individuals. Given this division, Palau was considered to have two populations, Palau population 1 (Palau S1, n = 5) and Palau population 2 (Palau S2, n = 18), in subsequent analyses.
+faststructure results mostly mirrored those of structure, except at K = 7 where there are notable differences in the assignment of individuals from Palau (Figure 3). The five individuals in Palau S1 were primarily assigned to the broader Palau cluster. The cluster which defined Palau S1 in structure was represented as admixture in these individuals encompassing about 25% of markers. Samples from Thailand exhibited lower marker diversity, and Hainan displayed admixture of a cluster that otherwise delineated the population on American Samoa.
+3.2 | Network and phylogenetic analyses
+NeighborNet analysis identified eight clusters within O. rhinoceros (Figure 4a). Guam and Oahu form distinct clusters sister to each other. American Samoa, Taiwan, Hainan and Thailand form individual clusters, with Hainan and Thailand sister to each other and American Samoa sister to them. Palau splits into two distinct clusters matching the populations identified by the structure analysis for K = 7. Most of the variation illustrated by the tree network involves the position of Palau clusters. A series of networks place the Palau populations sister to each other in either recent (Figure 4a; red branches) or deep (Figure 4a; green branches) time, building on
+
+REIL et al.
+
+|       4465
+
+K=2 Structure
+
+K=7 Structure
+
+K=7 fastStructure
+
+loc range
+
+||
+
+|
+
+Am. Samoa
+
+Guam
+
+|
+
+Oahu
+Invasive
+
+|
+Palau
+
+||
+
+||
+
+Hainan
+|
+
+Taiwan Thailand
+|
+Native
+
+F I G U R E 3   structure Plots describing cluster assignment made by structure and faststructure for O. rhinoceros samples using the STA.151 data set. Each bar represents a single sample. Cluster colours are preserved and used to define similar regional clusters across the figures in this report. At K = 2, structure and faststructure made identical assignments with extremely minor differences in admixture; therefore, K = 2 for faststructure was omitted. Range designations were made based on historical records of where the beetle natively occurs and where it is known to be invasive [Colour figure can be viewed at wileyonlinelibrary.com]
+
+the disparity observed between faststructure and structure assignments for this region.
+raxml analyses yielded a variable set of unrooted phylogenies, depending on the data matrix used (summarized in Figure 4b). Two major clades are conserved across the tree set: Hainan and Thailand as sister groups, with American Samoa sister to them, and the placement of Guam and Oahu as sister groups. Taiwan specimens occupy a central branch nearly equidistant from these two clades. Variation between topologies was generally focused around the placement of the Palau populations. In IPY.sh4snp and STA.44 trees, the Palau populations are sister to each other, and this clade is placed sister to that of Hainan– Thailand–American Samoa. In the STA.151 tree, Palau populations are split such that Palau S1 has a similar node position as in the 44-­taxon trees, but Palau S2 is sister to Taiwan. In all variations, support is weak surrounding nodes which anchor Palau along the backbone topology.
+Quartet analyses performed on the STA.44 and IPY.sh4snp data matrices produced unrooted trees with different topologies (summarized in Figure 4b). Branch support values highlighted regions of ambiguity in coalescent models between different genes. The
+
+STA.44 svdquartets tree mirrored the maximum-­likelihood trees for STA.44 and IPY.sh4snp, with poor support on branches around the Palau split (Branch Support <70). On the IPY.sh4snp tree, Palau populations are split: Palau S1 is sister to the Hainan–Thailand–American Samoa clade and Palau S2 is sister to the Guam-­Oahu clade. Taiwan sits between these groupings. The backbone of this tree was well supported for all clades (Branch Support >90), in contrast to the other phylogenies produced by this study which exhibited weak support (Branch Support <90) on branches associated with either of Palau’s two populations (Figure 4b).
+3.3 | Demographic history
+treemix analysis revealed an admixture event between Palau S1 and Palau S2 that improved the tree, increasing variance explained by the model by 8.97% (Figure 5a,b). Assuming additional admixture events beyond the first did not strengthen the model substantially (0.2% improvement or less). moments software further reinforced a migration pattern from Palau S1 to Palau S2 (Figure 5c). Effective
+
+| 4466      
+(a)
+
+REIL et al.
+
+0.01
+
+(b)
+S
+
+S S
+
+S
+- , 49, 88 63, -
+
+G&S
+
+6 9, -,-
+
+-
+
+,
+
+-
+
+G
+78, 74, 88 70, 93
+81, 70, 88 63, 93
+-,-,- , 93
+
+0.06
+G
+
+Oahu Guam Taiwan Palau S1 Palau S2 American Samoa Hainan Thailand
+G
+Branch Support Legend
+STA.151, STA.44, IPY.sh4snp STA.44, IPY.sh4snp
+
+RAxML Quartet
+
+REIL et al.
+
+|       4467
+
+F I G U R E 4   A composite figure describing the results of network and phylogenetic analyses on the different data sets compiled for this report. Scale bars indicate mean number of substitutions per site (in the case of 4b this value only applies to the representative tree). Branches without support values received full support across all analyses. (a) A NeighborNet network illustrating multiple hypotheses simultaneously. Red branches highlight hypotheses depicting recent hybridization between beetle populations on Palau. Green branches highlight further areas of ambiguity involving beetle populations on Palau and may be indicative of previous hybridization with a third introduced population or simply hybridization of gene regions informative at deeper time scales. (b) A composite tree displaying the raxml results for STA.151 (displayed tree) with the branch supports from the raxml and svdquartets trees for STA.44 and IPY.sh4snp superimposed onto the tree. Hyphens indicate missing branches in the topology of the respective tree. Beetle biotypes within each clade (biotype G, biotype S or both) are indicated [Colour figure can be viewed at wileyonlinelibrary.com]
+
+population sizes were less than one individual but retain relativistic value. Migration from Palau S1 into Palau S2 (m12) was more extreme than migration in the opposite direction, with an approximately twenty times greater migration rate from Palau S1 to Palau S2 (m12 = 19.98), than from Palau S2 to Palau S1 (m21 = 1.101).
+3.4 | Genetic variability and population differentiation
+Populations that diverge from a source population through a bottleneck event will represent a subset of alleles from the source
+
+population. We found, however, that the shared loci analyses of the least-­filtered data set (IPY.sh4loci) only reflect the locus coverage per sample, and in the more filtered data set, with comparable per sample loci coverage (IPY.sh35loci), there are no shared locus differences that remain between populations (Supporting Information Figures S2 and S3). Genetic variability and diversity statistics performed on STA.151 revealed that in all populations except Thailand, realized heterozygosity is lower than the sample-­size corrected, unbiased expected heterozygosity (Table 1). Hainan and Palau S1 exhibited heterozygosity over the expected values but not over unbiased
+
+(a) Thailand
+
+(b)
+
+Variance change with differing migration numbers
+
+1.000
+
+Palau S1 Oahu
+
+Varience explained
+
+0.975 0.950 0.925
+
+Migration weight
+0.5
+
+Guam Taiwan
+
+0.900 0 1 2 3 4 5 6 7 8 9 10 Number of Migrations
+(c)
+
+Palau S2
+
+m21 = 1.101
+
+ASamoa
+0
+
+m12 = 19.98
+
+10 SE
+
+0.00
+
+0.05
+
+Hainan
+
+0.10
+
+0.15
+
+Palau S1
+nu = 0.01844
+
+Palau S2
+nu = 0.02571
+
+Drift parameter
+
+F I G U R E 5   Demographic analyses from treemix and moments for CRB populations. (a) treemix supports admixture between Palau S1 and Palau S2. The tree is rooted at Thailand which is in the geographic centre of the beetle’s native range. (b) Variance explained by models with varying numbers of migrations. A single migration increases the proportion of variance explained from 0.9061 to 0.9958. Assuming additional migrations did not improve the model appreciably. (c) moments software was used to obtain additional details on demographic history for populations involved in this event, illustrated here as grey bins representing Palau S1 and Palau S2. nu = effective population size; m12 = relative migration rate from Palau S1 to Palau S2; m21 = relative migration rate from Palau S2 to Palau S1 [Colour figure can be viewed at wileyonlinelibrary.com]
+
+| 4468      
+
+REIL et al.
+
+expected values. Fst values indicate that Guam and Oahu have the highest genetic similarity (Fst = 0.124) among populations sampled (Table 2). Remaining pairwise comparisons suggest less strongly supported patterns. Palau S2 is genetically similar to Guam (Fst = 0.224), Oahu (Fst = 0.237) and Palau S1 (0.240). Palau S2 is the next most similar population for both Guam and Oahu. Palau S1 is most genetically similar to Palau S2, followed by Guam (Fst = 0.293) and Oahu (Fst = 0.354). American Samoa is most similar to Guam (Fst = 0.228) followed by Thailand (0.241). American Samoa is most similar to Thailand, followed by Guam (Fst = 0.270) and Hainan (Fst = 0.289).
+3.5 | Biotype mapping
+Biotype S or G designations were successfully obtained for 119 samples based on the diagnostic COI SNP (Supporting Information Table S1). Mapping biotypes to phylogenetic results revealed single-­ biotype populations in all locations except Palau (Figure 4b). Palau S1 included only biotype S individuals; Palau S2 included both biotypes dispersed throughout the clade with no apparent pattern (Figure 4). Populations in Taiwan, Guam and Hawaii are all biotype G (OrNV-­ resistant). Populations in American Samoa, Hainan and Thailand are all biotype S (OrNV susceptible).
+4 | DISCUSSION
+4.1 | Invasion pathways linked to biocontrol resistance
+Genomics-­based reconstruction of O. rhinoceros invasion waves in the Pacific indicates a strong relationship between the G biotype and the resurgence of invasiveness. While the OrNV susceptible S beetle biotype is prominent in regions that were invaded earlier, the invasions of the last two decades were all by the nudivirus-­resistant G biotype. This demonstrates the potential for rapid invasion by undetected, resistant biotypes that allow pests to suddenly escape previously effective biological control measures. Furthermore, our results suggest hybridization between beetle biotypes, leading to introgression.
+
+Oryctes rhinoceros invasion pathways across the Pacific are obscured by a lack of variation within and between populations, likely caused by intense bottleneck events, which are evidenced by the absence of detectable variation in locus representation. Nonetheless, we were able to clearly differentiate genetic signatures of the beetle’s two documented invasion waves: one from the early-­to mid-­ 20th century, prior to the rise of Oryctes nudivirus as a control agent in the 1960s (Bedford, 1980; Catley, 1969), and the modern wave which resulted in newly established beetle populations on Guam and Hawaii, and secondary invasion of Palau, over the last two decades (Marshall et al., 2017). All analyses point to a stepping-­stone invasion pattern from Guam into Hawaii. The precursory invasion of islands between mainland Asia and the Hawaiian archipelago is a common pattern for other species as well, with the intervening islands facilitating the transpacific invasion of pests (Moore, 2012; Vargas, Piñero, & Leblanc, 2015).
+4.2 | Unidirectional biotype introgression
+Our results demonstrate that Palau supports two genetically distinct populations of O. rhinoceros—one corresponding to the initial invasion wave with biotype S beetles and one corresponding to the recent invasion with biotype G—with gene flow between them. treemix analysis supports introgression, with an admixture event between Palau S1 and Palau S2 substantially increasing variance explained by the model. The ramifications of this introgression between beetle biotypes in Palau are yet unclear. Currently, the introgression appears to be unidirectional. We found COI S-­type individuals throughout the Palau S2 clade in the genomic data, despite it originating from the recent biotype G introduction, and no evidence of G genotypes occurring in the S-­typed (older introduction) Palau S1 population. This directionality is supported both by treemix and moments which demonstrated gene flow from Palau S1 to Palau S2 with only minor contributions in the opposite direction. Our genomic analysis of O. rhinoceros provides fresh evidence supporting the paradigm that new introductions can improve the adaptive potential of old pests by boosting genetic diversity (Kolbe et al., 2004; Lambrinos, 2004; Lavergne & Molofsky, 2007; Roman & Darling, 2007) and suggest
+
+Location
+
+N
+
+A
+
+Ae
+
+Ho
+
+He
+
+uHe
+
+Guam Am. Samoa Taiwan Oahu Hainan Palau S1 Palau S2 Thailand
+
+19.052 7.316
+11.663 48.606 3.917 3.288 13.810 0.913
+
+1.299 1.434 1.133 1.281 1.015 1.065 1.388 0.714
+
+1.167 1.233 1.061 1.181 0.969 1.008 1.222 0.707
+
+0.092 0.144 0.055 0.087 0.050 0.073 0.116 0.060
+
+0.098 0.160 0.060 0.104 0.045 0.065 0.136 0.033
+
+0.101 0.177 0.065 0.105 0.054 0.078 0.142 0.056
+
+Notes. General diversity statistics for loci data calculated for the STA.151 data set evaluated on a per
+loci basis. N: Average population size; A: number of different alleles; Ae: number of effective alleles [1/(Sum pi2)]; Ho: observed heterozygosity (No. of Hets/N); He: expected heterozygosity (1−Sum pi2); uHe: unbiased expected heterozygosity [(2N/(2N−1)) × He].
+
+TA B L E 1   Per loci summary statistics for all sampling locations
+
+REIL et al.
+
+|       4469
+
+TA B L E 2   Population pairwise Fst (AMOVA) values
+
+Guam
+
+Am. Samoa
+
+Taiwan
+
+Oahu
+
+Hainan
+
+Palau S1
+
+Palau S2
+
+Thailand
+
+Guam Am. Samoa Taiwan Oahu Hainan Palau S1 Palau S2 Thailand
+
+0.000 0.228 0.282 0.124 0.288 0.293 0.224 0.270
+
+0.001 0.000 0.277 0.336 0.276 0.355 0.337 0.241
+
+0.001 0.001 0.000 0.395 0.366 0.494 0.419 0.431
+
+0.001 0.001 0.001 0.000 0.398 0.354 0.237 0.414
+
+0.001 0.001 0.001 0.001 0.000 0.409 0.393 0.289
+
+0.001 0.001 0.001 0.001 0.001 0.000 0.240 0.365
+
+0.001 0.001 0.001 0.001 0.001 0.001 0.000 0.369
+
+0.001 0.001 0.001 0.001 0.003 0.002 0.001 0.000
+
+Notes. Pairwise Fst values evaluated across all population pairs. Fst values located below the diagonal; corresponding p-­values located above the diagonal.
+
+a mechanism by which hybridization may generate recombinant biotypes with enhanced invasiveness and severity (Anderson et al., 2018; Ellstrand & Schierenbeck, 2000). While no other biotype G populations in the Pacific exhibited nudivirus infection, some biotype G individuals on Palau had measurable viral loads (Marshall et al., 2017); this points towards adaptation for viral tolerance, and not simply resistance, as a mechanism for biotype G’s bolstered invasiveness. Tolerance and resistance are not equivalent traits, with the former more readily achieving fixation in a population (Roy & Kirchner, 2000).
+Although we cannot differentiate the influences of introgression from a novel evolutionary trajectory, the potential for multiple introductions to enhance adaptability remains a subject for further study. Regardless, there is an immediate need for the development of new robust methods for screening these biotypes. The apparent introgression is likely to jeopardize the reliability of the current diagnostic COI genotype assays due to phenomena such as mito-­nuclear discordance (e.g., Dupont, Porco, Symondson, & Roy, 2016). Mito-­nuclear discordance is known to be caused by asymmetric movement of mtDNA through sex-­biased, demographic and adaptive processes (reviewed in Toews & Brelsford, 2012). Because introgression is only detected in the direction of biotype S mitochondria associating with nuclear DNA from the new, resistant, invasive G strain and not vice versa, this suggests resistant male beetles may be outcompeting, or are more numerous than, non-­resistant males on Palau, causing a mating bias. Wolbachia infections are also known to cause mito-­nuclear discordance in insects (Gompert, Forister, Fordyce, & Nice, 2008; Smith et al., 2012), but there is no evidence to date supporting rampant infection by these microbial endosymbionts among the Scarabaeidae. As the first location with demonstrated introgression of O. rhinoceros biotypes, Palau has proven to be a crossroads between the distinct invasion waves. Intensified quarantine throughout the region, and particularly in Palau, is paramount, as these processes appear to be actively ongoing. Escaped individuals from regions experiencing introgression will be even more difficult to track and diagnose genetically and may lead to cascading resistance in other regions.
+
+4.3 | Invasions in the native range?
+Our results reveal inconsistencies in genomic diversity between native and invasive ranges of an invasive species, including the identification of invaded areas which were previously considered part of the native range. While O. rhinoceros populations in Taiwan were always considered native (Bedford, 1980), we found low diversity in this region, suggesting an older undocumented invasion (see Dlugosch & Parker, 2008), or displacement of the native population by an invasive biotype. Misinterpretation of native status can distort our fundamental understanding of a pests’ evolution, biology and history, forestalling management, thus facilitating re-­introduction and spread (e.g., Holsbeek et al., 2008; Liu et al., 2007; Gao, Reitz, Wei, Yu, & Lei, 2012). Genetic diversity in native areas will have to be reassessed to develop effective biotype-­based quarantine protocols to prevent genetic swamping—as is currently ongoing in Palau—that can result in spreading resistance.
+4.4 | Origin of a resistant biotype
+The OrNV was first discovered in beetles in Malaysia (Huger, 2005), but it is unclear where and when the G biotype first appeared. The biotype may have existed for much of the species’ history but only recently escaped isolation due to developing human infrastructure and globalization-­mediated release (e.g., Lees et al., 2011). The first indicators of potential viral resistance came from repeated O. rhinoceros outbreaks in Java and South Sulawesi in the mid-­1980s (Holt & Hochberg, 1997). Recent inventories using the COI resistance marker found biotype G in the native range in both Indonesia and the Philippines (Marshall et al., 2017). In Indonesia, biotype S and biotype G were found sympatrically, while in the Philippines all 12 beetle samples were G type. In the context of this investigation, the lack of shared allelic diversity between Palau and other biotype G populations, coupled with phylogenetic position of samples from this region, suggest that Palau is likely not the source of this resistant strain. Of the regions sampled for this study, Taiwan was the only biotype G dominated region which the literature places in the beetle’s native range, and it shares mitochondrial haplotypes with
+
+| 4470      
+
+REIL et al.
+
+recently established populations (Reil et al., 2016). Because the resistant strain is dominant in Taiwan, it appears the most likely source for G-­type beetles in the recent invasions of regions we sampled. Still, a more comprehensive sampling of O. rhinoceros’ native range would allow more finite conclusions to this end.
+4.5 | Impact of analysis method on introgression and secondary invasion detection
+The use of genomic data for the reconstruction of invasion pathways is relatively new and the analyses methods are in development, making our comparison of two pipelines broadly relevant. Considering ipyrad and stacks for ddRAD sequenced loci assembly and SNP selection, we found the former to produce more extensive (max: 209,493 SNPs) data sets more effective at revealing deeper evolutionary relationships despite uneven data coverage. In contrast, the stacks data sets were more evenly distributed, contained fewer loci (max: 7,907) and were sensitive to recent introgression, but missed deeper signals of isolation. A combination of ipyrad’s more “relaxed” assembly and a quartet approach, which is robust to the incongruence of individual locus or gene trees, enabled us to identify the hybridizing coalescent biotype lineages in Palau and revealed the more recent introduction of biotype G during the modern invasion phase. This may be an important consideration for other studies in which multiple signals are present. Additionally, we found that structure delimited two distinct O. rhinoceros populations in Palau without extensive gene flow, whereas faststructure detected recent hybridization by assigning these groups to largely the same cluster.
+4.6 | Management implications
+The propagation of the Oryctes nudivirus as a biocontrol agent may have catalysed the recent success of biotype G over biotype S. This, coupled with anthropogenic movement of O. rhinoceros in recent decades, appears to have driven the resistant biotype’s 21st-­century dispersal. Recent interceptions in Mexico extend this pest’s ongoing threat to the Neotropics. Oryctes rhinoceros resistance to OrNV, detected as early as 1989, is one of the first clear cases of biological control resistance associated with a diagnosable biotype (Zelazny, Alfiler, & Lolong, 1989). In the broader context of pest invasion dynamics, our results suggest that biological control resistance can not only promote pest recovery, but also the resurgence of invasive vagility, leading to a new invasion wave nearly half a century after control efforts began.
+Despite concerns over robustness and longevity, the use of biocontrol agents is steadily increasing, encouraged by the trend towards pest management practices with minimal non-­target and environmental impacts (Cordeau, Triolet, Wayman, Steinberg, & Guillemin, 2016; Glare et al., 2012; Lacey et al., 2015; Siegwart et al., 2015). While biological control agents have clear benefits, our results reveal the mechanism of a potential breakdown and emphasize the importance of continued quarantine against pests, even those already thought to be present in a region. Novel pest bio-­ and genotypes appear, with
+
+the potential to enhance outbreak damage in both invasive and native ranges (e.g., Delatte et al., 2009; Stastny & Sargent, 2017). In the case of O. rhinoceros, it is unclear whether OrNV resistance is the sole phenotypic factor contributing to biotype G’s invasion success, but a new approach to monitoring ongoing changes in invasive pest genomics is essential as globalization rapidly facilitates the spread of novel, virulent biotypes. Old pests can become new threats; as species humans have dispersed and managed for decades continue to evolve resistance, the resurgent invasion risk is only going to increase.
+ACKNOWLEDGEMENTS
+We thank Darcy Oishi, Michael Melzer, Shizu Watanabe, Megan Manley, Daniel Nitta, Will Haines, Nicole Yoneishi, Angela Kauwe, Cheng Zhiqiang, Aubrey Moore, Yolisa Ishibashi, Mark Schmaedick, Hong Thai Pham, Meredith Metotagivale, Niela Leifi, Lanor Laulu, Domenick Skabeikis, Joel Miles, Nelson Masang Jr., Srishti Sami Soni, Christopher Kitalong, Li-­Cheng Shih (Chubby), Hsiang-­Yu Chuang (Nomis), Yu-­Chi Lin (Chichi), Wei Yan, Frank Hsu, Yu-­Feng Shu, Chia-­ Lung Huang (Biogun) and the Hawaii Department of Agriculture for providing O. rhinoceros samples, assisting with collection and/or otherwise helpful contributions. This study was funded, in part, by the USDA Farm Bill, USDA National Institute of Food and Agriculture (NIFA), Agriculture and Food Research Initiative (AFRI), Education and Literacy Initiative (ELI) 2017-­67012-­26087 (FY17-­FY19) which was awarded to and partially supported SBS, the ARCS Foundation, and by the University of Hawaii at Manoa College of Tropical Agriculture and Human Resources and USDA Cooperative State Research, Education and Extension (CSREES) project HAW00942-­H administered by the College of Tropical Agriculture and Human Resources, University of Hawaii at Manoa.
+DATA ACCESSIBILIT Y
+Raw ddRAD Sequencing Reads. NCBI SRA accession SRP132406. COI Sanger Sequences for Biotyping samples exclusive to this re-
+port. GenBank Accessions MH800532–MH800566 (in review to be released upon completion).
+COI Sanger Sequences for Biotyping samples shared and accessioned earlier for use in Reil et al., 2016. GenBank Accessions KY197991, KY197993, KY197995, KY197997– KY198028, KY198030–KY198069, KY198075–KY198083, KY198085, KY198087, KY198088, KY198093–KY198095, K Y198 0 98–K Y198107.
+A selection of relevant scripts used in R and Python for data processing, visualization and analysis. Dryad https://doi.org/10.5061/ dryad.f4g56.
+Raw tree files used in the assembly of Figure 4. Dryad https:// doi.org/10.5061/dryad.f4g56.
+Data matrices and alignments generated from stacks and ipyrad, in the case of ddRAD data, and from geneious, in the case of Sanger data, used for project analyses. pgdspider was used for conversion between file formats when necessary. A VCF file containing all SNPs
+
+REIL et al.
+
+|       4471
+
+for all loci identified and catalogued by ipyrad has also been included. Dryad https://doi.org/10.5061/dryad.f4g56.
+AUTHOR CONTRIBUTION
+Authors listed made the following contributions. D.R., J.R., S.S., M.S., and S.G. conceived the project; J.R. and S.S. prepared the samples and performed laboratory work; J.R., S.G. M.S. and C.D. analyzed the data, all authors helped interpret the data and J.R., C.D. and D.R. lead the writing which was supplemented by the other authors.
+ORCID
+Jonathan Bradley Reil http://orcid.org/0000-0001-9511-960X
+Camiel Doorenweerd http://orcid.org/0000-0002-0418-4439
+Michael San Jose http://orcid.org/0000-0001-9877-2794
+Sheina B. Sim http://orcid.org/0000-0003-0914-6914
+Scott M. Geib http://orcid.org/0000-0002-9511-5139
+REFERENCES
+Anderson, C. J., Oakeshott, J. G., Tay, W. T., Gordon, K. H., Zwick, A., & Walsh, T. K. (2018). Hybridization and gene flow in the mega-­ pest lineage of moth, Helicoverpa. Proceedings of the National Academy of Sciences, 115(19), 5034–5039. https://doi.org/10.1073/ pnas.1718831115
+Banbury, B., & Leache, A. (2014). phrynomics: An SNP toolkit. R package version 2.0.
+Bedford, G. O. (1980). Biology, ecology, and control of palm rhinoceros beetles. Annual Review of Entomology, 25(1), 309–339. https://doi. org/10.1146/annurev.en.25.010180.001521
+Bedford, G. O. (2013). Biology and management of palm dynastid beetles: Recent advances. Annual Review of Entomology, 58, 353–372. https://doi.org/10.1146/annurev-ento-120710-100547
+Bravo, A., Likitvivatanavong, S., Gill, S. S., & Soberón, M. (2011). Bacillus thuringiensis: A story of a successful bioinsecticide. Insect Biochemistry and Molecular Biology, 41(7), 423–431. https://doi. org/10.1016/j.ibmb.2011.02.006
+Bryant, D., & Moulton, V. (2004). NeighborNet: An agglomerative method for the construction of phylogenetic networks. Molecular Biology and Evolution, 21(2), 255–265.
+Catchen, J. M., Amores, A., Hohenlohe, P., Cresko, W., & Postlethwait, J. H. (2011). Stacks: Building and genotyping loci de novo from short-­ read sequences. G3: Genes, Genomes, Genetics, 1(3), 171–182. https:// doi.org/10.1534/g3.111.000240
+Catchen, J., Hohenlohe, P. A., Bassham, S., Amores, A., & Cresko, W. A. (2013). STACKS: An analysis tool set for population genomics. Molecular Ecology, 22(11), 3124–3140. https://doi.org/10.1111/mec.12354
+Catley, A. (1969). The coconut rhinoceros beetle Oryctes rhinoceros (L) [Coleoptera: Scarabaeidae: Dynastinae]. PANS Pest Articles & News Summaries, 15(1), 18–30. https://doi. org/10.1080/04345546909415075
+Chifman, J., & Kubatko, L. (2014). Quartet inference from SNP data under the coalescent model. Bioinformatics, 30(23), 3317–3324. https://doi. org/10.1093/bioinformatics/btu530
+Chifman, J., & Kubatko, L. (2015). Identifiability of the unrooted species tree topology under the coalescent model with time-­reversible substitution processes, site-­specific rate variation, and invariable sites.
+
+Journal of Theoretical Biology, 374, 35–47. https://doi.org/10.1016/j. jtbi.2015.03.006 Cordeau, S., Triolet, M., Wayman, S., Steinberg, C., & Guillemin, J. P. (2016). Bioherbicides: Dead in the water? A review of the existing products for integrated weed management. Crop Protection, 87, 44– 49. https://doi.org/10.1016/j.cropro.2016.04.016 DeAngelis, M. M., Wang, D. G., & Hawkins, T. L. (1995). Solid-­phase reversible immobilization for the isolation of PCR products. Nucleic Acids Research, 23(22), 4742. https://doi.org/10.1093/nar/23.22.4742 Delatte, H., Duyck, P. F., Triboire, A., David, P., Becker, N., Bonato, O., & Reynaud, B. (2009). Differential invasion success among biotypes: Case of Bemisia tabaci. Biological Invasions, 11(4), 1059–1070. https:// doi.org/10.1007/s10530-008-9328-9 Dennehy, T. J., Degain, B. A., Harpold, V. S., Zaborac, M., Morin, S., Fabrick, J. A., … Li, X. (2010). Extraordinary resistance to insecticides reveals exotic Q biotype of Bemisia tabaci in the New World. Journal of Economic Entomology, 103(6), 2174–2186. https://doi. org/10.1603/EC10239 Dhileepan, K. (1992). Insect pests of oil palm (Elaeis guineensis) in India. Planter, 68(793), 183–191. Di Giallonardo, F., & Holmes, E. C. (2015). Viral biocontrol: Grand experiments in disease emergence and evolution. Trends in Microbiology, 23(2), 83–90. https://doi.org/10.1016/j.tim.2014.10.004 Diehl, S. R., & Bush, G. L. (1984). An evolutionary and applied perspective of insect biotypes. Annual Review of Entomology, 29(1), 471–504. https://doi.org/10.1146/annurev.en.29.010184.002351 Dlugosch, K. M., & Parker, I. M. (2008). Founding events in species invasions: Genetic variation, adaptive evolution, and the role of multiple introductions. Molecular Ecology, 17(1), 431–449. https://doi. org/10.1111/j.1365-294X.2007.03538.x Dupont, L., Porco, D., Symondson, W. O. C., & Roy, V. (2016). Hybridization relics complicate barcode-­based identification of species in earthworms. Molecular Ecology Resources, 16(4), 883–894. https://doi. org/10.1111/1755-0998.12517 Eaton, D. A. (2014). PyRAD: Assembly of de novo RADseq loci for phylogenetic analyses. Bioinformatics, 30(13), 1844–1849. https://doi. org/10.1093/bioinformatics/btu121 Eaton, D. A., & Overcast, I. (2016). ipyrad: interactive assembly and analysis of RADseq data sets. Available at: http://ipyrad.readthedocs.io/ Eaton, D. A., Spriggs, E. L., Park, B., & Donoghue, M. J. (2017). Misconceptions on missing data in RAD-­seq phylogenetics with a deep-­scale example from flowering plants. Systematic Biology, 66(3), 399–412. Ellstrand, N. C., & Schierenbeck, K. A. (2000). Hybridization as a stimulus for the evolution of invasiveness in plants? Proceedings of the National Academy of Sciences, 97(13), 7043–7050. https://doi.org/10.1073/ pnas.97.13.7043 Erfmeier, A., Böhnke, M., & Bruelheide, H. (2011). Secondary invasion of Acer negundo: The role of phenotypic responses versus local adaptation. Biological Invasions, 13(7), 1599–1614. https://doi.org/10.1007/ s10530-010-9917-2 Evanno, G., Regnaut, S., & Goudet, J. (2005). Detecting the number of clusters of individuals using the software STRUCTURE: A simulation study. Molecular Ecology, 14(8), 2611–2620. https://doi. org/10.1111/j.1365-294X.2005.02553.x Folmer, O., Black, M., Hoeh, W., Lutz, R., & Vrijenhoek, R. (1994). DNA primers for amplification of mitochondrial cytochrome c oxidase subunit I from diverse metazoan invertebrates. Molecular Marine Biology and Biotechnology, 3(5), 294–299. Francis, R. M. (2017). Pophelper: An R package and web app to analyse and visualize population structure. Molecular Ecology Resources, 17(1), 27–32. https://doi.org/10.1111/1755-0998.12509 Furlong, M. J., Wright, D. J., & Dosdall, L. M. (2013). Diamondback moth ecology and management: Problems, progress, and prospects.
+
+| 4472      
+
+REIL et al.
+
+Annual Review of Entomology, 58, 517–541. https://doi.org/10.1146/ annurev-ento-120811-153605 Gao, Y., Reitz, S. R., Wei, Q., Yu, W., & Lei, Z. (2012). Insecticide-­mediated apparent displacement between two invasive species of leafminer fly. PLoS ONE, 7(5), e36622. https://doi.org/10.1371/journal. pone.0036622 Glare, T., Caradus, J., Gelernter, W., Jackson, T., Keyhani, N., Köhl, J., … Stewart, A. (2012). Have biopesticides come of age? Trends in Biotechnology, 30(5), 250–258. https://doi.org/10.1016/j. tibtech.2012.01.003 Gompert, Z., Forister, M. L., Fordyce, J. A., & Nice, C. C. (2008). Widespread mito-­nuclear discordance with evidence for introgressive hybridization and selective sweeps in Lycaeides. Molecular Ecology, 17(24), 5231–5244. https://doi. org/10.1111/j.1365-294X.2008.03988.x González-Torralva, F., Brown, A. P., & Chivasa, S. (2017). Comparative proteomic analysis of horseweed (Conyza canadensis) biotypes identifies candidate proteins for glyphosate resistance. Scientific Reports, 7, 42565. https://doi.org/10.1038/srep42565 Gressitt, J. L. (1953). The coconut rhinoceros beetle (Oryctes rhinoceros) with particular reference to the Palau Islands. Bulletin of the Bernice P. Bishop Museum, 212, 157. Hajek, A. E., Hurley, B. P., Kenis, M., Garnas, J. R., Bush, S. J., Wingfield, M. J., … Cock, M. J. (2016). Exotic biological control agents: A solution or contribution to arthropod invasions? Biological Invasions, 18(4), 953–969. https://doi.org/10.1007/s10530-016-1075-8 Hajek, A. E., McManus, M. L., & Junior, I. D. (2007). A review of introductions of pathogens and nematodes for classical biological control of insects and mites. Biological Control, 41(1), 1–13. https://doi. org/10.1016/j.biocontrol.2006.11.003 Hartman, G. L., Domier, L. L., Wax, L. M., Helm, C. G., Onstad, D. W., Shaw, J. T., … Steffey, K. L. (2001). Occurrence and distribution of Aphis glycines on soybeans in Illinois in 2000 and its potential control. Plant Health Progress, 2(1), 17. https://doi.org/10.1094/ PHP-2001-0205-01-HN Hawaii Department of Agriculture (2014). Destructive beetles found on Oahu coconut trees. Department of Agriculture, State of Hawaii. http://hdoa.hawaii.gov/blog/main/crb/ Hill, C. B., Crull, L., Herman, T. K., Voegtlin, D. J., & Hartman, G. L. (2010). A new soybean aphid (Hemiptera: Aphididae) biotype identified. Journal of Economic Entomology, 103(2), 509–515. https://doi. org/10.1603/EC09179 Hinckley, A. D. (1966). Damage by the rhinoceros beetle, Oryctes rhinoceros (L.), to Pacific island palms. South Pacific Bulletin, 16(4), 51–52. Hinckley, A. D. (1973). Ecology of the coconut rhinoceros beetle, Oryctes rhinoceros (L.)(Coleoptera: Dynastidae). Biotropica, 5(2), 111–116. https://doi.org/10.2307/2989660 Hipp, A. (2017). RADami: Phylogenetic Analysis of RADseq Data. R package version 1.1-2. https://CRAN.R-project.org/package=RADami Hoddle, M. S. (2004). Restoring balance: Using exotic species to control invasive exotic species. Conservation Biology, 18(1), 38–49. https:// doi.org/10.1111/j.1523-1739.2004.00249.x Holsbeek, G., Mergeay, J., Hotz, H., Plötner, J., Volckaert, F. A. M., & De Meester, L. (2008). A cryptic invasion within an invasion and widespread introgression in the European water frog complex: consequences of uncontrolled commercial trade and weak international legislation. Molecular Ecology, 17(23), 5023–5035. Holt, R. D., & Hochberg, M. E. (1997). When is biological control evolutionarily stable (or is it)? Ecology, 78(6), 1673–1683. https://doi.org/1 0.1890/0012-9658(1997)078[1673:WIBCES]2.0.CO;2 Horowitz, A. R., Kontsedalov, S., Khasdan, V., & Ishaaya, I. (2005). Biotypes B and Q of Bemisia tabaci and their relevance to neonicotinoid and pyriproxyfen resistance. Archives of Insect Biochemistry and Physiology, 58(4), 216–225. https://doi.org/10.1002/ (ISSN)1520-6327
+
+Hufbauer, R. A., & Roderick, G. K. (2005). Microevolution in biological control: Mechanisms, patterns, and processes. Biological Control, 35(3), 227–239. https://doi.org/10.1016/j.biocontrol.2005.04.004
+Huger, A. M. (2005). The Oryctes virus: Its detection, identification, and implementation in biological control of the coconut palm rhinoceros beetle, Oryctes rhinoceros (Coleoptera: Scarabaeidae). Journal of Invertebrate Pathology, 89(1), 78–84. https://doi.org/10.1016/j. jip.2005.02.010
+Huson, D. H., & Bryant, D. (2006). Application of phylogenetic networks in evolutionary studies. Molecular Biology and Evolution, 23(2), 254– 267. Software available from www.splitstree.org
+Jackson, T. A. (2009). The use of Oryctes virus for control of rhinoceros beetle in the Pacific Islands. In A. E. Hajek, T. R. Glare & M. O’Callaghan (Eds.), Use of microbes for control and eradication of invasive arthropods (pp. 133–140). Dordrecht, The Netherlands: Springer. https://doi.org/10.1007/978-1-4020-8560-4
+Jackson, T. A., Crawford, A. M., & Glare, T. R. (2005). Oryctes virus—time for a new look at a useful biocontrol agent. Journal of Invertebrate Pathology, 89(1), 91–94. https://doi.org/10.1016/j.jip.2005.03.009
+Jakobsson, M., & Rosenberg, N. A. (2007). CLUMPP: A cluster matching and permutation program for dealing with label switching and multimodality in analysis of population structure. Bioinformatics, 23(14), 1801–1806. https://doi.org/10.1093/bioinformatics/btm233
+Jepson, F. P. (1912). The rhinoceros beetle (Oryctes rhinoceros, Linn.) in Samoa. Fiji Department of Agriculture Bulletin, 3, 25.
+Jervis, M. A. (1997). Parasitoids as limiting and selective factors: Can biological control be evolutionarily stable? Trends in Ecology & Evolution, 12(10), 378–380. https://doi.org/10.1016/S0169-5347(97)87378-8
+Jiménez, Q., Martínez, M., Trejo, R., González, V., Guerrero, A., & Chávez, N. (2017). First intercept of the Asiatic coconut rhinoceros beetle Oryctes rhinoceros (Linnaeus, 1758) in Mexico. Revista Mexicana de Ciencias Forestales, 8(39), 99–105. https://doi.org/10.29298/rmcf. v8i39.46
+Jouganous, J., Long, W., Ragsdale, A. P., & Gravel, S. (2017). Inferring the joint demographic history of multiple populations: Beyond the diffusion approximation. Genetics, 206(3). https://doi.org/10.1534/ genetics.117.200493
+Kearse, M., Moir, R., Wilson, A., Stones-Havas, S., Cheung, M., Sturrock, S., … Thierer, T. (2012). Geneious Basic: An integrated and extendable desktop software platform for the organization and analysis of sequence data. Bioinformatics, 28(12), 1647–1649. https://doi. org/10.1093/bioinformatics/bts199
+Khoo, K. C., Ooi, P. A. C., & Ho, C. T. (1991). Crop pests and their management in Malaysia. Kuala Lumpur, Malaysia: Tropical Press Sdn. Bhd.
+Kolbe, J. J., Glor, R. E., Schettino, L. R., Lara, A. C., Larson, A., & Losos, J. B. (2004). Genetic variation increases during biological invasion by a Cuban lizard. Nature, 431(7005), 177–181. https://doi.org/10.1038/ nature02807
+Lacey, L. A., Frutos, R., Kaya, H. K., & Vail, P. (2001). Insect pathogens as biological control agents: Do they have a future? Biological Control, 21(3), 230–248. https://doi.org/10.1006/bcon.2001.0938
+Lacey, L. A., Grzywacz, D., Shapiro-Ilan, D. I., Frutos, R., Brownbridge, M., & Goettel, M. S. (2015). Insect pathogens as biological control agents: Back to the future. Journal of Invertebrate Pathology, 132, 1–41. https://doi.org/10.1016/j.jip.2015.07.009
+Lambrinos, J. G. (2004). How interactions between ecology and evolution influence contemporary invasion dynamics. Ecology, 85(8), 2061–2070. https://doi.org/10.1890/03-8013
+Lavergne, S., & Molofsky, J. (2007). Increased genetic variation and evolutionary potential drive the success of an invasive grass. Proceedings of the National Academy of Sciences, 104(10), 3883–3888. https://doi. org/10.1073/pnas.0607324104
+Lees, D. C., Lack, H. W., Rougerie, R., Hernandez-Lopez, A., Raus, T., Avtzis, N. D., … Lopez-Vaamonde, C. (2011). Tracking origins of invasive herbivores through herbaria and archival DNA: The case of the
+
+REIL et al.
+
+|       4473
+
+horse-­chestnut leaf miner. Frontiers in Ecology and the Environment, 9(6), 322–328. https://doi.org/10.1890/100098 Lewis, P. O. (2001). A likelihood approach to estimating phylogeny from discrete morphological character data. Systematic Biology, 50(6), 913–925. https://doi.org/10.1080/106351501753462876 Liau, S. S., & Ahmad, A. (1991). The control of Oryctes rhinoceros by clean clearing and its effect on early yield in palm to palm replants. Proceedings PORIM International Palm Oil Development Conference, 1, 396–403. Lischer, H. E., & Excoffier, L. (2011). PGDSpider: An automated data conversion tool for connecting population genetics and genomics programs. Bioinformatics, 28(2), 298–299. Liu, S. S., De Barro, P. J., Xu, J., Luan, J. B., Zang, L. S., Ruan, Y. M., & Wan, F. H. (2007). Asymmetric mating interactions drive widespread invasion and displacement in a whitefly. Science, 318(5857), 1769–1772. https://doi.org/10.1126/science.1149887 Majtánová, Z., Choleva, L., Symonová, R., Ráb, P., Kotusz, J., Pekárik, L., & Janko, K. (2016). Asexual reproduction does not apparently increase the rate of chromosomal evolution: Karyotype stability in diploid and triploid clonal hybrid fish (Cobitis, Cypriniformes, Teleostei). PLoS ONE, 11(1), e0146872. https://doi.org/10.1371/journal.pone.0146872 Manjeri, G., Muhamad, R., & Tan, S. G. (2014). Oryctes rhinoceros beetles, an oil palm pest in Malaysia. Annual Research & Review in Biology, 4(22), 3429. https://doi.org/10.9734/ARRB Marshall, S. D., Moore, A., Vaqalo, M., Noble, A., & Jackson, T. A. (2017). A new haplotype of the coconut rhinoceros beetle, Oryctes rhinoceros, has escaped biological control by Oryctes rhinoceros nudivirus and is invading Pacific islands. Journal of Invertebrate Pathology, 149, 127–134. https://doi.org/10.1016/j.jip.2017.07.006 Messing, R. H., & Wright, M. G. (2006). Biological control of invasive species: Solution or pollution? Frontiers in Ecology and the Environment, 4(3), 132–140. https://doi.org/10.1890/1540-9295(2006)004[0132:BCOISS]2.0.CO;2 Miller, M. A., Pfeiffer, W., & Schwartz, T. (2010). Creating the CIPRES Science Gateway for inference of large phylogenetic trees. Red Hook, NY: Curran Associates. (pp. 1–8). Moore, A. (2012). Guam as a Source of New Insects for Hawaii. In Current and Emerging Insect Pests in Hawaiʻi and the Pacific. Symposium conducted at the XIV Pacific Entomology Conference, Challenges and Changes in Entomology, Honolulu, Hawaii. Owen, M. D., & Zelaya, I. A. (2005). Herbicide-­resistant crops and weed resistance to herbicides. Pest Management Science, 61(3), 301–311. https://doi.org/10.1002/(ISSN)1526-4998 Peakall, R., & Smouse, P. E. (2006). GENALEX 6: Genetic analysis in Excel. Population genetic software for teaching and research. Molecular Ecology Notes, 6, 288–295. https://doi. org/10.1111/j.1471-8286.2005.01155.x Peakall, R., & Smouse, P. E. (2012). GenAlEx 6.5: Genetic analysis in Excel. Population genetic software for teaching and research-­an update. Bioinformatics, 28, 2537–2539. https://doi.org/10.1093/ bioinformatics/bts460 Pekár, S., Šmerda, J., Hrušková, M., Šedo, O., Muster, C., Cardoso, P., … Sentenská, L. (2012). Prey-­race drives differentiation of biotypes in ant-­eating spiders. Journal of Animal Ecology, 81(4), 838–848. https:// doi.org/10.1111/j.1365-2656.2012.01957.x Peterson, B. K., Weber, J. N., Kay, E. H., Fisher, H. S., & Hoekstra, H. E. (2012). Double digest RADseq: An inexpensive method for de novo SNP discovery and genotyping in model and non-­model species. PLoS ONE, 7(5), e37135. https://doi.org/10.1371/journal.pone.0037135 Pickrell, J. K., & Pritchard, J. K. (2012). Inference of population splits and mixtures from genome-­wide allele frequency data. PLoS Genetics, 8(11), e1002967. https://doi.org/10.1371/journal.pgen.1002967 Pritchard, J. K., Stephens, M., & Donnelly, P. (2000). Inference of population structure using multilocus genotype data. Genetics, 155(2), 945–959.
+
+R Core Team (2015). R: A language and environment for statistical computing. Vienna, Austria: R Foundation for Statistical Computing. https:// www.R-project.org/
+Raj, A., Stephens, M., & Pritchard, J. K. (2014). fastSTRUCTURE: Variational inference of population structure in large SNP data sets. Genetics, 197, 573–589. https://doi.org/10.1534/genetics.114.164350
+Reil, J. B., San Jose, M., & Rubinoff, D. (2016). Low variation in nuclear and mitochondrial DNA inhibits resolution of invasion pathways across the pacific for the coconut rhinoceros beetle (Scarabeidae: Oryctes rhinoceros). Proceedings of the Hawaiian Entomological Society, 48, 57–69.
+Rohland, N., & Reich, D. (2012). Cost-­effective, high-­throughput DNA sequencing libraries for multiplexed target capture. Genome Research, 22(5), 939–946. https://doi.org/10.1101/gr.128124.111
+Roman, J., & Darling, J. A. (2007). Paradox lost: Genetic diversity and the success of aquatic invasions. Trends in Ecology & Evolution, 22(9), 454–464. https://doi.org/10.1016/j.tree.2007.07.002
+Romero, A., Potter, M. F., Potter, D. A., & Haynes, K. F. (2007). Insecticide resistance in the bed bug: A factor in the pest’s sudden resurgence? Journal of Medical Entomology, 44(2), 175–178.
+Roy, B. A., & Kirchner, J. W. (2000). Evolutionary dynamics of pathogen resistance and tolerance. Evolution, 54(1), 51–63. https://doi. org/10.1111/j.0014-3820.2000.tb00007.x
+Saitou, N., & Nei, M. (1987). The neighbor-­joining method: A new method for reconstructing phylogenetic trees. Molecular Biology and Evolution, 4(4), 406–425.
+Siegwart, M., Graillot, B., Blachere Lopez, C., Besse, S., Bardin, M., Nicot, P. C., & Lopez-Ferber, M. (2015). Resistance to bio-i­nsecticides or how to enhance their sustainability: A review. Frontiers in Plant Science, 6, 381.
+Sim, S. B., & Geib, S. M. (2017). A chromosome-­scale assembly of the Bactrocera cucurbitae genome provides insight to the genetic basis of white pupae. G3: Genes, Genomes, Genetics, 7(6). https://doi. org/10.1534/g3.117.040170.
+Smith, M. A., Bertrand, C., Crosby, K., Eveleigh, E. S., Fernandez-Triana, J., Fisher, B. L., … Hrcek, J. (2012). Wolbachia and DNA barcoding insects: Patterns, potential, and problems. PLoS ONE, 7(5), e36514. https://doi.org/10.1371/journal.pone.0036514
+Smith, S. L., & Moore, A. (2008). Early detection pest risk assessment: coconut rhinoceros beetle. http://guaminsects.net/uogces/kbwiki/ images/1/13/CRB_Pest_Risk_Assessment.pdf. Google Scholar
+Stamatakis, A. (2014). RAxML version 8: A tool for phylogenetic analysis and post-­analysis of large phylogenies. Bioinformatics, 30(9), 1312– 1313. https://doi.org/10.1093/bioinformatics/btu033
+Stastny, M., & Sargent, R. D. (2017). Evidence for rapid evolutionary change in an invasive plant in response to biological control. Journal of Evolutionary Biology, 30(5), 1042–1052. https://doi.org/10.1111/ jeb.13078
+Swaine, G. (1966). Fiji’s campaign against the coconut rhinoceros beetle. International Pest Control, 8, 6–9.
+Swofford, D. L. (2003). PAUP*: phylogenetic analysis using parsimony, version 4.0 b10.
+Toews, D. P., & Brelsford, A. (2012). The biogeography of mitochondrial and nuclear discordance in animals. Molecular Ecology, 21(16), 3907– 3930. https://doi.org/10.1111/j.1365-294X.2012.05664.x
+Tomasetto, F., Tylianakis, J. M., Reale, M., Wratten, S., & Goldson, S. L. (2017). Intensified agriculture favors evolved resistance to biological control. Proceedings of the National Academy of Sciences, 114(15), 3885–3890. https://doi.org/10.1073/pnas. 1618 416114
+Vargas, R. I., Piñero, J. C., & Leblanc, L. (2015). An overview of pest species of Bactrocera fruit flies (Diptera: Tephritidae) and the integration of biopesticides with other biological approaches for their management with a focus on the Pacific Region. Insects, 6(2), 297–318. https://doi.org/10.3390/insects6020297
+
+| 4474      
+
+REIL et al.
+
+Young, E. C. (1975). A study of rhinoceros beetle damage in coconut palms. Technical Paper, South Pacific Commission, 170, 63.
+Zelazny, B., Alfiler, A. R., & Lolong, A. (1989). Possibility of resistance to a baculovirus in populations of coconut rhinoceros beetle (Oryctes rhinoceros). Boletin Fitosanitario de la FAO (FAO).
+Zhang, J., Pei, N., & Mi, X. (2012). phylotools: Phylogenetic tools for Ecophylogenetics. R package version 0.1.2. http://CRAN.R-project.org/ package=phylotools
+Zheng, X., Levine, D., Shen, J., Gogarten, S. M., Laurie, C., & Weir, B. S. (2012). A high-­performance computing toolset for relatedness and principal component analysis of SNP data. Bioinformatics, 28(24), 3326–3328. https://doi.org/10.1093/bioinformatics/ bts606
+
+SUPPORTING INFORMATION Additional supporting information may be found online in the Supporting Information section at the end of the article.    
+How to cite this article: Reil JB, Doorenweerd C, San Jose M, Sim SB, Geib SM, Rubinoff D. Transpacific coalescent pathways of coconut rhinoceros beetle biotypes: Resistance to biological control catalyses resurgence of an old pest. Mol Ecol. 2018;27:4459–4474. https://doi.org/10.1111/mec.14879
+

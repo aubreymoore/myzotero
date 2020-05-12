@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0.2" name="wpd_version">
+<meta content="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" name="wpd_baseurl">
+<meta content="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" name="wpd_url">
+<meta content="2017-06-24T17:46Z" name="wpd_date">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculate geographical coordinates for equidistant points at vertices of a triangular grid | Aubrey Moore</title>
+
+
+
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://aubreymoore.github.io/blog/rss.xml">
+<link rel="canonical" href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+<meta name="author" content="Aubrey Moore">
+<link rel="prev" href="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/" title="Using Scrapy to Extract Scientific Names from PestNet Fact Sheets" type="text/html">
+<link rel="next" href="https://aubreymoore.github.io/blog/posts/web2py-to-static/" title="Converting a web2py web site to a static web site" type="text/html">
+<meta property="og:site_name" content="Aubrey Moore">
+<meta property="og:title" content="Calculate geographical coordinates for equidistant points at vertices ">
+<meta property="og:url" content="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/">
+<meta property="og:description" content="I needed to set up a grid of equally spaced insect pheromone traps. While it is
+convenient to put traps at the vertices of a rectangular grid, this is not
+optimal because nearest neighbors on the diag">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-05-28T09:33:46+10:00">
+<meta property="article:tag" content="GIS">
+<meta property="article:tag" content="GPS">
+<meta property="article:tag" content="KML">
+<meta property="article:tag" content="python">
+
+<link media="all" href="calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://aubreymoore.github.io/blog/">
+
+                <span id="blog-title">Aubrey Moore</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="https://aubreymoore.github.io/blog/archive.html">Archive</a>
+                </li>
+<li>
+<a href="https://aubreymoore.github.io/blog/categories/">Tags</a>
+                </li>
+<li>
+<a href="https://aubreymoore.github.io/blog/rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<span class="navbar-form navbar-left">
+<input id="tipue_search_input" class="form-control" placeholder="Search" type="text"></span>
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/index.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" class="u-url">Calculate geographical coordinates for equidistant points at vertices of a triangular grid</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                    Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" rel="bookmark"><time class="published dt-published" datetime="2017-05-28T09:33:46+10:00" itemprop="datePublished" title="2017-05-28 09:33">2017-05-28 09:33</time></a></p>
+            
+        <p class="sourceline"><a href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/index.md" id="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>I needed to set up a grid of equally spaced insect pheromone traps. While it is
+convenient to put traps at the vertices of a rectangular grid, this is not
+optimal because nearest neighbors on the diagonals are further away than those
+within rows or columns (If the spacing within rows and columns is X, then the
+diagonal spacing is sqrt(2)*X).  For equidistant spacing, points are placed
+at vertices of a grid made with equilateral triangles. This python script
+calculates such a grid of points and returns the data as a KML file containing
+latitude/longitude coordinates in decimal degrees.</p>
+<script src="7f3688e88556e08a8069623ecf48b68f.js"></script><div id="gist48115701" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-triangular_grid-py" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-python">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-triangular_grid-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-triangular_grid-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>!/usr/bin/python3</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-triangular_grid-py-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-triangular_grid-py-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> pyproj</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-triangular_grid-py-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> simplekml</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-triangular_grid-py-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s"><span class="pl-pds">'''</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-triangular_grid-py-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s">Generates a KML file with equally spaced points at vertices of a triangular grid. The epsg argument is the code for the UTM </span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-triangular_grid-py-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s">projection which converts lat/lon to meters. The epsg default value, EPSG:32655 is for Guam (zone 55n).</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-triangular_grid-py-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s"></span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-triangular_grid-py-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s">Example: This command line places points equally spaced at 10 m on the lawn in front of the Canadian Parliament Building:</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-triangular_grid-py-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s">$ python -c 'from triangular_grid import *; <span class="pl-c1">\</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-triangular_grid-py-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s">generate_equidistant_points(epsg="EPSG:32618", ll_longitude=-75.698873, ll_latitude=45.424078, meters_between_points=10)'</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-triangular_grid-py-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s"><span class="pl-pds">'''</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-triangular_grid-py-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-k">def</span> <span class="pl-en">generate_equidistant_points</span>(<span class="pl-smi">epsg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>EPSG:32655<span class="pl-pds">'</span></span>, <span class="pl-smi">meters_between_points</span><span class="pl-k">=</span><span class="pl-c1">100.0</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-triangular_grid-py-LC14" class="blob-code blob-code-inner js-file-line">    <span class="pl-smi">ll_longitude</span><span class="pl-k">=</span><span class="pl-c1">144.71318</span>, <span class="pl-smi">ll_latitude</span><span class="pl-k">=</span><span class="pl-c1">13.26232</span>, <span class="pl-smi">ncols</span><span class="pl-k">=</span><span class="pl-c1">5</span>, <span class="pl-smi">nrows</span><span class="pl-k">=</span><span class="pl-c1">5</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-triangular_grid-py-LC15" class="blob-code blob-code-inner js-file-line">    <span class="pl-smi">kml_file</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>points.kml<span class="pl-pds">'</span></span>):</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-triangular_grid-py-LC16" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-triangular_grid-py-LC17" class="blob-code blob-code-inner js-file-line">    wgs84<span class="pl-k">=</span>pyproj.Proj(<span class="pl-v">init</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>EPSG:4326<span class="pl-pds">'</span></span>) <span class="pl-c"><span class="pl-c">#</span> LatLon with WGS84 datum used by GPS units and Google Earth</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-triangular_grid-py-LC18" class="blob-code blob-code-inner js-file-line">    utm<span class="pl-k">=</span>pyproj.Proj(<span class="pl-v">init</span><span class="pl-k">=</span>epsg) <span class="pl-c"><span class="pl-c">#</span> UTM coords (Cartesian coordinates in meters)</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-triangular_grid-py-LC19" class="blob-code blob-code-inner js-file-line">    hdist <span class="pl-k">=</span> meters_between_points <span class="pl-c"><span class="pl-c">#</span> horizontal distance between points</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-triangular_grid-py-LC20" class="blob-code blob-code-inner js-file-line">    vdist <span class="pl-k">=</span> meters_between_points <span class="pl-k">*</span> (<span class="pl-c1">0.75</span><span class="pl-k">**</span><span class="pl-c1">0.5</span>) <span class="pl-c"><span class="pl-c">#</span> vertical distance between points</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-triangular_grid-py-LC21" class="blob-code blob-code-inner js-file-line">    x0, y0 <span class="pl-k">=</span> pyproj.transform(wgs84, utm, ll_longitude, ll_latitude) <span class="pl-c"><span class="pl-c">#</span> convert lon lat to Cartesian coordinates in meters (UTM)</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-triangular_grid-py-LC22" class="blob-code blob-code-inner js-file-line">    x <span class="pl-k">=</span> x0; y <span class="pl-k">=</span> y0; i <span class="pl-k">=</span> <span class="pl-c1">0</span>;  kml <span class="pl-k">=</span> simplekml.Kml()</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-triangular_grid-py-LC23" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">for</span> row <span class="pl-k">in</span> <span class="pl-c1">range</span>(nrows):</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-triangular_grid-py-LC24" class="blob-code blob-code-inner js-file-line">        y <span class="pl-k">=</span> y0 <span class="pl-k">+</span> row <span class="pl-k">*</span> vdist</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-triangular_grid-py-LC25" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span> col <span class="pl-k">in</span> <span class="pl-c1">range</span>(ncols):</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-triangular_grid-py-LC26" class="blob-code blob-code-inner js-file-line">            x <span class="pl-k">=</span> x0 <span class="pl-k">+</span> col <span class="pl-k">*</span> hdist</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-triangular_grid-py-LC27" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">if</span> row <span class="pl-k">%</span> <span class="pl-c1">2</span> <span class="pl-k">!=</span> <span class="pl-c1">0</span>: <span class="pl-c"><span class="pl-c">#</span> Odd numbered rows are offset by dist/2</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-triangular_grid-py-LC28" class="blob-code blob-code-inner js-file-line">                x <span class="pl-k">=</span> x <span class="pl-k">+</span> hdist <span class="pl-k">/</span> <span class="pl-c1">2</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-triangular_grid-py-LC29" class="blob-code blob-code-inner js-file-line">            lon, lat <span class="pl-k">=</span> pyproj.transform(utm, wgs84, x, y) <span class="pl-c"><span class="pl-c">#</span> convert UTM back to lon lat</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-triangular_grid-py-LC30" class="blob-code blob-code-inner js-file-line">            i <span class="pl-k">=</span> i <span class="pl-k">+</span> <span class="pl-c1">1</span></td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-triangular_grid-py-LC31" class="blob-code blob-code-inner js-file-line">            kml.newpoint(<span class="pl-v">name</span><span class="pl-k">=</span><span class="pl-c1">str</span>(i), <span class="pl-v">coords</span><span class="pl-k">=</span>[(lon, lat)])</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-triangular_grid-py-LC32" class="blob-code blob-code-inner js-file-line">    kml.save(kml_file)</td>
+      </tr>
+      <tr>
+        <td id="file-triangular_grid-py-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-triangular_grid-py-LC33" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+  
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/aubreymoore/7f3688e88556e08a8069623ecf48b68f/raw/c0af0bb1ce652bdefe244d113ebf38a6b90ba4b4/triangular_grid.py" style="float: right;">view raw</a>
+        <a href="https://gist.github.com/aubreymoore/7f3688e88556e08a8069623ecf48b68f#file-triangular_grid-py">triangular_grid.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<p>The KML file may be displayed using Google Earth.</p>
+<p><img alt="example output" src="points.jpg"></p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="https://aubreymoore.github.io/blog/categories/gis/" rel="tag">GIS</a></li>
+            <li><a class="tag p-category" href="https://aubreymoore.github.io/blog/categories/gps/" rel="tag">GPS</a></li>
+            <li><a class="tag p-category" href="https://aubreymoore.github.io/blog/categories/kml/" rel="tag">KML</a></li>
+            <li><a class="tag p-category" href="https://aubreymoore.github.io/blog/categories/python/" rel="tag">python</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/" rel="prev" title="Using Scrapy to Extract Scientific Names from PestNet Fact Sheets">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="https://aubreymoore.github.io/blog/posts/web2py-to-static/" rel="next" title="Converting a web2py web site to a static web site">Next post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+
+            Contents © 2017         <a href="mailto:aubreymoore@guam.net">Aubrey Moore</a> - Powered by         <a href="https://getnikola.com/" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><!-- Modal --><div id="search-results" class="modal fade" role="dialog" style="height: 80%;">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Search Results:</h4>
+      </div>
+      <div class="modal-body" id="tipue_search_content" style="max-height: 600px; overflow-y: auto;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+
+$(document).ready(function() {
+    $.when(
+        $.getScript( "/assets/js/tipuesearch_set.js" ),
+        $.getScript( "/assets/js/tipuesearch.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json'
+        });
+        $('#tipue_search_input').keyup(function (e) {
+            if (e.keyCode == 13) {
+                $('#search-results').modal()
+            }
+        });
+    });
+});
+</script>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body>
+</html>

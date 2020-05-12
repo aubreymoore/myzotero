@@ -1,0 +1,438 @@
+current community
+
+    chat log out
+    Stack Overflow
+    Meta Stack Overflow
+    Stack Overflow Careers
+
+your communities
+edit cancel
+
+    Stack Overflow 1
+
+reset to default list
+more stack exchange communities
+company blog
+Stack Exchange Inbox 1 Reputation and Badges
+1 2
+help
+
+    Tour Start here for a quick overview of the site
+    Help Center Detailed answers to any questions you might have
+    Meta Discuss the workings and policies of this site
+
+
+Stack Overflow
+
+    Questions
+    Jobs beta
+    Tags
+    Users
+    Badges
+
+    Ask Question
+
+How to save Python Dict Values to SQLite Model?
+No problem. We won't show you that ad again. Why didn't you like it?
+
+    Uninteresting
+    Misleading
+    Offensive
+    Repetitive
+    Other
+
+Oops! I didn't mean to do this.
+up vote 0 down vote favorite
+1
+	
+
+I am calling an API that returns JSON data. I am using json.loads to decode the JSON to Python as a dictionary. The dictionary that returns is a somewhat complex nested dictonary with nested lists as well.
+
+For example:
+
+ { "educations" : { "_total" : 1 , "values" : [{ "degree" : "Bachelor of Arts" , "fieldOfStudy" : "Psychology" , "schoolName" : "Antioch University Seattle" }] }  
+
+How do I store each of the values into an SQLite database with the model defined as:
+
+ class Educations ( models . Model ): name = models . ForeignKey ( Candidate ) degree = models . CharField ( max_length = 200 ) fieldOfStudy = models . CharField ( max_length = 200 ) schoolName = models . CharField ( max_length = 200 )  
+
+Each education is associated with a Candidate which is defined in the Candidate class (not shown here).
+
+I am just learning Python / Django. I have spent the past few days trying to figure this out.
+python sqlite dictionary
+share | edit
+	
+edited Jul 29 at 23:48
+Unihedron
+7,444 10 30 52
+	
+asked Mar 22 '12 at 5:41
+Hung Luu
+391 7 22
+	
+	
+add a comment  | 
+1 Answer 1
+active oldest votes
+up vote 2 down vote accepted
+	
+
+You can set the fields in new object like
+
+ # Get after json.dump json_data = { "educations" : { "_total" : 1 , "values" : [{ "degree" : "Bachelor of Arts" , "fieldOfStudy" : "Psychology" , "schoolName" : "Antioch University Seattle" }] } for each_education in json_data [ 'educations' ][ 'values' ] new_education = Education (** each_education ) # Set the name foreign key # new_educaiton.name = name new_education . save ()  
+
+Note: How you will get the data for the name foreignkey is not mention in your question so that also you can set.
+share | edit
+	
+answered Mar 22 '12 at 7:11
+Lafada
+8,307 6 30 66
+	
+   	 
+	
+I'm sorry - for my understanding is this what is going on? (1) get json_data using json.dump (2) define variable each_education to loop through every value under the "value" key under the "educations" key (#) (3) map new_education variable to save to the class Educations (4) save new_educations to database with new_education.save() Is this logic correct? –  Hung Luu Mar 22 '12 at 17:08
+   	 
+	
+yes try your code and if get error then past that error so we can solve that :) –  Lafada Mar 23 '12 at 15:49
+1 	 
+	
+Thanks Lafada - I think your answer works but the structure of the JSON that I am returning has more levels under [education] and [values] that I don't think the **each_education argument worked. I had to individually call each value in the dictionary that i wanted and then saved it like you did. I was able to get it to work though after you pointed me to the right direction! thank you. –  Hung Luu Mar 23 '12 at 18:23
+   	 
+	
+That is up to you how you structure data. –  Lafada Mar 24 '12 at 7:29
+add a comment  | 
+Your Answer
+
+        Links
+        Images
+        Styling/Headers
+        Lists
+        Blockquotes
+        Code
+        HTML
+        advanced help »
+
+    In most cases, a plain URL will be recognized as such and automatically linked:
+
+     Visit http://area51.stackexchange.com/ regularly!
+    Use angle brackets to force linking: Have you seen <http://superuser.com>?
+
+    To create fancier links, use Markdown:
+
+     Here's [a link](http://www.example.com/)! And a reference-style link to [a panda][1].
+    References don't have to be [numbers][question].
+
+     [1]: http://notfound.stackexchange.com/
+     [question]: http://english.stackexchange.com/questions/11481
+
+    You can add tooltips to links:
+
+     Click [here](http://diy.stackexchange.com   "this text appears when you mouse over")!
+    This works with [reference links][blog] as well.
+
+     [blog]: http://blog.stackoverflow.com/   "click here for updates"
+
+    Images are exactly like links, but they have an exclamation point in front of them:
+
+     ![a busy cat](http://sstatic.net/stackoverflow/img/error-lolcat-problemz.jpg)
+    ![two muppets][1]
+
+     [1]: http://i.imgur.com/I5DFV.jpg "tooltip"
+
+    The word in square brackets is the alt text, which gets displayed if the browser can't show the image. Be sure to include meaningful alt text for screen-reading software.
+
+    Be sure to use text styling sparingly; only where it helps readability.
+
+     *This is italicized*, and so
+    is _this_.
+
+    **This is bold**, just like __this__.
+
+    You can ***combine*** them
+    if you ___really have to___.
+
+    To break your text into sections, you can use headers:
+
+     A Large Header
+    ==============
+
+    Smaller Subheader
+    -----------------
+
+    Use hash marks if you need several levels of headers:
+
+     # Header 1 #
+    ## Header 2 ##
+    ### Header 3 ###
+
+    Both bulleted and numbered lists are possible:
+
+     -   Use a minus sign for a bullet
+    +   Or plus sign
+    *   Or an asterisk
+
+    1.   Numbered lists are easy
+    2.   Markdown keeps track of
+     the numbers for you
+    7.   So this will be item 3.
+
+     1.   Lists in a list item:
+         -   Indented four spaces.
+             *   indented eight spaces.
+         -   Four spaces again.
+    2.    You can have multiple
+         paragraphs in a list items.
+      
+         Just be sure to indent.
+
+     > Create a blockquote by
+    > prepending “>” to each line.
+    >
+    > Other formatting also works here, e.g.
+    >
+    > 1. Lists or
+    > 2. Headings:
+    >
+    > ## Quoted Heading ##
+
+    You can even put blockquotes in blockquotes:
+
+     > A standard blockquote is indented
+    > > A nested blockquote is indented more
+    > > > > You can nest to any depth.
+
+    To create code blocks or other preformatted text, indent by four spaces:
+
+          This will be displayed in a monospaced font. The first four spaces
+         will be stripped off, but all other whitespace will be preserved.
+         
+         Markdown and HTML are turned off in code blocks:
+         <i>This is not italic</i>, and [this is not a link](http://example.com)
+
+    To create not a block, but an inline code span, use backticks:
+
+     The `$` character is just a shortcut for `window.jQuery`.
+
+    If you want to have a preformatted block within a list, indent by eight spaces:
+
+     1. This is normal text.
+    2. So is this, but now follows a code block:
+      
+             Skip a line and indent eight spaces.
+             That's four spaces for the list
+             and four to trigger the code block.
+
+    If you need to do something that Markdown can't handle, use HTML. Note that we only support a very strict subset of HTML!
+
+     Strikethrough humor is <strike>funny</strike>.
+
+    Markdown is smart enough not to mangle your span-level HTML:
+
+     <b>Markdown works *fine* in here.</b>
+
+    Block-level HTML elements have a few restrictions:
+        They must be separated from surrounding text by blank lines.
+        The begin and end tags of the outermost block element must not be indented.
+        Markdown can't be used within HTML blocks.
+
+     <pre>
+     You can <em>not</em> use Markdown in here.
+    </pre>
+
+ 
+draft saved
+draft discarded
+discard
+Not the answer you're looking for? Browse other questions tagged python sqlite dictionary or ask your own question .
+Hello World!
+
+This is a collaboratively edited question and answer site for professional and enthusiast programmers . It's 100% free.
+
+Got a question about the site itself? meta is the place to talk about things like what questions are appropriate, what tags we should use, etc.
+
+about »     help »   meta »
+
+asked
+	
+
+3 years ago
+
+viewed
+	
+
+342 times
+
+active
+	
+
+4 months ago
+Featured on Meta
+The MIT License – Clarity on Using Code on Stack Overflow and Stack Exchange
+
+Careers Unificintegration: Jobs on Stack Overflow
+
+Hot Meta Posts
+33
+What license are the hats published on?
+
+7
+Is the Careers meta going to move from MSE to MSO?
+
+No problem. We won't show you that ad again. Why didn't you like it?
+
+    Uninteresting
+    Misleading
+    Offensive
+    Repetitive
+    Other
+
+Oops! I didn't mean to do this.
+Looking for a job?
+
+    Technical Solution Consultant
+    Layar
+    Amsterdam, Netherlands / relocation
+    python django
+    Senior Web Developer
+    Propeller Aerobotics
+    Sydney, Australia / relocation
+    javascript css
+    Technical Project Manager
+    Scrapinghub
+    Cork, Ireland / remote
+    python scrum
+    Software Engineer
+    Noom
+    New York, NY / relocation
+    python c++
+
+Related
+1382
+How can I merge two Python dictionaries in a single expression?
+625
+How do I sort a list of dictionaries by values of the dictionary in Python?
+1356
+Sort a Python dictionary by value
+259
+Convert Python dict to object?
+2
+How can I design a dict like sqlite class in python which can using different field as “key”?
+11
+Python - mysqlDB, sqlite result as dictionary
+3
+Insert a python dict into an SQLite DB
+1
+Python Key Error Missing Dict in LinkedIn API call - how to call default value instead?
+0
+Python : How to insert a dictionary to a sqlite database?
+285
+Is there any pythonic way to combine two dicts (adding values for keys that appear in both)?
+Hot Network Questions
+
+    How do I remove all but the file name (with no extension) from a full file path?
+    How to replace SSL/TLS?
+    Santa's Decision
+    How to talk about putting water in the freezer to become ice?
+    What prompted Lovell on Apollo 8 to announce "there is a Santa Claus"?
+    You're on a 8 day streak!
+    Any disadvantages for no companions?
+    Is a dragonborn arctic half-minotaur half-ogre water orc possible?
+    When someone puts your integrity/reliability "in doubt"
+    Examples of group-theoretic results more easily obtained through topology or geometry
+    Which ranking is more meaningful for post-doc students?
+    Why did Doc Brown take so long to write to Marty?
+    Efficiency on a 64-bit platform: pointer vs 32-bit array indexing
+    Mixed Number to an Improper Fraction
+    Monty Hall Simulation
+    How much distance is there between True North and Magnetic North Poles?
+    How to take down the internet?
+    How can I legally and efficiently help my girlfriend build equity by helping with a mortgage?
+    What is the use of restore headeronly when performing a backup?
+    Why is R2D2 a droid?
+    Dividing a Pizza with N Lines
+    Can an unsuccessful grade appeal hurt an academic career?
+    Surviving Captain Nefarious
+    How to fulfill a wish without causing a lot of troubles
+
+more hot questions
+question feed
+default
+tour help blog chat data legal privacy policy work here advertising info mobile contact us feedback
+Technology 	Life / Arts 	Culture / Recreation 	Science 	Other
+
+    Stack Overflow
+    Server Fault
+    Super User
+    Web Applications
+    Ask Ubuntu
+    Webmasters
+    Game Development
+    TeX - LaTeX
+
+	
+
+    Programmers
+    Unix & Linux
+    Ask Different (Apple)
+    WordPress Development
+    Geographic Information Systems
+    Electrical Engineering
+    Android Enthusiasts
+    Information Security
+
+	
+
+    Database Administrators
+    Drupal Answers
+    SharePoint
+    User Experience
+    Mathematica
+    Salesforce
+    ExpressionEngine® Answers
+    more (13)
+
+	
+
+    Photography
+    Science Fiction & Fantasy
+    Graphic Design
+    Movies & TV
+    Seasoned Advice (cooking)
+    Home Improvement
+    Personal Finance & Money
+    Academia
+    more (9)
+
+	
+
+    English Language & Usage
+    Skeptics
+    Mi Yodeya (Judaism)
+    Travel
+    Christianity
+    Arqade (gaming)
+    Bicycles
+    Role-playing Games
+    more (21)
+
+	
+
+    Mathematics
+    Cross Validated (stats)
+    Theoretical Computer Science
+    Physics
+    MathOverflow
+    Chemistry
+    Biology
+    more (5)
+
+	
+
+    Stack Apps
+    Meta Stack Exchange
+    Area 51
+    Stack Overflow Careers
+
+site design / logo © 2015 Stack Exchange Inc; user contributions licensed under cc by-sa 3.0 with attribution required
+rev 2015.12.17.3109
+Stack Overflow works best with JavaScript enabled

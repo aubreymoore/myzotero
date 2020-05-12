@@ -1,0 +1,218 @@
+
+/* ::::: http://portal.nifa.usda.gov/web/crisprojectpages/css/usdastyle.css ::::: */
+
+body { padding: 0px; margin: 0px; background-color: rgb(62, 62, 62); }
+.headerfile { margin-bottom: 0px; }
+.accessibility { display: none; }
+.leftnavfile { margin-bottom: 0px; background-color: rgb(255, 255, 255); }
+.rightnavfile { margin-bottom: 0px; background-color: rgb(255, 255, 255); }
+.PageBG { padding: 0px; margin: 0px; background-color: rgb(62, 62, 62); }
+table { padding: 0px; margin-bottom: 0px; }
+tr { padding: 0px; margin-bottom: 0px; }
+td { padding: 0px; margin-bottom: 0px; }
+div { padding: 0px; margin-bottom: 0px; }
+label { padding: 0px; margin-bottom: 0px; }
+fieldset { border-width: 0px; }
+div.divcenter { text-align: center; }
+div.divright { text-align: right; }
+img { padding: 0px; margin-bottom: 0px; }
+a img { padding: 0px; font-size: 11px; margin-bottom: 0px; line-height: 0; }
+.nopadding { padding: 0px; margin: 0px; line-height: 0; }
+.onepx { margin-bottom: 0px; line-height: 0px; }
+li { font-size: 11px; font-family: Verdana; list-style-type: disc; }
+form { padding: 0px; display: inline; margin-bottom: 0px; }
+P { margin-top: 3px; font-size: 11px; margin-bottom: 7px; color: rgb(0, 0, 0); font-family: Verdana; }
+ul { margin-top: 5px; font-size: 11px; margin-bottom: 0em; font-family: Verdana; }
+ul.bulletedSummaryList { margin-top: 0px; font-size: 11px; margin-bottom: 0em; font-family: Verdana; }
+a:link { font-weight: normal; color: rgb(0, 0, 153); text-decoration: none; }
+a:visited { font-weight: normal; color: rgb(102, 0, 153); text-decoration: none; }
+a:hover { font-weight: normal; color: rgb(0, 0, 153); text-decoration: underline; }
+hr { color: rgb(0, 0, 0); height: 1px; }
+td.VerticalRuleBlack { border-left: 1px solid rgb(0, 0, 0); }
+table.biographyImageTable { float: right; width: 120px; }
+table.tablecenter { background-color: rgb(255, 255, 255); text-align: center; }
+table.tableborder { border-width: 1px; border-style: solid; border-color: rgb(34, 134, 35); font-weight: normal; border-collapse: separate; text-decoration: none; }
+th.thBorderTop { border-top: 1px solid rgb(0, 0, 0); }
+th.thBorder { font-weight: bold; font-size: 11px; color: rgb(255, 255, 255); border-bottom: 1px solid rgb(34, 134, 35); font-family: Verdana; border-collapse: separate; background-color: rgb(36, 134, 33); text-decoration: none; }
+td.tdBorder { font-weight: normal; border-bottom: 1px solid rgb(34, 134, 35); border-collapse: separate; text-decoration: none; }
+td.tdBorderTop { border-top: 1px solid rgb(0, 0, 0); font-weight: normal; border-collapse: separate; text-decoration: none; }
+td.tdBorderHead { border-right: 1px solid rgb(34, 134, 35); font-weight: bold; font-size: 11px; border-bottom: 1px solid rgb(34, 134, 35); font-family: Verdana; border-collapse: separate; text-decoration: none; }
+td.tdBorderRight { font-weight: bold; font-size: 11px; border-bottom: 1px solid rgb(34, 134, 35); font-family: Verdana; border-collapse: separate; text-decoration: none; }
+td.tdBorderleft { font-weight: bold; font-size: 11px; border-left: 1px solid rgb(0, 0, 0); font-family: Verdana; border-collapse: separate; text-decoration: none; }
+td.tdL3aPadding { height: 8px; }
+table.content-border { border-width: 1px; border-style: solid; border-color: rgb(131, 133, 132); border-collapse: collapse; }
+table.content-border th { border-width: 1px; border-style: solid; border-color: rgb(131, 133, 132); font-weight: bold; font-size: 11px; font-family: Verdana; background-color: rgb(255, 255, 255); text-align: center; }
+table.content-border td { border-width: 1px; border-style: solid; border-color: rgb(131, 133, 132); font-size: 11px; font-family: Verdana; background-color: rgb(255, 255, 255); }
+table.content-noborder th { font-weight: bold; font-size: 11px; font-family: Verdana; background-color: rgb(255, 255, 255); }
+table.content-noborder td { font-size: 11px; font-family: Verdana; background-color: rgb(255, 255, 255); }
+h1 { font-weight: bold; font-size: 13px; color: rgb(0, 0, 0); font-family: Verdana; }
+h2 { font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Verdana; }
+h3 { font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Verdana; }
+h4 { font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Verdana; }
+h5 { font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Verdana; }
+.searchform { font-size: 11px; margin-bottom: 0px; width: 116px; font-family: Verdana; }
+.advsearchform { font-size: 11px; margin: 2px 0px; width: 160px; font-family: Verdana; }
+.audiencebox { font-weight: normal; font-size: 10px; width: 154px; color: rgb(0, 0, 0); font-family: Verdana; height: 18px; }
+.latestnewsselectboxmonth { font-weight: normal; font-size: 11px; width: 90px; color: rgb(0, 0, 0); font-family: Verdana; }
+.latestnewsselectboxyear { font-weight: normal; font-size: 11px; width: 60px; color: rgb(0, 0, 0); font-family: Verdana; }
+.checkbox { width: 12px; font-family: Verdana; height: 12px; }
+.dropdown { width: 115px; font-family: Verdana; height: 20px; }
+.stateselect { font-weight: normal; font-size: 11px; width: 125px; color: rgb(0, 0, 0); font-family: Verdana; height: 20px; }
+.BodyTextBlack { font-weight: normal; font-size: 11px; color: rgb(0, 0, 0); font-family: Verdana; }
+.BodyTextRed { font-weight: normal; font-size: 10px; color: rgb(255, 0, 0); font-family: Verdana; }
+.BodyTextRedBold { font-weight: bold; font-size: 11px; color: rgb(255, 0, 0); font-family: Verdana; }
+.BodyTextBlue { font-weight: normal; font-size: 11px; color: rgb(0, 0, 153); font-family: Verdana; }
+.FootTextBlue { font-weight: normal; font-size: 10px; color: rgb(0, 0, 153); font-family: Verdana; }
+.BodyTextBlackBold { font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); font-family: Verdana; }
+.BodyTextBlueBold { font-weight: bold; font-size: 11px; color: rgb(0, 0, 153); font-family: Verdana; }
+.HdrBlue { font-weight: normal; font-size: 13px; color: rgb(0, 0, 153); font-family: Verdana; }
+.HdrBlack { font-weight: normal; font-size: 13px; color: rgb(0, 0, 0); font-family: Verdana; }
+.HdrBlueBold { font-weight: bold; font-size: 13px; color: rgb(0, 0, 153); font-family: Verdana; }
+.HdrBlackBold { font-weight: bold; font-size: 13px; color: rgb(0, 0, 0); font-family: Verdana; }
+.BodyTextBlackSmall { font-weight: normal; font-size: 10px; color: rgb(0, 0, 0); font-family: Verdana; }
+.BodyTextBlueSmall { font-weight: normal; font-size: 10px; color: rgb(0, 0, 153); font-family: Verdana; }
+.BodyTextBlueSmallBold { font-weight: bold; font-size: 10px; color: rgb(0, 0, 153); font-family: Verdana; }
+.ErrorMessageNormal { font-weight: normal; font-size: 11px; color: rgb(255, 0, 0); font-family: Verdana; }
+.ErrorMessageBold { font-weight: bold; font-size: 11px; color: rgb(255, 0, 0); font-family: Verdana; }
+.leftNavTopSectionColor { font-weight: normal; font-size: 11px; margin-bottom: 0px; font-family: Verdana; background-color: rgb(197, 197, 197); }
+.leftNavBottomSectionColor { font-weight: normal; font-size: 11px; font-family: Verdana; background-color: rgb(197, 197, 197); }
+.leftNavBackgroundColor { font-weight: normal; font-size: 11px; margin-bottom: 0px; font-family: Verdana; background-color: rgb(197, 197, 197); }
+.RightNavBackgroundColor { margin-bottom: 0px; background-color: rgb(242, 242, 242); }
+.GrayBackgroundColor { margin-bottom: 0px; background-color: rgb(184, 184, 184); }
+.WhiteBackgroundColor { margin-bottom: 0px; background-color: rgb(255, 255, 255); }
+.WhiteBackgroundColor2 { margin-bottom: 0px; line-height: 0; background-color: rgb(255, 255, 255); }
+.WhiteSpacer { margin-bottom: 0px; width: 10px; background-color: rgb(255, 255, 255); }
+.BlackBackgroundColor { margin-bottom: 0px; background-color: rgb(0, 0, 0); }
+.BlackBackgroundColor2 { margin-bottom: 0px; line-height: 0; background-color: rgb(255, 255, 255); }
+.footertable { border-top: 1px solid rgb(184, 184, 184); }
+.FooterText { font-weight: normal; font-size: 10px; color: rgb(0, 0, 153); border-bottom: 1px solid rgb(0, 0, 0); font-family: Verdana; }
+.Breadcrumb { font-weight: normal; font-size: 11px; color: rgb(0, 0, 0); font-family: Verdana; }
+.bypass-nav { margin-bottom: 0px; line-height: 0; background-color: rgb(63, 62, 62); }
+.wpsPortletTitleUSDa { font-weight: bold; font-size: 13px; color: rgb(0, 0, 0); font-family: Verdana; }
+.wpsPortletTitleUSDasmall { font-weight: normal; font-size: 9px; color: rgb(0, 0, 0); font-family: Verdana; }
+.regSelectBox { font-weight: normal; font-size: 11px; width: 200px; color: rgb(0, 0, 0); font-family: Verdana; }
+.faqselect { font-weight: normal; font-size: 11px; width: 325px; color: rgb(0, 0, 0); font-family: Verdana; height: 20px; }
+.agencyreportselectboxmonth { font-weight: normal; font-size: 11px; width: 70px; color: rgb(0, 0, 0); font-family: Verdana; }
+.agencyreportselectboxday { font-weight: normal; font-size: 11px; width: 40px; color: rgb(0, 0, 0); font-family: Verdana; }
+.agencyreportselectboxyear { font-weight: normal; font-size: 11px; width: 55px; color: rgb(0, 0, 0); font-family: Verdana; }
+.logo { width: 80px; height: 70px; }
+div.toggleblock a { font-family: Arial,Helvetica; font-size: 11px; }
+div.rightnav_angled { margin-left: 1px; background-image: url('navright_angled.gif'); background-repeat: no-repeat; height: 24px; width: 187px; }
+div.rightnav { margin-left: 1px; background-image: url('navright.gif'); background-repeat: no-repeat; height: 24px; width: 187px; }
+div.rightnav_title { padding: 5px 0px 0px 10px; font-family: verdana; font-size: 12px; color: rgb(59, 59, 59); font-weight: 600; }
+table.rightnav { width: 189px; margin-left: 10px; border-spacing: 0px; }
+div.rightnav_content { margin-top: 10px; margin-bottom: 10px; }
+table.rightnav_content { width: 179px; }
+td.rightnav_content { width: 163px; vertical-align: baseline; }
+.rightnav a:link { font-weight: normal; color: rgb(0, 0, 153); text-decoration: none; }
+.rightnav a:visited { font-weight: normal; color: rgb(0, 0, 153); text-decoration: none; }
+.rightnav a:active { font-weight: normal; color: rgb(0, 0, 153); text-decoration: none; }
+.rightnav a:hover { font-weight: normal; color: rgb(0, 0, 153); text-decoration: underline; }
+table.tgltab { border: 1px solid; background-color: rgb(247, 247, 231); }
+table.tgltabL2 { border: 1px solid; background-color: rgb(204, 204, 153); }
+table.tgltabL3 { border: 1px solid; background-color: rgb(153, 204, 255); }
+table.tgltab img.toggleimg { padding-top: 2px; padding-right: 2px; }
+table.tgltab thead { background-color: rgb(247, 247, 231); text-align: center; font-family: Verdana,Arial,Helvetica; font-size: 11px; font-weight: bold; }
+table.tgltab tr.RL1 { background-color: rgb(204, 204, 153); }
+table.tgltab tr.RL2 { background-color: rgb(153, 204, 255); }
+table.tgltab tr.RL3 { background-color: rgb(255, 255, 255); }
+table.tgltab tr.total { background-color: rgb(247, 247, 231); }
+table.tgltab td { font-size: 11px; font-family: Verdana,Arial,Helvetica; text-align: right; vertical-align: top; }
+table.tgltab tr.total td { font-family: Verdana,Arial,Helvetica; font-size: 11px; font-weight: bold; text-align: right; }
+table.tgltab td.tgltd { padding: 0px; }
+table.tgltab td.lalign { text-align: left; }
+table.tgltab a { font-size: 11px; font-family: Verdana,Arial,Helvetica; }
+form.parmform fieldset { font-family: Verdana,Arial,Helvetica; font-size: 11px; }
+form.parmform td { font-family: Verdana,Arial,Helvetica; font-size: 11px; }
+form.parmform label { padding-left: 2px; padding-right: 5px; }
+form.parmform input { background-color: rgb(247, 247, 231); }
+form.parmform select { background-color: rgb(247, 247, 231); }
+a.topnav { color: black; font-family: arial; font-size: 12px; font-weight: bold; text-decoration: none; }
+div.topnav { background-image: url('navtop.gif'); height: 21px; color: white; font-family: arial; font-size: 12px; font-weight: bold; text-decoration: none; }
+div.topnav_over { background-image: url('navtop_over.gif'); height: 21px; color: black; font-family: arial; font-size: 12px; font-weight: bold; text-decoration: none; }
+div.topnav a:link { color: white; font-family: arial; font-size: 12px; font-weight: normal; text-decoration: none; }
+div.topnav a:visited { color: white; font-family: arial; font-size: 12px; font-weight: normal; text-decoration: none; }
+div.topnav a:active { color: white; font-family: arial; font-size: 12px; font-weight: normal; text-decoration: none; }
+div.topnav_over a:hover { color: black; font-family: arial; font-size: 12px; font-weight: normal; text-decoration: none; }
+.Breadcrumb a:visited { color: rgb(0, 0, 153); }
+div.chkbox label { display: block; padding-top: 5px; padding-left: 45px; text-indent: -42px; }
+div.chkbox input { width: 13px; height: 13px; padding-right: 10px; margin: 0px; vertical-align: bottom; position: relative; top: -1px; }
+div.tbl { font-size: 11px; font-family: Verdana; background-color: rgb(255, 255, 255); }
+div.tbl li { list-style-type: none; }
+div.tbl ul { border: 0px none; margin: 5px 0px 0px 15px; padding: 5px; font-size: 11px; font-family: Verdana; }
+table.tbl { font-size: 11px; font-family: Verdana; background-color: rgb(255, 255, 255); }
+table.tbl td { margin-top: 5px; vertical-align: top; }
+table.tbl li { list-style-type: none; }
+table.tbl ul { border: 0px none; margin: 0px 0px 0px 5px; padding: 0px; font-size: 11px; font-family: Verdana; }
+#pagination li { border: 0px none; margin: 0px 2px 0px 0px; padding: 0px; font-size: 11px; list-style-type: none; display: inline; }
+#pagination a {  }
+#pagination .previous-off, #pagination .next-off { float: left; font-weight: bold; margin-right: 2px; padding: 3px 4px; }
+#pagination .next a, #pagination .previous a { font-weight: bold; }
+#pagination .active { background: rgb(46, 106, 177) none repeat scroll 0% 0%; color: rgb(255, 255, 255); font-weight: bold; display: block; float: left; padding: 4px 6px; }
+#pagination a:link, #pagination a:visited { float: left; padding: 3px 6px; text-decoration: none; }
+#pagination a:hover {  }
+div.pagination { padding: 3px; margin: 3px; text-align: center; font-size: 11px; font-family: verdana,arial; }
+div.pagination a { padding: 2px 5px; margin: 2px; border: 1px solid rgb(170, 170, 221); text-decoration: none; color: rgb(0, 0, 153); }
+div.pagination a:hover { border: 1px solid rgb(0, 0, 153); color: rgb(0, 0, 0); }
+div.pagination span.current { padding: 2px 5px; margin: 2px; border: 1px solid rgb(0, 0, 153); font-weight: bold; background-color: rgb(0, 0, 153); color: rgb(255, 255, 255); }
+div.pagination span.disabled { padding: 2px 5px; margin: 2px; border: 1px solid rgb(238, 238, 238); color: rgb(187, 187, 187); }
+tr.selected { background-color: rgb(204, 204, 153); }
+span.highlight { background-color: blue; color: white; }
+
+/* ::::: http://portal.nifa.usda.gov/web/crisprojectpages/css/CRISPublicProjectPage.css ::::: */
+
+#imap { display: block; width: 765px; height: 115px; background: transparent url('masthead.JPG') repeat scroll 0% 0%; position: relative; }
+#imap dd { position: absolute; padding: 0px; margin: 0px; }
+#imap #usda { left: 10px; top: 6px; z-index: 20; }
+#imap #reeis { left: 563px; top: 3px; z-index: 20; }
+#imap a#usdaLink { display: block; width: 57px; height: 44px; background: transparent url('transparent.gif') no-repeat scroll -100px -100px; text-decoration: none; z-index: 20; }
+#imap a#reeisLink { display: block; width: 190px; height: 59px; background: transparent url('transparent.gif') no-repeat scroll -100px -100px; text-decoration: none; z-index: 20; }
+
+/* ::::: null ::::: */
+
+.outer DIV { background-color: rgb(255, 255, 255); float: left; }
+a { text-decoration: none; color: rgb(3, 66, 181); }
+a:hover { text-decoration: none; background-color: rgb(62, 255, 252); }
+.old-table DIV { padding-top: 5px; padding-bottom: 5px; font-family: verdana,arial,helvetica; font-size: 10pt; }
+table thead tr th { border-collapse: collapse; border: 1px solid black; padding-top: 5px; padding-bottom: 5px; }
+td, th, p, li { font-family: verdana,arial,helvetica; font-size: 10pt; }
+td, th { padding-left: 10px; padding-right: 10px; }
+.smallink a { text-decoration: none; font-size: 10px; color: rgb(3, 66, 181); display: block; }
+.smallink a:hover { background-color: rgb(210, 243, 252); }
+.list-header-cyan { text-align: center; width: 18em; height: 2em; background-color: cyan; border: 1px solid black; }
+.list-header { border: 1px solid black; white-space: nowrap; }
+.leftcol { white-space: nowrap; }
+.list-column { margin: 10px; height: 2em; width: 18em; padding-left: 3px; padding-right: 3px; text-align: center; border: 1px solid black; }
+.list-column p { text-align: left; }
+.list-column-noborder { text-align: left; }
+.list-columnNew { margin: 10px; height: 2em; width: 8em; padding-left: 3px; padding-right: 3px; text-align: left; border: 1px solid black; }
+div.outer { position: relative; width: 765px; background-color: rgb(255, 255, 255); }
+.container DIV { font-family: verdana,arial,helvetica; font-size: 10pt; vertical-align: middle; float: left; }
+.container .col1, .container .col2, .container .col3, .container .col4, .container .col234 { padding-left: 10px; text-align: left; }
+.rightcol { width: 350px; }
+.leftcol { width: 372px; }
+.leftcol, .rightcol { padding-left: 0px; margin-top: 10px; margin-bottom: 10px; }
+.first { float: left; width: 745px; }
+.padding-lr-10 { padding-left: 10px; padding-right: 10px; }
+.second { margin-top: 20px; margin-bottom: 20px; border: 1px solid black; position: relative; }
+.third { float: left; width: 100%; }
+.first, .second, .third, .fourth, .fifth {  }
+.fourth, .fifth { float: left; }
+div.filler { width: 10px; float: left; }
+div.container { background-color: white; padding-top: 5px; padding-bottom: 5px; }
+.col1, .col3 { white-space: nowrap; }
+.col1 { font-weight: bold; width: 170px; }
+.col3 { font-weight: bold; width: 170px; }
+.col2, .col4 { width: 170px; }
+.col4 { clear: right; }
+.col234 { width: 520px; }
+.padding-left-10 { padding-left: 10px; text-align: left; }
+#project_director_div, #recipient_org_div { width: 725px; padding-left: 10px; text-align: left; }
+.rec_leftcol { text-align: left; width: 194px; }
+.rec_rightcol { text-align: right; width: 56px; clear: right; }
+.endrow { display: none; }
+hr { clear: both; display: block; visibility: hidden; }
+#title { text-align: left; font-family: verdana,arial,helvetica; font-size: 10pt; width: 745px; }
+#recipient_org_div .leftcol { white-space: normal; }
+#keywords { width: 745px; }
+#keywords div { position: relative; float: left; width: 25%; }

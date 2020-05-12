@@ -1,0 +1,43 @@
+Skip to main content
+Toggle navigation Aubrey Moore
+
+    Archive
+    Tags
+    RSS feed
+
+    Source
+
+Publish Nikola Site on GitHub
+
+Aubrey Moore
+
+2017-02-11 10:09
+
+Source
+
+Publishing my Nikola site on github pages was remarkably easy.
+
+    Instructions are found in the Nikola Handbook here: https://getnikola.com/handbook.html#deploying-to-github
+
+    Created a new repo on github called aubreymoore/blog
+        IMPORTANT: Go to the settings page for the new repo and enable github pages. The root URL for these pages will be at https://aubreymoore.github.io/blog/
+
+    Created a git repo on my local machine:
+
+  git init .
+git remote add origin git@github.com:aubreymoore/blog.git
+
+    Pushed my site to github from the command line:
+
+  nikola github_deploy
+
+    github pages
+    Nikola
+
+    Previous post
+    Next post
+
+Contents © 2017 Aubrey Moore - Powered by Nikola
+×
+Search Results:
+Close

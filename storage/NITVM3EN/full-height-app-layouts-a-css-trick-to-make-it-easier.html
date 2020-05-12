@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/">
+<meta name="wpd_url" content="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/">
+<meta name="wpd_date" content="2014-02-12T05:24Z">
+<script src="user_timeline.json" async=""></script>
+
+	<!-- General meta information -->
+				<title>Full-height app layouts: A CSS trick to make it easier   - Steve Sanderson’s blog - As seen on YouTube™</title>
+		
+	<!-- // General meta information -->
+	
+	
+	<!-- Load stylesheets -->
+		
+			
+                <!--[if lt IE 7]><link type="text/css" rel="stylesheet" href="http://blog.stevensanderson.com/wp-content/themes/clearlymodern/css/ie6.css" media="screen" /><![endif]-->
+        		
+		        
+	<!-- // Load stylesheets -->
+	
+	
+	<!--[if lt IE 7]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script><![endif]-->    
+	<link rel="alternate" type="application/rss+xml" title="Steve Sanderson’s blog » Feed" href="http://blog.stevensanderson.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Steve Sanderson’s blog » Comments Feed" href="http://blog.stevensanderson.com/comments/feed/">
+				
+	<script src="ga.js" async="" type="text/javascript"></script><script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.1.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-65756-6']);
+	_gaq.push(['_trackPageview'],['_trackPageLoadTime']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="alternate" type="application/rss+xml" title="Steve Sanderson’s blog » Full-height app layouts: A CSS trick to make it easier Comments Feed" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/feed/">
+<script type="text/javascript" src="l10n.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="superfish-combined.js"></script>
+<script type="text/javascript" src="jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="jquery.tweet.js"></script>
+<script type="text/javascript" src="general.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.stevensanderson.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.stevensanderson.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Steve Sanderson’s blog" href="http://blog.stevensanderson.com/">
+<link rel="start" title="MVC in the browser" href="http://blog.stevensanderson.com/2007/08/13/mvc-in-the-browser/">
+<link rel="prev" title="Knockout 1.3.0 Beta Available" href="http://blog.stevensanderson.com/2011/08/31/knockout-1-3-0-beta-available/">
+<link rel="next" title="Full-height app layouts: Animated transitions within panes" href="http://blog.stevensanderson.com/2011/10/12/full-height-app-layouts-animated-transitions-within-panes/">
+<link rel="canonical" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/">
+<link rel="shortlink" href="http://blog.stevensanderson.com/?p=393">
+
+
+
+	
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/gif" href="favicon.gif">
+	<!-- // Favicon -->
+	
+
+<link rel="stylesheet" type="text/css" href="full-height-app-layouts-a-css-trick-to-make-it-easier.css" media="all">
+</head>
+<body class="single single-post postid-393 single-format-standard">
+
+<div style="overflow: hidden; width: 1px; height: 1px; position: absolute; left: -10000px;">
+    <a href="http://s20.sitemeter.com/stats.asp?site=s20codeville" target="_top">
+    <img src="meter.asp" alt="Site Meter" border="0"></a>
+</div>
+	<div id="outer" class="clearfix">
+	
+		
+        <div id="topbar" class="clearfix">
+            <div class="container_12">
+				
+				<div class="grid_6">
+					<!-- header-top-left sidebar empty -->&nbsp;				</div><!-- //grid_6 -->
+				
+                					<div class="grid_6">
+                                
+				<!-- header-top-right sidebar empty -->&nbsp;				</div><!-- //grid_# -->
+                
+                				
+				
+            </div><!-- //container_12 -->
+        </div><!-- //topbar -->
+
+
+            
+		<div id="header" class="clearfix">          
+        	<div class="container_12">
+           		<div class="grid_12" id="header-container">
+                    
+                                        
+					<div id="logo">
+                        <h1>
+							<a href="http://blog.stevensanderson.com/">
+
+								Steven Sanderson's blog
+							</a>
+						</h1>
+			As seen on YouTube™                    </div><!-- //logo -->
+                
+										<a class="hidden" href="#main" title="Skip to content">Skip to content</a>
+					
+										<div class="menu-main-menu-container"><ul id="menu-main-menu" class="sf-menu sf-js-enabled"><li id="menu-item-362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-362"><a href="http://blog.stevensanderson.com/">Home</a></li>
+<li id="menu-item-360" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-360"><a href="http://blog.stevensanderson.com/about/">About me</a></li>
+</ul></div>
+            	</div><!-- //grid_12 -->
+			</div><!-- //container_12 -->
+        </div><!-- //header -->
+		
+		<div id="main" class="clearfix">
+			<div class="container_12">
+			
+				
+		
+    <div class="grid_10">
+    
+		    
+    
+            <div id="post-393" class="post-393 post type-post status-publish format-standard hentry category-mobile">
+                
+					<h2 class="entry-title">Full-height app layouts: A CSS trick to make it easier</h2>					
+											<p class="entry-meta clearfix">Posted on October 5, 2011</p><!-- //entry-meta -->
+										
+					<div class="entry-content">
+						<p>In HTML layouts, there’s a fundamental difference between <em>width</em> and <em>height</em>. The natural state of affairs is that your page’s width is constrained to the width of the browser window, but its height is unconstrained – it grows however tall is necessary to contain its contents.</p>
+<p><a href="http://blog.stevensanderson.com/wp-content/uploads/2011/10/image.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto;" title="image" alt="image" src="image_thumb.png" height="192" width="311"></a></p>
+<p>That makes sense for <em>documents</em>, but it’s a pain for <em>application UIs</em>. Native application UIs tend to slice up the screen both horizontally and vertically into a nested set of panels, some of which may scroll/resize, others being docked against particular edges of their parent panes.</p>
+<p><a href="http://blog.stevensanderson.com/wp-content/uploads/2011/10/image1.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto;" title="image" alt="image" src="image_thumb1.png" height="260" width="325"></a></p>
+<p>So, what’s the robust way, with HTML/CSS, to set up a nested collection of panes that exactly divide both the width and height of the browser window?</p>
+<h4>Hang on, didn’t we have this one solved back in 1999?</h4>
+<p>Hmm… this reminds me of something… I remember: the <strong>&lt;frameset&gt;</strong> tag from <em>HTML 4</em>. Yes, HTML frames do divide the browser window both horizontally and vertically, exactly consuming the available screen area. So why don’t we use them any more? There are loads of reasons, including:</p>
+<ul>
+<li>What you’re building is logically one page, but technically each frame is a separate HTML document, which makes interactions between them so much more complex</li>
+<li>It’s not really practical to support deep-linking to (i.e., bookmarking) particular UI states</li>
+<li>Mobile devices and tablets have very limited support for HTML 4 frames. iOS in particular requires the user to use two-fingered scrolling within panes. This is UX death.</li>
+</ul>
+<h4>OK, so what’s the 21st century solution?</h4>
+<p>I’ve used lots of hacks and tricks over the years to get columns and panes into my web applications, often involving JavaScript, <strong>$(…).height(…)</strong>, <strong>window.body.clientHeight</strong>, and the <strong>onresize</strong> event. Ugh. Fragile and messy. But at long last this week I learned there is actually an elegant and robust way to set up nested exact-height panes with pure CSS, and it works on all browsers back to IE 7, even on current mobile browsers that <em>don’t </em>support position:fixed.</p>
+<p>You know that if you set <strong>position: absolute</strong> on an element, then you can make it appear at a specified distance from the top, left, right, or bottom from its parent element. Well, it turns out that you can specify both <strong>top </strong><em>and </em><strong>bottom</strong>, or both <strong>left</strong> <em>and</em> <strong>right</strong>, and then it will dock against both edges and always resize to match its parent’s dimensions. </p>
+<p>Let’s define some generic CSS rules for panes:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="css"><span style="color: rgb(128, 128, 128); font-style: italic;">/* Generic pane rules */</span>
+body <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">margin</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(204, 102, 204);">0</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.row</span><span style="color: rgb(0, 170, 0);">,</span> <span style="color: rgb(102, 102, 255);">.col</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">overflow</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">hidden</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">position</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">absolute</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.row</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">left</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">right</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.col</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">top</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">bottom</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.scroll-x</span> <span style="color: rgb(0, 170, 0);">{</span> overflow-x<span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">auto</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.scroll-y</span> <span style="color: rgb(0, 170, 0);">{</span> overflow-y<span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">auto</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span></pre></div></div>
+
+<p>Now it’s easy to set up a fixed-height header, variable-height body, and fixed-height footer:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="html">&lt;body&gt;
+    &lt;div class="header row"&gt;
+        &lt;h2&gt;My header&lt;/h2&gt;
+    &lt;/div&gt;
+&nbsp;
+    &lt;div class="body row scroll-y"&gt;
+        The body
+    &lt;/div&gt;
+&nbsp;
+    &lt;div class="footer row"&gt;
+        My footer
+    &lt;/div&gt;
+&lt;/body&gt;</pre></div></div>
+
+<p>Of course, you also have to configure the heights and positions of the three rows by using a bit more CSS:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="css"><span style="color: rgb(102, 102, 255);">.header</span><span style="color: rgb(102, 102, 255);">.row</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">75px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">top</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.body</span><span style="color: rgb(102, 102, 255);">.row</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">top</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">75px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">bottom</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">50px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.footer</span><span style="color: rgb(102, 102, 255);">.row</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">50px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">bottom</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span></pre></div></div>
+
+<p>The result? It’s the classic mobile phone app layout. Screenshot with some colours and content added for interest:</p>
+<p><a href="http://blog.stevensanderson.com/wp-content/uploads/2011/10/image2.png"><img style="margin: 0px auto; display: block; float: none;" title="image" alt="image" src="image_thumb2.png" height="480" width="264"></a></p>
+<p><a href="http://stevesanderson.github.com/fixed-height-layouts-demo/simple.html" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://stevesanderson.github.com']);">Try it in your desktop or mobile browser here</a>. Works on IE7+.</p>
+<h4>More nesting (or, tablet-style layouts)</h4>
+<p>The reason for setting up the generic CSS rules in that way is that it makes it easy nest panes arbitrarily. For example, you could split the main viewport into two vertical columns:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="html">&lt;body&gt;
+    &lt;div class="left col"&gt;
+        Left col here    
+    &lt;/div&gt;
+    &lt;div class="right col"&gt;
+        Right col here
+    &lt;/div&gt;
+&lt;/body&gt;</pre></div></div>
+
+<p>… and then subdivide the right column so it has a fixed header, variable-height body, and fixed footer, just by putting some more <strong>row</strong> divs inside it:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="html">&lt;div class="right col"&gt;
+    &lt;div class="header row"&gt;
+        View or edit something
+    &lt;/div&gt;
+    &lt;div class="body row scroll-y"&gt;
+        Here’s some content that can scroll vertically
+    &lt;/div&gt;
+    &lt;div class="footer row"&gt;
+        Some status message here
+    &lt;/div&gt;
+&lt;/div&gt;</pre></div></div>
+
+<p>Here’s the CSS to configure the widths/heights/positions of those panes:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="css"><span style="color: rgb(102, 102, 255);">.left</span><span style="color: rgb(102, 102, 255);">.col</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">width</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">250px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.right</span><span style="color: rgb(102, 102, 255);">.col</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">left</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">250px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">right</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.header</span><span style="color: rgb(102, 102, 255);">.row</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">75px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">line-height</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">75px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.body</span><span style="color: rgb(102, 102, 255);">.row</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">top</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">75px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">bottom</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">50px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span>
+<span style="color: rgb(102, 102, 255);">.footer</span><span style="color: rgb(102, 102, 255);">.row</span> <span style="color: rgb(0, 170, 0);">{</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">50px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">bottom</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(204, 102, 204);">0</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">line-height</span><span style="color: rgb(0, 170, 0);">:</span> <span style="color: rgb(153, 51, 51);">50px</span><span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span></pre></div></div>
+
+<p>Going further, in the right-hand pane’s body, you could also nest a horizontally-scrollable row:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="html">&lt;div class="body row scroll-y"&gt;
+    &lt;p&gt;Here's a horizontally-scrollable thing:&lt;/p&gt;
+&nbsp;
+    &lt;div class="scroll-x"&gt;
+        Any content in here, if it's too wide, becomes independently scrollable
+    &lt;/div&gt;
+&nbsp;
+    &lt;p&gt;That's enough - bye.&lt;/p&gt;
+&lt;/div&gt;</pre></div></div>
+
+<p>The result of all this? Well, it’s a structure like this:</p>
+<p><a href="http://blog.stevensanderson.com/wp-content/uploads/2011/10/layout.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto;" title="image" alt="image" src="layout.png" height="300" width="423"></a></p>
+<p>… but that’s pretty boring to look at, so here’s a version where I threw in a rough effort of some iPad-like styling:</p>
+<p><a href="http://blog.stevensanderson.com/wp-content/uploads/2011/10/image4.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto;" title="image" alt="image" src="image_thumb4.png" height="768" width="824"></a></p>
+<p><a href="http://stevesanderson.github.com/fixed-height-layouts-demo/two-columns.html" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://stevesanderson.github.com']);">Here’s a live example</a>. It still renders correctly on very small screens (like a WP7 or iPhone) but this 2-column layout really needs a wider screen to be usable.</p>
+<h4>Enabling touch scrolling</h4>
+<p>The scrolling looks and works fine on a desktop browser, but on a mobile browser it varies:</p>
+<ul>
+<li>On WP7, you’ll see no scrollbars, but you’ll get one-finger touch scrolling, <em>without</em> the lovely inertia/momentum effect. This is kind-of OK, though imperfect.</li>
+<li>On iOS, you’ll see no scrollbars, and it requires <strong>two-finger scrolling</strong> (which is horrible), and it won’t use the inertia/momentum effect either. Badness.</li>
+<li>There are similar problems on Android</li>
+</ul>
+<p>With iOS 5, it will be possible to enable fluid, <em>native</em> touch-based momentum scrolling to our divs just by making a tiny tweak to the CSS, thanks to <a href="http://johanbrook.com/browsers/native-momentum-scrolling-ios-5/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://johanbrook.com']);">the new “touch scrolling” feature</a>:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="css"><span style="color: rgb(102, 102, 255);">.scroll-x</span><span style="color: rgb(0, 170, 0);">,</span> <span style="color: rgb(102, 102, 255);">.scroll-y</span> <span style="color: rgb(0, 170, 0);">{</span> -webkit-overflow-scrolling<span style="color: rgb(0, 170, 0);">:</span> touch<span style="color: rgb(0, 170, 0);">;</span> <span style="color: rgb(0, 170, 0);">}</span></pre></div></div>
+
+<p>I really hope this catches on and becomes a standard.</p>
+<p>But in the meantime, for visitors on other mobile OSes, and until iOS 5 becomes prevalent, you can use the open-source <a href="http://cubiq.org/iscroll-4" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://cubiq.org']);">iScroll</a> library that provides one-finger momentum scrolling for Webkit (iOS and Android) and Mozilla browsers. </p>
+<p>Enabling momentum scrolling on any given element requires only one line of JavaScript (assuming you’ve referenced iScroll.js):</p>
+
+<div class="wp_syntax"><div class="code"><pre class="javascript"><span style="color: rgb(0, 51, 102); font-weight: bold;">new</span> iScroll<span style="color: rgb(0, 153, 0);">(</span>theElementYouWantToEnableItFor<span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span></pre></div></div>
+
+<p>For my example, I used the following block of JavaScript, which enables touch scrolling on all the .scroll-x and .scroll-y elements:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="html">&lt;!-- Touch scrolling --&gt;
+&lt;!--[if !IE]&gt;&lt;!--&gt;
+&lt;script src="script/iscroll.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    var xScrollers = document.getElementsByClassName("scroll-x");
+    for (var i = 0; i &lt; xScrollers.length; i++)
+        new iScroll(xScrollers[i], { vScroll: false });
+&nbsp;
+    var yScrollers = document.getElementsByClassName("scroll-y");
+    for (var i = 0; i &lt; yScrollers.length; i++)
+        new iScroll(yScrollers[i], { hScroll: false });                
+&lt;/script&gt;
+&lt;!--&lt;![endif]--&gt;</pre></div></div>
+
+<p>You could do this in fewer lines if you’re using a library like <a href="http://jquery.com/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://jquery.com']);">jQuery</a> or <a href="http://xuijs.com/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://xuijs.com']);">XUI</a> (which is a tiny implementation of a small part of the jQuery API surface, intended for mobiles). Here’s the resulting mobile-style scrollbar:</p>
+<p><a href="http://blog.stevensanderson.com/wp-content/uploads/2011/10/image5.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto;" title="image" alt="image" src="image_thumb5.png" height="311" width="311"></a></p>
+<p>Of course, to see the momentum effect, you’ll need to <a href="http://stevesanderson.github.com/fixed-height-layouts-demo/touch-scrolling.html" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://stevesanderson.github.com']);">run it in your Chrome/Safari/Firefox browser</a>.</p>
+<p><strong>Credits:</strong> Thanks to <a href="http://www.alistapart.com/articles/conflictingabsolutepositions/" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.alistapart.com']);">Rob Swan</a> and <a href="https://github.com/fellowshiptech/slablet" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://github.com']);">FellowshipTech</a> for their articles and projects where I found the CSS positioning trick that underlies this approach to exact-height layout.</p>
+											</div><!--//entry-content -->
+				
+				
+											<p class="entry-meta clearfix">
+
+														Posted in <a href="http://blog.stevensanderson.com/category/mobile/" title="View all posts in Mobile" rel="category tag">Mobile</a> 
+																				</p><!-- //entry-meta -->
+					                
+                </div><!-- //post-->
+            
+				<div class="pagination clearfix">
+    <a href="http://blog.stevensanderson.com/2011/08/31/knockout-1-3-0-beta-available/" rel="prev">&lt; Knockout 1.3.0 Beta Available</a>    <span class="right"><a href="http://blog.stevensanderson.com/2011/10/12/full-height-app-layouts-animated-transitions-within-panes/" rel="next">Full-height app layouts: Animated transitions within panes &gt;</a></span>                
+</div>
+                            
+                <div id="comments">
+
+
+			<h3 id="comments-title">19 Responses to Full-height app layouts: A CSS trick to make it easier</h3>
+
+
+	<ol>
+				<li class="comment even thread-even depth-1" id="li-comment-13090">
+			<div id="comment-13090">
+			<div class="comment-author vcard">
+				<img alt="" src="751a3ccecc4d235a742f6cd9fbc67b19" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">Lucian Maran</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Hello, I like your ideia…it’s clean and smart, but what about an open source JQuery library like <a href="http://layout.jquery-dev.net/?" onclick="javascript:_gaq.push(['_trackEvent','outbound-comment','http://layout.jquery-dev.net']);" rel="nofollow">http://layout.jquery-dev.net/?</a><br>
+I used it (only 33k, free) for my demo project with fixed height, autoresize, collapsible and cross-browser layout.<br>
+You can skip over my text (sorry for the language) and go directly to the LiveDemo link.<br>
+<a href="http://mozaic.codeplex.com/" onclick="javascript:_gaq.push(['_trackEvent','outbound-comment','http://mozaic.codeplex.com']);" rel="nofollow">http://mozaic.codeplex.com/</a></p>
+<p>Anyway, I will  bookmark your post for the touch-scrolling technique.<br>
+Thank you!</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13090" title="Link to this comment">
+
+					Posted on October 5, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-13091">
+			<div id="comment-13091">
+			<div class="comment-author vcard">
+				<img alt="" src="92b4f617dea2300cc2e3a6cc5740f5a8" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn"><a href="http://mysoftwarenotes.wordpress.com/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://mysoftwarenotes.wordpress.com']);" rel="external nofollow" class="url">Grahame Scott-Douglas</a></cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>This is great!  Using clean CSS to make the UI more app like is a great way to go.  Much more elegant than using JavaScript or some ugly CSS hack.</p>
+<p>Thanks for this.  I’m going to be using it.</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13091" title="Link to this comment">
+
+					Posted on October 5, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-13093">
+			<div id="comment-13093">
+			<div class="comment-author vcard">
+				<img alt="" src="5607a81b07b8b7cd9e003a6bd80e56a7" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">Steve</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>FYI:  I’m getting quite the ‘bouncing’ going on in chrome with those test pages</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13093" title="Link to this comment">
+
+					Posted on October 5, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-13097">
+			<div id="comment-13097">
+			<div class="comment-author vcard">
+				<img alt="" src="e774874a8acc65cc0f0bb1e77b4def5b" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn"><a href="http://aboutcode.net/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://aboutcode.net']);" rel="external nofollow" class="url">Andrew Davey</a></cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Application-style UI layout is the current major failing of CSS. I’m keenly watching the various new CSS3 modules (e.g. <a href="http://www.w3.org/TR/css3-grid-layout/" onclick="javascript:_gaq.push(['_trackEvent','outbound-comment','http://www.w3.org']);" rel="nofollow">http://www.w3.org/TR/css3-grid-layout/</a> ) My hope is that once a few modern browsers implement them, someone will create a decent JavaScript implementation to back port to old browsers.</p>
+<p>For now though, position: absolute seems like the least worst option. I’m certainly making use of it in my apps.</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13097" title="Link to this comment">
+
+					Posted on October 6, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-13098">
+			<div id="comment-13098">
+			<div class="comment-author vcard">
+				<img alt="" src="de243d8d7c103a6dc614e019c3538eda" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">Eliman</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Great Steve, very useful! A problem I was trying to solve differently</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13098" title="Link to this comment">
+
+					Posted on October 6, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-13102">
+			<div id="comment-13102">
+			<div class="comment-author vcard">
+				<img alt="" src="6c2718bc68685386dcfac612eb6e7e57" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">Ian</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>iScroll is really cool, but I’ve found it starts to break down a bit when its contents resize or it has several form elements that can receive focus.</p>
+<p>That said, for many cases, it works great.</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13102" title="Link to this comment">
+
+					Posted on October 7, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-13125">
+			<div id="comment-13125">
+			<div class="comment-author vcard">
+				<img alt="" src="d53b6b9c453b2e10516206f09b0f7928" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">dencio</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>very usefull. thanks steve.</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13125" title="Link to this comment">
+
+					Posted on October 12, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="post pingback">
+			<p>Pingback: <a href="http://blog.stevensanderson.com/2011/10/12/full-height-app-layouts-animated-transitions-within-panes/" rel="external nofollow" class="url">Full-height app layouts: Animated transitions within panes - Steve Sanderson’s blog - As seen on YouTube™</a></p>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-13131">
+			<div id="comment-13131">
+			<div class="comment-author vcard">
+				<img alt="" src="a8a616e2e801d2f53364fe218c722ae4" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">Sander</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Hi,<br>
+Looks like somthing I need or not, I am new to css and I am trying to create 3 equal height colums (eg. the longest column should determine the height of all the colums). I do not want my footer to be fixed/always visible and have the main content scroll as in your example. </p>
+<p>Is it possible to create such a layout with the techniqe you mention? or do I need faux-colums or any of the other trick I read about elsewhere.</p>
+<p>thanks,<br>
+Sander</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13131" title="Link to this comment">
+
+					Posted on October 13, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-13195">
+			<div id="comment-13195">
+			<div class="comment-author vcard">
+				<img alt="" src="b83f4241cff9712ecf09504375d819d2" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn"><a href="http://blog.tomasjansson.com/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://blog.tomasjansson.com']);" rel="external nofollow" class="url">Tomas</a></cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Great post. Have you experimented with media queries? Couldn’t that make it even more flexible?  Like having one version for all devices and then have the UI to adjust to the screen size. The navigation panel could for example go on top if the screen size is smaller than on a tablet, ot if take up to much space you could add some funky javascript to create a drop down of the panel.</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13195" title="Link to this comment">
+
+					Posted on October 20, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-13269">
+			<div id="comment-13269">
+			<div class="comment-author vcard">
+				<img alt="" src="f6b9ae2ca9de0e4f98d898fc625cf599" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn"><a href="http://joelambert.co.uk/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://joelambert.co.uk']);" rel="external nofollow" class="url">Joe Lambert</a></cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Nice article, I’ve used a similar technique in the past for creating mobile layouts. </p>
+<p>More recently however I’ve started to use the new flexbox module of CSS3, I think it provides a much more flexible/extensible UI:</p>
+<p><a href="http://www.w3.org/TR/css3-flexbox/" onclick="javascript:_gaq.push(['_trackEvent','outbound-comment','http://www.w3.org']);" rel="nofollow">http://www.w3.org/TR/css3-flexbox/</a></p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13269" title="Link to this comment">
+
+					Posted on October 31, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="post pingback">
+			<p>Pingback: <a href="http://blog.stevensanderson.com/2011/11/04/full-height-app-layouts-navigation-and-history/" rel="external nofollow" class="url">Full-height app layouts: Navigation and History - Steve Sanderson’s blog - As seen on YouTube™</a></p>
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-13655">
+			<div id="comment-13655">
+			<div class="comment-author vcard">
+				<img alt="" src="e05eb7fb33ffbd6aff9a8a3856a00037" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">Steve G.</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Very nice – this was exactly what I didn’t know I was looking for! I re-did my full panel app using this and it greatly simplified my code. Here’s a nifty extension: making inner panes resizable. Let’s say you have 2 main content pane divs ‘A’ and ‘C’ separated by a slim gutter div ‘B’. E.g.:</p>
+<p>|————A————|-B-|——–C——–|</p>
+<p>The key is to make B draggable, and dynamically resize A and C. What’s nice about this layout technique is that it becomes really simple. Using JQuery’s Draggable extension, the code looks like:</p>
+<p>        $(“#B”).draggable({<br>
+            drag: function (obj, ui) {</p>
+<p>                var prevright = $(this).parent().width() – ui.position.left;<br>
+                $(this).prev().css(“right”, prevright);</p>
+<p>                var nextwidth = prevright – $(this).width();<br>
+                $(this).next().css(“width”, nextwidth);<br>
+            },<br>
+            stop: function () {<br>
+            }<br>
+        })</p>
+<p>I also use the styles “{ cursor: e-resize; width: 6px; }” and the class “col” from this article to style the gutter div, B. That’s it.</p>
+<p>This sample creates a vertical, draggable bar that will allow your users to dynamically resize divs ‘A’ and ‘C’. The horizontal version is left as an exercise for the reader. <img src="icon_wink.gif" alt=";-)" class="wp-smiley"> </p>
+<p>Steve G.</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-13655" title="Link to this comment">
+
+					Posted on November 9, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-17478">
+			<div id="comment-17478">
+			<div class="comment-author vcard">
+				<img alt="" src="a881c1c7db3ce352bad53f10eee2d6fb" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">Corey</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>You are a champion Steve. I didn’t think it should be that hard to get divs to play nicely, but up until now I was having limited success. Your solution worked a treat, tested in chrome(15.0), ie(8.0), firefox(8.0) and safari(5.1.1)  thanks heaps.</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-17478" title="Link to this comment">
+
+					Posted on November 29, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-18579">
+			<div id="comment-18579">
+			<div class="comment-author vcard">
+				<img alt="" src="4a3d983e7cf312ad6ffcf2ea0a07e285" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn"><a href="http://shifthappens.nl/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://shifthappens.nl']);" rel="external nofollow" class="url">Coen</a></cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Wow this is wonderful, really saved my day and is exactly what I needed! Bookmarked and shared, sir!</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-18579" title="Link to this comment">
+
+					Posted on December 8, 2011                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-18771">
+			<div id="comment-18771">
+			<div class="comment-author vcard">
+				<img alt="" src="63c56ef0da83033d8d5360c88d1f0d83" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn"><a href="http://www.gutter-maintenance.co.uk/home/4557880395" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://www.gutter-maintenance.co.uk']);" rel="external nofollow" class="url">blocked or damaged guttering is one of the main causes for damp in uk houses, most people forget that guttering need annual maintenance and requires checking,</a></cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>We are a bunch of volunteers and opening a brand new scheme in our community. Your web site provided us with valuable information to paintings on. You have done an impressive task and our whole group will likely be grateful to you.</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-18771" title="Link to this comment">
+
+					Posted on February 7, 2012                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-18930">
+			<div id="comment-18930">
+			<div class="comment-author vcard">
+				<img alt="" src="63ccfb93ba62953b98047d6518c13762" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">luigi</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Hi, it’s great but I wonder how to improve the “bouncing issue” (like Steve found).<br>
+I am getting page bouncing on chrome and firefox, not safari.<br>
+Any idea?</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-18930" title="Link to this comment">
+
+					Posted on March 28, 2012                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-18991">
+			<div id="comment-18991">
+			<div class="comment-author vcard">
+				<img alt="" src="1c2b238198cc29c499a8bb37c763a8e6" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">Arthur</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Does not work on Android!!! RRRR… Position absolute + overflow auto – the ancient issue of android!</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-18991" title="Link to this comment">
+
+					Posted on April 15, 2012                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-21412">
+			<div id="comment-21412">
+			<div class="comment-author vcard">
+				<img alt="" src="38cfe687ff670056ddf7a581e1a3756e" class="avatar avatar-80 photo" height="80" width="80">				<cite class="fn">Martin Andersen</cite>			</div><!-- .comment-author .vcard -->
+						<div class="comment-body"><p>Very nice and very useful</p>
+<p>Is there a way to create a body with 3 columns? basically the same layout as in the demo with a extra center column.  </p>
+<p>left fixed width<br>
+center “100%” width<br>
+right fixed width</p>
+<p>left:30px<br>
+center: fill<br>
+right:30px;</p>
+</div>
+			<div class="reply">
+				<div class="comment-toolbox">
+														</div>
+				<a class="comment-date-link" href="http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/#comment-21412" title="Link to this comment">
+
+					Posted on June 29, 2012                 </a>
+			</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+	
+		</li>
+	</ol>
+
+
+
+								</div>
+            
+            		
+        </div><!--//grid_X-->
+        
+                    <div class="grid_2">
+                <!-- Source: sidebar.php -->
+<div id="search-3" class="widget widget_search"><h3 class="widgettitle">Search</h3><!-- Source: searchform.php -->
+<form action="http://blog.stevensanderson.com/" method="get" class="clearfix" id="searchform">
+	<input value="" size="15" id="s" name="s" class="rounded" type="text">
+	<input value="GO" id="searchsubmit" title="Search the site" type="submit">
+</form></div><div id="text-4" class="widget widget_text"><h3 class="widgettitle">Subscribe</h3>			<div class="textwidget"><p><a href="http://blog.stevensanderson.com/feed/" title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="feed-icon32x32.png" alt="" style="border: 0px none; vertical-align: middle; margin-right: 10px;"></a><a href="http://blog.stevensanderson.com/feed/" title="Subscribe to my feed" rel="alternate" type="application/rss+xml">RSS feed</a></p>
+<p><a href="http://blog.stevensanderson.com/feed/"><img src="SteveCodeville" style="border: 0px none;" alt="" height="26" width="88"></a></p>
+</div>
+		</div>		<div id="recent-posts-4" class="widget widget_recent_entries">		<h3 class="widgettitle">Recent Posts</h3>		<ul>
+				<li><a href="http://blog.stevensanderson.com/2013/12/21/experiments-with-koa-and-javascript-generators/" title="Experiments with Koa and JavaScript Generators">Experiments with Koa and JavaScript Generators</a></li>
+				<li><a href="http://blog.stevensanderson.com/2013/12/03/knockout-projections-a-plugin-for-efficient-observable-array-transformations/" title="Knockout Projections – a plugin for efficient observable array transformations">Knockout Projections – a plugin for efficient observable array transformations</a></li>
+				<li><a href="http://blog.stevensanderson.com/2013/10/21/a-standing-desk-with-mostly-ikea-parts/" title="A standing desk with (mostly) Ikea parts">A standing desk with (mostly) Ikea parts</a></li>
+				<li><a href="http://blog.stevensanderson.com/2013/10/08/knockout-3-0-release-candidate-available/" title="Knockout 3.0 Release Candidate available">Knockout 3.0 Release Candidate available</a></li>
+				<li><a href="http://blog.stevensanderson.com/2013/07/09/knockout-v2-3-0-released-v3-0-0-beta-available/" title="Knockout v2.3.0 released; v3.0.0 beta available">Knockout v2.3.0 released; v3.0.0 beta available</a></li>
+				</ul>
+		</div><div id="archives-3" class="widget widget_archive"><h3 class="widgettitle">Archives</h3>		<ul>
+			<li><a href="http://blog.stevensanderson.com/2013/12/" title="December 2013">December 2013</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2013/10/" title="October 2013">October 2013</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2013/07/" title="July 2013">July 2013</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2013/05/" title="May 2013">May 2013</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2013/03/" title="March 2013">March 2013</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2012/10/" title="October 2012">October 2012</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2012/08/" title="August 2012">August 2012</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2012/07/" title="July 2012">July 2012</a>&nbsp;(3)</li>
+	<li><a href="http://blog.stevensanderson.com/2012/05/" title="May 2012">May 2012</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2012/03/" title="March 2012">March 2012</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2011/12/" title="December 2011">December 2011</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2011/11/" title="November 2011">November 2011</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2011/10/" title="October 2011">October 2011</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2011/08/" title="August 2011">August 2011</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2011/07/" title="July 2011">July 2011</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2011/04/" title="April 2011">April 2011</a>&nbsp;(4)</li>
+	<li><a href="http://blog.stevensanderson.com/2011/03/" title="March 2011">March 2011</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2011/01/" title="January 2011">January 2011</a>&nbsp;(3)</li>
+	<li><a href="http://blog.stevensanderson.com/2010/12/" title="December 2010">December 2010</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2010/11/" title="November 2010">November 2010</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2010/10/" title="October 2010">October 2010</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2010/07/" title="July 2010">July 2010</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2010/06/" title="June 2010">June 2010</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2010/03/" title="March 2010">March 2010</a>&nbsp;(3)</li>
+	<li><a href="http://blog.stevensanderson.com/2010/02/" title="February 2010">February 2010</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2010/01/" title="January 2010">January 2010</a>&nbsp;(3)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/11/" title="November 2009">November 2009</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/10/" title="October 2009">October 2009</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/09/" title="September 2009">September 2009</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/08/" title="August 2009">August 2009</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/07/" title="July 2009">July 2009</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/06/" title="June 2009">June 2009</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/04/" title="April 2009">April 2009</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/03/" title="March 2009">March 2009</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/02/" title="February 2009">February 2009</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2009/01/" title="January 2009">January 2009</a>&nbsp;(5)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/12/" title="December 2008">December 2008</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/11/" title="November 2008">November 2008</a>&nbsp;(3)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/10/" title="October 2008">October 2008</a>&nbsp;(4)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/09/" title="September 2008">September 2008</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/08/" title="August 2008">August 2008</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/07/" title="July 2008">July 2008</a>&nbsp;(4)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/05/" title="May 2008">May 2008</a>&nbsp;(2)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/04/" title="April 2008">April 2008</a>&nbsp;(3)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/03/" title="March 2008">March 2008</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2008/02/" title="February 2008">February 2008</a>&nbsp;(1)</li>
+	<li><a href="http://blog.stevensanderson.com/2007/12/" title="December 2007">December 2007</a>&nbsp;(6)</li>
+	<li><a href="http://blog.stevensanderson.com/2007/11/" title="November 2007">November 2007</a>&nbsp;(6)</li>
+	<li><a href="http://blog.stevensanderson.com/2007/10/" title="October 2007">October 2007</a>&nbsp;(3)</li>
+	<li><a href="http://blog.stevensanderson.com/2007/09/" title="September 2007">September 2007</a>&nbsp;(3)</li>
+	<li><a href="http://blog.stevensanderson.com/2007/08/" title="August 2007">August 2007</a>&nbsp;(1)</li>
+		</ul>
+</div>            </div><!--//grid_X-->
+            
+							
+			</div><!-- //container_12 -->
+		</div><!-- //main -->
+		
+		<!-- Source: sidebar-footer-top.php -->
+		
+			<div id="footer" class="clearfix">
+				<div class="container_12">
+					
+					
+					                   
+                        <div class="grid_4">		<div id="recent-posts-3" class="widget widget_recent_entries">		<h3 class="widgettitle">Recent</h3>		<ul>
+				<li><a href="http://blog.stevensanderson.com/2013/12/21/experiments-with-koa-and-javascript-generators/" title="Experiments with Koa and JavaScript Generators">Experiments with Koa and JavaScript Generators</a></li>
+				<li><a href="http://blog.stevensanderson.com/2013/12/03/knockout-projections-a-plugin-for-efficient-observable-array-transformations/" title="Knockout Projections – a plugin for efficient observable array transformations">Knockout Projections – a plugin for efficient observable array transformations</a></li>
+				<li><a href="http://blog.stevensanderson.com/2013/10/21/a-standing-desk-with-mostly-ikea-parts/" title="A standing desk with (mostly) Ikea parts">A standing desk with (mostly) Ikea parts</a></li>
+				</ul>
+		</div></div>
+                        <div class="grid_4"><div id="recent-comments-3" class="widget widget_recent_comments"><h3 class="widgettitle">Comments</h3><ul id="recentcomments"><li class="recentcomments"><a href="http://www.usahawanweb.com/index.php?a=profile&amp;u=stdyett" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://www.Usahawanweb.com']);" rel="external nofollow" class="url">crime city cheats android</a> on <a href="http://blog.stevensanderson.com/2013/12/21/experiments-with-koa-and-javascript-generators/#comment-31785">Experiments with Koa and JavaScript Generators</a></li><li class="recentcomments"><a href="http://peterwawa.wordpress.com/2013/10/02/powershell-remoting-ja-trustedhosts/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://peterwawa.wordpress.com']);" rel="external nofollow" class="url">fl studio download</a> on <a href="http://blog.stevensanderson.com/2013/12/03/knockout-projections-a-plugin-for-efficient-observable-array-transformations/#comment-31784">Knockout Projections – a plugin for efficient observable array transformations</a></li><li class="recentcomments"><a href="http://bestinductioncookware.drupalgardens.com/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://bestinductioncookware.drupalgardens.com']);" rel="external nofollow" class="url">best stainless steel cookware</a> on <a href="http://blog.stevensanderson.com/2013/12/03/knockout-projections-a-plugin-for-efficient-observable-array-transformations/#comment-31781">Knockout Projections – a plugin for efficient observable array transformations</a></li></ul></div></div>
+                        <div class="grid_4">              <div id="cudazi_tweetswidget-3" class="widget widget_cudazi_tweetswidget">                  <h3 class="widgettitle"><small class="right follow-us-text">Follow me <a href="http://twitter.com/StevenSanderson">@StevenSanderson</a></small>Tweets</h3>                  <div id="latest-tweets-2507"><ul class="tweet_list"></ul><p class="loading">Loading tweets...</p></div>
+				<script type="text/javascript">
+
+					/* <![CDATA[ */
+						jQuery(function($) {
+							$("#latest-tweets-2507").tweet({
+								join_text: "auto",
+								username: "StevenSanderson",
+								count: 3,
+								auto_join_text_default: "we said,", 
+								auto_join_text_ed: "we",
+								auto_join_text_ing: "we were",
+								auto_join_text_reply: "we replied",
+								auto_join_text_url: "we were checking out",
+								loading_text: "Loading tweets..."
+							});
+						});
+					/* ]]> */
+                </script> 
+              </div>        </div>
+                   
+                     
+
+                    					
+				</div><!--//container_12-->
+			</div><!-- //footer -->
+
+
+		<!-- Source: sidebar-footer-bottom.php -->
+	<!-- No widgets added to this footer area -->
+
+		
+	</div><!-- //outer -->
+	<!-- Clearly Modern by Cudazi (http://cudazi.com/) v1.7 -->
+
+
+
+</body>
+</html>

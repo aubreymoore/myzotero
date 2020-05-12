@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Academic Journals - Journals</title>
+		<link href="http://www.academicjournals.org/all_articles.rss" type="application/rss+xml" rel="alternate" title="rss"/><link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/favicon.ico" type="image/x-icon" rel="icon"/><link href="/favicon.ico" type="image/x-icon" rel="shortcut icon"/><!--slider-->
+<script src="/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/modernizr.custom.js"></script>
+    
+<script type="text/javascript" src="/js/modernizr.custom.28468.js"></script>
+        
+    <link rel="stylesheet" type="text/css" href="/css/style2.css" />
+    
+    <script src="/js/easyResponsiveTabs.js" type="text/javascript"></script>
+		    <script type="text/javascript">
+			    $(document).ready(function () {
+			        $('#horizontalTab').easyResponsiveTabs({
+			            type: 'default', //Types: default, vertical, accordion           
+			            width: 'auto', //auto or any width like 600px
+			            fit: true   // 100% fit in a container
+			        });
+			    });
+			   </script>
+			   
+			    <script type="text/javascript"> 
+			   $(document).ready(function () {
+				
+				    $(window).scroll(function () {
+				        if ($(this).scrollTop() > 100) {
+				            $('.scrollup').fadeIn();
+				        } else {
+				            $('.scrollup').fadeOut();
+				        }
+				    });
+				
+				    $('.scrollup').click(function () {
+				        $("html, body").animate({
+				            scrollTop: 0
+				        }, 600);
+				        return false;
+				    });
+				
+				});
+			</script>
+
+
+
+</head>
+<body>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9666312-1']);
+  _gaq.push(['_setDomainName', 'academicjournals.org']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<div class="wrap"> 
+	 <div class="total">
+		
+		<div class="header">
+	<div class="header-bot">
+		<div class="logo">
+			<a href="/"><img src="/images/logo.png" alt=""/></a>
+		</div>
+		<div class="f-right">
+			<div class="clear"></div>
+			<ul class="links">
+                <li class="first"><a href="/" title="Home">Home</a></li>
+                <li><a href="/about_us" title="About us">About us</a></li>
+                <li><a href="/all_articles" title="Articles">Articles</a></li>
+                <li><a href="http://ms.academicjournals.me" title="Log In" target="_blank">Log In</a></li>
+                <li  class=" last"><a href="/contact" title="Contact us">Contact us</a></li>
+                
+   			</ul>
+		</div>
+		<div class="clear"></div> 
+	</div>
+</div>			
+		<div class="header_bottom">
+			  <div class="menu">
+			     	<ul class="nav">
+					   	<li><a href="#">Journals</a>
+                            <ul>
+                                <li><a href="/journal">Browse by Title</a></li>
+                                <li><a href="/journals/bysubject">Browse by Subject</a></li>
+                            </ul>
+                        </li>
+					   	<li><a href="#">Authors</a>
+                            <ul>
+                            	<li><a href="/instructions_for_authors">Instructions for Authors</a></li>
+                                <li><a href="/editorial_policies">Editorial Policies</a></li>
+                                <li><a href="/publication_ethics">Publication Ethics</a></li>
+                                <li><a href="/manuscript_handling_fee">Publication Fee</a></li>
+                                <li><a href="/waiver_policy">Waiver Policy</a></li>                                
+                            </ul>
+                        
+                        </li>                        
+                        <li><a href="/reviewers_guidelines">Reviewers</a></li>
+					   	<li><a href="/for_editors">Editors</a></li>
+					   	
+                        <li><a href="http://ms.academicjournals.me" target="_blank">Submit Manuscript</a></li>
+                        <li><a href="http://ms.academicjournals.me/apply_for_editorial" target="_blank">Join Editorial Board</a></li>
+                        <li><a href="/faq">F.A.Q</a></li>
+                        <li><a href="/search">Search</a></li>
+					    <div class="clear"></div>
+		     		</ul>
+                    <script type="text/javascript" src="/js/nav.js"></script>
+			    </div>
+    
+    <!--This is the mobile menu. Please do not remove, but you can modify. -->
+            <div class="mobile_menu">
+                <select class="mobile_menu" onchange="window.location.href=this.value">
+                    <option value="">Journal</option>
+                    <option value="/journal">-Browse by Title</option>
+                    <option value="/journals/bysubject">-Browse by Subject</option>
+                    <option value="">Authors</option>
+                    <option value="/instructions_for_authors">-Instruction for Authors</option>
+                    <option value="/editorial_policies">-Editorial Policies</option>
+                    <option value="/publication_ethics">-Publication Ethics</option>
+                    <option value="/manuscript_handling_fee">-Publication Fee</option>
+                    <option value="/waiver_policy">-Waiver Policy</option>   
+                    <option value="/reviewers_guidelines">Reviewers</option>
+                    <option value="/for_editors">Editors</option>
+                    <option value="http://ms.academicjournals.me">Submit Manuscript</option>
+                    <option value="http://ms.academicjournals.me/apply_for_editorial">Join Editorial Board</option>
+                    <option value="/faq">F.A.Q</option>
+                    <option value="/search">Search</option>
+                </select>
+            
+            </div>
+    <!--End Mobile Menu -->
+    
+                <div id="google_translate_element" style="float: right; margin-top:8px; padding-right: 10px;"></div><script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},  'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+	     	<div class="clear"></div>
+	     </div>
+	     
+		
+         
+
+
+<div><img src="/banners/journal1500648930_BANNER.jpg" width="100%" height="30%" alt="African Journal of Agricultural Research" /></div>
+         
+         
+                  
+         
+	  <div class="mian">
+        <div class="single">
+		 			 <div class="page-not-found">
+                <h3><img src="/images/404.png"/></h3>
+				<h1>OOPS! PAGE COULD NOT BE FOUND</h1>
+                <h3><br>
+
+                <p>Go to: <span><a href="/">Homepage</a></span>|<span>  <a href="/journal">View Journals</a></span></p>
+                </h3>
+			</div>
+			 			 
+		   </div>
+ 	   </div>
+	   <!--Display the footer-->
+         <div class="footer">
+         <div class="footer-top">
+				<div class="col_1_of_4 span_1_of_4">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/about_us">About us</a></li>
+						<li><a href="/memberships_and_standards">Memberships & Standards</a></li>
+						<li><a href="/open_access">Open Access</a></li>
+						<li><a href="/oai-pmh">Open Archives Initiatives</a></li>
+                        <li><a href="/contact">Contact us</a></li>
+					</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<ul>
+						<li><a href="/journal">Journals</a></li>
+						<li><a href="/all_articles">View Articles</a></li>
+						<li><a href="http://ms.academicjournals.me" target="_blank">Submit Manuscript</a></li>
+						<li><a href="http://ms.academicjournals.me" target="_blank">Track your Manuscript</a></li>
+						<li><a href="/manuscript_handling_fee">Manuscript Handling Fees</a></li>
+                        <li><a href="/waiver_policy">Waiver Policy</a></li>
+					</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<ul>
+						<li><a href="/editorial_policies">Editorial Policies</a></li>
+						<li><a href="/publication_ethics">Publication Ethics</a></li>
+						<li><a href="/reviewers_guidelines">Reviewers Guidelines</a></li>
+						<li><a href="#">Join Editorial Board</a></li>
+                        <li><a class="popup-with-zoom-anim" href="#small-dialog">Subscribe to Alerts</a></li>
+                        <li><a href="/all_articles.rss">Subscribe to RSS</a></li>
+					</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4 footer-lastgrid">
+					<ul>
+						<p><a href="/open_access" ><img src="/images/1.png" width="50%"></a></p>
+						<p><a href="/creative_commons" ><img src="/images/2.png" width="50%"></a></p>
+                        <p><a href="http://www.crossref.org/crosscheck.html" target="_blank"><img src="/images/3.gif" width="50%"></a></p>
+					</ul>
+			    </div>
+				<div class="clear"></div> 
+		</div>
+		<div class="copy">
+			<p>&copy; 2002-2017 <img src="/images/acad.png"> | <a href="/terms_and_conditions">Terms of Use</a></p>
+		
+		</div>
+	</div><a href="#" class="scrollup">Scroll</a>
+					 <link media="screen" rel="stylesheet" href="/css/select2.css" />
+				 <link media="screen" rel="stylesheet" href="/css/magnific-popup.css" />
+				<!--Begin the pop up-->
+                        <div id="small-dialog" class="mfp-hide">
+                                <div class="pop_up">
+                                    <h2>Subscription Form</h2>
+                                    <form action="/subscribers/add" id="SubscriberAddForm" method="post" accept-charset="utf-8">
+                                        <table>
+                                        <tr>
+                                            <td><label>Full Name:</label></td>
+                                            <td><input type="text"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>E-mail address:</label></td>
+                                            <td><input type="text"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <select id="select-multi" data-placeholder="Please select a journals you wish to subscribe for" multiple style="width:400px;">
+                                            <optgroup label="Medical Sciences">
+                                                <option value="African Journal Of Pharmacy And Pharmacology">African Journal Of Pharmacy And Pharmacology</option>
+                                                <option value="Clinical Reviews And Opinions">Clinical Reviews And Opinions</option>
+                                                <option value="International Journal Of Medicine And Medical Sciences">International Journal Of Medicine And Medical Sciences</option>
+                                                <option value="International Journal Of Nursing And Midwifery">International Journal Of Nursing And Midwifery</option>
+                                                <option value="International Journal Of Nutrition And Metabolism">International Journal Of Nutrition And Metabolism</option>
+                                                <option value="Journal Of AIDS And HIV Research">Journal Of AIDS And HIV Research</option>
+                                                <option value="Journal Of Cancer Research And Experimental Oncology">Journal Of Cancer Research And Experimental Oncology</option>
+                                            </optgroup>
+                                            <optgroup label="Pacific Time Zone">
+                                                <option value="CA">African Journal Of Pharmacy And Pharmacology</option>
+                                            </optgroup>
+                                            </select>
+                                            </td>
+                                        </tr>
+                                        </table>
+                                        
+                                  
+                                    <input type="submit"/>
+                                    </form>
+                                    
+                             </div>
+                            
+                        <script src="/js/select2.min.js" type="text/javascript"></script>
+                        <script src="/js/jquery.magnific-popup.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                $('.popup-with-zoom-anim').magnificPopup({
+                                    type: 'inline',
+                                    fixedContentPos: false,
+                                    fixedBgPos: true,
+                                    overflowY: 'auto',
+                                    closeBtnInside: true,
+                                    preloader: false,
+                                    midClick: true,
+                                    removalDelay: 300,
+                                    mainClass: 'my-mfp-zoom-in'
+                                });
+                            });
+                        </script>
+                           <script>
+                               jQuery(document).ready(function() {
+                                   // Select2
+                                   jQuery("#select-basic, #select-multi").select2();
+                                   jQuery('#select-search-hide').select2({
+                                       minimumResultsForSearch: -1
+                                   });
+                
+                               });
+                        </script>
+                            <script src="/js/plugins.js"></script>
+                            <script src="/js/app.js"></script>
+                            <script src="/css/bootstrap.min.js"></script>
+                             
+                        </div><!--End the pop-up-->
+         <!--End Display of footer-->
+      </div>
+</div>
+</body>
+</html>

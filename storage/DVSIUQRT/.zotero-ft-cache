@@ -1,0 +1,149 @@
+coderwall
+
+    Discover
+    Teams
+    Jobs
+    Sign In
+    Sign Up
+
+    Discover
+    Teams
+    Jobs
+    Sign In
+    Sign Up
+
+Where developers come to connect, share, build and be inspired.
+Join Coderwall
+Blank-mugshot
+
+    by Raine
+
+Lead instructor at RefactorU. Founder of collegecoding.com.
+
+    raineorshine
+
+Networks
+
+    git
+    shell
+
+Featured team
+961x477
+Profile_005
+Iddiction
+
+Calling all Senior iOS engineers. Iddiction is amazing and is hiring!
+feature your jobs here
+Share this
+69
+Create new github repo from command line
+
+4338 views
+
+    github
+    shell
+    git
+    curl
+
+Note: While the below is a great way to do it yourself, hauleth suggested Hub which does all this and more!
+
+Create a new shell script called "git-create"
+
+   #!/bin/sh 
+
+repo_name= $1 
+test -z  $repo_name  &&  echo   "Repo name required."   1 >& 2  &&  exit   1 
+
+curl -u  'your_github_username'  https://api.github.com/user/repos -d  "{\"name\":\" $repo_name \"}" 
+ 
+
+As tchaudhri mentioned in the comments, don't forget to make the above script executable by running chmod +x git-create .
+
+Make sure you save it somewhere on your PATH. If you don't have a directory for custom shell scripts on your PATH, you can save it in ~/bin and then add that to your PATH by editing ~/.bash_profile as follows:
+
+  PATH= $PATH :~/bin
+export PATH
+ 
+
+Now you can easily create a new github repo from with the following command:
+
+   git  create mynewrepo
+ 
+
+If you assume this command is run from a valid local git repo (or the folder containing what should become the repo) you can add the following lines to "git-create" to automatically add the remote:
+
+   git  init
+ git  remote add origin  "https://github.com/your_github_username/$repo_name.git" 
+ 
+
+git init is safe and won't mess anything up if the local repo already exists.
+
+Enjoy!
+
+Again, Hub recommended by hauleth does all this and more!
+Comments
+
+    Laughingman
+    hauleth 10
+
+    Or you can use Hub which provide some more features.
+
+    Blank-mugshot
+    mattpolito 1
+
+    As already stated, Hub is a really great library for this kind of thing.
+
+    Blank-mugshot
+    dommmel 1
+
+    You can alias the hub command in your .dotfiles like so
+
+      hub_path=$(which hub)
+     if   [[ -f $hub_path ]] 
+     then 
+      alias git=$hub_path
+    fi
+     
+
+    that gives you the additional github commands
+
+      git pull-request   Open a pull request  on  GitHub
+    git fork           Make a fork  of  a remote repository 
+                        on  GitHub  and  add as remote
+    git create         Create  this  repository  on  GitHub  and  
+                       add GitHub as origin
+    git browse         Open a GitHub page  in  the  default  browser
+    git compare        Open a compare page  on  GitHub
+     
+
+    54588_555132027835563_687647376_o
+    rshetty 1
+
+    Some Shell Scripts for github https://github.com/rShetty/Scriptomaniac
+
+    Blank-mugshot
+    tchaudhri 1
+
+    if not using Hub, but instead this method - you still need to remember to 'chmod +x script_name' the script file.
+
+    Blank-mugshot
+    raineorshine
+
+    Good to know! Thanks hauleth!
+
+    Blank-mugshot
+    raineorshine
+
+    Great point tchaudhri, thanks!
+
+    Blank-mugshot
+    raineorshine
+
+    Great point tchaudhri, thanks!
+
+Add a comment
+961x477
+Profile_005
+Iddiction
+
+Calling all Senior iOS engineers. Iddiction has a great engineering team and is hiring!

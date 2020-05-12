@@ -1,0 +1,347 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/329513775
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+Chapter · January 2019
+DOI: 10.1007/978-3-030-02357-7_12
+
+CITATIONS
+0
+3 authors: Ali Ahmed Faculty of computers and information, Minoufiya University 17 PUBLICATIONS 44 CITATIONS
+SEE PROFILE
+Sherif Hussein Mansoura University 16 PUBLICATIONS 81 CITATIONS
+SEE PROFILE
+
+READS
+48
+Abdelhameed Ibrahim Mansoura University 52 PUBLICATIONS 170 CITATIONS
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects: object View project material classification of printed circuit boards View project
+
+All content following this page was uploaded by Abdelhameed Ibrahim on 28 December 2018.
+The user has requested enhancement of the downloaded file.
+
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+Ali Ahmed, Abdelhameed Ibrahim and Sherif Hussein
+
+Abstract Due to the extensive stretches of date plantation and topography of traditional grooves in countries such as Saudi Arabia and Egypt, the red palm weevil (RPW) early detection is a signiﬁcant challenge. The RPW is a palm borer insect that develops within the soft tissues of the trunk and crown, eventually leading to tree death. Early detection of RPW infestation is crucial because, at an early stage of infestation, palms can be treated more efﬁciently and saved, while the determination of treatment efﬁcacy is hugely vital to optimize palm rescue efforts. Detection is often particularly problematic since not all palms can be accessed and inspected directly. Thermography technique can determine the thermal properties of any objects of interest, and it is a non-destructive. In thermography, the invisible radiation patterns are transformed to visible images called thermal images. Those thermal images are acquired using speciﬁc sensors that can be coupled with many available optical systems. Due to the simple operating procedure and the noticeable reductions in equipment cost of thermal imaging systems, it gains popularity in pests’ detection. This chapter discusses the state-of-the-art research concerning the detection methods for detecting infected Palm trees. The study will concentrate on the thermal imaging and its application on red palm weevil detection.
+Keywords Palms · Palm pests · Thermal imaging · Detection methods
+Red palm weevil (RPW)
+
+A. Ahmed Faculty of Computers and Information, Menouﬁa University, Menouﬁa, Egypt
+A. Ibrahim (B) · S. Hussein
+Faculty of Engineering, Mansoura University, Mansoura, Egypt e-mail: afai79@yahoo.com
+S. Hussein D.I.Mendeleyev Institute for Metrology, Saint Petersburg, Russia
+
+© Springer Nature Switzerland AG 2019
+
+253
+
+A. E. Hassanien (ed.), Machine Learning Paradigms: Theory
+
+and Application, Studies in Computational Intelligence 801,
+
+https://doi.org/10.1007/978-3-030-02357-7_12
+
+254
+1 Introduction
+
+A. Ahmed et al.
+
+Palms and their fruits have been an essential part of many cultures, especially in the Middle East since early times. Over the history of humankind, many species have evolved that produced the main sources of food and materials for tribes and even countries [1]. The most critical pests for palms is called the red palm weevil (RPW) which can affect coconut palms and was a problem in Vietnam, Thailand, Sri Lanka, Cambodia, and the Philippines for a very long time. Lately, it was ﬁrst detected in the Gulf region during the 80s, and it has expanded over the last decades to cover the majority of North African countries and the Near East region.
+Previous research conducted on RPW proved to be ineffective and in many times contradictory. Some of those research studies showed overlapping generations which are comprised of the various stages of the RPW. For example, the RPW could lay a number of eggs that could reach 531 eggs, 55–412 eggs, and 250 eggs according to [2–4], respectively. Larval development has been reported as between 25 and 105 days [5, 6], depending on feeding substrates and temperature. In Malaysia, a study done by Yong et al. [7] found that a female RPW could deposit 342.3 + 0.97 eggs on average (ranged from 270 to 396). These eggs are light-yellow, oval in shape and approximately 2.5 mm long. The eggs are laid very close to the surface of the incision made along the petioles or trunk, and also in the wounds made by the Oryctes rhinoceros. Figure 1 shows an example of color and thermal images of RPW.
+
+(a) Color RPW image Fig. 1 Samples of RPW images
+
+(b) Thermal RPW image
+
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+
+255
+
+Recently, RPW has damaged many palm trees incurring a signiﬁcant amount of economic loss. For example, in the Sri Lanka coconut farming industry, an estimate of yearly damage is $16.6 million in US dollar according to a study made in Kings College London in 2015. Also, the yearly damages of approximately US $26 million was estimated in the Middle East plantations of date palm that was caused by RPW alone [8]. Early detection of infestations in offshoots and the transported trees is of immense importance to control and limit RPW expansion [9, 10]. Weakness procedures and difﬁculties in the RPW early detection lead to a rapid spread of infection. Nowadays, RPW can be managed by employing pheromone-based IPM strategy which proved satisfactory results. One of these studies is the RPW-IPM program of the Canary Islands, where the pest was eliminated as there has been neither any report of infestation or any occurrences of weevil that got captured in traps since 2013. This successful approach was due to a scientiﬁc and systematic study supported by suitable resources.
+This chapter summarizes several state-of-the-art approaches and techniques undertaken to detect infested palms. The detection by thermal imaging based on physiological changes in infested palms that can be sensed by inspecting the irradiation thermal spectrum emitted from the tree canopy is introduced. The acoustic detection is explained, which identiﬁes gnawing sounds of RPW larvae, produced as they chew and move within the infested palms. The chemical detection of infested trees by dogs or electronic nose is also presented. This study will concentrate on the thermal imaging and its application on red palm weevil detection. The advances in each of these detection techniques, pitfalls, and potential implementation in area-wide detection and the future directions in the development of detection methods, will also be discussed.
+This chapter is organized as follows: Sect. 2 surveys the traditional detection methods. The thermal methods are described in Sect. 3. The performance analysis of different detection methods is provided in Sect. 4. The conclusion of this chapter is reported in Sect. 5.
+
+2 Traditional Detection Methods
+2.1 Visual Inspection
+Visual inspection of the tree is considered as the most famous approach to detect the infestation in palms. Visual signs of RPW presence depend on which infestation stage is there. For example, oozing of thick brown liquid, tunnels at the bases and on the trunk of frond’s petiole. Frass consists of chewed plant tissue that has a fermenting odor, cocoons around the tree, remains of weevils and their pupae and at a more severe stage of infestation is the breaking of the trunk or the topping [10].
+Though, this approach is challenging, and not practical on large-scale detection and should be conducted with utmost care as pests can be attracted to healthy palm
+
+256 Types
+
+Symptoms
+
+Liquid oozing from the stipe
+
+A. Ahmed et al. Snapshot
+
+Date palm trees Dry offshoots
+
+Holes in the trunk
+Fig. 2 Some visual symptoms in date palm trees
+trees. Palm trees are difﬁcult to be visibly inspected which can make direct inspection very difﬁcult. Consequently, conventional early RPW infestation detection is timeconsuming difﬁcult for experts, costly, and still not accurate.
+A few approaches have been started, to overcome those visual inspection problems, using chemical or odor signs, thermal and acoustic imaging approaches. The limitations and advantages of each of those approaches and the possibilities to use each of them will be discussed later in this chapter. Figure 2 shows some visual symptoms in date palm trees.
+2.2 Acoustic Detection
+Palms acoustic detection with RPW infestation was argued based on distinct sounds noticed from the pest infected palms. Chewing sounds are originated from the pest activities. Acoustic detection of those types of sounds can be used to monitor termites
+
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+
+257
+
+in the wood [11]. When many pests reside inside the palm tissue, then the sounds they cause can be detected with the smart and trained expert. The problem can be at the early infestation stages when the sound of pests activities is too low to be detected.
+This task consisted of ﬁve stages:
+1. Comparison of Acoustic devices 2. Equipment selection (recording devices and software) 3. Monitoring diurnal acoustic activity of R. ferrugineus 4. Optimizing acoustic algorithm for R. ferrugineus 5. Recording P. archon acoustic activity.
+There are three acoustic devices were tested namely Larval sound detector (NIR-W. Weinard, Germany), Commercial detector and recording system (Marantz professional), and Digital laser vibrometer. There are two types of RPW chewing sounds recorded by digital laser vibrometer. The ﬁrst is basic and very short snaps or clicks that last from 1 to 4 ms with most of the energy between 1 and 8 kHz. The second is a longer lasting sound of bites or rasps fused from short sound events, and their maximum energy lay below 3 kHz. They last an average time of 440 ms. A digital laser vibrometer records the sonograms and oscillograms of the RPW pests chewing sounds.
+
+2.3 Chemical Detection
+Chemical detection approaches are usually based on that weevil infested palms produce signs of characteristic volatile. These signs resulted from the RPW’ frass, thick brown liquid, made from chewed plant tissue with a fermenting odor oozing made in the infested palm. However, none of the speciﬁc signs emitted by the wounded palms could be identiﬁed. The chemical detection technique is commonly tested using trained and snifﬁng dogs. These dogs can detect infested plant material [12]. A variety of dog types have been utilized for snifﬁng tasks in the past. Such types are usually preferred for these sort of tasks because of easy disposition, their performance, and good interaction with the surroundings. Regarding RPW and palm pests, the practicality of this approach was assessed in previous research [13] that proved the ability of Golden Retrievers to correctly detect the oozing secretion collected from RPW infested date palms. However, those dogs ability to detect the infested palm in its original place was not proven. Suma et al. proved the ability of two Golden Retrievers and one Rottweiler dogs to detect the various number of RPW at the base of different palm species that were partially buried in vented containers which had variable sizes and ages. After a six-month of training period, the trained dogs were accurate in ﬁnding the artiﬁcially infested canary palms in 70% of cases without consideration of the weevil instar that was used in the trials. Figure 3 shows some chemical treatment of the infected palm trees.
+The planned research activities to be considered when using chemical detection with dogs can be summarized into ﬁve stages as follows:
+
+258
+
+A. Ahmed et al.
+
+Fig. 3 Chemical treatment of the infected palm trees
+1. Selection of dogs for training. 2. Development of training protocol using different developmental stages of pests. 3. Evaluation of detection abilities in artiﬁcially infested palms of different species. 4. Validation of the training protocol. 5. Evaluation of dog persistence, working ability, conditions, and precision.
+While a four-stage training protocol should be as follows:
+1. Mental activation to stimulate dog’s senses. 2. Obedience tests. 3. Training olfactory detection capability and communicating it by sitting down. 4. Detection efﬁciency evaluation as a percentage of true positive and true negative
+responses.
+Finally, The Dogs’ responses can be categorized as follows:
+1. True positive indication (TP) when the dogs successfully located target odours. 2. False negative (FN) when the dogs did not detect the target odours. 3. True negative (TN) when the dog correctly didnt respond to the non-target odours. 4. False positive response (FP) when the dog responded to the non-target odours.
+
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+
+259
+
+3 Thermal Detection Methods
+
+3.1 Thermal Imaging Detection
+
+Thermal imaging plays a key role in many ﬁelds of agriculture such as nursery monitoring, soil salinity stress detection, irrigation scheduling, yield estimation, plants disease detection, bruise detection and maturity evaluation of vegetables and fruits. That importance is due to its higher temporal and spatial resolutions images. Though, intensive research studies still needed for the potential applications in other ﬁelds of agriculture requiring further investigations [14].
+
+3.1.1 Thermal Remote Sensing
+Thermal remote sensing is the type of remote sensing which deals with data acquired in the thermal infrared region of the Electromagnetic spectrum and apply the suitable acquisition, processing and interpretation techniques [15]. Thermal remote sensing measures the emitted radiations from the surface of the target object [16]. An optical remote sensing is shown in Fig. 4 explaining the remote sensing approach.
+In thermal remote sensing the objects radiation patterns are transformed into visible images called thermal images or thermograms. Portable thermal sensors coupled with optical systems can acquire thermograms which could be done when mounted on satellite or an airplane. This technology is noninvasive which means it can be applied in many ﬁelds using thermal properties of objects under investigation from which heat can be emitted in time and space. The advantages of using thermal remote sensing in agriculture can include greenhouse monitoring, nursery, irrigation scheduling, evaluating the maturity of fruits, estimating fruit yield, plant disease detection, and bruise detection in fruits and vegetables. Though, recently, the usage
+
+Fig. 4 Optical remote sensing
+
+260
+
+A. Ahmed et al.
+
+of thermal imaging is gaining so much popularity in pest detection because of the reductions in the equipment cost and simplifying the operating procedure.
+Thermal Imaging can be divided into two main categories depending on the sample excitation:
+• Passive Thermography: In which the un-excited infrared radiation (natural emission) is used to test the sample quality and detect any defects in its structure. In passive thermography the temperature difference between a defect and its surroundings is used distinguish it.
+• Active Thermography: In which an external source is used to excite the test sample thus creating temperature variation between the defective and non defective areas within the test sample. The excitation can be achieved through optical, electromagnetic, mechanical, thermo elastic heating and convection based heating or cooling. Each of these techniques are further divided into sub classes.
+
+3.1.2 Thermal Imaging Cameras
+Thermal imaging cameras can transform the infrared wavelength energy into a visible light display [17–23]. All objects with temperature above absolute zero can emit thermal infrared energy. Therefore, thermal cameras can detect all objects, irrespective to ambient light. Though, the majority of thermal cameras can only sense objects with temperature higher than 50◦. The amount of thermal radiation and spectrum depend heavily on the temperature of object’s surface. This makes it possible for a thermal imaging camera to display the temperature of an object. However, there are other factors that also inﬂuence radiation, which limits the technique’s accuracy. For example, the radiation depends as well on a function of the emissivity of the object. Besides, radiation that originate from the surroundings and the radiation absorption by the atmosphere can all affect the thermal imaging accuracy [24].
+Thermal detector or thermal imaging camera is the heart of entire thermography technique. The thermal imaging cameras operate only in the infrared region. Such spectrum can be further classiﬁed into Near infrared, Middle infrared, Long wavelength and Far infrared. The thermal imaging cameras generate thermograms from the captured heat radiation. Such thermograms capture the temperature variations of the specimen with time and space. The Infrared radiations can be focused by appropriate optics and detected by specially designed sensors. The IR cameras used to detect these radiations are classiﬁed in to two types [25]
+• Un-cooled camera: Un-cooled cameras have infrared detectors composed of microbolometric based arrays.
+• Cooled camera: The current technologies used in the cooled cameras comprise infrared photon based focal plane arrays.
+
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+
+261
+
+3.2 Thermal Infested Palm Detection
+
+Thermal imaging is a remote sensing technique that is currently being applied to the case of date palms [26–28]. For the speciﬁc case of R. ferrugineus, it appears that when the tree is infested fermentation occurs within the trunk. This can result in an increased tree temperature. R. ferrugineus behaviour also interferes with water transport within the trunk, causing water stress which results in higher tree temperatures [26, 28].
+Cohen et al. [26] investigated how changes in irrigation affect the health of date palm plantations. They reduced the irrigation in several test ﬁelds to 80% of the normal irrigation, and compared these to control blocks. Aerial thermal images with a spatial resolution of 1.8 m were taken and processed in Matlab. The watershed algorithm, which is based on identifying sinks as one would do in water ﬂow analysis, identiﬁed basins, which could either be classiﬁed as canopy or soil. A temperature threshold was determined using either pixel-based or basin-based analysis so that only the canopy basins were included in analysis. Test trees were selected based on the tree outlines and a minimum distance was set in order to remove the effects of autocorrelation. Finally, ANOVA was applied to determine whether there is a signiﬁcant 10 difference in the mean and variance of the test groups. This study found that there was a 1◦ difference between the two different treatments of irrigation for the test trees, though the absolute temperature differed between the blocks. Thus, there was high block dependency, and it was concluded that it is important to alter thresholds based on the management blocks studied.
+Research conducted by Golomb et al. [27] suggests that it is possible to detect R. ferrugineus infestation in date palms using aerial thermal imaging. The study consists of two parts; the ﬁrst involved intentionally infesting trees and studying them over time, and the second was based on aerial thermal images of known infested trees and control trees. The second method is most related to the current study. The thermal images in this study had spatial resolution of 0.5 m. The canopy pixels were identiﬁed using the watershed algorithm and the pixel-based method used in [26]. Eight trees were identiﬁed as infested following ﬁeld investigation, out of approximately 40 trees in total. Based on temperature thresholds to identify infested trees, six of the eight infested trees were correctly classiﬁed and twelve healthy trees were also identiﬁed as infested. Based on these results, it appears that infested trees are warmer than the control trees, but there is also variation between the control trees.
+A study conducted by Bokhari and Abuzuhairah [29] explained the possibility of physiological changes detection in the infested palms. Several research studies indicated temperature increase at the infested palms trunks detected by infrared cameras. A survey by Soroker et al. [28], on the recent utilized advanced technologies in remote thermal images provide the potential to obtain spatial information on surface temperature, and consequently facilitate the mapping of canopy temperature unevenness over large areas. Pest feeding within the palm trunk and lead to a serious fermentation of plant tissue that elevates the local temperature inside the trunk or crown above the ambient temperature levels [13, 30]. Despite temperature can increase in the center
+
+262
+
+A. Ahmed et al.
+
+of the crown of seriously infested palms, that can be detected only when viewed from top as the palm natural tissue works as an insulator to prevent the detection in lateral view.
+A study conducted on thermal remote sensing system and the potential application of thermal imaging system in pest detection is discussed in [31]. The study concluded that, although thermal imaging system has its own limitations, but with time and more research, IR imaging may become a reasonable technique for pest detection. One more fact that is new, is the presence of enhanced thermal sensors, that can make the cameras of today to potentially bring more interest and challenge in the new ﬁelds. Consequently, there is now an urgency to promote the use of thermal data and the understanding by the application and scientiﬁc community. Figure 5 shows an example of thermal and RGB images of date palm trees.
+Moreover, the tunneling insects can destroy the palm vascular system creating water stress conditions. This “crop water” status can be detected through inspection of the thermal region of the reﬂected irradiation spectrum [32]. Recent research approaches in remote thermal images give the possibility to acquire spatial information on the object surface temperature, which facilitates the mapping of canopy temperature variability over large surface regions. Thermal imaging provides an effective alternative to point measurements. Because the temperature of the whole ﬁeld of view can be acquired in one time, a map of the plant water status distribution can be obtained. High-resolution thermal imaging devices are usually used to evaluate water status of vineyards [33, 34], cotton [35–37], wheat [38], and olives [39–41].
+According to the research done in [36], the researchers investigated the use of thermal images for an estimation of the water status of cotton in-ﬁeld under a range of irrigation scenarios. Particular leaves which appeared in the camera ﬁeld of view were sampled and the LWP was measured while their temperature was calculated from the images. Regression models were implemented to predict LWP according to both the crop water stress index (CWSI) empirical formulation and the crop canopy temperature. Statistical analysis could show that the relationship between LWP and CWSI was more stable and had a bit higher correlation coefﬁcient than that between LWP and canopy temperature. The LWP maps classiﬁcation showed that there was spatial variability in each treatment. The distribution of LWP in the maps showed better classiﬁcation for irrigation treatments when the maps were calculated from CWSI than from leaf temperature alone.
+A recent research by El-Faki et al. [42] offered valuable baseline information on temperature proles of RPW infested date palms for developing a real-time sensor fusion system for a nondestructive early detection of insect infestation. Figures 6 and 7 show examples of thermal images of control and infected palm trees.
+
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+
+263
+
+Fig. 5 Thermal (right) and RGB (left) images of date palm trees
+4 Analysis
+The advantages and disadvantages of the various detection methods discussed above are summarized by different parameters in Table 1. However, major effort is still needed to improve the sensitivity and effectiveness in the available methods. No single method is cost effective and sufﬁciently sensitive and there is still no perfect
+
+264
+
+A. Ahmed et al.
+
+Fig. 6 RGB and thermal images of control trees
+solution for pests’ detection in wide regions. In case of visual detection, protocols for most commonly attacked palms are lacking. Remote detection by olfactory and visual cues is encouraging for wide areas inspection but still not feasible. At the moment an integration of technologies and methods is needed to produce optimal solutions.
+Thermal imagery proved to have potential as a tool for assessing RPW infestation in palm trees in quarantine and open areas. As expected the detection accuracy was
+
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+
+265
+
+Fig. 7 RGB and thermal of infected trees
+higher at later stages of infestation, and was correlated with larval damage. However this method it is not suitable for covered facilities as palm leaf exposure to a direct sun light is a prerequisite for thermal imaging. Time of day appears to be critical for detection accuracy. Highest differences between infested and uninfested trees were obtained between 11:00 and 14:00. The method is also limited to the warm season.
+Detection accuracy with thermal detection was lower when compared to the detection accuracy obtained by acoustic means or using dogs. This is probably associated
+
+266
+
+A. Ahmed et al.
+
+Table 1 Comparison of advantages and costs of detection methods
+
+Items
+
+Visual
+
+Acoustic
+
+Olfactory
+
+Thermal
+
+Remote sensing
+
+Individual Required examination
+
+Required
+
+Required
+
+Not required Not required
+
+Special
+
+No
+
+equipment
+
+Yes
+
+No
+
+Yes
+
+Yes
+
+Labour
+
+High
+
+Low
+
+Medium
+
+Low
+
+Low
+
+Trained labour Medium
+
+No
+
+Yes
+
+No
+
+Medium
+
+Cost
+
+Expensive Affordable Medium
+
+Affordable Expensive
+
+Suitability
+
+Open area
+
+Controlled Mostly for Open area environment/ local detection quarantine
+
+Open area
+
+Sensitivity
+
+Medium accuracy
+
+80–95% under 64–75% control
+
+Still unknown Still unknown
+
+with the level of damage of the infested palms in controlled experiments, effective only if causing substantial water stress that can be detected by thermal images. In commercial plantations infected trees were detected by ground and aerial thermal images with high accuracy and reliability before visual symptoms were observed.
+For large scale screening aerial thermal imaging has an advantage over other detection methods that were developed for RPW infestation, such as dogs and acoustics, since the latter require screening every tree. Identifying and mapping suspected infected palm trees within commercial plantation through thermal imaging is a complicated task. When covering a large area, the water status of trees is not a speciﬁc indicator of RPW infection and can be highly variable due to differences in irrigation, age, sun exposure or diseases. These factors may cause inaccurate detection of RPW infestation. On the other hand, thermal imaging can be used for large scale screening of palms in order to detect wide range of anomalies making this methodology more cost effective. The problem of speciﬁcity could be solved if thermal detection would allow identifying of speciﬁc trees as suspected candidates, followed by speciﬁc examinations using other detection means. Additionally, the accuracy and reliability of the thermal detection is crop water stress index threshold-dependent. Thus, it is necessary to further develop an algorithm for adaptive selection of the crop water stress index threshold for optimal detection of the RPW infested trees.
+Inspection of palms in large areas such as agricultural, natural habitat, or urban areas, and decision making for natural resources and control management is a very complicated task. The task is more complex especially in non-agricultural regions where thousands of trees in an inspected region, of different ages, growth conditions and species are required to be regularly checked for pest infestation, and the progress of treatment. The RPW data acquisition in such areas needs visual management and quick positioning of data. Such types of systems could be based on applications deployed on the Internet and with appropriate interface to produce and
+
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+
+267
+
+display timed and spatial information for decision making and control management. Data acquisition based on electronic methods has been widely adopted in recent approaches [43]. Furthermore, Geographical Information Systems (GIS) can offer location-sensitive monitoring which facilitates the real-time data collection and the patterns distribution of pest population [44, 45]. Those systematically collected data that can help model and forecast the palm trees distribution and offer the bases for decision making system.
+
+5 Conclusion
+During the last three decades, Rynchophorus Ferrugineus Oliv. or RPW, has become one of the most dangerous threats that attacked palm trees that were spread all over the world. Therefore, its early detection became crucial to save many farms yet it is very difﬁcult to assess since the infected palm trees do not show visual evidences in their initial stages. Hence, the infection can lead to stages that are too late for the plant to recover. Even though, the extensive effort to develop effective RPW detection techniques, technologies including chemical and acoustical methods are still lagging behind as they are not feasible or practical, leaving the sole method of detection to be dependent mainly on visual inspection in most cases. The advantages and disadvantages of the detection methods discussed in this chapter are summarized using a number of parameters. More research is still needed to improve both the efﬁciency and the sensitivity in the available techniques such as acoustic and olfactory detection. there is no speciﬁc method that can be cost effective or sensitive enough to be practical. Moreover, there is no optimal solution that could be applied for all areas of detection problems. In addition, visual detection which is considered the most widely used method to detect infected palms, is lacking protocols for commonly attacked palms types. However, even remote detection by visual and olfactory cues could be argued to be very promising for wide area inspection, it is still not mature enough to be applicable. Therefore, the integration of both methods and technologies is needed to get an optimal solution. This study has surveyed several novel techniques and approaches adopted to detect infested palms. Detection by thermal imaging based on the thermal spectrum of the irradiation emitted from the tree canopy and physiological changes in infested palms can achieve good results. The thermal imaging systems and their application on red palm weevil detection are considered a promising technology. Therefore, the advances of using thermal images can give us future directions in development of such detection method.
+
+268
+References
+
+A. Ahmed et al.
+
+1. Howard, F.W., Moore, D., Giblin-Davis, R.M., Abad, R.G.: Insects on Palms. CAB eBooks (2001)
+2. Alhammadi, M.S., Glenn, E.P.: Detecting date palm trees health and vegetation greenness change on the eastern coast of the United Arab Emirates using SAVI. Int. J. Remote Sens. 29(6), 1745–1765 (2008). https://doi.org/10.1080/01431160701395195
+3. Murphy, S.T., Briscoe, B.R.: The red palm weevil as an alien invasive: biology and the prospects for biological control as a component of ipm. Biocontrol News Inf. 20(1), 35N–46N (1999)
+4. Salama, H.S., Zaki, F.N., Abdel-Razek, A.S.: Ecological and biological studies on the red palm weevil rhynchophorus ferrugineus (olivier). Arch. Phytopathol. Plant Protect. 42(4), 392–399 (2009)
+5. Abraham, V.A., Koya, K.M.A., Kurian, C.: Integrated management of red palm weevil (Rhynchophorus ferrugineus F.) in coconut gardens. J. Plant. Crops 16, 159–162 (1989)
+6. Faghih, A.A.: The biology of red palm weevil, Rhynchophorus ferrugineus Oliv. (Coleoptera, Curculionidae) in Saravan region (Sistan & Balouchistan province, Iran). Appl. Entomol. Phytopathol. 63(1/2), 16–18 (1996)
+7. Afzan Azmi, W., Kah Wai, Y., Abu Bakar, A.: Fecundity, fertility and survival of red palm weevil (rhynchophorus ferrugineus) larvae reared on sago palm. Sains Malaysiana 44(10), 1371–1375 (2015)
+8. El-Sabea, A.M.R., Faleiro, J.R., Abo-El-Saad, M.M.: The threat of red palm weevil rhynchophorus ferrugineus to date plantations of the gulf region in the middle-east: an economic perspective. Outlooks Pest Manage. 20(3), 131–134 (2009)
+9. Al-Shawaf, A.M., Al-Shagag, A., Al-Bagshi, M., Al-Saroj, S., Al-Bather, S., Al-Dandan, A.M., Abdallah, A.B.: A quarantine protocol against red palm weevil rhynchophorus ferrugineus (olivier) (coleptera: Curculiondae) in date palm. J. Plant Protect. Res. 53(4), 409–415 (2013)
+10. Faleiro, J.: A review of the issues and management of the red palm weevil Rhynchophorus ferrugineus (coleoptera: Rhynchophoridae) in coconut and date palm during the last one hundred years. Int. J. Trop. Insect Sci. 26(3), 135–154 (2006). https://doi.org/10.1079/IJT2006113
+11. Scheffrahn, Rudolf H., Robbins, William P., Busey, Philip, Nan-Yao, Su, Mueller, Rolf K.: Evaluation of a novel, hand-held, acoustic emissions detector to monitor termites (isoptera: Kalotermitidae, rhinotermitidae) in wood. J. Econ. Entomol. 86(6), 1720–1729 (1993)
+12. Schlyter, F.: Detection dogs recognize pheromone from spruce bark beetle and follow it source. In: ESA 60th Annual Meeting Knoxville (2012)
+13. Nakash, J., Osem, Y., Kehat, M.: A suggestion to use dogs for detecting red palm weevil (rhynchophorus ferrugineus) infestation in date palms in israel. Phytoparasitica 28(2), 153– 155 (2000)
+14. Vadivambal, R., Jayas, D.S.: Applications of thermal imaging in agriculture and food industry— a review. Food Bioprocess Technol. 4(2), 186–199, Feb 2011
+15. Prakash, A.: Thermal remote sensing: concepts, issues and applications. Int. Arch. Photogram. Remote Sens. 33, 239–243 (2000)
+16. Sabins Jr., Lulla, K.: Remote sensing: principles and interpretation. Geocarto Int. 2(1), 66–66 (1987)
+17. Ibrahim, A., Horiuchi, T., Tominaga, S., Ella Hassanien, A.: Spectral reﬂectance images and applications. In: Awad, A., Hassaballah, M. (eds.) Image Feature Detectors and Descriptors. Studies in Computational Intelligence, vol. 630. Springer, Cham (2016)
+18. Ibrahim, A., Tominaga, S., Horiuchi, T.: Material classiﬁcation for printed circuit boards by spectral imaging system. In: Trémeau, A., Schettini, R., Tominaga, S. (eds.), Computational Color Imaging, pp. 216–225. Springer, Berlin, Heidelberg (2009)
+19. Ibrahim, A., Tominaga, S., Horiuchi, S.: Unsupervised material classiﬁcation of printed circuit boards using dimension-reduced spectral information. In: MVA2009 IAPR Conference on Machine Vision Applications, pp. 435–438 (2009)
+20. Ibrahim, A., Tominaga, S., Horiuchi, T.: Spectral imaging method for material classiﬁcation and inspection of printed circuit boards. Opt. Eng. 49, 49–49–10 (2010)
+
+Detection of Palm Tree Pests Using Thermal Imaging: A Review
+
+269
+
+21. Ibrahim, A., Tominaga, S., Horiuchi, T.: Spectral invariant representation for spectral reﬂectance image. In: 2010 20th International Conference on Pattern Recognition, pp. 2776– 2779, Aug 2010
+22. Ibrahim, A., Tominaga, S., Horiuchi, T.: Invariant representation for spectral reﬂectance images and its application. EURASIP J. Image Video Process. 1(2), Jun 2011
+23. Ibrahim, A., Tominaga, S., Horiuchi, T.: A spectral invariant representation of spectral reﬂectance. Opt. Rev. 18(2), 231–236, Mar 2011
+24. Maldague, X.P.V., Jones, T.S., Kaplan, H., Marinetti, S., Prystay, M.: Chapter 2: fundamentals of infrared and thermal testing: part 1. principles of infrared and thermal testing, vol. 3. ASNT Press (2001)
+25. Rogalski, A., Chrzanowski, K.: Infrared devices and techniques (revision). Metrol. Measure. Syst. 21(4), 565–618 (2014)
+26. Cohen, Y., Alchanatis, V., Prigojin, A., Levi, A., Soroker, V., Cohen, Y.: Use of aerial thermal imaging to estimate water status of palm trees. Prec. Agric. 13(1), 123–140 (2012)
+27. Alchanatis, V., Cohen, Y., Levin, N., Golomb, O., Soroker, V.: Detection of red palm weevil infected trees using thermal imaging. In: Precision Agriculture ’15, p. 322 (2015)
+28. Suma, P., La Pergola, A., Cohen, Y., Cohen, Y., Alchanatis, V., Golomb,O., Goldshtein, E., Hetzroni, A., Galazan, L., Kontodimas, D., Pontikakos, C., Zorovoc, M., Soroker, V., Brandstetter, M.: Early detection and monitoring of red palm weevil: approaches and challenges. In: AFPP-Palm Pest Mediterranean Conference (2013)
+29. Bokhari, U.G., Abuzuhira, R.: Diagnostic tests for redpalm weevil, Rhynchophorus ferrugineus infested datepalm trees. Arab J. Sci. Res. 10(3), 93–104 (1992)
+30. Abe, F., Ohkusu, M., Kubo, T., Kawamoto, S., Sone, K., Hata, K.: Isolation of yeasts from palm tissues damaged by the red palm weevil and their possible effect on the weevil overwintering. Mycoscience 51(3), 215–223, May 2010
+31. Al-doski, J., Mansor, S., Shafri, M., Zulhaidi, H.: Thermal imaging for pests detecting-a review. Int. J. Agric. Forest. Plant. 2, 10–30 (2016)
+32. Ehrler, W.L.: Cotton leaf temperatures as related to soil water depletion and meteorological factors. Agro. J. 65, 404–409 (1973)
+33. Grant, O.M., Tronina, U., Jones, H.G., Manuela Chaves, M.: Exploring thermal imaging variables for the detection of stress responses in grapevine under different irrigation regimes. J. Exp. Botany 58(4), 815–825 (2007)
+34. Mller, M., Alchanatis, V., Cohen, Y., Meron, M., Tsipris, J., Naor, A., Ostrovsky, V., Sprintsin, M., Cohen, S.: Use of thermal and visible imagery for estimating crop water status of irrigated grapevine*. J. Exp. Botany 58(4), 827–838 (2007)
+35. Alchanatis, V., Cohen, Y., Cohen, S., Moller, M., Sprinstin, M., Meron, M., Tsipris, J., Saranga, Y., Sela, E.: Evaluation of different approaches for estimating and mapping crop water status in cotton with thermal imaging. Prec. Agric. 11(1), 27–41 (2010)
+36. Cohen, Y., Alchanatis, V., Meron, M., Saranga, Y., Tsipris, J.: Estimation of leaf water potential by thermal imagery and spatial analysis*. J. Exp. Botany 56(417), 1843–1852 (2005)
+37. Meron, M., Tsipris, J., Orlov, V., Alchanatis, V., Cohen, Y.: Crop water stress mapping for site-speciﬁc irrigation by thermal imagery and artiﬁcial reference surfaces. Prec. Agric. 11(2), 148–162, Apr 2010
+38. Tilling, A.K., OLeary, G.J., Ferwerda, J.G., Jones, S.D., Fitzgerald, G.J., Rodriguez, D., Belford, R.: Remote sensing of nitrogen and water stress in wheat. Field Crops Res. 104(1), 77–85 (2007). Groundbreaking Stuff- Proceedings of the 13th Australian Society of Agronomy Conference, 10–14 Sept 2006, Perth, Western Australia
+39. Ben-Gal, A., Kool, D., Agam, N., van Halsema, G.E., Yermiyahu, U., Yafe, A., Presnov, E., Erel, R., Majdop, A., Zipori, I., Segal, E., Rger, S., Zimmermann, U., Cohen, Y., Alchanatis, V., Dag, A.: Whole-tree water balance and indicators for short-term drought stress in non-bearing barnea olives. Agric. Water Manage. 98(1), 124–133 (2010)
+40. Berni, J.A.J., Zarco-Tejada, P.J., Sepulcre-Cant, G., Fereres, E., Villalobos, F.: Mapping canopy conductance and CWSI in olive orchards using high resolution thermal remote sensing imagery. Remote Sens. Environ. 113(11), 2380–2388 (2009)
+
+270
+
+A. Ahmed et al.
+
+41. Sepulcre-Cant, G., Zarco-Tejada, P.J., Jimnez-Muoz, J.C., Sobrino, J.A., de Miguel, E., Villalobos, F.J.: Detection of water stress in an olive orchard with thermal remote sensing imagery. Agric. Forest Meteorol. 136(1), 31–44 (2006)
+42. El-Faki, M.S., El-Shaﬁe, H.A.F., Al-Hajhoj, M.B.R.: Potentials for early detection of red palm weevil (coleoptera: Curculionidae)-infested date palm (arecaceae) using temperature differentials. Canad. Entomol. 148(2), 239–245 (2016)
+43. Montoya, L.: Geo-data acquisition through mobile gis and digital video: an urban disaster management perspective. Environ. Model. Softw. 18(10), 869–876 (2003). Integrating Environmental Modelling and GI-Technology
+44. Papadopoulos, Nikos T., Katsoyannos, Byron I., Nestle, David: Spatial autocorrelation analysis of a ceratitis capitata (diptera: Tephritidae) adult population in a mixed deciduous fruit orchard in northern greece. Environ. Entomol. 32(2), 319–326 (2003)
+45. Sciarretta, A., Trematerra, P., Baumgrtner, J.: Geostatistical analysis of cydia funebrana (lepidoptera: Tortricidae) pheromone trap catches at two spatial scales. Amer. Entomol. 47(3), 174–185 (2001)
+
+View publication stats
+

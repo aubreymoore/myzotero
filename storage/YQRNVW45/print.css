@@ -1,0 +1,21 @@
+.engagement-bar,
+.call-to-action,
+footer,
+.scrim:before,
+.inline-image,
+.header-nav__mobile__list,
+.sitecore_video_embed,
+.content-wrapper  + .ribbon-top--tint,
+.bgi {
+    display: none;
+    
+}
+
+header + .bgi {display: block;background: none !important;}
+
+.banner__text {
+    color: #000000;
+}
+
+.vh--1-4, .vh--1-3, .vh--1-2, .vh--1-1 {min-height: auto;}
+

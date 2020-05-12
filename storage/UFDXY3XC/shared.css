@@ -1,0 +1,1079 @@
+/* To edit global bootstrap styles, edit less/bootstrap/variables.less and recompile */
+h1 {
+  border-bottom: 2px solid #999;
+}
+h3 {
+  margin: 10px 0px 5px 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+a {
+  color: #049366;
+}
+a:focus,
+a:hover {
+  color: #024731;
+}
+body {
+  background-color: #fff;
+  min-width: 400px;
+  /* Don't let things get absurdly small */
+  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#logo-wrapper {
+  background-color: white;
+  white-space: nowrap;
+  height: 90px;
+  overflow-y: hidden;
+  /* If the screen gets too small, the right side of the header will drop down and be hidden */
+}
+#content {
+  background-color: #fff;
+  padding-bottom: 15px;
+}
+#sidebar {
+  /* padding-left:25px; */
+}
+.table thead > tr > th,
+.table tbody > tr > th,
+.table tfoot > tr > th {
+  border-top: none;
+}
+/* Hide all the DSpace help since they aren't branded */
+.glyphicon-question-sign {
+  display: none;
+}
+.font-lg {
+  font-size: 180%;
+}
+.font-md {
+  font-size: 140%;
+}
+.font-sm {
+  font-size: 80%;
+}
+.font-xs {
+  font-size: 60%;
+}
+/* for indenting collections and communities on community-list page */
+.indent1 {
+  padding-left: 30px;
+}
+.indent2 {
+  padding-left: 60px;
+}
+.indent3 {
+  padding-left: 90px;
+}
+.indent4 {
+  padding-left: 120px;
+}
+.indent5 {
+  padding-left: 150px;
+}
+.indent6,
+.indent7,
+.indent8,
+.indent9,
+.indent10 {
+  padding-left: 180px;
+}
+/* margin and padding fixes for various controls */
+.small-margins {
+  margin: 5px;
+}
+.small-paddings {
+  padding: 5px;
+}
+.no-margins {
+  margin: 0px;
+}
+.no-paddings {
+  padding: 0px;
+}
+/* provide a quick way to add borders to controls */
+.border-top {
+  border-top: 2px solid #ddd;
+}
+.border-left {
+  border-left: 2px solid #ddd;
+}
+.border-right {
+  border-right: 2px solid #ddd;
+}
+.border-bottom {
+  border-bottom: 2px solid #ddd;
+}
+.border-all {
+  border: 1px solid #ddd;
+}
+.border-rounded {
+  border-radius: 10px;
+}
+.pnl {
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+.pnl:before,
+.pnl:after {
+  content: " ";
+  display: table;
+}
+.pnl:after {
+  clear: both;
+}
+.shadow {
+  box-shadow: 1px 1px 2px #999;
+}
+/* text colors for various controls */
+.text-white {
+  color: #fff;
+}
+.text-black {
+  color: #000;
+}
+.bold {
+  font-weight: 700;
+}
+/* for the tiny browse jump buttons */
+.min-width20 {
+  min-width: 20px;
+}
+.breadcrumb {
+  margin-bottom: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+ol.breadcrumb li a {
+  color: #049366;
+}
+.breadcrumb > li + li:before {
+  color: #666;
+  content: " > ";
+}
+.breadcrumb > .active {
+  color: #666;
+}
+.navbar-collapse {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.navbar {
+  border-radius: 0px;
+  margin-bottom: 0px;
+  min-height: 40px;
+}
+.navbar-collapse.in {
+    overflow-y: none;
+}
+
+@media (min-width: 0px) { .navbar-form { width: 100%; margin: 8px auto;}}
+@media (min-width: 768px) { .navbar-form { width: 250px; }}
+@media (min-width: 992px) { .navbar-form { width: 300px; }}
+@media (min-width: 1200px) { .navbar-form { width: 300px; }}
+.navbar-nav {
+    margin: auto;
+}
+.navbar-inverse {
+  background-color: #024731;
+  border-color: #024731;
+  box-shadow: 1px 1px 2px #999;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFF;
+}
+.navbar-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-inverse .navbar-nav > .open > a:hover {
+  color: #FFF;
+  background-color: #013323;
+}
+#footer {
+  color: #fff;
+  font-size: 80%;
+  padding: 8px;
+  margin-bottom: 0px;
+}
+/* Make sure we can see and differentiate links on the header/footer */
+#footer a,
+#footer a:hover,
+#footer a:visited,
+#footer a:focus {
+  color: #fff;
+  font-weight: 700;
+}
+#footerlinks {
+  list-style-type: none;
+}
+#footerlinks > li {
+  font-variant: small-caps;
+  line-height: 2em;
+}
+.list-group-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.list-group-item.active,
+.list-group-item.active:focus,
+.list-group-item.active:hover {
+  background-color: #777;
+  border-color: #777;
+}
+.list-group-item h4 {
+  color: #049366;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.list-group-item:first-child,
+.list-group-item:last-child {
+  border-radius: 0px;
+}
+.panel-primary > .panel-heading a {
+  color: #FFF;
+}
+.panel-primary,
+.panel-success,
+.panel-info,
+.panel-warning {
+  border-color: #555;
+}
+.panel-primary > .panel-heading,
+.panel-success > .panel-heading,
+.panel-info > .panel-heading,
+.panel-warning > .panel-heading {
+  color: #fff;
+  background-color: #555;
+  border-color: #555;
+}
+
+/*Must show tab pane for submission step */
+.tab-content > .tab-pane {
+	visibility:visible;
+}
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover
+{
+	border-color:#FFF;
+}
+
+#osd
+{
+	background-color:#111;
+	padding:0px;
+}
+
+/******************************
+ START override btns
+ *****************************
+.btn-primary {
+  background-color: #049366;
+  border-color: #049366;
+}
+.btn-primary:focus,
+.btn-primary:hover {
+  background-color: #03644a;
+  border-color: #03644a;
+}
+*****************************
+ END override btns
+ ******************************/
+ 
+.btn {
+  box-shadow: 1px 1px 2px #999;
+  margin: 3px 3px;
+}
+.btn-group > .btn {
+    margin:0px;
+}
+.form-control {
+	margin:3px;
+}
+.input-group-btn > .btn {
+  box-shadow: none;
+  margin: 0px;
+}
+.input-group > .form-control {
+  margin: 0px;
+}
+
+.input-group[class*="col-"] {
+    margin: 3px;
+}
+.qualdrop-addon {
+	padding:5px 12px;
+}
+
+
+#support {
+  box-shadow: 1px 1px 4px #999;
+}
+/* Styles for the use of the rotating image on the home page */
+.carousel-caption {
+  left: 0px;
+  bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  background-color: #333333;
+  width: 100%;
+}
+.carousel-control {
+  width: 30px;
+}
+/******************************
+ BEGIN padding/margin generators 
+ put this at the bottom so we can override margins/paddings in other classes
+ ******************************/
+/* pad is synonymous with pad-10 */
+.pad {
+  padding: 10px;
+}
+.margin-1 {
+  margin: 1px;
+}
+.margin {
+  margin: 10px;
+}
+.pad-100 {
+  padding: 100px;
+}
+.margin-100 {
+  margin: 100px;
+}
+.pad-left-100 {
+  padding-left: 100px;
+}
+.pad-right-100 {
+  padding-right: 100px;
+}
+.pad-top-100 {
+  padding-top: 100px;
+}
+.pad-bottom-100 {
+  padding-bottom: 100px;
+}
+.margin-left-100 {
+  margin-left: 100px;
+}
+.margin-right-100 {
+  margin-right: 100px;
+}
+.margin-top-100 {
+  margin-top: 100px;
+}
+.margin-bottom-100 {
+  margin-bottom: 100px;
+}
+.pad-95 {
+  padding: 95px;
+}
+.margin-95 {
+  margin: 95px;
+}
+.pad-left-95 {
+  padding-left: 95px;
+}
+.pad-right-95 {
+  padding-right: 95px;
+}
+.pad-top-95 {
+  padding-top: 95px;
+}
+.pad-bottom-95 {
+  padding-bottom: 95px;
+}
+.margin-left-95 {
+  margin-left: 95px;
+}
+.margin-right-95 {
+  margin-right: 95px;
+}
+.margin-top-95 {
+  margin-top: 95px;
+}
+.margin-bottom-95 {
+  margin-bottom: 95px;
+}
+.pad-90 {
+  padding: 90px;
+}
+.margin-90 {
+  margin: 90px;
+}
+.pad-left-90 {
+  padding-left: 90px;
+}
+.pad-right-90 {
+  padding-right: 90px;
+}
+.pad-top-90 {
+  padding-top: 90px;
+}
+.pad-bottom-90 {
+  padding-bottom: 90px;
+}
+.margin-left-90 {
+  margin-left: 90px;
+}
+.margin-right-90 {
+  margin-right: 90px;
+}
+.margin-top-90 {
+  margin-top: 90px;
+}
+.margin-bottom-90 {
+  margin-bottom: 90px;
+}
+.pad-85 {
+  padding: 85px;
+}
+.margin-85 {
+  margin: 85px;
+}
+.pad-left-85 {
+  padding-left: 85px;
+}
+.pad-right-85 {
+  padding-right: 85px;
+}
+.pad-top-85 {
+  padding-top: 85px;
+}
+.pad-bottom-85 {
+  padding-bottom: 85px;
+}
+.margin-left-85 {
+  margin-left: 85px;
+}
+.margin-right-85 {
+  margin-right: 85px;
+}
+.margin-top-85 {
+  margin-top: 85px;
+}
+.margin-bottom-85 {
+  margin-bottom: 85px;
+}
+.pad-80 {
+  padding: 80px;
+}
+.margin-80 {
+  margin: 80px;
+}
+.pad-left-80 {
+  padding-left: 80px;
+}
+.pad-right-80 {
+  padding-right: 80px;
+}
+.pad-top-80 {
+  padding-top: 80px;
+}
+.pad-bottom-80 {
+  padding-bottom: 80px;
+}
+.margin-left-80 {
+  margin-left: 80px;
+}
+.margin-right-80 {
+  margin-right: 80px;
+}
+.margin-top-80 {
+  margin-top: 80px;
+}
+.margin-bottom-80 {
+  margin-bottom: 80px;
+}
+.pad-75 {
+  padding: 75px;
+}
+.margin-75 {
+  margin: 75px;
+}
+.pad-left-75 {
+  padding-left: 75px;
+}
+.pad-right-75 {
+  padding-right: 75px;
+}
+.pad-top-75 {
+  padding-top: 75px;
+}
+.pad-bottom-75 {
+  padding-bottom: 75px;
+}
+.margin-left-75 {
+  margin-left: 75px;
+}
+.margin-right-75 {
+  margin-right: 75px;
+}
+.margin-top-75 {
+  margin-top: 75px;
+}
+.margin-bottom-75 {
+  margin-bottom: 75px;
+}
+.pad-70 {
+  padding: 70px;
+}
+.margin-70 {
+  margin: 70px;
+}
+.pad-left-70 {
+  padding-left: 70px;
+}
+.pad-right-70 {
+  padding-right: 70px;
+}
+.pad-top-70 {
+  padding-top: 70px;
+}
+.pad-bottom-70 {
+  padding-bottom: 70px;
+}
+.margin-left-70 {
+  margin-left: 70px;
+}
+.margin-right-70 {
+  margin-right: 70px;
+}
+.margin-top-70 {
+  margin-top: 70px;
+}
+.margin-bottom-70 {
+  margin-bottom: 70px;
+}
+.pad-65 {
+  padding: 65px;
+}
+.margin-65 {
+  margin: 65px;
+}
+.pad-left-65 {
+  padding-left: 65px;
+}
+.pad-right-65 {
+  padding-right: 65px;
+}
+.pad-top-65 {
+  padding-top: 65px;
+}
+.pad-bottom-65 {
+  padding-bottom: 65px;
+}
+.margin-left-65 {
+  margin-left: 65px;
+}
+.margin-right-65 {
+  margin-right: 65px;
+}
+.margin-top-65 {
+  margin-top: 65px;
+}
+.margin-bottom-65 {
+  margin-bottom: 65px;
+}
+.pad-60 {
+  padding: 60px;
+}
+.margin-60 {
+  margin: 60px;
+}
+.pad-left-60 {
+  padding-left: 60px;
+}
+.pad-right-60 {
+  padding-right: 60px;
+}
+.pad-top-60 {
+  padding-top: 60px;
+}
+.pad-bottom-60 {
+  padding-bottom: 60px;
+}
+.margin-left-60 {
+  margin-left: 60px;
+}
+.margin-right-60 {
+  margin-right: 60px;
+}
+.margin-top-60 {
+  margin-top: 60px;
+}
+.margin-bottom-60 {
+  margin-bottom: 60px;
+}
+.pad-55 {
+  padding: 55px;
+}
+.margin-55 {
+  margin: 55px;
+}
+.pad-left-55 {
+  padding-left: 55px;
+}
+.pad-right-55 {
+  padding-right: 55px;
+}
+.pad-top-55 {
+  padding-top: 55px;
+}
+.pad-bottom-55 {
+  padding-bottom: 55px;
+}
+.margin-left-55 {
+  margin-left: 55px;
+}
+.margin-right-55 {
+  margin-right: 55px;
+}
+.margin-top-55 {
+  margin-top: 55px;
+}
+.margin-bottom-55 {
+  margin-bottom: 55px;
+}
+.pad-50 {
+  padding: 50px;
+}
+.margin-50 {
+  margin: 50px;
+}
+.pad-left-50 {
+  padding-left: 50px;
+}
+.pad-right-50 {
+  padding-right: 50px;
+}
+.pad-top-50 {
+  padding-top: 50px;
+}
+.pad-bottom-50 {
+  padding-bottom: 50px;
+}
+.margin-left-50 {
+  margin-left: 50px;
+}
+.margin-right-50 {
+  margin-right: 50px;
+}
+.margin-top-50 {
+  margin-top: 50px;
+}
+.margin-bottom-50 {
+  margin-bottom: 50px;
+}
+.pad-45 {
+  padding: 45px;
+}
+.margin-45 {
+  margin: 45px;
+}
+.pad-left-45 {
+  padding-left: 45px;
+}
+.pad-right-45 {
+  padding-right: 45px;
+}
+.pad-top-45 {
+  padding-top: 45px;
+}
+.pad-bottom-45 {
+  padding-bottom: 45px;
+}
+.margin-left-45 {
+  margin-left: 45px;
+}
+.margin-right-45 {
+  margin-right: 45px;
+}
+.margin-top-45 {
+  margin-top: 45px;
+}
+.margin-bottom-45 {
+  margin-bottom: 45px;
+}
+.pad-40 {
+  padding: 40px;
+}
+.margin-40 {
+  margin: 40px;
+}
+.pad-left-40 {
+  padding-left: 40px;
+}
+.pad-right-40 {
+  padding-right: 40px;
+}
+.pad-top-40 {
+  padding-top: 40px;
+}
+.pad-bottom-40 {
+  padding-bottom: 40px;
+}
+.margin-left-40 {
+  margin-left: 40px;
+}
+.margin-right-40 {
+  margin-right: 40px;
+}
+.margin-top-40 {
+  margin-top: 40px;
+}
+.margin-bottom-40 {
+  margin-bottom: 40px;
+}
+.pad-35 {
+  padding: 35px;
+}
+.margin-35 {
+  margin: 35px;
+}
+.pad-left-35 {
+  padding-left: 35px;
+}
+.pad-right-35 {
+  padding-right: 35px;
+}
+.pad-top-35 {
+  padding-top: 35px;
+}
+.pad-bottom-35 {
+  padding-bottom: 35px;
+}
+.margin-left-35 {
+  margin-left: 35px;
+}
+.margin-right-35 {
+  margin-right: 35px;
+}
+.margin-top-35 {
+  margin-top: 35px;
+}
+.margin-bottom-35 {
+  margin-bottom: 35px;
+}
+.pad-30 {
+  padding: 30px;
+}
+.margin-30 {
+  margin: 30px;
+}
+.pad-left-30 {
+  padding-left: 30px;
+}
+.pad-right-30 {
+  padding-right: 30px;
+}
+.pad-top-30 {
+  padding-top: 30px;
+}
+.pad-bottom-30 {
+  padding-bottom: 30px;
+}
+.margin-left-30 {
+  margin-left: 30px;
+}
+.margin-right-30 {
+  margin-right: 30px;
+}
+.margin-top-30 {
+  margin-top: 30px;
+}
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
+.pad-25 {
+  padding: 25px;
+}
+.margin-25 {
+  margin: 25px;
+}
+.pad-left-25 {
+  padding-left: 25px;
+}
+.pad-right-25 {
+  padding-right: 25px;
+}
+.pad-top-25 {
+  padding-top: 25px;
+}
+.pad-bottom-25 {
+  padding-bottom: 25px;
+}
+.margin-left-25 {
+  margin-left: 25px;
+}
+.margin-right-25 {
+  margin-right: 25px;
+}
+.margin-top-25 {
+  margin-top: 25px;
+}
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
+.pad-20 {
+  padding: 20px;
+}
+.margin-20 {
+  margin: 20px;
+}
+.pad-left-20 {
+  padding-left: 20px;
+}
+.pad-right-20 {
+  padding-right: 20px;
+}
+.pad-top-20 {
+  padding-top: 20px;
+}
+.pad-bottom-20 {
+  padding-bottom: 20px;
+}
+.margin-left-20 {
+  margin-left: 20px;
+}
+.margin-right-20 {
+  margin-right: 20px;
+}
+.margin-top-20 {
+  margin-top: 20px;
+}
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+.pad-15 {
+  padding: 15px;
+}
+.margin-15 {
+  margin: 15px;
+}
+.pad-left-15 {
+  padding-left: 15px;
+}
+.pad-right-15 {
+  padding-right: 15px;
+}
+.pad-top-15 {
+  padding-top: 15px;
+}
+.pad-bottom-15 {
+  padding-bottom: 15px;
+}
+.margin-left-15 {
+  margin-left: 15px;
+}
+.margin-right-15 {
+  margin-right: 15px;
+}
+.margin-top-15 {
+  margin-top: 15px;
+}
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+.pad-10 {
+  padding: 10px;
+}
+.margin-10 {
+  margin: 10px;
+}
+.pad-left-10 {
+  padding-left: 10px;
+}
+.pad-right-10 {
+  padding-right: 10px;
+}
+.pad-top-10 {
+  padding-top: 10px;
+}
+.pad-bottom-10 {
+  padding-bottom: 10px;
+}
+.margin-left-10 {
+  margin-left: 10px;
+}
+.margin-right-10 {
+  margin-right: 10px;
+}
+.margin-top-10 {
+  margin-top: 10px;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+.pad-5 {
+  padding: 5px;
+}
+.margin-5 {
+  margin: 5px;
+}
+.pad-left-5 {
+  padding-left: 5px;
+}
+.pad-right-5 {
+  padding-right: 5px;
+}
+.pad-top-5 {
+  padding-top: 5px;
+}
+.pad-bottom-5 {
+  padding-bottom: 5px;
+}
+.margin-left-5 {
+  margin-left: 5px;
+}
+.margin-right-5 {
+  margin-right: 5px;
+}
+.margin-top-5 {
+  margin-top: 5px;
+}
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+.pad-0 {
+  padding: 0px;
+}
+.margin-0 {
+  margin: 0px;
+}
+.pad-left-0 {
+  padding-left: 0px;
+}
+.pad-right-0 {
+  padding-right: 0px;
+}
+.pad-top-0 {
+  padding-top: 0px;
+}
+.pad-bottom-0 {
+  padding-bottom: 0px;
+}
+.margin-left-0 {
+  margin-left: 0px;
+}
+.margin-right-0 {
+  margin-right: 0px;
+}
+.margin-top-0 {
+  margin-top: 0px;
+}
+.margin-bottom-0 {
+  margin-bottom: 0px;
+}
+
+
+/**
+ * The contents of this file are subject to the license and copyright
+ * detailed in the LICENSE and NOTICE files at the root of the source
+ * tree and available online at
+ *
+ * http://www.dspace.org/license/
+ */
+/* This magic gets the 16x16 icon to show up.. setting height/width didn't
+   do it, but adding padding actually made it show up. */
+img.ds-authority-confidence,
+span.ds-authority-confidence
+{ width: 16px; height: 16px; margin: 5px; background-repeat: no-repeat;
+  padding: 0px 2px; vertical-align: bottom; color: transparent;}
+img.ds-authority-confidence.cf-unset,
+span.ds-authority-confidence.cf-unset
+  { background-image: url(../../../image/authority/bug.png);}
+img.ds-authority-confidence.cf-novalue,
+span.ds-authority-confidence.cf-novalue
+  { background-image: url(../../../image/confidence/0-unauthored.gif);}
+img.ds-authority-confidence.cf-rejected,
+img.ds-authority-confidence.cf-failed,
+span.ds-authority-confidence.cf-rejected,
+span.ds-authority-confidence.cf-failed
+  { background-image: url(../../../image/confidence/2-errortriangle.gif); }
+img.ds-authority-confidence.cf-notfound,
+span.ds-authority-confidence.cf-notfound
+  { background-image: url(../../../image/confidence/3-thumb1.gif); }
+img.ds-authority-confidence.cf-ambiguous,
+span.ds-authority-confidence.cf-ambiguous
+  { background-image: url(../../../image/confidence/4-question.gif); }
+img.ds-authority-confidence.cf-uncertain,
+span.ds-authority-confidence.cf-uncertain
+  { background-image: url(../../../image/confidence/5-pinion.gif); }
+img.ds-authority-confidence.cf-accepted,
+span.ds-authority-confidence.cf-accepted
+  { background-image: url(../../../image/confidence/6-greencheck.gif); }
+
+/* hide authority-value inputs in forms */
+input.ds-authority-value { display:none; }
+
+/** XXX Change to this to get the authority value to show up for debugging:
+ input.ds-authority-value { display:inline; }
+**/
+
+/* for edit-item-form lock button */
+input.ds-authority-lock
+  { vertical-align: bottom; height: 24px; width: 24px; margin-right: 8px;
+    background-repeat: no-repeat; background-color: transparent; }
+input.ds-authority-lock.is-locked
+  { background-image: url(../../../image/lock24.png); }
+input.ds-authority-lock.is-unlocked
+  { background-image: url(../../../image/unlock24.png); }
+
+/* field required in submission */
+.label-required:after { content:" (required)"; }
+.browse_range { text-align: center; }
+.prev-next-links { text-align: center; }
+
+div.batchimport-info {
+	color: gray;
+}
+
+div.batchimport-info  a {
+	color:#47a447; 
+	font-weight: bold;
+}
+
+span.batchimport-error-tab {
+	padding-left:10px;
+}
+
+span.batchimport-error-caused {
+	font-weight:bold;
+}
+
+#edit_metadata > label {
+	margin-bottom: 2px;
+	margin-top: 10px;
+}
+
+#edit_metadata > .help-block {
+	display: inline;
+	margin-top:10px;
+	margin-bottom: 2px;
+}
+#edit_metadata > .alert {
+	margin-bottom: -5px;
+	margin-top:10px;
+}
+@media print {
+	a[href]:after {
+		content: "";
+	}
+}

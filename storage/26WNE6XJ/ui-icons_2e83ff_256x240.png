@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US"
+	xmlns:og="http://opengraphprotocol.org/schema/"
+	xmlns:fb="http://www.facebook.com/2008/fbml">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US"
+	xmlns:og="http://opengraphprotocol.org/schema/"
+	xmlns:fb="http://www.facebook.com/2008/fbml">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8) ]><!-->
+<html lang="en-US"
+	xmlns:og="http://opengraphprotocol.org/schema/"
+	xmlns:fb="http://www.facebook.com/2008/fbml">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>AgResearch</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://www.agresearch.co.nz/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/js/html5.js"></script>
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="AgResearch &raquo; Feed" href="http://www.agresearch.co.nz/feed/" />
+<link rel="alternate" type="application/rss+xml" title="AgResearch &raquo; Comments Feed" href="http://www.agresearch.co.nz/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.agresearch.co.nz\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.15"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='bootstrap-css'  href='http://www.agresearch.co.nz/wp-content/plugins/easy-bootstrap-shortcodes/styles/bootstrap.min.css?ver=4.2.15' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-fa-icon-css'  href='http://www.agresearch.co.nz/wp-content/plugins/easy-bootstrap-shortcodes/styles/font-awesome.min.css?ver=4.2.15' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-ui-css'  href='http://www.agresearch.co.nz/wp-content/plugins/form-maker/css/jquery-ui-1.10.3.custom.css?ver=4.2.15' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-ui-spinner-css'  href='http://www.agresearch.co.nz/wp-content/plugins/form-maker/css/jquery-ui-spinner.css?ver=4.2.15' type='text/css' media='all' />
+<link rel='stylesheet' id='form_maker_calendar-jos-css'  href='http://www.agresearch.co.nz/wp-content/plugins/form-maker/css/calendar-jos.css?ver=4.2.15' type='text/css' media='all' />
+<link rel='stylesheet' id='form_maker_frontend-css'  href='http://www.agresearch.co.nz/wp-content/plugins/form-maker/css/form_maker_frontend.css?ver=4.2.15' type='text/css' media='all' />
+<link rel='stylesheet' id='naturo-form-css-css'  href='http://www.agresearch.co.nz/wp-content/plugins/naturo-forms/template/style.css?ver=4.2.15' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfourteen-style-css'  href='http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/style.css?ver=4.2.15' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfourteen-ie-css'  href='http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='ebs_dynamic_css-css'  href='http://www.agresearch.co.nz/wp-content/plugins/easy-bootstrap-shortcodes/styles/ebs_dynamic_css.php?ver=4.2.15' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/jquery.js?ver=1.11.2'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-content/plugins/easy-bootstrap-shortcodes/js/bootstrap.min.js?ver=4.2.15'></script>
+<script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false&#038;ver=4.2.15'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-content/plugins/form-maker/js/if_gmap_front_end.js?ver=4.2.15'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-content/plugins/form-maker/js/jelly.min.js?ver=4.2.15'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-content/plugins/form-maker/js/file-upload.js?ver=4.2.15'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-content/plugins/form-maker/js/calendar/calendar.js?ver=4.2.15'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-content/plugins/form-maker/js/calendar/calendar_function.js?ver=4.2.15'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.agresearch.co.nz/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.agresearch.co.nz/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.2.15" />
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+	<script type="text/javascript" src="http://www.youtube.com/player_api"></script>
+			<link rel="stylesheet" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/css/bootstrap.glyph.min.css" />
+	<link rel="stylesheet" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/fonts/stylesheet.css" />
+	<link rel="stylesheet" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/css/bootstrap-grid.css" />
+
+	<script src="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/js/jquery.backstretch.min_.js"></script>
+	<script src="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/js/jqueryui.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+<link rel="stylesheet" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/css/bootstrap-image-gallery.min.css">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/manifest.json">
+<meta name="msapplication-TileColor" content="#8cc63f">
+<meta name="msapplication-TileImage" content="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">	
+
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-440313-1', 'auto');
+  ga('send', 'pageview');
+
+
+  (function($){
+
+    $(window).ready(function(){
+        $('.share-bottom a').on('click', function() {
+          ga('send', 'event', 'share', $(this).attr("data-share") , window.location.href);
+        });
+    });
+
+  })(jQuery);
+
+</script>
+
+</head>
+
+<body class="error404 header-image full-width footer-widgets">
+<div id="page" class="hfeed site">
+	
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"></h1>
+
+			
+			
+				<div id="site-header">
+				<a href="http://www.agresearch.co.nz/" rel="home">
+					<img src="http://www.agresearch.co.nz/wp-content/uploads/2016/03/AgResearch-trans.png" width="400" height="106" alt="">
+				</a>
+			</div>
+	
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+			   
+				<h1 class="menu-toggle">Primary Menu</h1>
+			
+				
+				 <div class='socialstrip '>
+			        <span class='hidden-xs'>
+			        
+			            			        
+    			        <a href='http://www.agresearch.co.nz/labels/events/'><img  src="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/cal.png"/></a>
+    			        <a href='https://www.youtube.com/user/AgResearch'><img  src="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/tubesyo.png"/></a>
+    			        <a href='https://www.linkedin.com/company/agresearch?trk=company_logo'><img  src="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/in.png"/></a>
+    			        <a href='https://www.facebook.com/agresearch?fref=ts'><img  src="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/fb.png"/></a>
+    			        <a href='https://twitter.com/AgResearchNEWS'><img  src="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/images/birdy.png"/></a>
+			        </span>
+		        </div>
+			    <div>
+			        <form method='get' action="/" class='searchbox'>
+			            <button class="search-toggler"> <span class='glyphicon glyphicon-search' >
+			            </span ></button><input type='text' name='s' class='searchbnox' />
+			        </form>
+    			     
+			        <div class="menu-main-container"><ul id="menu-main" class="nav-menu"><li id="menu-item-66" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-66"><a href="/">News</a></li>
+<li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-29"><a href="/people/">People</a></li>
+<li id="menu-item-115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-115"><a href="/careers">Careers</a></li>
+<li id="menu-item-116" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-116"><a href="/about">about</a></li>
+<li id="menu-item-117" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-117"><a href="/contact-2">contact</a></li>
+</ul></div>			     </div>
+			</nav>
+		</div>
+<!--
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+			
+			</div>
+		</div> -->
+	</header><!-- #masthead -->
+	
+	
+	<script>
+	    jQuery(window).ready(function(){
+	    jQuery('.side-bar-section').each(function(i,e){
+           if(!jQuery(this).find('a').length){
+              jQuery(this).hide();
+           }
+        })
+	    })
+	</script>
+
+	<div id="main" class="site-main">
+
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			<header class="page-haeader" style="text-align: center;">
+
+				<h1 class="page-atitle" style="font-size: 100px;">4<span class="glyphicon glyphicon-ban-circle" style="font-size: 69px;  vertical-align: middle;"></span>4</h1>
+				<h1 class="page-atitle">Not Found</h1>
+			</header>
+
+
+		</div>
+	</div><!-- #primary -->
+
+    
+        <script>
+       (function($){
+            
+            $(window).ready(function(){
+                var height = $( '.single-tile-space .tile-image.picture-tile').width();
+                    $( '.tile-image').css({'min-height': height, 'height' : height  });
+                $(window).on('resize', function(){
+                    var height = $( '.single-tile-space .tile-image.picture-tile').width();
+                    $( '.tile-image').css({'min-height': height, 'height' : height });
+                });
+
+              $(window).trigger('resize');
+            
+            });
+        
+        })(jQuery);
+            
+        </script>
+    
+		</div><!-- #main -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			
+<div id="supplementary">
+	<div id="footer-sidebar" class="footer-sidebar widget-area" role="complementary">
+		<aside id="text-2" class="widget widget_text">			<div class="textwidget">&#169; AgResearch | 
+<a href='http://www.agresearch.co.nz/tc/#terms' target='_blank' >Terms of use</a> & <a href='http://www.agresearch.co.nz/tc/#privacy' target='_blank' >Privacy</a>
+
+<style>
+.textwidget, .widget_text{
+color: black;
+float:right !important;
+position:static  !important;
+}
+
+#text-2{
+width:50% !important;
+}
+</style></div>
+		</aside>	</div><!-- #footer-sidebar -->
+</div><!-- #supplementary -->
+
+			<div class="site-info">
+								<a href="http://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+
+
+	<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/ui/mouse.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/ui/slider.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/ui/button.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/ui/spinner.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/ui/effect.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/ui/effect-shake.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-content/plugins/naturo-forms/template/script.js?ver=1.0.0'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/masonry.min.js?ver=3.1.2'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2'></script>
+<script type='text/javascript' src='http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/js/functions.js?ver=20131209'></script>
+	
+		
+
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="http://www.agresearch.co.nz/wp-content/themes/twentyfourteen/js/bootstrap-image-gallery.min.js"></script>
+
+
+</body>
+</html>

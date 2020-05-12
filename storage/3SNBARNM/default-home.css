@@ -1,0 +1,454 @@
+﻿.page-home {
+    min-width: 972px;
+    overflow: hidden;
+}
+.page-home header {
+    background-size: cover;
+    background-image: url("../../gfx/cabicd4/home-bg.jpg");
+    background-position: center center;
+}
+.page-home header .logo .svg-image {
+    width: 146px;
+    height: 42px;
+    margin-left: 0;
+}
+.page-home header h1 {
+    font-size: 38px;
+}
+.page-home  p {
+    line-height: 22px;
+    font-size: 15px;
+}
+.page-home #sign-in.active a .in {
+    color: #262626
+}
+.page-home .top-nav,
+.page-home .top-nav .nav {
+    background-color: #4a4949;
+}
+.page-home .top-nav .nav li a,
+.page-home .text-white.icon-icon_arrow_down {
+    color: #fff;
+}
+.page-home .push-top {
+    margin-top: 12px !important;
+}
+.page-home .nopadding {
+    padding: 0 !important
+}
+.nopadding-top {
+    padding-top: 0 !important;
+}
+.soft-bottom {
+    padding-bottom: 0px !important;
+}
+.page-home .soft-top {
+    padding-top: 35px !important;
+}
+.page-home .soft-half-left-right {
+    padding: 0 !important;
+}
+.page-home .tab-search {
+    padding: 15px;
+    width: 643px;
+}
+.page-home .tab-search p,
+.content-mycabi .side-nav li,
+.content-block .show-more {
+    font-size: 14px;
+}
+.page-home .nav > li > a:hover,
+.page-home .nav > li > a:focus {
+    background-color: #eef1ea;
+}
+.page-home .nav-pills > li + li {
+    margin-left:0
+}
+.page-home .bg-green {
+    background-color: #dbe1d5;
+}
+.page-home .bg-home {
+    background-color: #eef1ea;
+    float: left;
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+}
+.page-home .bg-home:before,
+.page-home .bg-home:after {
+    background-color:#eef1ea;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 700%;
+}
+.page-home .bg-home:before {
+    right: 100%;
+}
+.page-home .bg-home:after {
+    left: 130%;
+}
+.page-home .bg-white {
+    background-color: #fff;
+}
+.page-home .tabs {
+    border-bottom: 5px solid #dbe1d5;
+    margin-top: 20px;
+    background-color: transparent;
+}
+.page-home .tabs .form-group .form-control {
+    width: 373px;
+    height: auto;
+    margin-right: 10px;
+    display: inline-block !important;
+}
+.page-home .btn-default {
+    padding: 4px 20px 5px;
+    margin-right: 10px;
+}
+.page-home .tab-pane > a {
+    color: #262626;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.page-home .tab-search .form-group {
+    display: inline-block !important;
+    margin-bottom: 0 !important
+}
+.page-home .content-section  {
+    border-top:20px solid #EEF1EA;
+    padding-top: 0;
+}
+.page-home .content-block {
+    background-color: transparent;
+    border-top:none;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.page-home .content-block a {
+    display: block;
+    text-decoration: underline;
+    padding: 4px 0 0;
+    font-size: 16px;
+}
+.page-home .content-block h3 {
+    font-size: 20px;
+    margin-top: 3px;
+}
+.page-home .content-block .show-more {
+    padding: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+.page-home .content-block .show-more {
+    text-decoration: none;
+}
+.page-home .show-all-links li {
+    width: 100%;
+}
+.page-home .content-block .show-more span {
+    text-decoration: underline;
+}
+.page-home .content-block .show-more span.icon-icon_plus {
+    text-decoration: none;
+}
+.page-home .platform-details .icon-icon_arrow_right {
+    color: #cd4400;
+    font-size: 10px;
+}
+.page-home .side-nav {
+    padding: 15px 30px 5px 10px;
+    background-color: #fff;
+}
+.page-home .side-nav  span,
+.page-home .side-nav a,
+.page-home .platform-details span {
+    font-size: 15px;
+}
+.page-home .side-nav .media {
+    border-bottom: 1px solid #adbaa3;
+    padding:0 10px 15px;
+}
+.page-home .side-nav-icons {
+    width: 60px;
+    height: 60px;
+}
+.side-nav span strong {
+    font-size: 16px;
+}
+.linkto-icon {
+    width: 15px;
+    height: 14px;
+    display: inline-block;
+    margin-left: 5px;
+}
+.non-border {
+    border-bottom: none !important;
+    padding-bottom: 0;
+}
+.side-nav a,
+.user-btn a {
+    color: #cd4400;
+    text-decoration: underline;
+}
+.side-nav h2 {
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+.side-nav span {
+    padding-bottom: 5px;
+    display: inline-block;
+}
+.svg-green {
+    width: 81px;
+    height: 81px;
+    padding: 10px;
+    background-color: #80c546;
+}
+/*bullets*/
+.content-block .bullets li:before {
+    top: 9px;
+}
+.bullets li {
+    padding-left: 15px;
+    font-weight: normal;
+    font-family: "open_sansregular";
+    font-size: 15px;
+}
+.bullets li:before {
+    width: 5px;
+    height: 5px;
+    top: 9px;
+}
+/*section 2*/
+.platform-details,
+.content-mycabi {
+    margin-top: 20px;
+}
+.platform-details h3 {
+    margin-left: 3px;
+}
+.platform-details h3,
+.content-mycabi h3 {
+    font-size: 22px;
+    margin-top: 25px;
+}
+.platform-details p {
+    margin-bottom: 4px;
+}
+.platform-details p strong {
+    display: inline-block;
+    font-size: 16px;
+}
+.platform-lists {
+    background-color:#EEF1EA;
+}
+.icon-icon_arrow_right::before {
+    color: red;
+    content: "\e603";
+    position: relative;
+    top: 0px;
+    color: #cd4400;
+    left: 5px;
+    font-size: 10px;
+}
+.content-mycabi ul li,
+.content-mycabi p,
+.content-mycabi a {
+    font-size: 15px;
+}
+.content-mycabi .col-sm-6 > p {
+    padding-bottom: 5px;
+}
+.content-mycabi .push-bottom {
+    margin-bottom: 35px !important;
+}
+.icons {
+    padding: 10px
+}
+.icons img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.user-btn button {
+    padding: 4px 23px 6px;;
+}
+.user-btn p {
+    margin: 12px 0 0;
+}
+.icon-Icon_TrainingVideos:before,
+.icon-Icon_QuickGuide:before,
+.icon-Icon_Help_Circle:before {
+    color: #fff;
+    font-size: 40px;
+}
+.push-half-left {
+    padding-left: 6px !important;
+    margin-left: 0 !important
+}
+.platform-details img {
+    width: 100%;
+}
+::i-block-chrome, .side-nav-icons img.non-svg-image,
+::i-block-chrome, .platform-details img.non-svg-image {
+    display: inline-block;
+    max-width: none;
+    height: auto;
+}
+::i-block-chrome, .linkto-icon img.non-svg-image {
+    display: inline-block;
+    max-width: none;
+    height: auto;
+    margin-bottom: 10px;
+}
+::i-block-chrome, .page-home .tab-search {
+    width: 693px;
+}
+.platform-lists .media-body {
+    padding-bottom: 18px;
+    padding-top: 18px;
+    padding-right: 0;
+}
+/* styling for ie */
+.ie7 .page-home .col-sm-5 {
+    width: 370px !important
+}
+.ie7 .page-home .col-sm-7 .col-sm-5 {
+    width: 190px !important
+}
+.ie7 .page-home .col-sm-7 .col-sm-7 {
+    /*width: 337px !important*/
+    width: 313px !important;
+}
+.ie7 .page-home .content-mycabi .col-sm-6 {
+    /*width: 262px !important*/
+    width: 255px !important
+}
+.ie7 .linkto-icon {
+    display: inline;
+    position: relative;
+}
+.ie7 .content-block .show-more SPAN {
+    float: left;
+}
+.ie7 .show-more .icon-icon_plus {
+    float: left;
+    margin: 7px 0 0 7px
+}
+.ie7 .platform-lists .media-left {
+    float: left;
+    display: block;
+    width: auto;
+}
+.ie7 .side-nav .media-body {
+    float: left;
+    display: block;
+}
+.ie7 .media-body {
+    width: auto;
+}
+/**/
+.ie7 .page-home .linkto-icon .non-svg-image {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 3px;
+}
+.ie7 .platform-lists .icon-icon_arrow_right {
+    background: url("../../gfx/cabicd4/right_arrow.png") no-repeat left bottom !important;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    left: 2px;
+}
+.ie7 .side-nav .media-body span  {
+    display: block;
+}
+/*.ie7 .side-nav .set-layout {
+    width: 263px;
+}*/
+.ie7 .side-nav .media-body {
+    width: 274px;
+}
+.ie7 .side-nav .media-right {
+    display: inline-block;
+    padding-left: 0;
+}
+.ie7 .side-nav .block-relative {
+    position: relative;
+    top: 49px;
+}
+.ie7 .nopadding {
+    padding: 0 !important;
+}
+.ie7 .platform-lists .icon-Icon_TrainingVideos,
+.ie7 .platform-lists .icon-Icon_QuickGuide,
+.ie7 .platform-lists .icon-Icon_Help {
+    background: url("../../gfx/cabicd4/u112.png") no-repeat left bottom !important;
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    /*position: relative;
+    top: -1px;
+    left: 2px;*/
+    margin-left: 8px;
+}
+.ie7 .platform-lists .icon-Icon_QuickGuide {
+    background: url("../../gfx/cabicd4/u103.png") no-repeat left bottom !important;
+    padding-top: 6px;
+}
+.ie7 .platform-lists .icon-Icon_Help {
+    background: url("../../gfx/cabicd4/u105.png") no-repeat left bottom !important;
+    padding-top: 8px;
+}
+.ie7 .platform-lists .media-body {
+    padding: 12px 0;
+}
+.ie7 .page-home .tabs .form-group .form-control {
+    height: 17px;
+}
+.ie7 .page-home .tab-search {
+    width: 645px;
+}
+.ie7 .page-home .side-nav-icons,
+.ie8 .page-home .side-nav-icons {
+    margin-top: 5px;
+}
+.ie7 .page-home .content-mycabi p,
+.ie8 .page-home .content-mycabi p {
+    margin-bottom: 0;
+}
+/*IE8**/
+.ie8 .page-home .container {
+    width: 972px;
+}
+.ie8 .page-home .tab-search .form-group {
+    float: left;
+}
+.ie8 .page-home .tab-search {
+    width: 675px;
+}
+
+.Product_BannerAds {
+    *zoom: 1;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    background: #eef1ea !important;
+}
+
+.Product_BannerAds .BannerAds {
+    height: 100px !important;
+    margin: 0 auto;
+    overflow: auto;
+    background-repeat: no-repeat !important;
+    margin-bottom: 1px !important;
+    background-size: 100% 100% !important;
+    width: 956px !important;
+}

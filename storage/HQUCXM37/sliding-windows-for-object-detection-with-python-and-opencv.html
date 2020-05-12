@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="js csstransforms3d csstransitions wf-opensans3a3002c4002c6002c8007cbreeserif-n4-inactive wf-inactive">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/">
+<meta name="wpd_url" content="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/">
+<meta name="wpd_date" content="2016-08-10T05:55Z">
+<script src="form" type="text/javascript"></script>
+
+<meta charset="UTF-8">
+
+
+<link rel="pingback" href="http://www.pyimagesearch.com/xmlrpc.php">
+<link rel="shortcut icon" href="favicon.ico">
+
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!--  Mobile viewport scale -->
+<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport">
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v2.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Sliding Windows for Object Detection with Python and OpenCV - PyImageSearch</title>
+<meta name="description" content="Inside this tutorial, you'll learn how to combing a sliding window + an image pyramid to create an object detection classifier using Python and OpenCV.">
+<link rel="canonical" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sliding Windows for Object Detection with Python and OpenCV - PyImageSearch">
+<meta property="og:description" content="Inside this tutorial, you'll learn how to combing a sliding window + an image pyramid to create an object detection classifier using Python and OpenCV.">
+<meta property="og:url" content="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/">
+<meta property="og:site_name" content="PyImageSearch">
+<meta property="article:tag" content="classification">
+<meta property="article:tag" content="histogram of oriented gradients">
+<meta property="article:tag" content="hog">
+<meta property="article:tag" content="image pyramid">
+<meta property="article:tag" content="linear svm">
+<meta property="article:tag" content="machine learning">
+<meta property="article:tag" content="object detection">
+<meta property="article:tag" content="sliding window">
+<meta property="article:section" content="Machine Learning">
+<meta property="article:published_time" content="2015-03-23T10:00:58+00:00">
+<meta property="article:modified_time" content="2015-06-14T16:31:54+00:00">
+<meta property="og:updated_time" content="2015-06-14T16:31:54+00:00">
+<meta property="og:image" content="http://www.pyimagesearch.com/wp-content/uploads/2015/03/sliding_window_example.jpg">
+<meta property="og:image" content="http://www.pyimagesearch.com/wp-content/uploads/2014/10/sliding_window_example.gif">
+<meta property="og:image" content="http://www.pyimagesearch.com/wp-content/uploads/2015/03/sliding-window-animated-adrian.gif">
+<meta property="og:image" content="http://www.pyimagesearch.com/wp-content/uploads/2015/03/sliding-window-animated-sot.gif">
+<meta property="og:image" content="http://www.pyimagesearch.com/wp-content/uploads/2014/02/download-code-icon.png">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="PyImageSearch » Feed" href="http://feeds.feedburner.com/Pyimagesearch">
+<link rel="alternate" type="application/rss+xml" title="PyImageSearch » Comments Feed" href="http://www.pyimagesearch.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="PyImageSearch » Sliding Windows for Object Detection with Python and OpenCV Comments Feed" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/feed/">
+		<div class="fit-vids-style">­</div><script async="" src="cb=gapi.loaded_1"></script><script async="" src="cb=gapi.loaded_0"></script><script src="54220efd7ab7f03f7e000043.js" async="" type="text/javascript"></script><script src="mlt.js" type="text/javascript" async=""></script><script src="4768429.js" async="" type="text/javascript"></script><script src="analytics.js" async=""></script><script src="mixpanel-2-latest.min.js" async="" type="text/javascript"></script><script type="text/javascript">
+
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.pyimagesearch.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script type="text/javascript" src="wp-emoji-release.min.js"></script>
+		
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<link href="http://www.pyimagesearch.com/wp-content/themes/canvas/css/non-responsive.css" rel="stylesheet" type="text/css" />
+<style type="text/css">.col-full, #wrapper { width: 960px; max-width: 960px; } #inner-wrapper { padding: 0; } body.full-width #header, #nav-container, body.full-width #content, body.full-width #footer-widgets, body.full-width #footer { padding-left: 0; padding-right: 0; } body.fixed-mobile #top, body.fixed-mobile #header-container, body.fixed-mobile #footer-container, body.fixed-mobile #nav-container, body.fixed-mobile #footer-widgets-container { min-width: 960px; padding: 0 1em; } body.full-width #content { width: auto; padding: 0 1em;}</style>
+<![endif]-->
+<script type="text/javascript" src="M9bPKixNLarUMYYydHMz04sSS1L1cjPzAA.js"></script>
+<script type="text/javascript">
+
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/www.pyimagesearch.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="M9RPLkqszM_TLa7MK0ms0M3ITM_IAeKS1CL9rGL93Mw8qAI9IBMA.js"></script>
+<script type="text/javascript" data-cfasync="false" id="omapi-script" src="api.min.js"></script>
+<script type="text/javascript" src="M9BPTswrSyzWz8xLzilNSS3WzyrWL8nILErRLUgsKqnUMcCmIDc_JbUoL7OqCLt0empealFiDgA.js"></script>
+<link rel="https://api.w.org/" href="http://www.pyimagesearch.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.pyimagesearch.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.pyimagesearch.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.4.2">
+<link rel="shortlink" href="http://www.pyimagesearch.com/?p=2154">
+<link rel="alternate" type="application/json+oembed" href="http://www.pyimagesearch.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.pyimagesearch.com%2F2015%2F03%2F23%2Fsliding-windows-for-object-detection-with-python-and-opencv%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.pyimagesearch.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.pyimagesearch.com%2F2015%2F03%2F23%2Fsliding-windows-for-object-detection-with-python-and-opencv%2F&amp;format=xml">
+
+<!-- Theme version -->
+<meta name="generator" content="Canvas 5.5.7">
+<meta name="generator" content="WooFramework 5.5.5">
+
+<!-- Custom CSS Styling -->
+
+<!-- Options Panel Custom CSS -->
+
+
+
+<!-- Woo Shortcodes CSS -->
+
+
+<!-- Custom Stylesheet -->
+
+
+
+<!-- start Mixpanel -->
+<script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("2486e0f021e92605d44d32fce5f1d826");
+</script>
+<!-- end Mixpanel -->
+
+<script src="jquery.min.js"></script><script src="tagjs" async="" type="text/javascript"></script><img src="untitled" height="1" width="1" border="0"><img src="seg" height="1" width="1" border="0"><img src="seg_001.dat" height="1" width="1" border="0"><img src="seg_002.dat" height="1" width="1" border="0"><script src="webfont.js"></script>
+<link rel="stylesheet" type="text/css" href="sliding-windows-for-object-detection-with-python-and-opencv.css" media="all">
+</head>
+<body class="single single-post postid-2154 single-format-standard gecko alt-style-default two-col-left width-960 two-col-left-960 full-width full-header full-footer">
+<div id="wrapper">
+
+	<div id="inner-wrapper">
+
+	    <!--#header-container-->
+    <div id="header-container">
+<h3 class="nav-toggle icon"><a href="#navigation">Navigation</a></h3>
+
+	<header id="header" class="col-full">
+
+		<div id="logo">
+<a href="http://www.pyimagesearch.com/" title="Be awesome at learning OpenCV, Python, and computer vision"><img src="logo.png" alt="PyImageSearch"></a>
+<span class="site-title"><a href="http://www.pyimagesearch.com/">PyImageSearch</a></span>
+<span class="site-description">Be awesome at learning OpenCV, Python, and computer vision</span>
+</div>
+
+	</header>
+
+	    </div><!--/#header-container-->
+    <!--#nav-container-->
+    <div id="nav-container">
+<nav id="navigation" class="col-full" role="navigation">
+
+	<section class="menus">
+
+		<a href="http://www.pyimagesearch.com/" class="nav-home"><span>Home</span></a>
+
+	<h3>Main Menu</h3><ul id="main-nav" class="nav fl"><li id="menu-item-4519" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4519"><a href="http://www.pyimagesearch.com/start-here-learn-computer-vision-opencv/">Start Here</a></li>
+<li id="menu-item-2616" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2616"><a href="https://www.pyimagesearch.com/practical-python-opencv/">Practical Python and OpenCV</a></li>
+<li id="menu-item-2617" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2617"><a href="https://www.pyimagesearch.com/pyimagesearch-gurus/">PyImageSearch Gurus</a></li>
+<li id="menu-item-2615" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2615"><a href="http://www.pyimagesearch.com/opencv-tutorials-resources-guides/">OpenCV 3 Tutorials</a></li>
+<li id="menu-item-2618" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2618"><a href="http://www.pyimagesearch.com/free-opencv-crash-course/">FREE OpenCV Crash Course</a></li>
+<li id="menu-item-2619" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2619"><a href="http://www.pyimagesearch.com/about/">About</a></li>
+<li id="menu-item-2620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2620"><a href="http://www.pyimagesearch.com/contact/">Contact</a></li>
+</ul>	<ul class="rss fr">
+						<li class="sub-rss"><a href="http://feeds.feedburner.com/Pyimagesearch"></a></li>
+			</ul>
+	
+	</section><!-- /.menus -->
+
+	<a href="#top" class="nav-close"><span>Return to Content</span></a>
+
+</nav>
+    </div><!--/#nav-container-->
+       
+    <!-- #content Starts -->
+	    <div id="content" class="col-full">
+    
+    	<div id="main-sidebar-container">    
+
+            <!-- #main Starts -->
+                        <section id="main">                       
+<article class="post-2154 post type-post status-publish format-standard hentry category-machine-learning-2 category-tutorials tag-classification tag-histogram-of-oriented-gradients tag-hog tag-image-pyramid tag-linear-svm tag-machine-learning tag-object-detection tag-sliding-window">
+	<header>
+	<h1 class="title">Sliding Windows for Object Detection with Python and OpenCV</h1>	</header>
+<div class="post-meta"><span class="small">By</span> <span class="author vcard"><span class="fn"><a href="http://www.pyimagesearch.com/author/adrian/" title="Posts by Adrian Rosebrock" rel="author">Adrian Rosebrock</a></span></span> <span class="small">on</span> <abbr class="date time published" title="2015-03-23T10:00:58-0400">March 23, 2015</abbr>  <span class="small">in</span> <span class="categories"><a href="http://www.pyimagesearch.com/category/machine-learning-2/" title="View all items in Machine Learning">Machine Learning</a>, <a href="http://www.pyimagesearch.com/category/tutorials/" title="View all items in Tutorials">Tutorials</a></span>  </div>
+	<section class="entry">
+<div style="width: 623px;" id="fsb-social-bar" class="fsb-social-bar" data-post-id="2154" data-socialite="true"><div class="fsb-share-twitter fsb-hide-count"><a href="https://twitter.com/share?original_referer=http%3A%2F%2Fwww.pyimagesearch.com%2F&amp;source=tweetbutton&amp;text=Sliding+Windows+for+Object+Detection+with+Python+and+OpenCV&amp;url=http%3A%2F%2Fwww.pyimagesearch.com%2F2015%2F03%2F23%2Fsliding-windows-for-object-detection-with-python-and-opencv%2F&amp;via=pyimagesearch" class="socialite twitter fsb-twitter" data-fsb-service="twitter" rel="nofollow" target="_top" title="Be the first one to tweet this article!"><span class="fsb-service-title">Twitter</span><span class="fsb-count">0</span></a></div><div class="fsb-share-facebook"><div class="socialised facebook socialite-loaded"><div class="socialite-button"><div fb-iframe-plugin-query="app_id=&amp;container_width=120&amp;href=http%3A%2F%2Fwww.pyimagesearch.com%2F2015%2F03%2F23%2Fsliding-windows-for-object-detection-with-python-and-opencv%2F&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=60" fb-xfbml-state="rendered" data-fsb-service="facebook" data-href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" class="fb-like fb_iframe_widget"><span style="vertical-align: bottom; width: 66px; height: 20px;"><iframe class="" src="sliding-windows-for-object-detection-with-python-and-opencv_1.html" style="border: medium none; visibility: visible; width: 66px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f33d52b5a4eb22c" frameborder="0" height="1000px" width="60px"></iframe></span></div></div></div></div><div class="fsb-share-google"><div class="socialised googleplus socialite-loaded"><div class="socialite-button"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat ; 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="sliding-windows-for-object-detection-with-python-and-opencv_2.html" name="I0_1473486872133" id="I0_1473486872133" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div></div></div></div><div class="fsb-share-linkedin"><a href="https://www.linkedin.com/cws/share?url=http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/" class="socialite linkedin fsb-linkedin" data-fsb-service="linkedin" data-size="medium" data-href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/" rel="nofollow" target="_top"><span class="fsb-service-title">LinkedIn</span><span class="fsb-count">11</span></a></div></div><div class="fsb-clear"></div><p class="p1"><a href="http://www.pyimagesearch.com/wp-content/uploads/2015/03/sliding_window_example.jpg"><img class="aligncenter wp-image-2155" src="sliding_window_example.jpg" alt="sliding_window_example" srcset="http://www.pyimagesearch.com/wp-content/uploads/2015/03/sliding_window_example-300x246.jpg 300w, http://www.pyimagesearch.com/wp-content/uploads/2015/03/sliding_window_example.jpg 714w" sizes="(max-width: 600px) 100vw, 600px" height="492" width="600"></a></p>
+<p class="p1">So in <a href="http://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/" target="_top">last week’s blog post</a> we discovered how to construct an image pyramid.</p>
+<p class="p1">And in today’s article we are going to extend that example and introduce the concept of a <em><strong>sliding window</strong></em>. Sliding windows play an integral role in object classification, as they allow us to localize exactly&nbsp;<em>“where”</em> in an image an object resides.</p>
+<p class="p1">Utilizing both a sliding window and an image pyramid we are able to detect objects in images at various scales and locations.</p>
+<p class="p1">In fact, both sliding windows and image pyramids are both used in my <a title="Histogram of Oriented Gradients and Object Detection" href="http://www.pyimagesearch.com/2014/11/10/histogram-oriented-gradients-object-detection/" target="_top">6-step HOG + Linear SVM</a> object classification framework!</p>
+<p class="p1">To learn more about the role sliding windows play in object classification and image classification, read on.&nbsp;By the time you are done&nbsp;reading this blog post, you’ll have an excellent understanding on how image pyramids and sliding windows are used for classification.</p>
+<div style="padding-top: 10px; padding-bottom: 15px; padding-right: 10px; height: 70px; background: transparent url('download-code-icon.png') no-repeat ; 0% / 70px 70px;">
+<p style="margin-top: 1px; margin-left: 80px; font-weight: bold;">Looking for the source code to this post?<br>
+<a id="scroll_to_code" href="#">Jump right to the downloads section.</a></p>
+</div>
+<p class="p1"><strong>OpenCV and Python versions:</strong><br>
+This example will run on<strong>&nbsp;Python 2.7/Python 3.4+</strong> and <strong>OpenCV 2.4.X/OpenCV 3.0+</strong>.</p>
+<h1 class="p1">What is a sliding window?</h1>
+<p class="p1">In the context of computer vision (and as the name suggests), a sliding window is rectangular region of fixed width and height that “slides” across an image, such as in the following figure:</p>
+<div id="attachment_1423" style="width: 266px;" class="wp-caption aligncenter"><a href="http://www.pyimagesearch.com/wp-content/uploads/2014/10/sliding_window_example.gif"><img class="size-full wp-image-1423" src="sliding_window_example.gif" alt="Figure 2: Example of the sliding a window approach, where we slide a window from left-to-right and top-to-bottom." height="377" width="256"></a><p class="wp-caption-text"><strong>Figure 1:</strong> Example of the sliding a window approach, where we slide a window from left-to-right and top-to-bottom.</p></div>
+<p class="p1">For each of these windows, we would normally take the window region and apply an <i>image classifier</i> to determine if the window has an object that interests us — in this case, a face.</p>
+<p class="p1">Combined with <a href="http://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/" target="_top">image pyramids</a> we can create image classifiers that can <strong>recognize objects at varying <i>scales</i> and <i>locations</i> in the image.</strong></p>
+<p class="p1">These techniques, while simple, play an <i>absolutely critical</i> role in object detection and image classification.</p>
+<h1 class="p1">Sliding Windows for Object Detection with Python and OpenCV</h1>
+<p class="p1">Let’s go ahead and build on your image pyramid&nbsp;example from <a href="http://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/" target="_top">last week</a>.</p>
+<p class="p1">Remember the 
+			<span id="crayon-57d3999219dc8511657038" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">helpers</span><span class="crayon-sy">.</span><span class="crayon-v">py</span></span></span>&nbsp;&nbsp;file? Open it back up and insert the 
+			<span id="crayon-57d3999219dd4740920534" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">sliding_window</span></span></span>&nbsp;&nbsp;function:</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-57d3999219dda495311750" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><span class="crayon-title">Sliding Windows for Object Detection with Python and OpenCV</span>
+			<div class="crayon-tools" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px ! important; line-height: 16.8px ! important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;" wrap="soft"># import the necessary packages
+import imutils
+
+def pyramid(image, scale=1.5, minSize=(30, 30)):
+	# yield the original image
+	yield image
+
+	# keep looping over the pyramid
+	while True:
+		# compute the new dimensions of the image and resize it
+		w = int(image.shape[1] / scale)
+		image = imutils.resize(image, width=w)
+
+		# if the resized image does not meet the supplied minimum
+		# size, then stop constructing the pyramid
+		if image.shape[0] &lt; minSize[1] or image.shape[1] &lt; minSize[0]:
+			break
+
+		# yield the next image in the pyramid
+		yield image
+
+def sliding_window(image, stepSize, windowSize):
+	# slide a window across the image
+	for y in xrange(0, image.shape[0], stepSize):
+		for x in xrange(0, image.shape[1], stepSize):
+			# yield the current window
+			yield (x, y, image[y:y + windowSize[1], x:x + windowSize[0]])</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px ! important; line-height: 15px ! important;"><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219dda495311750-22">22</div><div class="crayon-num" data-line="crayon-57d3999219dda495311750-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219dda495311750-24">24</div><div class="crayon-num" data-line="crayon-57d3999219dda495311750-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219dda495311750-26">26</div><div class="crayon-num" data-line="crayon-57d3999219dda495311750-27">27</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px ! important; line-height: 15px ! important; -moz-tab-size: 4;"><div class="crayon-line crayon-striped-line" id="crayon-57d3999219dda495311750-22"><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-e">sliding_window</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">stepSize</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">windowSize</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-57d3999219dda495311750-23"><span class="crayon-h">	</span><span class="crayon-c"># slide a window across the image</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219dda495311750-24"><span class="crayon-h">	</span><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-i">y</span><span class="crayon-h"> </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-k ">xrange</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">shape</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">stepSize</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-57d3999219dda495311750-25"><span class="crayon-h">		</span><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-i">x</span><span class="crayon-h"> </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-k ">xrange</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">shape</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">stepSize</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219dda495311750-26"><span class="crayon-h">			</span><span class="crayon-c"># yield the current window</span></div><div class="crayon-line" id="crayon-57d3999219dda495311750-27"><span class="crayon-h">			</span><span class="crayon-r">yield</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">[</span><span class="crayon-v">y</span><span class="crayon-o">:</span><span class="crayon-v">y</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">windowSize</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">x</span><span class="crayon-o">:</span><span class="crayon-v">x</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">windowSize</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0058 seconds] -->
+<p></p>
+<p class="p1">The 
+			<span id="crayon-57d3999219de0385676836" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">sliding_window</span></span></span>&nbsp;&nbsp;function requires three arguments. The first is the 
+			<span id="crayon-57d3999219de5091029833" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">image</span></span></span>&nbsp;&nbsp;that we are going to loop over. The second argument is the 
+			<span id="crayon-57d3999219dea111517425" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">stepSize</span></span></span>&nbsp;.</p>
+<p class="p1">The <span class="s1">stepSize</span> indicates how many pixels we are going to “skip” in both the <i>(x, y)</i> direction. Normally, we would <strong><em>not</em></strong> want to loop over each and every pixel of the image (i.e.&nbsp;&nbsp;
+			<span id="crayon-57d3999219def794383188" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">stepSize</span><span class="crayon-o">=</span><span class="crayon-cn">1</span></span></span>&nbsp;) as this would be computationally prohibitive if we were applying an image classifier at each window.</p>
+<p class="p1">Instead, the 
+			<span id="crayon-57d3999219df4983384083" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">stepSize</span></span></span>&nbsp;&nbsp;is determined&nbsp;on a <i>per-dataset</i> basis and is tuned to give optimal performance based on your dataset of images. In practice, it’s common to use a 
+			<span id="crayon-57d3999219df9902052230" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">stepSize</span></span></span>&nbsp;&nbsp;of 4 to 8 pixels. <strong><em>Remember, the smaller your step size is, the more windows you’ll need to examine.</em></strong></p>
+<p class="p1">The last argument 
+			<span id="crayon-57d3999219dfe269807176" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">windowSize</span></span></span>&nbsp;&nbsp;defines the width and height (in terms of pixels) of the window we are going to extract from our 
+			<span id="crayon-57d3999219e03197314204" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">image</span></span></span>&nbsp;.</p>
+<p class="p1"><b>Lines 24-27</b> are fairly straightforward and handle the actual “sliding” of the window.</p>
+<p class="p1"><b>Lines 24-26</b> define two 
+			<span id="crayon-57d3999219e08185841284" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-st">for</span></span></span>&nbsp;&nbsp;loops that loop over the <i>(x, y)</i> coordinates of the image, incrementing&nbsp;their respective&nbsp;
+			<span id="crayon-57d3999219e0d795379681" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">x</span></span></span>&nbsp;&nbsp;and&nbsp;
+			<span id="crayon-57d3999219e12892129563" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">y</span></span></span>&nbsp;&nbsp;counters by the provided step size.</p>
+<p class="p1">Then, <b>Line 27</b> returns a tuple containing the 
+			<span id="crayon-57d3999219e17283400839" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">x</span></span></span>&nbsp;&nbsp;and 
+			<span id="crayon-57d3999219e1b336211899" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">y</span></span></span>&nbsp;&nbsp;coordinates of the sliding window, along with the window itself.</p>
+<p class="p1">To see the sliding window in action, we’ll have to write a driver script for it. Create a new file, name it 
+			<span id="crayon-57d3999219e20953168410" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">sliding_window</span><span class="crayon-sy">.</span><span class="crayon-v">py</span></span></span>&nbsp;, and we’ll finish up this example:</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-57d3999219e25400851101" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><span class="crayon-title">Sliding Windows for Object Detection with Python and OpenCV</span>
+			<div class="crayon-tools" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px ! important; line-height: 16.8px ! important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;" wrap="soft"># import the necessary packages
+from pyimagesearch.helpers import pyramid
+from pyimagesearch.helpers import sliding_window
+import argparse
+import time
+import cv2
+
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="Path to the image")
+args = vars(ap.parse_args())
+
+# load the image and define the window width and height
+image = cv2.imread(args["image"])
+(winW, winH) = (128, 128)</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px ! important; line-height: 15px ! important;"><div class="crayon-num" data-line="crayon-57d3999219e25400851101-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e25400851101-2">2</div><div class="crayon-num" data-line="crayon-57d3999219e25400851101-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e25400851101-4">4</div><div class="crayon-num" data-line="crayon-57d3999219e25400851101-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e25400851101-6">6</div><div class="crayon-num" data-line="crayon-57d3999219e25400851101-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e25400851101-8">8</div><div class="crayon-num" data-line="crayon-57d3999219e25400851101-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e25400851101-10">10</div><div class="crayon-num" data-line="crayon-57d3999219e25400851101-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e25400851101-12">12</div><div class="crayon-num" data-line="crayon-57d3999219e25400851101-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e25400851101-14">14</div><div class="crayon-num" data-line="crayon-57d3999219e25400851101-15">15</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px ! important; line-height: 15px ! important; -moz-tab-size: 4;"><div class="crayon-line" id="crayon-57d3999219e25400851101-1"><span class="crayon-c"># import the necessary packages</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e25400851101-2"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-v">pyimagesearch</span><span class="crayon-sy">.</span><span class="crayon-e">helpers </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">pyramid</span></div><div class="crayon-line" id="crayon-57d3999219e25400851101-3"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-v">pyimagesearch</span><span class="crayon-sy">.</span><span class="crayon-e">helpers </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">sliding_window</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e25400851101-4"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">argparse</span></div><div class="crayon-line" id="crayon-57d3999219e25400851101-5"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">time</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e25400851101-6"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">cv2</span></div><div class="crayon-line" id="crayon-57d3999219e25400851101-7">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e25400851101-8"><span class="crayon-c"># construct the argument parser and parse the arguments</span></div><div class="crayon-line" id="crayon-57d3999219e25400851101-9"><span class="crayon-v">ap</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">argparse</span><span class="crayon-sy">.</span><span class="crayon-e">ArgumentParser</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e25400851101-10"><span class="crayon-v">ap</span><span class="crayon-sy">.</span><span class="crayon-e">add_argument</span><span class="crayon-sy">(</span><span class="crayon-s">"-i"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"--image"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">required</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k ">help</span><span class="crayon-o">=</span><span class="crayon-s">"Path to the image"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-57d3999219e25400851101-11"><span class="crayon-v">args</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">vars</span><span class="crayon-sy">(</span><span class="crayon-v">ap</span><span class="crayon-sy">.</span><span class="crayon-e">parse_args</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e25400851101-12">&nbsp;</div><div class="crayon-line" id="crayon-57d3999219e25400851101-13"><span class="crayon-c"># load the image and define the window width and height</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e25400851101-14"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">imread</span><span class="crayon-sy">(</span><span class="crayon-v">args</span><span class="crayon-sy">[</span><span class="crayon-s">"image"</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-57d3999219e25400851101-15"><span class="crayon-sy">(</span><span class="crayon-v">winW</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">winH</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">128</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">128</span><span class="crayon-sy">)</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0025 seconds] -->
+<p></p>
+<p class="p1">On <b>Lines 2-6</b> we import our necessary packages. We’ll use our 
+			<span id="crayon-57d3999219e2a450683725" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">pyramid</span></span></span>&nbsp;&nbsp;function from <a href="http://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/" target="_top">last week</a> to construct our image pyramid. We’ll also use the 
+			<span id="crayon-57d3999219e2f478488405" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">sliding_window</span></span></span>&nbsp;&nbsp;function we just defined. Finally we import 
+			<span id="crayon-57d3999219e34427606949" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">argparse</span></span></span>&nbsp;&nbsp;for parsing command line arguments and 
+			<span id="crayon-57d3999219e39277962390" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">cv2</span></span></span>&nbsp;&nbsp;for our OpenCV bindings.</p>
+<p class="p1"><b>Lines 9-12</b> handle parsing our command line arguments. We only need a single switch here, the 
+			<span id="crayon-57d3999219e3d793337627" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-o">--</span><span class="crayon-v">image</span></span></span>&nbsp; that we want to process.</p>
+<p class="p1">From there, <b>Line 14</b> loads our image off disk and <b>Line 15</b> defines our window width and height to be 128 pixels, respectfully.</p>
+<p class="p1">Now, let’s go ahead and combine our image pyramid and sliding window:</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-57d3999219e42990033983" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><span class="crayon-title">Sliding Windows for Object Detection with Python and OpenCV</span>
+			<div class="crayon-tools" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Python</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px ! important; line-height: 16.8px ! important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;" wrap="soft"># import the necessary packages
+from pyimagesearch.helpers import pyramid
+from pyimagesearch.helpers import sliding_window
+import argparse
+import time
+import cv2
+
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="Path to the image")
+args = vars(ap.parse_args())
+
+# load the image and define the window width and height
+image = cv2.imread(args["image"])
+(winW, winH) = (128, 128)
+
+# loop over the image pyramid
+for resized in pyramid(image, scale=1.5):
+	# loop over the sliding window for each layer of the pyramid
+	for (x, y, window) in sliding_window(resized, stepSize=32, windowSize=(winW, winH)):
+		# if the window does not meet our desired window size, ignore it
+		if window.shape[0] != winH or window.shape[1] != winW:
+			continue
+
+		# THIS IS WHERE YOU WOULD PROCESS YOUR WINDOW, SUCH AS APPLYING A
+		# MACHINE LEARNING CLASSIFIER TO CLASSIFY THE CONTENTS OF THE
+		# WINDOW
+
+		# since we do not have a classifier, we'll just draw the window
+		clone = resized.copy()
+		cv2.rectangle(clone, (x, y), (x + winW, y + winH), (0, 255, 0), 2)
+		cv2.imshow("Window", clone)
+		cv2.waitKey(1)
+		time.sleep(0.025)</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px ! important; line-height: 15px ! important;"><div class="crayon-num" data-line="crayon-57d3999219e42990033983-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e42990033983-18">18</div><div class="crayon-num" data-line="crayon-57d3999219e42990033983-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e42990033983-20">20</div><div class="crayon-num" data-line="crayon-57d3999219e42990033983-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e42990033983-22">22</div><div class="crayon-num" data-line="crayon-57d3999219e42990033983-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e42990033983-24">24</div><div class="crayon-num" data-line="crayon-57d3999219e42990033983-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e42990033983-26">26</div><div class="crayon-num" data-line="crayon-57d3999219e42990033983-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e42990033983-28">28</div><div class="crayon-num" data-line="crayon-57d3999219e42990033983-29">29</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e42990033983-30">30</div><div class="crayon-num" data-line="crayon-57d3999219e42990033983-31">31</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e42990033983-32">32</div><div class="crayon-num" data-line="crayon-57d3999219e42990033983-33">33</div><div class="crayon-num crayon-striped-num" data-line="crayon-57d3999219e42990033983-34">34</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px ! important; line-height: 15px ! important; -moz-tab-size: 4;"><div class="crayon-line" id="crayon-57d3999219e42990033983-17"><span class="crayon-c"># loop over the image pyramid</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e42990033983-18"><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-e">resized </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-e">pyramid</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">scale</span><span class="crayon-o">=</span><span class="crayon-cn">1.5</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-57d3999219e42990033983-19"><span class="crayon-h">	</span><span class="crayon-c"># loop over the sliding window for each layer of the pyramid</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e42990033983-20"><span class="crayon-h">	</span><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">window</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-e">sliding_window</span><span class="crayon-sy">(</span><span class="crayon-v">resized</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">stepSize</span><span class="crayon-o">=</span><span class="crayon-cn">32</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">windowSize</span><span class="crayon-o">=</span><span class="crayon-sy">(</span><span class="crayon-v">winW</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">winH</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-57d3999219e42990033983-21"><span class="crayon-h">		</span><span class="crayon-c"># if the window does not meet our desired window size, ignore it</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e42990033983-22"><span class="crayon-h">		</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">shape</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">!=</span><span class="crayon-h"> </span><span class="crayon-e">winH </span><span class="crayon-st">or</span><span class="crayon-h"> </span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">shape</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">!=</span><span class="crayon-h"> </span><span class="crayon-v">winW</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-57d3999219e42990033983-23"><span class="crayon-h">			</span><span class="crayon-st">continue</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e42990033983-24">&nbsp;</div><div class="crayon-line" id="crayon-57d3999219e42990033983-25"><span class="crayon-h">		</span><span class="crayon-c"># THIS IS WHERE YOU WOULD PROCESS YOUR WINDOW, SUCH AS APPLYING A</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e42990033983-26"><span class="crayon-h">		</span><span class="crayon-c"># MACHINE LEARNING CLASSIFIER TO CLASSIFY THE CONTENTS OF THE</span></div><div class="crayon-line" id="crayon-57d3999219e42990033983-27"><span class="crayon-h">		</span><span class="crayon-c"># WINDOW</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e42990033983-28">&nbsp;</div><div class="crayon-line" id="crayon-57d3999219e42990033983-29"><span class="crayon-h">		</span><span class="crayon-c"># since we do not have a classifier, we'll just draw the window</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e42990033983-30"><span class="crayon-h">		</span><span class="crayon-v">clone</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">resized</span><span class="crayon-sy">.</span><span class="crayon-k ">copy</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-57d3999219e42990033983-31"><span class="crayon-h">		</span><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">rectangle</span><span class="crayon-sy">(</span><span class="crayon-v">clone</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">winW</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">winH</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">255</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e42990033983-32"><span class="crayon-h">		</span><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">imshow</span><span class="crayon-sy">(</span><span class="crayon-s">"Window"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">clone</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-57d3999219e42990033983-33"><span class="crayon-h">		</span><span class="crayon-v">cv2</span><span class="crayon-sy">.</span><span class="crayon-e">waitKey</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-57d3999219e42990033983-34"><span class="crayon-h">		</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">sleep</span><span class="crayon-sy">(</span><span class="crayon-cn">0.025</span><span class="crayon-sy">)</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0070 seconds] -->
+<p></p>
+<p class="p1">We start by looping over each layer of the image pyramid on <b>Line 18</b>.</p>
+<p class="p1">For each layer of the image pyramid, we’ll also loop over each window in the 
+			<span id="crayon-57d3999219e49285913937" class="crayon-syntax crayon-syntax-inline  crayon-theme-classic crayon-theme-classic-inline crayon-font-monaco" style="line-height: 15px ! important; font-size: 12px ! important;"><span class="crayon-pre crayon-code" style="line-height: 15px ! important; font-size: 12px ! important; -moz-tab-size: 4;"><span class="crayon-v">sliding_window</span></span></span>&nbsp;&nbsp;on <b>Line 20</b>. We also&nbsp;make a check on <strong>Lines 22-23</strong>&nbsp;to ensure that our sliding window has met the minimum size requirements.</p>
+<p class="p1">If we&nbsp;were applying an image classifier to detect objects, we would do this on <b>Lines 25-27</b> by extracting features from the window and passing them on to our classifier (which is done in our <a title="Histogram of Oriented Gradients and Object Detection" href="http://www.pyimagesearch.com/2014/11/10/histogram-oriented-gradients-object-detection/" target="_top">6-step HOG + Linear SVM object detection framework</a>).</p>
+<p class="p1">But since we do not have an image classifier, we’ll just visualize the sliding window results instead by drawing a rectangle on the image indicating where the sliding window is on <b>Lines 30-34</b>.</p>
+<h1 class="p1">Results</h1>
+<p class="p1">To see our image pyramid and sliding window in action, open up a terminal and execute the following command:</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-57d3999219e4e784547165" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><span class="crayon-title">Sliding Windows for Object Detection with Python and OpenCV</span>
+			<div class="crayon-tools" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Shell</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px ! important; line-height: 16.8px ! important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;" wrap="soft">$ python sliding_window.py --image images/adrian_florida.jpg</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px ! important; line-height: 15px ! important;"><div class="crayon-num" data-line="crayon-57d3999219e4e784547165-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px ! important; line-height: 15px ! important; -moz-tab-size: 4;"><div class="crayon-line" id="crayon-57d3999219e4e784547165-1"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">python </span><span class="crayon-v">sliding_window</span><span class="crayon-e">.py</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-e">image </span><span class="crayon-v">images</span><span class="crayon-o">/</span><span class="crayon-v">adrian_florida</span><span class="crayon-e">.jpg</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0004 seconds] -->
+<p></p>
+<p class="p1">If all goes well you should see the following results:</p>
+<div id="attachment_2156" style="width: 610px;" class="wp-caption aligncenter"><a href="http://www.pyimagesearch.com/wp-content/uploads/2015/03/sliding-window-animated-adrian.gif"><img class="size-full wp-image-2156" src="sliding-window-animated-adrian.gif" alt="Figure 2: An example of applying a sliding window to each layer of the image pyramid." height="472" width="600"></a><p class="wp-caption-text"><strong>Figure 2:</strong> An example of applying a sliding window to each layer of the image pyramid.</p></div>
+<p class="p1">Here you can see that for each of the layers in the pyramid a window is “slid” across it. And again, if we had an image classifier ready to go, we could take each of these windows and classify the contents of the window. <strong>An example could be <em>“does this window contain a face or not?”</em></strong></p>
+<p class="p1">Here’s another example with a different image:</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-57d3999219e55465499292" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><span class="crayon-title">Sliding Windows for Object Detection with Python and OpenCV</span>
+			<div class="crayon-tools" style="font-size: 12px ! important; height: 18px ! important; line-height: 18px ! important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Shell</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px ! important; line-height: 16.8px ! important;"></div>
+			<div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;" wrap="soft">$ python sliding_window.py --image images/stick_of_truth.jpg.jpg</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px ! important; line-height: 15px ! important;"><div class="crayon-num" data-line="crayon-57d3999219e55465499292-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px ! important; line-height: 15px ! important; -moz-tab-size: 4;"><div class="crayon-line" id="crayon-57d3999219e55465499292-1"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">python </span><span class="crayon-v">sliding_window</span><span class="crayon-e">.py</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-e">image </span><span class="crayon-v">images</span><span class="crayon-o">/</span><span class="crayon-v">stick_of_truth</span><span class="crayon-e">.jpg</span><span class="crayon-e">.jpg</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0004 seconds] -->
+<p></p><div id="attachment_2157" style="width: 610px;" class="wp-caption aligncenter"><a href="http://www.pyimagesearch.com/wp-content/uploads/2015/03/sliding-window-animated-sot.gif"><img class="size-full wp-image-2157" src="sliding-window-animated-sot.gif" alt="Figure 3: A second example of applying a sliding window to each layer of the image pyramid." height="822" width="600"></a><p class="wp-caption-text"><strong>Figure 3:</strong> A second example of applying a sliding window to each layer of the image pyramid.</p></div><p></p>
+<p class="p1">Once again, we can see that the sliding window is slid across the image at each level of the pyramid. High levels of the pyramid (and thus smaller layers) have less windows that need to be examined.</p>
+<h1 class="p1">Summary</h1>
+<p class="p1">In this blog post we learned all about sliding windows and their application to object detection and image classification.</p>
+<p class="p1">By combining a sliding window with an image pyramid we are able to localize and detect objects in images at multiple <b><i>scales</i></b> and <b><i>locations</i></b>.</p>
+<p class="p1">While both sliding windows and image pyramids are very simple techniques, they are absolutely critical in object detection.</p>
+<p class="p1">You can learn more about the more global role they play in this <a title="Histogram of Oriented Gradients and Object Detection" href="http://www.pyimagesearch.com/2014/11/10/histogram-oriented-gradients-object-detection/" target="_top">blog post</a>, where I detail my framework on how to use the Histogram of Oriented Gradients image descriptor and a Linear SVM classifier to build a custom object detector.</p>
+<h1 id="post_downloads">Downloads:</h1>
+<div id="mc4wp-form-1" class="form mc4wp-form mc4wp-form-761">
+<form data-drip-id="8756317" action="https://www.getdrip.com/forms/8756317/submissions" method="post" target="_blank" data-drip-embedded-form="8756317"><img style="padding-right: 10px; width: 115px; border: medium none; float: left;" src="download-code-icon.png" alt="">If you would like to download the code and images used in this post, please enter your email address in the form below. Not only will you get a .zip of the code, I’ll also send you a <strong>FREE 11-page Resource Guide</strong> on Computer Vision and Image Search Engines, including <strong>exclusive techniques</strong> that I don’t post on this blog! Sound good? If so, enter your email address and I’ll send you the code immediately!<p></p>
+<p style="margin-left: 130px;"><label for="fields[email]">Email address:</label><input name="fields[email]" value="" placeholder="Your email address" type="email"></p>
+<p style="margin-left: 130px;"><input value="Download the code!" type="submit"></p>
+<input value="Australia/Brisbane" name="time_zone" type="hidden"><input value="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/" name="url" type="hidden"><input value="Sliding Windows for Object Detection with Python and OpenCV - PyImageSearch" name="page_title" type="hidden"></form>
+</div>
+	</section><!-- /.entry -->
+	<div class="fix"></div>
+		<aside id="connect">
+		<h3>Resource Guide (it’s totally free).</h3>
+
+		<div>
+			<p><img title="Get your FREE 11-page Image Search Engine Resource Guide PDF" src="imagesearchengine-resourceguide-cover.png" style="padding-right: 10px; float: left;">
+</p><div style="padding-top: 35px;">
+
+Enter your email address below to get my <strong>free 11-page Image Search Engine Resource Guide PDF</strong>. Uncover <strong>exclusive techniques</strong> that I don't publish on this blog and start building image search engines of your own!</div><p></p>
+
+			
+						<form data-drip-id="1295" action="https://www.getdrip.com/forms/1113813/submissions" method="post" target="_blank" data-drip-embedded-form="1295">
+				<div>
+					<input name="fields[email]" class="required email" value="" placeholder="Your email address" style="width: 50%;" type="email">
+				</div>
+				<div>
+					<input id="mc-embedded-subscribe" name="submit" class="btn submit button" value="Download the Guide!" data-drip-attribute="sign-up-button" type="submit">
+				</div>
+			<input value="Australia/Brisbane" name="time_zone" type="hidden"><input value="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/" name="url" type="hidden"><input value="Sliding Windows for Object Detection with Python and OpenCV - PyImageSearch" name="page_title" type="hidden"></form>
+			
+						<div class="social">
+		   					</div>
+			
+		</div><!-- col-left -->
+
+		
+        <div class="fix"></div>
+	</aside>
+	<div class="post-utility"><p class="tags"><i class="icon-tag"></i> <a href="http://www.pyimagesearch.com/tag/classification/" rel="tag">classification</a>, <a href="http://www.pyimagesearch.com/tag/histogram-of-oriented-gradients/" rel="tag">histogram of oriented gradients</a>, <a href="http://www.pyimagesearch.com/tag/hog/" rel="tag">hog</a>, <a href="http://www.pyimagesearch.com/tag/image-pyramid/" rel="tag">image pyramid</a>, <a href="http://www.pyimagesearch.com/tag/linear-svm/" rel="tag">linear svm</a>, <a href="http://www.pyimagesearch.com/tag/machine-learning/" rel="tag">machine learning</a>, <a href="http://www.pyimagesearch.com/tag/object-detection/" rel="tag">object detection</a>, <a href="http://www.pyimagesearch.com/tag/sliding-window/" rel="tag">sliding window</a></p> </div>
+</article><!-- /.post -->
+	        <div class="post-entries">
+	            <div class="nav-prev fl"><a href="http://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/" rel="prev"><i class="icon-angle-left"></i> Image Pyramids with Python and OpenCV</a></div>
+	            <div class="nav-next fr"><a href="http://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/" rel="next">Accessing the Raspberry Pi Camera with OpenCV and Python <i class="icon-angle-right"></i></a></div>
+	            <div class="fix"></div>
+	        </div>
+
+		<div id="comments">		 	<h3 id="comments-title">33 Responses to <em>Sliding Windows for Object Detection with Python and OpenCV</em></h3>
+		 	<ol class="commentlist">
+					                 
+		<li class="comment even thread-even depth-1 parent">
+	    
+	    	<a name="comment-314433"></a>
+	      	
+	      	<div id="li-comment-314433" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="222d05620ef595dda277f1ba792b8dc3" srcset="http://2.gravatar.com/avatar/222d05620ef595dda277f1ba792b8dc3?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">joe</span>           
+	                <span class="date">May 11, 2015 at 3:16 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-314433" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-314433">
+				
+				<p>hey Adrian, wonderful article. Just wondering about when you say “Remember, the larger your step size is, the more windows you’ll need to examine.” . Shouldn’t this be “the smaller the stepsize, the more windows”?<br>
+Maybe i misunderstood something, but it looks to me as if each sliding window would move of  pixels, so – as you say a few lines above that comment – having a stepSize=1 makes it prohibitive.<br>
+Thanks for the article</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=314433#respond" onclick="return addComment.moveForm( &quot;comment-314433&quot;, &quot;314433&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to joe">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2">
+	    
+	    	<a name="comment-314478"></a>
+	      	
+	      	<div id="li-comment-314478" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">May 11, 2015 at 4:53 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-314478" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-314478">
+				
+				<p>Hey Joe, you’re absolutely right. Thanks for catching that typo. I have updated it now. Thanks again!</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=314478#respond" onclick="return addComment.moveForm( &quot;comment-314478&quot;, &quot;314478&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-odd thread-alt depth-1 parent">
+	    
+	    	<a name="comment-315495"></a>
+	      	
+	      	<div id="li-comment-315495" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="ca68b93b3e839ee64ca08f56d466a31f" srcset="http://0.gravatar.com/avatar/ca68b93b3e839ee64ca08f56d466a31f?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Rish</span>           
+	                <span class="date">May 14, 2015 at 12:38 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-315495" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-315495">
+				
+				<p>Hi Adrian,</p>
+<p>I have had some discussions with you in other topic threads. Your tutorials has helped me create a object detector though in C++ with ease. </p>
+<p>I am new to this object recognition field. I was wondering other than sliding window for object search in the image space, what other methods are there. One of the biggest issue for me in Sliding Window is that incrementing the sliding window by small pixel margin gives the best results (say about 50 – 75% overlap to the previous window). In a normal image frame this is quite exhaustive search. </p>
+<p>I am just curious if there are other better or faster method for object search?</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=315495#respond" onclick="return addComment.moveForm( &quot;comment-315495&quot;, &quot;315495&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Rish">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2">
+	    
+	    	<a name="comment-315603"></a>
+	      	
+	      	<div id="li-comment-315603" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">May 14, 2015 at 6:41 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-315603" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-315603">
+				
+				<p>There are indeed other methods to using sliding windows, but the sliding window is pretty much the “default”. Take a look at the <a target="blank" href="http://www.pyimagesearch.com/2014/11/10/histogram-oriented-gradients-object-detection/" rel="nofollow">comments of this post</a> to see a discussion of some faster variants of the standard sliding window.</p>
+<p>However, I will say that the exhaustive image search is actually a good thing. If our classifier is working correctly, then it will provide positive classifications for regions surrounding our object. We can then apply non-maxima suppression to select only the most probable bounding box.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=315603#respond" onclick="return addComment.moveForm( &quot;comment-315603&quot;, &quot;315603&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-even depth-1 parent">
+	    
+	    	<a name="comment-322431"></a>
+	      	
+	      	<div id="li-comment-322431" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="794dfdaae219b98ee75fdbf4918fd058" srcset="http://1.gravatar.com/avatar/794dfdaae219b98ee75fdbf4918fd058?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">abbas</span>           
+	                <span class="date">June 4, 2015 at 2:06 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-322431" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-322431">
+				
+				<p>hi  Adrian<br>
+i am working on HOG descriptor i train svm on 64*128 positive negative images output is good but  i have a problem in large image human detection so u can help me because i start research in computer vission</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=322431#respond" onclick="return addComment.moveForm( &quot;comment-322431&quot;, &quot;322431&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to abbas">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2">
+	    
+	    	<a name="comment-322532"></a>
+	      	
+	      	<div id="li-comment-322532" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">June 4, 2015 at 6:24 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-322532" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-322532">
+				
+				<p>If the human you are trying to detect is substantially larger than your 64×128 window, then you should apply an <a target="blank" href="http://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/" rel="nofollow">image pyramid</a>. This way the image becomes smaller at each layer of the pyramid, while your 64×128 window remains fixed, allowing you to detect larger objects (in this case, humans).</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=322532#respond" onclick="return addComment.moveForm( &quot;comment-322532&quot;, &quot;322532&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-odd thread-alt depth-1 parent">
+	    
+	    	<a name="comment-375086"></a>
+	      	
+	      	<div id="li-comment-375086" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="71e9db62267b5cc89b9bd67ffda4c601" srcset="http://1.gravatar.com/avatar/71e9db62267b5cc89b9bd67ffda4c601?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Hoon</span>           
+	                <span class="date">October 26, 2015 at 12:29 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-375086" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-375086">
+				
+				<p>Thanks for the wonderful article!<br>
+I am wondering that I should change each of the step size when the resolution of the image changes because of image pyramid.<br>
+Thanks in advance.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=375086#respond" onclick="return addComment.moveForm( &quot;comment-375086&quot;, &quot;375086&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Hoon">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2 parent">
+	    
+	    	<a name="comment-375145"></a>
+	      	
+	      	<div id="li-comment-375145" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">October 26, 2015 at 6:13 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-375145" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-375145">
+				
+				<p>No, the step size of the sliding window normally stays constant across levels of the image pyramid.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=375145#respond" onclick="return addComment.moveForm( &quot;comment-375145&quot;, &quot;375145&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment even depth-3 parent">
+	    
+	    	<a name="comment-375318"></a>
+	      	
+	      	<div id="li-comment-375318" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="71e9db62267b5cc89b9bd67ffda4c601" srcset="http://1.gravatar.com/avatar/71e9db62267b5cc89b9bd67ffda4c601?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Hoon</span>           
+	                <span class="date">October 26, 2015 at 11:11 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-375318" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-375318">
+				
+				<p>Thank you!<br>
+Can I ask one more?<br>
+Should I calculate the entire hog features for each image of different resolution?<br>
+I am assuming the following steps.</p>
+<p>1) calculate HOG features of the original image<br>
+2) collect regions that have high similarities (ROI) into a list or something<br>
+3) resize the original image (down-size)<br>
+4) calculate HOG features again<br>
+…<br>
+..<br>
+n) Draw rectangles by referring to the list.</p>
+<p>And plus, how do I extract original location of ROI in down-sized images?</p>
+<p>Thank you very much!</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=375318#respond" onclick="return addComment.moveForm( &quot;comment-375318&quot;, &quot;375318&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Hoon">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-4">
+	    
+	    	<a name="comment-375419"></a>
+	      	
+	      	<div id="li-comment-375419" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">October 27, 2015 at 4:48 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-375419" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-375419">
+				
+				<p>I think reading <a target="blank" href="http://www.pyimagesearch.com/2014/11/10/histogram-oriented-gradients-object-detection/" rel="nofollow">this post</a> on using HOG and Linear SVM for object detection should really help you out and answer all your questions <img src="simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;"></p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=375419#respond" onclick="return addComment.moveForm( &quot;comment-375419&quot;, &quot;375419&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-even depth-1 parent">
+	    
+	    	<a name="comment-385816"></a>
+	      	
+	      	<div id="li-comment-385816" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="8ca4098226a0fcccfc66cb9540409351" srcset="http://2.gravatar.com/avatar/8ca4098226a0fcccfc66cb9540409351?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">bob</span>           
+	                <span class="date">January 6, 2016 at 4:43 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-385816" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-385816">
+				
+				<p>Wow, what great examples. Thanks. I have a question. Let’s say you have a classifier with K classes and you call the classifier for each of the N sliding windows on the current image. You essentially have a matrix with N rows and K columns. How do you process that matrix in some sensible way to report which windows have a meaningful object in them?</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=385816#respond" onclick="return addComment.moveForm( &quot;comment-385816&quot;, &quot;385816&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to bob">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2">
+	    
+	    	<a name="comment-385826"></a>
+	      	
+	      	<div id="li-comment-385826" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">January 6, 2016 at 6:35 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-385826" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-385826">
+				
+				<p>You would simply maintain a list of bounding boxes for each of the unique classes reported by the SVM. From there, you would apply <a target="blank" href="http://www.pyimagesearch.com/2015/02/16/faster-non-maximum-suppression-python/" rel="nofollow">non-maxima suppression</a> for each set of bounding boxes.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=385826#respond" onclick="return addComment.moveForm( &quot;comment-385826&quot;, &quot;385826&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-odd thread-alt depth-1 parent">
+	    
+	    	<a name="comment-391678"></a>
+	      	
+	      	<div id="li-comment-391678" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="8ca4098226a0fcccfc66cb9540409351" srcset="http://2.gravatar.com/avatar/8ca4098226a0fcccfc66cb9540409351?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Bob Zigon</span>           
+	                <span class="date">March 9, 2016 at 3:51 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-391678" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-391678">
+				
+				<p>Adrian, I have a question about your NMS logic. I applied a classifier to each of N sliding windows. I then extracted the subset of windows associated with class = 1 and passed them through the NMS. There was only 2 instances of object 1 in the FOV. Their dimension is approximately 280×200. The sliding window was 140×100. This is also the size of patches that I trained with. I was expecting the NMS to “merge” the 140×100 windows into a bounding box that more closely approximated the 280×200 of the actual objects. The NMS reported 5 objects and not 2.</p>
+<p>Am I using the NMS wrong? I can’t train on images that are 280×200 because I want to be able to identify the object when it is sliding out of the FOV. That is why I extracted a bunch of random 140×100 patches from the 280×200 object and trained that way.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=391678#respond" onclick="return addComment.moveForm( &quot;comment-391678&quot;, &quot;391678&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Bob Zigon">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2 parent">
+	    
+	    	<a name="comment-391679"></a>
+	      	
+	      	<div id="li-comment-391679" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">March 9, 2016 at 4:36 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-391679" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-391679">
+				
+				<p>NMS is meant to merge overlapping bounding boxes, either based on their spatial dimensions, or the probability returned by your SVM (where higher probabilities are preferred over the lower ones). If your bounding boxes are not overlapping, then NMS will not suppress them. From your comment, it’s not clear if bounding boxes were overlapping?</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=391679#respond" onclick="return addComment.moveForm( &quot;comment-391679&quot;, &quot;391679&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment even depth-3 parent">
+	    
+	    	<a name="comment-391952"></a>
+	      	
+	      	<div id="li-comment-391952" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="8ca4098226a0fcccfc66cb9540409351" srcset="http://2.gravatar.com/avatar/8ca4098226a0fcccfc66cb9540409351?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Bob Zigon</span>           
+	                <span class="date">March 14, 2016 at 12:38 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-391952" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-391952">
+				
+				<p>Yes, the boxes were overlapping. (I wish there was a way to embed a graphic in these comments, it would be easier to describe the situation.) </p>
+<p>Let me ask the question a different way. If you train your classifier with images that are 140×100 (these are random subsets of the 280×200 target image), how do you get a bounding box around the target image with the NMS?</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=391952#respond" onclick="return addComment.moveForm( &quot;comment-391952&quot;, &quot;391952&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Bob Zigon">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-4">
+	    
+	    	<a name="comment-392006"></a>
+	      	
+	      	<div id="li-comment-392006" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">March 14, 2016 at 3:23 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-392006" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-392006">
+				
+				<p>If you want like to include an image, I would suggest uploading the image to Imgur and then posting the link in the comment.</p>
+<p>As for the bounding boxes, please see my previous comment. You would take the entire set of bounding boxes and apply NMS based on either (1) the bounding box coordinates (such as the bottom-right corner) or (2) the probability associated with the bounding box.</p>
+<p>Again, NMS isn’t used to actually <em>generate</em> the bounding box surrounding an object, it’s used to <em>suppress</em> bounding boxes that have heavy overlap.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=392006#respond" onclick="return addComment.moveForm( &quot;comment-392006&quot;, &quot;392006&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-even depth-1 parent">
+	    
+	    	<a name="comment-392030"></a>
+	      	
+	      	<div id="li-comment-392030" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="8ca4098226a0fcccfc66cb9540409351" srcset="http://2.gravatar.com/avatar/8ca4098226a0fcccfc66cb9540409351?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Bob Zigon</span>           
+	                <span class="date">March 14, 2016 at 10:43 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-392030" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-392030">
+				
+				<p>Hmmm .. ok. The distinction seems subtle. Is it fair to say that the bounding box (with a target size of 280×200) is just the union of the 140×100 boxes in physical proximity to each other that overlap some small amount?</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=392030#respond" onclick="return addComment.moveForm( &quot;comment-392030&quot;, &quot;392030&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Bob Zigon">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2">
+	    
+	    	<a name="comment-392095"></a>
+	      	
+	      	<div id="li-comment-392095" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">March 15, 2016 at 4:36 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-392095" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-392095">
+				
+				<p>I’m not sure I understand your question. If you can provide visual examples, I can try to answer further.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=392095#respond" onclick="return addComment.moveForm( &quot;comment-392095&quot;, &quot;392095&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-odd thread-alt depth-1 parent">
+	    
+	    	<a name="comment-392175"></a>
+	      	
+	      	<div id="li-comment-392175" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="2824e1469270a39c13e7d3a0feccffc7" srcset="http://2.gravatar.com/avatar/2824e1469270a39c13e7d3a0feccffc7?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Vinit</span>           
+	                <span class="date">March 16, 2016 at 2:34 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-392175" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-392175">
+				
+				<p>Hey Adrian,</p>
+<p>I have been reading your blogs recently and they are very helpful for my work. However I am still not able to figure out, how I am going to train the SVM for the classification.</p>
+<p>I got to detect humans in image so I am using INRIA dataset for training but i can’t figure out one issue that in one image I can see many persons. Right now I am just taking the hog features of the whole image once its resized to certain dimensions and then send it to train svm. But the data contains multiple human images not only single one. So can you please help me out here. Also it would be great if you can make a small post on training svm too for this object detection part.</p>
+<p>Thanks in advance</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=392175#respond" onclick="return addComment.moveForm( &quot;comment-392175&quot;, &quot;392175&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Vinit">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2">
+	    
+	    	<a name="comment-392222"></a>
+	      	
+	      	<div id="li-comment-392222" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">March 17, 2016 at 10:42 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-392222" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-392222">
+				
+				<p>You mentioned resizing your image to a fixed size, extracting HOG features, and then passing it to your SVM — this is partly correct, but you’re missing a few critical steps. To start, I would suggest <a target="blank" href="http://www.pyimagesearch.com/2014/11/10/histogram-oriented-gradients-object-detection/" rel="nofollow">reading through a description of the entire HOG + Linear SVM pipeline</a>.</p>
+<p>Instead, you need to utilize a sliding window (detailed in this post). This window is a fixed size that “slides” across your input image. At each stop along the window, you extract HOG features, and then pass them to your SVM for classification. In this way, you can detect not only a single person but <em>multiple people</em> at various locations in image. Combined with an <a target="blank" href="http://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/" rel="nofollow">image pyramid</a>, you can recognize objects both multiple scales AND multiple locations.</p>
+<p>As for a source code implementation of such an object detector, <a target="blank" href="https://www.pyimagesearch.com/pyimagesearch-gurus/" rel="nofollow">please see the PyImageSearch Gurus course</a>, where I detail how to code an object detector in detail.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=392222#respond" onclick="return addComment.moveForm( &quot;comment-392222&quot;, &quot;392222&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-even depth-1 parent">
+	    
+	    	<a name="comment-394015"></a>
+	      	
+	      	<div id="li-comment-394015" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="dfae08154511478591270479e66d105d" srcset="http://1.gravatar.com/avatar/dfae08154511478591270479e66d105d?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name"><a href="https://ch.linkedin.com/in/mohamed-ben-arbia-6174834a" rel="external nofollow" class="url">Mohamed Ben Arbia</a></span>           
+	                <span class="date">April 5, 2016 at 5:59 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-394015" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-394015">
+				
+				<p>Hey Adrian, </p>
+<p>Excellent post. This is really helpful and straightforward. Thanks!</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=394015#respond" onclick="return addComment.moveForm( &quot;comment-394015&quot;, &quot;394015&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Mohamed Ben Arbia">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2 parent">
+	    
+	    	<a name="comment-394140"></a>
+	      	
+	      	<div id="li-comment-394140" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">April 6, 2016 at 9:14 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-394140" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-394140">
+				
+				<p>I’m glad you found it helpful Mohamed! <img src="simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;"></p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=394140#respond" onclick="return addComment.moveForm( &quot;comment-394140&quot;, &quot;394140&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment even depth-3 parent">
+	    
+	    	<a name="comment-400622"></a>
+	      	
+	      	<div id="li-comment-400622" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="dfae08154511478591270479e66d105d" srcset="http://1.gravatar.com/avatar/dfae08154511478591270479e66d105d?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Mohamed Ben Arbia</span>           
+	                <span class="date">June 20, 2016 at 6:41 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-400622" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-400622">
+				
+				<p>Hi Adran, </p>
+<p>I have encountered one issue during my project concerning the object detection. What if there are rotated versions of the object we would like to detect ? </p>
+<p>What would be the best  approach ta tackle this ? Would you use rotated versions of the sliding windows ? Or would you define rotated versions of the image containing the object (And probably rotated version of the object) as the image pyramids for scaling ?</p>
+<p>Thanks !</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=400622#respond" onclick="return addComment.moveForm( &quot;comment-400622&quot;, &quot;400622&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Mohamed Ben Arbia">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-4 parent">
+	    
+	    	<a name="comment-400656"></a>
+	      	
+	      	<div id="li-comment-400656" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">June 20, 2016 at 5:23 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-400656" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-400656">
+				
+				<p>Rotated objects can be a real pain in the ass to detect, depending on your problem. I would suggest training a detector for each rotated version of your image. Or better yet, try to utilize algorithms that are more invariant to changes in rotation. Keypoint detection and local invariant descriptors tend to work well here as well.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=400656#respond" onclick="return addComment.moveForm( &quot;comment-400656&quot;, &quot;400656&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment even depth-5">
+	    
+	    	<a name="comment-400692"></a>
+	      	
+	      	<div id="li-comment-400692" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="dfae08154511478591270479e66d105d" srcset="http://1.gravatar.com/avatar/dfae08154511478591270479e66d105d?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Mohamed</span>           
+	                <span class="date">June 21, 2016 at 4:09 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-400692" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-400692">
+				
+				<p>Thanks for your response Adrian <img src="simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;"><br>
+Yes, I think using algorithms that are invariant to changes in rotation is a good approach.<br>
+Concerning my problem, here is a link to a screen shot to the image where I have my rotated objects: <a href="https://drive.google.com/file/d/0B9xjuFiZNvo4RHg1RnEyNjlSUlU/view?usp=sharing" rel="nofollow">https://drive.google.com/file/d/0B9xjuFiZNvo4RHg1RnEyNjlSUlU/view?usp=sharing</a>.  The goal is to detect the footprints in the image.</p>
+<p>Thanks!</p>
+		            
+										
+	                <div class="reply">
+	                    	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-5">
+	    
+	    	<a name="comment-400868"></a>
+	      	
+	      	<div id="li-comment-400868" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">June 23, 2016 at 1:31 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-400868" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-400868">
+				
+				<p>Why not just apply a dilation or closing morphological operation to close the gaps in between the footprints? From there, thresholding and contour detection will give you the footprint regions.</p>
+		            
+										
+	                <div class="reply">
+	                    	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-odd thread-alt depth-1 parent">
+	    
+	    	<a name="comment-396860"></a>
+	      	
+	      	<div id="li-comment-396860" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="c8dd0eb6ec832a282451bc785289a88b" srcset="http://0.gravatar.com/avatar/c8dd0eb6ec832a282451bc785289a88b?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">farah</span>           
+	                <span class="date">May 6, 2016 at 4:38 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-396860" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-396860">
+				
+				<p>When we run our classifier on sliding windows then it will fetch many bounding boxes.I want to show these bounding boxes on the original image. How to change the coordinates of the bounding boxes from the different sized windows to the original scale to be shown on the original window.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=396860#respond" onclick="return addComment.moveForm( &quot;comment-396860&quot;, &quot;396860&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to farah">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2">
+	    
+	    	<a name="comment-396901"></a>
+	      	
+	      	<div id="li-comment-396901" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">May 6, 2016 at 4:32 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-396901" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-396901">
+				
+				<p>Hey Farah — I assume you’re also talking about using <a target="blank" href="http://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/" rel="nofollow">image pyramids</a> as well? As the image pyramid code demonstrates, you can keep track of the current scale of the pyramid and use that to give you the location of the <em (x,="" y)-coordinates<="" em=""> of the original image.</em></p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=396901#respond" onclick="return addComment.moveForm( &quot;comment-396901&quot;, &quot;396901&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-even depth-1 parent">
+	    
+	    	<a name="comment-397206"></a>
+	      	
+	      	<div id="li-comment-397206" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="c8dd0eb6ec832a282451bc785289a88b" srcset="http://0.gravatar.com/avatar/c8dd0eb6ec832a282451bc785289a88b?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Farah</span>           
+	                <span class="date">May 10, 2016 at 1:28 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-397206" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-397206">
+				
+				<p>Sir to get to the original scale should I multiply the coordinates by the respective scaling factor used in resizing the window i.e if I am downscaling by 1.5 in both x and y direction then I just multiply the bounding boxes coordinates at this layer by 1.5.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=397206#respond" onclick="return addComment.moveForm( &quot;comment-397206&quot;, &quot;397206&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Farah">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor odd alt depth-2">
+	    
+	    	<a name="comment-397252"></a>
+	      	
+	      	<div id="li-comment-397252" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">May 10, 2016 at 8:06 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-397252" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-397252">
+				
+				<p>Hey Farah — please see my previous comment. If you’re using sliding windows in conjunction with image pyramids, you need to keep track of ratio of the original image height to the <em>current</em> pyramid height. You can use this scale to multiply the bounding box coordinates and obtain them for the original image size. I cover this in more detail <a target="blank" href="https://www.pyimagesearch.com/pyimagesearch-gurus/" rel="nofollow">PyImageSearch Gurus</a>.</p>
+<p>In this case, if you resize your image to be 1.5x smaller than the original, then yes, you would multiply your bounding boxes (obtained by the new, resized image) by this 1.5 factor to obtain the coordinates relative to the original image.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=397252#respond" onclick="return addComment.moveForm( &quot;comment-397252&quot;, &quot;397252&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	                 
+		<li class="comment even thread-odd thread-alt depth-1">
+	    
+	    	<a name="comment-397315"></a>
+	      	
+	      	<div id="li-comment-397315" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="c8dd0eb6ec832a282451bc785289a88b" srcset="http://0.gravatar.com/avatar/c8dd0eb6ec832a282451bc785289a88b?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Farah</span>           
+	                <span class="date">May 10, 2016 at 11:57 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-397315" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-397315">
+				
+				<p>Thanks Adrian for resolving my query</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=397315#respond" onclick="return addComment.moveForm( &quot;comment-397315&quot;, &quot;397315&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Farah">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+	                 
+		<li class="comment odd alt thread-even depth-1 parent">
+	    
+	    	<a name="comment-402847"></a>
+	      	
+	      	<div id="li-comment-402847" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="2584d7402704e3018f968575c340e437" srcset="http://2.gravatar.com/avatar/2584d7402704e3018f968575c340e437?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Aka</span>           
+	                <span class="date">July 23, 2016 at 5:28 am</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-402847" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-402847">
+				
+				<p>Hi Adrian,</p>
+<p>Nice post ! </p>
+<p> I was wondering if the sliding window could be parallelised ? With a classifier which has a really low false positive rate and if the search need to be exhaustive, I feel sliding window is the best option. But say for a very large image it will be very slow. So if the sliding can be parallelised so that a list will have all the detections ( the order in which they get appended does not matter for NMS) , won’t it help speed up the detection process  ?   </p>
+<p>What do you think ? Do you know of such an implementation ?</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=402847#respond" onclick="return addComment.moveForm( &quot;comment-402847&quot;, &quot;402847&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Aka">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	<ul class="children">
+	                 
+		<li class="comment byuser comment-author-adrian bypostauthor even depth-2">
+	    
+	    	<a name="comment-403120"></a>
+	      	
+	      	<div id="li-comment-403120" class="comment-container">
+	      	
+					                <div class="avatar"><img alt="" src="02743529311d3b8babbaf6935670ec9c" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=80&amp;d=mm&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></div>
+	                        
+	
+		      	<div class="comment-head">
+		      	            
+	                <span class="name">Adrian Rosebrock</span>           
+	                <span class="date">July 27, 2016 at 2:47 pm</span>
+	                <span class="perma"><a href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#comment-403120" title="Direct link to this comment">#</a></span>
+	                <span class="edit"></span>
+		        		          	
+				</div><!-- /.comment-head -->
+		      
+		   		<div class="comment-entry" id="comment-403120">
+				
+				<p>Yes, you can absolutely make the sliding window run in parallel. However, I instead recommend making the <a target="blank" href="http://www.pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/" rel="nofollow">image pyramid</a> run in parallel such that you have one process running for each of the layers of the pyramid. If you are only processing a small set of pyramid layers (or just one layer), then yes, absolutely make the sliding window run in parallel.</p>
+<p>I don’t have any implementations of this, but I do review how to build your own custom object detector inside the <a target="blank" href="https://www.pyimagesearch.com/pyimagesearch-gurus/" rel="nofollow">PyImageSearch Gurus course</a>.</p>
+		            
+										
+	                <div class="reply">
+	                    <a rel="nofollow" class="comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/?replytocom=403120#respond" onclick="return addComment.moveForm( &quot;comment-403120&quot;, &quot;403120&quot;, &quot;respond&quot;, &quot;2154&quot; )" aria-label="Reply to Adrian Rosebrock">Reply</a>	                </div><!-- /.reply -->                       
+			
+				</div><!-- /comment-entry -->
+	
+			</div><!-- /.comment-container -->
+			
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+			</ol>
+		 	</div>				<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/#respond" style="display: none;">Click here to cancel reply.</a></small></h3>				<form action="http://www.pyimagesearch.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<p class="comment-form-comment"><label class="hide" for="comment">Comment</label> <textarea tabindex="4" id="comment" name="comment" cols="50" rows="10" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><input id="author" name="author" class="txt" tabindex="1" value="" size="30" aria-required="true" type="text"><label for="author">Name <span class="required">(required)</span></label> </p>
+<p class="comment-form-email"><input id="email" name="email" class="txt" tabindex="2" value="" size="30" aria-required="true" type="text"><label for="email">Email (will not be published) <span class="required">(required)</span></label> </p>
+<p class="comment-form-url"><input id="url" name="url" class="txt" tabindex="3" value="" size="30" type="text"><label for="url">Website</label></p>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Submit Comment" type="submit"> <input name="comment_post_ID" value="2154" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="69c6102e30" type="hidden"></p><p style="display: none;"></p>				<input id="ak_js" name="ak_js" value="1473486870927" type="hidden"></form>
+					</div><!-- #respond -->
+		     
+            </section><!-- /#main -->
+                
+            <aside id="sidebar">
+<div id="text-7" class="widget widget_text"><h3>Resource Guide (it’s totally free).</h3>			<div class="textwidget"><img title="Get your FREE 11-page Image Search Engine Resource Guide PDF" src="imagesearchengine-resourceguide-cover.png" style="padding-right: 10px; width: 100px; float: left;">
+<p>
+
+Click the button below to get my <strong>free 11-page Image Search Engine Resource Guide PDF</strong>. Uncover <strong>exclusive techniques</strong> that I don't publish on this blog and start building image search engines of your own.
+</p>
+<div style="clear: left;"></div>
+
+<center><a href="#" class="manual-optin-trigger" data-optin-slug="rxgemdcavzehuzpr" style="color: rgb(255, 255, 255); text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-size: 16px; line-height: 20px; padding: 10px; display: inline-block; max-width: 300px; border-radius: 5px; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 1px; box-shadow: rgba(255, 255, 255, 0.498039) 0px 1px 3px inset, rgba(0, 0, 0, 0.498039) 0px 1px 3px; background: #DF4B4B;">Download for Free!</a></center></div>
+		</div><div id="text-5" class="widget widget_text"><h3>You can detect faces in images &amp; video.</h3>			<div class="textwidget"><a href="http://www.pyimagesearch.com/practical-python-opencv/?src=sidebar-face-detection" title="Practical Python and OpenCV"><img title="Learn how to detect faces in images and video" src="adrian_face_detection_sidebar.png" style="padding-bottom: 5px; width: 300px;" onclick="document.location='http://www.pyimagesearch.com/practical-python-opencv/?src=sidebar-face-detection'; return false;"></a>
+<p>
+
+Are you interested in <strong>detecting faces in images &amp; video?</strong> But <strong>tired of Googling for tutorials</strong> that <em>never work?</em> Then let me help! I guarantee that my new book will turn you into a <strong>face detection ninja</strong> by the end of this weekend.
+<a href="http://www.pyimagesearch.com/practical-python-opencv/?src=sidebar-face-detection" title="Practical Python and OpenCV" onclick="document.location='http://www.pyimagesearch.com/practical-python-opencv/?src=sidebar-face-detection'; return false;">Click here to give it a shot yourself.</a>
+</p>
+<p><input value="Click here to master face detection" style="background-color: rgb(223, 75, 75);" onclick="document.location='http://www.pyimagesearch.com/practical-python-opencv/?src=sidebar-face-detection'; return false;" type="submit"></p></div>
+		</div><div id="text-8" class="widget widget_text"><h3>PyImageSearch Gurus: NOW ENROLLING!</h3>			<div class="textwidget"><div id="pyimg_gurus_carousel_container" style="width: 300px; height: 310px; cursor: pointer;" onclick="document.location='http://www.pyimagesearch.com/pyimagesearch-gurus/?src=sidebar'; return false;">
+	<div id="pyimg_gurus_carousel" style="width: 300px; height: 300px; background: transparent url('gurus_carousel.jpg') no-repeat ; -300px; display: block;"></div>
+</div>
+<p style="margin-bottom: 8px;"><strong>The PyImageSearch Gurus course is <em>now enrolling!</em></strong> Inside the course you'll learn how to perform:</p>
+<ul style="margin-bottom: 8px;">
+	<li>Automatic License Plate Recognition (ANPR)</li>
+	<li>Deep Learning</li>
+	<li>Face Recognition</li>
+	<li><em>and much more!</em></li>
+</ul>
+<p><strong>Click the button below to learn more about the course, take a tour, and get 10 (FREE) sample lessons</strong>.</p>
+<p><input value="Take a tour &amp; get 10 (free) lessons" style="background-color: rgb(223, 75, 75);" onclick="document.location='http://www.pyimagesearch.com/pyimagesearch-gurus/?src=sidebar'; return false;" type="submit"></p></div>
+		</div><div id="woo_blogauthorinfo-2" class="widget widget_woo_blogauthorinfo"><h3>Hello! I’m Adrian Rosebrock.</h3><span class="left"><img alt="" src="02743529311d3b8babbaf6935670ec9c_001.dat" srcset="http://0.gravatar.com/avatar/02743529311d3b8babbaf6935670ec9c?s=180&amp;d=mm&amp;r=g 2x" class="avatar avatar-90 photo" height="90" width="90"></span>
+<p>I'm an entrepreneur and Ph.D who has launched two successful image search engines, <a target="blank" href="http://www.idmypill.com/">ID My Pill</a> and <a target="blank" href="http://www.chicengine.com/">Chic Engine</a>. I'm here to share my tips, tricks, and hacks I've learned along the way.</p>
+<div class="fix"></div>
+</div><div id="text-4" class="widget widget_text"><h3>Learn computer vision in a single weekend.</h3>			<div class="textwidget"><a href="http://www.pyimagesearch.com/practical-python-opencv/?src=sidebar-single-weekend" title="Practical Python and OpenCV"><img title="Become an OpenCV guru" src="practical_python_and_opencv_2nd_cover.png" style="margin-left: 35px; padding-bottom: 15px; width: 215px;"></a>
+<p>Want to learn computer vision &amp; OpenCV? I can teach you in a <strong>single weekend</strong>. I know. It sounds crazy, but it’s no joke. My new book is your <strong>guaranteed, quick-start guide</strong> to becoming an OpenCV Ninja. So why not give it a try? <a href="http://www.pyimagesearch.com/practical-python-opencv/?src=sidebar-single-weekend" title="Practical Python and OpenCV">Click here to become a computer vision ninja.</a></p>
+<p><input value="Click here to become an OpenCV ninja" style="background-color: rgb(223, 75, 75);" onclick="document.location='http://www.pyimagesearch.com/practical-python-opencv/?src=sidebar-single-weekend'; return false;" type="submit"></p></div>
+		</div><div id="text-3" class="widget widget_text"><h3>Subscribe via RSS</h3>			<div class="textwidget"><a target="blank" href="http://feeds.feedburner.com/Pyimagesearch"><img title="PyImageSearch RSS Feed" src="rss-icon.png" style="padding-right: 10px; float: left;"></a>
+<p><strong>Never miss a post!</strong> Subscribe to the PyImageSearch RSS Feed and keep up to date with my image search engine tutorials, tips, and tricks</p></div>
+		</div>
+		<div id="woo_tabs-2" class="widget widget_woo_tabs"> 		<div id="tabs">
+
+            <ul class="wooTabs">
+                                <li class="popular"><a class="selected" href="#tab-pop">Popular</a></li>                                                            </ul>
+
+            <div class="clear"></div>
+
+            <div class="boxes box inside">
+
+	            
+                                <ul style="display: block;" id="tab-pop" class="list">
+                    	<li>
+				<a title="Install OpenCV and Python on your Raspberry Pi 2 and B+" href="http://www.pyimagesearch.com/2015/02/23/install-opencv-and-python-on-your-raspberry-pi-2-and-b/">Install OpenCV and Python on your Raspberry Pi 2 and B+</a>
+		<span class="meta">February 23, 2015</span>
+		<div class="fix"></div>
+	</li>
+		<li>
+				<a title="Home surveillance and motion detection with the Raspberry Pi, Python, OpenCV, and Dropbox" href="http://www.pyimagesearch.com/2015/06/01/home-surveillance-and-motion-detection-with-the-raspberry-pi-python-and-opencv/">Home surveillance and motion detection with the Raspberry Pi, Python, OpenCV, and Dropbox</a>
+		<span class="meta">June 1, 2015</span>
+		<div class="fix"></div>
+	</li>
+		<li>
+				<a title="How to install OpenCV 3 on Raspbian Jessie" href="http://www.pyimagesearch.com/2015/10/26/how-to-install-opencv-3-on-raspbian-jessie/">How to install OpenCV 3 on Raspbian Jessie</a>
+		<span class="meta">October 26, 2015</span>
+		<div class="fix"></div>
+	</li>
+		<li>
+				<a title="Install OpenCV 3.0 and Python 2.7+ on Ubuntu" href="http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/">Install OpenCV 3.0 and Python 2.7+ on Ubuntu</a>
+		<span class="meta">June 22, 2015</span>
+		<div class="fix"></div>
+	</li>
+		<li>
+				<a title="Accessing the Raspberry Pi Camera with OpenCV and Python" href="http://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/">Accessing the Raspberry Pi Camera with OpenCV and Python</a>
+		<span class="meta">March 30, 2015</span>
+		<div class="fix"></div>
+	</li>
+		<li>
+				<a title="Install OpenCV 3.0 and Python 2.7+ on OSX" href="http://www.pyimagesearch.com/2015/06/15/install-opencv-3-0-and-python-2-7-on-osx/">Install OpenCV 3.0 and Python 2.7+ on OSX</a>
+		<span class="meta">June 15, 2015</span>
+		<div class="fix"></div>
+	</li>
+		<li style="border-bottom: 0px none;">
+				<a title="Basic motion detection and tracking with Python and OpenCV" href="http://www.pyimagesearch.com/2015/05/25/basic-motion-detection-and-tracking-with-python-and-opencv/">Basic motion detection and tracking with Python and OpenCV</a>
+		<span class="meta">May 25, 2015</span>
+		<div class="fix"></div>
+	</li>
+	                </ul>
+                                                                
+            </div><!-- /.boxes -->
+
+        </div><!-- /wooTabs -->
+
+        </div>         <div id="woo_search-2" class="widget widget_woo_search"><h3>Search</h3><div class="search_main">
+    <form method="get" class="searchform" action="http://www.pyimagesearch.com/">
+        <input class="field s" name="s" value="Search..." onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}" type="text">
+                <button type="submit" class="icon-search submit" name="submit" value="Search"></button>
+    </form>    
+    <div class="fix"></div>
+</div>
+</div></aside><!-- /#sidebar -->
+
+		</div><!-- /#main-sidebar-container -->         
+
+		
+    </div><!-- /#content -->
+	
+    <!--#footer-widgets-container-->
+    <div id="footer-widgets-container">
+	</div><!--/#footer_widgets_container_end-->
+    <!--#footer_container_start-->
+    <div id="footer-container">
+	<footer id="footer" class="col-full">
+
+		
+		<div id="copyright" class="col-left">
+
+			Find me on <a target="blank" href="https://twitter.com/pyimagesearch" style="font-weight: bold; color: rgb(255, 255, 255);">Twitter</a>, <a target="blank" href="https://www.facebook.com/pyimagesearch" style="font-weight: bold; color: rgb(255, 255, 255);">Facebook</a>, <a target="blank" href="https://plus.google.com/115909176846554117735/?rel=author" style="font-weight: bold; color: rgb(255, 255, 255);">Google+</a>, and <a target="blank" href="http://www.linkedin.com/pub/adrian-rosebrock/2a/873/59b" style="font-weight: bold; color: rgb(255, 255, 255);">LinkedIn</a>.<br>
+			<p>© 2016 PyImageSearch. All Rights Reserved. </p>		</div>
+
+		<div id="credit" class="col-right">
+		</div>
+
+	</footer>
+
+	    </div><!--/#footer_container_end-->
+
+	</div><!-- /#inner-wrapper -->
+
+</div><!-- /#wrapper -->
+
+<div class="fix"></div><!--/.fix-->
+
+<script>
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46641058-1', 'pyimagesearch.com');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Drip -->
+<script type="text/javascript">
+
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {}; 
+  _dcs.account = '4768429';
+  
+  (function() {
+    var dc = document.createElement('script');
+    dc.type = 'text/javascript'; dc.async = true; 
+    dc.src = '//tag.getdrip.com/4768429.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(dc, s);
+  })();
+</script>
+
+<!-- HitTail Code -->
+<script type="text/javascript">
+
+	(function(){ var ht = document.createElement('script');ht.async = true;
+	  ht.type='text/javascript';ht.src = '//115962.hittail.com/mlt.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ht, s);})();
+</script>
+
+<script type="text/javascript">
+
+  (function() {
+    window._pa = window._pa || {};
+    // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+    // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+    // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.perfectaudience.com/serve/54220efd7ab7f03f7e000043.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+
+// visited blog tracking
+window._pq = window._pq || [];
+_pq.push(['track', 'visited blog']);
+  })();
+</script>
+
+<!-- -- scroll to code ---->
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+	jQuery("#scroll_to_code").click(function(event){
+		event.preventDefault();
+		jQuery('html, body').animate({scrollTop: jQuery('#post_downloads').offset().top}, 1000);
+	});
+});
+</script>
+
+<!-- gurus sidebar carousel -->
+<script type="text/javascript">
+
+	jQuery(document).ready(function(){
+		GURUS_CAROUSEL_IDX = 1;
+
+		window.setInterval(function(){
+			jQuery("#pyimg_gurus_carousel").fadeOut(function(){
+				GURUS_CAROUSEL_TOP = GURUS_CAROUSEL_IDX * -300;
+				jQuery("#pyimg_gurus_carousel").css("background-position", "0px " + GURUS_CAROUSEL_TOP + "px");
+				GURUS_CAROUSEL_IDX += 1;
+
+				if (GURUS_CAROUSEL_IDX == 4){
+					GURUS_CAROUSEL_IDX = 0;
+				}
+			}).delay(250).fadeIn();
+		}, 5000);
+	});
+</script>
+<!-- Woo Tabs Widget -->
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+	// UL = .wooTabs
+	// Tab contents = .inside
+
+	var tag_cloud_class = '#tagcloud';
+
+	//Fix for tag clouds - unexpected height before .hide()
+	var tag_cloud_height = jQuery( '#tagcloud').height();
+
+	jQuery( '.inside ul li:last-child').css( 'border-bottom','0px' ); // remove last border-bottom from list in tab content
+	jQuery( '.wooTabs').each(function(){
+		jQuery(this).children( 'li').children( 'a:first').addClass( 'selected' ); // Add .selected class to first tab on load
+	});
+	jQuery( '.inside > *').hide();
+	jQuery( '.inside > *:first-child').show();
+
+	jQuery( '.wooTabs li a').click(function(evt){ // Init Click funtion on Tabs
+
+		var clicked_tab_ref = jQuery(this).attr( 'href' ); // Strore Href value
+
+		jQuery(this).parent().parent().children( 'li').children( 'a').removeClass( 'selected' ); //Remove selected from all tabs
+		jQuery(this).addClass( 'selected' );
+		jQuery(this).parent().parent().parent().children( '.inside').children( '*').hide();
+
+		jQuery( '.inside ' + clicked_tab_ref).fadeIn(500);
+
+		 evt.preventDefault();
+
+	})
+})
+</script>
+<!-- This site is converting visitors into subscribers and customers with OptinMonster - http://optinmonster.com --><div id="om-rxgemdcavzehuzpr-holder"><script type="text/javascript">if(!(window.ga&&ga.create)){(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','__omGaTracker');}</script></div><script>var rxgemdcavzehuzpr,rxgemdcavzehuzpr_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById(n)){rxgemdcavzehuzpr_poll(function(){if(window['om_loaded']){if(!rxgemdcavzehuzpr){rxgemdcavzehuzpr=new OptinMonsterApp();return rxgemdcavzehuzpr.init({u:"18464.329426",staging:0,dev:0,beta:0});}}},25);return;}var d=false,o=e.createElement(t);o.id=n,o.src="//a.optnmnstr.com/app/js/api.min.js",o.onload=o.onreadystatechange=function(){if(!d){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){try{d=om_loaded=true;rxgemdcavzehuzpr=new OptinMonsterApp();rxgemdcavzehuzpr.init({u:"18464.329426",staging:0,dev:0,beta:0});o.onload=o.onreadystatechange=null;}catch(t){}}}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");</script><!-- / OptinMonster --><script type="text/javascript" src="M9RPzM4szk0t0Y_PzEvWT8svytUx0U_Oz81NzSvRLUotyKnUy83MA4qVF-im5ialpoC4AA.js"></script>
+<script type="text/javascript">
+
+/* <![CDATA[ */
+var fsb = {"ajax":"http:\/\/www.pyimagesearch.com\/wp-admin\/admin-ajax.php","nonce":"8e3e80e61f"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="M9RPy8lPLMnMS9ctzk_OTMzRTUos0s8q1k8rTgIA.js"></script>
+<script type="text/javascript">var omapi_localized = { ajax: 'http://www.pyimagesearch.com/wp-admin/admin-ajax.php?optin-monster-ajax-route=1', nonce: '2d97c25867' };</script>
+	    
+
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="sliding-windows-for-object-detection-with-python-and-opencv_3.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="sliding-windows-for-object-detection-with-python-and-opencv_4.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><script id="facebook-jssdk" src="all.js" async=""></script><script gapi_processed="true" src="plusone.js" async=""></script><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="sliding-windows-for-object-detection-with-python-and-opencv_5.html" id="oauth2relay681906307" name="oauth2relay681906307"></iframe><div class="drip-tab-container">
+  <div id="drip-1305" class="drip-tab bottom right no-image">
+    <div id="drip-header-1305" class="drip-header drip-hidden">
+      <a href="#" id="drip-toggle-1305" class="drip-toggle">
+        <h2 id="drip-teaser-1305">Free 21-day crash course on computer vision &amp; image search engines</h2>
+        <span id="drip-tab-up-1305" class="drip-arrow up">
+          <svg width="12px" height="8px" viewBox="1362 659 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon id="right_angle" stroke="none" fill="#FFFFFF" fill-rule="evenodd" transform="translate(1368.000000, 662.703125) rotate(-90.000000) translate(-1368.000000, -662.703125) " points="1364.29688 667.296875 1368.89062 662.703125 1364.29688 658.109375 1365.70312 656.703125 1371.70312 662.703125 1365.70312 668.703125"></polygon>
+          </svg>
+        </span>
+        <span id="drip-tab-down-1305" class="drip-arrow down" style="display: none;"></span>
+      </a>
+    </div>
+
+    <div style="height: auto; bottom: 0px;" id="drip-content-1305" class="drip-content drip-clearfix">
+      <div style="display: block;" id="drip-form-panel-1305" class="drip-panel">
+        <a id="drip-close-1305" class="drip-close">×</a>
+        <h3 id="drip-content-header-1305">Free 21-day crash course on computer vision &amp; image search engines</h3>
+        <div id="drip-scroll-1305" class="drip-scroll">
+          <div class="drip-clearfix">
+            
+            <div class="drip-description">Interested in computer vision and image search engines, but don't know where to start? Let me help. I've created a free, 21-day crash course that is hand-tailored to give you the best possible introduction to computer vision. Sound good? Enter your email below to start your journey to becoming a computer vision master.</div>
+          </div>
+          <form action="http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/" id="drip-form-1305">
+            <div style="display: none;">
+              <input name="form_id" value="1305" type="hidden">
+            </div>
+            <dl class="no-labels">
+              
+                <dt>Email Address</dt>
+                <dd class="drip-clearfix">
+                  
+                    <input name="fields[email]" value="" placeholder="Email Address" class="drip-text-field" type="email">
+                    <div id="drip-errors-for-email-1305" class="drip-errors"></div>
+                  
+                </dd>
+              
+            </dl>
+            <div class="form-controls">
+              <input name="submit" value="Let's do it!" id="drip-submit-1305" class="drip-submit-button" type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="drip-success-panel-1305" class="drip-success drip-panel drip-clearfix" style="display: none;">
+        <a id="drip-hide-1305" class="drip-close">×</a>
+        <h3>Almost There...</h3>
+        <p class="drip-description">To start your free 21-day crash course, confirm your email address by clicking the link in the email I just sent you.</p>
+      </div>
+
+      
+    </div>
+  </div>
+</div><div id="om-rxgemdcavzehuzpr" class="atlanta-background atlanta-rxgemdcavzehuzpr atlanta-optin-visible atlanta-has-image atlanta-lightbox atlanta-bullseye" style="display: none; position: fixed; z-index: 7371832; top: 0px; left: 0px; width: 100%; height: 100%; margin: 0px; padding: 0px;"><div id="atlanta-optin" class="atlanta-clearfix atlanta-outer-wrap" style=""><div id="atlanta-body" class="atlanta-element-row atlanta-element-row-global atlanta-body" data-selectable="true" data-target="#builder-setting-bg_border" style="border-color: rgb(26, 159, 230);"><a class="atlanta-element-close atlanta-close" title="Close" style=""></a><div id="atlanta-content" class="atlanta-clearfix atlanta-content"><div id="atlanta-element-image" class="atlanta-element-image atlanta-element" data-element="image"><div id="atlanta-image" class="atlanta-image" data-image-id="main" data-context="lightbox" data-theme="bullseye"><img class="atlanta-element-image-output" src="7960fd4dacde1462303655-optin.png" alt="7960fd4dacde1462303655-optin.png" data-image-id="main" data-context="lightbox" data-theme="bullseye"></div></div></div><div id="atlanta-footer" class="atlanta-clearfix atlanta-footer" data-selectable="true" data-target="#builder-setting-footer_bg" style="background-color: rgb(233, 233, 233); border-top-color: rgb(187, 187, 187);"><div id="atlanta-element-form" class="atlanta-element-form atlanta-element" data-element="form"><div id="atlanta-form" class="atlanta-form atlanta-has-email atlanta-form-horizontal atlanta-has-buttons"><div class="atlanta-form-wrap"><input id="atlanta-field-email" name="atlanta-email" data-selectable="true" data-target="#builder-setting-email_value" class="atlanta-field-email" placeholder="Enter your email address here..." value="" style="color: rgb(72, 72, 72); font-family: Open Sans;" type="email"><input id="atlanta-field-submit" name="atlanta-submit" data-selectable="true" data-target="#builder-setting-submit_value" class="atlanta-field-submit" value="DOWNLOAD MY PDF" style="color: rgb(255, 255, 255); background: rgb(26, 159, 230) none repeat ; 0%; border-color: rgb(23, 143, 214); font-family: Bree Serif;" type="submit"><div id="atlanta-element-privacy" class="atlanta-element-privacy atlanta-element" data-element="privacy"><div class="atlanta-element-privacy-wrap"><div id="atlanta-element-privacy-content" class="atlanta-element-privacy-content" data-editable="true">I hate SPAM and promise to keep your email address safe.</div></div></div></div><div class="atlanta-yesno-wrap" style="display: none;"><button id="atlanta-button-yes" type="button" name="atlanta-yes" data-selectable="true" data-target="#builder-setting-yes_value" data-action="form" data-type="yes" class="atlanta-button-yes atlanta-button-yesno" title="Yes, I Want Access!" style="color: rgb(255, 255, 255); background: rgb(131, 193, 31) none repeat ; 0%; border-color: rgb(131, 193, 31); font-family: Bree Serif;">Yes, I Want Access!</button><button id="atlanta-button-no" type="button" name="atlanta-no" data-selectable="true" data-target="#builder-setting-no_value" data-action="close" data-type="no" class="atlanta-button-no atlanta-button-yesno" title="No Thanks" style="color: rgb(255, 255, 255); background: rgb(102, 102, 102) none repeat ; 0%; border-color: rgb(102, 102, 102); font-family: Bree Serif;">No Thanks</button></div></div></div></div></div><div id="atlanta-success-container" class="atlanta-success-container atlanta-transition-hidden atlanta-success-theme-default"><a class="atlanta-success-element-close atlanta-success-close" title="Close" style="">×</a><div id="atlanta-success-content" class="atlanta-success-clearfix atlanta-success-content" data-selectable="true" data-target="#builder-setting-success_content_bg" style="background-color: rgb(255, 255, 255);"><div id="atlanta-success-element-title" class="atlanta-success-element-title atlanta-success-element optin-monster-saas-success-message" data-element="title"><div class="atlanta-success-element-title-wrap"><div id="atlanta-success-element-title-content" class="atlanta-success-element-title-content" data-editable="true">Thanks for subscribing! Please check your email for further instructions.</div></div></div></div></div></div><!--[if lte IE 9]><script type="text/javascript">var om_ie_browser = true;</script><![endif]--></div></body>
+</html>

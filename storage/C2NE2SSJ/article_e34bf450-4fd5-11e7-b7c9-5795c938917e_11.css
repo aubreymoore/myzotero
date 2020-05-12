@@ -1,0 +1,13 @@
+
+/* ::::: null ::::: */
+
+html { overflow: hidden; }
+body { display: inline-block; width: 100%; margin: 0px; padding: 0px; font-family: Arial,Helvetica,sans-serif; font-weight: normal; font-size: 12px; color: rgb(0, 0, 0); }
+.trc_popover_title_wrapper { padding: 8px 14px; margin: 0px; font-weight: bold; background-color: rgb(247, 247, 247); border-bottom: 1px solid rgb(235, 235, 235); border-radius: 5px 5px 0px 0px; }
+.trc_popover_title { width: 100%; display: inline-block; vertical-align: middle; }
+.trc_popover_title_text { float: left; }
+.trc_popover_content_wrapper { display: inline-block; float: left; padding: 9px 14px; }
+.trc_popover_content { width: 100%; }
+.trc_question_container .trc_question_title { margin: 0px 0px 3px; }
+.trc_question_container input[type="radio"] { float: left; cursor: pointer; margin: 3px 4px 0px 5px; }
+.trc_popover_content_wrapper .trc_question_container label { float: left; clear: left; width: 100%; cursor: pointer; line-height: 20px; text-align: left; }

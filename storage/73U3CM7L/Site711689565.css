@@ -1,0 +1,62 @@
+ /*SITE SPECIFIC CSS*/
+
+.featurePanel {
+	background-image: url(//academic.oup.com/data/sitebuilderassetsoriginals/images/jinsectscience/jinsectscience_feature_panel.jpg);
+}
+.navbar {
+	background-color: #c35129;
+}
+.featurePanel .featurePanelInner {
+	background: rgba(0, 0, 0, 0.7);
+}
+.featurePanel p {
+	color: #f6f6f6 !important;
+}
+.featurePanel h3 {
+	font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
+	font-weight: bold !important;
+	color: #f6f6f6 !important;
+}
+.featurePanel a {
+	color: #f6f6f6 !important;
+}
+.featurePanel a:hover {
+	color: #f6f6f6 !important;
+}
+.journal-bg {
+	background-color: #E66030;
+}
+.journal-header .journal-logo {
+	width: 420px;
+}
+.journal-header .society-logo {
+	width: 92px;
+}
+img.journal-footer-affiliations-logo {
+	width: 330px;
+}
+.journal-footer.journal-bg {
+	background-color: #c35129;
+}
+.pg_index .location-main-content>.widget-dynamic>.widget-dynamic-inner-wrap>.widget-dynamic[data-count]:nth-child(4):not(.row-related-titles){
+	background-color: #E66030;
+}
+.pg_index .location-main-content>.widget-dynamic>.widget-dynamic-inner-wrap>.widget-dynamic[data-count]:nth-child(4):not(.row-related-titles) .widget-dynamic__underbar.journal-bg{
+	background-color: #ffffff;
+}
+.pg_index .location-main-content>.widget-dynamic>.widget-dynamic-inner-wrap>.widget-dynamic[data-count]:nth-child(4):not(.row-related-titles) .widget-dynamic__header h3{
+	color: #ffffff;
+}
+.society-links-logo img {
+	width: 100%;
+	max-height: none;
+	height: auto;
+	display: block;
+	margin-bottom: 15px;
+}
+.article-body .ref .person-group:first-child, .article-body .ref .year {
+	font-weight: bold;
+}
+.article-body .ref .source {
+	font-style: normal;
+}

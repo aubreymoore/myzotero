@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="icon" type="image/png" href="https://healthcare-in-europe.com/styles/images/favicon.png" sizes="256x256">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://healthcare-in-europe.com/favicon.ico">
+
+    <meta name="generator" content="WebJazz - swinging solutions (www.webjazz.de)">
+<meta name="revisit-after" content="5">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="covid prediction, data science, corona future">
+<meta name="description" content="Mathematical models can help shed light on the evolution of the coronavirus pandemic, according to Spanish mathematician Juan Luis Fernández Martínez, who predicted Spain could have between 90,000 and 160,000 infected patients. The next trend in epidemic data science will be to issue prediction models that focus on early detection.">
+<meta name="date" content="2020-03-27">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script async="" src="analytics.js"></script><script type="text/javascript" async="" defer="defer" src="matomo.js"></script><script src="scripts.js" defer="defer"></script>
+<script src="scroll_track.js" defer="defer"></script>
+<script src="scrolltohome.js" defer="defer"></script>
+<meta property="og:title" content="Predicting the future of the Covid-19 pandemic with data">
+<meta property="og:image" content="https://healthcare-in-europe.com/media/story/23016/rect-01-fernandez2.jpg">
+<meta property="og:description" content="Mathematical models can help shed light on the evolution of the coronavirus pandemic, according to Spanish mathematician Juan Luis Fernández Martínez, who predicted Spain could have between 90,000 and 160,000 infected patients. The next trend in epidemic data science will be to issue prediction models that focus on early detection.">
+<meta property="og:url" content="https://healthcare-in-europe.com/en/news/predicting-the-future-of-the-covid-19-pandemic-with-data.html">
+
+
+    <title>Predicting the future of the Covid-19 pandemic with data</title>
+
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+
+
+
+<body>
+
+    <header class="pagehead">
+
+        <nav class="top">
+
+
+
+            <div class="content">
+
+                <div class="empty">
+
+                </div>
+
+                <ul style="margin-right: -20px;">
+
+                    <li><a href="https://healthcare-in-europe.com/de/home/">Deutsch</a></li>
+
+
+                    <li><a href="http://european-hospital.com/" target="_blank">European Hospital</a></li>
+
+                    <li><a href="http://european-hospital.com/publications/index.html" target="_blank">Publications</a></li>
+<li><a href="https://healthcare-in-europe.com/en/labbook/" target="_self">LabBook</a></li>
+<li><a href="https://healthcare-in-europe.com/en/radbook/" target="_self">RadBook</a></li>
+<li><a href="http://european-hospital.com/media-kits/index.html" target="_self">Media Kits</a></li>
+<li><a href="https://healthcare-in-europe.com/en/events/" target="_self">Events</a></li>
+<li><a href="https://healthcare-in-europe.com/en/newsletter/" target="_self">Newsletter</a></li>
+<li><a href="https://healthcare-in-europe.com/en/contact/" target="_self">Contact</a></li>
+
+
+                    <li class="social first"><a class="social-button" href="https://facebook.com/healthcare.in.europe" title="facebook" target="_blank"><span class="social social-facebook"></span></a></li><li></li><li class="social"><a class="social-button" href="https://twitter.com/EuropHospital" title="Twitter-Feed" target="_blank"><span class="social social-twitter"></span></a></li><li></li><li class="social"><a class="social-button" href="https://vimeo.com/europeanhospital" title="Vimeo-Kanal" target="_blank"><span class="social social-vimeo"></span></a></li><li class="social"><a class="social-button" href="https://healthcare-in-europe.com/en/global/rss.html" title="RSS-Feed" target="_blank"><span class="social social-rss"></span></a></li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+        <div class="content">
+
+            <a id="logo" href="https://healthcare-in-europe.com/en/home/"><img src="hie_logo.png" alt="healthcare-in-europe Logo"></a>
+
+            <div class="searchsocial">
+
+                <form id="searchform" class="search" action="/en/adv_search/index.html" method="get"><input id="searchfield" class="hidden" name="term" placeholder="Search for ..." type="text"></form>
+
+                <span id="toggle-input"><img src="search.png" alt="Search"></span>
+
+                <a id="offcanvas-menu" href="#sidr" class="mobile-menu">
+
+                    <img id="burger" src="burger-2.png" alt="Menu">
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+    </header>
+
+    <nav id="nav-main" class="main  ">
+
+        <div class="content">
+
+            <ul>
+
+                <li><a href="https://healthcare-in-europe.com/en/home/" target="_self">Latest News</a></li>
+<li><a href="https://healthcare-in-europe.com/en/diagnostic-imaging/" target="_self">Diagnostic imaging</a></li>
+<li><a href="https://healthcare-in-europe.com/en/laboratory-pathology/" target="_self">Laboratory/pathology</a></li>
+<li><a href="https://healthcare-in-europe.com/en/treatment/" target="_self">Treatment</a></li>
+<li><a href="https://healthcare-in-europe.com/en/management/" target="_self">Management</a></li>
+<li><a href="https://healthcare-in-europe.com/en/health-it/" target="_self">Health IT</a></li>
+<li class="selected"><a href="https://healthcare-in-europe.com/en/research/" target="_self">Research</a></li>
+
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <main>
+
+        <article id="story" class="single" data-id="23016">
+<header class="">
+<div class="content">
+<div class="text">
+<h4 class="prehead">The math behind corona</h4>
+<h1>Predicting the future of the Covid-19 pandemic with data</h1>
+<h2 class="small">Mathematical models can help shed light on the 
+evolution of the coronavirus pandemic, according to Spanish 
+mathematician Juan Luis Fernández Martínez, who predicted Spain could 
+have between 90,000 and 160,000 infected patients. The next trend in 
+epidemic data science will be to issue prediction models that focus on 
+early detection.</h2>
+<p class="writer">Report: Mélisande Rouger</p>
+</div>
+</div>
+</header>
+<section class="body">
+<div class="content">
+<figure class="content-image half" style="float: right; text-align: right; margin: 0 0 16px 30px;"><a class="fancybox content-img" rel="fancybox" href="https://healthcare-in-europe.com/media/story_section_text/16916/image-01-fernandez2_hires.jpg" title="Juan Luis Fernández Martínez&nbsp;&nbsp;Source: "><img src="image-01-fernandez2.jpg" alt="portrait of Juan Luis Fernández Martínez" srcset="/media/story_section_text/16916/image-01-fernandez2.jpg 1x, /media/story_section_text/16916/image-01-fernandez2_@2x.jpg 2x"></a><div class="caption">Juan Luis Fernández Martínez</div></figure>
+<p>Fernández, a professor of applied mathematics from Oviedo, Spain, has
+ developed a short term prediction tool that is helping Spanish 
+emergency departments know how many patients with Covid-19 will need to 
+be admitted in intensive care units (ICU) and prepare adequately. With 
+surprisingly exact results – he accurately predicted that 29 patients 
+would present with the infection in Asturias on March 24 –, Fernández 
+and his team are providing much needed help to an extremely strained 
+healthcare system. “The model is quite accurate and users are happy. 
+They can correlate our predictions with the number of people who are 
+currently in the ICU to plan workflow and anticipate their necessities,”
+ he said.</p></div>
+</section>
+<section style="margin-bottom: 20px;">
+<div class="content">
+<div class="banner banner-tablet banner-zone-1"><div class="banner-wrapper"><a href="https://healthcare-in-europe.com/en/banner/click/?banner_id=282&amp;tstamp=1585968904&amp;media_id=553" target="_blank" rel="external"><img src="banner-01-coronavirus-in-article-en.jpg" style="width: 100%; max-width: 690px; max-height: 75px;" alt="Advertisement"></a></div></div><div class="banner banner-mobile banner-zone-1"><div class="banner-wrapper"><a href="https://healthcare-in-europe.com/en/banner/click/?banner_id=282&amp;tstamp=1585968904&amp;media_id=554" target="_blank" rel="external"><img src="banner-01-coronavirus-in-article-en-mobile.jpg" style="width: 100%; max-width: 270px; max-height: 270px;" alt="Advertisement"></a></div></div><img src="a.gif" style="width: 0px; height: 0px;position:absolute;" alt=""></div>
+</section>
+<section class="body">
+<div class="content">
+<h3>Looking at curves to predict trends</h3><figure class="content-image half" style="float: right; text-align: right; margin: 0 0 16px 30px;"><a class="fancybox content-img" rel="fancybox" href="https://healthcare-in-europe.com/media/story_section_text/16917/image-01-covid1_hires.jpg" title="This curve shows the prediction of the daily number of infected in Spain (prediction date: March 26)&nbsp;&nbsp;Source: "><img src="image-01-covid1.jpg" alt="Photo"></a><div class="caption">This curve shows the prediction of the daily number of infected in Spain (prediction date: March 26)</div></figure>
+<p>Fernández gathers the infection data published by the healthcare 
+authorities in Asturias, Cantabria and Castile Leon provinces every 
+night, and analyzes the numbers using a population growth model to 
+calculate the evolution over the next 15-20 days. He has also been using
+ the data shared by the Spanish ministry of health since March 18th, and
+ the estimations issued by Johns Hopkins University, who started to 
+follow the epidemics across the world well before the Spanish 
+administration. “It’s a growing curve and you don’t know where it’s 
+going to finish. But using a population growth model, you know when the 
+infection will peak and deduce the total number of infected people. The 
+main point is to perform a correct uncertainty analysis of the growth 
+model fitting the past history and transmitting this uncertainty to the 
+future predictions,” Fernández said.</p><p>Most Spanish experts have 
+agreed that the peak of the epidemic would occur between March 25th and 
+29th. The total number of infected patients will be double that peak at 
+the end of this wave of the epidemic. On March 26th, the number of 
+infected across Spain was 56, 188, pointing to potentially 120,000 
+infected when the epidemic fades. But there might be more, Fernández 
+warned. “We think that the total number could oscillate between 90,000 
+and 160,000, depending on the data we receive every day. We can only 
+predict accurately day by day, as we receive new information,” he 
+said.&nbsp;</p></div>
+</section>
+<section class="body">
+<div class="content">
+<figure class="content-image half" style="float: left; text-align: left; margin: 0 30px 16px 0;"><a class="fancybox content-img" rel="fancybox" href="https://healthcare-in-europe.com/media/story_section_text/16918/image-01-europa1_hires.jpg" title="Comparison of Covid-19 infections across European countries (log-10)&nbsp;&nbsp;Source: "><img src="image-01-europa1.jpg" alt="Photo"></a><div class="caption">Comparison of Covid-19 infections across European countries (log-10)</div></figure>
+<p>To issue his predictions, Fernández uses the Verhulst model, a 
+population growth scale that looks at the initial population to identify
+ velocity and propagation constant. This approach enables to calculate 
+the level of uncertainty in the short run, by adjusting epidemics 
+history and identifying parameters. The results are then classified into
+ percentiles ranging from 25, 50, 75 and 90, which have different levels
+ of probability. “Percentile 50 (P50) is what is most likely to happen. 
+If you obtain a percentile above that, for example P75, you know that 
+the infection is not controlled. But if your percentile is below P50, 
+then the infection is under control.” Fernández explained.</p><p>The 
+system is also able to absorb temporary peaks, for example a mass 
+infection in a nursing home. The infection will not peak at the same 
+time across the country, he said. “Valencia still has some time. In 
+Asturias, we thought we had it contained a few days ago, but we had a 
+surge with 59 newly infected patients at a nursing home in one day. But 
+the model adapts, by predicting more admissions in the ICU. On the next 
+day, the peak was absorbed.”</p></div>
+</section>
+<section class="body">
+<div class="content">
+<h3>Increased reliance on data</h3><p>Fernández has been publishing his 
+forecast every day in Asturian newspaper La Nueva España since March 
+18th. The prediction wasn’t worth publishing before as the numbers 
+provided by the different local and federal administrations were not in 
+line, he explained. “The summation of the infected across the regions 
+didn’t match the total number provided by the national government. 
+Fortunately, they all managed to homogenize their data.”</p></div>
+</section>
+<section class="body">
+<div class="content">
+<figure class="content-image half" style="float: right; text-align: right; margin: 0 0 16px 30px;"><a class="fancybox content-img" rel="fancybox" href="https://healthcare-in-europe.com/media/story_section_text/16920/image-01-covid2_hires.jpg" title="Comparison of Covid-19 infections per continent (log-10)&nbsp;&nbsp;Source: "><img src="image-01-covid2.jpg" alt="Photo"></a><div class="caption">Comparison of Covid-19 infections per continent (log-10)</div></figure>
+<p>Governments are increasingly relying on data and prediction models in
+ the epidemic setting. Many prediction models are currently used to that
+ end around the world. The Verhulst model Fernández uses is not as 
+sophisticated as others like CIR, but it is reliable and strong for 
+short-term uncertainty analysis. For long-term analysis, prediction 
+tools should base themselves on the models used in the stock market, to 
+look at the infection as a stock share.</p><p>Thanks to the information 
+provided by Johns Hopkins, Fernández and his team have also been 
+checking the data around the world to assess the evolution on each 
+continent. <a href="https://healthcare-in-europe.com/en/news/covid-19-in-the-u-s-government-inaction-gave-virus-a-head-start.html" rel="noopener noreferrer" target="_blank" title="">America is without a doubt the next Covid-19 hub</a>.
+ The Covid-19 pandemic will continue for quite some time, until an 
+efficient vaccine is found. The trend will be to develop early detection
+ tools using data. Fernández is already looking at ways to obtain cough 
+data. “By analyzing patients’ cough, we could design an AI system that 
+predicts if a person is infected or not,” he concluded.</p></div>
+</section>
+<section class="body">
+<div class="content">
+<p>27.03.2020</p></div>
+</section>
+<section class="body"><div class="content"><span class="keyword-title">More on the subject:</span><ul class="keyword-list"><li><a href="https://healthcare-in-europe.com/en/tag/556-coronavirus/index.html">coronavirus (45)</a></li>
+<li><a href="https://healthcare-in-europe.com/en/tag/50-icu/index.html">ICU (193)</a></li>
+<li><a href="https://healthcare-in-europe.com/en/tag/159-infections/index.html">infections (447)</a></li>
+<li><a href="https://healthcare-in-europe.com/en/tag/67-prevention/index.html">prevention (477)</a></li>
+<li><a href="https://healthcare-in-europe.com/en/tag/92-research/index.html">research (1834)</a></li>
+</ul></div></section><section class="body"><div class="content"><form class="request" method="get" action="/en/request/form.html"><input name="id" value="23016" type="hidden"><button type="submit" class="information_request"><span class="glyphicons glyphicons-inline glyphicons-info-sign"></span>I'm interested in more information …</button><a class="information_request" href="https://healthcare-in-europe.com/en/home/"><span class="glyphicons glyphicons-inline glyphicons-bullhorn"></span>Read all latest stories</a></form></div></section><section><div class="content"><ul class="wj-share-buttons"><li class="wj-share-facebook"><a target="_blank" title="Share on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhealthcare-in-europe.com%2Fen%2Fnews%2Fpredicting-the-future-of-the-covid-19-pandemic-with-data.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 512"><path d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"></path></svg></a></li><li class="wj-share-twitter"><a target="_blank" title="Share on twitter" href="https://twitter.com/intent/tweet/?text=&amp;url=https%3A%2F%2Fhealthcare-in-europe.com%2Fen%2Fnews%2Fpredicting-the-future-of-the-covid-19-pandemic-with-data.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a></li><li class="wj-share-linkedin"><a target="_blank" title="Share on Linked-in" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fhealthcare-in-europe.com%2Fen%2Fnews%2Fpredicting-the-future-of-the-covid-19-pandemic-with-data.html&amp;title=&amp;summary=&amp;source="><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z"></path></svg></a></li><li class="wj-share-whatsapp"><a target="_blank" title="Share on WhatsApp" href="whatsapp://send?text=%20https%3A%2F%2Fhealthcare-in-europe.com%2Fen%2Fnews%2Fpredicting-the-future-of-the-covid-19-pandemic-with-data.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg></a></li><li class="wj-share-telegram"><a target="_blank" title="Share on Telegram" href="https://telegram.me/share/url?text=&amp;url=https%3A%2F%2Fhealthcare-in-europe.com%2Fen%2Fnews%2Fpredicting-the-future-of-the-covid-19-pandemic-with-data.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg></a></li><li class="wj-share-mail"><a target="_blank" title="Share via e-mail" href="mailto:?body=%0A%0Ahttps%3A%2F%2Fhealthcare-in-europe.com%2Fen%2Fnews%2Fpredicting-the-future-of-the-covid-19-pandemic-with-data.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg></a></li></ul></div></section></article>
+<section class="divider">
+<div class="content">
+<h2>Related articles</h2>
+</div>
+</section>
+<section>
+<div class="content"><div class="grid"><div class="teaser teaser-default teaser-26"><div class="box-top"><a href="https://healthcare-in-europe.com/en/news/killing-copper.html" title="Killing copper"><figure class="background-image"><img src="rect.jpg" alt="Photo"></figure></a><div class="text"><h4 class="prehead"></h4><h3><a href="https://healthcare-in-europe.com/en/news/killing-copper.html" title="Killing copper">Killing copper</a></h3><p>In
+ Europe, nosocomial infections cause about 25,000 deaths every year. 
+Copper has strong antibiotic effects and may reduce hospital acquired 
+infections.</p></div></div><div class="footer"><ul><li><a href="https://healthcare-in-europe.com/en/tag/89-disinfection/index.html">#disinfection</a></li><li><a href="https://healthcare-in-europe.com/en/tag/64-hygiene/index.html">#hygiene</a></li><li><a href="https://healthcare-in-europe.com/en/tag/50-icu/index.html">#ICU</a></li><li><a href="https://healthcare-in-europe.com/en/tag/159-infections/index.html">#infections</a></li><li><a href="https://healthcare-in-europe.com/en/tag/63-mrsa/index.html">#MRSA</a></li><li><a href="https://healthcare-in-europe.com/en/tag/67-prevention/index.html">#prevention</a></li><li><a href="https://healthcare-in-europe.com/en/tag/92-research/index.html">#research</a></li><li><a href="https://healthcare-in-europe.com/en/tag/77-security/index.html">#security</a></li></ul></div></div><div class="teaser teaser-default teaser-26"><div class="box-top"><a href="https://healthcare-in-europe.com/en/news/what-china-got-right-in-the-first-50-days-of-covid-19.html" title="What China got right in the first 50 days of COVID-19"><figure class="background-image"><img src="rect-01-novel-coronavirus-sars-cov-2-49597020648.jpg" alt="Photo" srcset="/media/story/23037/rect-01-novel-coronavirus-sars-cov-2-49597020648.jpg 1x, /media/story/23037/rect-01-novel-coronavirus-sars-cov-2-49597020648_@2x.jpg 2x"></figure></a><div class="text"><h4 class="prehead">Study: 700,000 cases prevented</h4><h3><a href="https://healthcare-in-europe.com/en/news/what-china-got-right-in-the-first-50-days-of-covid-19.html" title="What China got right in the first 50 days of COVID-19">What China got right in the first 50 days of COVID-19</a></h3><p>China's
+ control measures during the first 50 days of the COVID-19 epidemic may 
+have delayed the spread of the virus to cities outside of Wuhan by 
+several days and, by interrupting transmission…</p></div></div><div class="footer"><ul><li><a href="https://healthcare-in-europe.com/en/tag/556-coronavirus/index.html">#coronavirus</a></li><li><a href="https://healthcare-in-europe.com/en/tag/353-healthcare-politics/index.html">#healthcare politics</a></li><li><a href="https://healthcare-in-europe.com/en/tag/159-infections/index.html">#infections</a></li><li><a href="https://healthcare-in-europe.com/en/tag/92-research/index.html">#research</a></li><li><a href="https://healthcare-in-europe.com/en/tag/315-studies/index.html">#studies</a></li></ul></div></div><div class="teaser teaser-default teaser-26"><div class="box-top"><a href="https://healthcare-in-europe.com/en/news/covid-19-in-the-u-s-government-inaction-gave-virus-a-head-start.html" title="COVID-19 in the U.S.: Government inaction gave virus a head start"><figure class="background-image"><img src="rect-01-white-house-press-briefing-49690431596.jpg" alt="Photo" srcset="/media/story/23025/rect-01-white-house-press-briefing-49690431596.jpg 1x, /media/story/23025/rect-01-white-house-press-briefing-49690431596_@2x.jpg 2x"></figure></a><div class="text"><h4 class="prehead">Coronavirus chronology</h4><h3><a href="https://healthcare-in-europe.com/en/news/covid-19-in-the-u-s-government-inaction-gave-virus-a-head-start.html" title="COVID-19 in the U.S.: Government inaction gave virus a head start">COVID-19 in the U.S.: Government inaction gave virus a head start</a></h3><p>The
+ sense of fear is palpable in the images and videos of hospital 
+intensive care units (ICUs) and emergency departments that are broadcast
+ on television and posted on social media. Fear and…</p></div></div><div class="footer"><ul><li><a href="https://healthcare-in-europe.com/en/tag/556-coronavirus/index.html">#coronavirus</a></li><li><a href="https://healthcare-in-europe.com/en/tag/353-healthcare-politics/index.html">#healthcare politics</a></li><li><a href="https://healthcare-in-europe.com/en/tag/258-hospital/index.html">#hospital</a></li><li><a href="https://healthcare-in-europe.com/en/tag/159-infections/index.html">#infections</a></li><li><a href="https://healthcare-in-europe.com/en/tag/67-prevention/index.html">#prevention</a></li></ul></div></div></div>
+</div>
+</section>
+<section class="divider">
+<div class="content">
+<h2>Related products</h2>
+</div>
+</section>
+<div class="content"><div class="grid"><div class="product"><div class="box-top"><a href="https://healthcare-in-europe.com/en/labbook/poct/203-atlas-genetics-atlas-genetics-io-system.html"><img src="image-01-atlas-genetics-io-system.jpg" alt="Atlas Genetics - Atlas Genetics io system"></a><div class="text"><h4 class="prehead">Infectious diseases testing</h4><h3><a href="https://healthcare-in-europe.com/en/labbook/poct/203-atlas-genetics-atlas-genetics-io-system.html">Atlas Genetics - Atlas Genetics io system</a></h3>Atlas Genetics Ltd</div></div></div><div class="product"><div class="box-top"><a href="https://healthcare-in-europe.com/en/labbook/genetics/832-eppendorf-mastercycler-nexus-x2.html"><img src="image-01-ependorf-mastercycler.jpg" alt="Eppendorf – Mastercycler nexus X2" srcset="/media/product/832/image-01-ependorf-mastercycler.jpg 1x, /media/product/832/image-01-ependorf-mastercycler_@2x.jpg 2x"></a><div class="text"><h4 class="prehead">Research Use Only (RUO)</h4><h3><a href="https://healthcare-in-europe.com/en/labbook/genetics/832-eppendorf-mastercycler-nexus-x2.html">Eppendorf – Mastercycler nexus X2</a></h3>Eppendorf AG</div></div></div><div class="product"><div class="box-top"><a href="https://healthcare-in-europe.com/en/labbook/genetics/831-sarstedt-low-dna-binding-micro-tubes.html"><img src="image-01-sarstedt-lowdnabindingmicrotubes.jpg" alt="Sarstedt – Low DNA Binding Micro Tubes" srcset="/media/product/831/image-01-sarstedt-lowdnabindingmicrotubes.jpg 1x, /media/product/831/image-01-sarstedt-lowdnabindingmicrotubes_@2x.jpg 2x"></a><div class="text"><h4 class="prehead">Research Use Only (RUO)</h4><h3><a href="https://healthcare-in-europe.com/en/labbook/genetics/831-sarstedt-low-dna-binding-micro-tubes.html">Sarstedt – Low DNA Binding Micro Tubes</a></h3>SARSTEDT AG &amp; CO. KG</div></div></div><div class="product"><div class="box-top"><a href="https://healthcare-in-europe.com/en/labbook/chemistry-immunochemistry/264-shimadzu-clam-2030.html"><img src="image-01-clam-2030-1.jpg" alt="Shimadzu – CLAM-2030" srcset="/media/product/264/image-01-clam-2030-1.jpg 1x, /media/product/264/image-01-clam-2030-1_@2x.jpg 2x"></a><div class="text"><h4 class="prehead">Research Use Only (RUO)</h4><h3><a href="https://healthcare-in-europe.com/en/labbook/chemistry-immunochemistry/264-shimadzu-clam-2030.html">Shimadzu – CLAM-2030</a></h3>Shimadzu Europa GmbH</div></div></div><div class="product"><div class="box-top"><a href="https://healthcare-in-europe.com/en/labbook/genetics/2252-siemens-healthineers-fast-track-diagnostics-real-time-pcr-assays.html"><img src="image-01-siemens-fasttrackdiagnosticsreal-timepcr.jpg" alt="Siemens Healthineers – Fast Track Diagnostics Real-time PCR assays" srcset="/media/product/2252/image-01-siemens-fasttrackdiagnosticsreal-timepcr.jpg 1x, /media/product/2252/image-01-siemens-fasttrackdiagnosticsreal-timepcr_@2x.jpg 2x"></a><div class="text"><h4 class="prehead">Infectious Disease</h4><h3><a href="https://healthcare-in-europe.com/en/labbook/genetics/2252-siemens-healthineers-fast-track-diagnostics-real-time-pcr-assays.html">Siemens Healthineers – Fast Track Diagnostics Real-time PCR assays</a></h3>Siemens Healthineers</div></div></div><div class="product"><div class="box-top"><a href="https://healthcare-in-europe.com/en/labbook/genetics/213-siemens-healthineers-versant-hcv-genotype-2-0-assay-lipa.html"><img src="image-01-siemens-versant-hcv-genotype-2-0-assay-lipa.jpg" alt="Siemens Healthineers – Versant HCV Genotype 2.0 Assay (LiPA)" srcset="/media/product/213/image-01-siemens-versant-hcv-genotype-2-0-assay-lipa.jpg 1x, /media/product/213/image-01-siemens-versant-hcv-genotype-2-0-assay-lipa_@2x.jpg 2x"></a><div class="text"><h4 class="prehead">Infectious Disease/Hepatitis</h4><h3><a href="https://healthcare-in-europe.com/en/labbook/genetics/213-siemens-healthineers-versant-hcv-genotype-2-0-assay-lipa.html">Siemens Healthineers – Versant HCV Genotype 2.0 Assay (LiPA)</a></h3>Siemens Healthineers</div></div></div><div class="product"></div><div class="product"></div><div class="product"></div><div class="product"></div><div class="product"></div><div class="product"></div></div>
+</div>
+
+
+        
+
+    </main>
+
+    <footer>
+
+        <div class="content"><ul><li><h3>Categories</h3></li><li><a href="https://healthcare-in-europe.com/en/diagnostic-imaging">Diagnostic imaging</a></li>
+<li><a href="https://healthcare-in-europe.com/en/laboratory-pathology">Laboratory/pathology</a></li>
+<li><a href="https://healthcare-in-europe.com/en/treatment">Treatment</a></li>
+</ul><ul><li class="mobile">&nbsp;</li><li><a href="https://healthcare-in-europe.com/en/management">Management</a></li>
+<li><a href="https://healthcare-in-europe.com/en/health-it">Health IT</a></li>
+<li><a href="https://healthcare-in-europe.com/en/research">Research</a></li>
+</ul><ul class="mobile"><li><h3>General</h3></li><li><a href="https://healthcare-in-europe.com/en/labbook">LabBook</a></li>
+<li><a href="https://healthcare-in-europe.com/en/radbook">RadBook</a></li>
+<li><a href="https://healthcare-in-europe.com/en/manufacturers/">Manufacturer-Index</a></li></ul><ul><li class="mobile">&nbsp;</li><li><a href="http://european-hospital.com/media-kits/index.html" target="_blank">Media Kits</a></li><li><a href="https://healthcare-in-europe.com/en/newsletter/">Newsletter</a></li><li><a href="https://healthcare-in-europe.com/en/contact/">Contact</a></li></ul><ul><li class="mobile">&nbsp;</li><li><a href="https://facebook.com/healthcare.in.europe" target="_blank">Facebook</a></li><li><a href="https://twitter.com/EuropHospital" target="_blank">Twitter</a></li><li><a href="https://www.youtube.com/channel/UCsA5SHoIEC7c6EFQbt8gRKw" target="_blank">YouTube</a></li></ul><ul><li class="mobile">&nbsp;</li><li><a href="https://healthcare-in-europe.com/en/global/rss.html" target="_blank">RSS-Feed</a></li><li><a href="https://healthcare-in-europe.com/en/global/privacy.html">Privacy policy</a></li><li><a href="https://healthcare-in-europe.com/en/global/imprint.html">Imprint</a></li></ul></div>
+
+    </footer>
+
+    <div class="star-wrapper" id="star-wrapper" data-lang="en"><div class="star-wrapper-bg" id="star-wrapper-bg" style="background: url('/media/scroll_to/2/en-01-screenshot-2020-02-19-healthcare-business-news-trends-developments.png') no-repeat top center / cover;"></div><div class="star-wrapper-text" id="star-wrapper-text" style="display: none;">To Homepage?</div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250" id="star-svg" style="display: none;">
+                    <path class="st0" id="star-path" fill="#FFFFFF" fill-opacity="0.7" stroke="#004071" stroke-width="4" d="M125,200c-41.4,0-75-33.6-75-75c0-41.4,33.6-75,75-75s75,33.6,75,75C200,166.4,166.4,200,125,200" style="stroke-dasharray: 471.268, 471.268; stroke-dashoffset: 471.268;"></path>
+                    </svg></div>
+
+   <div class="toTop"><a href="#top"><span class="glyphicons glyphicons-circle-arrow-top"></span></a><div class="background"></div></div>
+
+    <div id="sidr" style="transition: right 0.2s ease 0s;" class="sidr right"><div class="sidr-inner">
+
+        <form action="/en/adv_search/" method="post">
+
+            <div class="sidr-class-search-icon"></div><input name="term" type="search">
+
+        </form>
+
+        <ul>
+
+            <li><a href="https://healthcare-in-europe.com/en/home/">Home</a></li>
+
+            <li><a href="https://healthcare-in-europe.com/de/home/">Deutsch</a></li>
+
+
+        </ul>
+
+        <ul>
+
+            <li><a href="https://healthcare-in-europe.com/en/home/" target="_self">Latest News</a></li>
+<li><a href="https://healthcare-in-europe.com/en/diagnostic-imaging/" target="_self">Diagnostic imaging</a></li>
+<li><a href="https://healthcare-in-europe.com/en/laboratory-pathology/" target="_self">Laboratory/pathology</a></li>
+<li><a href="https://healthcare-in-europe.com/en/treatment/" target="_self">Treatment</a></li>
+<li><a href="https://healthcare-in-europe.com/en/management/" target="_self">Management</a></li>
+<li><a href="https://healthcare-in-europe.com/en/health-it/" target="_self">Health IT</a></li>
+<li class="sidr-class-selected"><a href="https://healthcare-in-europe.com/en/research/" target="_self">Research</a></li>
+
+
+        </ul>
+
+        <ul>
+
+            <li><a href="https://healthcare-in-europe.com/en/manufacturers/index.html" target="_self">Manufacturer-Index</a></li>
+
+
+            <li><a href="http://european-hospital.com/" target="_blank">European Hospital</a></li>
+
+            <li><a href="http://european-hospital.com/publications/index.html" target="_blank">Publications</a></li>
+<li><a href="https://healthcare-in-europe.com/en/labbook/" target="_self">LabBook</a></li>
+<li><a href="https://healthcare-in-europe.com/en/radbook/" target="_self">RadBook</a></li>
+<li><a href="http://european-hospital.com/media-kits/index.html" target="_self">Media Kits</a></li>
+<li><a href="https://healthcare-in-europe.com/en/events/" target="_self">Events</a></li>
+<li><a href="https://healthcare-in-europe.com/en/newsletter/" target="_self">Newsletter</a></li>
+<li><a href="https://healthcare-in-europe.com/en/contact/" target="_self">Contact</a></li>
+
+
+        </ul>
+
+    </div></div>
+
+    <div id="sidr-body-overlay"></div>
+
+    <script>
+function track_impressions () {
+var impressions = {};
+var clicks = {};
+var views = {};
+impressions.story = [];
+impressions.story.push('8818');
+impressions.story.push('23037');
+impressions.story.push('23025');
+impressions.product = [];
+impressions.product.push('203');
+impressions.product.push('832');
+impressions.product.push('831');
+impressions.product.push('264');
+impressions.product.push('2252');
+impressions.product.push('213');
+clicks.story = [];
+clicks.story.push('23016');
+var data = {impressions: impressions, clicks: clicks, views: views};
+$.post({
+url: '/en/track/',
+data: data,
+success: function(data) {console.log(data);},
+});
+}
+</script>
+
+
+    <div id="cookie-message">
+<p>This website uses cookies to give our readers the best website experience. <br>Please refer to our <a href="https://healthcare-in-europe.com/en/global/privacy.html">privacy policy</a> to find out how we use cookies and how you can edit your preferences.</p><div class="button-wrapper"><a href="#" class="cookies-denied">Refuse cookies</a><a href="#" class="cookies-accepted">Accept cookies</a></div></div>
+
+    <script>var _paq = window._paq || [];
+_paq.push(["setDoNotTrack", true]);
+_paq.push(["setVisitorCookieTimeout", 0]);
+_paq.push(["setReferralCookieTimeout", 0]);
+_paq.push(["setSessionCookieTimeout", 0]);
+_paq.push(["trackPageView"]);
+_paq.push(["enableLinkTracking"]);
+(function() {
+var u="https://stats.webjazz.de/piwik/";
+_paq.push(["setTrackerUrl", u + "matomo.php"]);
+_paq.push(["setSiteId", "77"]);
+var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+})();
+</script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-1792576-1', {'cookieExpires': 0});
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script>
+<script>
+function wj_init_deferred () {
+track_impressions();
+}
+</script>
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,390 @@
+Site Meter
+ 
+ 
+Steven Sanderson's blog
+As seen on YouTube™
+Skip to content
+
+    Home
+    About me
+
+Full-height app layouts: A CSS trick to make it easier
+
+Posted on October 5, 2011
+
+In HTML layouts, there’s a fundamental difference between width and height . The natural state of affairs is that your page’s width is constrained to the width of the browser window, but its height is unconstrained – it grows however tall is necessary to contain its contents.
+
+image
+
+That makes sense for documents , but it’s a pain for application UIs . Native application UIs tend to slice up the screen both horizontally and vertically into a nested set of panels, some of which may scroll/resize, others being docked against particular edges of their parent panes.
+
+image
+
+So, what’s the robust way, with HTML/CSS, to set up a nested collection of panes that exactly divide both the width and height of the browser window?
+Hang on, didn’t we have this one solved back in 1999?
+
+Hmm… this reminds me of something… I remember: the <frameset> tag from HTML 4 . Yes, HTML frames do divide the browser window both horizontally and vertically, exactly consuming the available screen area. So why don’t we use them any more? There are loads of reasons, including:
+
+    What you’re building is logically one page, but technically each frame is a separate HTML document, which makes interactions between them so much more complex
+    It’s not really practical to support deep-linking to (i.e., bookmarking) particular UI states
+    Mobile devices and tablets have very limited support for HTML 4 frames. iOS in particular requires the user to use two-fingered scrolling within panes. This is UX death.
+
+OK, so what’s the 21st century solution?
+
+I’ve used lots of hacks and tricks over the years to get columns and panes into my web applications, often involving JavaScript, $(…).height(…) , window.body.clientHeight , and the onresize event. Ugh. Fragile and messy. But at long last this week I learned there is actually an elegant and robust way to set up nested exact-height panes with pure CSS, and it works on all browsers back to IE 7, even on current mobile browsers that don’t support position:fixed.
+
+You know that if you set position: absolute on an element, then you can make it appear at a specified distance from the top, left, right, or bottom from its parent element. Well, it turns out that you can specify both top and bottom , or both left and right , and then it will dock against both edges and always resize to match its parent’s dimensions.
+
+Let’s define some generic CSS rules for panes:
+
+  /* Generic pane rules */ 
+body  {   margin  :   0   } 
+ .row  ,   .col   {   overflow  :   hidden  ;   position  :   absolute  ;   } 
+ .row   {   left  :   0  ;   right  :   0  ;   } 
+ .col   {   top  :   0  ;   bottom  :   0  ;   } 
+ .scroll-x   {  overflow-x :   auto  ;   } 
+ .scroll-y   {  overflow-y :   auto  ;   } 
+
+Now it’s easy to set up a fixed-height header, variable-height body, and fixed-height footer:
+
+ <body>
+    <div class="header row">
+        <h2>My header</h2>
+    </div>
+ 
+    <div class="body row scroll-y">
+        The body
+    </div>
+ 
+    <div class="footer row">
+        My footer
+    </div>
+</body>
+
+Of course, you also have to configure the heights and positions of the three rows by using a bit more CSS:
+
+  .header  .row   {   height  :   75px  ;   top  :   0  ;   } 
+ .body  .row   {   top  :   75px  ;   bottom  :   50px  ;   } 
+ .footer  .row   {   height  :   50px  ;   bottom  :   0  ;   } 
+
+The result? It’s the classic mobile phone app layout. Screenshot with some colours and content added for interest:
+
+image
+
+Try it in your desktop or mobile browser here . Works on IE7+.
+More nesting (or, tablet-style layouts)
+
+The reason for setting up the generic CSS rules in that way is that it makes it easy nest panes arbitrarily. For example, you could split the main viewport into two vertical columns:
+
+ <body>
+    <div class="left col">
+        Left col here    
+    </div>
+    <div class="right col">
+        Right col here
+    </div>
+</body>
+
+… and then subdivide the right column so it has a fixed header, variable-height body, and fixed footer, just by putting some more row divs inside it:
+
+ <div class="right col">
+    <div class="header row">
+        View or edit something
+    </div>
+    <div class="body row scroll-y">
+        Here’s some content that can scroll vertically
+    </div>
+    <div class="footer row">
+        Some status message here
+    </div>
+</div>
+
+Here’s the CSS to configure the widths/heights/positions of those panes:
+
+  .left  .col   {   width  :   250px  ;   } 
+ .right  .col   {   left  :   250px  ;   right  :   0  ;   } 
+ .header  .row   {   height  :   75px  ;   line-height  :   75px  ;   } 
+ .body  .row   {   top  :   75px  ;   bottom  :   50px  ;   } 
+ .footer  .row   {   height  :   50px  ;   bottom  :   0  ;   line-height  :   50px  ;   } 
+
+Going further, in the right-hand pane’s body, you could also nest a horizontally-scrollable row:
+
+ <div class="body row scroll-y">
+    <p>Here's a horizontally-scrollable thing:</p>
+ 
+    <div class="scroll-x">
+        Any content in here, if it's too wide, becomes independently scrollable
+    </div>
+ 
+    <p>That's enough - bye.</p>
+</div>
+
+The result of all this? Well, it’s a structure like this:
+
+image
+
+… but that’s pretty boring to look at, so here’s a version where I threw in a rough effort of some iPad-like styling:
+
+image
+
+Here’s a live example . It still renders correctly on very small screens (like a WP7 or iPhone) but this 2-column layout really needs a wider screen to be usable.
+Enabling touch scrolling
+
+The scrolling looks and works fine on a desktop browser, but on a mobile browser it varies:
+
+    On WP7, you’ll see no scrollbars, but you’ll get one-finger touch scrolling, without the lovely inertia/momentum effect. This is kind-of OK, though imperfect.
+    On iOS, you’ll see no scrollbars, and it requires two-finger scrolling (which is horrible), and it won’t use the inertia/momentum effect either. Badness.
+    There are similar problems on Android
+
+With iOS 5, it will be possible to enable fluid, native touch-based momentum scrolling to our divs just by making a tiny tweak to the CSS, thanks to the new “touch scrolling” feature :
+
+  .scroll-x  ,   .scroll-y   {  -webkit-overflow-scrolling :  touch ;   } 
+
+I really hope this catches on and becomes a standard.
+
+But in the meantime, for visitors on other mobile OSes, and until iOS 5 becomes prevalent, you can use the open-source iScroll library that provides one-finger momentum scrolling for Webkit (iOS and Android) and Mozilla browsers.
+
+Enabling momentum scrolling on any given element requires only one line of JavaScript (assuming you’ve referenced iScroll.js):
+
+  new  iScroll ( theElementYouWantToEnableItFor )  ; 
+
+For my example, I used the following block of JavaScript, which enables touch scrolling on all the .scroll-x and .scroll-y elements:
+
+ <!-- Touch scrolling -->
+<!--[if !IE]><!-->
+<script src="script/iscroll.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var xScrollers = document.getElementsByClassName("scroll-x");
+    for (var i = 0; i < xScrollers.length; i++)
+        new iScroll(xScrollers[i], { vScroll: false });
+ 
+    var yScrollers = document.getElementsByClassName("scroll-y");
+    for (var i = 0; i < yScrollers.length; i++)
+        new iScroll(yScrollers[i], { hScroll: false });                
+</script>
+<!--<![endif]-->
+
+You could do this in fewer lines if you’re using a library like jQuery or XUI (which is a tiny implementation of a small part of the jQuery API surface, intended for mobiles). Here’s the resulting mobile-style scrollbar:
+
+image
+
+Of course, to see the momentum effect, you’ll need to run it in your Chrome/Safari/Firefox browser .
+
+Credits: Thanks to Rob Swan and FellowshipTech for their articles and projects where I found the CSS positioning trick that underlies this approach to exact-height layout.
+
+Posted in Mobile
+< Knockout 1.3.0 Beta Available Full-height app layouts: Animated transitions within panes >
+19 Responses to Full-height app layouts: A CSS trick to make it easier
+
+    Lucian Maran
+
+    Hello, I like your ideia…it’s clean and smart, but what about an open source JQuery library like http://layout.jquery-dev.net/?
+    I used it (only 33k, free) for my demo project with fixed height, autoresize, collapsible and cross-browser layout.
+    You can skip over my text (sorry for the language) and go directly to the LiveDemo link.
+    http://mozaic.codeplex.com/
+
+    Anyway, I will bookmark your post for the touch-scrolling technique.
+    Thank you!
+    Posted on October 5, 2011
+    Grahame Scott-Douglas
+
+    This is great! Using clean CSS to make the UI more app like is a great way to go. Much more elegant than using JavaScript or some ugly CSS hack.
+
+    Thanks for this. I’m going to be using it.
+    Posted on October 5, 2011
+    Steve
+
+    FYI: I’m getting quite the ‘bouncing’ going on in chrome with those test pages
+    Posted on October 5, 2011
+    Andrew Davey
+
+    Application-style UI layout is the current major failing of CSS. I’m keenly watching the various new CSS3 modules (e.g. http://www.w3.org/TR/css3-grid-layout/ ) My hope is that once a few modern browsers implement them, someone will create a decent JavaScript implementation to back port to old browsers.
+
+    For now though, position: absolute seems like the least worst option. I’m certainly making use of it in my apps.
+    Posted on October 6, 2011
+    Eliman
+
+    Great Steve, very useful! A problem I was trying to solve differently
+    Posted on October 6, 2011
+    Ian
+
+    iScroll is really cool, but I’ve found it starts to break down a bit when its contents resize or it has several form elements that can receive focus.
+
+    That said, for many cases, it works great.
+    Posted on October 7, 2011
+    dencio
+
+    very usefull. thanks steve.
+    Posted on October 12, 2011
+
+    Pingback: Full-height app layouts: Animated transitions within panes - Steve Sanderson’s blog - As seen on YouTube™
+    Sander
+
+    Hi,
+    Looks like somthing I need or not, I am new to css and I am trying to create 3 equal height colums (eg. the longest column should determine the height of all the colums). I do not want my footer to be fixed/always visible and have the main content scroll as in your example.
+
+    Is it possible to create such a layout with the techniqe you mention? or do I need faux-colums or any of the other trick I read about elsewhere.
+
+    thanks,
+    Sander
+    Posted on October 13, 2011
+    Tomas
+
+    Great post. Have you experimented with media queries? Couldn’t that make it even more flexible? Like having one version for all devices and then have the UI to adjust to the screen size. The navigation panel could for example go on top if the screen size is smaller than on a tablet, ot if take up to much space you could add some funky javascript to create a drop down of the panel.
+    Posted on October 20, 2011
+    Joe Lambert
+
+    Nice article, I’ve used a similar technique in the past for creating mobile layouts.
+
+    More recently however I’ve started to use the new flexbox module of CSS3, I think it provides a much more flexible/extensible UI:
+
+    http://www.w3.org/TR/css3-flexbox/
+    Posted on October 31, 2011
+
+    Pingback: Full-height app layouts: Navigation and History - Steve Sanderson’s blog - As seen on YouTube™
+    Steve G.
+
+    Very nice – this was exactly what I didn’t know I was looking for! I re-did my full panel app using this and it greatly simplified my code. Here’s a nifty extension: making inner panes resizable. Let’s say you have 2 main content pane divs ‘A’ and ‘C’ separated by a slim gutter div ‘B’. E.g.:
+
+    |————A————|-B-|——–C——–|
+
+    The key is to make B draggable, and dynamically resize A and C. What’s nice about this layout technique is that it becomes really simple. Using JQuery’s Draggable extension, the code looks like:
+
+    $(“#B”).draggable({
+    drag: function (obj, ui) {
+
+    var prevright = $(this).parent().width() – ui.position.left;
+    $(this).prev().css(“right”, prevright);
+
+    var nextwidth = prevright – $(this).width();
+    $(this).next().css(“width”, nextwidth);
+    },
+    stop: function () {
+    }
+    })
+
+    I also use the styles “{ cursor: e-resize; width: 6px; }” and the class “col” from this article to style the gutter div, B. That’s it.
+
+    This sample creates a vertical, draggable bar that will allow your users to dynamically resize divs ‘A’ and ‘C’. The horizontal version is left as an exercise for the reader. ;-)
+
+    Steve G.
+    Posted on November 9, 2011
+    Corey
+
+    You are a champion Steve. I didn’t think it should be that hard to get divs to play nicely, but up until now I was having limited success. Your solution worked a treat, tested in chrome(15.0), ie(8.0), firefox(8.0) and safari(5.1.1) thanks heaps.
+    Posted on November 29, 2011
+    Coen
+
+    Wow this is wonderful, really saved my day and is exactly what I needed! Bookmarked and shared, sir!
+    Posted on December 8, 2011
+    blocked or damaged guttering is one of the main causes for damp in uk houses, most people forget that guttering need annual maintenance and requires checking,
+
+    We are a bunch of volunteers and opening a brand new scheme in our community. Your web site provided us with valuable information to paintings on. You have done an impressive task and our whole group will likely be grateful to you.
+    Posted on February 7, 2012
+    luigi
+
+    Hi, it’s great but I wonder how to improve the “bouncing issue” (like Steve found).
+    I am getting page bouncing on chrome and firefox, not safari.
+    Any idea?
+    Posted on March 28, 2012
+    Arthur
+
+    Does not work on Android!!! RRRR… Position absolute + overflow auto – the ancient issue of android!
+    Posted on April 15, 2012
+    Martin Andersen
+
+    Very nice and very useful
+
+    Is there a way to create a body with 3 columns? basically the same layout as in the demo with a extra center column.
+
+    left fixed width
+    center “100%” width
+    right fixed width
+
+    left:30px
+    center: fill
+    right:30px;
+    Posted on June 29, 2012
+
+Search
+Subscribe
+
+RSS feed
+
+Recent Posts
+
+    Experiments with Koa and JavaScript Generators
+    Knockout Projections – a plugin for efficient observable array transformations
+    A standing desk with (mostly) Ikea parts
+    Knockout 3.0 Release Candidate available
+    Knockout v2.3.0 released; v3.0.0 beta available
+
+Archives
+
+    December 2013  (2)
+    October 2013  (2)
+    July 2013  (1)
+    May 2013  (1)
+    March 2013  (2)
+    October 2012  (1)
+    August 2012  (2)
+    July 2012  (3)
+    May 2012  (1)
+    March 2012  (1)
+    December 2011  (1)
+    November 2011  (1)
+    October 2011  (2)
+    August 2011  (1)
+    July 2011  (1)
+    April 2011  (4)
+    March 2011  (1)
+    January 2011  (3)
+    December 2010  (1)
+    November 2010  (1)
+    October 2010  (1)
+    July 2010  (2)
+    June 2010  (1)
+    March 2010  (3)
+    February 2010  (1)
+    January 2010  (3)
+    November 2009  (1)
+    October 2009  (2)
+    September 2009  (2)
+    August 2009  (2)
+    July 2009  (1)
+    June 2009  (1)
+    April 2009  (2)
+    March 2009  (1)
+    February 2009  (2)
+    January 2009  (5)
+    December 2008  (2)
+    November 2008  (3)
+    October 2008  (4)
+    September 2008  (2)
+    August 2008  (2)
+    July 2008  (4)
+    May 2008  (2)
+    April 2008  (3)
+    March 2008  (1)
+    February 2008  (1)
+    December 2007  (6)
+    November 2007  (6)
+    October 2007  (3)
+    September 2007  (3)
+    August 2007  (1)
+
+Recent
+
+    Experiments with Koa and JavaScript Generators
+    Knockout Projections – a plugin for efficient observable array transformations
+    A standing desk with (mostly) Ikea parts
+
+Comments
+
+    crime city cheats android on Experiments with Koa and JavaScript Generators
+    fl studio download on Knockout Projections – a plugin for efficient observable array transformations
+    best stainless steel cookware on Knockout Projections – a plugin for efficient observable array transformations
+
+Follow me @StevenSanderson Tweets
+
+Loading tweets...

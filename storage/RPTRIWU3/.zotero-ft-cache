@@ -1,0 +1,484 @@
+current community
+
+    chat log out
+    Stack Overflow
+    Meta Stack Overflow
+    Stack Overflow Careers
+
+your communities
+edit cancel
+
+    Stack Overflow 1
+
+reset to default list
+more stack exchange communities
+company blog
+Stack Exchange Inbox 2 Reputation and Badges
+1 2
+help
+
+    Tour Start here for a quick overview of the site
+    Help Center Detailed answers to any questions you might have
+    Meta Discuss the workings and policies of this site
+    About Us Learn more about Stack Overflow the company
+    Business Learn more about hiring developers or posting ads with us
+
+
+Stack Overflow
+
+    Questions
+    Jobs
+    Tags
+    Users
+    Badges
+
+    Ask Question
+
+How can create a json tree from django-mptt?
+No problem. We won't show you that ad again. Why didn't you like it?
+
+    Uninteresting
+    Misleading
+    Offensive
+    Repetitive
+    Other
+
+Oops! I didn't mean to do this.
+up vote 7 down vote favorite
+5
+	
+
+I want to use the JavaScript InfoVis Tooljit ( http://thejit.org ) to render a tree of mptt nodes in django. How can i create the required json structure (see http://thejit.org/static/v20/Jit/Examples/Spacetree/example1.code.html for an example) in django?
+
+Thanks
+django django-mptt
+share | edit
+	
+asked Feb 21 '11 at 23:05
+sean2000
+167 1 7
+	
+	
+add a comment  | 
+4 Answers 4
+active oldest votes
+up vote 5 down vote accepted
+	
+
+If you use the template functionality of django-mptt to generate the JSON data you should be able to do something like the following:
+
+ var json = {% recursetree nodes %} { id : "{{ node.id }}" , name : "{{ node.name }}" , data : {}, children : [{{ children }}] }, {% endrecursetree %}  
+
+The children tag is brilliant, basically calling recursetree for each child of the node. However there is a little messiness generated around commas with this solution as the mptt example is around list elements where such things aren't a problem.
+
+A slightly larger bit of code solves this:
+
+ var json = { id : "{{ root.id }}" , name : "{{ root.name }}" , data : {}, children : [{% recursetree root . children %} { id : "{{ node.id }}" , name : "{{ node.name }}" , data : {}, children : [{{ children }}] } {% endrecursetree %}] }  
+
+By making a distinction between the root node (presuming there is only one) which does not reside within an array but is instead assigned to a variable, compared to other nodes which live within the children of another node, the var x = y, issue is avoided.
+
+There is still a problem with children: [x,y,z,] having a trailing comma. If that final comma is raising errors then in the view that has called the template you can always do a quick string replace to replace ,] with ]
+
+Alternatively you could alter the {{ children }} call of mptt in some way to take a join string, but that would involve much more work.
+share | edit
+	
+edited Apr 13 '11 at 15:20
+	
+answered Apr 13 '11 at 13:25
+Chris
+1,818 13 20
+	
+   	 
+	
+I found a few issues with using this approach (adding commas between children nodes, and that all sub information didn't seem to enter correctly). It was very useful, however, to get me pointed in the right direction. –  JayCrossler Jan 24 '15 at 21:11
+add a comment  | 
+No problem. We won't show you that ad again. Why didn't you like it?
+
+    Uninteresting
+    Misleading
+    Offensive
+    Repetitive
+    Other
+
+Oops! I didn't mean to do this.
+up vote 2 down vote
+	
+
+Create JSON without trailing comma problem:
+
+ {% full_tree_for_model YOUR_APP . YOUR_MODEL as nodes %} var json = {% for genre , structure in nodes | tree_info %}{% if structure . new_level %} [{ {% else %} },{ {% endif %} id : "{{ genre.id }}" , children : {% if genre . is_leaf_node %}[]{% endif %} {% for level in structure . closed_levels %}}]{% endfor %}{% endfor %}  
+
+share | edit
+	
+answered Mar 6 '12 at 11:31
+Tomasz Karbownicki
+398 3 5
+	
+   	 
+	
+Can you release this snippet under MIT? –  Private May 31 at 14:02
+add a comment  | 
+up vote 0 down vote
+	
+
+I found a great solution to rendering children with sub-data in this thread: fastest way to create JSON to reflect a tree structure in Python / Django using mptt (See the accepted answer by craigds). His method also caches results and uses the built in json.dumps to create the structure.
+share | edit
+	
+answered Jan 24 '15 at 21:13
+JayCrossler
+901 1 10 17
+	
+	
+add a comment  | 
+up vote -1 down vote
+	
+
+If you want to write your own serializer or do this from a view you can do:
+
+ from mptt . templatetags . mptt_tags import cache_tree_children queryset = Foo . objects . all (). select_related ( 'bar' ) queryset = cache_tree_children ( queryset )  
+
+Now the queryset is "cached", meaning you can use model API methods like get_children() without it hitting the database again.
+share | edit
+	
+answered Mar 8 '13 at 1:29
+dan-klasson
+5,187 5 25 52
+	
+	
+add a comment  | 
+Your Answer
+
+        Links
+        Images
+        Styling/Headers
+        Lists
+        Blockquotes
+        Code
+        HTML
+        advanced help »
+
+    In most cases, a plain URL will be recognized as such and automatically linked:
+
+     Visit http://area51.stackexchange.com/ regularly!
+    Use angle brackets to force linking: Have you seen <http://superuser.com>?
+
+    To create fancier links, use Markdown:
+
+     Here's [a link](http://www.example.com/)! And a reference-style link to [a panda][1].
+    References don't have to be [numbers][question].
+
+     [1]: http://notfound.stackexchange.com/
+     [question]: http://english.stackexchange.com/questions/11481
+
+    You can add tooltips to links:
+
+     Click [here](http://diy.stackexchange.com   "this text appears when you mouse over")!
+    This works with [reference links][blog] as well.
+
+     [blog]: http://blog.stackoverflow.com/   "click here for updates"
+
+    Images are exactly like links, but they have an exclamation point in front of them:
+
+     ![a busy cat](http://sstatic.net/Sites/stackoverflow/img/error-lolcat-problemz.jpg)
+    ![two muppets][1]
+
+     [1]: http://i.imgur.com/I5DFV.jpg "tooltip"
+
+    The word in square brackets is the alt text, which gets displayed if the browser can't show the image. Be sure to include meaningful alt text for screen-reading software.
+
+    Be sure to use text styling sparingly; only where it helps readability.
+
+     *This is italicized*, and so
+    is _this_.
+
+    **This is bold**, just like __this__.
+
+    You can ***combine*** them
+    if you ___really have to___.
+
+    To break your text into sections, you can use headers:
+
+     A Large Header
+    ==============
+
+    Smaller Subheader
+    -----------------
+
+    Use hash marks if you need several levels of headers:
+
+     # Header 1 #
+    ## Header 2 ##
+    ### Header 3 ###
+
+    Both bulleted and numbered lists are possible:
+
+     -   Use a minus sign for a bullet
+    +   Or plus sign
+    *   Or an asterisk
+
+    1.   Numbered lists are easy
+    2.   Markdown keeps track of
+     the numbers for you
+    7.   So this will be item 3.
+
+     1.   Lists in a list item:
+         -   Indented four spaces.
+             *   indented eight spaces.
+         -   Four spaces again.
+    2.    You can have multiple
+         paragraphs in a list items.
+      
+         Just be sure to indent.
+
+     > Create a blockquote by
+    > prepending “>” to each line.
+    >
+    > Other formatting also works here, e.g.
+    >
+    > 1. Lists or
+    > 2. Headings:
+    >
+    > ## Quoted Heading ##
+
+    You can even put blockquotes in blockquotes:
+
+     > A standard blockquote is indented
+    > > A nested blockquote is indented more
+    > > > > You can nest to any depth.
+
+    To create code blocks or other preformatted text, indent by four spaces:
+
+          This will be displayed in a monospaced font. The first four spaces
+         will be stripped off, but all other whitespace will be preserved.
+         
+         Markdown and HTML are turned off in code blocks:
+         <i>This is not italic</i>, and [this is not a link](http://example.com)
+
+    To create not a block, but an inline code span, use backticks:
+
+     The `$` character is just a shortcut for `window.jQuery`.
+
+    If you want to have a preformatted block within a list, indent by eight spaces:
+
+     1. This is normal text.
+    2. So is this, but now follows a code block:
+      
+             Skip a line and indent eight spaces.
+             That's four spaces for the list
+             and four to trigger the code block.
+
+    If you need to do something that Markdown can't handle, use HTML. Note that we only support a very strict subset of HTML!
+
+     Strikethrough humor is <strike>funny</strike>.
+
+    Markdown is smart enough not to mangle your span-level HTML:
+
+     <b>Markdown works *fine* in here.</b>
+
+    Block-level HTML elements have a few restrictions:
+        They must be separated from surrounding text by blank lines.
+        The begin and end tags of the outermost block element must not be indented.
+        Markdown can't be used within HTML blocks.
+
+     <pre>
+     You can <em>not</em> use Markdown in here.
+    </pre>
+
+ 
+draft saved
+draft discarded
+discard
+Not the answer you're looking for? Browse other questions tagged django django-mptt or ask your own question .
+Hello World!
+
+This is a collaboratively edited question and answer site for professional and enthusiast programmers . It's 100% free.
+
+Got a question about the site itself? meta is the place to talk about things like what questions are appropriate, what tags we should use, etc.
+
+about »     help »   meta »
+
+asked
+	
+
+5 years ago
+
+viewed
+	
+
+3223 times
+
+active
+	
+
+1 year ago
+Hot Meta Posts
+15
+Is suggesting a debugger/tool ever an answer?
+
+27
+For what purpose do we use the Android tag
+
+7
+Should answers include support requirements?
+
+115
+Jobs company page spam
+
+No problem. We won't show you that ad again. Why didn't you like it?
+
+    Uninteresting
+    Misleading
+    Offensive
+    Repetitive
+    Other
+
+Oops! I didn't mean to do this.
+Work from anywhere
+Senior eCommerce Software Engineer
+Focustron PTE No office location
+$1,000 - $2,000 Remote
+php mws
+Job Description
+
+Senior Developer with focus and experience in eCommerce projects. You should be able to work independently and as part of a team when required. As you will be working remotely to build cutting edge eCommerce applications you should be responsible and able to schedule your time effectively. In addition you must be a tinkerer by nature and able to improve existing…
+What we offer
+
+    You actually get to build something
+    Flexible Work Hours
+    International Travel is a Possiblity
+
+Learn more about this job
+Linked
+10
+fastest way to create JSON to reflect a tree structure in Python / Django using mptt
+2
+Django:Is there a way to use a tree control in my template‏
+Related
+1
+How to retrieve tree structure from node using django-mptt?
+5
+Django-mptt and multiple parents?
+1
+Django MPTT - absolute url for category
+5
+Django and MPTT - get only leaf nodes
+2
+I'm trying to build site navigation using django-mptt
+1
+How to change parent of a node in django-mptt
+1
+Parsing a Django-mptt JSON
+0
+Add a new root node to django-mptt tree
+0
+multi level referal system with django and mptt
+1
+Django-mptt registration for an existing model
+Hot Network Questions
+
+    Is there a type of bottle cage that doesn't scratch bottles?
+    The value of an Effect Size
+    In Rebellion I Earned My Fame
+    Count Up, Replace, Repeat!
+    Is it safe to keep a MacBook in the fridge to cool it down?
+    What did Ramsay actually mean?
+    What does "this will date me" mean?
+    Write a program to elasticize strings
+    What is momentum really?
+    Why don't high-ranking journals go solo?
+    Is there an ideal PWM frequency for DC brush motors?
+    When should I let my teammates die?
+    What is wrong with extrapolation?
+    Why are the Edison screws allowed to be used? they seem unsafe. Why are they designed that way?
+    What is the fastest way to update a variable on a condition
+    Two equations in align environment with bracket in between
+    How can there be 1,000 stellar ancestors before our Sun?
+    Even and Odd game
+    Why does Bash's source not need the execution bit?
+    Firing an incompetent subordinate in relatively far in the future: when to tell him?
+    How many steps are visible on the Escalator?
+    Why do thin films need to be thin?
+    How to increase readability of code?
+    Generate white noise to calm a baby
+
+question feed
+default
+about us tour help blog chat data legal privacy policy work here advertising info mobile contact us feedback
+Technology 	Life / Arts 	Culture / Recreation 	Science 	Other
+
+    Stack Overflow
+    Server Fault
+    Super User
+    Web Applications
+    Ask Ubuntu
+    Webmasters
+    Game Development
+    TeX - LaTeX
+
+	
+
+    Programmers
+    Unix & Linux
+    Ask Different (Apple)
+    WordPress Development
+    Geographic Information Systems
+    Electrical Engineering
+    Android Enthusiasts
+    Information Security
+
+	
+
+    Database Administrators
+    Drupal Answers
+    SharePoint
+    User Experience
+    Mathematica
+    Salesforce
+    ExpressionEngine® Answers
+    more (13)
+
+	
+
+    Photography
+    Science Fiction & Fantasy
+    Graphic Design
+    Movies & TV
+    Seasoned Advice (cooking)
+    Home Improvement
+    Personal Finance & Money
+    Academia
+    more (9)
+
+	
+
+    English Language & Usage
+    Skeptics
+    Mi Yodeya (Judaism)
+    Travel
+    Christianity
+    Arqade (gaming)
+    Bicycles
+    Role-playing Games
+    more (21)
+
+	
+
+    Mathematics
+    Cross Validated (stats)
+    Theoretical Computer Science
+    Physics
+    MathOverflow
+    Chemistry
+    Biology
+    more (5)
+
+	
+
+    Stack Apps
+    Meta Stack Exchange
+    Area 51
+    Stack Overflow Careers
+
+site design / logo © 2016 Stack Exchange Inc; user contributions licensed under cc by-sa 3.0 with attribution required
+rev 2016.6.22.3695
+Stack Overflow works best with JavaScript enabled

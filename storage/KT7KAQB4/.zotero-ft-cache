@@ -1,0 +1,333 @@
+
+iPhylo
+
+Rants, raves (and occasionally considered opinions) on phyloinformatics, taxonomy, and biodiversity informatics. For more ranty and less considered opinions, see my Twitter feed .
+ISSN 2051-8188 View this blog in Magazine View .
+Monday, February 06, 2012
+Using Google Refine and taxonomic databases (EOL, NCBI, uBio, WORMS) to clean messy data
+Refine Google Refine is an elegant tool for data cleaning. One of its most powerful features is the ability to call "Reconciliation Services" to help clean data, for example by matching names to external identifiers. Google Refine comes with the ability to use Freebase reconciliation services, but you can also add external services. Inspired by this I've started to implement services to reconcile taxonomic names.
+
+The services I've implemented so far are:
+
+    EOL http://iphylo.org/~rpage/phyloinformatics/services/reconciliation_eol.php
+    NCBI taxonomy http://iphylo.org/~rpage/phyloinformatics/services/reconciliation_ncbi.php
+    uBio FindIT http://iphylo.org/~rpage/phyloinformatics/services/reconciliation_ubio.php
+    WORMS http://iphylo.org/~rpage/phyloinformatics/services/reconciliation_worms.php
+    GBIF http://iphylo.org/~rpage/phyloinformatics/services/reconciliation_gbif.php
+    Global Names Index http://iphylo.org/~rpage/phyloinformatics/services/reconciliation_globalnames.php
+
+
+
+To use these you need to add the URLs above to Google Refine (see example below). The EOL, NCBI and WORMS do a basic name lookup. The uBio FindIT service extracts a taxonomic name from a string, and can be viewed as a "taxonomic name cleaner".
+
+How to use reconciliation services
+
+Start a Google Refine session. Save the names below to a text file and open it as a new project.
+
+ 
+ Names
+ Achatina fulica (giant African snail)
+ Acromyrmex octospinosus ST040116-01
+ Alepocephalus bairdii (Baird's smooth-head)
+ Alaska Sea otter (Enhydra lutris kenyoni)
+ Toxoplasma gondii
+ Leucoagaricus gongylophorus
+ Pinnotheres
+ Themisto gaudichaudii
+ Hyperiidae
+ 
+
+
+
+You should see something like this:
+Refine1
+
+Click on the column header Names and choose Reconcile → Start reconciling .
+
+Refine2
+
+A dialog will popup asking you to select a service.
+
+Refine3
+
+If you've already added a service it will be in the list on the left. If not, click the Add Standard Services... button at the bottom left and paste in the URL (in this case http://iphylo.org/~rpage/phyloinformatics/services/reconciliation_ubio.php ).
+
+Once the service has loaded click on Start Reconciling . Once it has finished you should see most of the names linked to uBio (click on a name to check this):
+
+Refine4
+
+Sometimes there may be more than one possible match, in which case these will be listed in the cell. Once you have reconciled the data you may want to do something with the reconciliation. For example, if you want to get the ids for the names you've just matched you can create a new column based on the reconciliation. Click on the Names column header and choose Edit column → Add column based on this column... . A dialog box will be displayed:
+
+Refine6
+
+In the box labelled Expression enter cell.recon.match.id and give the column a name (e.g., "NamebankID"). You will now have a column of uBio NamebankIDs for the names:
+
+Refine7
+
+You could also get the names uBio extracted by creating a column based on the values of cell.recon.match.name . To compare this with the original values, click on the Names column header and choose Reconcile → Actions → Clear reconciliation data . Now you can see the original input names, and the string uBio extracted from each name:
+
+Refine8
+
+These are some very simple ideas for using Google Refine with taxonomic name services. Obvious extensions would to use services that provide an "accepted name", or services that support approximate string matching so you could catch spelling mistakes (most of the services I've implemented here have some degree of support for these features).
+
+Development notes
+The code for these services is in Github (undocumented as yet, that's on the to do list). I had a few hiccups getting these services to work. There is detailed documentation at http://code.google.com/p/google-refine/wiki/ReconciliationServiceApi , but this seems a little out of step with what actually happens. Based on the documentation I thought Google Refine called a reconciliation service using HTTP GET, but in fact it uses POST. Google Refine always called my reconciliation service using "Multiple Query Mode", which meant supporting this mode wasn't optional. Once these issues were sorted out (turning on the Java console as per David Huynh's tip helped) things work pretty well.
+Posted by Roderic D. M. Page at 2:11 pm
+Email This BlogThis! Share to Twitter Share to Facebook Share to Pinterest
+Labels: data cleaning , Google Refine , taxonomic name
+Newer Post Older Post Home
+About Me
+My photo
+
+Roderic D. M. Page
+
+View my complete profile
+Pageviews from the past week
+Sparkline 2,617
+Popular Posts
+
+    On having multiple DOI registration agencies for the same journal
+    On Friday I discovered that BHL has started issuing CrossRef DOIs for articles, starting with the journal Revue Suisse de Zoologie . The me...
+    Browsing TreeBASE using a genome browser-like interface
+    One of the things I find frustrating about TreeBASE is that there's no easy way to get an overview of what it contains. What is it'...
+    Guest post: The Not problem
+    The following is a guest post by Bob Mesibov . Nico Franz and Beckett Sterner created a stir last year with a preprint in bioRxiv about ...
+    Using Google Refine and taxonomic databases (EOL, NCBI, uBio, WORMS) to clean messy data
+    Google Refine is an elegant tool for data cleaning. One of its most powerful features is the ability to call "Reconciliation Services&...
+    Response to To Increase Trust, Change the Social Design Behind Aggregated Biodiversity Data
+    Nico Franz and Beckett W. Sterner recently published a preprint entitled "To Increase Trust, Change the Social Design Behind Aggregated...
+    Exploring images in the Biodiversity Literature Repository
+    A post by on the Plaza blog Expanded access to images in the Biodiversity Literature Repository has prompted me to write up a little toy I ...
+    Bitcoin, biodiversity, and micropayments for open data
+    I gave a "wild ideas" talk at TDWG17 suggesting that the biodiversity community use Bitcoin to make micropayments to use data. ...
+    Dark taxa: GenBank in a post-taxonomic world
+    In an earlier post ( Are names really the key to the big new biology? , I questioned Patterson et al.'s assertion in a recent TREE artic...
+    TDWG 2017: thoughts on day 1
+    Some random notes on the first day of TDWG 2017. First off, great organisation with the first usable conference calendar app that I've s...
+    Reconciling author names using Open Refine and VIAF
+    In an earlier post I discussed using Open Refine (formerly Google Refine ) to clean and reconcile taxon names. I've added an additiona...
+
+TripIt - Organize your travel
+Roderic is in Melbourne, VIC, Australia
+and has traveled 627,295 km to 105 locations
+UPCOMING TRIPS
+Singapore, Singapore Mar 18 - Apr 7, 2018
+London, United Kingdom Apr 11, 2018
+Duesseldorf, Germany Jun 30 - Jul 3, 2018
+TripIt Organize your travel
+My projects
+
+    1,000,000 DNA barcode map
+    BioNames
+    BioStor
+    Elsevier Challenge Demo
+    LSID Tester
+    NCBI - Wikipedia mapping
+    NEXUS Data Editor (NDE)
+    Old home page
+    Phyloinformatics course
+    TbMap (TreeBASE - NCBI mapping)
+    TreeView
+    TreeView X
+    bioGUID
+    iSpecies
+
+Twitter
+Tweets by @rdmpage
+GBIF JIRA issues
+
+    <a href="http://dev.gbif.org/issues/secure/ViewProfile.jspa?name=rdmpage">Roderic D. M. Page</a> commented on <a href="http://dev.gbif.org/issues/browse/PF-2394">PF-2394 - Micrurus isozonus sandneri ssp. nov.</a>
+    <a href="http://dev.gbif.org/issues/secure/ViewProfile.jspa?name=rdmpage">Roderic D. M. Page</a> created <a href="http://dev.gbif.org/issues/browse/PF-2860"><span>PF-2860</span> - PANGAEA not longer being indexed?</a>
+    <a href="http://dev.gbif.org/issues/secure/ViewProfile.jspa?name=rdmpage">Roderic D. M. Page</a> commented on <a href="http://dev.gbif.org/issues/browse/PF-2859">PF-2859 - basis of record invalid!?</a>
+    <a href="http://dev.gbif.org/issues/secure/ViewProfile.jspa?name=rdmpage">Roderic D. M. Page</a> commented on <a href="http://dev.gbif.org/issues/browse/PF-2858">PF-2858 - Oxysaurus Hoser, 2013</a>
+    <a href="http://dev.gbif.org/issues/secure/ViewProfile.jspa?name=rdmpage">Roderic D. M. Page</a> commented on <a href="http://dev.gbif.org/issues/browse/PF-2856">PF-2856 - Errores dentro de Gentianaceae</a>
+
+Slideshare
+View rdmpage's profile on slideshare
+Blog Archive
+
+    ►  2018 (1)
+        ►  January (1)
+
+    ►  2017 (21)
+        ►  December (2)
+        ►  November (1)
+        ►  October (4)
+        ►  September (1)
+        ►  August (2)
+        ►  July (1)
+        ►  June (2)
+        ►  May (3)
+        ►  March (2)
+        ►  February (1)
+        ►  January (2)
+
+    ►  2016 (38)
+        ►  December (3)
+        ►  November (3)
+        ►  September (3)
+        ►  August (7)
+        ►  June (3)
+        ►  May (5)
+        ►  April (7)
+        ►  March (4)
+        ►  February (1)
+        ►  January (2)
+
+    ►  2015 (43)
+        ►  December (4)
+        ►  November (1)
+        ►  September (7)
+        ►  August (8)
+        ►  July (7)
+        ►  June (3)
+        ►  May (3)
+        ►  April (3)
+        ►  March (1)
+        ►  February (2)
+        ►  January (4)
+
+    ►  2014 (41)
+        ►  December (6)
+        ►  November (1)
+        ►  October (2)
+        ►  September (2)
+        ►  August (6)
+        ►  June (6)
+        ►  May (2)
+        ►  April (5)
+        ►  March (5)
+        ►  February (2)
+        ►  January (4)
+
+    ►  2013 (72)
+        ►  December (2)
+        ►  November (7)
+        ►  October (4)
+        ►  September (4)
+        ►  August (5)
+        ►  July (7)
+        ►  June (9)
+        ►  May (6)
+        ►  April (9)
+        ►  March (10)
+        ►  February (4)
+        ►  January (5)
+
+    ▼  2012 (68)
+        ►  December (4)
+        ►  November (4)
+        ►  October (4)
+        ►  September (5)
+        ►  August (1)
+        ►  July (9)
+        ►  June (14)
+        ►  May (2)
+        ►  April (3)
+        ►  March (3)
+        ▼  February (12)
+            Making biodiversity data sticky: it's all about li...
+            GBIF specimens in BioStor: who are the top ten mus...
+            Linking GBIF and the Biodiversity Heritage Library...
+            How many specimens does GBIF really have?
+            Clustering strings
+            Why LSIDs suck
+            Linking GBIF and Genbank
+            EOL Phylogenetic Tree Challenge
+            BLAST a sequence and get a tree and a map
+            Automating the creation of geophylogenies: NEXUS +...
+            Using Google Refine and taxonomic databases (EOL, ...
+            Browsing TreeBASE using a genome browser-like inte...
+        ►  January (7)
+
+    ►  2011 (71)
+        ►  December (5)
+        ►  November (7)
+        ►  October (9)
+        ►  September (10)
+        ►  August (2)
+        ►  July (2)
+        ►  June (4)
+        ►  May (4)
+        ►  April (4)
+        ►  March (14)
+        ►  February (7)
+        ►  January (3)
+
+    ►  2010 (83)
+        ►  December (8)
+        ►  November (2)
+        ►  October (6)
+        ►  September (7)
+        ►  August (15)
+        ►  July (5)
+        ►  June (7)
+        ►  May (10)
+        ►  April (6)
+        ►  March (10)
+        ►  February (2)
+        ►  January (5)
+
+    ►  2009 (83)
+        ►  December (2)
+        ►  November (4)
+        ►  October (8)
+        ►  September (11)
+        ►  August (9)
+        ►  July (6)
+        ►  June (6)
+        ►  May (6)
+        ►  April (13)
+        ►  March (6)
+        ►  February (9)
+        ►  January (3)
+
+    ►  2008 (101)
+        ►  December (9)
+        ►  November (11)
+        ►  October (10)
+        ►  September (7)
+        ►  August (13)
+        ►  July (13)
+        ►  June (6)
+        ►  May (11)
+        ►  April (3)
+        ►  March (6)
+        ►  February (9)
+        ►  January (3)
+
+    ►  2007 (68)
+        ►  November (5)
+        ►  October (11)
+        ►  September (4)
+        ►  August (9)
+        ►  July (3)
+        ►  June (4)
+        ►  May (17)
+        ►  April (1)
+        ►  March (2)
+        ►  February (4)
+        ►  January (8)
+
+    ►  2006 (51)
+        ►  December (2)
+        ►  November (5)
+        ►  October (1)
+        ►  September (2)
+        ►  August (2)
+        ►  July (1)
+        ►  June (2)
+        ►  May (13)
+        ►  April (5)
+        ►  March (8)
+        ►  February (8)
+        ►  January (2)
+
+    ►  2005 (10)
+        ►  December (10)
+
+Labels
+"author names" (2) "data wars" (1) "Guy Kawasaki" (1) "rock pools" (1) "sea level" (1) "Social Graph API" (1) "table lens" (1) "web service" (2) "word for the day" (1) 2010 (1) 2014 (1) 3D (4) Æ (1) Aedes (1) AFD (1) AgeNames (1) aggregation (3) ajax (3) ALA (1) algorithm (3) alignment-free phylogeny (1) altmetric (2) altmetrics (2) Amazon (1) amber (1) AMNH (2) Android (1) Angelina Jolie (1) annotation (13) ants (2) AntWeb (1) Apache (2) API (14) Apple (3) AppleScript (1) apps (1) AquaMaps (1) ArcGIS (1) Arctos (1) art (1) Arthur C Clarke (1) article 2.0 (7) articles (1) Asterophrys leucopus (1) Atlas of Living Australia (3) ATOM (1) Atypon (1) Auckland (1) Australian Faunal Directory (5) Australian Systematic Botany (1) author names (1) authorship (1) AVATOL (1) background (1) bats (2) BBC (5) Begonia (1) BHL (86) BHL Africa (1) BHL in a box (1) BHL-Europe (3) BibJSON (1) bibliographic coupling (1) bibliographies (2) Bibliography of Life (2) bibliometrics (3) Bio2RDF (1) biodiversity (2) Biodiversity Data Journal (2) biodiversity informatics (14) biogeography (2) bioguid (11) bioinformatics (1) biomedical (1) BioNames (25) BIOONE (2) BioStar (1) BioStor (48) birds (2) bit.ly (2) Bitcoin (2) Blackwell (1) BLAST (3) blogs (4) BLR (1) Blue Planet (1) BMC (1) BMC Bioinformatics (2) BNCOD2008 (1) Bob Mesibov (5) BOLD (1) book (2) bookmarklets (1) books (1) Bouchout Declaration (2) Bowker (1) British Library (1) Broad Institute (1) browser (2) bryozoa (1) business model (1) c-squares (1) C++ (1) canonical name (1) canvas (1) career suicide (1) Carmen Electra (1) CartoDB (1) Catalogue of Life (17) CD (1) CERN (1) CGI (1) Chaerephon (1) Chærephon (1) Challenge (31) chameleons (3) character encoding (1) Charles Sherbon (1) Choerephon (1) Chœrephon (1) chresonym (1) Chromis (1) CiNii (1) Cisco (1) citation (15) citation context (1) citation matching (3) citation mutation (1) citation needed (1) citations (1) CiteBank (3) Cladistics (1) classification (11) Clay Shirky (1) climate (1) close to the bone (1) cloud (4) Cloudant (7) cluster maps (2) clusterfuck (1) clustering (3) co-occurrence (1) code (4) COinS (3) collaboration (1) collections (1) community (2) computers (1) conference (2) Connotea (2) conservation status (1) containers (1) contest (1) conversation (1) Cool URIs (1) Cooliris (1) copyright (2) cospeciation (1) CouchDB (17) coverage (1) crash (1) crazy (1) Creative Commons (7) CrossRef (29) crowdsourcing (2) CSS (2) curation (1) CVS (1) cyberscience (1) D3 (1) d3js (1) dark taxa (7) Darwin (1) Darwin Core Archive (3) Darwin Core riplet (3) dashboard (1) data (12) data cleaning (9) data coupling (1) data entry (1) data grief (1) data integration (1) data mining (3) data model (1) data preservation (1) data quality (11) database (5) DataCite (5) DBpedia (2) dechronization (1) deep zoom (2) DeepDyve (2) Defra (1) Demansia (1) demo (4) design (3) difference (1) DiGIR (2) digital humanities (1) digital library (1) digitisation (3) digitising (1) dimly lit taxa (1) dinosaurs (1) disaambiguation (1) displacement (1) Disqus (1) distribution (2) DjVu (7) DNA barcoding (17) Docker (1) dogfooding (1) DOI (46) DOI trees (1) domain names (1) dot (1) Drupal (1) Dryad (3) DSpace (2) Dublin Core (2) duplicates (6) duplication (1) E O Wilson (1) e-Biosphere (7) Earth Microbiome Project (1) EAV (2) ebio09 (1) Edinburgh (1) editing (1) Edward Taylor (1) ElasticSearch (2) eLife (2) eLife Lens (1) Elsevier (12) ENCODE (1) encoding (1) Encylcopedia of Life (5) Enhydris punctata (1) Entomologica Scandinavica (1) environmental DNA (1) EOL (40) ePub (3) equirectangular projection (1) error (8) errors (4) Europe (1) EvolDir (3) Evolution2010 (1) evolutionary biology (1) exhaustion (1) expert (1) extensions (1) extraction (1) F1000 (1) Facebook (3) fail (4) failure (1) false positive (1) family (1) Fedora (1) fictional taxa (1) FigShare (5) filesystem (1) filtered-push (1) Firefox (1) FishBase (1) Fitzalania (1) Flickr (2) Flipboard (1) Fluidinfo (1) folksonomy (1) font (1) fonts (1) forking data (1) fossil (1) Freebase (2) freemium (1) frogs (3) FundRef (1) Fungi (1) future (1) Gallica (1) games (1) gaps (1) GB21 (1) GBIC (1) GBIC2012 (4) GBIF (90) GBIO (1) Genbank (13) Gene Wiki (3) genus (1) geocoding (1) GeoCouch (1) geography (1) GeoJSON (3) geophylogeny (4) georeferencing (12) GeoRSS (3) GGBN (1) gibbons (1) GIS (1) gist (4) git (1) github (23) Glassella (1) glitch (1) Global Forest Watch (1) Global Plant Initiative (1) GML (1) God (1) Gondwana (1) Google (18) Google Analytics (1) Google books (4) Google Charts (1) Google Code (2) Google Docs (3) Google Earth (3) Google Maps (13) Google Refine (2) Google Scholar (3) Google Spreadsheets (1) GPI (1) GPS (1) GrandChallenge (2) grant (1) graph database (1) Graphviz (3) GrBio (1) Greasemonkey (1) Gregg's paradox (1) guest post (10) GUIDs (9) h-score (1) H1N1 (1) hack (2) hack4knowledge (2) hackathon (1) half-baked (1) Handle (3) Handles (5) help (1) Hipponix (1) Hipponyx (1) history flow (3) hOCR (3) Holly Bik (1) holotypes (1) HomeBrew (1) homonym (1) Hoolock (1) Hoplocephalus (1) host (2) HS_ALIAS (1) HTTP URI (3) Human trafficking (1) Hurlbert's index (1) hyperbolic tree (1) hypothes.is (4) iBOL (1) iBook (1) iBooks (1) iCal (1) icon (1) ICZN (4) idea (1) Ideator (1) identifier (2) identifiers (22) identiifers (1) identity (1) ideology (1) iDigBio (1) iEvoBio (3) IFTTT (2) images (1) imagination (1) impact (3) impact factor (2) iNaturalist (1) index (2) Index Fungorum (2) indirection (1) Insect Systematics and Evolution (1) integration (6) interface (8) Internet Explorer (2) interview (2) ION (12) iPad (20) iPhone (5) iphylo (3) IPNI (6) IRMNG (2) ISNI (2) iSpecies (10) iSpiders (1) ISSN (3) ITIS (3) iTunes (2) IUCN (2) J-Stage (1) JACC (2) Japanese (1) JATS (2) javascript (12) jellyfish (1) JournalMap (2) journals (1) joy (1) jQuery (1) jQueryMobile (3) JSON (6) JSON-LD (4) JSONP (1) JSTOR (5) Kew (3) KML (3) Knowledge Graph (9) Knowledge Navigator (1) lazy load (1) Leaflet (3) legacy literature (1) Leptograpsus (1) library (3) lice (1) license (2) Life and Literature (1) Lifemapper (1) ligature (1) Linked data (13) linked data. Zitgist (1) linking (12) Linkout (3) links (3) Linux (1) list (1) literature (2) liverwort (1) logo (1) long tail (1) longest common substring (1) LSID (13) LSIDs (1) lucene (3) Mac (1) Mac OS X (4) Mac OSX (1) MacClade (1) machine learning (1) macrobiome (1) mailing list (1) Mammal Species of the World (1) mammals (3) manifesto (1) map (1) Map of Life (1) mapping (3) maps (3) MarkMail (1) markup (2) mashup (7) matching (10) material examined (1) matrix (1) md5 (2) Mediawiki (6) megascience (1) Mekong River Schistosomiasis (1) memcached (1) Mendeley (28) merging (1) Mesibov (1) Mesquite (2) Metacafe (1) metacrap (1) metadata (17) metagenomics (1) metrics (1) microbiome (1) microcitations (3) microformat (1) Micropayment (1) microservices (2) Microsoft (2) millipedes (2) MIT (2) mobile tagging (1) MOBOT (1) mockup (1) mod_rewrite (1) model (1) modelling (3) mollusc (1) Molossidae (1) mosquitoes (1) Mount Mabu (1) MPE (1) MSW (1) Mus rutilans (1) museum (3) museum collections (2) museums (1) MySQL (2) n-grams (1) names (7) namestream (1) nanopublication (2) NASA (1) natural language queries (1) Nature (9) Nature Precedings (4) navigation (1) NCBI (21) NDE (2) Neo4J (3) NESCent (2) New Category (1) new species (1) NEXUS (1) ngram (2) NHM (7) NLM DTD (2) node.js (1) Nomenclator Zoologicus (1) nomenclators (3) nomenclature (1) NoSQL (1) note to self (4) NSF (2) number of species (1) Nuytsia (1) OAI (1) OAuth (4) OBIS (3) OCLC (1) OCR (10) ODI (1) OneZoom (1) ontology (1) Open access (7) Open Acess (1) Open Calais (2) open data (8) Open Refine (1) Open Science (2) Open source (2) Open Tree of Life (1) OpenHandle (1) OpenRef (1) OpenRefine (1) OpenStreetMap (1) OpenURL (23) ORCID (5) orthographic projection (1) OTU (1) output (1) OZCAM (2) pagerank (4) Pagodabox (1) PaleoBioDB (1) panbiogeography (2) Pando (1) PaperID (1) Papers (3) Parallels (1) parasite (2) parasites (1) patent (1) paywall (1) PDF (6) Pensoft (1) Perceptive Pixel (2) Perl (1) Peter Norvig (1) Philautus (1) Photosynth (1) PHP (3) Phthiraptera (1) phylgeny (1) phylogenetic diversity (1) phylogeny (30) phyloinformatics (6) PhyLoTA (4) phylowidget (1) PhyloWS (1) Pinnixa (1) Pinnotheridae (1) piracy (1) Pit Stop (1) planet management (1) plans (3) Plant List (2) plants (2) platform (3) platforms (1) Plazi (1) PLoS (15) PLoS Currents (1) PLoS Currents Tree of Life (1) PLoS Hubs (3) PMID (1) podcast (2) points (1) polar (1) pollution (1) Poly9 (1) possible project (6) post-taxonomic (1) postphylogenetics (1) power law (2) pPod (1) predictions (1) preprint (5) presentation (1) press (1) Prezi (1) PRISM (2) Pristimantis (1) prize (1) pro-iBiosphere (3) programming (2) ProjectEvoMap (1) Proxy (1) Pteralopex (1) publication (8) published (2) publishing (2) PubMed (2) PubMed Central (3) PubPeer (1) PygmyBrowse (2) Pyramica (1) QR Codes (1) quantum treemap (3) Quora (1) R-tree (1) rank (1) ranking (2) rant (7) Raorchestes (1) RAxML (1) Raymondia (1) Raymondionymus (1) RDF (19) ReaderMeter (1) Readmill (1) reCAPTCHA (1) ReCon16 (1) reconciliation (2) rectangle packing (1) red lionfish (1) Red List (1) regular expression (1) release (1) reliability (2) rent (1) replication (2) research sprint (1) rewrite (1) Ross Mounce (1) RSS (9) RTFM (1) rtree (1) ruby (1) sailfin lizards (1) schistosomiasis (1) science (1) Science 2.0 (1) Science Commons (1) Scott Federhen (1) scraping (2) scratchpads (2) screencast (5) Scripting life (1) SEALS (1) search (11) Semantic Mediawiki (2) Semantic Web (15) SEO (1) serverless (1) services (3) shape files (1) Sherborn (1) SICI (3) silos (1) SKOS (1) slideshare (1) snakes (1) SOAP (1) social citation (1) social graph (1) Social media (2) sociology (1) software (4) Solr (1) space tree (2) sparklines (1) SPARQL (8) speaking (1) species (1) Species-ID (1) specimen (2) specimen codes (7) specimens (7) spelling correction (1) spider (2) spy (1) squid (1) stackoverflow (3) stained glass (1) Stamen (1) startup (1) State of the World's Plants (1) Stephen Colbert (1) Steve Jobs (1) stratigraphy (1) string (1) structured data (1) Strumigenys (1) success (1) sucks (3) Sun (1) supertree (1) SVG (14) swine flu (1) symbiome (2) synonyms (2) synonymy (1) SysTax (1) Systematic Biology (1) systematics (1) table (1) tag tree (1) tagging (3) tags (4) talk (4) Talk Science (1) TAPIR (1) Tasmania (1) TAXACOM (3) Taxobox (1) taxon concepts (1) taxonomic concept (3) taxonomic databases (1) taxonomic intelligence (1) taxonomic name (9) taxonomic names (1) taxonomists (1) taxonomy (38) TaxonRank (2) TaxPub (2) Taylor and Francis (1) TBMap (3) TDWG (15) teaching (2) Ted Nelson (2) test suite (1) text mining (2) text-mining (1) Thamnomys rutilans (1) The Plant List (1) thesis (1) threads (1) tiles (2) timeline (4) timemap (2) TinyURL (1) to do (1) Tony Rees (2) Top 10 (1) topological sorting (1) touch (5) touch screen (2) TraitBank (1) transitive reduction (1) treatments (1) tree (4) tree edit (1) Tree of Life (5) TreeBASE (23) treemap (9) trees (12) TreeView (2) TreeView X (1) triple store (1) Trove (1) trust (1) tutorial (2) TV (1) tvwidget (2) twitter (10) twittervision (1) type specimens (2) uBio (5) UFT-8 (1) Unicorn (1) Uniprot (3) University of Alaska (1) URI (3) URL shortening (1) URN (1) use case (1) user interface (2) users (2) USIN (1) USNM (1) UTF8 (1) UTM grid reference (1) UUID (2) Vast Machine (2) velcro (1) Venter (1) version control (2) VertNet (1) VIAF (2) ViBRANT (1) video (5) Vince Smith (1) vision (3) Vista (2) visualisation (63) visualization (2) visulaisation (1) vizbi (3) vocabulary (2) vouchers (1) Wallace (1) we feel fine (1) weather (1) Web Hooks (5) web services (2) WebDAV (1) Webdot (1) Wellcome (1) whales (1) white paper (1) wiki (21) WikiCite (2) wikicite2017 (1) Wikidata (7) Wikiometrics (1) Wikipedia (36) Wikisource (1) Wikispecies (10) Wiley (1) Windows (2) Wine (1) Wired (2) Wordle (1) wordtrees (1) workshop (4) WorldCat (2) worm (1) WoRMS (2) wow (2) Xanadu (4) XML (10) XMP (2) XSLT (4) Yahoo (4) Zemanta (1) Zenodo (4) ZFMK (1) Zika virus (1) ZooBank (4) ZooKeys (10) zoom (4) zoomify (2) Zootaxa (5) Zotero (5)
+	
+	
+Simple theme. Powered by Blogger .

@@ -1,0 +1,273 @@
+444
+
+IEEE ANTENNAS AND WIRELESS PROPAGATION LETTERS, VOL. 7, 2008
+
+A Portable Low-Power Harmonic Radar System and Conformal Tag for Insect Tracking
+Dimitris Psychoudakis, Member, IEEE, William Moulder, Student Member, IEEE, Chi-Chih Chen, Senior Member, IEEE, Heping Zhu, and John L. Volakis, Fellow, IEEE
+
+Abstract—Harmonic radar systems provide an effective modality for tracking insect behavior. This letter presents a harmonic radar system proposed to track the migration of the Emerald Ash Borer (EAB). The system offers a unique combination of portability, low power and small tag design. It is comprised of a compact radar unit and a passive RF tag for mounting on the insect. The radar unit transmits a 5.9–6 GHz signal and detects at the 11.8–12 GHz band. A prototype of the radar unit was built and tested, and a new small tag was designed for the application. The new tag offers improved harmonic conversion efﬁciency and much smaller size as compared to previous harmonic radar systems for tracking insects. Unlike RFID detectors whose sensitivity allows detection up to a few meters, the developed radar can detect a tagged insect up to 58 m (190 ft).
+Index Terms—Harmonic radar, insect tracking, radar, radio frequency identiﬁcation (RFID).
+I. INTRODUCTION
+H ARMONIC radars have been used to track insects for 20 years [1]–[9]. However, existing radars either use low frequencies not suited for small tags or transmit high power (tens of kilowatts) severely limiting portability, so the successful tracking rate is very low. This letter presents an insect radar system that offers a combination of portability, low-power operation, and tag miniaturization not currently available in modern insect radars. The motivation is to allow the tracking of the Emerald Ash Borer (EAB), an exotic beetle native to Asia. EAB has caused tens of millions of dollars damage to ash trees in North America since 2002. The dispersal and behavioral patterns of EAB are needed to aid development of appropriate treatment and management strategies. Tracking EAB is an essential part of dispersal and behavioral studies.
+The proposed harmonic radar relies on a small radio frequency (RF) tag attached to a captured and released insect. The system’s unique features are portability, low power operation, and small tag design, coupled with a remarkably large detection distance. Speciﬁcally, the prototype was shown to track the small RF tag up to a range of approximately 58 m (190 ft). The radar is powered by a 12 V alarm battery and is compact enough (excluding the antennas) to be placed in a small backpack. Compared to units with output powers on the order
+Manuscript received July 14, 2008; revised August 06, 2008. Current version published December 02, 2008
+The authors are with the ElectroScience Laboratory, Department of Electrical and Computer Engineering, The Ohio State University, Columbus, OH 43212 USA (e-mail: dpsycho@ece.osu.edu; moulder.3@osu.edu; chen.118@osu.edu; Heping.Zhu@ARS.USDA.GOV; volakis.1@osu.edu).
+Color versions of one or more ﬁgures in this letter are available online at http://ieeexplore.ieee.org
+Digital Object Identiﬁer 10.1109/LAWP.2008.2004512
+
+of tens of kilowatts [1]–[4], this radar’s output power is quite
+
+low (approximately 0.1 W). It operates at 5.9–6/11.8–12 GHz
+
+and employs a geometrically miniaturized RF tag. The tag
+
+measures 9.5 mm 9.5 mm, or
+
+at the system
+
+transmit frequency. Unlike loop-dipole tags previously used in
+
+this application [3]–[5], the proposed tag is conformal to the
+
+insect’s body.
+
+II. RADAR SUBSYSTEM
+The radar tracking system is comprised of two components: the radar unit and the RF tag. The radar unit transmits a 5.9–6 GHz signal and detects the 11.8–12 GHz harmonic created by the tag. A system schematic is depicted in Fig. 1 and a photograph of the prototype system is given in Fig. 2, all built with commercially available parts. As shown, to generate the 5.9–6-GHz transmit signal, the output of a 5-GHz dielectric resonator oscillator (DRO) and the output of a stable 0.9–1 GHz auxiliary oscillator are mixed. The prototype system exhibited similar performance when the auxiliary oscillator frequency was 0.9 GHz and when the oscillator frequency was 1.0 GHz. It was found necessary that the transmit signal be sufﬁciently ﬁltered to remove harmonics, as false positive detection scenarios can occur if the harmonic is transmitted. The received 11.8–12 GHz signal must also be ﬁltered prior to ampliﬁcation to remove any coupled or reﬂected transmitted (5.9–6 GHz) signal. That is, if the transmit signal is ampliﬁed in the receive circuit, it can create harmonics, resulting in false positive detections.
+Detection occurs at 1.8–2.0 GHz. A 10-GHz signal is mixed with the received signal to generate the observed (1.8–2 GHz) IF signal. It should be noted that the harmonic of the 5 GHz DRO is isolated and ampliﬁed to generate the 10 GHz signal. The two circuits (5 and 10 GHz) are separated with a Wilkinson power divider. This design ensures that the observed IF is stable in spite of any frequency drift exhibited by the DRO, and also eliminates the need for another oscillator. The observed IF signal can be detected with a spectrum analyzer, RFID detection system or RF signal detection chip (such as the Analog Devices AD608).
+Electromagnetic interference considerations are critical to a successful design as internal harmonics of the auxiliary oscillator signal or the transmit signal can allow the system to register false detections. To eliminate such issues, the low noise block, auxiliary oscillator, and the rest of the system were placed in three separate, tightly sealed boxes (see Fig. 2). Also, the buffer in the transmit circuit must provide sufﬁcient isolation so that the auxiliary oscillator and/or transmit signals do not leak into the receive circuit through the DRO or power divider.
+A power budget analysis for the radar system is given in Table I. In the analysis, it is assumed that the radar detects the
+
+1536-1225/$25.00 © 2008 IEEE
+
+PSYCHOUDAKIS et al.: A PORTABLE LOW-POWER HARMONIC RADAR SYSTEM AND CONFORMAL TAG FOR INSECT TRACKING
+
+445
+
+Fig. 1. Schematic of the insect radar system. The 5 GHz signal and 10 GHz signal originate in the same (nominally 5 GHz) oscillator, using the oscillator’s ﬁrst harmonic. The node numbers mark points referred to in Table I, the system power budget analysis.
+TABLE I THEORETICAL SYSTEM POWER BUDGET ANALYSIS
+
+Fig. 2. Radar subsystem prototype (antennas and RSSI not pictured). As pictured: 1) transmitter and mixing circuit, 2) 1 GHz oscillator, 3) low-noise block, and 4) 12 V alarm battery.
+
+tag at a range of 58 m (190 ft), and received power at a point in the system is given by
+
+(1)
+
+where is transmitted power, is path loss,
+
+is tag
+
+conversion loss (taken to be 11 dB, as discussed in a later sec-
+
+tion), and G is a component’s gain or loss. At a given point, the
+
+summation of preceding component gains is considered. and
+
+are, of course, considered to be zero in (1) at points be-
+
+fore their respective encounters (nodes 1–8 for , nodes 1–9
+
+for
+
+). Noise power at a point in the system is given by
+
+(2)
+where is the thermal noise in the system at the point before the ﬁrst active component and NF is a component’s noise ﬁgure. A summation of preceding component noise ﬁgures is considered. Thermal noise is given by
+
+at a given point: one where ideal (free space) path loss (FSPL) is assumed so that
+(4)
+
+(3)
+where is Boltzmann’s Constant, T is ambient temperature, and B is bandwidth. The latter is assumed 30 Hz, as this was the resolution setting of the spectrum analyzer used in the experiments. The table shows two scenarios in determining the power
+
+and another where an empirical path loss (EPL, derived via power regression of the experimental data presented in Fig. 9) that accounts for ground reﬂection is assumed so that
+(5)
+
+446
+
+IEEE ANTENNAS AND WIRELESS PROPAGATION LETTERS, VOL. 7, 2008
+
+= 5 91 2 Fig. 3. The modiﬁed Minkowski loop tag is composed of two concentric fractal
+loops. At f : GHz, the tag measures 9.5 mm 9.5 mm.
+Fig. 5. Copolarization elevation angle gain pattern of the modiﬁed Minkowski loop at 5.91 GHz.
+
+Fig. 4. Formation of a Minkowski loop [10].
+
+III. TAG DESIGN
+
+A. Geometry
+
+The proposed tag is a planar geometry (that is easily bent)
+
+comprised of two concentric (modiﬁed) Minkowski loops (see
+
+Fig. 3). The Minkowski loop is a fractal geometry which is re-
+
+ﬁned iteratively as shown in Fig. 4. The Minkowski loop antenna
+
+has been shown to be a suitable miniaturized alternative to the
+
+square loop antenna [10]–[13]. Unlike the antennas in [11], [12],
+
+the proposed tag employs a set of modiﬁed Minkowski loops.
+
+These loops were altered to meet the fabrication constraints im-
+
+posed by the tag’s smaller size (due to higher operational fre-
+
+quencies). A similar alteration was made in [13], for a fractal-
+
+based slot antenna. The design measures 9.5 mm 9.5 mm, or
+
+at
+
+GHz.
+
+Fig. 6. Copolarization elevation angle gain pattern of the modiﬁed Minkowski loop at 11.82 GHz.
+
+B. Tag Operation and Diode Considerations
+The tag intercepts the transmitted signal from the radar unit (5.9–6 GHz) and reradiates the harmonic at 11.8–12 GHz. As in other harmonic radar tags [14], a very small and light (low barrier) Schottky diode is positioned between the two loops as shown in Fig. 3. As the antenna is excited by the impinging radar wave, a current is induced through the diode which (due to its non-linearity) creates the re-radiated harmonic. Given the size and weight requirements of this application, the Avago/Agilent HSCH-5340 was found as a suitable diode for the tag. Schottky diodes, such as this one, operate with a low forward voltage drop. This is critical for the application, since the expected induced voltage is very small.
+C. Tag Performance
+The simulated gain patterns of the tag are given in Fig. 6–8. The disparity in gain between the co-polarization patterns and the cross-polarization patterns demonstrates the antenna’s strong linear polarization. The maximum low mode gain is about 2.8 dBi (see Fig. 5), whereas the maximum high mode gain is about 5.5 dBi (see Fig. 6). However, the low- and high-mode maximum gain points do not occur in the same
+
+Fig. 7. Cross-polarization elevation angle gain patterns of the modiﬁed Minkowski loop at 5.91 GHz (left) and 11.82 GHz (right).
+
+direction. In testing, the tag surface was placed normal to the
+
+direction of incidence (direction of maximum low mode gain).
+
+The approximate conversion loss of the modiﬁed Minkowski
+
+loop tag was measured to be 11 dB at
+
+GHz. This
+
+conversion loss corresponds to the power differential between
+
+an incident signal and the resulting re-radiated signal. This is
+
+an improvement over the loop-dipole tag, a resonant tag shown
+
+in Fig. 8, previously used in harmonic radars for insect tracking
+
+[3]–[5]. The improvement is signiﬁcant since a tag with lower
+
+conversion loss is capable of a longer detection range. A loop-
+
+dipole tag, which consists of a half wavelength dipole for the
+
+low mode and a single wavelength loop for the high mode, was
+
+built and the conversion loss was measured as 16 dB. Also, in
+
+PSYCHOUDAKIS et al.: A PORTABLE LOW-POWER HARMONIC RADAR SYSTEM AND CONFORMAL TAG FOR INSECT TRACKING
+
+447
+
+However, a power regression of the data in Fig. 9 gives
+
+(7)
+
+(8)
+
+Fig. 8. Loop dipole tag, previously used in harmonic insect radar systems [4]. The new Minkowski loop tag exhibits improvements in size, gain, conversion efﬁciency, and conformability.
+
+It should be noted that in (7), is in meters.
+
+V. CONCLUSION
+
+A portable harmonic radar system for insect tracking was de-
+
+signed and tested. The system offers a unique combination of
+
+portability, low power output, and small tag design. The built
+
+prototype demonstrated that a tag of size 9.5 mm 9.5 mm
+
+can be detected up to 58 m (190 ft) when
+
+the unit transmits 0.1 W, uses 22 dBi transmit and receive an-
+
+tennas, and operates at
+
+GHz. Studies will be continued
+
+to investigate methods of mounting the miniaturized tag on EAB
+
+with minimal interference with movement and behavior of the
+
+insect.
+
+Fig. 9. IF signal strength (signal observed by the “Received Signal Strength Indicator,” as shown in Fig. 1). Measurements taken at 1.83 GHz (auxiliary oscillator frequency was 915 MHz).
+
+another insect radar system study (where a loop-dipole tag was used), the conversion loss was reported as 21 dB [3]. The modiﬁed Minkowski loop tag offers improvements in size, gain, conversion efﬁciency, and conformability.
+
+IV. EXPERIMENTAL RESULTS
+
+Range measurements were conducted using a prototype
+
+radar unit. The IF signal, viz., the signal fed into the “Received
+
+Signal Strength Indicator” shown in Fig. 1, was measured as a
+
+Minkowski loop tag (shown in Fig. 3) was moved to varying
+
+ranges from the transmitting radar unit’s antennas. The exper-
+
+iment was conducted outdoors in a ﬂat, dry ﬁeld. The system
+
+was operating at
+
+GHz and the RF power output
+
+was measured to be approximately dBm. The transmit and
+
+receive antennas, both horns with gains of approximately 22
+
+dBi at the respective relevant frequencies, were placed about 5
+
+ft above the ground. Also, the tag was placed on a thin layer of
+
+foam and mounted atop a wooden stand 5 ft above the ground.
+
+The IF strength measurements were performed with a spectrum
+
+analyzer, where (two point) averaging was employed and the
+
+resolution bandwidth was set to 30 Hz, producing a noise ﬂoor
+
+of approximately 97 dBm (caused by ampliﬁcation in the
+
+receive circuit).
+
+The measurement results given in Fig. 9 show that the system
+
+was able to reliably detect the Minkowski loop tag up to a range
+
+of 58 m (190 ft). It is also evident from the plot that when the
+
+measurements were taken that ground effects are pronounced,
+
+reducing the detection distance. That is, for a radar operating
+
+in free space, the power received from a backscattering target
+
+would decay as
+
+(6)
+
+REFERENCES
+[1] J. L. Osborne, S. J. Clark, R. J. Morris, I. H. Williams, J. R. Riley, A. D. Smith, D. R. Reynolds, and A. S. Edwards, “A landscape-scale study of bumblebee foraging range and constancy, using harmonic radar,” J. Appl. Ecol., vol. 36, pp. 519–533, 1999.
+[2] G. P. Svensson, P. G. Valeur, D. R. Reynolds, A. D. Smith, J. R. Riley, T. C. Baker, G. M. Poppy, and C. Löfstedt, “Mating disruption in Agrotis segetum monitored by harmonic radar,” Entomologia Experimentalis et Applicata, vol. 101, pp. 111–121, 2001.
+[3] J. R. Riley and A. D. Smith, “Design considerations for an harmonic radar to investigate the ﬂight of insects at low altitude,” Compute. Electron. Agricult., vol. 35, pp. 151–169, 2002, (Elsevier.).
+[4] B. G. Colpitts and G. Boiteau, “Harmonic radar transceiver design: Miniature tags for insect tracking.,” IEEE Trans. Antennas Propag., vol. 52, pp. 2825–2832, 2004.
+[5] E. A. Capaldi, A. D. Smith, J. L. Osborne, S. E. Fahrbach, S. M. Farris, D. R. Reynolds, A. S. Edwards, A. Martin, G. E. Robinson, G. M. Poppy, and J. R. Riley, “Ontogeny of orientation ﬂight in the honeybee revealed by harmonic radar,” Nature, vol. 403, pp. 537–540, 2000.
+[6] G. Boiteau and B. Colpitts, “Electronic tags for the tracking of insects in ﬂight: Effect of weight on ﬂight performance of adult Colorado potato beetles,” Entomologia Experimentalis et Applicata, vol. 100, pp. 187–193, 2001.
+[7] R. D. Brazee, E. S. Miller, M. E. Reding, M. G. Klein, B. Nudd, and H. Zhu, “A transponder for harmonic radar tracking of the black vine weevil in behavioral research,” Amer. Soc. Agricult. Eng. Trans., vol. 48, no. 2, pp. 831–838, 2005.
+[8] D. Mascanzoni and H. Wallin, “The harmonic radar: A new method of tracking insects in the ﬁeld,” Ecolog. Entomol., vol. 11, pp. 387–390, 1986.
+[9] J. Roland, G. McKinnon, C. Backhouse, and P. D. Taylor, “Even smaller radar tags on insects,” Nature, vol. 381, pp. 120–, 1996.
+[10] J. P. Gianvittorio and Y. Rahmat-Samii, “Fractal antennas: A novel antenna miniaturization technique, and applications,” IEEE Antennas Propag. Mag., vol. 44, no. 1, pp. 20–36, 2002.
+[11] S. K. Padhi, G. F. Swiegers, and M. E. Bialkowski, “A miniaturized slot ring antenna for rﬁd applications,” in Proc. 15th Int. Conf. Microw., Radar Wireless Commun., May 2004, vol. 1, pp. 318–321.
+[12] H. M. Elkamchouchi and M. N. A. El-Salam, “Square loop antenna miniaturization using fractal geometry,” in Proc. IEEE Antennas Propag. Soc. Int. Symp., Jun. 2003, vol. 4, pp. 254–257.
+[13] C. Mahatthanajatuphat and P. Akkaraekthalin, “A double square loop antenna with modiﬁed Minkowski fractal geometry for multiband operation,” IEICE Trans. Commun., vol. E90-B, no. 9, Sep. 2007.
+[14] G. Charvat, E. Rothwell, L. Kempel, and T. Miller, “Harmonic radar tag measurement and characterization,” in Proc. IEEE Antennas Propag. Soc. Int. Symp., Columbus, Ohio, Jun. 22–27, 2003.
+

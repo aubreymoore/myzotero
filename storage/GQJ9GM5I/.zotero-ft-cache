@@ -1,0 +1,173 @@
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Gist
+
+        New repository Import repository New organization
+        This repository
+        New issue 
+    @aubreymoore
+    Signed in as aubreymoore
+    Your profile Your stars Explore Integrations Help
+    Settings
+    Sign out
+
+    Watch 17
+    Notifications
+    Not watching Be notified when participating or @mentioned. Watch
+    Watching Be notified of all conversations. Unwatch
+    Ignoring Never be notified. Stop ignoring
+    Unstar 75
+    Star 75
+    Fork
+    53
+
+bikz05 / object-detector
+Code Issues 1 Pull requests 0 Wiki Pulse Graphs
+Object Detection Framework using HOG as descriptor and Linear SVM as classifier.
+
+    11 commits
+    1 branch
+    0 releases
+    1 contributor
+    MIT
+
+    Python 100.0%
+
+Python
+Clone or download
+Use SSH
+Clone with HTTPS
+
+Use Git or checkout with SVN using the web URL.
+Use HTTPS
+Clone with SSH
+
+Use an SSH key and passphrase from account.
+Download ZIP
+Create new file
+Upload files Find file
+Branch: master
+Switch branches/tags
+
+    Branches
+    Tags
+
+master
+Nothing to show
+Nothing to show
+New pull request
+Latest commit 872d519 on Jul 23, 2015 @bikz05 bikz05 Update README.md
+Permalink
+	Failed to load latest commit information.
+	bin 	1st alpha version released 	a year ago
+	data 	Configuration file loaded 	a year ago
+	object-detector 	Configuration file loaded 	a year ago
+	.gitignore 	1st alpha version released 	a year ago
+	LICENSE 	Initial commit 	a year ago
+	README.md 	Update README.md 	a year ago
+README.md
+object-detector
+
+Object Detector using HOG as descriptor and Linear SVM as classifier. | Video
+Run the code
+
+I have created a single python script that can be used to test the code. To test the code, run the lines below in your terminal.
+
+ git clone https://github.com/bikz05/object-detector.git
+cd  object-detector/bin
+test-object-detector
+
+The test-object-detector will download the UIUC Image Database for Car Detection and train a classifier to detect cars in an image. The SVM model files will be stored in data/models , so that they can be resused later on.
+Configuration File
+
+All the configurations are in the data/config/config.cfg configuration files. You can change it as per your need. Here is what the default configuration file looks like (which I have set for Car Detector)-
+
+ [hog]
+min_wdw_sz: [100, 40]
+step_size: [10, 10]
+orientations: 9
+pixels_per_cell: [8, 8]
+cells_per_block: [3, 3]
+visualize: False
+normalize: True
+
+[nms]
+threshold: .3
+
+[paths]
+pos_feat_ph: ../data/features/pos
+neg_feat_ph: ../data/features/neg
+model_path: ../data/models/svm.model
+
+About the modules
+
+    extract-features.py -- This module is used to extract HOG features of the training images.
+    train-classifier.py -- This module is used to train the classifier.
+    nms.py -- This module performs Non Maxima Suppression.
+    test-classifier.py -- This module is used to test the classifier using a test image.
+    config.py -- Imports the configuration variables from config.cfg .
+
+Some of the results
+Test Image 1
+
+Detections before NMS
+
+Image 1
+
+Detections after NMS
+
+Test Image 2
+
+Detections before NMS
+
+Detections after NMS
+
+Test Image 3
+
+Detections before NMS
+
+Detections after NMS
+
+Test Image 4
+
+Detections before NMS
+
+Detections after NMS
+
+TODO
+
+Here is list of tasks that I am planning to implement in the future -
+
+    Optimize code to use more numpy vectorized codes.
+    Faster NMS code.
+    Add bootstrapping (Hard Negative Mining) code.
+
+Useful tutorials
+
+    Histogram of Oriented Gradients and Object Detection
+    Image Pyramids with Python and OpenCV
+    Sliding Windows for Object Detection with Python and OpenCV
+    Non-Maximum Suppression for Object Detection in Python
+    (Faster) Non-Maximum Suppression in Python
+    Texture Matching using Local Binary Patterns (LBP), OpenCV, scikit-learn and Python
+    Detección de objetos Course by Coursera
+
+    Contact GitHub
+    API
+    Training
+    Shop
+    Blog
+    About
+
+    © 2016 GitHub , Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+You can't perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.

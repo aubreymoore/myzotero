@@ -1,0 +1,363 @@
+Guam Coconut Rhinoceros Beetle Project Technical Report CRB-2014-07-29
+Funnel Test
+Prepared by Aubrey Moore and Roland Quitugua University of Guam Cooperative Extension Service
+Updated August 20, 2014
+In an attempt to minimize the escape rate for pan traps with chicken wire tops, we placed funnels beneath the chicken wire. During a four week trial, pan traps equipped with funnels trapped 35% more beetles than those without funnels. During the experiment, trap catch rate for pan traps equipped with funnels was 16X that of surrounding standard pheromone traps within a 5 km radius.
+1 Introduction
+We observed that CRB can escape from pans with chicken wire tops. In this experiment we test funnels to see if they increase trap catch.
+2 Methods
+We designed funnels to ﬁt in pans and had some manufactured out of PVC sheet by a local company, Express Signs. The funnels were tested over 4 one-week trapping periods by placing them on the 31 pan traps in operation at the Yigo Ag. Expt. Stn. Each pan trap was equipped with a chicken wire top, UVLED and orycatalure. Each pan was supported by an empty 55 gal. oil drum. No breeding material substrate was placed inside the barrel.
+Funnels were added to approximately half of the pan traps. To decide which traps would be equipped with funnels, we ranked the traps by trap-catch within the month prior to the experiment,
+1
+
+in descending order. On week one and three of the experiment, pans with odd numbered ranks were ﬁtted with funnels. On week two and four, the funnels were moved to pans with even numbered ranks.
+Data from the trial were stored in the YigoBarrelObs table of the project’s oryctes database. Analysis was done using a couple of R scripts (Listings 1 and 2).
+3 Results
+Pan traps equipped with funnels caught 35% more beetles than those without funnels (Table 1, Figure 1). The increase in trap catch rate, from 0.233 to 0.313 beetles per trap-day, is signiﬁcant (p = 0.0013, Fisher’s Exact Test for Count Data, two-sided). Trap catch rate for 51 standard pheromone traps with a 5 km radius of the ﬁeld trial area during the period of the trial was 0.020. During the four week trial period, 3 out of 31 (9%) of pan traps caught no beetles. In contrast, 41 out of 55 (75%) of standard traps caught no beetles.
+4 Discussion
+There is an operational disadvantage in using funnels in panel traps in that the funnel needs to be removed to check for trapped beetles. This extra time needed for trap checking is oﬀset in a several ways:
+• signiﬁcantly higher trap catch • trapped beetles are shaded from the sun and remain healthy for several days making them
+available for experiments • lures can be protected from direct sunshine by hanging them beneath the cone
+2
+
+Table 1: Beetles caught in pan traps with and without funnels.
+
+barrelID WithoutFunnel WithFunnel
+
+1
+
+2
+
+3
+
+2
+
+1
+
+3
+
+3
+
+5
+
+6
+
+4
+
+3
+
+1
+
+5
+
+4
+
+6
+
+6
+
+1
+
+4
+
+7
+
+0
+
+4
+
+8
+
+1
+
+10
+
+9
+
+3
+
+6
+
+10
+
+0
+
+0
+
+11
+
+4
+
+2
+
+12
+
+3
+
+3
+
+13
+
+2
+
+0
+
+14
+
+7
+
+5
+
+15
+
+5
+
+8
+
+16
+
+4
+
+2
+
+17
+
+2
+
+1
+
+18
+
+3
+
+4
+
+19
+
+2
+
+3
+
+20
+
+1
+
+1
+
+21
+
+0
+
+4
+
+22
+
+4
+
+7
+
+23
+
+0
+
+0
+
+24
+
+4
+
+5
+
+25
+
+3
+
+5
+
+26
+
+0
+
+11
+
+27
+
+0
+
+0
+
+28
+
+14
+
+8
+
+29
+
+9
+
+10
+
+30
+
+7
+
+10
+
+31
+
+7
+
+4
+
+3
+
+1.0
+
+q
+
+0.8
+
+Beetles per trap−day
+
+q
+
+0.6
+
+0.4
+
+0.2
+
+q q
+
+q qqqq qq
+
+standard trap
+
+pan trap without funnel pan trap with funnel
+
+0.0
+
+Figure 1: Pan traps equipped with funnels trapped signiﬁcantly more CRB than those without funnels (increase = 34%; p = 0.0013, Fisher’s Exact Test for Count Data, two-sided). Trap catch rate for 52 standard pheromone traps with a 5 km radius of the ﬁeld trial area during the period of the trial is provided for comparison. Mean trap catch rates were 0.020, 0.233 and 0.313 for standard pheromone traps, pan traps without funnels, and pan traps with funnels, respectively.
+4
+
+Listing 1: db.R
+# Start the clock ! Takes about 75 seconds to run . ptm <− p r o c . time ( )
+r e q u i r e (RMySQL) require ( xtable )
+# Connect to project database . # DB username and password a r e hidden i n an e x e r n a l f i l e , d b s e c r e t s . R, # which d e f i n e s two s t r i n g s : user and password . # d b s e c r e t s .R s h o u l d not be made p u b l i c s o t h a t s e c u r i t y o f t h e DB i s # protected .
+source (” d b s e c r e t s .R”)
+conn = dbConnect (MySQL( ) , user = user , password = password , host = ”mysql . guaminsects . net ” , dbname = ” o r y c t e s ”)
+# The standardTraps .R s c r i p t g e t s trap catch data f o r standard pheromone t r a p s w i t h i n 5 km o f t h e
+# c e n t r o i d o f t h e Yigo Ag Expt Stn o v e r t h e t r i a l p e r i o d , 2014−06−15 through 2014−07−13.
+source (” standardTraps .R”)
+# Get trap data f o r pans not equipped with funnels .
+sql = (” SELECT b a r r e l I D , SUM( males+f e m a l e s ) AS trapCatch FROM YigoBarrelObs WHERE s t a r t d a t e >= '2014 −06 −15 '
+AND endDate <= '2014 −07 −13 ' AND f u n n e l = ' n ' GROUP BY b a r r e l I D ORDER BY b a r r e l I D ”) rs = dbSendQuery ( conn , sql ) withoutFunnel = f e t c h ( rs , −1)
+# Get trap data f o r pans equipped with funnels .
+sql = (” SELECT b a r r e l I D , SUM( males+f e m a l e s ) AS trapCatch FROM YigoBarrelObs WHERE s t a r t d a t e >= '2014 −06 −15 '
+AND endDate <= '2014 −07 −13 ' AND f u n n e l = ' y ' GROUP BY b a r r e l I D ORDER BY b a r r e l I D ”) rs = dbSendQuery ( conn , sql )
+5
+
+withFunnel = f e t c h ( rs , −1)
+# Create and export trapCatchTable . tex
+df = data . frame ( withoutFunnel , withFunnel$trapCatch ) names ( df ) = c ( ' barrelID ' , ' WithoutFunnel ' , ' WithFunnel ' )
+xt = xtable ( df , d i s p l a y=c ( ' d ' , ' d ' , ' d ' , ' d ' ) , caption =' Beetles caught in pan traps with and without funnels . ' , label ='trapCatchTableLabel ' )
+print ( xt , caption . placement='top ' , i n c l u d e . rownames=FALSE, table . placement = ”p” , f i l e ='trapCatchTable . tex ' )
+# Test significance of difference in trap catch
+dm = data . matrix ( d f [ 2 : 3 ] ) f i s h e r . t e s t (dm, workspace=2e8 )
+# Create and export Boxplot
+# R e s u l t s from 51 s t a n d a r d t r a p s w i t h i n 5 km r a d i u s d i s p l a y e d f o r comparison
+s q l = ”SELECT meanTrapRate AS t r FROM s t a n d a r d T r a p s GROUP BY trapID ; ”
+standardTrap = sqldf ( sql )
+pdf ( ' boxplot . pdf ' ) boxplot ( standardTrap$tr , df$WithoutFunnel /14.0 , df$WithFunnel /14.0 ,
+names = c ( ' standard trap ' , ' pan trap without funnel ' , ' pan trap with funnel ') ,
+y l a b = ' B e e t l e s p e r trap −day ' ) dev . o f f ()
+mstandard = mean ( standardTraps$meanTrapRate ) mwith = mean ( df$WithFunnel ) / 1 4 . 0 mwithout = mean ( df$WithoutFunnel ) / 1 4 . 0
+mwith / mwithout
+mwithout/mstandard mwith / mstandard
+emptyStandardTraps = s q l d f ( ”SELECT COUNT( ∗ ) FROM s t a n d a r d T r a p s WHERE meanTrapRate = 0.0;”)
+emptyPans = s q l d f ( ”SELECT COUNT( ∗ ) FROM d f WHERE wi th ou tF un ne l + withFunnel = 0 . 0 ; ” )
+# Stop the clock
+6
+
+proc . time ( ) − ptm
+print (” FINIS ”)
+Listing 2: standardTraps.R
+##### C a l c u l a t e t r a p r a t e f o r s t a n d a r d pheromone t r a p s w i t h i n a ##### 5 km r a d i u s o f t h e c e n t r o i d o f t h e Yigo Ag Expt Stn .
+# This code is imported using source () .
+# Running t h i s code takes several minutes .
+l i b r a r y (RMySQL) require ( geosphere ) require ( sqldf ) o p t i o n s ( s q l d f . d r i v e r = ” SQLite ” ) # a s p e r FAQ #7 f o r c e SQLite
+getNearestTraps = f u n c t i o n ( longitude , l a t i t u d e , d e l t a =0.05 , n=5) { # Gets the t r a p i d f o r n t r a p s n e a r e s t to the l a t −long point . # Returns a dataframe containing t r a p i d and distance to point in meters .
+# Start by f i n d i n g a l l traps within a bounding r e c t a n g l e which i s plus # and minus delta degrees from the point . This step reduces processing time . # We don ' t want t o c a l c u l a t e d d i s t a n c e t o p o i n t f o r a l l t r a p s , j u s t t h o s e # nearby .
+sql = paste ( ”SELECT t r a p i d , l o n g i t u d e , l a t i t u d e FROM t r a p ” , ”WHERE ISNULL( date removed ) ” , ” AND l o n g i t u d e >”, l o n g i t u d e − d e l t a , ” AND l o n g i t u d e < ” , l o n g i t u d e + d e l t a , ” AND l a t i t u d e > ” , l a t i t u d e − d e l t a , ” AND l a t i t u d e < ” , l a t i t u d e + d e l t a )
+# conn = odbcConnect (” oryctes ”) conn = dbConnect (MySQL( ) ,
+user = ”readonlyguest ”, password = ”readonlypassword ” , host = ”mysql . guaminsects . net ” , dbname = ” o r y c t e s ”) # r e s u l t = sqlQuery ( conn , sql ) # odbcClose ( conn ) rs = dbSendQuery ( conn , sql ) r e s u l t = f e t c h ( rs , −1) print ( result ) i f ( nrow ( r e s u l t ) < n) { print ( paste ( ”WARNING: There a r e l e s s than n t r a p s w i t h i n t h e bounding box . ” , ”Reduce n or increase delta .” ) ) }
+# Now t h a t we have a l i s t o f nearby t r a p s , c a l c u l a t e d i s t a n c e t o t h e p o i n t
+7
+
+# using the distm function from th geosphere l i b r a r y and s e l e c t the n # nearest points .
+result$dist = distm ( result [ ,2:3] , c( longitude , latitude ) ) sql = paste (
+”SELECT ∗ FROM r e s u l t ” , ”ORDER BY d i s t ” , ”LIMIT 0 , ” , n ) sql result = sqldf ( sql ) }
+# TEST # Get nearest traps to Tai C l i f f b a r r e l trap #( n e a r e s t T r a p s = g e t N e a r e s t T r a p s ( 1 4 4 . 7 8 5 0 0 8 , 1 3 . 4 2 7 3 3 9 ) )
+##### End o f g e t N e a r e s t T r a p s f u n c t i o n d e f i n i t i o n .
+( nearestTraps = getNearestTraps (144.872720 , 13.531372 , delta =0.5 , n=58) )
+##############################################################################
+# Create tempTrapCatch table
+# tempTrapCatch table w i l l containing the f i e l d s : # trapID , latitude , longitude , date2 , date1 , trapCatch , trapRate
+# Note that this query uses a l l records in the t r a p v i s i t table . # The i n t e n t i s to add a new f i e l d , date1 , which i s the date on # which the trap was p r e v i o u s l y v i s i t e d . Thus the trap period i s # d a t e 1 through date2 , o r DATEDIFF( date1 , d a t e 2 ) days .
+dbSendQuery ( conn , ”DROP TABLE IF EXISTS tempTrapCatch ; ” )
+sql = (” CREATE TABLE tempTrapCatch SELECT t r a p v i s i t . t r a p i d AS trapID , l a t i t u d e , l o n g i t u d e , v i s i t d a t e a s date2 , ( SELECT v i s i t d a t e FROM t r a p v i s i t WHERE t r a p i d = trapID AND v i s i t d a t e < d a t e 2 ORDER BY v i s i t d a t e DESC LIMIT 1 ) AS date1 , m a l e c o u n t + f e m a l e c o u n t + u n s e x e d c o u n t AS trapCatch FROM t r a p v i s i t , t r a p WHERE t r a p v i s i t . t r a p i d = t r a p . t r a p i d ; ”)
+dbSendQuery ( conn , sql )
+# If date1 is null , this indicates a f i r s t trap visit .
+8
+
+# Replace date1 with trap . date deployed .
+
+sql = (” UPDATE tempTrapCatch , t r a p SET d a t e 1 = d a t e d e p l o y e d WHERE trapID = t r a p i d AND d a t e 1 IS NULL; ”)
+dbSendQuery ( conn , sql )
+
+# D e l e t e any r e c o r d s where e i t h e r d a t e i s NULL o r d a t e 1 >= d a t e 2 .
+
+sql = (” DELETE FROM tempTrapCatch WHERE d a t e 1 IS NULL OR d a t e 2 IS NULL OR d a t e 1 >= d a t e 2 ; ”)
+dbSendQuery ( conn , sql )
+
+# Add t r a p R a t e f i e l d
+
+dbSendQuery ( conn , ”ALTER TABLE tempTrapCatch ADD trapRate DOUBLE NOT NULL COMMENT ' b e e t l e s p e r t r a p day ' ; ” )
+
+# Calculate trapRate
+
+dbSendQuery ( conn , ”UPDATE tempTrapCatch SET t r a p R a t e = trapCatch / DATEDIFF( date2 , date1 ) ;”)
+
+############################################################################
+
+# Create tempTrap table .
+
+# This table contains a single field , trapID , which i s simply a l i s t of traps # o f i n t e r e s t . In t h i s c a s e , a l l t r a p s w i t h i n a 5 km r a d i u s o f t h e c e n t r o i d o f t h e # Yigo Expt Stn .
+
+dbSendQuery ( conn , ”DROP TABLE IF EXISTS tempTrap ” ) ; dbSendQuery ( conn , ”CREATE TABLE tempTrap ( trapID VARCHAR( 2 5 5 ) , PRIMARY KEY( trapID ) )
+;”)
+
+s q l = ”INSERT INTO tempTrap ( trapID ) VALUES” f o r ( i in 1: nrow ( nearestTraps ) ) {
+sql = paste ( sql , ”( '” , nearestTraps$trap id [ i ] , i f ( i < nrow ( nearestTraps ) ) {
+sql = paste ( sql , ” ,” , sep ='') }else{
+sql = paste ( sql , ”;” , sep ='') } } dbSendQuery ( conn , sql )
+
+” ') ”,
+
+sep ='')
+
+9
+
+#####################################################################################
+# Create tempDaily table . # Fields : trapID , tdate , trapRate dbSendQuery ( conn , ”DROP TABLE IF EXISTS tempDaily ; ” ) dbSendQuery ( conn , ”CREATE TABLE tempDaily ( trapID VARCHAR( 255 ) , t d a t e DATE,
+t r a p R a t e DOUBLE) ; ” ) mydate = seq ( as . Date(”2014−06−15”) , as . Date(”2014−07−13”) , ”days ”) f o r ( i in 1: length ( mydate ) ) {
+curdate = mydate [ i ] sql = paste (”
+INSERT INTO tempDaily SELECT tempTrap . trapID , ' ” , c u r d a t e , ” ' AS t d a t e , t r a p R a t e FROM tempTrapCatch , tempTrap WHERE
+tempTrapCatch . trapID = tempTrap . trapID AND ' ” , c u r d a t e , ” ' >= d a t e 1 AND ' ” , c u r d a t e , ” ' <= d a t e 2 ; ” ,
+sep =””) dbSendQuery ( conn , sql ) } ##########################################################################################
+# Calculate trap rate for each trap over the trapping period s q l = ( ”SELECT trapID , MIN( t d a t e ) AS minDate , MAX( t d a t e ) AS maxDate , AVG( t r a p R a t e )
+AS meanTrapRate FROM tempDaily GROUP BY trapID ORDER BY trapID ; ” )
+rs = dbSendQuery ( conn , sql ) standardTraps = f e t c h ( rs , −1)
+10
+

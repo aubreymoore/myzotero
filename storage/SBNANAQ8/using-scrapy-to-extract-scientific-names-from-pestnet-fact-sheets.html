@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0.2" name="wpd_version">
+<meta content="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/" name="wpd_baseurl">
+<meta content="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/" name="wpd_url">
+<meta content="2017-06-24T17:47Z" name="wpd_date">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using Scrapy to Extract Scientific Names from PestNet Fact Sheets | Aubrey Moore</title>
+
+
+
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://aubreymoore.github.io/blog/rss.xml">
+<link rel="canonical" href="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+<meta name="author" content="Aubrey Moore">
+<link rel="prev" href="https://aubreymoore.github.io/blog/posts/finding-lost-parents/" title="Finding Lost Parents" type="text/html">
+<link rel="next" href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" title="Calculate geographical coordinates for equidistant points at vertices of a triangular grid" type="text/html">
+<meta property="og:site_name" content="Aubrey Moore">
+<meta property="og:title" content="Using Scrapy to Extract Scientific Names from PestNet Fact Sheets">
+<meta property="og:url" content="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/">
+<meta property="og:description" content="PestNet serves a couple of hundred excellent pest fact sheets on its site at http://www.pestnet.org/fact_sheets/index.htm. Unfortunately, these are indexed only by vernacular names. I want to hyperlin">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-05-18T13:00:26+10:00">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="scrapy">
+
+<link media="all" href="using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://aubreymoore.github.io/blog/">
+
+                <span id="blog-title">Aubrey Moore</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="https://aubreymoore.github.io/blog/archive.html">Archive</a>
+                </li>
+<li>
+<a href="https://aubreymoore.github.io/blog/categories/">Tags</a>
+                </li>
+<li>
+<a href="https://aubreymoore.github.io/blog/rss.xml">RSS feed</a>
+
+                
+            </li>
+</ul>
+<span class="navbar-form navbar-left">
+<input id="tipue_search_input" class="form-control" placeholder="Search" type="text"></span>
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/index.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/" class="u-url">Using Scrapy to Extract Scientific Names from PestNet Fact Sheets</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+
+                    Aubrey Moore
+            </span></p>
+            <p class="dateline"><a href="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/" rel="bookmark"><time class="published dt-published" datetime="2017-05-18T13:00:26+10:00" itemprop="datePublished" title="2017-05-18 13:00">2017-05-18 13:00</time></a></p>
+            
+        <p class="sourceline"><a href="https://aubreymoore.github.io/blog/posts/using-scrapy-to-extract-scientific-names-from-pestnet-fact-sheets/index.md" id="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>PestNet serves a couple of hundred excellent pest fact sheets on its site at http://www.pestnet.org/fact_sheets/index.htm. Unfortunately, these are indexed only by vernacular names. I want to hyperlink to sheets using scientific names.  So I wrote a  <a href="https://scrapy.org/">scrapy</a> script to crawl the site and scrape the section from each page which contains scientific names.  </p>
+<pre class="code literal-block"><span></span><span class="kn">from</span> <span class="nn">scrapy.spiders</span> <span class="kn">import</span> <span class="n">CrawlSpider</span><span class="p">,</span> <span class="n">Rule</span>
+<span class="kn">from</span> <span class="nn">scrapy.contrib.linkextractors</span> <span class="kn">import</span> <span class="n">LinkExtractor</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">class</span> <span class="nc">someSpider</span><span class="p">(</span><span class="n">CrawlSpider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">'crawltest'</span>
+    <span class="n">allowed_domains</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'www.pestnet.org'</span><span class="p">]</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'http://www.pestnet.org/fact_sheets/index.htm'</span><span class="p">]</span>
+    <span class="n">rules</span> <span class="o">=</span> <span class="p">(</span> <span class="n">Rule</span><span class="p">(</span><span class="n">LinkExtractor</span><span class="p">(</span><span class="n">allow</span><span class="o">=</span><span class="p">()),</span> <span class="n">follow</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="s1">'parse_item'</span><span class="p">),</span> <span class="p">)</span>
+
+
+    <span class="c1"># Let's capture scientific names</span>
+    <span class="k">def</span> <span class="nf">parse_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="n">log</span> <span class="o">=</span> <span class="s1">'scientific_names_log.md'</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+        <span class="n">searchObj</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="s1">r'&lt;a name="Scientific Name"(.*?)&lt;a name='</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="o">|</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">searchObj</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">searchObj</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="s2">"Nothing found!!"</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'{} {}</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">result</span><span class="p">))</span>
+        <span class="k">return</span>
+</pre>
+
+
+<p>The script was invoked from the terminal using:</p>
+<pre class="code literal-block"><span></span>scrapy runspider scrapePP.py -s <span class="nv">DEPTH_LIMIT</span><span class="o">=</span>1
+</pre>
+
+
+<p>Here are the first few lines from <strong>scientific_names_log.md</strong>:</p>
+<pre class="code literal-block"><span></span>http://www.pestnet.org/fact_sheets/mini/index.htm Nothing found!!
+http://www.pestnet.org/fact_sheets/batiki_blue_grass_eye_spot_207.htm &gt;<span class="nt">&lt;/a&gt;&lt;h1</span> <span class="na">class=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"False"</span><span class="nt">&gt;</span>Scientific Name<span class="nt">&lt;/h1&gt;&lt;P&gt;&lt;EM&gt;</span>Curvularia ischaemi<span class="nt">&lt;/EM&gt;&lt;/P&gt;</span>
+http://www.pestnet.org/fact_sheets/bean_pod_borer_037.htm &gt;<span class="nt">&lt;/a&gt;&lt;h1</span> <span class="na">class=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"False"</span><span class="nt">&gt;</span>Scientific Name<span class="nt">&lt;/h1&gt;&lt;P&gt;&lt;EM&gt;</span>Maruca<span class="nt">&lt;/EM&gt;</span> <span class="nt">&lt;EM&gt;</span>vitrata<span class="nt">&lt;/EM&gt;</span>; it used to be known as <span class="nt">&lt;EM&gt;</span>Maruca testulalis.<span class="nt">&lt;/EM&gt;&lt;/P&gt;</span>
+http://www.pestnet.org/fact_sheets/bean_lace_bug_253.htm &gt;<span class="nt">&lt;/a&gt;&lt;h1</span> <span class="na">class=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"False"</span><span class="nt">&gt;</span>Scientific Name<span class="nt">&lt;/h1&gt;&lt;P&gt;&lt;EM&gt;&lt;/EM&gt;</span><span class="ni">&amp;nbsp;</span><span class="nt">&lt;EM&gt;</span>Corythucha gossypii<span class="nt">&lt;/EM&gt;&lt;/P&gt;</span>
+http://www.pestnet.org/fact_sheets/bean_phaseolus_rust_217.htm &gt;<span class="nt">&lt;/a&gt;&lt;h1</span> <span class="na">class=</span><span class="s">""</span> <span class="na">style=</span><span class="s">"False"</span><span class="nt">&gt;</span>Scientific Name<span class="nt">&lt;/h1&gt;&lt;P&gt;&lt;EM&gt;</span>Uromyces appendiculatus<span class="nt">&lt;/EM&gt;</span> \r\nvar. <span class="nt">&lt;EM&gt;</span>appendiculatus.<span class="nt">&lt;/EM&gt;</span> Previously <span class="nt">&lt;EM&gt;</span>Uromyces \r\nphaseoli.<span class="nt">&lt;/EM&gt;</span> <span class="nt">&lt;/P&gt;</span>
+</pre>
+
+
+<p>As you can see, there was still some work to be done to clean this up. I used the <a href="https://atom.io/">atom</a>  editor to delete the extraneous bits and saved urls and scientific names to 
+<a href="https://aubreymoore.github.io/blog/pacific_pests_insects.csv">pacific_pests_insects.csv</a>. Note that this file contains info only on arthropod pests.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="https://aubreymoore.github.io/blog/categories/python/" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="https://aubreymoore.github.io/blog/categories/scrapy/" rel="tag">scrapy</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="https://aubreymoore.github.io/blog/posts/finding-lost-parents/" rel="prev" title="Finding Lost Parents">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="https://aubreymoore.github.io/blog/posts/calculate-geographical-coordinates-for-equidistant-points-at-vertices-of-a-triangular-grid/" rel="next" title="Calculate geographical coordinates for equidistant points at vertices of a triangular grid">Next post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+
+            Contents © 2017         <a href="mailto:aubreymoore@guam.net">Aubrey Moore</a> - Powered by         <a href="https://getnikola.com/" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><!-- Modal --><div id="search-results" class="modal fade" role="dialog" style="height: 80%;">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Search Results:</h4>
+      </div>
+      <div class="modal-body" id="tipue_search_content" style="max-height: 600px; overflow-y: auto;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+
+$(document).ready(function() {
+    $.when(
+        $.getScript( "/assets/js/tipuesearch_set.js" ),
+        $.getScript( "/assets/js/tipuesearch.js" ),
+        $.Deferred(function( deferred ){
+            $( deferred.resolve );
+        })
+    ).done(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'json',
+            'contentLocation': '/assets/js/tipuesearch_content.json'
+        });
+        $('#tipue_search_input').keyup(function (e) {
+            if (e.keyCode == 13) {
+                $('#search-results').modal()
+            }
+        });
+    });
+});
+</script>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body>
+</html>

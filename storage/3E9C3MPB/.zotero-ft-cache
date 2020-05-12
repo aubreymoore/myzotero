@@ -1,0 +1,351 @@
+Apidologie (2015) 46:10–22 * The Author(s), 2014. This article is published with open access at Springerlink.com DOI: 10.1007/s13592-014-0298-x
+
+Review article
+
+Application of continuous monitoring of honeybee colonies
+W. G. MEIKLE1, N. HOLST2
+1USDA-ARS, 2000 E. Allen Rd, Tucson, AZ 85719, USA 2Department of Agroecology, Aarhus University, Forsøgsvej 1, 4200 Slagelse, Denmark
+Received 7 January 2014 – Revised 24 April 2014 – Accepted 3 June 2014
+Abstract – Monitoring physical variables associated with honeybee colonies, including weight, temperature, humidity, respiratory gases, vibration, sound, and forager traffic, in a continuous manner is becoming feasible for most researchers as the cost and size of electronic sensors decrease while their precision and capacity increase. Researchers have taken different approaches to collecting and analyzing the resulting datasets, with a view toward extracting information on colony behavior and phenology. The objective of this review is to examine critically the different kinds of data and data analyses, providing researchers with better-informed options for obtaining information on colony phenology in the field without disturbing the hive, and for combining information from different kinds of sensors to obtain a more complete picture of colony status. Wireless sensor networks and powering sensors are briefly discussed.
+continuous hive weight / colony temperature / colony humidity / forager traffic / hive vibration
+
+1. INTRODUCTION
+Interest in monitoring honeybee colonies on a continuous basis, defined here as data gathered from the colony (as opposed to individual bees) hourly or more often for periods exceeding 2 days, is not new. Gates (1914), for example, reported hourly temperature data over several days collected from a beehive in 1907. However, sensor technology has changed a great deal, and its application to both bee research and general beekeeping is increasing. Smaller, cheaper, and more accurate sensors, along with easier connections to computers and the Internet (Faludi 2010), have made it possible for bee researchers and beekeepers to monitor many physical aspects of bee colonies continuously,
+Corresponding author: W.G. Meikle, william.meikle@ars.usda.gov Manuscript editor: Peter Rosenkranz
+
+remotely, and with little manpower. Once sensors have been installed, hives can be monitored without disturbance, including during periods when invasive hive inspections are contraindicated, such as during winter or times of colony stress.
+Honeybee colonies present particular advantages as subjects for continuous monitoring, especially when kept in hives where all parts of the colony are easily separated, measured, and, if need be, modified. Honeybee colonies are active, in one way or another, all day every day and have been considered as “superorganisms” (Southwick and Mugaas 1971; Moritz and Southwick 1992; Schmolz et al. 1994) with individual bees playing roles analogous to cells in a multicellular organism. Bees behave collectively in ways that isolated or solitary bees do not, such as by regulating temperature and humidity (Human et al. 2006), and by protecting the colony against diseases and pests (Evans and Spivak 2010). How effectively a given colony performs these collective, complex behaviors can be used as indicators of colony
+
+Application of continuous monitoring of honeybee colonies
+
+11
+
+genetics, phenology, and health. The capacity of a colony to regulate colony temperature, for example, has been found to be a function of the bee subspecies (W-Worswick 1987), the within-colony genetic diversity (Jones et al. 2004), and phenological status (Stalidzans and Berzonis 2013).
+Healthy honeybee colonies maintain, in many respects, a stable environment within at least part of the hive, but that environment is still subject to changing biotic and abiotic factors. A local nectar flow can rapidly boost the colony’s food reserves (Gary 1992), or a sudden exposure to pesticide in a field nearby may suddenly reduce the number of foragers (Rortais et al. 2005). A sudden period of unusually cold weather may reduce forager activity and brood production (Hoopingarner and Waller 1992). Internal events, such as the death of the queen or reproductive swarming, may cause abrupt changes to colony dynamics (Gary 1992). By monitoring colonies continuously, a researcher conducting field experiments can account for such factors when evaluating treatment effects. Studies that addressed bee health and behavior only outside the hive, such as foraging activity measured at flowers (e.g., Sabara and Winston 2003) or at feeding dishes (e.g., Colin et al. 2004), were not considered here.
+Here, we present early and recent studies employing continuous monitoring of physical parameters of honeybee colonies and discuss method application and data interpretation. Continuous monitoring provides longitudinal data that allows correlation of hive events, such as changes in forager activity, with changes in hive health, phenology, and queen status, and with external factors, such as weather, nectar flow, or pesticide exposure, and it provides an important perspective to studies on the interactions between colony health and the environment.
+2. LITERATURE REVIEW
+The objectives, methods, location (field or laboratory), and duration of studies involving continuous monitoring of bee colonies have varied among researchers (Table I). Sensors have been grouped here into four main types: (1) weight; (2) temperature, humidity, and gas; (3) sound and vibration; and (4) forager traffic. The
+
+variables examined in these studies can be considered either state variables (weight, temperature, humidity, gases) or rate variables (forager traffic), which offer different options for statistical analysis and biological inference. Among the state variables, colony weight at any particular moment is merely a physical characteristic with little information on colony status per se, but firstand second-order changes in weight over time are informative. Temperature, humidity, and respiratory gas concentrations are somewhat different since these variables are directly related to the metabolism of the bee colony (Kronenberg and Heller 1982; Van Nerum and Buelens 1997). There are often temperature and gas gradients within a hive, so data depend on the location and precision of the sensor. Vibration and sound are difficult to categorize as state or rate as they can be considered in both time and frequency domains. Bees use vibration and sound to communicate, but they also produce vibrations and sounds they likely do not use (Atauri Mezquida and Llorente Martínez 2009) and may not even detect, although those may provide information about the hive. A final section discusses the application of wireless networks to continuously monitored systems.
+2.1. Colony weight
+Placing a honeybee hive on a scale to weigh it disturbs the hive very little—and if the hive is kept on the scale, then weighing it does not disturb the bees at all. Occasional weighing (weekly or even daily) is usually done to determine when to harvest honey or to estimate hive food reserves (e.g., McLellan 1977; Szabo and Lefkovitch 1991; Harbo 1993). Continuous weighing with a sufficiently precise scale can provide that information as well as data on shorter-term changes in the hive. Weight data is easy to define and analyze: a colony has a single weight value at a given point in time, and scales are widely available and easily installed. Most load cells control for temperature variability, at least over a given range of values, but some weather factors, such as precipitation and wind, can affect the data.
+In early applications of continuous monitoring, Gates (1914) and Hambleton (1925) placed 10-
+
+12 W.G. Meikle and N. Holst
+
+Table I. Summary of research using continuous monitoring methods.
+
+Parameter
+
+Method
+
+Location
+
+No. of replicate colonies
+
+Duration of hourly datasets
+
+Reference
+
+Weight and temperature
+Weight
+Weight
+
+Mechanical balance and in-hive mercury thermometers
+Mechanical balance
+Electronic balance
+
+Field
+Field Field
+
+1
+2 1
+
+Weight Temperature
+
+Electronic balance Electric thermocouples
+
+Field
+
+2–4
+
+Insulated room 1
+
+Temperature, [O2] and [CO2]
+Temperature
+Temperature, [CO2], no. of fanning bees
+Temperature, [O2], no. of fanning bees
+Temperature, [O2] and [CO2]
+Temperature, [O2] and [CO2], humidity
+Temperature Temperature, humidity
+
+Electric thermocouples, metabolic chamber with extracted air passed through external detectors
+Extracted air passed over thermometer
+In-hive mercury thermometers, extracted air passed through external detectors
+Metabolic chamber with extracted air passed through external detectors
+Extracted air passed through detectors
+In-hive temperature sensors; extracted air passed through gas detectors
+In-hive sensors
+In-hive sensors
+
+Field
+Field Not stated
+Laboratory
+Field Field and
+laboratory Field Field
+
+Temperature
+
+In-hive sensors
+
+Field
+
+1
+1 1
+Not stated
+10 Not stated
+8 3 (incl. empty
+control) 14
+
+Vibration
+
+In-hive sensors
+
+Field
+
+2
+
+1 year: hourly during the day
+12 days 1 month
+16 months 5 months; hourly during
+the day 3 days
+
+Gates (1914)
+Hambleton (1925) Buchmann and Thoenes
+(1990) Meikle et al. (2006, 2008) Phillips and Demuth (1914)
+Milner (1921)
+
+Approx. 5 days 52 h
+
+Southwick and Mugaas (1971)
+Seeley (1974)
+
+Series of 24–48-h experiments over 14 months
+Not specified; some periods of at least 12 h
+18 weeks
+
+Kronenberg and Heller (1982)
+Southwick and Moritz (1987)
+Van Nerum and Buelens (1997)
+
+2 weeks 4 days
+
+Jones et al. (2004) Human et al. (2006)
+
+1 year Approx. 8 months
+
+Stalidzans and Berzonis (2013)
+Bencsik et al. (2011)
+
+Application of continuous monitoring of honeybee colonies
+
+13
+
+Reference Ferrari et al. (2008) Atauri Mezquida and
+Llorente Martínez (2009) Burrill and Dietz (1981) Danka and Beaman (2007) Schneider et al. (2012)
+
+23 days 9 days 10 trials of up to
+48 h each
+
+Approx. 1 year
+
+Duration of hourly datasets
+
+270 h
+
+No. of replicate colonies
+
+Field 1 Field 40 Field 2
+
+10
+
+3
+
+frame Langstroth hives on mechanical balances in sheltered locations. About every 3 weeks from October 1907 to September 1908, Gates (1914) recorded “by means of assistance” weight and temperature data hourly for 2 to 3 days but presented data on daily weight change only for the winter, including changes caused by rainfall. Hambleton (1925) established a team of three people, in 8-h shifts, to manually record the hourly hive weight changes for several days in September 1922, and for 13 consecutive days in May 1923. He noted the strong daily pattern of weight loss, attributed to water loss through nectar drying and respiration during the night and to departing foragers early in the morning, followed by weight gain due to foraging from mid-morning until late evening. Hambleton (1925) correlated ambient weather variables, including temperature, relative humidity, and hours of sunshine, with hive weight changes, under the assumption that those factors affect nectar production which in turn affects colony weight.
+Use of manual labor by Gates (1914) and Hambleton (1925) to record weight data was dictated by the technology available at the time. Buchmann and Thoenes (1990) introduced the use of continuous weight monitoring using a precision scale linked to a computer to record data every 15 min for 1 month (August 1988) for a single hive and used the data to link hive abandonment to tracheal mite (Acarapis woodi Rennie) infestation. Meikle et al. (2006, 2008) deployed a similar system: hives placed on precision electronic scales linked to data loggers. Similar to previous workers, data loggers were set to record weight hourly or more often, and weight was recorded for up to four hives over 16 months. Meikle et al. (2006, 2008) calculated the 25-h running average, subtracted those values from the hourly raw data to produce “detrended” residuals and then fit sine functions to these residuals. They showed the effects of swarming on daily detrended data, and also that an empty wooden hive has a detectable daily weight change pattern, probably due to moisture content changes in the wood.
+Continuous weighing has been shown to provide information on weather effects (Gates 1914; Hambleton 1925; Meikle et al. 2006), colony growth and consumption (Meikle et al. 2008),
+
+Location Field Field
+
+Hive entrance sensors Hive entrance sensors RFID tags and entrance
+sensors
+
+Method
+
+Acoustics, temperature, In-hive sensors relative humidity
+Acoustics, temperature In-hive sensors
+
+Forager traffic Forager traffic Forager traffic
+
+Table I (continued) Parameter
+
+14 W.G. Meikle and N. Holst
+
+swarming (Buchmann and Thoenes 1990; Meikle et al. 2006), hive abandonment (Thoenes and Buchmann 1992), the impact of pesticides on bee colonies, changes in nectar and pollen availability, and differences among honeybee races (Buchmann and Thoenes 1990). Continuously weighing hives provides data on colony-level weight changes but not with respect to colony component (adults, brood, and food reserves), and while detrended data shows forager activity, this data is confounded at least to some degree with water and pollen gain and loss, which can be significant at certain times of the year. For this reason, some measurement of colony size and food reserves is useful for interpreting weight data, although many studies have not provided this. Meikle et al. (2008) evaluated hives every 2 weeks over 6 months in 2005 and 3 months in 2006. By subtracting the weights of the hive parts from the total hive weight, and analyzing the photographs taken of each side of each frame to determine the percentage of capped brood and food reserves, they estimated the masses of the adult bee and brood populations, the food reserves, and the daily food demand. Changes in the running average hive weight were correlated with colony growth, and the amplitude of sine waves fit to the detrended data was correlated with daily colony food demand.
+2.2. Colony temperature, humidity, and gas concentrations
+Like weight data, temperature, humidity, and gas measurements provide single values per sensor at a given point in time, but unlike weight data, there is a range of values within a beehive, depending on the number and placement of the sensors. The position within the hive of a given temperature or gas sensor will determine to what extent it is affected by exterior ambient conditions, and differences among various points within a hive can be large. Temperature sensors, for example, within the brood cluster, usually the warmest part of the hive (Southwick 1992), will be affected less by exterior conditions while those nearer the exterior of the hive can be expected to be affected more. Sensors at fixed points may change over time with respect to their distance to the brood
+
+cluster as bees move and change the size of the cluster during the year and reduce or eliminate them in the winter (Szabo 1989) when gradients in temperature, for example, between exterior and interior, and top and bottom, are more extreme. Arrays of sensors embedded on the surface of hive frames would solve this problem but may be expensive to implement; Owens (1971) described the use of thermocouple arrays in winter hives to monitor cluster location and size. Researchers without access to sensor arrays may need to consider involving replicate hives in order to control for variability in brood location. Sensor placement can be standardized with respect to the hive, such as on top of a middle frame in the brood box, or with respect to the colony, such as the center of the brood cluster. In the latter case, sensors may be in a different place in each hive.
+Gases (including water vapor) have been sampled in beehives primarily using one of three methods: (1) placing the colony in a metabolic chamber and passing respiratory gases of known composition through the colony while measuring [O2] and [CO2] in the output (e.g., Milner 1921); (2) removing air samples from the hive using either pipettes (e.g., Van Nerum and Buelens 1997) or plastic tubing (e.g., Seeley 1974; Southwick and Moritz 1987) and then measuring gas in detectors outside the hive; or (3) placing sensors within the hive (e.g., Human et al. 2006). The first approach is ideal for colony-level studies of gas exchange rather than studies of withincolony gradients. The second approach allows researchers to sample air at very precise locations within the hive but will likely require hive modification or some disturbance and may be difficult to implement over large numbers of hives. The third approach is convenient in that commercially available gas sensors can fit easily between or within frames and large numbers of hives can be monitored simultaneously. However, in the hive, bees tend to cover foreign objects with propolis or wax which would interfere with air movement across the sensor, so in-hive gas sensors must be checked with some regularity to ensure that they or their protective covers are sufficiently clean. Care must also be taken when placing sensors directly on brood, as the sensor
+
+Application of continuous monitoring of honeybee colonies
+
+15
+
+can interfere with comb maintenance and with bee emergence (WGM pers. obs.). Data from tubes or sensors at fixed sites may also be affected by movement of the brood cluster.
+Measurement of temperature and gas concentrations has been conducted largely to understand metabolic processes on the colony level. Milner (1921), after making calculations from temperature and O2 consumption, determined that the energy produced by a colony of bees, even in conditions of favorable temperatures and low disturbance, exceeded that, when considered per unit weight, of a “man when working at hard manual labor” and expected that the energy production would be even greater under less favorable conditions. Southwick and Mugaas (1971) confirmed observations by Gates (1914) that when ambient temperatures were <5 °C, decreasing ambient temperature was associated with increasing colony core temperature (mostly 20–32 °C). Seeley (1974) observed changes in the number of fanning bees when [CO2], [O2], and [N2] were manipulated; only changing [CO2] influenced fanning behavior, presumably because bees can detect changes in [CO2] but not the other gases (Southwick and Moritz 1987). Van Nerum and Buelens (1997) observed that bees actively maintained low (15 %) O2 levels, which caused a reversible hypoxia and reduced metabolic rate among the bees which, they hypothesized, allowed bees to combine water conservation, energy conservation, and longevity with the ability to increase energy consumption on short notice if needed for hive defense. By measuring bee fanning activity while manipulating temperature, Jones et al. (2004) found that temperature variation within a colony was significantly lower in diverse patriline colonies compared to the uniform patriline colonies, suggesting that genetic diversity among workers may promote greater temperature stability owing to different genetic thresholds for action.
+Several research groups have observed daily or shorter-term temporal patterns in the data. Kronenberg and Heller (1982) noted “periodic, pulsatile increases in metabolic rate on the overall daily rhythm” of the bee groups which they thought might be linked to forager activity, and Southwick and Moritz (1987) presented data on the change in [O2] over 24 h, showing a clear diurnal cycle in the
+
+frequency of respiration in addition to the higherfrequency cycles of air movement. On an even finer time scale, Southwick and Moritz (1987) observed “peaks of tidal air movement” with a frequency of about 22 s, and irregular periods of 4 to 37 min of lower amplitude superimposed on the shorter periods. To exploit daily patterns, Human et al. (2006) applied cosinor analysis to the half-hour averages in order to evaluate whether relative and absolute humidity changes exhibited circadian rhythmicity and whether that rhythmicity differed among hives. Cosinor analysis involves fitting sinusoidal waves to datasets using least sums-ofsquares and making statistical comparisons of wave parameters, such as amplitude, phase, and mesor (value about which an oscillation occurs), among treatment groups (Nelson et al. 1979). Human et al. (2006) found that bees can maintain absolute humidity levels well above external levels, with greater variability near the brood than near the nectar and honey stores.
+2.3. Hive vibration and sound
+Vibration and sound are physically linked phenomena measured at a point in space over time, either on the surface of the hive or within the hive volume. Vibration and sound data contain rich spectra of overlapping wave forms and require processing to distil biologically meaningful information. Vibration of the hive substrate is an important form of communication among bees (Nieh and Tautz 2000; Sandeman et al. 1996; Schneider et al. 1986), which have specialized receptors in their legs for receiving low-frequency signals, generally <300 Hz (Sandeman et al. 1996), and the signals are thought to involve recruitment for foraging (Nieh and Tautz 2000). However, bees in a hive produce many frequencies of vibrations, from <10 to >1,000 Hz (Bencsik et al. 2011), and how much of this spectrum is used by bees is unknown. Several methods have been used to gather vibration data. Nieh and Tautz (2000) used laser vibrometry, focusing a laser on the wall of a comb cell next to a dancing bee and measuring the displacement. The method provided accurate data for single bees in a specific part of the comb, but is impractical for use on entire bee colonies in the field.
+
+16 W.G. Meikle and N. Holst
+
+Vibration data for a beehive, when examined as amplitude over time, tend to be “noisy” and contain many peaks of different sizes (please see Figure 5 in Nieh and Tautz 2000). One method to analyze this kind of data is to apply a discrete Fourier transform, which represents the data in the frequency domain as the sum of a series of sinusoidal waves of varying frequencies and amplitudes (Smith 2003) and thereby obtain a frequency spectrum. Amplitude data in both the time and frequency domains can be represented on spectrograms and those spectrograms examined for particular time periods, such as waggle dancing (Nieh and Tautz 2000). Researchers have used two main approaches to process vibration and sound data: (1) apply principal components analysis (PCA) to the entire range of resulting frequencies, and then evaluate the components that capture most of the information, and (2) focus on the amplitudes of a few frequency bands identified beforehand.
+Bencsik et al. (2011) embedded a vibration sensor, an accelerometer, in the wall of each of two hives, linking the sensor to a signal conditioner and a computer with considerable disk space. They collected data almost continuously from November 2008 to June 2009. Individual bees can be expected to vibrate at different frequencies and without phase coherence, so to resolve that problem, Bencsik et al. (2011) maintained a frequency resolution of 20 Hz and examined relatively short data samples of 510 s. They found that those samples produced power spectra with a satisfactory signal to noise ratio to determine frequency peaks, and they filtered much of the data noise by first expressing data in the frequency domain PCA and then selecting the components with eigenvalues in the top 5 %. Principal components are orthogonal to each other, so each component represents a unique source of variance. Bencsik et al. (2011) were thus able to focus on the strongest patterns without losing appreciable resolution; they used the PCA-filtered data to examine vibration frequencies prior to bee colony swarming.
+Sound data is as rich as vibration data, but beeproduced sounds are somewhat better understood. Most beekeepers listen to their hives, and the meaning of some sounds is well known (Schlegel et al. 2012; Seeley 2010). Rangel and Seeley
+
+(2008) took advantage of this by embedding a microphone in each of five small (three-frame) observation hives and, over the course of about a month, used the microphones to detect a particular kind of sound, “piping”. When piping was detected at a certain threshold rate, in this case at least three signals in 30 s, they switched on video equipment to capture images that were later analyzed for bee movement.
+Long-term sound monitoring of entire hives has seldom been reported, probably because the resulting amount of data tends be very large and unwieldy. Ferrari et al. (2008) monitored sound, temperature and relative humidity for 270 hours using within-hive sensors and observed 9 swarming events among three colonies; they observed increases in sound intensity and drops in temperature and humidity during the swarming. Atauri Mezquida and Llorente Martínez (2009) placed microphones and temperature sensors in up to 10 hives between May 2008, and April 2009. They recorded temperature within and outside the hive, and for each 8-s sound sample, they monitored the power (in W), the “rugosity” (an index of noisiness), and the tone and intensity of the five main sound frequency bands, as determined by a Fourier transform of the sound sample. These analyses provided some qualitative data concerning sound differences between healthy hives and those infected with chalkbrood (Ascosphaera apis), but the main goal of the paper was to introduce methods to analyze continuous sound data.
+2.4. Forager traffic
+Foraging is necessary for food gathering and is generally conducted by older bees (Gary 1992; Gould and Gould 1988). Forager traffic will thus be affected by food availability, food demand, and colony age structure (McLellan 1977), and sudden changes in that traffic may indicate acute changes on the colony level. Pham-Delègue et al. (2002) described forager activity as an important variable to monitor when evaluating the impact of pesticides on honeybee colony health.
+Forager activity is described in terms of the number of bees entering and/or exiting the hive over
+
+Application of continuous monitoring of honeybee colonies
+
+17
+
+a given time period, and so data can be collected, if need be, without the use of equipment more sophisticated than an observer and a stopwatch. Kolmes and Sam (1990) observed hives for several minutes per day over 23 days to analyze bee activity during hive establishment, and Corbett et al. (1993) collected data visually on the activity of several species of social bees with forager counts for several hours per day over 1–4 days. The use of human observation, while likely accurate, clearly limits, due to fatigue, the amount of time that the hive can be observed. Automating this has been a goal for some time; Faberge (1943) proposed an electrical counter as an improvement upon one originally described by Lundie (1925), which depended on bees tripping a balance arm, which produced electrical impulses that drove a printer. Faberge discussed the use of photovoltaic cells, but dismissed them as too expensive at the time. Later, Spangler (1969), Erickson et al. (1975), Liu et al. (1990) and others developed such counters.
+Several designs of hive entrance counters have been used. Burrill and Dietz (1981) gathered forager traffic data, using a photoelectric bee counter (“Apicard”) placed at the hive entrance, for 30-min periods (data were recorded every 15 s and were pooled) over 23 consecutive days from a single colony of bees and analyzed those data with respect to ambient weather conditions. Danka and Beaman (2007) used commercially available bee counters of a design described by Struye et al. (1994) to measure flight activity among 40 colonies of “Russian” and “Italian” bee races during blueberry pollination. Part of the objective of that study was to determine whether either race conducted more foraging flights per hour than the other race after controlling for weather and black globe temperature (Corbett et al. 1993). Danka and Beaman (2007) did observe a problem with counters installed at the hive entrance: under certain conditions, bees tend to cluster around the sensor, causing spurious “entrance” and “exit” readings, which can have large effects on the data, so they conducted visual counts of forager flights as well. Validating the hive entrance data using other means, as Danka and Beaman (2007) did, greatly increases ease of data interpretation.
+
+Streit et al. (2003) introduced the use of radiofrequency identification (RFID) tags to monitor honeybee movement in and out of the hive. The tags, which are small and weigh a few milligrams or less, are attached to adult bees. A detector records each time the tag crosses a threshold. To determine whether a given bee is entering or leaving, two detectors are used in one of two ways: (1) bees are restricted to a single entrance hole and two detectors arranged so that the order in which the bee crosses the detector determines direction or (2) the entrance is modified so that entering bees are obliged to pass one detector and exiting bees another. The RFID systems can provide data on bee life expectancy, foraging time, and other crucial information concerning hive dynamics. Schneider et al. (2012) used the RFID technology to investigate sublethal pesticide effects on bee colonies by exposing workers from a small colony of about 2,000 bees to contaminated sugar syrup at a feeder (>29,000 trips were observed but the number of bees tagged was not reported). Detectors were set up at the hive and the syrup feeder, and the effects of pesticide exposure were measured as the return rate of foragers from the feeder.
+RFID detector and tag systems can be somewhat expensive, and some care must be taken that neither the tags nor the glue to attach them affects bee behavior or survivorship. Tags are generally used once, which adds to the cost of each replicate hive and each experiment. Most RFID detectors require modification of the hive entrance. The detectors induce an electric current in the tags and need the tag to pass at a short distance (often 5 mm or less); they are thus sensitive to the orientation of the bee as it crosses the detector threshold. Schneider et al. (2012) modified the entrance to ensure proper orientation.
+Because forager traffic is closely linked to colony food intake and to pollination, it is a particularly useful variable for researchers, beekeepers, and growers. Burrill and Dietz (1981) found that while changes in flight activity were directly proportional to environmental temperature changes across the observed temperature range, which was true for changes in solar radiation only to a certain threshold (0.66 langleys), above which flight activity decreased with increasing solar radiation. Danka and
+
+18 W.G. Meikle and N. Holst
+
+Beaman (2007) found no significant difference in forager activity between the two bee races after controlling for colony size, but did find significant ambient temperature effects. Schneider et al. (2012) found no effect on forager return success rate at field-level doses of neonicotinoid pesticides, but they did observe effects at higher doses.
+2.5. Wireless networks
+Sensors are often used in environmental and agricultural monitoring, and data collection in those fields is often managed using wireless networks (Aqeel-ur-Rehman et al. 2014; Hart and Martinez 2006; Ruiz-Garcia et al. 2009; Zerger et al. 2010). Advances in technology and the increasing availability of wireless network access even in comparatively remote locations have made the use of such networks a commonplace among researchers, farmers, and land and wildlife managers. Where wireless phone networks are not available, transmitters are available to access satellite phone networks. Aqeel-ur-Rehman et al. (2014) compare different kinds of networks in terms of, among other aspects, frequency band, cost, energy consumption, and security. Zerger et al. (2010) provided examples of how sensor networks have been employed in three main application domains: vegetation, animals, and soils.
+Clearly, much potential exists for such networks in apiculture. An excellent application of wireless technology to create a network of beehives on scales can be found on the internet at http://www. bienenkunde.rlp.de. Data on hive weight and weight change, as well as ambient temperature and r.h. are available for over 70 sites across Germany, and those data are updated every 5 min. Such region-wide networks will likely prove very valuable for evaluating the impact of regional effects, such as climate or large-scale agricultural practices, which would be difficult or impossible on a smaller scale.
+3. DISCUSSION
+Methods and technology for continuous monitoring of beehives have changed since Gates (1914), Milner (1921), and Hambleton
+
+(1925), although their dedication to the task was impressive. Modern studies involve more electronics with a higher sampling frequency for more hive parameters. The use of sensors also permits hive observation without disturbance; gathering field data on colony growth and phenology from frequent, invasive hive inspections, for example, to assess treatment effects, can provoke bee defensive behavior (Breed et al. 2004), enable robbing by other colonies (Gary 1992), and lose, injure, or kill the queen in addition to disrupting the hive environment. Small, autonomous sensors, particularly those linked to wireless networks, can provide much information in real time with no disturbance.
+Continuous monitoring has been applied to study colony growth, activity, metabolic processes, genetics, and behavior. One objective in continuously monitoring has been to examine temporal patterns, but many studies have tended more toward “proof of concept” with the general application of the results being hampered by a low number, or even lack, of replicate bee colonies. Low replicate numbers can be attributed largely to equipment costs, which are not negligible; environmental chambers, respirometers, electronic balances, accelerometers, RFID tags, and associated equipment are expensive by most standards (temperature sensors less so). Common access to cheap and open-source electronics is quite recent (Faludi 2010), and researchers have often resorted to replication through time, if only for one or a few hives, to compensate for the singularity of their monitoring setup. As costs for electronics decrease, the costs of replication will decrease and thus become more widely applied.
+Continuous monitoring involves, by definition, conducting observations over time. While we restricted the scope of this paper to studies with two or more days of data collected at least hourly, the length of time a variable could be measured in a practical sense was in many ways determined by the technology available and by the variable itself. Continuous monitoring of any kind is limited when it depends on constant human attention. Gates (1914) and Hambleton (1925) exerted what was surely considerable effort to monitor hives hourly without interruption for just a few days at a time, while Meikle et al. (2006, 2008) produced hourly weight data for 16 months simply using
+
+Application of continuous monitoring of honeybee colonies
+
+19
+
+electronic data loggers. The quantity of data produced increases rapidly with sampling frequency and the number of sensors and colonies involved. Managing, and extracting useful information from, continuous data from experiments using large numbers of hives over extended periods of time can be challenging. Analyses can be simplified by exploiting patterns. Some variables, such as weight, temperature, and humidity, have been found to have strong sinusoidal components (Human et al. 2006; Meikle et al. 2008) owing to circadian rhythmicity; statistical analyses can be conducted on curve parameters.
+Monitoring bee colonies in the field can have significant logistical requirements. In some cases, technology has changed a great deal. To measure temperature, Gates (1914) and Seeley (1974) used mercury thermometers; Philips and Demuth (1914), Milner (1921), and Owens (1971) used electric thermocouples; whereas more recent research has been conducted with small, inexpensive, accurate, battery-powered electronic sensors (e.g., Human et al. 2006). With battery power, some sensors can last for months before memory restrictions require a download and have sufficient power to last for years. In other cases the changes in technology have been less drastic. Electronic scales sufficiently robust and precise for fieldwork still tend to be expensive and heavy. In addition, some sensors might not be readily transferred among hives; as noted above, Bencsik et al. (2011) embedded their accelerometers in hive walls, and moving those accelerometers among hives might be difficult. Detectors for forager traffic usually require some modification of the hive entrance, which may complicate rapid installation and removal and may restrict bee activity.
+Almost all of the sensors described here require electricity. Commercially available sensors are usually powered by (1) small watch-type batteries, such as those sensors used by Human et al. (2006); (2) wall current, which requires close proximity of research hives to electric outlets; or (3) high amphour batteries, often combined with an independent power source, such as solar panels (e.g., Meikle et al. 2006, 2008). Sensors such as load cells (with indicators or signal conditioners) and RFID detectors have higher requirements and are likely to need
+
+12 or 24 V DC power or even AC power, which can be provided by either wall current or batteries. How long a given battery system will last before the batteries need recharging depends on the number and types of equipment drawing current from it, including data loggers, wireless transmitters, and transformers. Designing the system to only draw power when a reading is taken would save energy, but constantly rebooting the indicators and signal conditioners should probably be avoided. Researchers with remote hives must either change batteries regularly or generate power using solar panels or wind turbines. Solar power systems can be placed, theoretically, almost anywhere, but do put restrictions on the amount and form of power available. The storage capacity and power draw on the system will determine the size of the batteries and energy generator required, taking into account the need for some “autonomy” in the event that the generator cannot function, such as cloudy weather in the case of solar panels or calm in the case of wind turbines. High-capacity, deep-cycle batteries tend to be heavy and expensive.
+4. CONCLUSIONS
+Continuous monitoring will very likely become a more common tool as both for research and in practical apiculture as electronic components become easier to deploy in the field, owing to small, accurate, and robustly designed sensors. Data on frequently measured variables, such as weight and temperature, will likely be more thoroughly exploited for information. Monitoring hive weight or forager traffic prior to crop pollination would allow beekeepers to observe hive health, and during pollination, those data could provide a record of quality control. Monitoring multiple variables offers the possibility of synergy, as the information that one method validates or augments information gained simultaneously via another method. Combining methods may also provide a way of exploiting data from variables such as vibration, for which the biological interpretation is not always evident. Sound cues have already been the focus of commercially available diagnostic tools for beehives. Other anticipated improvements include the following:
+
+20 W.G. Meikle and N. Holst
+
+1. Increased sampling frequency, for example, may show changes over minutes or seconds and thus explore colony behavior at different time scales.
+2. RFID tags are likely to be increasingly used in bee research; these tags have commercial application, such as for controlling inventory, so that technology is likely to improve substantially in the near future.
+3. Cameras that detect ultraviolet and/or infrared, as well as visible light are likely to be more widely used as image analysis software improves.
+4. Bees have been found to exploit changes in electric fields as a means of communication (Greggers et al. 2013), opening up new avenues for research and sensor development.
+5. Sensors designed to detect the presence or concentration of particular compounds may help in disease or contamination monitoring.
+ACKNOWLEDGMENTS
+The authors would like to warmly thank A. Barron, M. Bencsik, F. Linton, R. Mathew, A. Stilwell, M. Weiss, and two anonymous reviewers for their insightful comments and very helpful suggestions.
+OPEN ACCESS
+This article is distributed under the terms of the Creative Commons Attribution License which permits any use, distribution, and reproduction in any medium, provided the original author(s) and the source are credited.
+Mise en place d’une surveillance en continu de colonies d’abeilles
+Poids de la ruche / température de la colonie / humidité / activité des butineuses / vibration
+Einsatzgebiete für eine kontinuierliche Überwachung von Honigbienenvölkern
+kontinuierliches Bienenvolkgewicht / Bienenvolktemperatur / relative Feuchte / Sammelaktivität / Vibration
+
+REFERENCES
+Aqeel-ur-Rehman, Z.A., Abbasi, A.Z., Islam, N., Shaikh, Z.A. (2014) A review of wireless sensors and networks’ applications in agriculture. Computer Standards & Interfaces 36, 263–270
+Atauri Mezquida, D., Llorente Martínez, J. (2009) Platform for bee-hives monitoring based on sound analysis. A perpetual warehouse for swarm’s daily activity. Span. J. Agric Res 7(4), 824–828
+Bencsik, M., Bencsik, J., Baxter, M., Lucian, A., Romieu, J., Millet, M. (2011) Identification of the honey bee swarming process by analysing the time course of hive vibrations. Comput. Electron. Agric. 76, 44–50
+Breed, M.J., Guzman-Nova, E., Hunt, G.J. (2004) Defensive behavior of honey bees: Organization, genetics, and comparisons with other bees. Annu. Rev. Entomol. 49, 271–98
+Buchmann, S.L., Thoenes, S.C. (1990) The electronic scale honey bee colony as a management and research tool. Bee Sci. 1, 40–47
+Burrill, R.M., Dietz, A. (1981) The response of honey bees to variations in solar radiation and temperature. Apidologie 12(4), 319–328
+Colin, M.E., Bonmatin, J.M., Moineau, I., Gaimon, C., Brun, S., Vermandere, J.P. (2004) A method to quantify and analyze the foraging activity of honey bees: Relevance to the sublethal effects induced by systemic insecticides. Arch. Environ. Contam. Toxicol. 47, 387–395
+Corbett, S.A., Fussell, M., Ake, R., Fraser, A., Gunson, C., Savage, A., Smith, K. (1993) Temperature and the pollinating activity of social bees. Ecol. Entomol. 18, 17–30
+Danka, R.G., Beaman, L.D. (2007) Flight activity of USDA–ARS Russian honey bees (Hymenoptera: Apidae) during pollination of lowbush blueberries in Maine. J. Econ. Entomol. 100(2), 267–272
+Erickson, E.H., Miller, H.H., Sikkema, D.J. (1975) A method of separating and monitoring honey-bee flight activity at the hive entrance. J. Apic. Res. 14, 119–125
+Evans, J.D., Spivak, M. (2010) Socialized medicine: Individual and communal disease barriers in honey bees. J. Invertebr. Pathol. 103, S62– S72
+Faberge, A.C. (1943) Apparatus for recording the number of bees leaving and entering a hive. J. Sci. Instr. 20, 28–311
+Faludi, R. (2010) Building wireless sensor networks. O’Reilly Media, Inc., Sebastopol
+Ferrari, S., Silva, M., Guarino, M., Berckmans, D. (2008) Monitoring of swarming sounds in bee hives for early detection of the swarming period. Comput. Electron. Agric. 64, 72–77
+
+Application of continuous monitoring of honeybee colonies
+
+21
+
+Gary, N.E. (1992) Chapter 8. Activities and behavior of honey bees. In: Graham, J.M. (ed.) The hive and the honey bee, pp. 269–372. Dadant and Sons, Hamilton
+Gates B.N. (1914) The temperature of the bee colony, United States Department of Agriculture, Dept. Bull. No. 96.
+Gould J.L., Gould C.G. (1988) The Honey Bee. Scientific American Library.
+Greggers, U., Koch, G., Schmidt, V., Dürr, A., FloriouServou, A., Piepenbrock, D., Göpfert, M.C., Menzel, R. (2013) Reception and learning of electric fields in bees. Proc. R. Soc. B 280, 20130528
+Hambleton J.I. (1925) The effect of weather upon the change in weight of a colony of bees during the honey flow, United States Department of Agriculture, Dept. Bull. No. 1339.
+Harbo, J.R. (1993) Worker-bee crowding affects brood production, honey production, and longevity of honey bees (Hymenoptera: Apidae). J. Econ. Entomol. 86, 1672–1678
+Hart, J.K., Martinez, K. (2006) Environmental Sensor Networks: A revolution in the earth system science? Earth-Sci. Rev. 78, 177–191
+Hoopingarner, R.A., Waller, G. (1992) Chapter 24. Crop pollination. In: Graham, J.M. (ed.) The hive and the honey bee, pp. 1043–1082. Dadant and Sons, Hamilton
+Human, H., Nicolson, S.W., Dietemann, V. (2006) Do honeybees, Apis mellifera scutellata, regulate humidity in their nest? Naturwissenschaften 93, 397–401
+Jones, J.C., Myerscough, M.R., Graham, S., Oldroyd, B.P. (2004) Honey bee nest thermoregulation: Diversity promotes stability. Science 305, 402–404
+Kolmes, S.A., Sam, Y. (1990) Foraging rates and hive contents during the establishment of honey bee colonies (Apis mellifera L.). J. Apic Res 29(3), 126–131
+Kronenberg, F., Heller, H.C. (1982) Colonial thermoregulation in honey bees (Apis mellifera). J. Comp. Physiol. 148, 65–76
+Liu, C., Leonard, J., Feddes, J.J. (1990) Automated monitoring of flight activity at a beehive entrance using infrared light sensors. J. Apic. Res. 29(1), 20–27
+Lundie A. E. (1925) The flight activities of the honey bees, United States Department of Agriculture, Dept. Bull. No. 1328.
+McLellan, A.R. (1977) Honey bee colony weight as an index of honey production and nectar flow: a critical evaluation. J. Appl. Ecol. 14, 401–408
+Meikle, W.G., Holst, N., Mercadier, G., Derouané, F., James, R.R. (2006) Using balances linked to dataloggers to monitor honeybee colonies. J. Apic. Res. 45(1), 39–41
+Meikle, W.G., Rector, B.G., Mercadier, G., Holst, N. (2008) Within-day variation in continuous hive weight data as a measure of honey bee colony activity. Apidologie 39, 694–707
+Milner E.F. (1921) Heat production of honeybees in winter, United States Department of Agriculture, Dept. Bull. No. 988.
+
+Moritz, R.F.A., Southwick, E.E. (1992) Bees as superorganisms: An evolutionary reality. Springer, Heidelberg
+Nelson, W., Tong, Y.L., Lee, J.K., Halberg, F. (1979) Methods for cosinor rhythmometry. Chronobiologia 6, 305–323
+Nieh, J.C., Tautz, J. (2000) Behaviour-locked signal analysis reveals weak 200–300 Hz comb vibrations during the honey bee waggle dance. J. Exp. Biol. 203, 1573–1579
+Owens C.D. (1971) The thermology of wintering honey bee colonies, United States Department of Agriculture, Agricultural Research Service, Technical Bulletin no. 1429.
+Pham-Delegue, M.-H., Decourtye, A., Kaiser, L., Devillers, J. (2002) Behavioural methods to assess the effects of pesticides on honey bees. Apidologie 33, 425–432
+Phillips E.F., Demuth G.S. (1914) The temperature of the honey bee cluster in winter, United States Department of Agriculture, Dept. Bull. No. 93.
+Rangel, J., Seeley, T.D. (2008) The signals initiating the mass exodus of a honeybee swarm from its nest. Anim. Behav. 76, 1943–1952
+Rortais, A., Arnold, G., Halm, M.-P., Touffet-Briens, F. (2005) Modes of honeybees exposure to systemic insecticides: estimated amounts of contaminated pollen and nectar consumed by different categories of bees. Apidologie 36, 71–83
+Ruiz-Garcia, L., Lunadei, L., Barreiro, P., Robla, J.I. (2009) A review of wireless sensor technologies and applications in agriculture and food industry: State of the art and current trends. Sensors 9, 4728–4750
+Sabara, H.A., Winston, M.L. (2003) Managing honey bees (Hymenoptera: Apidae) for greenhouse tomato pollination. J. Econ. Entomol. 96(3), 547–554
+Sandeman, D.C., Tautz, J., Lindauer, M. (1996) Transmission of vibration across honeycombs and its detection by bee leg receptors. J. Exp. Biol. 199, 2585–2594
+Schlegel, T., Visscher, P.K., Seeley, T.D. (2012) Beeping and piping: Characterization of two mechanoacoustic signals used by honey bees in swarming. Naturwissenschaften 99, 1067–1071
+Schmolz, E., Lamprecht, I., Schricker, B. (1994) A method for continuous direct calorimetric measurements of energy metabolism in intact hornet (Vespa crabro) and honeybee (Apis mellifera) colonies. Thermochem. Acta 251, 293–301
+Schneider, S.S., Stamps, J.A., Gary, N.E. (1986) The vibration dance of the honey bee. I. Communication regulating foraging on two time scales. Anim. Behav. 34, 377–385
+Schneider, C.W., Tautz, J., Grünewald, B., Fuchs, S. (2012) RFID Tracking of sublethal effects of two neonicotinoid insecticides on the foraging behavior of Apis mellifera. PLoS ONE 7(1), e30023. doi:10.1371/journal.pone.0030023
+
+22 W.G. Meikle and N. Holst
+
+Seeley, T.D. (1974) Atmospheric carbon dioxide concentration in honey bee (Apis mellifera) colonies. J. Insect Physiol. 20, 2301–2305
+Seeley, T.D. (2010) Honeybee democracy. Princeton University Press, Princeton
+Smith, S.W. (2003) Digital signal processing. Singapore, Newnes (Elsevier)
+Southwick, E.E. (1992) Chapter 5. Physiology and social physiology of the honey bee. In: Graham, J.M. (ed.) The hive and the honey bee, pp. 171–196. Dadant and Sons, Hamilton, IL
+Southwick, E.E., Moritz, R.F.A. (1987) Social control of air ventilation in colonies of honey bees (Apis mellifera). J Insect Physiol. 33(9), 623–626
+Southwick, E.E., Mugaas, J.N. (1971) A hypothetical homeotherm: The honey bee hive. Comp. Biochem. Physiol. 40A, 935–944
+Spangler, H.G. (1969) Photoelectrical counting of outgoing and incoming honey-bees. J. Econ. Entomol. 62, 1183–1184
+Stalidzans, E., Berzonis, A. (2013) Temperature changes above the upper hive body reveal the annual development periods of honey bee colonies. Comput. Electron. Agric. 90, 1–6
+Streit, S., Bock, F., Pirk, C.W.W., Tautz, J. (2003) Automatic life-long monitoring of individual insect behaviour now possible. Zoology 106, 169–171. doi:10.1078/0944-2006-00113
+
+Struye, M.H., Mortier, H.J., Arnold, G., Miniggio, C., Borneck, R. (1994) Microprocessor-controlled monitoring of honeybee flight activity at the hive entrance. Apidologie 25, 384–395
+Szabo, T.I. (1989) Thermology of wintering honey-bee colonies in 4-colony packs. Am. Bee J. 189, 554– 555
+Szabo, T.I., Lefkovitch, L.P. (1991) Effects of honey removal and supering on honey bee colony gain. Am. Bee J. 131, 120–122
+Thoenes, S.C., Buchmann, S.L. (1992) Colony abandonment by adult honey bees: A behavioral response to high tracheal mite infestation? J. Apic. Res. 31, 167–168
+Van Nerum, K., Buelens, H. (1997) Hypoxiacontrolled winter metabolism in honeybees (Apis mellifera). Comp. Biochem. Physiol. Vol. 117A(4), 445–455
+W-Worswick, P.V. (1987) Comparative study of colony thermoregulation in the African honeybee, Apis mellifera adansonii Latreille and the Cape honeybee, Apis mellifera capensis Escholtz. Comp. Biochem. Physiol. Vol. 86A(1), 95–102
+Zerger, A., Viscarra Rossel, R.A., Swain, D.L., Wark, T., Handcock, R.N., Doerr, V.A.J., Bishop-Hurley, G.J., Doerr, E.D., Gibbons, P.G., Lobsey, C. (2010) Environmental sensor networks for vegetation, animal and soil sciences. Int. J. Appl. Earth Obs. Geoinf. 12, 303–316
+

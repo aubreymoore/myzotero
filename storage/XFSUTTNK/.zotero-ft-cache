@@ -1,0 +1,319 @@
+See discussions, stats, and author proﬁles for this publication at: https://www.researchgate.net/publication/235246270
+Neural Network Based System for the Classiﬁcation of Leaf Rot Disease in Cocos Nucifera Tree Leaves
+Article in European Journal of Scientiﬁc Research · October 2012
+
+CITATION
+1
+2 authors, including: Reghunadhan Rajesh Central University of Kerala 80 PUBLICATIONS 607 CITATIONS
+SEE PROFILE
+
+READS
+417
+
+Some of the authors of this publication are also working on these related projects: Facial Expression Recognition View project
+
+All content following this page was uploaded by Reghunadhan Rajesh on 23 May 2014.
+The user has requested enhancement of the downloaded ﬁle.
+
+European Journal of Scientific Research ISSN 1450-216X Vol. 88 No 1 October, 2012, pp.137-145 © EuroJournals Publishing, Inc. 2012 http://www.europeanjournalofscientificresearch.com
+Neural Network Based System for the Classification of Leaf Rot Disease in Cocos Nucifera Tree Leaves
+P. Balamurugan Assistant Professor, Government Arts College, Coimbatore-641018
+E-mail: spbalamurugan@rediffmail.com
+R. Rajesh Department of Computer Applications, Bharathiar University, Coimbatore-641046
+E-mail: kollamrajeshr@ieee.org
+Abstract
+Coconut palms are affected by a number of diseases, some of which are dangerous and the disease gradually reduces the strength of the palm causing severe loss in the yield. This paper deals with the classification of coconut tree leaves which are affected by one of the diseases named as 'leaf rot'. A new feature helpful for the classification of leaf rot leaves is proposed, namely the 'Distance measure of end points by means of line moving'. The classification results based on this feature using neural network is promising. The classification results are improved by having Histogram of Oriented Gradients (HOG) as additional feature.
+Keywords: Coconut tree, diseased leaves, normal leaves, NN classifier, HOG, distance, line moving algorithm
+1. Introduction
+Coconut scientifically named as Cocos nucifera is highly nutritious and rich in fiber, vitamins, and minerals [7][18][22]. It is classified as a 'functional food' because it provides many health benefits beyond its nutritional content. People from many diverse cultures, languages, religions and races scattered around the globe have revered the coconut as a valuable source of both food and medicine. More than thousands of years the coconut products have held in respected and valuable place in folk medicine.
+Recently it is been observed that most of the coconut trees are affected by the diseases which gradually reduces the strength of the palm causing severe loss in yield and there are nine common diseases widely found, namely, i) bud rot, ii) leaf rot, iii) stem bleeding iv) root disease v) tanjavur root, vi) mahali vii) crown chocking, viii) leaf spot and ix) tatipaka [4] [5] [22] [26] [28] [30] [31] [32].
+This paper deals with the classification of coconut tree leaves which are affected by one of the diseases, namely the leaf rot. In order to classify the leaves into diseased or non-diseased classes, it is necessary to get a good set of features from the images. Most of the existing classifiers uses spatial/coherent information from images as basic features [11] [14] [15] [23] [24] [29] [33] [34]. Recently it is found that histogram of oriented gradients proposed by Dalal and Triggs for human detection is used widely for the classification/detection of other types of images/objects. In this paper a new distance feature is proposed through line moving algorithm(DLMA) which is used along with
+
+Neural Network Based System for the Classification of
+
+Leaf Rot Disease in Cocos Nucifera Tree Leaves
+
+138
+
+HOG feature for the classification of diseased coconut tree leaves. The result of classification using neural network classifiers is promising.
+This paper is organized as follows. Section-2 covers the review of Coconut tree and its diseases. Section-3 explains the feature extraction methods. Section-4 presents the experiments and results and section-5 concludes the paper.
+
+2. Review of Coconut Tree and its Diseases
+The coconut leaves originate from the growing point at the apex of the stem [4] [5] [22] [26] [28] [30] [31] [32]. The youngest leaves are folded and wrapped together. They form central spear or heart of the palm. From the spear the leaves gradually unfold and expand. They are arranged in spirals, running clockwise in some palms, anti-clockwise in others. Each consecutive leaf is about 140ᶱ around from the former. Starting from one leaf, the sixth leaf reaches a position almost above the first leaf after two complete rounds of the stem. The difference between the position of the first and that of the sixth leaf may be about 25-30ᶱ [4] [26]. The crown of the mature coconut tree growing under favorable conditions forms an almost full sphere, the leaves standing out at different angles to all sides. The shape of the crown looking like an umbrella and in severe cases like a broom.
+Each leafs are having number of leaflets ranging from 200 to 500. The leaflets growing out from both sides of the mid-rib have different lengths. The first leaflets at the base are short, the following leaflets gradually increasing in length, reaching a maximum of about 130cm at about onethird of the mid-rib, gradually becoming smaller again towards the tip of the leaf. The smallest leaflets at the tip may be only 25cm long. The orientation of leaflets is evenly distributed in normal leaf but not in other cases.
+The yield of coconut is affected by various diseases. Figure 1 shows an example image of diseased coconut leaf. A leaf affected with leaf rot diseases looks like blackening and shrinking up of distal ends of the leaflets in the central spindle and younger leaves which later breaks off in bits.
+Crown choking diseases will shorter leaves with fascinated and crinkled leaves [22]. The leaflets show severe tip necrosis and fail to open out. In most of the cases, it gives a choked appearance to the leaf/branch.
+The sign of Leaf spot [22] [31] disease looks like a small, dark brown hollow necrotic spots on the young leaves/plants. Initially the spots are small, oval and brown, later enlarging and becoming pale buff in the centre, with broad dark brown margins. Leaf Blight [22] [30] indications are withering and dropping of the distal ends of the leaves, almost breaking away from the remainder of the leaves at a weak point but the remaining attached, hanging directly downwards as a pendulous section. A brown mark produced on the leaf stalk is particularly noticeable on the lower surface. The dropping end of the leaf, being yellow at first finally turns brown.
+The Leaf yellowing disease attacks young and adult palms [22] [28] [32]. The indication of this disease is an intensive yellowing of the leaves, starting from the tips of the leaflets and the older leaves. Eventually, all leaves except the youngest become yellow. Tatipaka disease is mostly observed in coconut palms 20-60 years old [17] [22] [28]. Young palms below 20 years of age are rarely affected. It affects roots, leaves and nuts. The signs of this disease in leaves are reduction in the number and size of the leaves which become light green and turn yellowish with a green tinge; chlorotic spots develop on leaflets; in some cases leaflets of some leaves adhere together without normal spitting; the leaves bend in the middle giving a bow-like appearance. In this paper, the class of leaves affected with leaf rot disease is only dealt with [22].
+
+139
+
+P. Balamurugan, and R.Rajesh
+
+Figure 1: Types of coconut tree diseases: (a) Leaf rot, (b) Leaf spot
+
+(a)
+
+(b)
+
+3. Feature Extraction
+Histogram of Oriented Gradients (HOG) and Distance through Line Moving Algorithm (DLMA) features are used for the classification of leaf rot diseased coconut leaves. The following section describes the feature extraction process.
+3.1. Histogram of Oriented Gradient- An Review
+Histogram of Oriented Gradients (HOG) [3] are feature descriptors used in computer vision and image processing for the purpose of object detection. It counts the occurrences of gradient orientation in localized portions of an image. This method is similar to that of edge orientation histograms, scaleinvariant feature transform descriptors, and shape contexts, but differs in that it is computed on a dense grid of uniformly spaced cells and uses overlapping local contrast normalization for improved accuracy. Local object appearance and shape within the image can be described by the distribution of intensity gradients and edge direction in HOG. The HOG image descriptor is calculated by dividing the image into small connected regions called cells and find the histogram of gradient directions or edge orientations for the pixels within the cell. Then the combination of these histograms defines the descriptor. For better accuracy the local histogram can be normalized by calculating a measure of intensity across a larger region called blocks. Then each cell within the block is normalized using this value. The HOG algorithm steps are given below:
+1. The first step of calculation is the computation of the gradient values. The most common method is to simply apply the 1-D centered, point discrete derivative mask in one or both of the horizontal and vertical directions. Specifically, this method requires filtering the color or intensity data of the image with the following filter kernels: [-1 0 1] and [-1 0 1]T
+2. Calculating the gradient orientation and magnitude. 3. The second step of calculation involves creating the cell histograms. Each pixel within the cell
+casts a weighted vote for an orientation-based histogram channel based on the values found in the gradient computation. 4. Next, the gradient strengths must be locally normalized. The HOG descriptor is then the vector of the components of the normalized cell histograms from all of the block regions.
+
+Neural Network Based System for the Classification of
+
+Leaf Rot Disease in Cocos Nucifera Tree Leaves
+
+140
+
+3.2. Distance Feature through Line Moving Algorithm (DLMA)
+The first step of the algorithm is to identify the boundary points of coconut leaflets. This is done by simple scanning of leaflet image using either a straight line or slope line. Then the distance between the end points forms the feature for classification. The algorithm steps are explained in following section. The proposed method is divided into two phases.
+
+3.2.1. Phase-I The first step of the algorithm is the preprocessing of image. Here the noises are removed and the image is converted into black and white images.
+
+3.2.2. Phase-II
+
+Distance feature from Leaf-end-point through Line Moving Algorithm (DLMA)
+
+1. Let M × N be the size of image I.
+
+ 2. yn =
+
+M I (i, y)
+i 1
+
+3. P = {}
+
+4. Move a straight vertical line (L) of length M with intensity value one. i.e., L=ones(M,1)
+
+for j=1 yn do
+
+ if
+
+M I (i,
+i 1
+
+j)*
+
+L(i)
+
+
+
+M
+
+then
+
+if I(i,j)*L(i) = 0 then
+
+if I(i-1,j-1) = I(i-1,j) = 1 then
+
+if I(i,j-1) = I(i+1,j-1) = I(i+1,j) = 1 then
+
+P = P U(i, j)
+
+end if
+
+end if
+
+end if
+
+end if
+
+end for
+
+5. Let Q be the cardinality of P
+
+for i =1 Q do
+
+P = P-(x+k , y+k) /(x,y) = P(i) where k = 1 : yn - y end for 6. Let (x1 ,y1) be the ith ordered pair in P. i.e., (x1 ,y1) = P(i). Similarly let (x2, y2) = P(j). Let ED(P(i),P(j)) be the Euclidean Distance between (x1 ,y1) and (x2, y2).
+
+ 7. Find distance between consecutive points, D1 
+
+Qn i 1
+
+ED
+
+(
+
+P(i
+
+),
+
+P(i
+
+
+
+1))
+
+where
+
+Qn
+
+is
+
+the
+
+cardinality
+
+of
+
+P.
+
+ 8. Find distance between points separated with gap 10, D2 
+
+Qn 9 i 1
+
+ED(P(i),
+
+P(i
+
+
+
+9))
+
+,
+
+where
+
+Qn
+
+is
+
+the
+
+cardinality of P.
+
+9. Similarly, the distances (D3,D4), and (D5,D6) are calculated by rotating the image by 30ᶱ and 60ᶱ respectively.
+
+Figure 4 & 5 shows the leaflet endpoints detected through Line Moving Algorithm (DLMA)
+
+scan over the coconut leaves of both normal and damaged from left to right respectively.
+
+141
+
+P. Balamurugan, and R.Rajesh
+
+4. Experiments and Results
+The dataset used for experiment consists of 800 images. In which 300 images are of normal coconut leaflets and 500 images are of diseased coconut leaflets. Figure 2 & 3 shows the sample images of normal and diseased coconut leaves. 50% of images in each class is used for training and testing. The transfer function used in the hidden layer is 'tansig' and we have used scaled conjugate gradient back propagation algorithm (trainscg) for training.
+The experiments are conducted with three different combinations of image features. Table 1 shows the classification results of neural network using 500 hidden neuron with a) DLMA feature b) HOG feature c) combination of DLMA & HOG features. Table 2 shows the classification results using NN (with the number of hidden neurons equal to the number of input features) with a) DLMA feature b) HOG feature c) combination of DLMA & HOG features. The result shows that the edge distance feature through line moving algorithm along with HOG feature giving higher classification rate.
+
+Figure 2: Sample normal coconut leaves
+
+Figure 3: Sample diseased coconut leaves
+
+Neural Network Based System for the Classification of
+
+Leaf Rot Disease in Cocos Nucifera Tree Leaves
+
+142
+
+Figure 4: a) Leaflet endpoints detected through Line Moving Algorithm (DLMA) in normal coconut leaves (Left-to-right scan) b) Removed diagonal points with respect to each leaflet endpoints
+
+(a)
+
+(b)
+
+Figure 5: a) Leaflet endpoints detected through Line Moving Algorithm (DLMA) in diseased coconut leaves (Left-to-right scan) b) Removed diagonal points with respect to each leaflet endpoint
+
+(a)
+
+(b)
+
+143
+
+P. Balamurugan, and R.Rajesh
+
+Table 1: Classification Rate (%) for normal and diseased coconut leaves with fixed number of hidden neurons (ACC-Accuracy; TPR-True Positive Rate; TNR-True Negative Rate)
+
+Features
+DLMA HOG HOG & DLMA
+
+Hidden
+Neurons 500 500 500
+
+ACC
+71.8 86.6 91.5
+
+Recall
+(TPR) 0.6392 0.7939 0.8774
+
+TNR
+0.7649 0.9119 0.9373
+
+Precision
+0.6159 0.8506 0.8889
+
+Negative
+Predictive Value 0.7824 0.8750 0.9304
+
+Table 2:
+
+Classification Rate (%) for normal and diseased coconut leaves with number of hidden neurons equivalent to number of features (ACC-Accuracy; TPR-True Positive Rate; TNR-True Negative Rate)
+
+Features
+DLMA HOG HOG & DLMA
+
+Hidden
+Neurons 6 81 87
+
+ACC
+70.7 87.8 89.7
+
+Recall
+(TPR) 0.5577 0.8278 0.8951
+
+TNR
+0.7926 0.9055 0.8977
+
+Precision
+0.6084 0.8278 0.8430
+
+Negative
+Predictive Value 0.7562 0.9055 0.9331
+
+5. Conclusion
+This paper has focused on two important features namely Histogram of oriented gradients and distance features obtained based on line moving algorithm. Both features are having its own significant in identifying diseased coconut leafs. The classification results obtained by using the combination of both features are promising.
+Acknowledgements
+The authors are thankful to all the staff members of the School of Computer Science and Engineering, Bharathiar University for their valuable support. The first author is also thankful to Bharathiar University for URF grant.
+
+References
+[1] Moses Amadasun, Robert King, "Textural Features Corresponding to Textural Properties", IEEE Transactions on Systems, Man, and Cybernetics, 19(5), pp. 1264-1274, 1989.
+[2] P. Balamurugan, R. Rajesh, "Greenery and non-greenery image classification using adaptive neuro-fuzzy inference systems", Proc. of the ICCIMA 2007, India, IEEE Computer Society Press, Vol. 3, pp.431-435, 2007.
+[3] N.Dalal and B.Triggs, "Histograms of Oriented Gradients for Human Detection," Proceedings of the Conference on Computer Vision and Pattern Recognition, Vol.2, pp.886-893, June 2005.
+[4] Darwis S.N., "Indonesian coconut research highlights", Indian Coconut Journal (India), 22:6-7, pp. 22-32, 1991
+[5] Darwis S.N. and Luntungan H.T., "Status of existing coconut collection in South East Asia", Industrial Crops Research Journal (Indonesia), 4,2: 27-39, 1992.
+[6] M. Flicker et.al., "Query by image and video content," The QBIC system, IEEE Computer, 28(9), pp. 23-32,1995.
+[7] Foale, and Mike A., " The coconut odyssey: the bounteous possibilities of the tree of life", Australian Centre for International Agricultural Research, Canberra, Australia, 2003, ISBN 1 86320 370 2.
+[8] R. C.Gonzalez, E. Woods, "Digital Image Processing", 2nd ed., Prentice Hall, India, 2002. [9] R.C. Gonzalez, E. Woods, L. Eddins, "Digital Image Processing using MATLAB", 2nd ed.,
+Prentice Hall, India, 2004.
+
+Neural Network Based System for the Classification of
+
+Leaf Rot Disease in Cocos Nucifera Tree Leaves
+
+144
+
+[10] V.Gudivada, V.V.Raghavan, "Content based image retrieval system", IEEE Computer, Vol. 28, No.9 pp. 18-22, September 1995.
+[11] J.Huang, S.R.Kumar, M.Metra, W.J. Zhu and R.Zabith, "Image Indexing Using Color Correlograms", Proceedings of CVPR International Conference, pp.762-768, 1997.
+[12] J. Huang, S.R. Kumar, M. Metra, W.J. Zhu, R.Zabith, "Spatial color indexing and applications", International Journal of Computer Vision, 35(3), pp. 245-268, 1999.
+[13] Bernd Jahne, "Digital Image Processing", 5th Revised edition, SIE, 2003. [14] Anil K. Jain and A. Vailaya, "Image retrieval using color and shape", Pattern Recognition
+Journal, Vol.29, pp. 1233-1244, August 1996. [15] Anil K. Jain,A. Vailaya and H.J.Zhang, "On Image classification: City Images Vs Landscapes,"
+Pattern Recognition Journal, Vol.31, pp. 1921-1936, December 1998. [16] R. Jang, "ANFIS: Adaptive-Network-based fuzzy Inference Systems", IEEE Transactions on
+Systems, Man, and Cybernetics, 23(3), pp. 665- 685, 1993. [17] Jayasankar N.P., "Combating important diseases of coconut", Indian Horticulturist (India), 36,
+3: 25-29,1991. [18] Jones D.L., "Palms in Autralia", Reed Book, Melbourne, 3rd edition, 1996, ISBN 0 7301 04907. [19] Fuhui Long, Hongjiang Zhang, David Dagan Feng, "Fundamentals of Content-Based Image
+Retrieval", in Multimedia Information Retrieval and Management Technological Fundamentals and Applications, D. Feng, W.C. Siu, (eds.), Springer Publishers, pp. 1-26, 2003. [20] O. Ludwig, D. Delgado, V. Goncalves, and U. Nunes, ''Trainable Classifier-Fusion Schemes: An Application To Pedestrian Detection", In: 12th International IEEE Conference On Intelligent Transportation Systems, 2009, St. Louis, 2009. Vol.1. pp.432-437. [21] V. Ogle and M.Stonebraker. Chabot, "Retrieval from a relational database of images", IEEE Computer , 28(9), pp. 40-48,1995. [22] Ohler J.G., "Modern Coconut Management; palm cultivation and products", Food and Agriculture organization of the United Nations, 1999. [23] G. Pass, R. Zabih, "Histogram Refinement for Content based image retrieval", IEEE Workshop on Applications of Computer Vision, pp. 96-102, 1996. [24] G. Pass, R. Zabih, and Justin Miller, "Comparing Images Using Color Coherence Vectors", Proceedings Fourth ACM Multimedia Conference, Boston, pp. 65-74, Nov.1996. [25] A. Pentland, R. Picard and S.Sclaroff, "Photobook:Content based manipulation of image databases", International Journal of Computer Vision, 18(3), pp. 223-254,1996. [26] Rajagopal V. et.al., "Early diagnostic techniques on the Root(Wilt) disease of coconut in India", Philippine Journal of Coconut Studies (Philippines), 13, 2: 31-35,1988. [27] Rajagopal V., "Is water stress associated with root (wilt) disease of coconut?", Journal of Plantation Crops 19: 2, 91-101,1991. [28] Rajamannar M., Prasadji J.K. and Rethinam P., "Tatipaka disease of coconut - Current status", Source: Nair M.K., et.al., Advances in coconut research and development. Indian Society for Plantation Crops, New Delhi (India) pp. 591-595, 1993. [29] R.Rajesh et al., "Coherence vector of oriented gradients for traffic sign recognition using neural networks", Proceedings of International joint conference on neural networks, San Jose, California, USA, July 31-August 5,2011. [30] Ram C., "Epidemiologia e controle quimco da 'Queima-das-folhas' (Botryodiplodia theobromae) do coqueiro (Cocos nucifera)", Fitopatologia Brasileira (Brazil), 14, 3-4: 215220, 1989. [31] Renard J.L., Dollet M., "Phytopathology", Green, A.H. (ed.) (1991) Coconut production. Present status and priorities for research. The World Bank, Washington D.C. (USA) pp. 8697,1991. [32] Sitepu D., Darwis S.N., "Management of major coconut diseases in Indonesia", Industrial Crops Research Journal, 1: 2, 66-77, 1989.
+
+145
+
+P. Balamurugan, and R.Rajesh
+
+[33] J. R. Smith and S.F.Chang, "Tools and techniques for color image retrieval", SPIE proceedings, 2670, pp. 426-437, 1996.
+[34] M. Stricker, A. Dimai, and E. Dimai, "Color Indexing with weak spatial constraints", SPIE proceedings, 2670, pp. 29-40, 1996.
+[35] M. J. Swain and D. H. Ballard, "Color Indexing", International Journal of Computer Vision, 7(1), pp. 11-32, 1991.
+
+View publication stats
+

@@ -1,0 +1,609 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/330832017
+ADVANCES IN ENTOMOLOGICAL LASER RADAR
+Conference Paper · October 2018
+
+CITATIONS
+0
+2 authors: Mikkel Brydegaard Lund University 90 PUBLICATIONS 659 CITATIONS
+SEE PROFILE
+
+READS
+21
+Samuel Jansson Lund University 27 PUBLICATIONS 72 CITATIONS
+SEE PROFILE
+
+Some of the authors of this publication are also working on these related projects: Inelastic hyperspectral lidar View project Entomological lidar View project
+
+All content following this page was uploaded by Mikkel Brydegaard on 02 February 2019.
+The user has requested enhancement of the downloaded file.
+
+ADVANCES IN ENTOMOLOGICAL LASER RADAR
+Mikkel Brydegaard1,2,3,4*, Samuel Jansson1,2
+1Lund Laser Centre, Dept. Physics, Lund University, Sölvegatan 14, Lund, Sweden 2Center for Animal Movement Research, Dept. Biology, Lund University, Sölvegatan 37, Lund, Sweden
+3Norsk Elektro Optikk AS, Prost Stabels vei 22, Skedsmokorset, Norway 4FaunaPhotonics ApS, Ole Maaløes Vej 3, København N, Denmark * mikkel.brydegaard@fysik.lth.se
+
+Keywords: Laser Radar, Biophotonics, Remote Sensing, Pest Monitoring, Entomological Ecology
+
+Abstract
+During last decade we have developed and applied optical remote sensing instrumentation for in situ remote surveillance and quantification of the aerofauna. The sparse structure of aerofauna makes optical focusing challenging, but we solved this issue through applying the century old Scheimpflug condition. With this approach we have managed to reduce size, cost and complexity of atmospheric lidars and accomplished an effective tool for ecological entomology capable of counting thousands of insects per hour. Because of the high sensitivity and resolution in time and space, we can retrieve target modulation signatures in the kHz range for target classification purposes. As opposed to the cm waves in entomological radar, we rely on near infrared light around one micron. This allow superior beam quality, negligible ground clutter and applications close over ground or within vegetation structure. Near infrared light can assess both molecular and microstructural properties of the target through differential absorption and depolarization. Here we give the background of entomological lidar, summarize our recent progress and put it in context with contemporary work. We outline applications, ongoing activities and state of the art. We discuss future prospects and challenges.
+1. Background
+Following WWII development of radar, radar ornithology1,2 and later radar entomology3,4 emerged in the last century. This century entomological lidar emerged5-8 with time-offlight lidars at kHz rates developed in Montana. Our group in Lund started out using a slower atmospheric lidar at hand9-12 in particular explorer feasibility of fluorescence lidar. We later also developed kHz methods13,14. As opposed to insect sampling with sweep nets and traps (see e.g.15) remote sensing has the advantages of being non-intrusive, nonperturbing and with known biases and detection ranges and limits. Further, remotely sensed insects are to some extend classified automatically16,17, whereas analysis of caught insects is tedious but provide more details18,19. Most radar entomology studies have targeted high migrating insects by vertical profiling. The size ratio between a large aircraft and insects is roughly the same at the wavelength ratio between microwaves in radar and infrared light and as opposed to microwaves, laser and optics offer great beam qualities allowing investigations of entomological ecology close over ground or within forest without ground clutter. Lidar and photonics methods also offer assessment of molecular and microstructural information through absorption, fluorescence
+
+and depolarization processes. Applications of entomological lidar includes monitoring abundance and dispersal of agricultural and forestry pest, disease vectors for humans and livestock and not least assessing biodiversity of pollinators. We will here give an overview of the recent progress in the field.
+2. Instrumentation
+2.1 Passive lidar As in passive radar20, insects can be sensed optically using existing radiation sources such as the sun for diurnal species21, the moon22 or thermal infrared emission23 for nocturnal species. Sunlight offer a range of wavelengths from UV to IR and some 1kWm-2 of power. We started out developing the remote dark-field method21 which gives lidar like signals across the spectrum without need of laser development. This method is based on directing a telescope at a remote black cavity and collect the light scattered from airborne insects. We demonstrated powder tagging and darkfield modulation spectroscopy24 and heading assessment by quadrant detection13 (corresponding to beam wobbling in radar). The method can also be employed at several spectral bands at kHz rates for determining body and wing melanisation25,26. For some time we attempted passive ranging27 but only recently provided a solution using quadrant detection28.
+2.2 Time-of-Flight entomological lidar Equivalently to radar, conventional lidar is based on transmission of ns long laser pulses and recording the backscattered intensity with fast detectors and RF electronics as a function of round-trip delay. Applied systems ranges from slow conventional multiband systems10,29,30 to fast single band systems8,31.
+2.3 Scheimflug lidar Similarly to bistatic radar, atmospheric Scheimpflug lidars utilise transmitted and receiver separated by a small baseline of roughly a meter13,32-35. The Scheimpflug principle allow infinite focal depth with large apertures14, therefore weak signals from insect scattering can be retrieved at kHz rates. The average emitted power can greatly exceed pulsed lidars despite the much smaller and inexpensive lasers. The systems can efficiently collect high number of observations32,34 (See. Fig.1). Scheimpflug lidars can be expanded to retrieve several spectral bands31,36,37 or polarisation modes33,35. For example for assessing melanin (See Fig.2). Scheimpflug lidar
+
+1
+
+can also retrieve fluorescence38 with applications for insect powder tagging10,24,39, however violet light may affect the insects40.
+
+analogy with early radar referencing42 the Montana group recorded polarimetric backscatter of pinned bees7. Our group recorded oscillatory cross sections of free flying insects43,44
+including spectral and polarisation modes feasible for lidar. We also applied hyper spectral imaging45, goniometry46 and polarisation imaging41 of pinned insects (See Fig.3).
+Referencing can also be done by releasing known insects into the lidar beam in field47 or sampling insect along the beam with a trap48.
+
+Fig.1. Fraction of entomological data from a Scheimpflug lidar. The lidar was profiling bees over a clover field, the hive was situated 180 m from the lidar. Bees oscillates around 200 Hz indicated by red color code (data from FaunaPhotonics).
+
+3. Methods, purpose and outcome.
+3.1 Organism sizing
+If the lidar beam-FoV overlap function can be determined,
+e.g., by a molecular Rayleigh echo and assumptions of homogeneous atmosphere32, then backscatter intensities can be converted into Lidar Cross Sections in mm2. Whereas
+RCS related to liquid water mass, Lidar Cross Section was
+defined as the projected area had the target been a 100%
+Lambertian reflector such as a Teflon beat. In practice insect reflectance in near infrared34,41, 808 nm, is in the order of 20%, the reflectance in short wave infrared45, 1320 nm, is in the order of 80% whereas specular reflectance46 could reach 5000%. Despite this, organism sizing allow estimation of the aerofauna biomass spectrum32 and insect and predating vertebrate can display a bimodal biomass spectrum34.
+Biomass spectra are popular in marine science,
+
+Fig.2. Dual band remote in insect observation using a short-wave
+infrared Scheimpflug lidar, the melanisation of body and wings can be derived (adapted from31).
+
+3.2 Modulation spectroscopy for target classification
+The wing beat cycle causes backscatter and extinction cross
+section to oscillate with a fundamental tone and a harmonic spectrum. This spectrum has proven valuable for target classification16,49,50 or even biodiversity assessment51. The
+methods are directly applicable for entomological lidar
+applications but the work is mainly based on so called E-traps
+somewhat simpler than lidar and often operating in extinction
+mode. The drawback is that the counts per day are much lower than lidar32,34,50. Much of this work involve advanced
+machine learning but even the fundamental tone can differentiate species, e.g.52. Some challenges are that the tone is temperature dependent53, that harmonic spectrum is aspect dependent28,43,44 and that identification of the fundamental tone is difficult54. Modulation spectroscopy can be expanded by additional spectral and polarisation bands (See Fig.4).
+
+Fig.3. a) Polarimetric image of a dry ♂ Anopheles Coluzzii mosquito, 808 nm, 162° backscatter. b) Aspect dependent backscatter cross sections with- and without wings (oscillatory part). c) Corresponding extinction cross section, note the different scale (adapted from41).
+2.4 Reference measurements Effort was put into quantifying and understanding optical backscatter- and extinction-cross sections for insects for comparison and feasibility of remote target classification. In
+
+Fig.4. Frequency components of co- and de-polarised backscatter from a Drosophila Melanogaster at 808 nm. The high harmonics are from glossy wings and therefore co-polarised (for instrument details see44).
+3.3 Powder tagging Insect can be tagged optically using fluorescent powders
+
+2
+
+from the printing and advertising community, and several colours can be used simultaneously. This is referred to as mark-without-recapture studies and yield the greatest certainty about target identity. Social insects such as bees can be auto-tagged by installing a tray in the hive exit. Powdered individuals can be detected remotely either by sunlight24 or violet lasers10,29,38. Applications of tagging include landscape dispersal studies, population size estimates and verifications of classification, e.g., by modulation spectroscopy. Corresponding tagging in radar entomology is accomplished by harmonic radar by attaching electrical diodes to the insects55.
+3.4 Heading assessment Heading assessment is important for understanding dispersal and migration properties, not least from epidemiological aspects of economic and medical entomology. It can be accomplished in radar by polarisation anisotropy56, beam wobbling or tracking57. In optics heading can be assessed by quadrant detectors13,26,58, heading could also be inferred by transit times33 or even and odd harmonics43 however specular contributions from wings deviates from this model28.
+3.5 Tracking individuals Reported entomological lidar studies typically report single timings and positions of many individuals, whereas tracking approaches report many timings and positions of a single individual. Tracking radar ornithology is widespread57 whereas report from radar entomology are limited55. In optics efficient tracking can be accomplished by static passive systems23,59, although active lock-in servo systems have been reported60.
+4. Doppler assessment of movements Movements of animals and their bodypart may yield small shift in backscatter photon energy, this have been demonstrated with weather radars61 and micro Doppler radar technology62. The reports on applications of widespread Doppler lidars are limited63.
+4. Conclusion, challenges and outlook
+We have revised the development of entomological lidar instrumentation and compared it to radar. We have demonstrated aspects of modulation signatures, dual band and polarimetric insect scattering. We have discussed various types of studies and outcome. A current challenge is that there are no table values for scatter cross sections of the millions of insect species. Entomological lidar scientists should be encouraged to calibrate and standardize cross sections for comparison and not report arbitrary units. Future work could benefit from improved reference measurement, and linking lidar recording both to modulation spectroscopy50 and museum 3D insect libraries64.
+5. Acknowledgements
+We thank Mariam Andersson, Peggy Atkinson, Klas Rydhmer, Alfred Strand, Birte Boelt for contributed material. Entomological lidar has been supported by amound others: Swedish Research Council, Norsk Elektro Optikk, FaunaPhotonics, Lund University, Stellenbosch University,
+
+South China Normal University, Physiographic Society in Lund, Linnaeus grant to Lund Laser Centre and Center for Animal Movement Research.
+
+6. References
+
+[1]
+
+S. A. Gauthreaux and C. G. Belser, "RADAR ornithology and
+
+biological conservation," The Auk, vol. 120, pp. 266-277,
+
+2003/04/01 2003.
+
+[2]
+
+E. Eastwood, Radar ornithology: Methuen, 1967.
+
+[3]
+
+J. Riley, "Remote sensing in entomology," Annual review of
+
+entomology, vol. 34, pp. 247-271, 1989.
+
+[4]
+
+V. A. Drake and D. R. Reynolds, Radar entomology : observing
+
+insect flight and migration Wallingford, Oxfordshire ; Boston,
+
+MA: CABI, 2012.
+
+[5]
+
+D. S. Hoffman, A. R. Nehrir, et al., "Range-resolved optical
+
+detection of honeybees by use of wing-beat modulation of
+
+scattered light for locating land mines," Appl. Opt., vol. 46, pp.
+
+3009-3012, 2007.
+
+[6]
+
+K. S. Repasky, J. A. Shaw, et al., "Optical detection of honeybees
+
+by use of wing-beat modulation of scattered laser light for
+
+locating explosives and land mines," Appl. Opt., vol. 45, pp. 1839-
+
+1843, 2006.
+
+[7]
+
+J. A. Shaw, N. L. Seldomridge, et al., "Polarization lidar
+
+measurements of honey bees in flight for locating land mines,"
+
+Opt. Expr., vol. 13, pp. 5853-5863, 2005.
+
+[8]
+
+M. J. Tauc, K. M. Fristrup, and J. A. Shaw, "Development of a
+
+wing-beat-modulation scanning lidar system for insect studies,"
+
+in Lidar Remote Sensing for Environmental Monitoring, San
+
+Diego, USA, 2017.
+
+[9]
+
+M. Brydegaard, P. Lundin, et al., "Feasibility study: fluorescence
+
+lidar for remote bird classification," Appl. Opt., vol. 49, pp. 1-15,
+
+2010.
+
+[10]
+
+Z. Guan, M. Brydegaard, et al., "Insect monitoring with
+
+fluorescence lidar techniques: Field experiments," Appl. Opt. ,
+
+vol. 49, pp. 1-11, 2010.
+
+[11]
+
+M. Brydegaard, Z. Guan, et al., "Insect monitoring with
+
+fluorescence lidar techniques: feasibility study," Appl. Opt., vol.
+
+48, pp. 5668-5677, 2009.
+
+[12]
+
+P. Lundin, P. Samuelson, et al., "Remote nocturnal bird
+
+classification by spectroscopy in extended wavelength ranges,"
+
+Appl. Opt., vol. 50, 2011.
+
+[13]
+
+M. Brydegaard, A. Gebru, and S. Svanberg, "Super resolution
+
+laser radar with blinking atmospheric particles – application to
+
+interacting flying insects.," Prog. Electromagn. Res., vol. 147, pp.
+
+141-151, 2014.
+
+[14]
+
+M. Brydegaard, E. Malmqvist, et al., "The Scheimpflug Lidar
+
+Method," SPIE Lidar Remote Sensing for Environmental
+
+Monitoring, vol. 10406, 2017.
+
+[15]
+
+J. B. Silver, Mosquito ecology: field sampling methods: Springer
+
+Science & Business Media, 2007.
+
+[16]
+
+A. Moore and R. H. Miller, "Automated identification of optically
+
+sensed aphid (Homoptera: Aphidae) wingbeat waveforms," Ann.
+
+Entomol. Soc. Am., vol. 95, pp. 1-8, 2002.
+
+[17]
+
+E. Malmqvist, S. Jansson, et al., "Effective parameterization of
+
+laser radar observations of atmospheric fauna," Selected Topics
+
+in Quantum Electronics, IEEE Journal of, vol. 22, pp. 327-334,
+
+2016.
+
+[18]
+
+M. A. Hoy, Insect molecular genetics: an introduction to
+
+principles and applications: Academic Press, 2003.
+
+[19]
+
+IAEA, Manual for the Use of Stable Isotopes in Entomology: IAEA,
+
+VIENNA, 2009.
+
+[20]
+
+H. D. Griffiths and C. J. Baker, An Introduction to Passive Radar:
+
+Artech House, 2017.
+
+[21]
+
+A. Runemark, M. Wellenreuther, et al., "Rare events in remote
+
+dark field spectroscopy: an ecological case study of insects," IEEE
+
+JSTQE, vol. 18, pp. 1573 - 1582, 2012.
+
+[22]
+
+M. Brydegaard and S. Svanberg, "Photonic monitoring of
+
+atmospheric and aquatic fauna," Laser & Photonics Reviews,
+
+2018.
+
+3
+
+[23]
+
+D. H. Theriault, N. W. Fuller, et al., "A protocol and calibration
+
+[45]
+
+M. Brydegaard, "Advantages of shortwave infrared LIDAR
+
+method for accurate multi-camera field videography," The
+
+entomology," in Imaging and Applied Optics 2014, Seattle,
+
+Journal of experimental biology, vol. 217, pp. 1843-1848, 2014.
+
+Washington, 2014, p. LW2D.6.
+
+[24]
+
+M. Brydegaard, A. Merdasa, et al., "Realistic instrumentation
+
+[46]
+
+M. Brydegaard, S. Jansson, et al., "Can the narrow red bands of
+
+platform for active and passive optical remote sensing," Applied
+
+dragonflies be used to perceive wing interference patterns? ,"
+
+Spectroscopy, vol. 70, pp. 372-385, 2016.
+
+Ecology and Evolution, 2018.
+
+[25]
+
+A. Gebru, S. Jansson, et al., "Remote species and sex
+
+[47]
+
+S. Török, "Kilohertz electro-optics for remote sensing of insect
+
+determination of disease vector mosquitoes using multispectral
+
+dispersal," Master Msc thesis, Department of Physics, Lund
+
+polarimetric techniques," 2017.
+
+University, 2013.
+
+[26]
+
+A. Gebru, M. Brydegaard, et al., "Probing insect backscatter
+
+[48]
+
+C. Kirkeby, M. Wellenreuther, and M. Brydegaard, "Observations
+
+cross-section and melanization using kHz optical remote
+
+of movement dynamics of flying insects using high resolution
+
+detection system," SPIE, Journal of Applied Remote Sensing, vol.
+
+lidar," Scientific Reports, vol. 6, p. 29083, 07/04/online 2016.
+
+16611P, 2016.
+
+[49]
+
+D. F. Silva, V. M. Souza, et al., "Exploring low cost laser sensors to
+
+[27]
+
+P. Lundin, M. Brydegaard, et al., "Passive unmanned sky
+
+identify flying insect species," Journal of Intelligent & Robotic
+
+spectroscopy for remote bird classification," Conference on
+
+Systems, vol. 80, pp. 313-330, 2015.
+
+Remote Sensing for Agriculture, Ecosystems, and Hydrology
+
+[50]
+
+I. Potamitis, I. Rigakis, and K. Fysarakis, "Insect Biometrics:
+
+XIII/18th Internat. Symposium on Remote vol. 8174, pp. 81740J-
+
+Optoacoustic Signal Processing and Its Applications to Remote
+
+81740J-11, Sep 19-21, 2011 2011.
+
+Monitoring of McPhail Type Traps," PLoS ONE, vol. 10, p.
+
+[28]
+
+S. Jansson and M. Brydegaard, "Passive Entomological Lidar for
+
+e0140474, 2015.
+
+Stand-Off Modulation Spectroscopy and Heading Assessment," [51]
+
+T. Ganchev, Computational Bioacoustics: Biodiversity Monitoring
+
+Animal Telemetry, 2018.
+
+and Assessment: Walter de Gruyter GmbH & Co KG, 2017.
+
+[29]
+
+L. Mei, Z. G. Guan, et al., "Agricultural pest monitoring using
+
+[52]
+
+A. P. Genoud, R. Basistyy, et al., "Optical remote sensing for
+
+fluorescence lidar techniques," Appl. Phys. B, vol. 106, pp. 733-
+
+monitoring flying mosquitoes, gender identification and
+
+740, 2011.
+
+discussion on species identification," Applied Physics B, vol. 124,
+
+[30]
+
+S. Jansson, M. Brydegaard, et al., "Exploitation of an atmospheric
+
+p. 46, February 17 2018.
+
+lidar network node in single-shot mode for the classification of [53]
+
+S. M. Villarreal, O. Winokur, and L. Harrington, "The Impact of
+
+aerofauna," JARS, 2017.
+
+Temperature and Body Size on Fundamental Flight Tone
+
+[31]
+
+M. Andersson, "Short-Wave Infrared Lidar on Atmospheric
+
+Variation in the Mosquito Vector Aedes aegypti (Diptera:
+
+Aerosols and Insects," Msc., Physics, Lund University, 2017.
+
+Culicidae): Implications for Acoustic Lures," Journal of Medical
+
+[32]
+
+M. Brydegaard, A. Gebru, et al., "Daily evolution of the insect
+
+Entomology, vol. 54, pp. 1116-1121, 2017.
+
+biomass spectrum in an agricultural landscape accessed with
+
+[54]
+
+A. Andersson, "Unbiasing entomological kHz Scheimpflug LIDAR
+
+lidar," in ILRC 27, New York, USA, 2015.
+
+data," Msc., Dept. Physics, Lund University, 2018.
+
+[33]
+
+S. Zhu, E. Malmqvist, et al., "Insect abundance over Chinese rice [55]
+
+O. Ovaskainen, A. D. Smith, et al., "Tracking butterfly movements
+
+fields in relation to environmental parameters, studied with a
+
+with harmonic radar reveals an effect of population age on
+
+polarization-sensitive CW near-IR lidar system," Applied Physics
+
+movement distance," PNAS, vol. 105, pp. 19090-19095,
+
+B, vol. 123, 2017.
+
+December 9, 2008 2008.
+
+[34]
+
+E. Malmqvist, S. Jansson, et al., "The bat-bird-bug battle: daily
+
+[56]
+
+V. A. Drake, J. W. Chapman, et al., "Ventral-aspect radar cross
+
+flight activity of insects and their predators over a rice field
+
+sections and polarization patterns of insects at X band and their
+
+revealed by high resolution Scheimpflug Lidar " Royal Society
+
+relation to size and form," International Journal of Remote
+
+Open Science, 2018.
+
+Sensing, vol. 38, pp. 5022-5044, 2017/09/17 2017.
+
+[35]
+
+L. Mei and P. Guan, "Development of an atmospheric
+
+[57]
+
+T. Alerstam, J. Backman, et al., "A polar system of
+
+polarization Scheimpflug lidar system based on a time-division
+
+intercontinental bird migration," Proc. R. Soc. B, vol. 274, pp.
+
+multiplexing scheme," Optics Letters, vol. 42, pp. 3562-3565,
+
+2523-30, Oct 22 2007.
+
+2017/09/15 2017.
+
+[58]
+
+S. Jansson and M. Brydegaard, "Passive Entomological Lidar,"
+
+[36]
+
+M. Brydegaard, J. Larsson, et al., "Short-wave infrared
+
+IEEE Photonics, 2017.
+
+atmospheric Scheimpflug lidar," EDP Sciences, vol. 176, 2018.
+
+[59]
+
+S. Butail, Motion reconstruction of animal groups: From
+
+[37]
+
+G. Zhao, E. Malmqvist, et al., "Dual-band continuous-wave lidar
+
+schooling fish to swarming mosquitoes: University of Maryland,
+
+system employed for particle classification," IEEE sensors, 2017.
+
+College Park, 2012.
+
+[38]
+
+G. Zhao, M. Ljungholm, et al., "Inelastic Hyperspectral Lidar for [60]
+
+E. R. Mullen, P. Rutschman, et al., "Laser system for
+
+Profiling Aquatic Ecosystems," Laser & Photonics Reviews, vol.
+
+identification, tracking, and control of flying insects," Optics
+
+10, pp. 807–813, 2016.
+
+Express, vol. 24, pp. 11828-11838, 2016/05/30 2016.
+
+[39]
+
+J. R. Hagler and C. G. Jackson, "Methods for marking insects:
+
+[61]
+
+J. K. Westbrook, R. S. Eyster, and W. W. Wolf, "WSR-88D Doppler
+
+current techniques and future prospects," Annual review of
+
+radar detection of corn earworm moth migration," International
+
+entomology, vol. 46, pp. 511-543, 2001.
+
+Journal of Biometeorology, vol. 58, pp. 931-940, 2014/07/01
+
+[40]
+
+K. Rydhmer and A. Strand, "Applied hyperspectral LIDAR for
+
+2014.
+
+monitoring fauna dispersal in aquatic environments," 2016.
+
+[62]
+
+B. Torvik, K. E. Olsen, and H. Griffiths, "K-band radar signature
+
+[41]
+
+S. Jansson, P. Atkinson, and M. Brydegaard, "First Polarimetric
+
+analysis of a flying mallard duck," in Radar Symposium (IRS),
+
+Investigation of Malaria Mosquitos as Lidar Targets," IEEE JSTQE
+
+2013 14th International, 2013, pp. 584-591.
+
+Biophotonics, 2018.
+
+[63]
+
+C. E. Wainwright, P. M. Stepanian, et al., "The movement of
+
+[42]
+
+J. Riley, "Angular and temporal variations in the radar cross-
+
+small insects in the convective boundary layer: linking patterns
+
+sections of insects," in Proceedings of the Institution of Electrical
+
+to processes," Scientific Reports, vol. 7, p. 5438, 2017.
+
+Engineers, 1973, pp. 1229-1232.
+
+[64]
+
+C. V. Nguyen, D. R. Lovell, et al., "Capturing Natural-Colour 3D
+
+[43]
+
+M. Brydegaard, "Towards quantitative optical cross sections in
+
+Models of Insects for Species Discovery and Diagnostics," PLOS
+
+entomological laser radar – Potential of temporal and spherical
+
+ONE, vol. 9, p. e94346, 2014.
+
+parameterizations for identifying atmospheric fauna," PLoS One,
+
+vol. 10, p. e0135231, 2015.
+
+[44]
+
+A. Gebru, S. Jansson, et al., "Multiband modulation spectroscopy
+
+for determination of sex and species of mosquitoes in flight," J.
+
+Biophotonics, vol. J. Biophotonics, 2018.
+
+4
+
+View publication stats
+

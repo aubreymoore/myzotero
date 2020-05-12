@@ -1,0 +1,10 @@
+
+
+
+
+
+
+var basePolicyJSON = '{\"guide\":{\"fmt\":\"results-xsl\",\"ok\":true},\"baynoteObserver\":{\"dt\":60,\"so\":true,\"uhd\":false,\"cds\":true,\"cdt\":true,\"ioi\":true,\"hn\":\"handler2.js\",\"ec\":false,\"uca\":\"315360000000\",\"alt\":true,\"om\":2,\"ub\":false,\"ep\":50,\"sv\":true,\"sdl\":false,\"ok\":true,\"st\":true},\"search\":{\"ok\":true},\"customScript\":{\"hn\":\"custom-script.js\"},\"trail\":{\"tl\":5,\"so\":false,\"ok\":false},\"GuideSet\":{\"eids\":[\"BN_ProductDetailPage\",\"BN_LandingPage\",\"BN_HomePage\",\"BN_HomeRec\"]},\"inf\":{\"dt\":\"Mon Jun 25 22:26:02 CEST 2018\",\"exp\":86400,\"u\":\"ANONYMOUS\",\"cn\":\"springer\",\"ve\":\"V1\",\"cc\":\"www\",\"cd\":\"d&g&s\"},\"baynoteGuide\":{\"ok\":true},\"guidePro\":{\"ok\":true}}';
+var userPolicyJSON = '{\"dir\":{\"au\":true},\"inf\":{\"dt\":\"Sat Jul 28 03:36:33 CEST 2018\",\"u\":\"6927361432407591648\",\"ve\":\"V1\",\"cd\":\"d&g&s\"}}';
+bnPolicy.registerPolicy(basePolicyJSON, userPolicyJSON);
+

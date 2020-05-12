@@ -1,0 +1,1 @@
+TNCMS.AdManager.setImpressions('www.postguam.com', {"daily":[],"total":[]});

@@ -1,0 +1,640 @@
+Density Dependence and Spatial Structure in the Dynamics of Insect Pathogens Author(s): Greg Dwyer Source: The American Naturalist, Vol. 143, No. 4 (Apr., 1994), pp. 533-562 Published by: The University of Chicago Press for The American Society of Naturalists Stable URL: https://www.jstor.org/stable/2462899 Accessed: 18-10-2018 22:27 UTC
+JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide range of content in a trusted digital archive. We use information technology and tools to increase productivity and facilitate new forms of scholarship. For more information about JSTOR, please contact support@jstor.org. Your use of the JSTOR archive indicates your acceptance of the Terms & Conditions of Use, available at https://about.jstor.org/terms
+The American Society of Naturalists, The University of Chicago Press are collaborating with JSTOR to digitize, preserve and extend access to The American Naturalist
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+Vol. 143, No. 4 The American Naturalist April 1994
+DENSITY DEPENDENCE AND SPATIAL STRUCTURE IN THE DYNAMICS OF INSECT PATHOGENS
+GREG DWYER*
+Department of Entomology, University of Massachusetts, Amherst, Massachusetts 01003
+Submitted October 20, 1992; Revised June 23, 1993; Accepted July 7, 1993
+Abstract.-Many forest-defoliating Lepidoptera exhibit long-term cyclic fluctuations in density that span several orders of magnitude. One hypothesis to explain these fluctuations is that they are driven by pathogens with long-lived infectious stages capable of surviving outside the host. The basis of the argument is that, for realistic parameter values, a mathematical disease model incorporating such an infectious stage is likely to show cycles with the same period as is observed in nature. The mathematical model used to make this argument, however, is so simple that it may not be biologically meaningful. In this article, I extend the original model by including two realistic complications: density-dependent host reproduction and host movement behavior. Including density-dependent host reproduction greatly increases the likelihood of cycles; additional realism thus strengthens the original conclusion. Including host movement behavior makes the model more versatile, as it allows comparison of the model output with literature data on the spatial spread of insect viruses. This comparison suggests that the spatial spread of the viruses of Gilpinia hercyniae and Oryctes rhinoceros can be explained with a very simple model of host movement, without recourse to complicated mechanisms of dispersal. The introduction of host movement behavior also introduces the possibility of cycles of outbreaks in space and time simultaneously-that is, waves of disease that will reappear at regular intervals.
+In the past 15 yr, ecologists have been led to recognize that diseases can play an important role in the dynamics of animal populations and communities (Begon et al. 1986; Dobson and Hudson 1986). An important impetus for this recognition has been a rapidly growing body of theoretical articles on animal diseases (Anderson and May 1979; Levin and Pimentel 1981; Brown 1984; Murray et al. 1986; Andreasen 1989; Hochberg and Holt 1990). Insect epizootiology illustrates the effect of this theory: although insect ecologists knew for some time that pathogens affect many different insects (Steinhaus 1963; Martignoni and Iwai 1986) and that many forest-defoliating Lepidoptera undergo large-amplitude cyclic fluctuations (Varley et al. 1973), the first connection between these facts was made in a theoretical article. Anderson and May (1981) hypothesized that forest Lepidopteran cycles result from the impact of pathogenic microorganisms, basing their hypothesis on a mathematical model. The crux of their argument is many insect pathogens have infectious stages capable of surviving for long periods outside the host; such a free-living stage, included in an otherwise standard mathematical disease model, leads to long-term cyclic fluctuations; and the period and amplitude of the model cycles are close to the period and amplitude observed in real populations for realistic parameter values.
+* E-mail: greg.dwyer@ent.umass.edu.
+Am. Nat. 1994. Vol. 143, pp. 533-562. ? 1994 by The University of Chicago. 0003-0147/94/4304-0001$02.00. All rights reserved.
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+534 THE AMERICAN NATURALIST
+Although Anderson and May's (1981) theory provides a simple and at least plausible explanation for a natural pattern, ecologists have been reluctant to accept it for two principal reasons. First, the theory may be overly simplistic; it does not include spatial structure, regulating factors other than the disease, or a host of other biological details (Brown 1987; Onstad and Carruthers 1990). Second, since the theory makes predictions over long time periods, it is difficult to test, given the problems of collecting long-term data, whether experimental or observational. In this article, I attempt to address these problems by extending Anderson and May's simple model to include two realistic complications: densitydependent host reproduction and host movement. First, many of the insects that undergo fluctuations in population density experience increased nondisease mortality or reduced fecundity at the peak of their cycle (Mason 1981; Myers 1981); including such density dependence may alter the conclusions that Anderson and May drew from the original model. Second, adding spatial spread allows me crudely to analyze a hitherto underutilized body of data generated from the release of pathogens as biological control agents (Entwistle et al. 1983). Moreover, spatial spread is an important component of the dynamics of many insect diseases, yet there is no general theory that combines spatial spread with an understanding of long-term insect disease dynamics (but see Dwyer 1992 for withinseason dynamics and Onstad et al. 1990 for a system-specific model).
+A general aim of this article is thus to expand our understanding of the longterm dynamics of insect host-pathogen systems, since diseases influence the dynamics of an enormous number of insects (Kaya and Anderson 1976; Harkrider and Hall 1978; Myers 1981; Fuxa 1982; Kalmakoff and Crawford 1982; Carter et al. 1983; Entwistle et al. 1983; Murdoch et al. 1985; Fleming et al. 1986) and are the subject of genetic engineering programs (Wood and Granados 1991). Toward this end, I have three main goals. First, I want to show the possible dynamics associated with insect-disease systems that are affected by density dependence and spatial structure. Second, I hope to provide a simple explanation for the apparently complex phenomenon of the spatial spread of disease-in particular, to show that simple mechanisms for host movement may be sufficient to explain existing observations of the spatial spread of insect diseases. Third, I want to show how a spatially structured theory can be used to make practical predictions regarding the rate of spread of diseases in the field. Such predictions could be invaluable when considering the use of pathogens in pest control or when releasing genetically engineered pathogens.
+To make the theory as concrete as possible, I focus on three insects and their associated viruses: European spruce sawfly, Gilpinia hercyniae, and its nuclear polyhedrosis virus (NPV); the coconut palm rhinoceros beetle, Oryctes rhinoceros, and its nonoccluded virus; Douglas-fir tussock moth, Orgyia pseudotsugata, and its NPV. I chose these particular insect-virus systems because they are among the best understood; in particular, for the European spruce sawfly and the rhinoceros beetle, there are extensive data sets describing the spatial spread of the associated virus (Young 1974; Entwistle et al. 1983). Furthermore, there are published estimates of many of the model parameters for all three systems.
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 535
+DENSITY DEPENDENCE
+To model changes in insect populations whose densities may be driven by disease outbreaks, Anderson and May (1981) used a system of ordinary differential equations based on standard epidemiological models. In traditional epidemiological models, the host population is divided into infected and susceptible classes, with one differential equation representing each class (Bailey 1975; Anderson and May 1979). What made Anderson and May's model innovative was the introduction of an additional class representing the population of infectious pathogen particles in the environment. These particles are found in widely divergent taxa of invertebrate pathogens, including viruses, fungi, and microsporidia (Carruthers and Soper 1987; Evans and Entwistle 1987), and they allow pathogens to survive in the environment for several decades (Thompson and Scott 1979). Although here I concentrate on viruses that infect insects, the models that I present could be used for these other host-pathogen systems as well with only minor modification.
+Anderson and May's (1981) model is
+dS- r(S + I) - vPS, (1)
+dT
+dTd - I _vPS - oI, (2)
+and
+dP XI - [,u + v(S + I)]P, (3)
+dT
+where S is the density of susceptible hosts, I is the density of infected hosts, P is the density of pathogen particles, r is the reproductive rate of the host, v is the transmission coefficient, ot is the rate of disease-induced mortality, X is the rate of production of pathogen particles by infected hosts, >L is the decay rate of the virus, and T is time.
+There are four different possible outcomes for the model described by equations (1)-(3): the pathogen regulates the host to a stable equilibrium; the pathogen is unable to control the host's population, which increases exponentially; both host and pathogen go extinct; or host and pathogen oscillate periodically, in a so-called stable limit cycle. Which of these four types of behavior occurs depends on the values of the model's parameters (r, v, ot, X, ,u). Although the existence of sustained cycles for a model as simple as this is interesting in and of itself, the essence of Anderson and May's argument is that such cycles are not just possible but probable. Their argument is that, for many insect-virus systems, the model parameters are such that host and pathogen will fall into a stable oscillation with a long period. All else being equal, the model requires that the infectious particles of the pathogen last long enough to survive for several years between host outbreaks and that the host reproductive rate be low enough so that it takes years
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+536 THE AMERICAN NATURALIST
+
+a 0.012 -
+
+CD * 0.006
+0
+
+\u4 years \- -U-8 years
+\12 years
+
+4-o
+
+0~
+(0
+
+0.000 - I l l I
+0.00 0.02 0.04 0.06 0.08
+Pathogen decay rate, p (/d)
+
+FIG. 1.-The time between host population peaks for Anderson and May's (1981) mathematical model of the dynamics of disease in insect populations, eqq. (1)-(3). Parameter values were estimated for Douglas-fir tussock moth, Orgyia pseudotsugata. Except for A = 107 (Thompson and Scott 1979), parameter values are from Dwyer (1992): v = 3.83 x 10-1 m2/d, X = 6.67 x 106/d, ox = 0.067/d, and ,u = 0.002/d. The numbered curves indicate the number of years between outbreaks for r - ,u combinations along the curve. Population cycles occur in actual tussock moth populations at roughly 6-12-yr intervals, and the model reproduces this behavior for realistic values of the model parameters.
+
+for the host population to recover from an outbreak. For some forest-defoliating Lepidoptera, crude estimates of the model parameters indicate that host and pathogen may indeed fall into stable oscillations of 6-12 yr (Anderson and May 1981). Since estimates of the parameters are for the most part poorly known, the relative area of parameter space that leads to long-term cycles becomes an issue: the larger the area the better. For example, for Douglas-fir tussock moth and its NPV, Vezina and Peterman (1985) present estimates for the parameter values in Anderson and May's (1981) model that are mostly derived from the literature; based on these estimates, they conclude that 6-12-yr cycles are unlikely for tussock moth. In an earlier article (Dwyer 1992), I estimated values for tussock moth for ot and v and estimated X from the literature. Figure 1, which is based on these values, shows the values of the host reproductive rate r and the pathogen decay rate pi that lead to cycles of 4-12 yr for parameters estimated for Douglas-fir tussock moth. Using Vezina and Peterman's (1985) estimates for r (-0.005/d)
+and ji (:0.01/d), figure 1 suggests that long-term cycles of approximatel
+correct period are instead likely for tussock moth. Without assessing different methods of parameter estimation, the issue of whether the pathogen drives cycles in Douglas-fir tussock moth is clearly in doubt.
+The only way to test this hypothesis unequivocally is with manipulative field experiments, with their attendant logistic difficulties (but see Myers 1990). My
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 537
+alternative approach is to modify Anderson and May's (1981) model (eqq. [1]-[3]) to include greater biological realism, and then to ask how this modification affects the likelihood of cycles with a long period, in terms of the size of the parameter space, for parameter estimates for tussock moth. The particular modification that I have chosen to include is density-dependent host population dynamics. The resulting model is
+dd=Tr1K- (K S Sl-s v)P]IS,,
+
+and
+
+-I=VPS - ot 1 ( +I
+dP dT= xI - [iL + v(S + I)]P,
+
+where the only new symbol is the carrying capacity K. In Appendix A, I make the model nondimensional to show that the rate at which hosts consume the pathogen is negligible relative to typical rates of production and decay of the pathogen; simulations confirm that this assumption has little or no effect on the dynamics of host and pathogen. Neglecting the consumption of the pathogen by the host leads to the simpler model
+
+dS I[ (S K S - vPS+ (4)
+
+and
+
+d- vPS ot + r() ' 1" (5) dTK
+
+dT= XI - tP. (6)
+
+In Appendix A, I show that this model has three types of behavior. For K > pL(r + ot)/vX, the possibilities are host and pathogen oscillate in a stable limit cycle, or the pathogen regulates the host to a stable equilibrium. For K < ii(r + ot)/vX, the only possibility is that the pathogen becomes extinct, following which the host reaches a stable equilibrium (S = K). In figure 2, I show the boundary between a stable limit cycle and a stable equilibrium for equations (4)-(6) for the same parameter values as in figure 1, for three different values of K; for Orgyia, K is approximately 400/M2 (Shepherd et al. 1984; Otvos et al. 1987a). What is most noticeable is that the region of r - pL parameter space in which cycles occur has increased in size; in particular, for K = 400/mi2, it has expanded enormously. In fact, the size of the parameter space that leads to cycles increases with increasing K. Even for K = 100/M2, the parameter space for the modified model (with density-dependent reproduction) is still much larger than for the original model
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+100
+A) Carrying capacity, K = 1000 /m
+10
+.1-
+No density-dependence
+.0 1 - ''""" ''"""I ''""" ''""" I ' I'"I "I
+10-5 104 10 3 10-2 io- 100
+10 B) Carrying capacity, K = 400 /m2
+Co .sE\
+No density-dependence =0
+.01 -l ________I_'_'__"_"_"I__'_'__"_"_"I__'_'_"__"_"I
+10-5 10-4 10-3 io-2 lo-1 10?
+1 C) Carryi0 ng capacity, K =2 100 /m
+I
+No density-dependence
+.01.
+10,7 1 0-6 10'5 10,4 10,3 10-2 10-I 10? Pathogen decay rate, p (Id)
+FIG. 2.-A comparison of the parameter combinations for which population cycles occur for both Anderson and May's (1981) model of disease in insect populations and for my modification of their model, eqq. (4)-(6). The modified version represented here includes density-dependent host reproduction, in other words, a carrying capacity. Limit cycles occur for pairs of values of r and p. that are on the origin side of the plotted curves. No density dependence indicates eqq. (1)-(3), in which host population growth in the absence of the disease is exponential. Carrying capacity indicates the modified model, eqq. (4)-(6), in which host population growth in the absence of the disease is density-dependent (logistic growth). Parameter values were estimated for Douglas-fir tussock moth, Orgyia pseudotsugata, as in fig. 1. A, K = 103/m2; B, K = 400/m2, which represents roughly the observed value of K in tussock moth outbreaks; C, K = 100/M2. The range of parameter values for which cycles occur in the more detailed model is much larger than it is for the original model.
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 539
+0.4
+-u--4 years
+*; :- 0.3 - -c-8 years
+. \ 12 years
+cn 0.2
+hCo
+i= 0.1
+(0*
+0.0 I I l 0.00 0.02 0.04 0.06 0.08
+Pathogen decay rate, p (/d)
+FIG. 3.-The time between disease outbreaks for the model with logistic host population growth, eqq. (4)-(6), with parameter values for Orgyia pseudotsugata as in fig. 1. The numbered curves indicate the number of years between outbreaks for parameter combinations along the curve. For realistic values of the model parameters, the model predicts cycles with a long interoutbreak interval.
+(with exponential reproduction). In short, the inclusion of additional biological realism strengthens Anderson and May's conclusion; that is, for a similar set of parameters, limit cycles are more likely and will have a longer period when density dependence is included in the model. More concretely, whereas the published parameter values (r 0.005/d, p- 0.01/d) indicate either an absence of cycles or cycles with a period that is too short for the original model, they imply cycles with a long period for the biologically enriched model (fig. 3). In fact, for such parameter values, equations (4)-(6) give cycles with a period that is much longer than 7-12 yr. Although this suggests that equations (4)-(6) may not be the correct model either, it is again important to remember that the parameter values used to generate figure 3 may or may not be accurate. In short, the simultaneous difficulties of parameter estimation and model selection make modeling the longterm dynamics of insect pathogens a formidable problem.
+SPATIAL SPREAD I: SHORT-TERM DYNAMICS
+Both Anderson and May's (1981) model and my modification of it, equations (4)-(6), describe temporal changes in host and pathogen density and thus can only be applied to time series of insect densities. Another important source of data on insect diseases comes from the release of pathogens as biological control agents into pest insect populations (Entwistle et al. 1983). This kind of data typically reports the spatial spread of the disease from its point of introduction (i.e., disease spread in both space and time). In this section, I extend the model given by equations (4)-(6) so as to describe this kind of disease spread, and I show
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+540 THE AMERICAN NATURALIST
+that the resulting model can easily explain published spatial spread data, again for reasonable parameter values.
+Allowing for host movement, and thus spatial spread, in equations (4)-(6) produces the following model:
+aS a((XT,) =T) r= (r szIS)- 1vaP'sS + D (7)
+
+and
+
+aI(Xa, Tv ) VPPSS- (- Sa)x I 2 + 'D aK2 (8)
+aP(X, T) = A- P (
+
+Host movement is here represented by the terms D(a2 SlaX2) and D(a2IlaX2) (D is the diffusion coefficient, which represents the rate of host movement), where X is the spatial coordinate (typically the distance from the point of introduction of the pathogen). Since S, I, and P are now functions of both time and space, the ordinary differential equations (4)-(6) (functions of one variable T) have become partial differential equations (7)-(9) (functions of two variables, X and T). Although diffusion is one of the simplest ways of representing insect movement, it is often accurate and a good approximation of the movement of Orgyia larvae (Kareiva 1982; Dwyer 1992).
+The model described by equations (7)-(9) assumes that space is onedimensional. Although this is of course unrealistic, often the spatial spread of insect viruses approximates unidimensionality, as when viruses are sprayed in strips as biological insecticides (Otvos et al. 1987b). Moreover, the dynamics of one-dimensional disease models with dispersal are often qualitatively similar to the dynamics of their two-dimensional counterparts (Murray et al. 1986; Mollison 1991). In addition, in many situations one dimension may well be a reasonable approximation. For example, when a pathogen spreads outward from a point, the disease front that develops may be nearly circular. After a sufficient time, a spreading circle will present an essentially planar front in each direction, since a circle with a large enough radius viewed at a local scale looks like a straight line. In such cases, the spread in any particular direction can be approximated with one dimension. Because of this, published data on the release of insect pathogens are often given in terms of one dimension (Entwistle et al. 1983).
+Equations (7)-(9) are an example of a reaction-diffusion model. In other words, they combine an interspecific interaction with diffusive movement. Such models have the important mathematical characteristic that they can exhibit what is known as traveling wave behavior. For equations (7)-(9), this means that the spatial distribution of the host and pathogen populations in the model resemble waves that move across the landscape (fig. 4). This characteristic has important mathematical repercussions, which in turn lead to significant biological insight. Here I present a simple overview of the mathematics for mathematically inclined
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+400 200 -
+
+247 days
+
+0 50 100
+458 days
+400 E U'
+Infected
+-_ 200- 20 0 - t -Susceptible
+
+= 0-
+
+0
+
+50
+
+100
+
+400
+
+599 days
+
+200 -
+
+0I
+
+0
+
+50
+
+100
+
+Distance from source of virus (km)
+
+FIG. 4.-A numerical simulation of a traveling wave solution of an insect host-pathogen model modified to include not just density dependence but also spatial structure (eqq. [7][9]). The parameter values are again for Orgyia pseudotsugata as in fig. 3, with the addition of r = 0.06/d, F = 0.006/d, and D = 510 m2/d (estimated from data of Mason and McManus [1981] for ballooning larvae of the closely related gypsy moth; see Parameter Estimates: The diffusion coefficient: D for calculation of D). The disease is introduced at the origin into a spatially uniform uninfected population and moves from left to right in the form of a wave.
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+542 THE AMERICAN NATURALIST
+biological readers, with the technical details relegated to Appendix B. Those with no mathematical background may wish to skip the next two paragraphs.
+Partial differential equation models that show traveling wave behavior can be analyzed as if the models were ordinary differential equations, which greatly simplifies the analysis. This is because the unchanging shape of the wave (fig. 4) means that, in a coordinate system that travels at the same speed as the wave, the spatial distribution of the wave always looks the same. The substitution e = X + kT therefore transforms equations (7)-(9) to a traveling coordinate system: the effect is to convert partial differential equations that are functions of space X and time T to ordinary differential equations that are functions of the variable e and that have absorbed the new parameter k. Thus, k is the rate of advance of the wave of disease, or the wave speed.
+In Appendix B, I use this transformation partially to analyze equations (7)(9)-in other words, to understand how the biological characteristics of host and pathogen affect the spatial spread of the disease. Equations (7)-(9) have three equilibria, or critical points: a trivial equilibrium at the origin (S, I, P) = (0, 0, 0); a disease-free equilibrium at the carrying capacity of the host population (S, I, P) = (K, 0, 0); and an internal equilibrium (S, I, P) = (S, I, P). Mathematically, a traveling wave solution of the model consists of a wave of disease that transforms the spatially uniform disease-free equilibrium (S, I, P) = (K, 0, 0) into the internal equilibrium (S, I, P); for now, I consider only the first of these two nontrivial equilibria. For the nonspatial model of equations (4)-(6), there is a threshold that determines whether the pathogen can survive in the population; for equations (7)-(9), the same threshold determines whether a traveling wave solution will exist. That is, for
+K< + r) (10)
+vA
+no wave forms; instead, the disease barely spreads from the point of its introduction. For
+K> (a + r) (11) vA
+a traveling wave forms; that is, a wave-shaped distribution of infected hosts develops and moves away from the point of introduction of the virus. In front of the wave, the susceptible population is equal to K, and the population of the infected hosts and pathogen particles is equal to zero. Behind the wave, the dynamics can be complicated, and will be treated later (see Spatial Spread II: Long-Term Dynamics). It is difficult to calculate what the speed of the wave of disease will be in general; in Appendix B, however, I derive an expression for the minimum value of the wave speed parameter k. Although it is even more difficult to determine which wave speed will be the most stable, using computer simulations I found that the initial wave of disease modeled by equations (7)-(9) consistently traveled at this minimum speed. In other words, although other speeds are possible, the actual model solutions apparently travel at the minimum
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 543
+
+speed, a result that has consistently been true for similar wave models (Murray et al. 1986; van den Bosch et al. 1988; Murray 1989; Yachi et al. 1990).
+In short, it is possible to calculate the velocity of the wave of disease. Although the notion of velocity for a traveling wave of disease may seem like mathematical esoterica, in fact it has both practical merit and biological importance. For instance, when assessing the risk of spread of an engineered pathogen, often what we most want to know is the speed with which such a pathogen spreads. Also, the wave speed parameter acts as a convenient summary statistic: it summarizes the relationship between the model parameters, which represent the biological characteristics of host and pathogen, and the rate of spatial spread of the disease. It thus translates the individual-level processes of host reproduction, disease transmission, disease-induced mortality, host movement, pathogen production, pathogen decay, and host movement into the population-level phenomenon of disease spread. For example, figure 5 shows plots of the speed of an NPV wave moving through an Orgyia population, as each of the model parameters is varied in turn. This figure shows that, as one would expect, the wave speed increases with increasing carrying capacity K, transmission parameter v, and pathogen production rate X, and it decreases with increasing pathogen decay rate > and disease-induced death rate a. Surprisingly, however, it decreases slightly with the intrinsic rate of population increase, r. This latter effect may be due to the fact that r scales the effects of density dependence on the infected population: increases in r thus lead to greater losses of infected hosts due to density dependence.
+Parameter Estimates
+In order to demonstrate the usefulness of the model in explaining published patterns of the spatial spread of insect pathogens, I need to show that the shape or speed of the waves generated by the model for realistic parameter values is similar to the shape or speed of waves in actual insect-pathogen systems (Young 1974; Entwistle et al. 1983). In this subsection I derive crude estimates of the model parameters from the literature, for European spruce sawfly Gilpinia hercyniae and its NPV and for the coconut palm rhinoceros beetle Oryctes rhinoceros and its nonoccluded virus, treating each parameter separately.
+Intrinsic rate of increase: r.-The intrinsic rate of increase, r, can be estimated from the net replacement rate and the generation time according to
+
+In
+g
+
+nR
+
+(12)
+
+where Ro is the net replacement rate, and g is the generation time (Krebs 1978). The net replacement rate is equal to lifetime female fecundity times proportional survival from egg to adult (times 0.5 for the sexually reproducing Oryctes: Gilpinia is apparently parthenogenetic; Entwistle et al. 1983). Hinckley (1973) gives
+the lifetime fecundity of female Oryctes as 90-150 eggs and the generation time as 20 wk. Zelazny and Alfiler (1986) give the proportion of Oryctes eggs surviving to adulthood as 0.03; these statistics result in a value of r = 0.002-0.006/d. Entwistle et al. (1983) give the lifetime fecundity of Gilpinia as 30-40 eggs. I was
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+1000 - 500
+A) / B)
+
+500
+
+0
+
+0- 1 1 09 a1 o - C '!'I io'12o1?'1o10?'i?o9 io-4 io'7 i0'6 io'5 1o-4 Transmission coefficient, v (m 2/d) Production rate of pathogen, x (/d)
+40
+40- C') l\
+10
+
+0.
+20
+
+20
+
+D)
+
+0l
+
+0 500 1000 10o7 10o6 i0-5 1o-4 10o3 io-2 10.1 10? Carrying capacity, K (Im2) Pathogen decay rate, p (Id)
+
+40
+
+-
+
+40
+
+-
+
+F) 20 - E) 20 -
+
+0-II0 0.0 0.5 1.0 10 6 10 5 10 4 10 3 10 2 io11 Disease-induced host death rate, a (Id) Host intrinsic rate of increase, r (/d)
+FIG. 5.-Plots of the wave speed, or the rate of advance of the disease, for the NPV of Orgyia as a function of each of the parameter values in eqq. (7)-(9). For the default parameter values, see figs. 3 and 4 with the addition of r = 0.005/d (Vezina and Peterman 1986). Wave speed versus (A) the transmission coefficient, v; (B) pathogen production rate, X; (C) carrying capacity, K; (D) pathogen decay rate, R; (E) disease-induced mortality rate, cx; (F) intrinsic rate of increase, r. As the graphs show, the model parameters vary enormously in the extent to which they affect the speed of the wave. In particular, the wave speed is very sensitive to small changes in the transmission coefficient v and the pathogen production rate X, which suggests that the rate of advance of the disease is quite sensitive to the infectiousness of the disease.
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 545
+
+unable to find an estimate of survival from egg to adult for Gilpinia; instead, I use Olofsson's (1987) estimate of fractional egg to adult survival of the related Neodiprion sertifer of 0.05. Since Gilpinia in Europe has one generation per year, the generation time is 365 d. This gives a value of r = 0.001-0.0045/d.
+Carrying capacity: K.- The carrying capacity K can be taken as roughly the population density of each insect before the introduction of the disease. Young (1974) gives the population of adult Oryctes on Tongatapu as 25/ha. I use this estimate for lack of a better one. Although there is no corresponding estimate of Gilpinia density in Wales, Bird and Elgee (1957) estimate the maximum density of Gilpinia in Canada before the introduction of the NPV disease as 15/M2.
+The disease-induced mortality rate: oL.-The disease-induced mortality rate cx is the inverse of the incubation time. I was unable to find an estimate of the incubation time for virus-infected Gilpinia; however, the viruses of Oryctes, Orgyia, and the closely related Neodiprion sertifer all have incubation times of 7-21 d (Zelazny 1972; Olofsson 1988; Dwyer 1992). For both Oryctes and Gilpinia, I therefore use an incubation time of 15 d, for a value of cx of 0.075/d.
+The virus decay rate: ,u.-If the virus decays exponentially, as I assume in the model, then
+
+dP _>p, (13)
+
+so that
+
+1I P(t) (4 I t P(0)t (14)
+
+where P(0) and P(t) are the pathogen populations at times 0 and t, respectively.
+Thus, R can be estimated from the fraction of the pathogen population surv
+per unit time. Zelazny (1972) provides this data for the virus of Oryctes, for a
+value of R = 0.3/d. I was unable to find similar data for the NPV of Gilpini
+but Olofsson (1988) estimates that the density of Neodiprion sertifer virus declined from 109 to 106 over a period of 10 mo, for a value of > = 0.02/d. The higher value of the decay rate for the Oryctes virus is probably because of the fact that, unlike the Orgyia, Neodiprion, or Gilpinia viruses, the Oryctes virus is not encapsulated in a protective protein matrix, so it decays rapidly (Evans and Entwistle 1987).
+The pathogen production rate: X.-The pathogen production rate is related to the number of virus particles per dead infected host according to
+
+X = Ao- (15)
+
+(Anderson and May 1981). That is, the number of virus particles produced per unit time by an infected host is the total number produced during the infectious period, A, divided by the length of time that an infection lasts (T, where cx = lIT). Since I have estimates of the disease-induced mortality rate for both Gilpinia and Oryctes, I only need to know the number of pathogen particles produced by an infected host. Although there are no such estimates for either Gilpinia or Oryctes, estimates of A for other insects range from 107 to 109
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+546 THE AMERICAN NATURALIST
+TABLE 1
+MODEL PARAMETERS FOR GILPINIA AND ORYCTES
+Parameter Gilpinia Oryctes
+Intrinsic rate of increase r .003 d- .004 d-l Carrying capacity K 15 m 2 2.5 x 10-4 m-2 Disease-induced mortality rate ot .075 d- .075 dDisease decay rate ,u .02 d- .3 d -1 Number of pathogen particles per infected host A lo8 lo8 Diffusion coefficient D 10 m2/d 271.83 m2/d
+(Thompson and Scott 1979; Kaupp 1983; Shapiro et al. 1987). I therefore use a value for A of 108 for both Oryctes and Gilpinia.
+The diffusion coefficient: D.-For the diffusion coefficient for Oryctes, I use mark recapture data from Cumber (1957). One of the characteristics of diffusion as a model for movement is that, if a group of individuals is released at a point, the mean square distance m of the population from the point of release will increase linearly with time t according to
+m = 4Dt (16)
+(Okubo 1980), where D is again the diffusion coefficient. Cumber's data result in a value of D of 271.83 m2/d.
+For the diffusion coefficent (D) for Gilpinia, I use a value of D = 10 m2/d as an intentional underestimate (see next section, Fitting the Model to Field Observations).
+The remaining parameters are the transmission parameter v for both species. The only estimates of the transmission parameter v that I am aware of are for Orgyia (Dwyer 1992) and Lymantria dispar (Dwyer and Elkinton 1993). Since the model output is so sensitive to changes in v (fig. 5) and since v summarizes so much of the biology of the host-pathogen interaction (Dwyer 1991), rather than estimate v, I instead opted to fit this parameter to the data (see next section).
+The model parameters for Gilpinia and Oryctes are summarized in table 1.
+Fitting the Model to Field Observations
+Although I cannot formally test the model because I lack independent estimates of all the parameters, I can use the model to explore the plausibility of interesting biological hypotheses. Specifically, Entwistle et al. (1983) remark that disease spread in Gilpinia seems remarkably fast and so must require special mechanisms of virus transport such as movement in bird feces. To test whether such a conclusion is necessary, I substituted into the model a conservatively low diffusion coefficient (D = 10 m2/d compared to 102_103 m2/d for other insects; Kareiva 1982) for Gilpinia and asked whether the model predicts spread rates in accord with field data for a reasonable range of transmission coefficients. The observed rate of spread of Gilpinia NPV is about 800 m/yr; figure 6A indicates that for the model this is equivalent to a value of v of about 10-'0-10-9/d. For more realistic
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 547
+5 A) Gilpinia hercyniae
+
+a4
+E
+
+,
+
+3-
+
+1O'1o 10 9 10-8
+4 - B) Oryctes rhinoceros a)/
+E3-
+%fw2
+10-10 910o- 10-8
+hercyniae B) Oryctes rhinoceros,vr
+0
+10,10 10o9 io'8 1
+Transmission constant, v (m 2/d)
+FIG. 6.-Wave speeds, or rates of advance of a disease epizootic, for the virus hercyniae and Oryctes rhinoceros, versus transmission rate v. For the other par ues, see table 1. The model correctly predicts the approximate rate of spread of th for apparently realistic parameter values.
+(i.e., higher) values of D, the value of v corresponding to the correct wave speed would of course be lower. Similarly, figure 6B plots the wave speed against the transmission parameter for Oryctes virus. The observed rate of spread of the Oryctes virus in the field is 1.5-3 km/mo (Young 1974); figure 6B shows that this corresponds to a value of v of about 10-8-10-7/d. In fact, given that the estimate of the carrying capacity K for Oryctes is an underestimate and given that at low values of K the wave speed is very sensitive to K (fig. 5), in reality the transmission coefficient v probably could be much lower and still result in a high rate of spread.
+Although it is difficult to attach any biological interpretation to these values of
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+548 THE AMERICAN NATURALIST
+1.0
+-U-NE transect -ti/C-SW transect -Model
+~0.5
+0
+U.
+0 500 1000 Distance (m)
+FIG. 7.-Model output fitted to the spatial distribution of the fraction of Gilpinia larvae infected with NPV 1 yr after the disease was introduced at the origin, as in fig. 4. In other words, I ran the model for various values of the transmission coefficient v and the diffusion coefficient D and picked the model runs that were closest to the data (Entwistle et al. 1983). The other parameters are from table 1. The close fit between model and data suggests that the model accurately reproduces the wave of disease apparent in the data. Note that the model is constrained to fit not just the shape of the wave of disease but also the time after the disease was introduced.
+v, they are similar to the value of v for Orgyia (10-9 m2/d; Dwyer 1992) and for Lymantria dispar (10-12 m2/d; Dwyer and Elkinton 1993) in that they are much less than one. The point is that for apparently reasonable parameter values the model described by equations (7)-(9) can easily explain the observed rate of spread of the viruses of Gilpinia and Oryctes. The model thus demonstrates that it is not necessary to include complicated dispersal mechanisms to explain the spread of the virus-simple diffusive host movement is sufficient. Encouragingly, more recent evidence indicates that Gilpinia NPV spread by birds may be insignificant (Buse 1987).
+I went one step further for the Gilpinia data set, which includes profiles of disease incidence along spatial transects centered on an experimental introduction of the disease. For these data, I adjusted the values of both v and D and compared the shape of the model wave to the data. Figure 7 shows that, for v = 1 x 10-9 m2/d and D = 60 m2/d, the model reproduces the qualitative features of the spatial distribution of disease surprisingly accurately, considering the roughness of both the parameter estimates and the spread data. The model thus is capable of explaining the shape of the wave of disease as well, again for biologically reasonable values of both v and D.
+In summary, the model given by equations (7)-(9) can be useful in explaining
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 549
+observed patterns of insect pathogen spatial spread. Biologically this means that the interaction between host and pathogen on a local scale, combined with the random movement of hosts, may be sufficient to explain the spatial spread of insect diseases in the field. In addition, the model has the advantage of being comparatively simple, since it does not include or require pathogen dispersal by species other than the host. This is not to say that complex dispersal mechanisms are not important but rather that simple mechanisms may be sufficient to explain the existing data.
+SPATIAL SPREAD II: LONG-TERM DYNAMICS
+In addition to predicting transitory spatial spread, the model described by equations (7)-(9) can be used to understand the effects of spatial structure on the long-term dynamics of insect diseases. Although published observations of spatial spread typically extend for less than 5 yr, an examination of the long-term dynamics generated by the model nevertheless can indicate possibilities that were previously unexplored. Specifically, for some of the simulations in which the pathogen is introduced at a point, the initial wave of disease is followed by repeated waves. In other words, a train of traveling waves appears, so that the wave of disease is repeated over and over (fig. 8). This type of behavior, which cannot be inferred from the nonspatial model, is an example of what is known as pattern generation. This means that, although none of the parameters vary with space and at least the host population starts out spatially uniform, the addition of host movement to the interaction between host and pathogen generates a persistent spatial pattern. Pattern-generating mechanisms have been found in models of predator-prey interactions (Levin and Segal 1985), with the difference that the nonuniform spatial distributions of predator and prey do not change with time; in contrast, the pattern generated by a train of traveling waves changes with both space and time. Comins et al. (1992) similarly observed traveling waves in a two-dimensional hostparasitoid model, with the difference that the waves spiral outward.
+Whether such persistent waves occur depends on both the initial conditions and the parameter values. If the pathogen is introduced uniformly with respect to space, the long-term behavior of the model will inevitably be spatially uniform. In such cases, the spatial model (eqq. [7]-[9]) essentially reduces to the nonspatial model. In other words, host and pathogen can still oscillate temporally, and the conditions that permit oscillation are the same as for equations (4)-(6) (fig. 2). This is because any solution to a spatially homogeneous model, such as that given by equations (4)-(6), is also a solution to the same model with diffusion, such as that given by equations (7)-(9) (Hastings 1990).
+Even if the pathogen is introduced at a point, for some parameter values the waves of disease damp out to a spatially uniform state. Stable waves only appear for the appropriate parameter values; for example, if r and p1 are on the limit cycle side of the bifurcation locus in figure 2B and are progressively made smaller, eventually the damped spatial waves cease to damp out and instead become stable. In Appendix C, I derive an approximate expression for the boundary between wave trains, or spatial cycles, and spatial homogeneity, and this bound-
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+550 THE AMERICAN NATURALIST
+
+400
+
+599 days
+
+200 -
+
+00 50 100
+
+1479 days
+
+2 400 - Infocted
+
+_
+
+-Susceptible
+
+t 200
+
+(0
+
+0
+
+50
+
+100
+
+400 -
+
+2289 days
+
+200 -
+0- I
+0 50 100 Distance from source of virus (km)
+FIG. 8.-Cyclic spatial waves: simulations of trains of waves of NPV disease of Orgyia. This figure is a continuation of fig. 4. In each graph, a wave of infected hosts is chasing a wave of healthy hosts from left to right, but the peaks are only shown when they reach a distance of about 80 km from the origin. In other words, successive waves of disease are generated at the origin, and then proceed down the horizontal axis. See figs. 3 and 4 for parameter values.
+ary is plotted in figure 9. The lack of long-term spatially referenced data sets of insect diseases means that there is no way to compare the model predictions, such as figure 9, to what occurs in nature. Nevertheless, it is encouraging that, for the parameters estimated for Orgyia, the region of parameter space in which cycles of traveling waves occur is also larger than the area of parameter space in which temporal cycles occur in the original Anderson and May (1981) model, which indicates that such cycles may well occur in nature.
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 551
+10 - With density-dependence -Without density-dependence
+------------------------Spatial cycles
+co~
+X- X
+._
+10'5 1'4 10,3 10io2 10-1 100 Pathogen decay rate, Li (/d)
+FIG. 9.-Parameter space for cyclic waves of disease for the spatial model, eqq. (7)-(9), compared with the nonspatial models, eqq. (I)-(3), and (4)-(6). Cycles occur for pairs of values of r and p. that are on the origin side of the plotted curves. For the nonspatial models, the cycles are temporal, while for the spatial model the cycles occur in both time and space. The large range of combinations of r and p. that give cyclic wave trains suggests that such cyclic waves may in fact occur in nature.
+One of the interesting aspects of the spatial cycles generated by equations (7)-9) is that they are a function of spatial scale. In particular, repeated waves will only occur if the spatial domain is large enough relative to the dispersal ability of the host. This is similar to the critical patch phenomenon of simple models that incorporate dispersal plus population growth (Okubo 1980). In figure 10, I have plotted the distance between successive peaks as a function of ~x for Orgyia, based on a calculation in Appendix C. For ~x = 0.01Id, this theoretical wavelength, which is a rough estimate of the minimum spatial domain in which repeated waves can form, is about 1 km. Field data indicate that Orgyia populations driven by a virus disease are in synchrony at 10-50 km (Mason 1978), which at least does not grossly contradict my theoretical guess for a minimum spatial domain.
+DISCUSSION
+Incorporating the realistic complication of density-dependent host reproduction into an otherwise simple invertebrate host-pathogen model increases the likelihood that host and pathogen will be driven into stable cycles. This result suggests that Anderson and May's (1981) conclusion is robust; that is, under the more complicated conditions in nature, host and pathogen will indeed cycle.
+Introducing spatial structure into the model makes it possible to use the model
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+552 THE AMERICAN NATURALIST
+100
+- 10
+>1
+co
+.1 - I |I H 111 I I i 1 1l I11 i 1 1111
+10 7 10 6 10' 5 10' 4 10 3 10 2 10 1 Pathogen decay rate, gi (/d)
+FIG. 10.-The minimum spatial scale, or patch size, in which cyclic waves can form for Orgyia, as a function of the pathogen decay rate [L. For the spatial model, cyclic waves of disease can occur only if the insect host's habitat is of a sufficiently large spatial scale. The other parameter values are as in figs. 3 and 4.
+to describe the spread of insect pathogens in both space and time. Although the model defined by equations (7)-(9) is still comparatively simple, it is nevertheless sufficient to explain the apparently complex phenomenon of insect pathogen spatial spread, even without complex mechanisms of dispersal. Significantly, this conclusion was not obvious from the existing data (Entwistle et al. 1983), even though the data were derived from experimental releases of pathogens. Of course, whether the model embodies the correct mechanism of pathogen dispersal can only be established in the field.
+Introducing spatial structure also allows for the possibility of cycles in both time and space. In the absence of any data, it is impossible to know whether such cycles actually occur, but if they did they would be difficult to detect. Gypsy moth populations in different areas on the east coast of the United States, for example, oscillate in asynchrony (J. S. Elkinton, personal communication). Since the spatial scales involved are on the order of hundreds of kilometers and the habitat is very patchy, it is difficult to tell if such oscillations are repeated trains of virus waves. The mere possibility is nevertheless interesting, especially since such asynchrony is usually explained in terms of variation in local conditions, such as predation rates (Elkinton and Liebhold 1990) or host foliage chemistry (Keating and Yendol 1987).
+In short, simple mathematical disease models can play a useful role in delineating the possible and probable dynamics of insect host-pathogen interactions and can provide simple explanations of complex spatial phenomena. In addition, however, such models can have practical applications. For example, the wave speed
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 553
+calculation that I have given here can be used to answer critical questions in the use of pathogens in pest control. Genetically engineered polyhedrosis viruses have been produced that are of dramatically different virulence and longevity than wild strains (Wood and Granados 1991). Before such viruses can be widely used in the field, however, concerns over environmental risks require a knowledge of how far they will spread from the point of release. The wave speed can be used to make this calculation, with the advantage that many of the input parameters can be estimated in the lab. Similarly, Otvos et al. (1987b) discovered that, when the NPV of Orgyia is used as a biological insecticide, the disease can spread at least 250 m in a season. Spraying the virus is very expensive; by using the wave speed calculation to estimate how far the disease will spread, the virus could be sprayed over a potentially much smaller area. The result would be much more cost-effective biological pest control.
+ACKNOWLEDGMENTS
+I would like to thank G. M. Odell for his help, encouragement, custom software, and enthusiasm. J. Elkinton and P. Kareiva similarly provided encouragement, financial support, and computers. P. Kareiva's Remedial Ecology Reading Group made many helpful editorial and mathematical suggestions. T. Ives extricated me from several algebraic tangles, and C. Styles helped me finish. This research was supported in part by a National Science Foundation Graduate Fellowship, a National Science Foundation grant, a U.S. Department of Agriculture (USDA) Competitive Scientific Research Service (CSRS) grant to P. Kareiva, and a National Science Foundation grant to J. Elkinton, J. Burand, and G.D. Some of the simulations were carried out using a computer supplied by the University of Washington's Faculty Workstation Initiative.
+APPENDIX A
+LIMIT CYCLE BEHAVIOR FOR A MODEL WITH DENSITY DEPENDENCE In this appendix, I derive the conditions for which equations (4)-(6) can have a limit
+cycle. The approach is to delineate the area of parameter space for which the equations may potentially undergo what is known mathematically as a Hopf bifurcation (Marsden and McCracken 1976). Although this may sound daunting, all that is required to understand any of the appendixes in this article is an understanding of the qualitative theory of ordinary differential equations, sometimes known as linear stability analysis (for a clear exposition
+see Odell 1981).
+To reduce the number of parameters, I begin by making equations (4)-(6) nondimensional according to
+S.IP
+K 'K P K t=vKT
+and
+r (x IL
+vK vK vK Y vK
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+554 THE AMERICAN NATURALIST
+
+This turns equations (4)-(6) into
+ds= [1 - (s + i)]s -Ps, (Al)
+dti
+ddt i =ps- [b + E (S + i)]i, (A2)
+and
+
+dp = - yp.
+dt For Anderson and May's model (eqq. [1]-[3]) equation (A3) is
+
+(A3)
+
+dtdp -= wi-yp - (s + i)p. (A4)
+For Orgyia, v is very small compared to X, x, and K. As a result, w and y are very large compared to one, so that it is probably safe to neglect the last term on the right-hand side of equation (A4), which represents the rate of consumption of the pathogen by the host. Simulations confirm that this expression has little effect on the dynamics of the model.
+The equilibrium points of the system described by equations (4)-(6) are
+s = 1 i=O p =0 (A5)
+s=0 i-0 pj=0 (A6)
+s =- [yEl (E +y b) + bw] f=I -2[W - yE (E + 8)] p =( -[k7 - y(E + 8)]. (A7)
+
+For the disease to maintain itself in the system, it must of course have a positive equilibrium: this requires
+
+- (E + 8) > 0.
+ly
+In the main text, I use the dimensionalized version of this condition. The standard linearization procedure (May 1974; Odell 1981) around the critical points (s, i, j) yields the Jacobian matrix
+-Es es --
+
+(~ )
+0 o -y,
+where +-8 + S - 2Ei. The equation for the eigenvalues of the Jacobian is then
+
+where
+
+O' + a02 + bO + c = 0, (A8)
+
+a- E + -y + +,
+
+b--E(y + ?) + 4y - WS + EQF E)
+
+and
+
+c- I E- E)(W + Ey) + Es(4+y - WS).
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 555
+
+At the internal equilibrium (A7), a Hopf bifurcation to a limi some values of the parameters, there is a pair of pure imaginary eigenvalues. Since complex eigenvalues only come in pairs, the remaining eigenvalue is necessarily real, and for a Hopf bifurcation it must be negative. For these conditions to be satisfied, the characteristic equation for the eigenvalues must factor as
+
+(0 + j-q)(0 - j-q)(0 + r) = 0, where j = I, r is the real root, and ?jfr is the pure imaginary pair, so that
+O' + rO2 + -q2O + r112 = 0. (A9)
+
+Since equation (A9) is the same as equation (A8), r a, for a Hopf bifurcation to occur, it first of all must be t
+
+and
+
+r>0 N2> 0 .
+
+The first condition is obviously true, and it is easy to show holds as well. A third condition is that the expression fo r must equal the expression for -q2. The resulting expr the parameter space for which there is a pair of complex eigenvalues. If a Hopf bifurcation to a stable limit cycle occurs, then, as the parameters are varied so that this boundary is crossed, a limit cycle will appear. Proving that a Hopf bifurcation occurs across this boundary is exceedingly difficult, so we are forced to resort to numerical simulations. The simulations confirm that a stable limit cycle appears on one side of this locus of points.
+
+APPENDIX B WAVE SPEED CALCULATION In this appendix, I derive an expression for the minimum wave speed, which I use in figures 5 and 6. Although the analysis treats partial differential equations, as in Appendix A all that is required to understand what follows is a familiarity with the qualitative theory of ordinary differential equations. I begin by making equations (7)-(9) nondimensional: the nondimensionalization is the same as for the nonspatial model, described by equations (4)-(6) (see App. A), with the addition of the transformation for X
+vK
+x D X.
+Equations (7)-(9) then become
+As = E[1- (s + i)]s - Ps + 22s
+ai = ps - [5 + E(S + i)]i + a2i
+and ap
+The simulations indicate that there are solutions of the model that form waves traveling with constant shape at a constant speed, so that the model can be converted to a moving
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+556 THE AMERICAN NATURALIST
+
+coordinate system using the transformation e = x + kt. This translates the system of partial differential equations to a system of ordinary differential equations, so that
+
+ks' = E[1 - (s + i)]s - ps + s",
+
+ki' = ps - [ + E(s + i)]i + i",
+
+and
+
+kp' = i- -yp,
+
+where the prime symbol indicates differentiation with respect to t. To further convert this second-order system to a first-order one, I introduce the variables y and z such that s' = z and i' = y to give the first-order system
+
+s=
+
+z,
+
+(B1)
+
+z' =kz - E[1 + (s + i)]s + ps, (B2)
+
+it= y, (B3)
+
+y'= ky + [5 + E(S + i)]i- ps, (B4)
+
+and
+
+k. yP (B5)
+
+This set of ordinary differential equations has three critical points (or equilibria): (s, z, i, y, p) = (1, 0, 0, 0, 0); (s, z, i, y, p) = (0, 0, 0, 0, 0); and (s, z, i, y, p) = (s, 0, I, 0, p),
+where s, I, and pj represent the internal equilibrium in Appendix A. A traveling w solution is thus a trajectory from (1, 0, 0, 0, 0) to (s, 0, I, 0, p) for which s, i, and p are
+always positive. As in Appendix A, this requires that
+
+t - (e + 8) > O. (B6)
+ly
+The interpretation of this condition is slightly different, however; whereas for the nonspatial model this was a condition on whether the disease would maintain itself in the system, here it is as well a condition on whether there will be a traveling wave. That is, if equation (B6) is satisfied, then a traveling wave will form; if not, the disease will barely spread from the point of introduction.
+Given that equation (B6) holds, the calculation of the minimum possible wave speed proceeds from an analysis of the eigenvalues of the system given by equations (B1)-(B5) linearized around (1, 0, 0, 0, 0). The eigenvalues associated with this point are 0 = k/2
+?/k+2+ 42/2 and the roots of the cubic
+
+f(0) = 03- (k - )y02 (5+ E + 'Y) + - k Y(b + E)]. (B7)
+Sincef(?+oo) = so, f'(0) = -(5 + E + y) < 0, and if equation (B6) holds, f(O) > 0, then for any set of parameters, f(0) looks like the curves in figure B 1. As k is decreased, f will successively look like figure B1A, B, and C. Iff looks like figure B1A it will have one negative real root and a complex conjugate pair of roots, so that the solutions near the critical point will oscillate. Since at this critical point i = p = 0, oscillatory solutions imply negative population sizes, which is of course not realistic. Figure BIB thus represents the minimum possible value of k, denoted kc. For this minimum, f'(0) = 0 and f(0) = 0, allowing me to eliminate 0 from equation (B7) to find kc in terms of the other parameters. From this procedure, kc is given by the positive root of g(k 2) where
+g(z) = 2z3 + [3,y + 9(E + 8)]z2 - [27w + 3 y2 - 18,y( + E)]z (B8)
++ {z2 + z[-y + 3 (8 + E)] + y2}312 - 2y3.
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+5432
+0
+5-
+4_ B)
+32-
+-.1.5 -1.0 -0o.5s o0.o0 0.5 1.0 1.55 22..00 22..55
+5-
+4- C)
+321-
+a
+-1.5 -1.0 -0.5 0.0 0.5 1.0 1.5 2.0 2.5
+FIG. B1.-The calculation of the minimum wave speed in App. B. As the wave speed is decreased, f in eq. (B7) looks successively like A, B, and C. In A, f has two real positive roots; in C, f has two complex positive roots; and in B, f has two (identical) real positive roots.
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+558 THE AMERICAN NATURALIST
+The information that g(O) = -2,y3 < 0, g(+oo) = +oo, and, if equation (B6) holds, g'(z) < 0 can be used to sketch g(z) to show that it has a unique positive root; this root is the minimum possible velocity for a traveling wave of disease. Figures 5 and 6 were generated by redimensionalizing equation (B8).
+It remains to be shown that there is no trajectory from (s > 1, 0, 0, 0, 0) to the origin. The eigenvalues of the system linearized about the origin are
+0 k ?+ V k2 - 4E Y k k+ -45 2 'k' 2
+In the vicinity of the origin, the trajectories that approach the origin as + oo will be governed by the solutions with negative eigenvalues, that is, by 0 = - y/k. The eigenvector associated with this eigenvalue is the transpose of
+[0,0,0,0,A], (B9)
+where A is a constant determined by the initial conditions. This means that trajectories that approach the origin do so in the s = y = i = z = 0 subspace. For the system defined by equations (B 1)-(B5), again e is reversible, so that we can replace e by - t and move backward along any trajectory. If we make the substitution T = - e in equations (B 1)-(B5) and move backward from s = y = i = z = 0, we see that s = y = i = z = 0 for all positive T regardless of the initial value of p. This means that any trajectory for which s = y = i = z = 0 had s = y = i = z = 0 for all previous t; in other words, any trajectory leaving (1, 0, 0, 0, 0) will never reach the origin. The only possibility is thus that trave wave solutions have trajectories from (1, 0, 0, 0, 0) to (3, 0, ^, 0, p5).
+APPENDIX C REPEATED WAVES In this appendix, I attempt to find a locus of points in parameter space for which a Hopf bifurcation occurs in what is essentially the "exact traveling wave space" of equations (7)-(9)-that is, equations (B1)-(B5). I use the resulting expression to generate figures 9 and 10. My basic approach is motivated by the simulation results; that is, the simulations indicate that a stable limit cycle occurs. By this I mean that the traveling wave solutions recur (fig. 10): the initial wave of disease gives way to periodically recurring waves. Accordingly, I seek conditions on the parameters for which a limit cycle is possible. I begin in the usual way, by linearizing equations (B1)-(B5) around the internal equilibrium (A7). (If you skipped the last two appendixes, all that any one of them requires is an understanding of so-called linear stability analysis.) The resulting Jacobian gives the characteristic equation
+05 + a04 + bo3 + C02 + do + e =0, (C1)
+where
+'y
+a _Yk- 2k,
+b _ k2 - (+ 63 + w + )
+2d+-s+^+ ++ E)1 1 c+)-) )k+ 'y 1 + E 3^- If
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 559
+
+and
+
+2
+e- Sil eyk
+
+In order to have a Hopf bifurcation at the internal equilibrium, among other things there must be a pair of complex eigenvalues whose real part changes sign. In other words, if I
+divide equation (Cl) by (0 + j-q)(0 - jfr), wherejj 1- and - is the imaginary part of
+the eigenvalues whose real part changes sign, then the remainder will be zero. Synthetic (or long) division yields a cubic
+
+f(0) = 03 + a02 + (b- _q2)0 + (c - aq2) = O (C2)
+
+with remainder
+
+(d - br12 + ql4)0 + e + ar4 - C2 = o. (C3)
+The shape of the cubic (C2) and the condition (C3) both depend on the wave speed k; from Appendix B, I know the minimum wave speed, which is apparently the stable wave speed as well. Given the wave speed, the shape of the cubic can be determined from its coefficients. For parameter values for Orgyia (Dwyer 1992; fig. 3), a < 0 and c > 0, which means that f(O) > 0 and f"(0) < 0. These conditions can be used to sketch the cubic (C2) to show that, of the remaining three eigenvalues, one is a negative real, and the other two are possibly complex but always have positive real part. At this point, it is important to remember that we are attempting to analyze the behavior of partial differential equations; in other words, the stability of the ordinary differential equations (B1)-(B5) does not tell us the stability of traveling wave solutions of equations (7)-(9). In practical terms, the stability of the partial differential equations can only be determined by numerical simulation. The important point is thus that the linear analysis indicates that the internal equilibrium of equations (B1)-(B5) should not have a Hopf bifurcation. The Hopf bifurcation requires that all the eigenvalues should have negative real part except for the pair whose real part changes sign, whereas here there is a pair with positive real part. Nevertheless, the simulations show that a limit cycle does occur (and that the cycles are not due to a homoclinic orbit between the internal equilibrium and [K, 0, 0]). Heuristically, I interpret this to mean that stable solutions to the partial differential equations are equivalent to trajectories of equations (B1)-(B5) that approach the internal equilibrium as e -> oo and are spanned by the eigenvectors associated with the eigenvalue having negative real part and the pair of eigenvalues whose real part changes sign (a similar approach is followed by Murray et al. [1986] and Yachi et al. [1990]). The condition that a pair of eigenvalues have zero real part does not show that a Hopf bifurcation occurs; instead, I use this condition as a heuristic to describe what the simulations indicate is happening.
+In any event, since a < 0 and q2 > 0, 9
+
+c (\ e
+2b - v' i72 _ a \a a 22
+
+This condition gives the bifurcation locus in figure 10 and describes the outcome of the simulations for a broad range of parameter values. It does so only approximately, however; as the parameter values get close to the bifurcation locus, it becomes very difficult to tell whether the solutions approach a spatially uniform cycle. Part of the difficulty is that the solutions are only rarely perfect trains of waves; that is, often the point from which the waves travel moves, so that in many cases trains of waves proceed in both directions from somewhere in the middle of the spatial domain. This is in spite of using "no-flux" boundary conditions (a/ax = 0) at the end at which the pathogen is introduced and "absorbing" boundary conditions (a/ax = - Q, where Q is an arbitrary constant) at the opposite end. Indeed, even when the simulations were close to a perfect spatial uniform equilibrium, sometimes instabilities at the boundaries pushed the solutions into an irregular fluctuating
+
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+560 THE AMERICAN NATURALIST
+pattern. This was exacerbated if the spatial grid used to approximate the partial differential equations was too coarse: a coarse enough grid can even produce a spuriously chaotic pattern. Since too small a spatial domain can cause the spatial cycles to disappear, numerical solutions thus represent a trade-off between too coarse a spatial grid and too small a spatial domain.
+In any case, given the expression for the Hopf bifurcation locus, the expression for the minimum wavelength in figure B 1 can be derived in the following way: -q2 is related to the period of oscillation of solutions of equations (B1)-(B5) according to
+*tl - O) = 2w , (C4)
+so that (t - t2) = 2whq. For fixed t, since t = x + kt,
+27r
+tl - t2 = XI -X2 =-2. (C5)
+The minimum distance between peaks of disease, the minimum wave length, is thus 2T/
+Tb
+LITERATURE CITED
+Anderson, R. M., and R. M. May. 1979. Population biology of infectious diseases. Nature (London) 280:361-362. 1981. The population dynamics of microparasites and their invertebrate hosts. Philosophical Transactions of the Royal Society of London B, Biological Sciences 291:451-524.
+Andreasen, V. 1989. Disease regulation of age-structured host populations. Theoretical Population Biology 36:214-239.
+Bailey, N. T. J. 1975. The mathematical theory of infectious disease and its application. 2d ed. Griffin, London.
+Begon, M., J. L. Harper, and C. R. Townsend. 1986. Ecology: individuals, populations and communities. Sinauer, Sunderland, Mass.
+Bird, F. T., and D. E. Elgee. 1957. A virus disease and introduced parasites as factors controlling the European spruce sawfly, Diprion hercyniae (Htg.) in central New Brunswick. Canadian Entomologist 89:371-378.
+Brown, G. C. 1984. Stability in an insect-pathogen model incorporating age-dependent immunity and seasonal host reproduction. Bulletin of Mathematical Biology 46:139-153. 1987. Modelling. Pages 43-68 in J. R. Fuxa and Y. Tanada, eds. Epizootiology of insect diseases. Wiley, New York.
+Buse, A. 1987. The importance of birds in the dispersal of nuclear polyhedrosis virus of European spruce sawfly, Gilpinia hercyniae (Hymenoptera: Diprionidae) in mid-Wales. Entomologia Experimentalis et Applicata 22:191-199.
+Carruthers, R. I., and R. S. Soper. 1987. Fungal diseases. Pages 357-416 in J. R. Fuxa and Y. Tanada, eds. Epizootiology of insect diseases. Wiley, New York.
+Carter, J. B., E. I. Green, and A. J. Kirkham. 1983. A Tipula paludosa population with a high incidence of two pathogens. Journal of Invertebrate Pathology 42:312-318.
+Comins, H. N., M. P. Hassell, and R. M. May. 1992. The spatial dynamics of host-parasitoid systems. Journal of Animal Ecology 61:735-748.
+Cumber, R. A. 1957. The rhinoceros beetle in Western Samoa. Technical Paper, South Pacific Commission 107:1-32.
+Dobson, A. P., and P. J. Hudson. 1986. Parasites, disease, and the structure of ecological communities. Trends in Ecology & Evolution 1:11-14.
+Dwyer, G. 1991. The roles of density, stage structure, and spatial structure in the transmission of an insect virus. Ecology 72:559-574. 1992. On the spatial spread of insect viruses: theory and experiment. Ecology 73:479494.
+Dwyer, G., and J. S. Elkinton. 1993. Using a simple model to predict virus epizootics in gypsy moth populations. Journal of Animal Ecology 62:1-11.
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+DENSITY, SPACE, AND INSECT PATHOGENS 561
+Elkinton, J. S., and A. M. Liebhold. 1990. Population dynamics of gypsy moth in N. America. Annual Review of Entomology 35:571-596.
+Entwistle, P. F., P. H. W. Adams, H. F. Evans, and C. F. Rivers. 1983. Epizootiology of a nuclear polyhedrosis virus (baculoviridae) in European spruce sawfly (Gilpinia hercyniae): spread of disease from small epicentres in comparison with spread of baculovirus diseases in other hosts. Journal of Applied Ecology 20:473-487.
+Evans, H. F., and P. F. Entwistle. 1987. Viruses. Pages 257-322 in J. R. Fuxa and Y. Tanada, eds. Epizootiology of insect diseases. Wiley, New York.
+Fleming, S. B., J. Kalmakoff, R. D. Archibald, and K. M. Stewart. 1986. Density-dependent virus mortality in populations of Wiseana (Lepidoptera: Hepialidae). Journal of Invertebrate Pathology 48:193-198.
+Fuxa, J. R. 1982. Prevalence of viral infections in populations of fall armyworm, Spodoptera frugiperda, in southeastern Louisiana. Environmental Entomology 11:239-242.
+Harkrider, J. R., and I. M. Hall. 1978. The dynamics of an entomopoxvirus in a field population of larval midges of the Chironomus decorus complex. Environmental Entomology 7:858-862.
+Hastings, A. 1990. Spatial heterogeneity and ecological models. Ecology 71:426-428. Hinckley, A. D. 1973. Ecology of the coconut rhinoceros beetle, Oryctes rhinoceros L. (Coleoptera:
+Dynastidae). Biotropica 5:111-116. Hochberg, M. E., and R. D. Holt. 1990. The coexistence of competing parasites. I. The role of
+cross-species infection. American Naturalist 136:517-541. Kalmakoff, J., and A. M. Crawford. 1982. Enzootic virus control of Wiseana spp. in the pasture envi-
+ronment. Pages 435-438 in E. Kurstak, ed. Microbial and viral pesticides. Dekker, New York. Kareiva, P. M. 1982. Local movement in herbivorous insects: applying a passive diffusion model to
+mark-recapture field experiments. Oecologia (Berlin) 57:322-327. Kaupp, W. J. 1983. Estimation of nuclear polyhedrosis virus produced in field populations of the
+European sawfly, Neodiprion sertifer (Geoff.) (Hymenoptera: Diprionidae). Canadian Journal of Zoology 61:1857-1861. Kaya, H. K., and J. F. Anderson. 1976. Biotic mortality factors in dark tussock moth populations in Connecticut. Environmental Entomology 5:1141-1145. Keating, S. T., and W. G. Yendol. 1987. Influence of selected host plants on gypsy moth (Lepidoptera: Lymantriidae) larval mortality caused by a baculovirus. Environmental Entomology 16: 459-462. Krebs, C. J. 1978. Ecology: the experimental analysis of distribution and abundance. Harper & Row, New York. Levin, S. A., and D. Pimentel. 1981. Selection for intermediate rates of increase in parasite-host systems. American Naturalist 117:308-315. Levin, S. A., and L. A. Segal. 1985. Pattern generation in space and aspect. SIAM (Society for Industrial and Applied Mathematics) Review 27:45-67. Marsden, J. E., and M. McCracken. 1976. The Hopf bifurcation and its applications. Springer, New York. Martignoni, M. E., and P. J. Iwai. 1986. A catalog of viral diseases of insects, mites, and ticks. 4th ed. General Technical Report PNW-195. USDA Forest Service, Pacific Northwest Research Station. Mason, R. R. 1978. Synchronous patterns in an outbreak of the Douglas-fir tussock moth. Environmental Entomology 7:672-675. 1981. Numerical analysis of the causes of population collapse in a severe outbreak of the Douglas-fir tussock moth. Annals of the Entomological Society of America 74:51-57. May, R. M. 1974. Stability and complexity in model ecosystems. Princeton University Press, Princeton, N.J. Mollison, D. 1991. Dependence of epidemic and population velocities on basic parameters. Mathematical Biosciences 107:255-287. Murdoch, W., J. Chesson, and P. Chesson. 1985. The theory and practice of biological control. American Naturalist 125:344-366. Murray, J. D. 1989. Mathematical biology. Springer, New York. Murray, J. D., E. A. Stanley, and D. L. Brown. 1986. On the spatial spread of rabies among foxes. Proceedings of the Royal Society of London B, Biological Sciences 229:111-150.
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+
+562 THE AMERICAN NATURALIST
+Myers, J. H. 1981. Interactions between western test caterpillars and wild rose: a test of some general plant herbivore hypotheses. Journal of Animal Ecology 50:11-25. 1990. Population cycles of western tent caterpillars: experimental introductions and synchrony of fluctuations. Ecology 71:986-995.
+Odell, G. M. 1981. Qualitative theory of systems of ordinary differential equations, including phase plane analysis and the use of the Hopf bifurcation theorem. Pages 649-726 in L. A. Segel, ed. Mathematical models in molecular and cellular biology. Cambridge University Press, London.
+Okubo, A. 1980. Diffusion and ecological problems: mathematical models. Springer, New York. Olofsson, E. 1987. Mortality factors in a population of Neodiprion sertifer (Hymenoptera: Diprioni-
+dae). Oikos 48:297-303. 1988. Environmental persistence of the nuclear polyhedrosis virus of the European pine sawfly in relation to epizootics in Swedish Scots pine forests. Journal of Invertebrate Pathology 52:119-129. Onstad, D. W., and R. I. Carruthers. 1990. Epizootiological models of insect diseases. Annual Review of Entomology 35:399-419. Onstad, D. W., J. V. Maddox, D. J. Cox, and E. A. Kornkven. 1990. Spatial and temporal density dynamics of animals and the host-density threshold in epizootiology. Journal of Invertebrate
+Pathology 55:76-84. Otvos, I. S., J. C. Cunningham, and L. M. Friskie. 1987a. Aerial application of nuclear polyhedrosis
+virus against Douglas-fir tussock moth, Orgyia pseudotsugata (McDunnough) (Lepidoptera: Lymantriidae). II. Impact in the year of application. Canadian Entomologist 119:697-706. Otvos, I. S., J. C. Cunningham, and R. I. Alfaro. 1987b. Aerial application of nuclear polyhedrosis virus against Douglas-fir tussock moth, Orgyia pseudotsugata (McDunnough) (Lepidoptera: Lymantriidae). II. Impact 1 and 2 years after application. Canadian Entomologist 119: 707-715. Shapiro, M., J. R. Robertson, and R. A. Bell. 1987. Quantitative and qualitative differences in gypsy moth (Lepidoptera: Lymantriidae) nucleopolyhedrosis virus produced in different-aged larvae. Journal of Economic Entomology 79:1174-1177. Shepherd, R. F., I. S. Otvos, R. J. Chorney, and J. C. Cunningham. 1984. Pest management of Douglas-fir tussock moth (Lepidoptera: Lymantriidae): prevention of an outbreak through early treatment with a nuclear polyhedrosis virus by ground and aerial applications. Canadian Entomologist 116:1533-1542. Steinhaus, E. A. 1963. Insect pathology: an advanced treatise. Academic Press, New York. Thompson, C. G., and D. W. Scott. 1979. Production and persistence of the nuclear polyhedrosis virus of the Douglas-fir tussock moth, Orgyia pseudotsugata (Lepidoptera: Lymantriidae), in the forest ecosystem. Journal of Invertebrate Pathology 33:57-65. Van den Bosch, F., J. A. J. Metz, and 0. Diekmann. 1990. The velocity of spatial population expansion. Journal of Mathematical Biology 28:529-566. Varley, G. C., G. R. Gradwell, and M. P. Hassell. 1973. Insect population ecology: an analytical approach. Blackwell Scientific, Oxford. Vezina, A., and R. M. Peterman. 1985. Tests of the role of a nuclear polyhedrosis virus in the population dynamics of its host, Douglas-fir tussock moth, Orgyia pseudotsugata (Lepidoptera: Lymantriidae). Oecologia (Berlin) 67:260-266. Wood, H. A., and R. R. Granados. 1991. Genetically engineered baculoviruses as agents for pest control. Annual Review of Microbiology 45:69-87. Yachi, S., K. Kawasake, N. Shigesada, and E. Teramoto. 1989. Spatial patterns of propagating waves of fox rabies. Forma 4:3-12. Young, E. C. 1974. The epizootiology of two pathogens of the coconut palm rhinoceros beetle. Journal of Invertebrate Pathology 24:82-92. Zelazny, B. 1972. Studies on Rhabdionvirus oryctes. I. Effect on larvae of Oryctes rhinoceros and inactivation of the virus. Journal of Invertebrate Pathology 20:235-241. Zelazny, B., and A. Alfiler. 1986. Oryctes rhinoceros (Coleoptera: Scarabaeidae) larva abundance and mortality factors in the Philippines. Environmental Entomology 15:84-87.
+Associate Editor: Stephen W. Pacala
+This content downloaded from 168.123.242.23 on Thu, 18 Oct 2018 22:27:20 UTC All use subject to https://about.jstor.org/terms
+

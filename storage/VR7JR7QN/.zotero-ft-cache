@@ -1,0 +1,332 @@
+Cover Story
+Share
+
+More
+Inside the Raspberry Pi: The story of the $35 computer that changed the world By Nick Heath
+Can Russian hackers be stopped? Here's why it might take 20 years By Steve Ranger
+Smart farming: How IoT, robotics, and AI are tackling one of the biggest problems of the century By Charles McLellan
+Python is eating the world: How one developer's side project became the hottest programming language on the planet
+
+By Nick Heath on August 6, 2019
+Frustrated by programming language shortcomings, Guido van Rossum created Python. With the language now used by millions, Nick Heath talks to van Rossum about Python's past and explores what's next.
+
+In late 1994, a select group of programmers from across the US met to discuss their new secret weapon.
+
+Barry Warsaw was one of the 20 or so developers present at that first-ever workshop for the newly-created Python programming language and recalls the palpable excitement among those early users.
+
+"I can remember one person in particular who said, 'You cannot tell anybody that I'm here because our use of Python is a competitive advantage.' It was their secret weapon, right?"
+
+Even at that early meeting, at the then US National Standards Bureau in Maryland, Warsaw says it was evident that Python offered something new in how easy it was to write code and simply get things done.
+
+"When I first was introduced to Python, I knew there was something special. It was some combination of readability, and there was a joy to writing Python code," he remembers.
+
+Today enthusiasm for Python has spread far beyond that initial circle of developers, and some are predicting it will soon become the most popular programming language in the world , as it continues to add new users faster than any other language . Millions of people use Python each day , with the exponential growth in users showing little sign of tailing off.
+lenovo-cover-pdf.jpg
+
+Download this article as a PDF (free registration required).
+
+Python is used for tasks big and small by professional and amateur developers and is particularly popular among web devs, data scientists, and system administrators. It was Python that earlier this year helped stitch together the first images of a black hole some 500 million trillion km away , just as it's Python that powers countless hacked-together scripts on desktop PCs worldwide.
+
+Python plays a pivotal role in some of the world's best-known organizations, helping Netflix stream videos to more than 100 million homes worldwide , powering the photo-sharing phenomenon Instagram, and aiding NASA in space exploration.
+Python, the early years
+
+In some respects, the rise of Python is as surreal and surprising as the British comedy group it was named after, and in its own niche the coding language has become just as famous and influential.
+
+The programming language was started as a side project by Dutch programmer Guido van Rossum. In the late 1980s, van Rossum was working on a distributed system at the Centrum Wiskunde & Informatica (CWI), the Dutch national research center for math and computer science. Frustrated by the inadequacies of existing programming languages, he decided to create a new one -- one that would be both easy-to-use and capable.
+ddj-guido.jpg
+
+Guido van Rossum in 2001, the year the Python Software Foundation was established.
+Image: Guido van Rossum
+
+To an outsider, creating your own programming language might seem akin to saying 'I'll build my own airplane', but van Rossum, then in his thirties, had something of a head start. He had spent three years working with a team at CWI that had created ABC, an interpreted programming language, so he already had insight into what it would take to build an interpreter that executes programmer instructions, and the syntactic building blocks needed for a new language.
+
+It's also important to realize just how difficult it was to get anything done with the limited programming languages available to van Rossum at the time. The Amoeba distributed computing system he was working on required him to work in C or the Unix shell, both of which had significant limitations. C not only required developers to wrestle with the complexities of manually managing memory and to navigate a minefield of potential errors, but it also lacked a library of reusable code for everyday developer tasks, requiring developers to reinvent the wheel with each new project. Meanwhile, the Unix shell had different problems -- it offered a suite of utilities for common tasks, but ran so slowly it couldn't handle complex logic.
+
+The restrictions these languages placed on developers were such that, for van Rossum, creating his own interpreted language -- one that would borrow the best features from the ABC language -- really did seem like the best option.
+I don't know how serious I was in believing this really would make me more productive. I think that, in part, I just really enjoyed the idea of starting a big project on my own, of laying out the code I wanted to lay out and designing it the way I wanted to. Programming is fun for me.
+Guido van Rossum, creator of Python
+
+"I basically thought 'Well, why don't I create my own language', stealing my ideas from ABC but reducing the project size from something that took three years to complete to something I can do on my own, as a skunk works project in three months, and thus Python was born," he says.
+
+Van Rossum started work in earnest in late 1989, borrowing the name from his favorite comedy troupe Monty Python's Flying Circus -- the association with snakes and the entwined Pythons logo came later -- and working on the project whenever he could.
+
+"I didn't have a very rich social life at the time. So, instead of just watching TV, I would be coding, or sometimes doing both at the same time," he admits.
+
+While Python was nominally created to help him at work, van Rossum sees that the impetus may have been more the challenge of creating a language of his own.
+
+"I don't know how serious I was in believing this really would make me more productive. I think that, in part, I just really enjoyed the idea of starting a big project on my own, of laying out the code I wanted to lay out and designing it the way I wanted to. Programming is fun for me," he says.
+
+As unusual as it might sound for an individual to create their own programming language, van Rossum was in good company. In the late 1980s, various major languages sprang out of individual frustrations with the tools available to developers at the time. Larry Wall famously said he was driven to create Perl by how difficult it was to solve a problem while coding , as well as by an abundance of 'laziness, impatience and hubris'. Similarly John Ousterhout's search for a better language to create interactive tools for building integrated circuits led him to devise Tcl .
+
+Within just three months van Rossum had created a working prototype for Python as an interpreted language, one that he says was missing modern features but would still be recognizable as the language used today.
+
+"The current day Python has a lot of important abstractions that weren't present at the time, but the language looked very similar," he says.
+
+SEE:  More must-read Python coverage (TechRepublic on Flipboard)
+
+"At that point I had all the basic components of the interpreter and the language working. Simple Python programs from the first working Python interpreter will probably still work today," he says, adding that functions were defined the same way, indentation worked the same, dictionaries and tuples were created using identical syntax, and there was the familiar interactive prompt where you could type Python to immediately carry out calculations.
+lenovo-play.jpg
+
+Karen Roby interviews Nick Heath about his cover story on the evolution of the Python programming language. 
+
+However, while his two colleagues took to the language and immediately started using it, van Rossum didn't have huge expectations for its wider adoption, having already experienced how difficult it was to get a programming language off the ground in the pre-internet age.
+
+While sharing software with the world today only takes a few clicks, in the 1980s it was an altogether more laborious affair, with van Rossum recalling the difficulties of trying to distribute Python precursor ABC.
+
+"I remember around '85, going on a vacation trip to the US, my first ever visit to the US, with a magnetic tape in my luggage," says van Rossum.
+
+Armed with addresses and phone numbers of people who had signalled an interest in ABC via the rudimentary email system available at the time -- which wasn't suited to handling anything as large as source code -- he travelled door-to-door posting the tapes. Despite this effort, ABC didn't really take off.
+
+"So, no wonder we didn't get very far with the distribution of ABC, despite all its wonderful properties," he says. But as the internet revolution gathered steam, it would be much easier to distribute Python without a suitcase full of tapes.
+
+Van Rossum released Python to the world via the alt.sources newsgroup in 1991, under what was pretty much an open-source licence, six years before the term was first coined. While Python interpreter still had to be joined together into a compressed file from 21 separate parts and downloaded overnight on the Usenet network, it was still a vastly more efficient delivery mechanism than the hand deliveries of a few years earlier.
+
+Download this article as a PDF (free registration required).
+
+"I was hoping that there would be some kind of success, but I had done at least one other thing that I had released and basically ended up being a flop," he says.
+
+With his past experience in mind, van Rossum says it was a long time before he read anything into Python's growing user base. Gradually he realized momentum was building and after some time regularly interacting with the Python community did he realize he had created something that could be successful.
+
+"I think that realization came very, very slowly. After we did the first open source release, I built up a rhythm of doing new releases and interacting with the fledgling Python community that came into existence. That felt like a big deal."
+Why Python won
+
+It was that sense that Python was a language whose time had come that also struck van Rossum, as the language began to gain traction in early to mid 1990s.
+
+Van Rossum believes developers were drawn to Python by the same feeling that led him to create it in the first place. They wanted a high-level scripting language that struck a balance between being easy-to-use and capable that didn't have the limitations of the Unix shell when handling complex logic. They wanted an end to C's insistence on developers wrangling with memory management and having to reimplement code for the same basic tasks at the start of each project.
+
+Warsaw says Python struck a balance between useability while also not sacrificing what it could do -- a balance not really on offer in any major programming language in the early 1990s. "I had been doing a lot of Perl and Tcl and C code, and it just felt like it wasn't really fun. Python came on the scene, I was like, 'Wow, this is making programming fun again'," he says.
+
+What Python offered, and still offers, is clear and unambiguous syntax, where indentations group code into blocks, making the code easier for developers to understand.
+
+SEE:  10 ways to prevent developer burnout (free PDF) (TechRepublic)
+
+Fintan Ryan, research director with the Application Platform Strategies team for analyst firm Gartner, says that clarity played a big role in winning over developers, both now and in the 1990s, even if attributing such importance to indentation has proved divisive. "It offered a very clean syntax. You could enforce this in other languages, but Python enforced it automatically. Some programmers love this, and some hate it," he says.
+barry-warsaw.jpg
+
+Barry Warsaw at the first Python Workshop in 1994.
+Image: Barry Warsaw
+
+The fact Python prioritizes clean and readable code is no accident, van Rossum is on record as saying programming languages are as much about communicating ideas between developers as they are about telling a computer what to do .
+
+On top of this readability, Ryan says that from early on Python offered a level of built-in functionality that made it stand out from other languages. "You also had functionalities such as classes and exception handling from the outset. Python also provided support for functions such as lambda, map, and filter, which proved extremely useful in a lot of cases," he says.
+
+Python may never have existed at all had the popular programming languages in the late '80s been better, with one of van Rossum's motivations for creating Python being the incompatibility of the Perl scripting language with the Amoeba distributed computing system he was working on at CWI. "The lucky thing for Python is that Perl was unportable to Amoeba," he says. "If it had been possible to port Perl to Amoeba, I would have never have thought of starting my own language."
+
+Even though Python attracted a user base of hard-core fans after its release, in the 1990s Python was still very much a programming language underdog. Van Rossum says the language's competitors were Tcl/Tk and Perl, both of which shared Python's goal of being simple-to-use and relatively capable.
+
+"In the '90s, the top three languages, definitely Perl was number one -- the 800-pound gorilla -- Tcl/Tk was number two, and Python was a very modest number three," he says.
+
+Download this article as a PDF (free registration required).
+
+Today Python is the fastest-growing programming language in terms of active developers, according to the annual Stack Overflow Developer Survey , one of the most comprehensive snapshots of programming language use available, while Perl has shrunk to the point where it didn't get a mention in the latest Stack Overflow report.
+
+That explosive growth is captured by the graph below, showing how in recent years views of questions related to Python on Stack Overflow grew far faster than views of questions related to other languages.
+growth-major-programming-languages-stack-overflow.jpg
+
+The growth in views of Python questions on Stack Overflow relative to other programming languages reflects the huge growth in Python users.
+Image: Stack Overflow
+
+So how did Python leapfrog its erstwhile rival, and how to explain the two languages' vastly different fortunes? Van Rossum believes it has something to do with how easy it is to maintain a code base once it grows beyond a certain size. "People's experience was that for a 10-line script, Perl is perfect," he says. "But if you have 500 lines of mainline code and a few thousand lines of library, it requires an enormous amount of discipline to make that code maintainable in Perl. While in Python, even if you don't have all that much discipline, the code will still be fairly readable and fairly maintainable."
+
+That combination of Python offering a programming language that is simple to get started with but that is also robust enough to be used to write large applications is what van Rossum attributes to its initial success in the 1990s.
+
+"There were some internet developers -- a lot of this was early internet work -- who wanted to write larger and larger applications and who appreciated that it was much less effort to write an application in Python than to write it in C, C++, or Java for that matter."
+
+As use of Python spread in the 1990s, van Rossum, still working at CWI, found his creation was increasingly putting him in contact with people from across the world.
+
+"I had made something, and it was connecting with people all over the world -- people in Australia, people in the US, people in other European countries. I was having the time of my life," he says.
+
+SEE: Programming languages: Python predicted to overtake C and Java in next 4 years (ZDNet)
+Python and the web
+
+By the mid 1990s, Python was starting to be used in new ways, from scripts for audio recording and playback to its first foray into web development, which would go on to become a mainstay for Python.
+
+"One of the big things was web development, which was also a super interesting thing for me," says van Rossum, who says Python began to be used for backend scripting on web servers alongside Perl and Shell scripts. "You could create dynamic web pages and that became one of my favorite Python applications."
+It offered a very clean syntax. You could enforce this in other languages, but Python enforced it automatically. Some programmers love this, and some hate it.
+Fintan Ryan, Gartner research director
+
+Gartner's Ryan says what sealed Python's popularity among developers during the 1990s was how it became a favorite choice for quickly creating powerful scripts. "Being a scripting language with very strong functionality lowered the barriers to entry for many users," he says.
+
+More than that, however, Ryan says the language was sufficiently versatile and so easy to pick up that it appealed to many different types of users with a range of technical expertise. "Sysadmins and others took the language for systems automation and programming, developers for features such as functional programming and having classes with inheritance available -- Perl for example was far less featured in this regard," he says. "Once people were familiar with the language, and it has a pretty low curve for getting started, they became extremely productive very quickly."
+
+Download this article as a PDF (free registration required).
+
+By 1994, Python had caught the eye of Michael McLay, who held a senior role at the US National Bureau of Standards (NBS), now the US National Institute for Standards and Technology (NIST). Foreshadowing how Python would come to be favored by researchers and scientists for its ease of use, McLay was interested in how Python could be used by scientists at the NBS who van Rossum says "had a considerable amount of data to process but weren't very good coders".
+
+To help sell Python to others within the bureau, McLay invited van Rossum, who was still working at CWI in the Netherlands at the time, to spend two months working at NIST as a guest researcher. That placement would prove to be the catalyst for both Python's future evolution and a major change in van Rossum's life.
+pythonworkshop.jpg
+
+van Rossum is pictured during the first Python Workshop in discussion with Warsaw and Roger Masse, who worked with Warsaw at CNRI at the time.
+Credit: Barry Warsaw
+
+It was during this placement that the very first Python workshop would be held at the NBS's offices, where van Rossum, Barry Warsaw, and other early Python enthusiasts came together to discuss what they were doing with Python and hopes for the language's future development.
+
+While at the NBS's offices, van Rossum met Bob Kahn, renowned for his role in helping develop one of the foundational technologies of the internet: The TCP/IP protocol.
+
+That meeting resulted in a job offer to come work with Kahn at the Corporation for National Research Initiatives (CNRI), a nonprofit research group based in Virginia focused on the strategic development of network technologies.
+
+Just as Python had answered the need for a new type of programming language, van Rossum says the job offer came at exactly the time when he was starting to question his future at CWI.
+
+"CWI being more an academic institution, they were putting gentle pressure on me to either get a PhD or face the prospect of having to find employment elsewhere," he says.
+
+SEE:  Learning Python: Best free books, tutorials and videos (TechRepublic)
+
+"The prospect of having to switch to a PhD track at my age, I was 35 or so, didn't really appeal to me. Earlier, also, as a result of Python, some other prospects had come my way where, after a bunch of phone calls and thinking, I had decided not to go for it. But here, I liked the people, I liked what they were offering me, the project, and I went for it."
+
+It was at CNRI that van Rossum put together many of the structures for managing the Python language, with the help of a team of fellow Python enthusiasts. After joining CNRI in April 1995, van Rossum led a small team of developers working on building Knowbot Programs , software known as mobile agents designed to be run across distributed computer systems like the internet.
+
+The team worked in Python, and van Rossum was joined by Jeremy Hylton, Roger Masse, Barry Warsaw, Ken Manheimer, and Fred Drake, all of whom would go on to play an important role in the Python community.
+Python came on the scene, I was like, 'Wow, this is making programming fun again'.
+Barry Warsaw, longtime Python developer and Python Steering Council member
+
+"We ended up with a group of between four and 10 people, most of whom worked at CNRI, who were the core of Python development," says van Rossum.
+
+While van Rossum was at CNRI, this team helped him create the python.org website , the CVS server for managing changes to the core codebase, and the mailing lists for Python Special Interest Groups , which work to improve and maintain the Python language.
+
+Download this article as a PDF (free registration required).
+
+The community of Python users had grown significantly since its public release in 1991, and by the second half of the decade the language was attracting a sizeable global user base. During that period, the management of the language began to be formalized, with the establishment of the precursor to the Python Software Foundation (PSF), which would be set up in 2001. As the community grew, the biannual Python workshops that started in 1994 morphed into larger annual events, and eventually PSF's annual PyCon, which is still going strong today.
+
+By the turn of the 21st century, the language was larger than any one person, with a sizeable community playing an active role in its development, a long way from the summer of 1994, when early Python users fretted about what would happen to the language ' if Guido was hit by a bus '.
+
+Van Rossum continued to play a core role, however, and the idea of him being at the heart of the language never went away, as evidenced by him being nicknamed "Benevolent dictator for life" (BDFL) of the language, a tongue-in-cheek title that stuck for years.
+
+"For the most part, for a very long time, I was able to absorb the pressure quite well, and I also generally developed project management skills that allowed me to delegate lots of things and let people be in control of their own destiny," says van Rossum.
+
+Gartner's Ryan says it's not particularly unusual for a language's creator to act as that language's steward, citing Larry Wall with Perl and Ryan Dahl with the JavaScript runtime Node.js, but says van Rossum is recognized for being even-handed in his management of Python.
+
+"He is widely acknowledged as being very balanced about the direction of the project and in his overall stewardship," he says.
+
+Indeed, it's the open nature of Python's development, via public debate between a community of core developers, that van Rossum attributes to being a deciding factor in Python's success.
+
+SEE:  How to launch a successful developer career (TechRepublic Premium)
+The evolution of Python
+
+In the intervening years, there have been major leaps forward in Python, the introduction of Python 3.0 in 2008 modernized the language, and more recently there have been significant changes to how the language is managed.
+It wasn't exactly a revolt, but I felt that I didn't have the trust of enough of the core developer community to keep going.
+Guido van Rossum, creator of Python
+
+Those changes were triggered last year, when van Rossum stepped down from his leadership role as BDFL, following public disagreement over the introduction of Assignment Expressions to the language, mooted in the Python Enhancement Proposal PEP572 .
+
+While their introduction was designed to make it possible to write more efficient code, van Rossum faced heavy criticism online from those opposed to the change, with some arguing their use would make code less readable and harder to maintain.
+
+Van Rossum says he was used to debate over new features, but it was the intransigence of some of his detractors and also the personal nature of certain attacks that made up his mind to step down.
+
+"I was very disappointed in how the people who disagreed technically went to social media and started ranting that the decision process was broken, or that I was making a grave mistake. I felt attacked behind my back," he says.
+
+SEE: Python vs R and biggest salaries: Top data science job trends (ZDNet)
+
+"In the past, it had always been clear that if there were a decision to be made about a change in the language or an improved feature, a whole bunch of core developers would discuss the pros and cons of the thing. Either a clear consensus would appear or, if it was not so clear, I would mull it over in my head and decide one way or another. With PEP572, even though it was clearly controversial, I chose 'Yes, I want to do this', and people didn't agree to disagree.
+
+"It wasn't exactly a revolt, but I felt that I didn't have the trust of enough of the core developer community to keep going."
+
+He thinks the change in how disputes about the language play out is partly a result of how many people use Python today.
+
+"It's probably also the fact that the Python community is so much larger. It's harder to reach any form of consensus, of course, because there's always fringe dissidents, no matter which way you decide."
+wijaya-2.jpg
+
+Python core developer Mariatta Wijaya welcomed the election of a Python Steering Council to oversee the language's development.
+Image: A. Jesse Jiryu Davis
+
+Earlier this year, Python core developers -- those who work on maintaining and updating Python's reference CPython interpreter -- elected a steering council to oversee the future of the language. Van Rossum was elected, alongside Warsaw and fellow core developers Brett Cannon, Carol Willing, and Nick Coghlan.
+
+Warsaw says the change is necessary to manage a language whose user base is growing at such a rapid rate.
+
+"I think Guido really felt like the world was on his shoulders and his shoulders alone," he says.
+
+"That might've been fine 25 years ago, when Python was a much smaller community and a smaller language, but it's really too much to put on one person, you know? I think just for his own personal health and involvement in the community, it's great to be able to spread that load among five people," says Warsaw.
+
+Download this article as a PDF (free registration required).
+
+Fresh elections to the steering council will take place after each new Python feature release, which Warsaw says will pave the way for the next generation of leadership for the language to be put in place.
+
+"If Python is going to be healthy 25 years from now, it's not going to be Guido and I running things, you know?" he says.
+
+The setting up of the steering council has also been welcomed by the wider Python core developer community, with core developer Mariatta Wijaya saying the move felt like a step in the right direction. "To me the steering council is better than having one person who decides on everything -- that's too big of a responsibility and burden," she says. "It's a good sign, and it makes it such that the community will have more input."
+The future of Python
+
+While Python continues to attract new users at a prodigious rate, some within the community see challenges ahead, a need for Python to evolve if it's to stay relevant.
+
+At this year's Python Language Summit, BeeWare co-founder Russell Keith-Magee warned Python faces an "existential risk" if support for mobile and new web platforms doesn't improve.
+
+" Phones and tablets are achieving market penetration that desktops and laptops have never seen , and yet as a community we don't have a story about how you can use Python on these devices," he said, referencing his son's use of an iPad at his school. "So what happens to Python when laptops are niche devices?" he asked.
+
+Keith-Magee, whose BeeWare project aims to make it possible to write one Python application and have it run anywhere, rattled off a laundry list of problems Python currently has with supporting platforms other than standard x86 PCs.
+I would like to see better representation across all the diverse metrics, not just in terms of gender balance, but also race and everything else.
+Mariatta Wijaya, Python core developer
+
+He cited the need for better support for compiling code for newer, non-x86 hardware platforms; that Python's test suite is prone to crash on mobile and web platforms; the install size for Python apps is bloated and can't be trimmed down to a small subset of dependencies; the effort needed to get the asyncio library to work when writing GUI code on Android, Windows, and the web; and the number of modules in the standard library that are incompatible with Python interpreters other than CPython.
+
+Warsaw says Keith-Magee makes many good points, and believes it's important to consider how Python remains relevant to new platforms -- to phones, tablets, and newer web technologies such as WebAssembly.
+
+"Python, right now, doesn't have a great story there," says Warsaw, talking about an ambition to be able to download an app for an iPhone or Android handset and "never even know it was written in Python".
+
+SEE:  Python starter guide: Interview with creator Guido van Rossum, developers' favorite tools, use cases (TechRepublic)
+
+With the number of processor cores inside modern chips continuing to climb (up to 48-cores in Intel's latest server offerings), Warsaw is also keen to see Python get better at spreading tasks across multiple cores.
+
+He is excited about the potential of work being carried out by Eric Snow on sub-interpreters and how it could extend Python's ability to run code concurrently. "What I would really like to see is more work on being able to take advantage of multiple cores," he says.
+
+Snow is engaged in a long-term project aimed at making it easier for Python to efficiently split tasks between multiple processor cores , with Snow focusing on using a reworked version of Python's existing sub-interpreter feature and changing how each sub-interpreter interacts with the language's global interpreter lock (GIL) .
+
+"It's not quite ready for Python 3.8, maybe for 3.9," says Warsaw. "I think we'll see it within the next two years to two-and-a-half years. I'm pretty optimistic. I'm really glad that Eric is continuing to work on that, because I think it's important work."
+
+Even failed projects to get multi-threaded Python apps running across multiple cores, such as The Gilectomy , are yielding interesting lessons about how Python can get better at spreading workloads across cores, he says.
+
+The Python community is also taking steps to modernize the language's standard library of built-in code, recently publishing a proposal to prune obsolete modules from the library ; in doing so, it is addressing some recent criticisms about the state of Python's standard library. The library is generally considered to be one of Python's strengths, as it can be used to carry out a broad range of common tasks, which is why Python is described as having 'batteries included'. However, a talk at this year's Python Language Summit asked whether Python would be better served by letting people choose code libraries from the PyPI repository , rather than having functionality bundled with the language as the standard library.
+
+Download this article as a PDF (free registration required).
+
+There are also questions over whether the makeup of bodies overseeing the development of the language -- Python core developers and the Python Steering Council -- could better reflect the diverse user base of Python users in 2019.
+
+"I would like to see better representation across all the diverse metrics, not just in terms of gender balance, but also race and everything else," says Wijaya.
+
+"At PyCon I spoke to PyLadies members from India and Africa. They commented that, 'When we hear about Python or PyLadies, we think about people in North America or Canada, where in reality there are big user bases in other parts of the world. Why aren't we seeing more of them?' I think it makes so much sense. So I definitely would like to see that happening, and I think we all need to do our part."
+
+Ultimately, in spite of the tongue-in-cheek notion of a 'benevolent dictator' running everything, the ideas that have shaped Python in recent years have sprung up from the community, says Warsaw, from people pushing what's possible using Python by opening the door to new uses.
+
+"It's really bubbling up much more from the community than being a top down kind of thing," he says.
+blackhole.jpg
+
+Earlier this year, Python helped stitch together the first images of a black hole, some 500 million trillion km away.
+Credit: Event Horizon Telescope collaboration et al.
+
+An example of how simple community projects can have an outsized impact on Python are Type Hints, a Python 3.5 feature that was inspired by the mypy project launched by a PhD student back in 2012. These hints allow for optional type checking, allowing developers to spot a class of bugs that could otherwise slip through into software.
+
+Having this extra layer of security is more than just a nice to have when you have multiple people working on large codebases. That extra level of insight into what the code should and shouldn't be doing can make all the difference.
+
+"For me, the fact that it allows Python to scale up to larger organizations -- like an Instagram, which basically runs on Python 3 -- is completely invaluable," says Warsaw, who says asyncio is another example of community-derived idea that made a huge impact on what the language could do.
+
+With the steering council in place and a larger base of users than ever before, van Rossum is optimistic that "the community-driven evolution of the language" will continue to be "incredibly successful".
+
+"There is a very solid core developer community that now has a new system of governance, and so I think we're better prepared for whatever demands are being made of Python as a language to evolve," he says, praising the deep understanding of specific aspects of Python that exists within the community.
+
+If anyone has doubts about the Python community's ability to continue to find surprising new uses for the language, you need to look no further than Python's role in helping capture the first ever image of a black hole, says Warsaw.
+
+"That just blew me away. There's a couple of people in the Python community that I kind of look at as the mad scientists of Python. They're always looking at, well, here's what I can do today -- how far can I push that?"
+
+Download this article as a PDF (free registration required).
+Don't miss our upcoming, in-depth feature stories. Subscribe to the TechRepublic Cover Stories newsletter.
+Subscribe
+See all TechRepublic Newsletters
+
+Photo credit for hero image: Dan Stroud under the Creative Commons licence
+About Nick Heath
+
+Nick Heath is a computer science student and was formerly a journalist at TechRepublic and ZDNet.
+
+Show Comments
+Hide Comments
+LOG IN TO COMMENT
+
+    My Profile
+    Log Out
+
+| Commenting FAQs | Community Guidelines
+Join Discussion
+LOG IN TO COMMENT
+Add your Comment
+Inside the Raspberry Pi: The story of the $35 computer that changed the world By Nick Heath
+Can Russian hackers be stopped? Here's why it might take 20 years By Steve Ranger
+Smart farming: How IoT, robotics, and AI are tackling one of the biggest problems of the century By Charles McLellan
+A ZDNet site | © 2020 CBS Interactive. All rights reserved.

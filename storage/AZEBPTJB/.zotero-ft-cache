@@ -1,0 +1,337 @@
+Overview of the Guam Coconut Rhinoceros Beetle
+Eradication Project
+Hawaii CRB ICS, January 22, 2014 Aubrey Moore and Roland Quitugua
+University of Guam Cooperative Extension Service
+
+First Coconut Rhinoceros Beetle Collected on Guam
+11-Sep-2007, Tumon Bay
+
+Native Range Bangladesh Cambodia China Indonesia Laos Malaysia Myanmar Pakistan Philippines Sri Lanka Taiwan Thailand Vietnam
+
+Oryctes rhinoceros Distribution
+
+Alien Range Burma 1895 Samoa 1909 Keppel Island (Tonga) 1921 Wallis 1931 Palau ca. 1942 New Britain 1942 West Irian ca. 1942 Vavau (Tonga) 1952 New Ireland 1952
+Viti Levu (Fiji) 1953 Pak & Manus (PNG) 1960 Tongatapu (Tonga) 1961 Tokelau 1963 Guam 2007
+Guam
+
+Palau
+
+Interdictions Cook Islands 2002, 2007 Saipan 2006 Hawaii 2010
+
+Please Don't Do This
+
+Or This
+
+Vertical Distribution of CRB Larvae & Adults in Standing Dead Coconut Trankilidat, Guam; 25 Oct 2007
+
+19' 18' 17' 16' 15' 14' 13' 12' 11' 10' 9' 8' 7' 6' 5' 4' 3' 2' 1' Stump
+
+CRB larvae (n=20) CRB adults (n=2)
+
+012345678
+
+Novel CRB Behavior on Guam: Arboreal Development
+
+CRB extracted from the crowns of 121 felled coconut palms
+
+Eggs
+
+99
+
+L1
+
+40
+
+L2
+
+72
+
+L3
+
+210
+
+Pupae
+
+25
+
+Adult males
+
+34
+
+Adult females
+
+30
+
+Total
+
+510
+
+Mean per
+
+4.21
+
+tree
+
+ADULTS KILL TREES
+LARVAE FEED ON DEAD TREES
+
+Coconut palms killed by Oryctes rhinoceros; Viti Levu Island, Fiji; 1973 Source: ?
+
+Coconut palms killed by Oryctes rhinoceros; Peleliu Island, Palau 1951 Source: Gressitt 1953
+
+Location of Initial Detection September 11, 2007
+
+Delimiting Survey September 2007
+
+Guam Coconut Rhinoceros Eradication Project
+ORGANIZATION
+
+Partners: USDA-APHIS Guam Dept. of Agriculture University of Guam
+
+Funding: USDA-APHIS US Forest Service GovGuam
+
+Guam Coconut Rhinoceros Eradication Project
+TACTICS
+Quarantine Limit accidental transportation to uninfested parts of Guam.
+Pheromone Traps Capture adults and detect spread of the beetle population
+Sanitation Kill immatures and remove breeding sites
+Detector Dogs Efficient discovery of breeding sites.
+Chemical Control Injectable systemics for adults; spot treatments for breeding sites.
+Biocontrol Autodissemination of Oryctes virus
+
+Initial Quarantine Area September 2007
+
+PHEROMONE TRAPS
+Mass trapping unsuccessful Traps useful for monitoring
+
+Trap Data Entry Form
+
+Online Trap Data Report
+
+Visualization of Trap Catch Data
+Aubrey Moore
+Guam Coconut Rhinoceros Beetle Eradication Project
+Generated 2014-01-08 20:23:57 Path: C:/Documents and Settings/Administrator/My Documents/CRB monthly surveillance reports/map dev
+R script: makeMaps.R Brew ﬁle: makeBeamer.txt
+
+Introduction
+The following frames show spatial-temporal changes in numbers of CRB adults caught in pheromone traps. Note that trap catches on Guam are very low: the scale runs from 0 to only 0.02 beetles per trap day, a trap rate of only one beetle every 50 days.
+
+Methods
+Interpolated raster maps were made using an R script which: 1. Accesses georeferenced data stored in the CRB project’s online MySQL database. 2. Processes the data using the GRASS6 GIS 3. Writes the LATEX code which generated this PDF document.
+
+90 day trapping period ending on 01 May 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2008
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2009
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2010
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2011
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2012
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Feb 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Mar 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Apr 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 May 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jun 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jul 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Aug 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Sep 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Oct 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Nov 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Dec 2013
+Mean number of beetles caught per trap-day
+
+90 day trapping period ending on 01 Jan 2014
+Mean number of beetles caught per trap-day
+
+Reduced Release Rate
+
+Ultraviolet Light Emmitting Diodes (UVLED)
+
+Development of the Hotel California Trap
+
+Beetles Check In But Can Never Leave
+

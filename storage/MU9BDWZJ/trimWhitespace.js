@@ -1,0 +1,1 @@
+(function($){$(document).on('blur','input[data-aop-trim="blur"]',function(){$(this).val($(this).val().trim());});})(jQuery);

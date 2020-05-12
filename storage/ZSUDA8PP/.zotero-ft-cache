@@ -1,0 +1,175 @@
+
+Skip to content
+LiuYi.co
+Science . Industry . Creativity
+
+    About Me
+    Blog
+    Archives
+    Quotes
+    Book
+    Salon
+    关于我
+
+Passenger WSGI setup with pyenv on Dreamhost for Web2Py
+
+I have been using fastcgi+flup ( link ) to run my web2py apps on shared Dreamhost hosting. But the speed was really mediocre. Dreamhost recommends Passenger WSGI for python application.
+
+After hours of research and testing, I would like to share my experience using pyenv + passenger wsgi + web2py on Dreamhost shared hosting as of 08.2017
+
+What I did differently than most guides online is that I only have to edit .htaccess file (in domain root folder) with: (Credit: ASO )
+
+ PassengerEnabled on
+PassengerAppRoot /home/%USER%/
+PassengerPython /home/%USER%/.pyenv/shims/python
+
+Most importantly and strangely, I didn’t need to modify passenger_wsgi.py (handlers/wsgihandler.py) at all. Most guides online ( this ; this ; and many others) require adding two lines after import os , such as this one:
+
+ INTERP = "/home/%USER%/.pyenv/shims/python"
+#INTERP is present twice so that the new Python interpreter knows the actual executable path
+if sys.executable != INTERP: os.execl(INTERP, INTERP, *sys.argv)
+
+But I couldn’t make it work if I modify passenger_wsgi.py . It seems .htaccess is sufficient to specify pyenv environment.
+
+Some guides also suggest make a pyenv “virtualenv” within app folder, I found it is not required.
+
+Assuming you already know:
+
+    how to use web2py
+    how to use pyenv on Dreamhost
+    Read about Passenger on Dreamhost
+
+This is what I did:
+
+    Enable passenger on Dreamhost panel . A folder public will be created. Don’t worry.
+    Put web2py files into your domain root folder, which is parent folder of public
+    cp handlers/wsgihandler.py passenger_wsgi.py
+    Create/modify .htaccess in domain root folder as described above.
+    Created tmp/ folder under my web root folder, did a touch restart.txt to get passenger to reload
+
+Your web2py site should now load in your browser. If you use free “Let’s Encrypt” SSL from Dreamhost panel, you should be able to verify your pyenv python environment from admin interface by accessing https. I did verify mine.
+
+I am not sure ssh tunnel method could serve as verification, because you are serving admin from a separate web2py instance running from your shell.
+
+Hope this will help fellow web2py users. Thank all the web2py team for providing web2py.
+
+Tagged as: Dreamhost , Passenger , pyenv , web2py
+
+Categorized in: Tech&Web
+
+Posted on August 26, 2017 September 11, 2017 by Yi Liu
+Leave a Reply Cancel reply
+
+Your email address will not be published. Required fields are marked *
+
+Comment
+
+Name *
+
+Email *
+
+Website
+
+Post navigation
+Add Bluetooth or Inline Remote Mic Cable to Koss KSC75 Headphone
+Securing Web2py with Let’s Encrypt / Certbot
+
+Decode by Scott Smith
+Search for:
+Meta
+
+    Log in
+    Entries RSS
+    Comments RSS
+    WordPress.org
+
+Categories
+
+    Book
+    Cleveland
+    Entertain
+    Science
+    Tech&Web
+    关于自己
+    天方也谈
+    文海拾遗
+    西牛贺洲
+    那时花开
+    高山流水
+
+Recent Posts
+
+    Seasons of Los Angeles 洛城四季
+    Template rendered html email for Web2py email verification and password reset
+    Force SSL/HTTPS and non-www in web2py
+    China Vibe
+    Securing Web2py with Let’s Encrypt / Certbot
+
+Recent Comments
+
+    J. on 转移阵地
+    J. on 转移阵地
+    J. on 转移阵地
+    J. on 转移阵地
+    J. on 转移阵地
+
+Archives
+
+    February 2018
+    January 2018
+    November 2017
+    September 2017
+    August 2017
+    December 2016
+    October 2016
+    September 2016
+    April 2016
+    December 2014
+    October 2013
+    October 2011
+    May 2009
+    April 2009
+    March 2009
+    February 2009
+    January 2009
+    December 2008
+    November 2008
+    October 2008
+    September 2008
+    August 2008
+    July 2008
+    June 2008
+    May 2008
+    April 2008
+    March 2008
+    February 2008
+    January 2008
+    December 2007
+    November 2007
+    October 2007
+    September 2007
+    August 2007
+    July 2007
+    June 2007
+    May 2007
+    April 2007
+    March 2007
+    February 2007
+    January 2007
+    December 2006
+    November 2006
+    October 2006
+    September 2006
+    August 2006
+    July 2006
+    June 2006
+    May 2006
+    April 2006
+    March 2006
+    February 2006
+    January 2006
+    December 2005
+    November 2005
+    October 2005
+    September 2005
+

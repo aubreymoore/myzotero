@@ -1,0 +1,310 @@
+PERSPECTIVE published: 30 June 2017 doi: 10.3389/fams.2017.00013
+
+Seven Recommendations to Make Your Invasive Alien Species Data More Useful
+
+Edited by: Aristides Moustakas, Queen Mary University of London,
+United Kingdom
+Reviewed by: Sarah Supp,
+University of Wisconsin-Madison, United States
+Davide Francesco Tagliapietra, ISMAR-Marine Sciences Institute in
+Venice (CNR), Italy
+*Correspondence: Quentin J. Groom
+quentin.groom@plantentuinmeise.be
+Specialty section: This article was submitted to
+Environmental Informatics, a section of the journal
+Frontiers in Applied Mathematics and Statistics
+Received: 12 March 2017 Accepted: 15 June 2017 Published: 30 June 2017
+Citation: Groom QJ, Adriaens T, Desmet P, Simpson A, De Wever A, Bazos I,
+Cardoso AC, Charles L, Christopoulou A, Gazda A, Helmisaari H, Hobern D, Josefsson M, Lucy F, Marisavljevic D, Oszako T, Pergl J, Petrovic-Obradovic O, Prévot C, Ravn HP, Richards G, Roques A, Roy HE, Rozenberg M-AA, Scalera R, Tricarico E, Trichkova T, Vercayie D, Zenetos A and Vanderhoeven S (2017) Seven Recommendations to Make Your Invasive Alien Species Data More Useful. Front. Appl. Math. Stat. 3:13. doi: 10.3389/fams.2017.00013
+
+Quentin J. Groom 1*, Tim Adriaens 2, Peter Desmet 2, Annie Simpson 3, Aaike De Wever 4, Ioannis Bazos 5, Ana Cristina Cardoso 6, Lucinda Charles 7, Anastasia Christopoulou 5, Anna Gazda 8, Harry Helmisaari 9, Donald Hobern 10, Melanie Josefsson 11, Frances Lucy 12, Dragana Marisavljevic 13, Tomasz Oszako 14, Jan Pergl 15, Olivera Petrovic-Obradovic 16, Céline Prévot 17, Hans P. Ravn 18, Gareth Richards 7, Alain Roques 19, Helen E. Roy 20, Marie-Anne A. Rozenberg 19, Riccardo Scalera 21, Elena Tricarico 22, Teodora Trichkova 23, Diemer Vercayie 24, Argyro Zenetos 25 and Sonia Vanderhoeven 26
+1 Botanic Garden Meise, Bouchout Domain, Meise, Belgium, 2 Research Institute for Nature and Forest, Brussels, Belgium, 3 U.S. Geological Survey, Core Science Analytics, Synthesis, and Libraries Program, Reston, VA, United States, 4 Aquatic and Terrestrial Ecology, Operational Directorate Natural Environment, Royal Belgian Institute of Natural Sciences, Brussels, Belgium, 5 Department of Ecology and Systematics, Faculty of Biology, National and Kapodistrian University of Athens, Panepistimiopolis, Greece, 6 EASIN, European Commission Joint Research Centre, European Commission, Joint Research Centre, Ispra, Italy, 7 CABI, Nosworthy Way, Wallingford, Oxfordshire, United Kingdom, 8 Department of Forest Biodiversity, University of Agriculture in Krakow, Krakow, Poland, 9 Finnish Environment Institute, Helsinki, Finland, 10 Global Biodiversity Information Facility, Copenhagen, Denmark, 11 Swedish Environmental Protection Agency, Stockholm, Sweden, 12 CERIS, Institute of Technology, Sligo, Ireland, 13 Institute for Plant Protection and Environment, Belgrade, Serbia, 14 Forest Research Institute, Raszyn, Poland, 15 Department of Invasion Ecology, Institute of Botany, The Czech Academy of Sciences, Pru◦ honice, Czechia, 16 Faculty of Agriculture, University of Belgrade, Belgrade, Serbia, 17 SPW-DEMNA, Département de l’Étude du Milieu Naturel et Agricole, Gembloux, Belgium, 18 Department of Geosciences and Natural Resource Management, Faculty of Science, University of Copenhagen, Frederiksberg, Denmark, 19 INRA, UR633, Zoologie Forestière, Orléans, France, 20 Centre for Ecology and Hydrology, Wallingford, United Kingdom, 21 IUCN SSC Invasive Species Specialist Group, Rome, Italy, 22 Università degli Studi di Firenze, Firenze, Italy, 23 Institute of Biodiversity and Ecosystem Research, Bulgarian Academy of Sciences, Soﬁa, Bulgaria, 24 Natuurpunt, Mechelen, Belgium, 25 Institute of Marine Biological Resources and Inland Waters, HCMR, Anavyssos, Greece, 26 Belgian Biodiversity Platform, Walloon Research Department for Nature and Agricultural Areas, Service Public de Wallonie, Gembloux, Belgium
+Science-based strategies to tackle biological invasions depend on recent, accurate, well-documented, standardized and openly accessible information on alien species. Currently and historically, biodiversity data are scattered in numerous disconnected data silos that lack interoperability. The situation is no different for alien species data, and this obstructs efﬁcient retrieval, combination, and use of these kinds of information for research and policy-making. Standardization and interoperability are particularly important as many alien species related research and policy activities require pooling data. We describe seven ways that data on alien species can be made more accessible and useful, based on the results of a European Cooperation in Science and Technology (COST) workshop: (1) Create data management plans; (2) Increase interoperability of information sources; (3) Document data through metadata; (4) Format data using existing standards; (5) Adopt controlled vocabularies; (6) Increase data availability; and (7) Ensure long-term data preservation. We identify four properties speciﬁc and integral to alien species data (species status, introduction pathway, degree of establishment, and impact mechanism) that are either missing from existing data standards or lack a recommended
+
+Frontiers in Applied Mathematics and Statistics | www.frontiersin.org
+
+1
+
+June 2017 | Volume 3 | Article 13
+
+Groom et al.
+
+Making Alien Species Data Useful
+
+controlled vocabulary. Improved access to accurate, real-time and historical data will repay the long-term investment in data management infrastructure, by providing more accurate, timely and realistic assessments and analyses. If we improve core biodiversity data standards by developing their relevance to alien species, it will allow the automation of common activities regarding data processing in support of environmental policy. Furthermore, we call for considerable effort to maintain, update, standardize, archive, and aggregate datasets, to ensure proper valorization of alien species data and information before they become obsolete or lost.
+Keywords: checklists, data interoperability, data management plan, introduced species, non-indigenous, nonnative, pest species, standards
+
+1. INTRODUCTION
+Sound decision-making to minimize the risk associated with the introduction of alien species requires accurate and up-to-date data and the knowledge derived from them. These data feed into a wide range of processes to tackle problematic invasive alien species and are needed to develop an appropriate, evidencebased response (Table 1). Horizon scanning (the systematic examination of future potential threats and opportunities, leading to their prioritization), risk assessment, risk management, early detection and rapid response all depend on accurate and accessible data [1–4]. So, although alien species data are little diﬀerent from data on other species, the demands we place on these data are considerable and speciﬁc.
+Current invasive alien species policies depend on the availability and quality of data. For example, the EU regulation no. 1143/2014 on Invasive Alien Species [5], requires member states to report on the status of invasive alien species of Union concern and their progress in managing them, likewise similar regulations exist in other countries, such as the USA [6]. Responsible authorities need access to timely and validated data and they need to report this in a standardized way, so it can be collated nationally and internationally. Within the EU, the European Alien Species Information Network (EASIN) [7, 8] has been developed to this end, including a mechanism for quality assurance, safeguarding and improvement [9].
+Mitigating and preventing biological invasions present particular challenges with regard to the quality, relevance and scope of data sources and infrastructure [10]. The numerous origins of the data and broad taxonomic scope, combined with the global geographic extent and input from diverse disciplines make proper handling of alien species data diﬃcult, but also necessary. With this perspective, we gathered database managers, data users, data generators and biodiversity informatics specialists to outline how alien species data can be made more useful, taking into account the peculiarities and applications of such data. This resulted in seven recommendations, which, if followed, would improve the use of alien species data for research, policy and management purposes. Some of these recommendations are not unique to alien species data, but their impact would be particularly signiﬁcant in this discipline.
+
+TABLE 1 | Data/information categories and their invasive alien species-related evidence-based processes.
+
+Alien species checklists
+
+Horizon scanning (e.g., [2]) Selection of species for risk assessment (e.g., [46]) Analysis of pathways of introduction and spread (e.g., [43, 61, 62]) Pathway regulation Feeding indicators for policy evaluation (e.g., [63–65])
+
+Occurrence data of alien and native species
+
+Species distribution models (e.g., [66, 67]) Niche and occupancy modelingRisk modeling and risk mapping (e.g., [68]) Impact assessment Risk assessment Climate matching Impact research (e.g., [69, 70]) Early warning and rapid response programs (e.g., [35, 71])
+
+Climate data
+
+Niche and occupancy modeling Climate matching (e.g., [72]) Risk assessment
+
+Genetic data
+
+Species identiﬁcation (e.g., [71, 73]) Early detection through e-DNA (e.g., [32])
+
+Data on management actions
+
+Risk management (e.g., [62]) Evaluation of effectiveness of control actions Cost-beneﬁt analysis of control actions (e.g., [74, 75]) Assessment of non-target effects of control actions
+
+2. APPROACH
+Correspondence A workshop titled Data for invasive species research, policy making and management was organized in Brussels in 2016 with representatives from sixteen European countries and the United States. The attendees were from the European Alien Challenge COST1 Action, from important institutions and projects related to alien species data such as
+1http://www.cost.eu/
+
+Frontiers in Applied Mathematics and Statistics | www.frontiersin.org
+
+2
+
+June 2017 | Volume 3 | Article 13
+
+Groom et al.
+
+Making Alien Species Data Useful
+
+the European Alien Species Information Network (EASIN), Delivering Alien Invasive Species Inventories for Europe (DAISIE), Global Biodiversity Information Facility (GBIF), Global Invasive Species Information Network (GISIN), Centre for Agriculture and Biosciences International Invasive Species Compendium (CABI–ISC), and the Biodiversity Information Standards organization (formerly known as the Taxonomic Databases Working Group and referred to by the acronym TDWG). Eﬀort was made to balance participant representation in terms of gender, country of origin within Europe and taxonomic and habitat interests (terrestrial, freshwater and marine).
+The workshop consisted of talks and participatory exercises on four main invasive alien species themes: risk assessment, horizon scanning, management and monitoring. For each of these themes, participants reﬂected on the data needs and requirements (Table 1), the data sources they commonly use, and the existing data standards. Materials from the workshop have been deposited in an open repository [11]. Conclusions reported by breakout groups were reﬁned and supplemented in facilitated plenary discussion. Particular attention was paid to the perspectives of both the data publishers and data users.
+During the workshop a number of opportunities for facilitating proper use and valorization of alien species data was identiﬁed and these resulted in the recommendations presented below and summarized in Table 2.
+3. CREATE DATA MANAGEMENT PLANS
+A DMP describes how the information generated by a project will be handled both during and after it is generated. These plans deﬁne responsibilities; aim to avoid data loss and incompatibility by indicating how data will be preserved and formatted; stipulate what metadata are required to understand the data; and consider data sharing options, including licensing [12].
+Such plans are a means to improve data management and are now commonly required by funding agencies. The US National Science Foundation has required them since 2010 [13] and in 2013 the European Commission launched a pilot on open research data requiring a DMP in the ﬁrst 6 months of the project [14]. The DMP approach also encourages journals to change their policies toward the archiving of data, though it is taking time for the whole scientiﬁc community to embrace these changes
+
+[15, 16]. Typical minimum sections of a DMP are: (i) What type of data and metadata are expected? (ii) Which standards are used for alien species data? (iii) How should data be shared? (iv) How should data be permanently preserved? Researchers new to writing a DMP should refer to their institutional and funding agency guidelines if any, and, with respect to invasive species data, recommendations for ecologists [6, 17].
+Strictly speaking, each recommended action could be implemented without the need to compile a DMP. However, preparing and agreeing upon a DMP ensures a holistic approach to data management and increases its openness and accountability, while also answering the needs from funding agencies and institutional data policies [12], so we recommend their use.
+4. DOCUMENT THROUGH METADATA
+Good metadata provide information on provenance, scope, methods, limitations, data formats and units to facilitate correct data use, as well as license and contact information. USGS’ Data Management Web site2 lists multiple tools and best practices for metadata creation. Several metadata standards for biodiversity data are available: such as Ecological Markup Language (EML [18]) adopted by GBIF [19]; the INSPIRE directive framework (Infrastructure for Spatial Information in Europe)3, which describes geospatial data and the Data Catalog Vocabulary (DCAT)4, to describe datasets. We have not identiﬁed any speciﬁc metadata standards for alien species data and recommend the use of the metadata standards above, for which tools and services are already available [20]. An example of a tool for metadata standardization is the desktop application Morpho5, which guides users through the creation of EML [21]. Morpho can interface with a MetaCat registry to provide a searchable catalog of ecological datasets. This technology is used by both the DataONE repository6 and the European Biological Observations Network (EU BON) [22]. Creating metadata may seem secondary to primary data curation, but metadata are essential to ensure the data
+2https://www2.usgs.gov/datamanagement/describe/metadata.php 3http://inspire.ec.europa.eu 4https://www.w3.org/TR/vocab-dcat/ 5https://knb.ecoinformatics.org/#tools/morpho 6http://dataone.org
+
+TABLE 2 | Seven recommendations for improving the usefulness of alien species data.
+
+1
+
+Create and implement data management plans to deﬁne the alien species data life-cycle, good data quality and metadata, standardization, data sharing options,
+
+and long-term data preservation.
+
+2
+
+Describe alien species data through metadata, so users can understand their scope and limitations, and use metadata standards (EML, INSPIRE) to facilitate
+
+metadata exchange.
+
+3
+
+Improve interoperability and sustainability of existing and new alien species information sources by exposing the data they contain through standard exchange
+
+formats.
+
+4
+
+Format data using existing standards (Darwin Core, GISIN) and engage in their development through TDWG.
+
+5
+
+Adopt controlled vocabularies to further increase interoperability of data and engage with TDWG to make these compatible with existing standards.
+
+6
+
+Increase data availability by making alien species data openly accessible as soon as possible after collection.
+
+7
+
+Ensure long-term preservation of alien species data by archiving these in existing data repositories (GBIF, Zenodo).
+
+Frontiers in Applied Mathematics and Statistics | www.frontiersin.org
+
+3
+
+June 2017 | Volume 3 | Article 13
+
+Groom et al.
+
+Making Alien Species Data Useful
+
+can be discovered and used in the long term [23]. In the context of alien species data, improved access to metadata could enhance the speed with which data are found and mobilized.
+
+DNA, such as those of Dejean et al. [32], need support to be included within alien species initiatives.
+We recommend that alien species databases work together to follow common standards and that these standards are further developed for emerging data streams.
+
+5. IMPROVED INTEROPERABILITY OF INFORMATION SOURCES
+Information on alien species is scattered among a multitude of sources, including databases; peer-reviewed and gray literature; unpublished research projects and institutional datasets [8, 24]. Important international sources of these data include the 2000 Global Invasive Species Database (GISD) of the IUCN/SSC Invasive Species Specialist Group (ISSG) [25]; the 2004 Global Invasive Species Information Network (GISIN); and the Global Invasive Alien Species Information Partnership (GIASIP), as well as global information providers such as the CABI Invasive Species Compendium (ISC) and the Global Register of Introduced and Invasive Species (GRIIS). Any new initiative to collate data needs to consider its role and deﬁne its niche within a complex environment of global, continental, national and regional data repositories [7, 26].
+Almost any eﬀort to compile and harmonize data from these sources is impeded by diﬀerences in ﬁeld names, deﬁnitions, and taxonomy, as well as access and license restrictions [3, 27]. The use of common standards for all these aspects can improve the interoperability of these data sources: their data can be more eﬃciently exchanged, combined, compared, and presented. In addition, data processing should ideally be performed in a repeatable way, to increase the eﬃciency of activities such as horizon scanning and risk assessment. For invasion policies to be proactive, these activities should be repeated at regular intervals [2].
+Online alien species catalogs and invasive alien species information systems are diﬃcult to keep up-to-date [28, 29], yet they provide a wide variety of valuable information. Funding for these initiatives has been sporadic at best [28] and is often timelimited [29]. Thus relevant information stored and managed within such initiatives become quickly out-dated, and eﬀorts to keep them updated are often suddenly discontinued. This tends to spread errors to other systems that are populated with data from such sources, particularly if provenance is poorly tracked. As such, the current process restricts alien species data exchange, aggregation, interoperability and even rescue. Technological advances have boosted the number of initiatives [30], but also increased the data’s volume and complexity [23, 31– 33]. A holistic approach to complex biological questions requires more from data than a traditional reductionist approach, as demonstrated by the success of the Gene Ontology [34]. Yet this poses additional challenges of ensuring data quality, data curation, interoperability and future-prooﬁng against obsolete technology and increasing data volumes [35]. Technological change promises many improvements in data collection, with systems such as smartphones equipped with built-in GPS, image capture, external sensors, and automated and expert validation [31]. Also, advances in species detection through environmental
+
+6. FORMAT DATA USING EXISTING STANDARDS
+Within the scope of a single dataset, data only need to be formatted consistently to be usable. However, to combine datasets for broad-scale analysis, a community-deﬁned exchange format or standard is required to allow data interoperability. Among the qualities of a “good standard” are that it be readable (by both humans and machines), simple, learnable and eﬃcient [36].
+The alien species research community is not universally aware of biodiversity informatics standards, where they come from and how they can be extended. Standards for the exchange of biodiversity data, including alien species data, are developed, discussed and promoted by the Biodiversity Information Standards organization, TDWG [37]. This organization is the guardian of Darwin Core, the most widely adopted standard to exchange biodiversity information related to species [38]. By following these standards, data managers can avoid duplication of eﬀort and mistakes. Furthermore, the organization can give advice and support for updating existing standards and proposing new ones. It is recommended that the invasive alien species community continue to engage in TDWG, both to adopt standards for common terms and to establish standards speciﬁc to invasion biology.
+7. ADOPT CONTROLLED VOCABULARIES FOR FOUR ALIEN SPECIES PROPERTIES
+In addition to a standard format to exchange data, specialist communities often also require further control on the values of terms to increase interoperability. This can be achieved by adopting controlled vocabularies. This not only means that data can be merged, but also contributes to the normative deﬁnition of a term.
+Four alien species properties were identiﬁed that are either missing from Darwin Core or lacking a reference to a recommended controlled vocabulary. These are introduction pathway, degree of establishment, impact mechanism, and species status. For each of these, vocabularies exist outside Darwin Core, yet these currently exist as frameworks and require further work to be developed into standards.
+For pathway terminology, the need for a consistent classiﬁcation, hierarchy, and terminology has long been recognized [39–41]. Meanwhile, a standardized hierarchical pathway classiﬁcation was adopted by parties to the Convention of Biological Diversity [42] and is being applied to existing databases [9, 43].
+A framework for the degree of establishment has been presented by Blackburn et al. [44]. This hierarchical
+
+Frontiers in Applied Mathematics and Statistics | www.frontiersin.org
+
+4
+
+June 2017 | Volume 3 | Article 13
+
+Groom et al.
+
+Making Alien Species Data Useful
+
+classiﬁcation provides a terminology for populations at diﬀerent points in the invasion process (casual/introduced, alien, naturalized/established, invasive) and allows expression of the range of establishments from those organisms only kept in cultivation or captivity through to full naturalization and invasiveness.
+For alien species impact, a classiﬁcation of categories based on the magnitude of environmental impacts was developed by Blackburn et al. [45], and has been adopted by the IUCN in 2016. However, for impacts other than environmental, such as socioeconomic, plant health, human health and animal health, no comprehensive overview is available, but several protocols have been developed for risk assessment that can provide inspiration for classiﬁcations (see [46] for an overview).
+Standards from the trade and agriculture sectors can be useful in describing species status, for example, the International Plant Protection Conventions International Standard for Phytosanitary Measures: speciﬁcally, IPSM 87, Determining pest status in an area; and IPSM 68, Guidelines for surveillance. We recommend these controlled vocabularies are expressed in a machine-readable format and are referenced from the appropriate terms in Darwin Core. This is in line with the recommendations of the GBIF Task Group on Data Fitness for use in Research into Invasive Alien Species [33].
+Additionally, controlled vocabularies might prove helpful in the dissemination of information on species management [47]. Good examples are the Global Eradication and Response Database [48] and the Database of Island Invasive Species Eradications [49]. The documentation of management actions in the ﬁeld and the storage of these data are key to performing cost-beneﬁt analyses of management measures.
+8. INCREASE DATA AVAILABILITY
+Much has already been written about the methods and needs for open data publication [3, 17, 50]. Beyond the good intentions, Invasivesnet is a developing global association for open knowledge and open data on alien species [51]. This association will facilitate greater understanding, communication, and improved management of biological invasions globally, by developing a sustainable network of networks for eﬀective knowledge exchange. The association fosters tool development and cyberinfrastructure for the collection, management and dissemination of data and information on alien species from a range of sources (e.g., research, citizen science). The key point is that data should be shared and standardized to ensure interoperability [52]. In the case of species observation data a straightforward solution is to publish through a repository such as GBIF or the Ocean Biogeographic Information System (OBIS), as it ensures adherence to a minimum of common standards.
+There can be little doubt that data sharing using community standards and adequate metadata are of beneﬁt to research and society in general [53]. Yet motivating good data management
+7https://www.ippc.int/en/publications/612/ 8https://www.ippc.int/en/publications/615/
+
+is not easy when practitioners are not rewarded by their institutions. However, this is changing [54, 55], particular with the support of aspirational statements such as the Berlin9 and Bouchout10 declarations, which show the willingness of some institutions and individuals to change. Also, there are now policy initiatives in place, such as the EU INSPIRE directive11 or the United States Administration’s Open Data Policy12,13, to mandate harmonization of spatial data.
+9. ENSURE LONG-TERM DATA PRESERVATION
+Under ideal circumstances databases would have funding for maintenance and updating for as long as they are useful, however, this is unrealistic. Furthermore, the end of a project is the wrong time to consider the long-term persistence of data [29, 56]. Data actively being curated are often best maintained close to their source, however, longevity can be built-in to procedures by periodically depositing data in an open repository, not just on a personal or university website. Hence, data are protected from catastrophic events, human attrition, and the slow degradation of obsolescent hardware, which is the fate of much data [57]. If a publication is based upon a speciﬁc dataset it is good practice to deposit that precise version in a repository.
+Not all repositories are the same, for example the Dryad14 and Zenodo15 repositories are general-purpose repositories able to accept data in ad hoc formats, not necessarily formatted to community standards. They provide ﬂexibility, however, repositories dedicated to one data type provide much greater opportunities for integration due to their enforcement of standards. Examples of such repositories are GBIF and GenBank [58]. Repositories also diﬀer in their ability to embargo the release of data and in the licensing options. We recommend that considerable a priori thought goes into data preservation and the choice of repository.
+10. CONCLUSION
+Many alien species databases have emerged either before or without knowledge of existing standards for database management in biodiversity informatics. Furthermore, existing standards do not adequately cover all the needs of the research domain. Not all ecologists have strong information technology skills, nor are experts in technology-mediated collaboration, shared instrumentation or standardized data collection [59]. In the rapidly changing information technology landscape, ecologists and conservationists cannot be expected to keep up with developments in software and data standards. This should encourage data managers, wherever possible, to simplify the tools
+9https://openaccess.mpg.de/Berlin-Declaration 10http://bouchoutdeclaration.org/ 11http://inspire.ec.europa.eu 12https://www.fgdc.gov/standards 13https://project-open-data.cio.gov/IDC/ 14http://datadryad.org/ 15https://zenodo.org/
+
+Frontiers in Applied Mathematics and Statistics | www.frontiersin.org
+
+5
+
+June 2017 | Volume 3 | Article 13
+
+Groom et al.
+
+Making Alien Species Data Useful
+
+created for ecological practitioners. This becomes more pressing as new technologies are used to provide data on alien species.
+Many data management issues are common to all biodiversity data, yet species native range, introduction pathway, degree of establishment and impact mechanism are speciﬁc to alien species. Additionally, the need for fast dissemination of information and data is typical to alien species, in particular early detection and rapid response programs. Proactive responses to biological invasions require repeatable workﬂows for horizon scanning and risk assessment [60]. Adoption of standards and controlled vocabularies for this information can boost the usefulness for alien species research, policy-making and policy evaluation. There is a need for the acceptance of common data standards that take into consideration the needs of both data collectors and diverse data users, from the science community to the end user.
+Work is required with the research and education communities and the standards authorities to ensure that suggested standards are shepherded through acceptance and implementation and that these standards are introduced early within the education of young scientists and promoted among those in the biodiversity community, so that they are adopted widely. Improving core biodiversity standards for their content and usefulness for alien species data will allow the automation of common activities needed to tackle biological invasions. We call for considerable eﬀort toward maintaining, updating, standardizing, and archiving or incorporating current data sets, to ensure proper valorization of alien species data and resulting information before they become obsolete or lost.
+
+AUTHOR CONTRIBUTIONS
+QG, ACC, JP, SV, and TA wrote the original brieﬁng note, which outlined the idea of a workshop on biodiversity data interoperability for invasive species. SV, QG, TA, PD, AD were the local organizers of the Workshop and prepared the initial draft of the paper. HR is Chair of the COST Action and has supported and attended the workshop. AS participated in the workshop, contributed to the writing of the paper, and arranged for the initial peer review of the manuscript through the U.S. Geological Survey. All other authors contributed to the writing of the paper and attended the workshop.
+FUNDING
+This article is based upon work from COST Action TD1209 ALIEN Challenge, supported by COST (European Cooperation in Science and Technology) www.cost.eu. JP was partly supported by the long-term research development project no. RVO 67985939.
+ACKNOWLEDGMENTS
+We also thank the Belgian Biodiversity Platform, funded by the Belgian Science Policy Oﬃce, for the use of their facilities, and the U.S. Geological Survey, for previous peer review. Any use of trade, product, or ﬁrm names in this article is for descriptive purposes only and does not imply endorsement by the U.S. Government.
+
+REFERENCES
+1. McGeoch MA, Spear D, Kleynhans EJ, Marais E. Uncertainty in invasive alien species listing. Ecol Appl. (2012) 22:959–71. doi: 10.1890/11-1252.1
+2. Roy HE, Peyton J, Aldridge DC, Bantock T, Blackburn TM, Britton R, et al. Horizon scanning for invasive alien species with the potential to threaten biodiversity in Great Britain. Global Change Biol. (2014) 20:3859–71. doi: 10.1111/gcb.12603
+3. Groom QJ, Desmet P, Vanderhoeven S, Adriaens T. The importance of open data for invasive alien species research, policy and management. Manage Biol Invasions (2015) 6:119–25. doi: 10.3391/mbi.2015.6.2.02
+4. Zenetos A, Çinar ME, Crocetta F, Golani D, Rosso A, Servello G, et al. Uncertainties and validation of alien species catalogues: the Mediterranean as an example. Estuarine Coast Shelf Sci. (2017) 191:171–87. doi: 10.1016/j.ecss.2017.03.031
+5. European Union. Regulation (EU) No. 1143/2014 of the European Parliament and of the Council on the prevention and management of the introduction and spread of invasive alien species. Oﬃcial J Eur Union (2014) 317:35–55.
+6. Executive Oﬃce of the President. Safeguarding the nation from the impacts of invasive species. Federal Register (2016) 81:88609–14.
+7. Katsanevakis S, Bogucarskis K, Gatto F, Vandekerkhove J, Deriu I, Cardoso AC, et al. Building the European Alien Species Information Network (EASIN): a novel approach for the exploration of distributed alien species data. Bioinvasions Records (2012) 1:235–45. doi: 10.3391/bir.2012.1.4.01
+8. Katsanevakis S, Deriu I, D’Amico F, Nunes AL, Pelaez Sanchez S, Crocetta F, et al. European alien species information network (EASIN): supporting European policies and scientiﬁc research. Manage Biol Invasions (2015) 6:147–57. doi: 10.3391/mbi.2015.6.2.05
+9. Tsiamis K, Cardoso AC, Gervasini E. The European Alien Species Information Network on the Convention on Biological Diversity pathways categorization. NeoBiota (2017) 2:21–29. doi: 10.3897/neobiota.32.9429
+
+10. Latombe G, Pyšek P, Jeschke JM, Blackburn TM, Bacher S, Capinha C, et al. A vision for global monitoring of biological invasions. Biol Conserv. (2016). doi: 10.1016/j.biocon.2016.06.013. [Epub ahead of print].
+11. Groom Q, Adriaens T, Desmet P, Wever AD, Vanderhoeven S. Resources from the Workshop “Data for Invasive Species Research, Policy Making and Management”. doi: 10.5281/zenodo.261743
+12. McLure M, Level AV, Cranston CL, Oehlerts B, Culbertson M. Data curation: a study of researcher practices and needs. Libraries Acad. (2014) 14:139–64. doi: 10.1353/pla.2014.0009
+13. National Science Foundation. Press Release 10-077 Scientists Seeking NSF Funding Will Soon be Required to Submit Data Management Plans. (2010). Available online at: http://www.nsf.gov/news/news_summ.jsp?cntn_ id=116928 (Accessed 2 October, 2010).
+14. European Commission. EC Commission Recommendation of 17.7.2012 on Access to and Preservation of Scientiﬁc Information. (2012). Available online at: http://ec.europa.eu/research/science-society/document_library/pdf_06/ recommendation-access-and-preservation-scientiﬁc-information_en.pdf (Accessed 4 November, 2016).
+15. Roche DG, Kruuk LEB, Lanfear R, Binning SA. Public data archiving in ecology and evolution: how well are we doing? PLoS Biol. (2015) 13:e1002295. doi: 10.1371/journal.pbio.1002295
+16. Vision TJ. Open data and the social contract of scientiﬁc publishing. Bioscience (2010) 60:330. doi: 10.1525/bio.2010.60.5.2
+17. White EP, Baldridge E, Brym ZT, Locey KJ, McGlinn DJ, Supp SR. Nine simple ways to make it easier to (re) use your data. Ideas Ecol Evol. (2013) 6:1–10. doi: 10.4033/iee.2013.6b.6.f
+18. Fegraus EH, Andelman S, Jones MB, Schildhauer M. Maximizing the value of ecological data with structured metadata: an introduction to ecological metadata language (EML) and principles for metadata creation. Bull Ecol Soc Am. (2005) 86:158–68. doi: 10.1890/0012-9623(2005)86[158:MTVOED]2.0. CO;2
+
+Frontiers in Applied Mathematics and Statistics | www.frontiersin.org
+
+6
+
+June 2017 | Volume 3 | Article 13
+
+Groom et al.
+
+Making Alien Species Data Useful
+
+19. Robertson T, Dring M, Guralnick R, Bloom D, Wieczorek J, Braak K, et al. The GBIF integrated publishing toolkit: facilitating the eﬃcient publishing of biodiversity data on the internet. PLoS ONE (2014) 9:e102623. doi: 10.1371/journal.pone.0102623
+20. Oggioni A, Carrara P, Kliment T, Peterseil J, Schentz H. Monitoring of environmental status through long term series: data management system in the EnvEurope project. In: EnviroInfo. Aachen: Shaker Verlag (2012). p. 293–301.
+21. Higgins D, Berkley C, Jones MB. Managing heterogeneous ecological data using Morpho. In: Proceedings of the 14th International Conference on Scientiﬁc and Statistical Database Management. IEEE (2002). p. 69–76.
+22. Smirnova L, Mergen P, Groom Q, Wever AD, Penev L, Stoev P, et al. Data sharing tools adopted by the European Biodiversity Observation Network Project. Res Ideas Outcomes (2016) 2:e9390. doi: 10.3897/rio.2.e9390
+23. Michener WK. Meta-information concepts for ecological data management. Ecol Inform. (2006) 1:3–7. doi: 10.1016/j.ecoinf.2005.08.004
+24. Roy HE, Preston CD, Harrower CA, Rorke SL, Noble D, Sewell J, et al. GB Non-native Species Information Portal: documenting the arrival of non-native species in Britain. Biol Invasions (2014) 16:2495–505. doi: 10.1007/s10530-014-0687-0
+25. Pagad S, Genovesi P, Carnevali L, Scalera R, Clout M. IUCN SSC Invasive Species Specialist Group: invasive alien species information management supporting practitioners, policy makers and decision takers. Manage Biol Invasions (2015) 6:127–35. doi: 10.3391/mbi.2015.6.2.03
+26. Katsanevakis S, Genovesi P, Gaiji S, Hvid HN, Roy H, Nunes AL, et al. Implementing the European policies for alien species: networking, science, and partnership in a complex environment. Manage Biol Invasions (2013) 4:3–6. doi: 10.3391/mbi.2013.4.1.02
+27. Joppa LN, O’Connor B, Visconti P, Smith C, Geldmann J, Hoﬀmann M, et al. Filling in biodiversity threat gaps. Science (2016) 352:416–8. doi: 10.1126/science.aaf3565
+28. Jarnevich CS, Simpson A, Graham JJ, Newman GJ, Bargeron CT. Running a network on a shoestring: the Global Invasive Species Information Network. Manage Biol Invasions (2015) 6:137–46. doi: 10.3391/mbi.2015.6.2.04
+29. Olenin S, Narius A, Minchin D, David M, Galil B, Gollasch S, et al. Making non-indigenous species information systems practical for management and useful for research: an aquatic perspective. Biol Conserv. (2014) 173:98–107. doi: 10.1016/j.biocon.2013.07.040
+30. Roy H, Pocock M, Preston C, Roy D, Savage J, Tweddle J, et al. Understanding Citizen Science and Environmental Monitoring: Final Report on Behalf of UK Environmental Observation Framework. NERC/Centre for Ecology and Hydrology (2012).
+31. August T, Harvey M, Lightfoot P, Kilbey D, Papadopoulos T, Jepson P. Emerging technologies for biological recording. Biol J Linnean Soc. (2015) 115:731–49. doi: 10.1111/bij.12534
+32. Dejean T, Valentini A, Miquel C, Taberlet P, Bellemain E, Miaud C. Improved detection of an alien invasive species through environmental DNA barcoding: the example of the American bullfrog Lithobates catesbeianus. J Appl Ecol. (2012) 49:953–9. doi: 10.1111/j.1365-2664.2012.02171.x
+33. McGeoch MA, Groom QJ, Pagad S, Petrosyan V, Ruiz G, Wilson J. Data Fitness for Use in Research on Alien and Invasive Species. Copenhagen: GBIF Secretariat (2016). Available online at: http://www.gbif.org/resource/82958
+34. Ashburner M, Ball CA, Blake JA, Botstein D, Butler H, Cherry JM, et al. Gene ontology: tool for the uniﬁcation of biology. Nat Genet. (2000) 25:25–9. doi: 10.1038/75556
+35. Simpson A, Jarnevich C, Madsen J, Westbrooks R, Fournier C, Mehrhoﬀ L, et al. Invasive species information networks: collaboration at multiple scales for prevention, early detection, and rapid response to invasive alien species. Biodiversity (2009) 10:5–13. doi: 10.1080/14888386.2009.9712839
+36. Bos B. What Is a Good Standard? An Essay on W3C’s Design Principles. (2003). Available online at: https://www.w3.org/People/Bos/DesignGuide/ introduction
+37. Berendsohn W, Güntsch A, Hoﬀmann N, Kohlbecker A, Luther K, Müller A. Biodiversity information platforms: from standards to interoperability. ZooKeys (2011) 150:71–87. doi: 10.3897/zookeys.150.2166
+38. Wieczorek J, Bloom D, Guralnick R, Blum S, Döring M, Giovanni R, et al. Darwin core: an evolving community-developed biodiversity data standard. PLoS ONE (2012) 7:e29715. doi: 10.1371/journal.pone.0029715
+
+39. Hulme PE, Bacher S, Kenis M, Klotz S, Kühn I, Minchin D, et al. Grasping at the routes of biological invasions: a framework for integrating pathways into policy. J Appl Ecol. (2008) 45:403–14. doi: 10.1111/j.1365-2664.2007.01442.x
+40. Essl F, Bacher S, Blackburn TM, Booy O, Brundu G, Brunel S, et al. Crossing frontiers in tackling pathways of biological invasions. Bioscience (2015) 65:769. doi: 10.1093/biosci/biv082
+41. Pagad S, Hayes K, Katsanevakis S, Costello MJ. World Register of Introduced Marine Species (WRIMS) (2015). Available online at: http://www. marinespecies.org/introduced
+42. Convention on Biological Diversity. Pathways of Introduction of Invasive Species, Their Prioritization, and Management (2014). Available online at: http://www.cbd.int/doc/meetings/sbstta/sbstta-18/oﬃcial/sbstta-18-09add1-en.pdf
+43. Saul WC, Roy HE, Booy O, Carnevali L, Chen HJ, Genovesi P, et al. Assessing patterns in introduction pathways of alien species by linking major invasion data bases. J Appl Ecol. (2017) 54:657–69. doi: 10.1111/1365-2664.12819
+44. Blackburn TM, Pyšek P, Bacher S, Carlton JT, Duncan RP, Jarošík V, et al. A proposed uniﬁed framework for biological invasions. Trends Ecol Evol. (2011) 26:333–9. doi: 10.1016/j.tree.2011.03.023
+45. Blackburn TM, Essl F, Evans T, Hulme PE, Jeschke JM, Kühn I, et al. A uniﬁed classiﬁcation of alien species based on the magnitude of their environmental impacts. PLoS Biol. (2014) 12:e1001850. doi: 10.1371/journal.pbio.1001850
+46. McGeoch MA, Genovesi P, Bellingham PJ, Costello MJ, McGrannachan C, Sheppard A. Prioritizing species, pathways, and sites to achieve conservation targets for biological invasion. Biol Invasions (2016) 18:299–314. doi: 10.1007/s10530-015-1013-1
+47. Hulme PE, Pyšek P, Nentwig W, Vilà M. Will threat of biological invasions unite the European Union? Science (2009) 324:40–1. doi: 10.1126/science.1171111
+48. Kean J, Tobin P, Lee D, Smith G, Stringer L, Vargas RF, et al. Global Eradication and Response Database (2016). Available online at: http://b3.net.nz/gerda
+49. Island Conservation, Coastal Conservation Action Laboratory UCSC, IUCN SSC Invasive Species Specialist Group, University of Auckland and Landcare Research New Zealand. DIISE. The Database of Island Invasive Species Eradications (2015). Available online at: http://diise.islandconservation.org
+50. Wilkinson MD, Dumontier M, Aalbersberg IJ, Appleton G, Axton M, Baak A, et al. The FAIR guiding principles for scientiﬁc data management and stewardship. Sci Data (2016) 3:160018. doi: 10.1038/sdata.2016.18
+51. Lucy FE, Roy H, Simpson A, Carlton JT, Hanson JM, Magellan K, et al. INVASIVESNET towards an international association for open knowledge on invasive alien species. Manage Biol Invasions (2016) 7:131–9. doi: 10.3391/mbi.2016.7.2.01
+52. Faith D, Collen B, Ariño A, Koleﬀ PKP, Guinotte J, Kerr J, et al. Bridging the biodiversity data aps: recommendations to meet users’ data needs. Biodiversity Inform. (2013) 8:41–58. doi: 10.17161/bi.v8i2.4126
+53. Borgman CL. The conundrum of sharing research data. J Am Soc Inform Sci Technol. (2012) 63:1059–78. doi: 10.1002/asi.22634
+54. Donovan C. Introduction: future pathways for science policy and research assessment: metrics vs peer review, quality vs impact. Sci Public Policy (2007) 34:538. doi: 10.3152/030234207X256529
+55. Taylor J. The assessment of research quality in UK universities: peer review or metrics? Brit J Manage. (2011) 22:202–17. doi: 10.1111/j.1467-8551. 2010.00722.x
+56. Maday C, Moysan M. Records management for scientiﬁc data. Arch Manuscripts (2014) 42:190–2. doi: 10.1080/01576895.2014.911686
+57. Gibney E, Van Noorden R. Scientists losing data at a rapid rate. Nature (2013) 504. doi: 10.1038/nature.2013.14416
+58. Benson DA, Cavanaugh M, Clark K, Karsch-Mizrachi I, Lipman DJ, Ostell J, et al. GenBank. Nucleic Acids Res. (2013) 41:D36. doi: 10.1093/nar/ gks1195
+59. Ribes D, Finholt TA. The long now of technology infrastructure: articulating tensions in development. J Assoc Inform Syst. (2009) 10:375.
+60. Vanderhoeven S, Adriaens T, Desmet P, Strubbe D, Backeljau T, Barbier Y, et al. Tracking Invasive Alien Species (TrIAS): building a data-driven framework to inform policy. Res Ideas Outcomes (2017) 3:e13414. doi: 10.3897/rio.3.e13414
+61. NOBANIS. Invasive Alien Species: Pathway Analysis and Horizon Scanning for Countries in Northern Europe. Copenhagen: Nordic Council of Ministers (2015).
+
+Frontiers in Applied Mathematics and Statistics | www.frontiersin.org
+
+7
+
+June 2017 | Volume 3 | Article 13
+
+Groom et al.
+
+Making Alien Species Data Useful
+
+62. Andow DA. Pathways-based risk assessment of exotic species invasions. In: Carlton J, editor. Invasive Species: Vectors and Management Strategies. Washington, DC: Island Press (2003). p. 439–55.
+63. Rabitsch W, Essl F, Genovesi P, Scalera R. Invasive Alien Species Indicators in Europe-a Review of Streamlining European Biodiversity (SEBI) Indicator 10. EEA-Technical Report, 15/2012 (2012).
+64. Armon RH, Zenetos A. Invasive alien species and their indicators. In: Armon RH, Hänninen O, editors. Environmental Indicators. Dordrecht: Springer Netherlands (2015). p. 147–73. doi: 10.1007/978-94-017-94 99-2_10
+65. Rabitsch W, Genovesi P, Scalera R, Biała K, Josefsson M, Essl F. Developing and testing alien species indicators for Europe. J Nat Conserv. (2016) 29:89–96. doi: 10.1016/j.jnc.2015.12.001
+66. Ficetola GF, Thuiller W, Miaud C. Prediction and validation of the potential global distribution of a problematic alien invasive species—the American bullfrog. Divers Distribut. (2007) 13:476–85. doi: 10.1111/j.1472-4642.2007.00377.x
+67. Strubbe D, Matthysen E, Graham CH. Assessing the potential impact of invasive ring-necked parakeets Psittacula krameri on native nuthatches Sitta europeae in Belgium. J Appl Ecol. (2010) 47:549–57. doi: 10.1111/j.1365-2664.2010.01808.x
+68. Jiménez-Valverde A, Peterson AT, Soberón J, Overton J, Aragón P, Lobo JM. Use of niche models in invasive species risk assessments. Biol Invasions (2011) 13:2785–97. doi: 10.1007/s10530-011-9963-4
+69. Elzinga CL, Salzer DW, Willoughby JW, Gibbs JP. Monitoring Plant and Animal Populations. Malden, MA: Blackwell Science (2001).
+70. Marsh DM, Trenham PC. Current trends in plant and animal population monitoring. Conserv Biol. (2008) 22:647–55. doi: 10.1111/j.1523-1739. 2008.00927.x
+71. Adriaens T, Baert K, Breyne P, Casaer J, Devisscher S, Onkelinx T, et al. Successful eradication of a suburban Pallas’s squirrel Callosciurus erythraeus
+
+(Pallas 1779) (Rodentia, Sciuridae) population in Flanders (northern Belgium). Biol Invasions (2015) 17:2517–26. 72. Faulkner KT, Robertson MP, Rouget M, Wilson JR. A simple, rapid methodology for developing invasive species watch lists. Biol Conserv. (2014) 179:25–32. doi: 10.1016/j.biocon.2014.08.014 73. Beauchamp VB, Koontz SM, Suss C, Hawkins C, Kyde KL, Schnase JL. An introduction to Oplismenus undulatifolius (Ard.) Roem. & Schult.(wavyleaf basketgrass), a recent invader in Mid-Atlantic forest understories. J Torrey Bot Soc. (2013) 140:391–413. doi: 10.3159/TORREY-D-13-00033.1 74. Panzacchi M, Cocchi R, Genovesi P, Bertolino S. Population control of coypu Myocastor coypus in Italy compared to eradication in UK: a cost-beneﬁt analysis. Wildlife Biol. (2007) 13:159–71. doi: 10.2981/09096396(2007)13[159:PCOCMC]2.0.CO;2 75. Rajmis S, Thiele J, Marggraf RA. Cost-beneﬁt analysis of controlling giant hogweed (Heracleum mantegazzianum) in Germany using a choice experiment approach. NeoBiota (2016) 31:19–41. doi: 10.3897/neobiota. 31.8103
+Conﬂict of Interest Statement: The authors declare that the research was conducted in the absence of any commercial or ﬁnancial relationships that could be construed as a potential conﬂict of interest.
+Copyright © 2017 Groom, Adriaens, Desmet, Simpson, De Wever, Bazos, Cardoso, Charles, Christopoulou, Gazda, Helmisaari, Hobern, Josefsson, Lucy, Marisavljevic, Oszako, Pergl, Petrovic-Obradovic, Prévot, Ravn, Richards, Roques, Roy, Rozenberg, Scalera, Tricarico, Trichkova, Vercayie, Zenetos and Vanderhoeven. This is an openaccess article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) or licensor are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms.
+
+Frontiers in Applied Mathematics and Statistics | www.frontiersin.org
+
+8
+
+June 2017 | Volume 3 | Article 13
+

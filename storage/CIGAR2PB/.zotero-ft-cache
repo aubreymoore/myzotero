@@ -1,0 +1,1011 @@
+Guam Coconut Rhinoceros Beetle Eradication Pro ject
+Semiannual Report for USDA APHIS Grant 11-8510-1123-CA Performance Period: July - December, 2011
+Prepared by Aubrey Moore University of Guam Cooperative Extension Service
+April 2, 2012
+1
+
+Contents
+
+1 Background
+
+4
+
+2 Project Management
+
+5
+
+3 Project Personnel
+
+5
+
+4 Current Situation
+
+6
+
+4.1 Population Growth and Spread . . . . . . . . . . . . . . . . . . . 6
+
+4.2 Biological Control . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+
+4.3 Chemical Control . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+4.4 Novel CRB Behavior on Guam: Arboreal Development . . . . . . 8
+
+5 Quarantine
+
+9
+
+6 Survey and Detection
+
+9
+
+6.1 Pheromone Traps . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+6.2 Trap and Lure Development . . . . . . . . . . . . . . . . . . . . . 10
+
+6.3 Traps on Land Occupied by the U.S. Military . . . . . . . . . . . 12
+
+6.4 Traps at Pacic Islands Club Resort . . . . . . . . . . . . . . . . 12
+
+6.5 Non-Trap Detection . . . . . . . . . . . . . . . . . . . . . . . . . 15
+
+6.6 Arboreal Development of CRB on Guam . . . . . . . . . . . . . . 16
+
+6.7 Data Processing and Analysis . . . . . . . . . . . . . . . . . . . . 17
+
+7 Sanitation
+
+17
+
+8 Chemical Control
+
+20
+
+8.1 Injectable Insecticides . . . . . . . . . . . . . . . . . . . . . . . . 20
+
+8.2 Conventional Insecticides . . . . . . . . . . . . . . . . . . . . . . 21
+
+8.3 Attracticide . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+
+8.4 Insect Growth Regulators . . . . . . . . . . . . . . . . . . . . . . 21
+
+8.5 Biological Insecticides . . . . . . . . . . . . . . . . . . . . . . . . 22
+
+9 Biological Control
+
+22
+
+9.1 Virus . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+
+9.2 Metarhizium majus Fungus . . . . . . . . . . . . . . . . . . . . . 23
+
+10 Public Outreach
+
+25
+
+References
+
+28
+
+11 Signatures
+
+29
+
+12 APPENDICES
+
+30
+
+A Updated Environmental Assessment
+
+30
+
+2
+
+B Technical Note: Using QGIS to Detect Georeferencing Errors
+
+in an Online MySQL Database
+
+60
+
+3
+
+1 Background
+Coconut rhinoceros beetle (CRB, Coleoptera: Scarabaeidae), Oryctes rhinoceros, was rst detected on Guam on September 11, 2007. CRB is native to Southeast Asia and now occurs throughout much of Asia and the Western Pacic. CRB was accidentally introduced and is now established on the Pacic Islands of Palau, Fiji and Samoa. It is a serious pest of coconut palm, Cocos nucifera, betelnut, Areca catechu and Pandanus species. It is also known to attack banana, taro, pineapple and sugar cane.
+CRB grubs do no damage. They feed only on dead and decaying vegetation, mainly coconut logs and stumps. Adults are the injurious stage of the insect. They are generally night-time iers and when they alight on a host, they bore into the folded, emerging fronds of coconut palms to feed on sap. V-shaped cuts in the fronds and holes through the midrib are visible when the leaves grow out and unfold. If the growing tip is injured, the palm may be killed or severe loss of leaf tissue may cause decreased nut set. Feeding wounds may also serve as an infection pathway for pathogens or other pests. The eects of adult boring may be more severe on younger palms where spears are narrower. Mortality of young palms has already been observed on Guam but few mature plants have been killed. Tree mortality in Palau exceeded 50% a few years after arrival of CRB and this fate is expected for Guam in the absence of intervention. The situation on Guam is ideal for a population explosion of rhino beetles. There is ample food for grubs in the form of standing dead coconut trunks and fallen logs from trees which were killed by Supertyphoons Pongsona which hit Guam on December 8, 2002. If unchecked, breeding sites will produce large numbers of adults which will attack and kill palms, producing even more food for grubs. This positive feedback loop could result in massive numbers of adult beetles, increasing the risk of accidental export to surrounding islands, Hawaii, and elsewhere. In addition to having a copious food supply, CRB seems to be free of control by natural enemies on Guam. To date, no signs of predation, parasitism, or disease have been observed. Note that most vertebrate insectivores on Guam have been extirpated by the brown treesnake.
+Following a delimiting survey which indicated that the Guam CRB population was limited to a small area, Tumon Bay and Faifai beach on Guam's northwest coast, the Guam CRB Eradication project was launched. Two tactics were employed: mass trapping of adults using a commercially available pheromone, oryctalure (ethyl 4-methyloctanoate), and sanitation of breeding sites by removal and destruction of decaying vegetation wherever grubs are found. Mass trapping has been ineective. However, we maintain about 700 traps throughout the island to monitor ight activity and geographical spread of the CRB population. Sanitation has been successful in limiting population growth, slowing spread of the beetle, and reducing damage in the Tumon Bay hotel area.
+Detected breeding sites are removed and destroyed by our sanitation crew. Destruction of breeding sites involves physical removal of decaying logs, stumps, and other dead vegetation used as breeding sites by the CRB. This material
+4
+
+is removed using hand tools and chain saws and then reduced in volume by a chipper owned by the project. Piles of chipped material are fumigated to ensure death of all CRB and this material is then transported outside of the infested area where it is either disposed of by burial or used in a composting operation.
+An unexpected observation has lead to a better understanding of the biology of CRB on Guam. We discovered that a signicant number of CRB are going through their entire development cycle in the crowns of coconut palms. Immatures are not feeding on live tissue, but on decaying detritus caught between petioles. Arboreal development of CRB has not been reported elsewhere. We think that this behavior is common on Guam because there is a lack of vertebrate predation. It is likely that rats and insectivorous birds eat grubs in the crowns of coconuts elsewhere, but this natural control is entirely absent on Guam where rats and birds are almost nonexistent because of brown treesnake predation. Following this discovery, we have modied our sanitation strategy to include removal of unwanted coconut palms which are likely to enable arboreal development of CRB. A journal article on this novel CRB behavior is in preparation.
+2 Project Management
+The Guam Coconut Rhinoceros Beetle Eradication Project is managed using the Integrated Command System (ICS) as a condition for receiving APHIS funding. The command sta attend weekly planning meetings and monthly conference calls with Federal partners on the Mainland. The Federal commander for the ICS is the APHIS Port Director for Guam and the local commander is the Guam Director of Agriculture or their delegates. In December 2010, our Federal commander, Dallas Barringer was replaced by Michael "Troy" Brown, who is an APHIS Plant Health Safety Specialist assigned as the Guam Port Director. Our local commander, Joseph Torres was replaced by Mariquita "Tita" Taitague, Guam Director of Agriculture. In March 2011, the Director delegated Dr. Russell Campbell as the local ICS commander.
+3 Project Personnel
+The current personnel roster is displayed in Table 1. Several signicant changes took place during the reporting period:
+ The project's the detector dog component, consisting of four dogs and
+four dog handlers was discontinued at the end of November, 2011. The incident command decided this reduction in force was necessary because of uncertainties in short-term funding. The dogs were retired and adopted by their handlers.
+ Our Operations Chief, Paul Bassler, retired and moved to Oregon. His
+duties were taken over by Roland Quitugua, who also continues to serve as Logistics Chief.
+5
+
+ Jessica Nangauta, who acted as the project's administrative assistant and
+database manager, resigned in order to take care of her newborn baby.
+ A biologist, Jessica Gross, was hired to perform applied research required
+by the project.
+
+Table 1: Guam Coconut Rhinoceros Beetle Eradication Project personnel roster,
+
+March 28, 2012. * indicates personnel which are at least partially paid by project
+
+funding. PIF = Guam Plant Inspection Facility.
+
+Name
+
+Agency
+
+ICS Position
+
+Home Base
+
+Michael 'Troy' Brown Dr. Russell Campbell Dr. Aubrey Moore Roland Quitugua Ben Quichocho
+
+Incident Command
+
+APHIS
+
+Commander
+
+GDOA
+
+Commander
+
+UOG
+
+Principal Investigator
+
+UOG*
+
+Operations / Logistics Chief
+
+APHIS
+
+Program Assistant
+
+PIF PIF UOG UOG/PIF PIF
+
+Ian Iriarte Bob Bourgeois Vincent Benevente Cris Crisostomo Marty Hara Raymondo San Miguel Donatus Somol Ken Leon Guererro Derrick Diego Jessica Gross Ken San Nicolas Roland Cabrera John Diego
+
+UOG* UOG* UOG* UOG* UOG* UOG* UOG* UOG* UOG* UOG* UOG* UOG* UOG*
+
+Project Sta Admin assistant Technician
+Scouting/Sanitation Crew Leader Scouting/Sanitation Crew Scouting/Sanitation Crew Scouting/Sanitation Crew Scouting/Sanitation Crew Pesticide Crew Leader Pesticide Crew Research Technician Lab Technician Trap Monitoring Crew Trap Monitoring Crew
+
+UOG UOG PIF PIF PIF PIF PIF PIF PIF PIF PIF PIF PIF
+
+4 Current Situation
+This section is intended to give an overview of the current situation. Details of of the eradication project's tactics and activities are provided in following sections.
+4.1 Population Growth and Spread
+During the last quarter of 2010, CRB escaped from the quarantine zone along the northeast coast of Guam and spread to inland areas where adults established breeding sites in large village compost piles, some of which exceed 200 cubic
+6
+
+yards. Rapid spread of the CRB infestation continued during 2011 and CRB can now be found throughout Guam.
+As an emergency treatment to prevent emergence of large numbers of adults cypermethrin was applied as a drench to compost piles and other breeding sites . Since, MONTH, insecticide applications have largely been replaced by applications of the biological control agent, Metarhizium majus, a species-specic entomopathogenic fungus also known as green muscardine fungus (GMF).
+During March 2011, a large infestation of CRB was discovered at the northern tip of Guam, at the Guam National Wildlife Refuge at Ritidian Point, adjacent to Andersen Air Force Base. Multiple breeding sites were discovered in a large, abandoned copra plantation. This infestation disappeared rapidly. Although the project did signicant sanitation work at the Refuge, we suspect that the local CRB population was controlled by predation from feral pigs. This needs to be investigated further because the Refuge has recently fenced this are and feral ungulates are being eliminated within the fence. Project sta will be examining stomach contents of pigs killed in an upcoming island-wide feral pig hunting derby to see if these animals are eating a signicant number of CRB grubs.
+4.2 Biological Control
+To date, no natural biocontrol of CRB has been observed on Guam, except for possible indication that feral pigs are preying on grubs as mentioned above. Without density-dependent, self propagating biocontrol, Guam is primed for a population explosion of CRB. Large numbers of adult beetles will initiate a positive feedback loop in which palms are killed, producing more food for grubs which will transform into ever increasing numbers of adults until food becomes limiting. If a CRB population occurs, risk of accidental export to other islands and elsewhere will increase.
+Our plans to introduce a subfamily-specic virus into the population by autodissemination has failed. This virus has successfully suppressed CRB populations on other Pacic Islands. However, laboratory bioassays indicate that either our CRB population is resistant to the virus strains supplied to us by AgResearch, New Zealand, or the virus has lost its virulence and we are currently trying to dene the cause of the failure. I have received an APHIS permit to import live adult CRB from susceptible populations so that we can perform bioassays to determine dierences in susceptibility to the virus.
+As an alternative to the virus the virus for biocontrol, we have begun to import and disseminate Metarhizium majus, an entomopathogenic fungus also known as green muscardine fungus (GMF), from the Philippine Coconut Authority under conditions of an APHIS import permit. Preliminary results from the eld indicate that GMF is a highly eective control for the Guam CRB population. Details are provided later in this document.
+7
+
+4.3 Chemical Control
+In the short term, it is critical that we develop recommendations for emergency treatment of the large, recently-infested compost piles. These piles are too far composted to burn and too large to be removed and/or fumigated.
+To date, we have found only one soil insecticide which is ecacious for CRB: the pyrethroid, cypermethrin. A drench with cypermethrin is being used as an emergency treatment for large compost piles infested with grubs and a eld trial is underway to measure ecacy and persistence. Unfortunately, cypermethrin has no residual activity, requiring frequent, periodic retreatment of infested piles.
+An ideal pesticide for CRB would have a long period of residual activity and would be targeted at preventing production of adults rather than mortality of grubs. CRB is an unusual pest in that the adult is the only damaging stage. Grubs are actually benecial as they eciently break down dead coconut material and other dead vegetation into soil. Treatment of infested material with an insect growth regulator (IGR) containing a juvenile hormone analog or use of an insect chemosterilant may allow depletion of CRB larval food resources over time. In other words, the grubs would convert compost piles from CRB-food to non-CRB-food within a few generations. Converted piles would not require retreatment. Unfortunately, the nine month development cycle for CRB will require will require lengthy bioassays lasting several months to determine ecacy of candidate IGRs or chemosterilants. Lab bioassays showed that the IGR,
+methoprene, was ineective. However, another IGR, pyriproxyfen (NyGuard®)
+prevented pupation of larvae in lab bioassays. Third instar continued to feed, some of them surpassing 25 grams, which is double the normal maximum mass.
+A eld trial is currently underway to measure ecacy and persistence of both cypermethrin and pyriproxyfen and the project's environmental assessment has been updated to include evaluation of both chemicals (See Appendix A).
+4.4 Novel CRB Behavior on Guam: Arboreal Development
+An unexpected observation has lead to a better understanding of the biology of CRB on Guam. We discovered that a signicant number of CRB are going through their entire development cycle in the crowns of coconut palms. Immatures are not feeding on live tissue, but on decaying detritus caught between petioles. Arboreal development of CRB has not been reported elsewhere. We think that this behavior is common on Guam because there is a lack of vertebrate predation. It is likely that rats and insectivorous birds eat grubs in the crowns of coconuts elsewhere, but this natural control is entirely absent on Guam where rats and birds are almost nonexistent because of brown treesnake predation. Following this discovery, we have modied our sanitation strategy to include removal of unwanted coconut palms which are likely to enable arboreal development of CRB. We believe that arboreal development does not occur in ornamental palms in hotel landscapes because these trees are trimmed regularly.
+8
+
+A journal article on this novel CRB behavior is in preparation.
+5 Quarantine
+A quarantine regulation, imposed by the Guam Department of Agriculture, prohibits transport of green waste from within a prescribed quarantine zone without inspection and/or treatment. The area of the quarantine zone has been extended several times since the beginning of the CRB infestation. Its current extent, set on September 24, 2010, is 28,360 acres. Quarantine may have slowed down the initial spread of the CRB. However, since many current CRB sites are outside the current quarantine area (Figure 5), the quarantine needs to be discontinued or expanded.
+Figure 1: Map of Guam showing current quarantine area and all known CRB locations as of March 31, 2012.
+6 Survey and Detection
+6.1 Pheromone Traps
+A commercially available pheromone, oryctalure (ethyl 4-methyloctanoate) is used to trap adult CRB in locally manufactured baed bucket traps. Initially, these traps were deployed for mass trapping in addition to monitoring. Unfortunately, we determined that the traps were not ecient enough for mass trapping:
+ In a mark-release-recapture experiment, twenty beetles were released in
+the middle of a mass trapping area. None of the beetles were recovered in 9
+
+traps.
+ CRB damage appeared on coconut palms in the midst of mass trapping
+areas indicating that the palms are more attractive than traps.
+Following these discoveries, the density of traps in mass trapping areas has been reduced, from a high of over 1,700 traps in use island-wide to 792 traps used during the last half of 2010.
+The remaining traps are being used for survey purposes despite the fact that we don't know the relationship between population density and trap catch. Traps are checked and maintained by three teams:
+ Two project sta check and maintain most traps approximately biweekly.
+ Navy biologists check and maintain approximately 25 traps on land occu-
+pied by the Navy biweekly.
+ Sta of the Pacic Islands Club Resort (PIC) check 30 traps on their
+property daily.
+During 2011, 11,507 trap visits were made and 2,874 CRB adults were trapped from about 968 traps deployed throughout the island, a rate of about only 0.008 beetles per trap-day.
+Trap catch rates on Guam are very low. Highest record rate for single traps is 2 beetles per trap-day. This rate was observed on 8 separate days at the PIC, which is near the center of the original CRB infestation. The highest observed rate for the PIC trap array is 0.12 beetles per trap-day (4 beetles caught in 33 traps on November 21, 2010). Trap catch rate on Guam is very much lower than observed with similar traps using the same lure in other parts of the world.
+Trap data are visualized both spatially and temporally using which maps are updated monthly (Figure 2).
+6.2 Trap and Lure Development
+A tubular trap baited with oryctalure plus decaying coconut material was designed and tested. This trap did not perform signicantly better than the standard baed bucket trap. In another eld experiment, small, battery powered LED light sources were attached to taps. Field testing of new trap designs on Guam is dicult because of very low trap capture rates. Semi-eld testing of trap designs in a large (10 x 20 feet) eld cage was unsuccessful because test beetles did not readily y.
+Our standard traps are deployed to intercept beetles in ight. However, it is possible that CRB may disperse to some extent by walking and climbing trees. In a eld experiment, we set pairs of bucket traps around an active CRB breeding site in a pile of decaying coconut material. In each pair, one trap was placed on the ground, and one trap was placed in the ground so that it acted as a pitfall trap. In this experiment, in-ground traps caught signicantly more beetles than on-ground traps.
+10
+
+Figure 2: This is the last page of a trap map time series. An up-to-date copy
+of the series is available for download from http://guaminsects.net/anr/ content/visualization-coconut-rhinoceros-beetle-trap-catch-data.
+11
+
+In a CRB damage survey at PIC we discovered a group of highly damaged coconut palms centered on the resort's outdoor spa. We hypothesized that some of the chemicals being used by the spa may have attracted CRB adults into the area. Samples of beauty products were purchased and tested for attractiveness as part of a high school science fair project by Anran Li. Preliminary olfactometer bioassays indicated that one of the samples, "Body Butter", contains an ingredient that is highly attractive to CRB, at least 50% as attractive as pure oryctalure. We have recently constructed a glass Y-tube olfactometer using a design for CRB published by Bob VanderMeer, USDA-ARS-CMAVE. Experiments with the VanderMeer olfactometer during 2011 failed to show that adult CRB were attracted to any of 3 dierent samples of Body Butter.
+Dr. Eric Jang, a chemical ecologist and research leader with the USDAARS Pacic Basin Research Center, Hilo, HI visited Guam in March 2011 to help review our project. Dr. Jang identied a need for applied research in the area of semiochemicals used by rhino beetles. The project is currently sending live beetles to Dr. Jang's lab under conditions of an APHIS permit. These beetles are being used to develop electroantennogram (EAG) methods. Jang and associates are planning to return to Guam for about three weeks during May 2012 to continue this work.
+6.3 Traps on Land Occupied by the U.S. Military
+More than one third of Guam is occupied by the US Military. Security issues are often an impediment to conducting surveys on these lands. Since the beginning of our project, we have had excellent cooperation from the Navy in overcoming this impediment. Naval biologists check and maintain about 25 traps on Navy land and fax the results to our project about every two weeks.
+During 2011 we successfully negotiated with the Air Force to gain access to areas on Andersen Air Force Base which occupies 20,000 covering most of the northern tip of Guam.
+6.4 Traps at Pacic Islands Club Resort
+We thank Tedi Mary and the management of the PIC for installing, maintaining and checking a private trap array on their property. There are currently 33 vaned bucket traps, built to our specications, which are checked every day. All beetle catches are reported via email and these are entered into the project database. The PIC data is the highest quality trap data that we have. Preliminary analysis of the PIC trap catch data indicates that CRB ight activity has not signicantly increased in the Tumon Bay hotel landscape (Figure 6.4) and CRB ight activity peaks are correlated with the full moon (Figure 6.4).
+12
+
+14
+
+12
+
+10
+
+beetles_trapped
+
+8
+
+6
+
+4
+
+2
+
+0 2008
+
+2009
+
+2010 date
+
+2011
+
+2012
+
+Figure 3: Number of CRB caught per month in pheromone traps at the Pacic Islands Club Resort, Tumon Bay, Guam.
+
+13
+
+females males all_beetles
+
+q
+
+10
+
+q
+
+q
+
+8
+
+q
+
+q
+
+q
+
+q
+
+6
+
+q qqq
+
+q
+
+q
+
+qq
+
+q
+
+4
+
+q
+
+q
+
+qq
+
+q
+
+qq
+
+q
+
+2
+
+q
+
+q
+
+q
+
+q
+
+0q
+
+q
+
+0 5 10 15 20 25 lunar_phase
+
+q
+
+8
+
+q
+
+q
+
+qq q
+
+6
+
+q
+
+q
+
+qq
+
+q
+
+q
+
+4
+
+qqq
+
+q
+
+q
+
+q
+
+q
+
+q
+
+2 qq
+
+qq
+
+q
+
+qq
+
+qq
+
+0
+
+q
+
+0 5 10 15 20 25 lunar_phase
+
+q
+
+20
+
+q
+
+qq
+
+15
+
+qq
+
+qq q
+
+qq
+
+q
+
+q
+
+qq q
+
+10
+
+qq
+
+q q
+
+5
+
+q
+
+q
+
+q
+
+q
+
+q
+
+qqq
+
+q
+
+q
+0 5 10 15 20 25 lunar_phase
+
+Figure 4: Total number of CRB caught on each day during the lunar cycle in pheromone traps at the Pacic Islands Club Resort, Tumon Bay, Guam. The new moon occurs during day 0 and the full moon occurs during day 15.
+
+14
+
+6.5 Non-Trap Detection
+Due to eective public outreach, the public of Guam are now aware of the CRB, the damage it causes and environmental risks associated with the ongoing infestation. During the past year, many sightings have been phoned in to our project oce. In most instances, a rapid response team is sent out to investigate. To date, the most far ung conrmed beetle sighting is that of a live adult found by a home owner in the village of Merizo at the southern tip of Guam on November 15, 2010.
+Prior to the end of November, 2011, the project had 4 dogs trained to detect CRB grubs and 4 dog handlers. These dogs discovered 356 previously unknown CRB sites. A system was developed for documenting searches done by dog teams. A GPS receiver carried by the trainer or a dog was used to record the track of each search as GPX le which saves the geographic and time coordinates associated with each search plus waypoints for CRB discoveries (Figure 5). This system was not fully implemented because of project sta resource limitations.
+Figure 5: Screen capture of prototype system to capture data from CRB detector dog searches.
+15
+
+6.6 Arboreal Development of CRB on Guam
+An unexpected observation has lead to a better understanding of the biology of CRB on Guam. We discovered that a signicant number of CRB are going through their entire development cycle in the crowns of coconut palms (Table 6.6).. Immatures are not feeding on live tissue, but on decaying detritus caught between petioles. Arboreal development of CRB has not been reported elsewhere. We think that this behavior is common on Guam because there is a lack of vertebrate predation. It is likely that rats and insectivorous birds eat grubs in the crowns of coconuts elsewhere, but this natural control is entirely absent on Guam where rats and birds are almost nonexistent because of brown treesnake predation. Following this discovery, we have modied our sanitation strategy to include removal of unwanted coconut palms which are likely to enable arboreal development of CRB. A journal article on this novel CRB behavior is in preparation.
+
+Table 2: CRB extracted from the crowns of 121 felled coconut palms.
+
+Eggs L1 L2 L3 Pupae Adult males Adult females
+
+99 40 72 210 25 34 30
+
+Total CRB
+
+510
+
+Mean CRB per tree 4.21
+
+16
+
+6.7 Data Processing and Analysis
+
+All trapping data and observational data are entered into the projects georeferenced MySQL database which is remotely hosted. Scripts have been written to automate generation of maps which facilitate temporal-spatial visualization of trapping data at the end of each month (Figure 2) and to generate summary
+statistics for any time period (http://guaminsects.net/oryctes/stats.php).
+Public, readonly access to the database, which allows SELECT queries, is available using the following parameters:
+
+Host mysql.guaminsects.net
+
+Port 3306
+
+Database name oryctes
+
+User name readonlyguest
+
+Password mangilao
+
+phpMyAdmin An online database manager,
+
+, which can be used for exploring
+
+the database is available at http://mysql.guaminsects.net .
+
+oryctes The project's online MySQL database,
+
+, uses georeferenced tables
+
+trap crb_obs (
+
+and
+
+) to keep track of trapping data and observations. Each
+
+table contains elds containing latitude and longitude as decimal degrees. Lo-
+
+cation of traps and observations are entered into the database in several ways:
+
+direct upload from GPS devices (the preferred method), GPS locations recorded
+
+on a datasheet, and locations approximated using Google Earth.
+
+QGIS (Quantum GIS), an open source geographical information system
+
+oryctes which can link directly to
+
+as an online data source, is used to visu-
+
+alize and manage the project's georeferenced data (See Appendix B).
+
+7 Sanitation
+Ineective methods for handling material infested with CRB has been a major problem since the beginning of the project. The project handles four types of infested material gathered during sanitation operations:
+ Decaying coconut material including standing dead coconut palms, logs
+on the ground and stumps
+ Green waste including trimmings from landscape maintenance
+ Live coconut palms felled to prevent development of CRB in crowns. This
+is a relatively new stream of material from our sanitation activities which started after we discovered arboreal development of CRB on Guam.
+ Compost piles. This is a new and very problematic stream of material
+requiring treatment. See below.
+
+17
+
+Initially, we planned to chip all of coconut material plus green waste and use it as feed stock for a composting operation under the presumption that the heat of decomposition in well managed composting is higher than the lethal temperature for CRB. The idea was to process the compost to such a stage that it was no longer valid food for CRB grubs. Unfortunately, this plan was never implemented because Guam does not have a large scale composting operation and our project does not have the resources to start one. Project sta (Moore and Quitugua) joined University of Guam soil scientist, Dr. Mohammad Golabi, in developing plans for a large scale composting operation [2], but this has not come to fruition.
+Instead, we used a very "ungreen" method. Most material, 177,591 cubic feet [3], was trucked from sanitation sites to our Oka Point site, chipped, fumigated with methyl bromide by commercial pest control company, and immediately trucked to a dump site and buried. It is necessary to bury the material immediately after fumigation because it is still a valid food source for CRB grubs and there is a high potential for it to be re-infested. This method of disposal is obviously not "environmentally friendly". Methyl bromide is an expensive and highly toxic gas which is banned from most uses because it destroys ozone in the upper atmosphere [1]. In addition we are lling dump-sites with valuable organic material which could otherwise be used to augment Guam's very thin soil layer, especially on the northern limestone plateau.
+During the past year we have been burning more and more material, a total of 40,662 cubic feet to date [3], during times when wind direction and other weather conditions allow for this. While still not "green", burning has signicant advantages over fumigation:
+ We avoid cost of methyl bromide and the pest control operator's contract
+ Chipping is unnecessary
+ Volume of residue to be trucked o-site is much reduced
+ The residue is no longer valid food for CRB grubs. Thus the risk of re-
+infestation is zero. This is probably the most signicant advantage over fumigation.
+During 2011, a new materials handling problem has emerged: CRB grubs are developing in large compost piles discovered by adults moving into new areas of the island. The situation is described by Paul Bassler, former Operations Chief:
+"As you know, the scouting crew recently discovered a sizable compost pile at the old baseball eld in Asan village . In talking with the Asan mayor, we learned that the pile was created by debris from typhoon Pongsonga back in December of 2002. We estimate the amount of composted material is approximately 185 cubic yards. Since discovered, we have removed 1423 grubs and beetles from the pile, and there is still more sanitation needed. "
+"Within the past couple of days, our scouting crew has discovered three more large compost piles at the Community Golf Course in Dededo. It seems that over the years, the landscaping crew at the golf course found forested areas around
+18
+
+the course for disposal of organic material garnered from maintenance of the course. Much of that organic matter comes from coconut trees. Their practice has been to spread out the material in these remote areas for a time, then use their backhoe to push the material into the tree-line of the forest, leaving giant piles of composted material. In time, grass, vines and other plant life would grow on the piles. We estimate that each pile is approximately 200 cubic yards. Scouts spent a short time pulling out the grass and vines and digging into a small section of one of the piles and found six grubs and two beetles. We are currently in the process of having the management of the golf course remove the live growth on top of the piles, and pull the material out in order to fully assess the degree of infestation. Additionally, nearly all the coconut trees at the golf course show signs of feeding damage, and some are nearly destroyed by CRB. Once these piles are fully exposed and examined, I will let you know the degree of infestation that we nd."
+"Clearly nding breeding sites in hidden piles of compost within the forest presents an additional challenge to eradication and control."
+Storing organic debris from typhoons and other sources in compost piles was a good practice before arrival of CRB. However, these piles now pose a risk to Guam's environment as they are a concentrated food source for immature CRB. If these piles contained chemical contaminants (dioxin for example), instead of biological contamination (CRB), environmental regulations would be enforced, prescribed clean up procedures would be available, and emergency funding would probably be forthcoming. Even though there is a clear risk to Guam's environment from the biological contaminants discovered in the piles, management of this risk does not seem to t anywhere within the purview of federal or local Environmental Protection Agency. Instead, we (the project sta ) are left to ourselves to come up with a workable solution to the problem.
+The partially composted material cannot be burned. We are currently considering the following treatment options for handling infested compost piles:
+
+Treatment in place. 
+
+Treatment in place by application of a long-residual
+
+insecticide or insect pathogen appears to be the best and cheapest way to
+
+tackle this problem.
+
+Disposal by burial. 
+
+Trucking the infested material to a landll for burial
+
+is expensive and wasteful.
+
+Managed composting. 
+
+Trucking the infested material to properly man-
+
+aged large-scale composting facility where it can be transformed into a
+
+mixture which no longer supports development of CRB is an appealing
+
+solution. It is expected that CRB grubs will not survive in at temper-
+
+atures generated in a managed composting operation where material is
+
+turned and moistened regularly. Unfortunately, as mentioned above, a
+
+large-scale composting operation has not yet been established on Guam.
+
+19
+
+8 Chemical Control
+8.1 Injectable Insecticides
+We initially planned to protect high value palms in hotel landscapes with injectable insecticides. These plans were abandoned when laboratory bioassays with 7 injectable insecticide formulations resulted in insignicant mortality. In each bioassay we applied 5 micro-liters of undiluted formulation directly into the mouth-parts of adult beetles (Table 8.1). Injectable insecticides have been used successfully in controlling many wood-boring insects. However, most wood borers spend much of their life cycle feeding in live wood. In contrast, CRB larvae do not feed on live wood at all and adults bore into palm crowns for only a few days to feed on sap.
+
+Table 3: Injectable insecticides tested by direct injection into mouth-parts of adult coconut rhinoceros beetles. Each beetle was injected with 5 micro-liters of undiluted formulation directly into its mouth parts. None of the treatments resulted in signicant mortality.
+
+Manufacturer Trade Name
+
+Active Ingredient(s)
+
+Mauget Mauget Mauget
+Mauget Arbor Jet Arbor Jet Arbor Jet
+
+IMICIDE ABACIDE DUTREX
+INJECT-A-CIDE B ACE-JET
+
+10% imidacloprid 1.9% abamectin 5% imidacloprid and 0.95% abamectin 82% dicrotophos 15% acephate 4% emamectin benzoate 4% imidacloprid and 4% abamectin
+
+20
+
+8.2 Conventional Insecticides
+To date, the only conventional insecticides that have proven eective against CRB on Guam are the fumigants methyl bromide and phosphide and the pyrethroid, cypermethrin. We have used methyl bromide to sterilize over 100,000 cubic feet of CRB infested material collected during sanitation activities. Phosphide was used to treat tarp-covered piles of rotting coconut at a remote site, Faifai Beach, which is not accessible by road.
+A drench with cypermethrin is being used as an emergency treatment for large compost piles infested with grubs and a eld trial is underway to measure ecacy and persistence. Unfortunately, cypermethrin has no residual activity, requiring frequent, periodic retreatment of infested piles. Use of cypermethrin as a drench is included in the project's updated environmental assessment (See Appendix A).
+8.3 Attracticide
+We are currently evaluating an experimental attracticide product, SPLAT RB A&K, manufactured by ISCA Technologies. The product contains CRB aggregation pheromone and cypermethrin in a sticky matrix. Theoretically, adult CRB are attracted to the product, make contact, and pick up a lethal dose. This product may be useful when applied to the crowns of high value palms on hotel properties and elsewhere. Laboratory tests showed that brief tarsal contact with SPLAT RB A&K kills adult CRB.
+We are now performing semield experiments in custom built large eld cages (20' x 20' x 10') (Figure 6). At dusk, beetles will be released downwind from a target coated with the attracticide. They will only be able to contact the target by ying to it. After the ight activity period, all beetles will be collected. Rhodamine WT uorescent tracer dye mixed with the attracticide will be washed o the beetles and quantied using a uorometer. For each beetle, we will record:
+ contact with the target, indicated whether or not tracer dye is detected
+ amount of SPLAT picked up by the beetle, inferred by washing he beetle
+and measuring the concentration of tracer dye in the wash water
+ mortality
+8.4 Insect Growth Regulators
+The insect growth regulator, methoprene, a juvenile hormone analog, proved to be ineective against Guam's rhino beetles tested in a laboratory bioassays.
+However, another IGR, pyriproxyfen (NyGuard®), also a juvenile hormone
+analog, prevented pupation of larvae in lab bioassays. Third instar continued to feed, some of them surpassing 25 grams, which is double the normal maximum mass. A eld trial is currently underway to measure ecacy and persistence of
+21
+
+Figure 6: Large eld cages for testing SPLAT-RB attracticide.
+pyriproxyfen and the project's environmental assessment has been updated to include this insecticide (See Appendix A).
+8.5 Biological Insecticides
+A commercial formulation of fungal pathogen, Beauvaria bassiana, Botanigard 22 WP was tested against 2nd instar CRB grubs. Ten grubs were added to steer manure blend containing 0.1% (weight per volume) of the wettable powder and ten grubs were added to steer manure blend alone as experimental controls. The grubs were checked after a week. All appeared healthy and there was no detected dierence between the treated grubs and the experimental controls in mortality or weight gain.
+9 Biological Control
+9.1 Virus
+An insect virus attacking CRB has been used successfully for suppressing CRB populations on other Pacic Islands. We had planned to introduce this virus into the Guam population by autodissemination. However, several laboratory bioassays indicate that the Guam CRB are not susceptible to several strains of virus produced in insect cell culture by AgResearch New Zealand. These strains were imported into Guam under conditions of an APHIS import permit.
+22
+
+9.2 Metarhizium majus Fungus
+Figure 7: Coconut rhinoceros beetle grub killed by green muscardine fungus (GMF). As an alternative to the virus as a biocontrol agent, we have implemented classical biological control using Metarhizium majus, also known as green muscardine fungus (GMF) (Figure 7). Spores of this fungus are produced for the project by Dr. Ambrosio Aller of the Philippine Coconut Authority. It is imported and released under conditions of an APHIS import permit and use of this fungus was evaluated as part of the new environmental assessment document (See Appendix A). M. majus is largely restricted to the genus Oryctes. Since CRB is the only insect in this genus that occurs on Guam, nontarget eects on other insects are not expected. The fungus did not attack other species of scarab beetles in laboratory biossays.
+To date, the project has imported three 15 kg shipments of GMF. Spores are disseminated in two ways:
+ adult males caught in traps are dusted with spores and released. These
+males will nd breeding sites and infest these sites with GMF.
+ Articial breeding sites referred to as sinks have been set up. These sinks
+contain rotting coconut material infested with GMF. Adults are attracted 23
+
+to these sinks for mating and oviposition. Immatures and adults in the sinks are killed by GMF infection. Twenty-seven sinks are currently in existence and these are visited biweekly. Early results indicate that GMF is eectively limiting the Guam CRB population:
+ Since rst eld release of GMF in September 2011, island-wide trapping
+rates have stopped increasing and are currently trending downwards (Figure 2).
+ GMF is spreading naturally. Infected grubs have been found at a distance
+from GMF spore release sites.
+24
+
+10 Public Outreach
+Figure 8: Roland Quitugua does CRB public awareness presentation at H. S. Truman Elementary School. Project sta, including the dog teams, make numerous appearances at schools, agricultural festivals and other public events to promote awareness of the CRB problem on Guam. Members of the ICS command are often interviewed by the television, radio and newspaper reporters to report on progress of the project. This exposure has paid o in two ways, the public are now reporting many CRB sightings which allows us to rapidly home in on new infestations, and the community and the Government of Guam is very supportive of our eorts.
+Public outreach activities between January 1, 2011 and March 31, 2012 include:
+March 2012 University of Guam Charter Day CRB Display; 600 K-12 visitors March 2012 Andersen Elementary School, 200 K-5 students March 2012 Moore gave an oral presentation entitled Update on the Guam
+coconut rhinoceros beetle eradication project at the Annual Meeting of the Western Pacic Regional Invasive Species Committee, Guam.
+January 2012 Tourism Education Council, 450 Middle and 400 High School
+students 25
+
+January 2012 Article entitled Biological Control of the Coconut Rhinoceros
+Beetle featured in the 2011 Impact Report for the Western Pacic Tropical Research Center http://www.wptrc.org/userles/le/Impact%20reports/2011wptrc.pdf
+November, 2011 Moore and Quitugua made an oral presentation at the So-
+ciety of American Foresters Conference in Honolulu
+March 2012 Pacic News Center Video: Progress Reported on Eradication
+of Rhino Beetle Through Use of Special Fungus That's Killing It; Clint Ridgell interviews Roland Quitugua http://guaminsects.net/anr/content/pacic-news-center-video-progress-reportederadication-rhino-beetle-through-use-special-fun
+March 2012 Pacic Daily News Article: Rhino Beetles Face Biological Weapons
+http://guaminsects.net/anr/content/pacic-daily-news-article-rhino-beetlesface-biological-weapons
+February 2012 KUAM News Story: Rhino beetle infestation spreading
+http://guaminsects.net/anr/content/kuam-news-story-rhino-beetle-infestationspreading
+August 2011 Mvariety News: Rhino beetle infestation still spreading across
+Guam http://guaminsects.net/anr/content/mvariety-news-rhino-beetle-infestationstill-spreading-across-guam
+June 2011 Quitugua and Moore lead a one day rhino beetle workshop for
+CARIPAC scholars at the Guam Plant Inspection Facility and Guam Wildlife Refuge, Ritidian.
+June 2011 Moore and Quitugua put on a First Detector Training for Rhino
+Beetle Project Sta and CARIPAC scholars from Pacic and Caribbean
+Islands. Note: Rhino Beetle Beetle Project sta were rst to detect the little re ant on Guam while doing CRB surveys at the Primo Green Waste Dump site in Northern Guam. April 2011 Moore gave an oral presentation entitled Update on the Guam
+coconut rhinoceros beetle eradication project at the Annual Meeting of the Western Pacic Regional Invasive Species Committee, Guam.
+April 2011 Guahan Earth Day 2011
+http://guaminsects.net/anr/content/public-outreach-guahan-earth-day-2011
+April 2011 No Rhino pamphlet updated
+http://guaminsects.net/anr/content/no-rhino-pamphlet-update
+April_2011 PNC Story: Guam Losing Battle Against Rhino Beetle
+http://guaminsects.net/anr/content/pnc-story-guam-losing-battle-againstrhino-beetle
+26
+
+March 2011 Moore gave an oral presentation entitled The Guam coconut
+rhinoceros beetle eradication project at the Annual Meeting of the Pacic Branch of the Entomological Society of America in Waikaloa, HI.
+March 2011 Public Awareness: H.S. Truman Elementary School (Figure 8)
+http://guaminsects.net/anr/content/public-awareness-hs-truman-elementaryschool
+March 2011 University of Guam Charter Day CRB Display; 600 K-12 visitors March 2011 GuamPDN Article: Help those who are ghting rhino beetle
+http://guaminsects.net/anr/content/guampdn-article-help-those-who-areghting-rhino-beetle
+February 2011 CRB Presentation @ Wettengel Elementary School's Career
+Day http://guaminsects.net/anr/content/crb-presentation-wettengel-elementaryschools-career-day
+27
+
+References
+[1] Anonymous. The phaseout of methyl bromide, 2011. 7 [2] Mohammad Golabi, Aubrey Moore, Roland Quitugua, and K. C. Das. Draft
+proposal: Development of large scale composting of green waste on guam. 2009. 7 [3] Ben Quichocho. Incident command situation report for january 10, 2011, January 2011. 7
+28
+
+11 Signatures
+
+Aubrey Moore, PI University of Guam
+Vernon Harrington, ADODR USDA APHIS PPQ
+
+April 2, 2012 Date
+Date
+
+29
+
+12 APPENDICES A Updated Environmental Assessment
+30
+
+United States Department of Agriculture
+Marketing and Re gul atory Pr ograms
+Animal and Plant Health Ins p ec tion Service
+
+Coconut Rhinoceros Beetle Eradication Program on Guam
+Environmental Assessment December 2011
+
+Coconut Rhinoceros Beetle Eradication Program on
+Guam
+Environmental Assessment December 2011
+Agency Contact: Russell K. Campbell, Ph.D. Territorial Entomologist & Administrator Guam/USDA Plant Inspection Facility Guam Department of Agriculture 17-3306 Neptune Avenue Barrigada, Guam 96913
+_____________________________________________________ The U.S. Department of Agriculture (USDA) prohibits discrimination in all its programs and activities on the basis of race, color, national origin, sex, religion, age, disabil ity, political beliefs, sexual orientation, or marital or family status. (Not all prohibited bases apply to all programs.) Persons with disabilities who require alternative means for communication of program information (Braille, large print, audiotape, etc.) should contact USDA’S TARGET Center at (202) 720–2600 (voice and T DD).
+To file a complaint of discrimination, write USDA, Director, Office of Civil Rights, Room 326–W, Whitten Building, 1400 Independence Avenue, SW, Washington, DC 20250–9410 or call (202) 720–5964 (voice and TDD). USDA is an equal opportunity provider and employer. _____________________________________________________ Mention of companies or commercial products in this report does not imply recommendation or endorsement by the U.S. Department of Agriculture over others not mentioned . USDA neither guarantees nor warrants the standard of any product mentioned. Product names are mentioned solely to report factually on available data and to provide specific information. _____________________________________________________ This publication reports research involving pesticides. All use s of pesticides must be registered by appropriate State and/or Federal agencies before they can be recommended. _____________________________________________________ CAUTION: Pesticides can be injurious to humans, domestic animals, desirable plants, and fish or other wildlife—if they are not handled or applied properly. Use all pesticides selectively and carefully. Follow recommended practices for the disposal of surplus pesticides and pesticide containers.
+
+Table of Contents
+I. Introduction ..............................................................................1 A. Coconut Rhinoceros Beetle ..................................................1 B. Purpose and Need ................................................................2
+II. Alternatives..............................................................................3 A. No Action ...............................................................................3 B. Preferred Alternative .............................................................5
+III. Affected Environment ...........................................................6 IV. Environmental Impacts ........................................................8
+A. No Action ...............................................................................8 B. Preferred Alternative .............................................................9 C. Cumulative Effects ............................................................. 15 D. Threatened and Endangered Species .............................. 15 E. Other Considerations ......................................................... 16 IV. Listing of Agencies and Persons Consulted ................. 18 V. References............................................................................ 19
+Appendices Appendix A. Map of CRB Quarantine Boundary on Guam Appendix B. Number of CRB captured by the beginning of June in 2009, 2010, and 2011, demonstrating the expansion of the beetle on Guam
+
+1. Biology
+
+I. Introduction
+The United States Department of Agriculture (USDA), Animal and Plant Health Inspection Service (APHIS) is proposing to expand an integrated program to eradicate the coconut rhinoceros beetle (CRB), Oryctes rhinoceros, from Guam. APHIS has the responsibility for taking actions to exclude, eradicate, and/or control plant pests under the Plant Protection Act of 2000 (7 United States Code (U.S.C.) 7701 et seq.). This action is necessary to prevent further spread of CRB on Guam and eradicate CRB from the area.
+As a Federal Government agency subject to compliance with the National Environmental Policy Act of 1969 (NEPA) (42 U.S.C. 4321 et seq.), this environmental assessment (EA) has been prepared consistent with NEPA regulations promulgated by the Council on Environmental Quality (40 Code of Federal Regulations (CFR) parts 1500-1508), USDA (7 CFR part 1b), and APHIS’ NEPA implementing procedures (7 CFR part 372) for the purpose of evaluating how the proposed action, if implemented, may affect the quality of the human environment.
+APHIS has prepared a previous EA that is relevant to this current EA: Coconut Rhinoceros Beetle Eradication Program, Guam (USDA, APHIS, 2007), and is incorporated by reference into this document. This EA analyzed the use of an integrated eradication program using pheromone-baited traps to capture adults, various sanitation methods to eliminate infested and susceptible host material, and insecticides to kill larvae and adults in the Tumon Bay and Faifai Beach area of Gua m.
+A. Coconut Rhinoceros Beetle
+CRB is one of the most damaging insects to coconut palms (Cocos nucifera). Although primarily found attacking coconut and oil palm, CRB has also occasionally been recorded on banana, sugarcane, papaya, sisal and pineapple (CPC, 2011). In Mauritius, the royal palm (Roystonea regia), the latanier palm (Livistona chinensis), the talipot palm (Corypha umbraculifera), and the raphia palm (Raphia ruffia) are attacked (Bedford, 1980).
+CRB is a large (30-35 mm long and 14-21 mm breadth), black or reddish black beetle. It is stout and possesses a horn on its head which is larger in males.
+
+1
+
+2. Damage
+3. Distribution of CRB
+
+Adult females lay 3 or 4 clutches of eggs that contain approximately 30 eggs per clutch, in logs or other concentrations of organic material such as rotting stumps and rubbish piles, over a period of 9 to 12 weeks (Hinckley, 1973). Eggs hatch in 8 to 12 days into whitish grubs (Bedford, 1980). Larvae may develop in the tops of dead standing coconut palms that have been killed by adult beetle attacks or lightning strike or other causes (Bedford, 1980). Coconut stumps and logs on the ground are also important breeding sites (Bedford, 1980). There are four larval stages lasting 12 to 165 days, and a pupal period lasting three to four months. Adults fly at night and bore down into the folded, emerging fronds, the adult can damage spadices and leaflets, resulting in loss in coconut production (Hinckley, 1973).
+Adults are the injurious stage of the insect. CRB adults damage palms by boring into the center of the crown, where they injure the young, growing tissues and feed on the exuded sap. As they bore into the crown, they cut through the developing leaves. When the leaves grow out and unfold, the damage appears as V-shaped cuts in the fronds or holes through the midrib. If the growing tip is injured severe loss of tissue may cause decreased nut set. Also, the palm may die if the growing tip is destroyed or from a secondary infection (Hinckley, 1973). The CRB is one of the most damaging insects to coconut palms.
+CRB is native to Southern Asia and distributed throughout Asia and the Western Pacific including Sri Lanka, Upolu, Samoa, American Samoa, Republic of Palau, New Britain, West Irian, New Ireland, Pak Island and Manus Island (New Guinea), Fiji, Cocos (Keeling) Islands, Mauritius and Reunion (USDA, APHIS, 2007).
+
+4. History of CRB in Guam
+
+CRB was first detected on Guam on September 12, 2007. Delimiting surveys conducted at that time indicated that the infestation was limited to the Tumon Bay and Faifai Beach, an area of approximately 900 acres. Guam Department of Agriculture placed a quarantine on all properties within the Tumon area and later expanded the quarantine to greater than 5,830 acres. The current quarantine is 28,362 acres. See appendix A for a map of the quarantined area on Guam and appendix B for the number of CRB captured by the beginning of June in 2009, 2010, and 2011, demonstrating the expansion of the beetle on the is land.
+
+B. Purpose and Need
+The purpose of the proposed action is to expand the CRB eradication program on Guam because of the high economic damage potential of
+2
+
+this insect and the high probability of its spread to uninfested areas, such as other islands in Micronesia, Hawaii, and beyond (Smith and Moore, 2008). Recent evidence suggests that despite using traps and quarantines to limit its spread on Gua m, the breeding range of this non-indigenous insect has grown. It has now spread into parts of Piti and into the Leo Palace or Manengon hills area (Ridgell, 2011). In addition, the insecticides that the program had been using in the Tumon Bay and Faifai Beach area have not been effective in controlling CRB and are not being used. Therefore, there is a need to add insecticides that are effective against CRB to the integrated eradication control program, and to increase the area of program activities, including the use of effective insecticides, beyond the Tumon Bay-Faifai Beach area.
+II. Alternatives
+This EA analyzes the potential environmental consequences associated with the proposed action to expand a program to eradicate CRB from Guam. Two alternatives are being considered: (1) no action by APHIS by maintaining the eradication program at the current level, and (2) the preferred alternative, to expand the eradication program by increasing the area of action and including effective insecticides.
+A. No Action
+Under the no action alternative, APHIS, in cooperation with the Guam Department of Agriculture, would continue to implement regulatory control (quarantine restrictions), delimitation, mass trapping, survey, CRB sinks, and sanitation throughout Guam. Including new, effective insecticides to control CRB would not be used and the eradication program would not be expanded to other infested areas of Guam beyond the Tumon Bay-Faifai Beach area.
+Regulatory control consists of APHIS and the Guam Department of Agriculture establishing a quarantine. All host material from within the quarantine area is prohibited from moving outside the area, except under a limited permit issued by an Agriculture Officer. See appendix A for a map of the quarantine area.
+Delimitation and mass trapping strategies use the same methodology in trap design and location; only the trapping density differs. CRB bucket traps are made from five gallon buckets and fitted with a plastic vane. A commercially available lure containing a synthetic aggregation pheromone, ethyl 4-methyloctanoate, is suspended from the vane and attracts both sexes of the adult beetle. Traps are located in open areas where a higher percentage of beetles are captured rather
+3
+
+than more densely vegetated areas. The traps are suspended from branches and existing aerial supports or placed on poles at a height of about 8 feet. Attracted beetles strike the vane and fall into the bucket. Once inside the bucket the beetle lacks enough space to escape. The traps are non-lethal and are checked and emptied once every one to two weeks. Collected beetles are placed in specimen jars and delivered to the University of Guam for sexing and recording. All traps are numbered for accountability and for database record reference.
+Delimitation trap density is about 1 trap per 1,340 acres and covers a grid encompassing the entire island. Additional traps are placed at a density of 1 trap per acre in areas classified as having a high probability of material moved from the quarantine area. Mass trapping is aimed at reducing numbers or eliminating the adult beetles. Trap density for mass trapping is 1 trap per acre.
+Reconnaissance surveys supplement delimitation trapping by visually identifying locations having feeding damage or the presence of grubs in dead palms and logs. Surveys are done on all of the area within the quarantine boundary, in areas where trap captures indicate the presence of CRB, and in areas where sightings of CRB or CRB damage is reported.
+Infested sites are cleaned . Site cleaning consists of removing all ground or other debris within 10 meters of the flagging that marks an infested site. Dead palms and other dead trees are felled. Heavily infested live trees of low or no value are also felled because CRB uses the tops of these for larval breeding sites. Stumps are dug out or cut flat to protrude no more than six inches above the ground. Cleaning will result in a raked finish with only light litter (0-1 inch deep) remaining. Undeveloped lots may be cleared of over-story vegetation using equipment. All material is chipped on-site or loaded in such a way that material will not be blown or lost while in route to the processing site.
+Green waste and other organic material collected from feeding and breeding sites and from landscape maintenance within the quarantine area is processed at the processing site. Debris is chipped or ground to within a maximum of ½-inch particle size in two dimensions. Chipping or grinding is accomplished within one day of delivery of the debris to the processing site. Chipped material is composted. The finished compost is made available for use only within the quarantine eradication area.
+Recent evidence suggests that despite using these methods alone without effective insecticides to limit CRB spread on Guam, the
+4
+
+breeding range of this non-indigenous insect has grown. It has now spread into parts of P iti and into the Leo Palace or Manengon hills area (Ridgell, 2011). In addition, the insecticides that the program had been using in the Tumon Bay and Faifai Beach area have not been effective in controlling CRB and are not being used. Therefore, there is a need to add insecticides that are effective against CRB to the integrated eradication control program, and to increase the area of their use beyond the Tumon Bay-Faifai Beach area.
+B. Preferred Alternative
+The expanded CRB eradication program (preferred alternative) is a cooperative effort among APHIS, the Guam Department of Agriculture (GDA) and the University of Guam (UOG). Under the preferred alternative, APHIS, GDA and UOG would continue the activities included in the no action alternative (regulatory control (quarantine restrictions), delimitation, mass trapping, survey, CRB sinks, and site cleaning) but would also add insecticide treatments using cypermethrin, pyriproxyfen, and the entomopathogen Metarhizium majus as tools to eradicate CRB from Guam.
+Insecticide Treatments
+Tree crowns: Using a lift or ladder, program personnel will ascend to the tree crown and remove all adults and immature beetles from any boreholes, frond bases, or other visible areas. Insecticide will be sprayed inside any boreholes and frond basal areas. The insecticide cypermethrin (demon®Max) will be used, applied at a maximum 0.1% emulsion concentration. Spraying will be followed by filling the boreholes with urethane foam. Nuts will be removed from trees prior to treatment of tree crowns and bore holes.
+Stumps: Stumps of felled trees, to prevent beetle emergence from within or under the stump, will be treated with one of the following:
+• cypermethrin (demon®Max) applied at a maximum 0.1% emulsion concentration
+• pyriproxyfen, (NyGuard®) applied at a maximum 56 ml/50 gal water
+Larval breeding sites: Larval breeding sites consist of piles of rotting or composting plant material from coconuts or mixed with other organic matter. These piles serve as attractive locations for beetles to lay their eggs. Eggs hatch and larvae live and feed in the debris pile. Larval breeding sites would be treated with one of the following insectic ides :
+5
+
+1. Demograhic Infor mation
+
+• cypermethrin (demon®Max) applied at a maximum 0.1% emulsion concentration
+• pyriproxyfen, (NyGuard®) applied at a maximum 56 ml/50 gal water
+In addition to synthetic insecticides to control CRB larvae, the entomopathogen Metarhizium majus, applied as powdered spores, will be used in larval breeding sites, particularly in areas where cypermethrin and pyriproxyfen cannot be used. Studies have indicated that this fungus can be used for microbial control of CRB (Latch and Falloon, 1976; Gopal et al., 2006).
+All insecticide treatments are applied with a backpack or power sprayer. Allowable application, protective equipment, exclusion, dosage, and entry restrictions will follow the label instruction of the insecticide specified. Only licensed applicators or persons working under the supervision of a licensed applicator shall apply insecticides. Areas will be retreated at specified intervals based upon the label directions, persistence of the insecticide, and environmental conditions. No application of insecticides will be made within 100 feet of streams, drainages, or the intertidal high water mark.
+III. Affected Environment
+This section of the EA presents the baseline conditions of socioeconomic and environmental resources that could be impacted by CRB eradication activities. APHIS uses this information as the basis against which potential impacts of the program are evaluated.
+As of April 1, 2010, Guam’s population totaled 159,358 (U.S. Census, 2010). In 2010, the municipalities of Mongmong-Toto-Maite, Chalan Pago-Ordot, and Mangilao showed the highest population increase since 2000 while the southern villages of Inarajan, Umatac, Agat and Merizo revealed a population decline. Demographic information from the 2010 census that will contain demographic, social, economic and housing characteristics will not be released until 2012. However, from the census taken in 2000, the population was 37.1 percent Chamorro, 26.3 percent Filipino, 11.3 percent other Pacific islander, 6.9 percent white, 6.3 percent other Asian, 2.3 percent other ethnic origin or race, and 9.8 percent mixed (U.S. Census, 2000). Median household income in 1999 was $39,317, and per capita income was $12,722 (U.S. Census, 2000). The economy in Guam is largely dependent on tourism as well as U.S. military spending due to the military presence on the island.
+
+6
+
+2. Ecological Resources
+3. Environmental Quality
+
+At the northern half of the island the area is typically flat limestone plateau with abrupt cliffs toward the ocean. The limestone soils in these areas are forested where they have not been cultivated or urbanized. The southern part of the island has rolling to mountainous terrain associated with deeply weathered volcanic soils. The volcanic soils on the southern half of Guam are covered primarily by grassland, with some ravine forest occurring in sheltered and leeward sites (Donnegan et al., 2002). Guam has more than 600 plant species on the island with 100 of those being trees. In total t he forested area on Guam occupies approximately 63,830 acres, with limestone forest accounting for about 70 percent of that total (Donnegan et al., 2002). Guam is approximately 48 percent forested, with an additional 33 percent covered by grass and shrublands and has an estimated 1,162,494 coconut palms (Cocos nucifera) in its forests with a gross volume of 13,619,659 cubic feet (Donnegan et al., 2002).
+Guam has a range of fish and wildlife resources that occupy its various terrestrial habitats as well as fresh and saltwater areas. The flora and fauna on Guam have been impacted by significant disturbance agents, including frequent tropical storms and typhoons, human-caused grassland and forest fires, introduction of domestic animals and invasive species, mass soil movements and erosion, historical military actions, and timber harvest. The introduction of invasive species such as the brown tree snake have been especially detrimental to the native bird and fruit bat fauna on the island. Guam is also home to several aquatic and terrestrial species that are protected under the Endangered Species Act. Several of these species occur on the Guam National Wildlife Refuge which is a 22,500 acre refuge overlain on military lands at the northern tip of Guam. Guam has also designated five marine preserves to protect coral reef habitats and associated marine animals. One of the preserves is located on the north eastern tip of the island, Pati Point, while three lay in close proximity to each other on the western side of the island (Tumon Bay, P iti Bomb Holes, Sasa Bay) and the fifth preserve, Achang Reef Flat, is on the southern tip of the island.
+Guam has a wide diversity of freshwater and marine aquatic habitats. Assessment of the water quality in these habitats is variable based on the type of water body. Assessed wetlands are approximately 0.4 percent of the total on the island while approximately 37 percent of river/stream miles have been assessed for water quality (EPA, 2011a). Of the rivers and streams that have been assessed, approximately 34 percent are listed as impaired under Section 303(d) of the Clean Water Act (CWA) due primarily to turbidity. Other reasons for impairment include bacteria, dissolved oxygen, as well as some metals and other physical water quality parameters (ex. temperature). In bays/estuaries
+7
+
+and shoreline areas, the impaired waterbodies relative to those that are not impaired is much greater than for rivers and streams. In bays and estuaries the major reason for impairment of those types of water bodies is the contamination of fish tissue with polychlorinated biphenyls (PCBs), while along shorelines, impairment is due to Enterococcus bacteria contamination (EPA, 2011a). Similar to bays and estuaries, the reason for impairment in wetland habitats is related to PCB contamination. Pesticides as a cause of impairment is only listed for bays and estuaries and is related to the organochlorine insecticides chlordane and dieldrin.
+Air quality in Guam currently meets Environmental Protection Agency standards based on information from earlier this year with the exception of two areas that occur near power plants (EPA, 2011b). Available information shows that non-attainment of air quality standards due to sulfur dioxide levels occur in the Piti and the Tanguisson areas.
+IV. Environmental Impacts
+A. No Action
+Environmental impacts from the no action alternative, including regulatory control (quarantine restrictions), delimitation, mass trapping, and sanitation as well as insecticides that are not being used (imidacloprid, carbaryl, chlorpyrifos, bifenthrin, and methyl bromide) but were proposed for use have been analyzed in the 2007 EA that was prepared for this program (USDA, APHIS, 2007). At that time, it was expected that the proposed components of the eradication program would be effective in controlling CRB. However, the proposed insecticides did not prove effective and site cleaning and trapping alone have not been successful in controlling CRB on Guam.
+Impacts that could result from APHIS’ implementation of the no action alternative relate primarily to economic and environmental effects related to the spread of CRB throughout Guam. Damage from CRB to local host plants would be substantial if a viable pest population were to spread and become established throughout Guam. Any host plant damage from the anticipated spread would soon be much greater than any impacts from the initial host plant removal contemplated under an integrated eradication program. Based on historical data from previous introductions of CRB in other areas the loss of palms could reach 50 percent. In the tourist area of Tumon, for example, a conservative estimate of loss of palms is 2,000 trees, and with an approximate replacement value of $2,500, could result in
+8
+
+replacement costs of two and a half million dollars (Moore, 2009). Since tourism is a large part of the Guam economy the damage and loss of palms to resort, park, and residential shade and ornamental plants from CRB could result in reductions in private property values and loss of tourism. Economic impacts would also be anticipated if CRB becomes established in palm plantations on Guam, affecting production costs as well as diminishing yields through the loss of trees. Its establishment in Guam would also put other islands at risk from introduction of CRB where coconut is an important economic and subsistence crop for many Pacific island states (Smith and Moore, 2008). A permanent infestation could also lead to additional interstate and international quarantine restrictions affecting both Guam and the United States in general.
+
+From an environmental perspective the loss of native palms would impact the diversity of forests in Guam and result in increased erosion on beaches where palms and other vegetation provide protection against erosion (Mimura and Nunn, 1998; Moore, 2009). In addition, a lack of increased APHIS efforts to control CRB damage would likely result in control efforts by other public and private entities, including landscapers and landowners. Most actions of these groups would be uncoordinated and spread of CRB is likely if an established population were not cooperatively managed. Individual efforts to limit plant damage would be expected to potentially involve use of insecticides with increasing frequency resulting in increased pesticide loading in the environment and risk to human health and the environment.
+
+B. Preferred Alternative
+
+Pyriproxyfen
+
+Pyriproxyfen is part of a group of insecticides known as insect growth regulators that act as a juvenile hormone (JH) analog. Juvenile hormones are produced in insects naturally and are important in development, reproduction, and diapause. In this case, the JH analog
+is used as an insecticide to prevent larval insects from maturing to adults. Pyriproxyfen has several agricultural and non-agricultural uses in controlling a variety of insect pests. Its proposed use in the CRB program would be as applications to stumps or larval breeding sites using the formulation NyGuard® applied with a backpack sprayer.
+
+1. Human Health Toxicity and Risk
+
+Acute toxicity data for the pyriproxyfen active ingredient and the proposed formulation demonstrate very low toxicity from oral, dermal,
+or inhalation exposures. Median lethality values (LD/LC50) for all three exposure pathways are greater than the highest test concentrations suggesting the formulation is practically non-toxic in acute exposures. Handling the formulated product can result in eye and
+
+9
+
+skin irritation. In longer term studies pyriproxyfen has been shown to have low toxicity with no observable effect levels well above any exposures scenarios that could occur in the proposed program (EPA, 2009). Pyriproxyfen, and associated metabolites, are not considered to be carcinogenic or mutagenic based on available mammalian studies to support registration of the active ingredient (Bayoumi et al., 2003; EPA, 2009). Available mammalian toxicity data that has been submitted for registration of pyriproxyfen does not indicate any effects related to endocrine disruption. The greatest risk of exposure will be to workers during application. Applications will only be made by certified personnel following all label recommendations regarding worker safety. None of the treatments will be made to host plant material that would be consumed by humans; therefore, significant dietary exposure and risk is not anticipated. Exposure to pyriproxyfen from drinking water is also not anticipated due to the method of application, the environmental fate of the chemical, and the use of application buffers to protect surface water. The greatest possibility of exposure for the general public would be with the treatment of larval breeding sites and possible consumption of treated soil or host plant material after application. The risk from this type of exposure to the public is very low based on the available toxicity data and conservative assumptions regarding exposure.
+
+2. Ec2o. loEgcioclaolgical ToxiciTtyoxaincdityRaisnkd
+
+Proposed pyriproxyfen applications are not expected to have adverse impacts to fish and wildlife based on the method of application, the low toxicity of the insecticide to most organisms, and program mitigations to reduce exposure and risk. Pyriproxyfen has low toxicity to wild mammals and birds , suggesting very little direct risk, and based on the mode of action of pyriproxyfen and the small areas of treatment, would not be expected to have adverse impacts for those terrestrial organisms that depend on insects as prey items. Pyriproxyfen will have some impacts to non-target terrestrial invertebrates but these impacts will be minimized by the small area of treatment and the selective nature of the insecticide. Available acute contact toxicity data for pollinators shows that pyriproxyfen is practically non-toxic to adult honeybees (EPA, 2011c). No toxicity has also been observed in adult bumblebees nor to male production and brood production. However, pyriproxyfen may impact larval bumblebee mortality at concentrations not anticipated from applications in this program (Mommaerts et al., 2006). Pyriproxyfen toxicity to aquatic organisms is variable with acute toxicity above water solubility (0.367 milligrams per liter) for most fish species, suggesting low acute risk to aquatic vertebrates (EPA, 2011c). Sublethal impacts in acute and chronic exposures can occur at concentrations in the low part per billion range for fish and in the part per trillion range for aquatic invertebrates (EPA, 2011c; Sihuincha et al., 2005; Matsumoto et al., 2008). Median lethal acute effects to
+
+10
+
+aquatic invertebrates vary from the middle to upper part per billion range, depending on the test species (EPA, 2011c). Direct or indirect risk to aquatic organisms through loss of food items is expected to be low, based on the application method previously described that will reduce the likelihood of off-site drift and runoff, and the implementation of a 100-foot application buffer from aquatic areas.
+
+3. Environmental Quality
+
+Impacts to soil quality from pyriproxyfen applications are not expected, based on where treatments will occur and its fate in soil. Applications are directed primarily at stumps or small areas where larval host material occurs. Any contact with soil will be localized and not expected to persist, based on field dissipation ha lf-lives ranging from 3.5 to 16.5 days and aerobic soil metabolism half-lives of less than two weeks (CA DPR, 2000). Pyriproxyfen is not anticipated to have impacts to air quality, based on the proposed method of application and environmental fate for the insecticide. Pyriproxyfen has a low vapor pressure suggesting that volatilization into the atmosphere from plants and soil will be minimal. Some material may be present in the atmosphere at the site of treatment during application but will quickly dissipate to the ground since applications are made using backpack sprayers using large, coarse droplets, reducing drift. Impacts to surface or ground water are also not anticipated due to the low solubility of pyriproxyfen in water as well as its preference to bind to soil and sediment, thus reducing the threat to surface and ground water. In addition, program operations require a 100-foot buffer from water bodies, further reducing the potential of program insecticides to impact water quality. This will also reduce the potential for volatilization from water into the atmosphere which is considered moderate for pyriproxyfen based on available fate data (CA DPR, 2000)
+
+Cype r me thrin
+
+Cypermethrin is a pyrethroid insecticide that is a mixture of four diastereoisomers, each of which is present as a pair of enantiomers. Consistent with all pyrethroid insecticides, the mode of action is paralysis in affected organisms that occurs through effects to the axon of the nerve and subsequent paralysis (EPA, 2005). Cypermethrin has several agricultural and non-agricultural uses to control a variety of insect pests. Its proposed use in the CRB program is to treat bore holes, frond bases, stumps , and larval breeding sites using the formulation, demon®Max.
+
+1. Human Health Toxicity and Risk
+
+The technical active ingredient, cypermethrin, and the proposed formulation is moderately toxic in oral exposures but is considered practically non-toxic in dermal and inhalation exposures. The formulated material is severely irritating to the eye and moderately
+
+11
+
+irritating to the skin. It is also considered a mild skin sensitizer. Cypermethrin is not considered mutagenic or teratogenic; however, it is considered a possible carcinogen based on results from a chronic mouse study where benign lung tumors were observed at the highest dose level. These levels are well above those expected in this program. Similar effects were not observed in other test species in chronic studies (EPA, 2007). There is data that demonstrate endocrine related impacts in vertebrates, but at residues that would not be expected to occur in this program. Jin et al. (2011) observed a decrease in testosterone levels in male mice dosed at 20 milligrams per kilogram of body weight (mg/kg). Wang et al. (2010) also observed effects to mice after maternal exposure during lactation to male offspring. Doses of 25 mg/kg resulted in reduced serum and testicular testosterone levels in male mice that returned to normal as they reached maturity; however, a reduction in testicular weights and tissue effects remained unchanged. These values are in the effect range for studies that have been submitted to support the registration of cypermethrin.
+
+Similar to pyriproxyfen, exposure and risk will be the greatest for applicators. Adherence to personal protective equipment (PPE) recommendations will reduce risk to workers. Exposure to the general public in areas where they may frequent will be very low for cypermethrin treatments of boreholes and frond bases because the boreholes are plugged and the frond bases are well above the reach of the general public. The greatest chance for exposure to cypermethrin treatments would be through the ingestion of soil or plant material in cases where breeding sites are treated. No applications are made to parts of the plant that would be consumed as food; therefore, dietary exposure would be very low. Exposure to cypermethrin from drinking water is also not anticipated due to buffers from surface water and the extremely low probability of groundwater contamination based on the environmental fate for this insecticide. Risk to cypermethrin through the primary pathway of exposure, ingestion of soil, is very low based on the known toxicity and conservative assumptions regarding the amount of soil that would need to be consumed to reach an adverse effect.
+
+2. Ecological Toxicity and Risk
+
+Cypermethrin has low acute and chronic avian toxicity with reported acute median lethal doses and chronic no observable effect concentrations greater than the highest test concentration (EPA, 2005). Toxicity is high to most terrestrial invertebrates, including honey bees; however, the applications to boreholes and stumps as well as the small areas of treatment for larval sites will reduce exposure because flowers would not be expected to be treated. In addition, label language designed to protect foraging honeybees will provide additional protection from risk to cypermethrin exposure. Treatments could
+
+12
+
+3. Environmental Quality
+
+impact some soil borne terrestrial invertebrates; however, this will be minimized by the small treatment areas for the larval breeding sites and the affinity for the insecticide to bind to soil, reducing bioavailability (Hartnik and Styrishave, 2008). The localized impacts that could occur to some terrestrial invertebrates from treatment of larval breeding sites is not expected to pose an indirect risk to terrestrial vertebrates that depend on invertebrates for prey because they would forage over areas greater than the area of treatment.
+Cypermethrin is considered highly toxic to aquatic invertebrates and vertebrates with reported median lethality values in the low parts per trillion to low parts per billion range, depending on the test species, although fish were slightly less sensitive when compared to aquatic invertebrates (Solomon et al., 2001; EPA, 2005). Acute and chronic risk to aquatic habitats is not anticipated based on the proposed method of application, environmental fate of cypermethrin, and proposed 100-foot application buffers from aquatic habitats.
+Cypermethrin is not expected to cause adverse impacts to soil, water, or air quality due to the method of application, the environmental fate of the insecticide, and additional mitigation measures beyond those stated on the label. Cypermethrin breaks down in soil under aerobic and anaerobic conditions with half-lives of less than 65 days (EPA, 2005). Cypermethrin has very low water solubility and a high binding affinity to soil and sediment that would result in a very low probability of ground or surface water contamination. Cypermethrin that would move off-site as drift and enter surface water would dissipate quickly from the water column based on its low water solubility and affinity for sediment particles. The rapid partitioning of pyrethroid insecticides from water to sediments has been observed in field applications as well as laboratory data (Crossland, 1982). In the field, half-lives are less than a day under a variety of conditions (Agnihorti et al., 1986; Roessink et al., 2005; He et al., 2008). Surface water is further protected by adherence to label restrictions and the implementation of a 100-foot application buffer from water. Physical and chemical characteristics for cypermethrin preclude significant volatilization into the atmosphere. Cypermethrin may be present in the air as drift following an application to stumps or larval breeding sites; however, the directed hand application using large, coarse droplets will minimize the probability of any off-site drift during these types of applications. No drift is expected from the use of cypermethrin in treating bore holes that will be plugged immediately after treatment.
+
+13
+
+Metarhizium majus
+Species of the genus Metarhizium are entomopathogenic fungi whose sporulating colonies are green in color. Species from this genus are used as biological control agents to manage various insect pests. Spores on the surface of the insect respond to chemical cues present there and germinate within 8 to 16 hours. The fungus then penetrates the insect’s exoskeleton (insect’s hard, outer covering) using a combination of mechanical pressure and a mixture of enzymes. Growing hyphae (long, branching filamentous cells of a fungus) usually reach the body cavity of the insect within 24 hours of germination, and the fungus grows and spreads rapidly through the insect. In a later stage of development, the insect is densely packed with fungal mycelia (masses of hyphae) and spores. The fungus kills its host by means of insect-specific toxic metabolites (destruxins), as well as tissue-disrupting enzymes. The infected insect typically dies within 7 to 14 days.
+Metarhizium anisopliae var. majus (Tulloch, 1976; Driver et al. 2000) has been recently recognized as the species Metarhizium majus stat. nov. (Bischoff et al., 2009). M. majus is largely restricted to the genus Oryctes (Gillespie and Claydon, 1989; Rhombach et al., 1987; Ferron et al., 1972) and has been widely tested for the control of CRB (Ferron et al., 1975; Latch and Falloon, 1976; Marschall, 1978; Fernando et al., 1994-1995; Gopal et al., 2006). Larval, pupal, and adult CRBs are susceptible to M. majus (Latch, 1976). It has been collected from CRB larvae in Samoa, American Samoa, Tonga, Fiji, India, and Mauritius (Latch, 1976).
+As early as 1913, M. anisopliae (now known as M. majus) was introduced into artificially produced CRB breeding sites in Samoa and has been used for field control of CRB in several countries (Latch and Falloon, 1976; Bedford, 1980). Swan (1974) summarized the literature on the CRB biological control work, including M. anisopliae (= M. majus) carried out in the Pacific Islands.
+
+1. Human Health and Ecological Risk
+
+Zimmerman (1993 and 2007) summarized the safety studies of M. anisopliae and concluded that it is safe with minimal risks to vertebrates, humans, and the environment. No toxicological or pathological symptoms were observed when the fungus was applied by different methods to birds, fish, mice, rats, guinea pigs, or rabbits. There have also been no harmful effects on honey bees, earthworms, freshwater invertebrates such as Daphnia sp. and Collembola. Acute oral and dermal LD50s were reported as >2, 000 mg/kg (the maximum amount applied) to rats. Gopal et al. (2006) reported no toxicity of M. majus to Eudrilus sp. earthworms although 100 percent of CRB larvae
+14
+
+were infected in the study. White mice and guinea pigs fed spores at a rate of 10 percent of their daily ration showed similar weight gains to control animals and no organ or tissue abnormalities were discovered at post mortem examination (Latch, 1976). No plant disease or toxicity effects of M. anisopliae, either on leaves or roots are known (Zimmerman, 2007).
+C. Cumulative Effects
+The selection of the preferred alternative described in this EA for the CRB eradication program is not anticipated to have a significant cumulative impact on human health or the environment. There will be an increase in insecticide loading in certain areas; however, it is anticipated that with a cooperative integrated approach, insecticide use would be less compared to permanent establishment of CRB on Guam that could occur under the no action alternative. Insecticide use would not be expected to have cumulative impacts to soil, air, or water quality beyond baseline conditions based on the proposed method of application, the environmental fate of pyriproxyfen and cypermethrin, and in the case of surface water, the use of a 100-foot application buffer for both insecticides. Both insecticides do have wide uses and may be used on Guam for other purposes; however, their use in areas where CRB detections would be likely to occur would be expected to be minimal. The use of the entomopathogenic fungus M. majus is also not anticipated to have significant cumulative impacts to human health or the environment based on its lack of toxicity to vertebrates and other non-target organisms. This fungus is specific to beetles in the Oryctes genus. Its anticipated use in the program will be only for larval breeding sites in areas where cypermethrin and pyriproxyfen can not be used; therefore, no cumulative impacts from the use of two control treatments would be anticipated.
+D. Threatened and Endangered Species
+Section 7 of the Endangered Species Act and its implementing regulations require Federal agencies to ensure their actions are not likely to jeopardize the continued existence of threatened or endangered species or result in the destruction or adverse modif ication of critical habitat.
+APHIS has prepared a biological assessment (BA) that considers the effect of the proposed eradication program on federally listed threatened and endangered species in Guam. APHIS has determined that the program will have no effect on the little Mariana fruit bat, Guam Micronesian kingfisher, Guam rail, Guam bridled white-eye, Micronesian megapode, or nightingale reed-warbler. APHIS has also
+15
+
+determined that with the implementation of certain protection measures, the proposed program may affect, but is not likely to adversely affect the Mariana fruit bat and its critical habitat, Mariana crow and its critical habitat, Mariana common moorhen, Mariana gray swiftlet, the critical habitat of the Guam Micronesian kingfisher, and green and hawksbill sea turtles. APHIS has requested concurrence with these determinations from the U.S. Fish and Wildlife Service.
+E. Other Considerations
+Executive Order (EO) 12898, ―Federal Actions to Address Environmental Justice in Minority Populations and Low-Income Populations,‖ focuses Federal attention on the environmental and human health conditions of minority and low-income communities, and promotes community access to public information and public participation in matters relating to human health and the environment. This EO requires Federal agencies to conduct their programs, policies, and activities that substantially affect human health or the environment in a manner so as not to exclude persons and populations from participation in or benefiting from such programs. It also enforces existing statutes to prevent minority and low-income communities from being subjected to disproportionately high or adverse human health or environmental effects. The human health and environmental risks from the preferred alternative are expected to be minimal and are not expected to have disproportionate adverse effects to any minority or low-income family.
+EO 13045, ―Protection of Children from Environmental Health Risks and Safety Risks,‖ acknowledges that children, as compared to adults, may suffer disproportionately from environmental health and safety risks because of developmental stage, greater metabolic activity levels, and behavior patterns. This EO requires each Federal agency to identify, assess, and address environmental health risks and safety risks that may disproportionately affect children. The program applications are made directly to trees, stumps, as well as small areas that are larval breeding sites in undeveloped lots, landscape areas surrounding hotels and businesses, and within public parks. Many of these sites would be in locations where children would not be expected to be present. In cases where applications could be made in public areas where children are present, the program applicators ensure that the general public is not in or around areas being treated to minimize exposure during application. The only possible exposure could occur from a child playing in the treated soil or on treated stumps. The available human health data and very conservative assumptions regarding ingestion of treated soil or host material suggests that risks to children in these types of scenarios would be extremely low in cases of exposure for each proposed program treatment. Therefore, it was
+16
+
+determined that no disproportionate effects on children are anticipated as a consequence of implementing the preferred alternative. Consistent with the National Historic Preservation Act of 1966, APHIS has examined the proposed action in light of its impacts to national historic properties. On October 24, 2011, a letter was prepared and sent to the State Historic Preservation Officer (SHPO). APHIS will continue to work with the SHPO to address potential questions or concerns regarding CRB eradication activities that could occur on properties protected by the National Historic and Preservation Act.
+17
+
+IV. Listing of Agencies and Persons Consulted
+U.S. Department of Agriculture Animal Plant Health Inspection Service PPQ–Emergency and Domestic Programs 4700 River Road, Unit 26 Riverdale, MD 20737 U.S. Department of Agriculture Animal Plant Health Inspection Service PPQ–Environmental Compliance Team 4700 River Road, Unit 150 Riverdale, MD 20737 U.S. Department of Agriculture Animal Plant Health Inspection Service PPD–Environmental Services 4700 River Road, Unit 149 Riverdale, MD 20737 Russell K. Campbell, Ph.D. Territorial Entomologist & Administrator Guam/USDA Plant Inspection Facility Guam Department of Agriculture 17-3306 Neptune Avenue Barrigada, Guam 96913
+18
+
+V. References
+Agnihorti, N.P., Jain, H.K., and Gajbhiye, V.T. 1986. Persistence of some synthetic pyrethroid insecticides in soil, water and sediment-part I. J. Entomol. Res. 10(2): 147–151.
+Bayoumi, A.E., Perez-Pertejo, Y., Zidan, H.Z., Balan-Fouce, R., Ordonez, C., and Ordonez, D. 2003. Cytotoxic effects of two antimolting insecticides in mammalian CHO-K1 cells. Ecotox. and Environ. Safety. 55: 19–23.
+Bedford, G.O. 1980. Biology, ecology, and control of palm rhinoceros beetles. Ann. Rev. Entomol. 25: 309–339.
+Bischoff, J.F., Rehner, S.A., and Humber, R.A. 2009. A multilocus phylogeny of the Metarhizium anisopliae lineage. Mycologia. 101: 512–530.
+CA DPR —see California Department of Pesticide Regulation.
+California Department of Pesticide Regulation. 2000. Environmental Fate of Pyriproxyfen. Prepared by Environmental Monitoring and Pest Management Branch, Department of Pesticide Regulation. 9 pp.
+CPC—see Crop Protection Compendium.
+Crop Protection Compendium. 2010 Edition. CAB International, Wallingford, UK, 2010.
+Crossland, N.O. 1982. Aquatic toxicology of cypermethrin. II. Fate and biological effects in pond experiments. Aquatic Toxicol. 2: 205– 222.
+Donnegan, J. A., Butler, S. L., Grabowiecki, W., Hiserote, B.A., and Limtiaco, D. 2002. Guam’s forest resources, 2002. Resource Bull. PNW-RB-243. Portland, OR: U.S. Department of Agriculture, Forest Service, Pacific Northwest Research Station. 32 p.
+Driver, F., Milner, R.J., and Trueman, J.W.H. 2000. A taxonomic revision of Metarhizium based on a phylogenetic analysis of rDNA sequence data. Mycol. Res. 104: 134−150.
+Gillespie, A.T., and Claydon, N. 1989. The use of entomogenous fungi for pest control and the role of toxins in pathogenesis. Pestic. Sci. 27: 203–215.
+19
+
+EPA—see U.S. Environmental Protection Agency.
+Ferron, P., Hurpin, B., and Robert, P. H. 1972. Sur la specificite de Metarrhizium anisopliae (Metsch.) Sorokin. Entomophaga. 17: 165– 178.
+Ferron, P., Robert, P.H., and Deotte, A. 1975. Susceptibility of Oryctes rhinoceros adults to Metarrhizium anisopliae. J. Invert. Pathol. 25: 313−319.
+Gopal. M., Gupta, A. and Thomas, G.V. 2006. Prospects of using Metarhizium anisopliae to check the breeding of insect pest, Oryctes rhinoceros L. in coconut leaf vermicomposting sites. Bioresource Technology. 97: 1801–1806.
+Hartnik, T., and Styrishave, B. 2008. Impact of biotransformation and bioavailability on the toxicity of the insecticides cypermethrin and chlorfenvinphos in earthworm. J. Agric. Food Chem. 56: 11057–11064.
+He, L.M., Troiano, J., Wang, A., and Goh, K. 2008. Environmental chemistry, ecotoxicity, and fate of lambda-cyhalothrin. Pp. 71–91. In: D.M. Whitacre [ed.] Reviews of Environmental Contamination and Toxicology. Springer-Verlag.
+Hinckley, A.D. 1973. Ecology of the coconut rhinoceros beetle, Oryctes rhinoceros (L.) (Coleoptera: Dynastidae). Biotropica. 5: 111– 116.
+Jin, Y., Wang, L., Ruan, M., Kiu, J., Yang, Y., Zhou, C., Xu, B., and Fu, Z. 2011. Cypermethrin exposure during puberty induces oxidative stress and endocrine disruption in male mice. Chemosphere. 84: 124–130.
+Latch, G.C.M. 1976. Studies on the susceptibility of Oryctes rhinoceros to some entomogenous fungi. Entomophaga. 21: 31–38.
+Latch, G.C.M. and Falloon, R.E. 1976. Studies on the use of Metarhizium anisopliae to control Oryctes rhinoceros. Entomophaga. 21: 39–48.
+Mimura, N., and Nunn, P.D. 1998. Trends of beach erosion and shoreline protection in rural Fiji. J. Coastal Res. 14(1): 37–46.
+Mommaerts, V., Sterk, G. , and Smagghe, G. 2006. Bumblebees can be used in combination with juvenile hormone analogues and ecdysone agonists. Ecotoxicology. 15: 513–521.
+20
+
+Moore, A.M. 2009. Guam Coconut Rhinoceros Beetle (CRB) Eradication Program Semi-annual Progress Report. University of Guam Cooperative Extension Service. 13 pp.
+Ridgell, C. 2011. Guam losing battle against coconut rhino beetle. Guam News. April 6, 2011. Available http://www.pacif icnewscenter.com/ index. php?opt ion=com_content&vie w=artic le& id=13091:gua m- los ing- batt le-aga inst-coconut-r hinobeetle&catid=45:guam-news&Itemid=156 last accessed September 29, 2011.
+Rombach, M., Humber, R.A., and Evans, H.C. 1987. Metarhizium album, a fungal pathogen of leaf- and planthoppers of rice. Trans. Br. Mycol. Soc. 88: 451–459.
+Sihuincha, M., Zamora-perea, E., Orellana-rios, W., Stancil, J.D., López-sifuentes, V., Vidal-oré, C. and Devine, G.J. 2005. Potential use of pyriproxyfen for control of Aedes aegypti (Diptera: Culicidae) in Iquitos, Peru. J. Med. Entomol. 42(4): 620–630.
+Smith, S.L., and Moore, A. 2008. Early Detection Pest Risk Assessment, Coconut Rhinoceros Beetle. USDA Forest Service. R5FHP-2008-01 Available http://guaminsects.net/uogces/kbw iki/ images/1/ 13/CRB_P est_Risk_Ass essment.pdf last accessed September 29, 2011.
+Swan, D.I. 1974. A review of the work on predators, parasites and pathogens for the control of Oryctes rhinoceros (L.) (Coleoptera: Scarabaeidae) in the Pacific area. Misc. Pub. No. 7. Commonwealth Institue of Biological Control. Commonwealth Agricultural Bureaux, 63 pp.
+Tulloch, M. 1976. The Genus Metarhizium. Trans. Br. Mycol. Soc. 66: 407–411.
+U.S. Census Bureau. 2000. Guam Summary File. http://factfinder.census.gov/servlet/DatasetMainPageServlet last accessed October 18, 2011.
+U.S. Census Bureau. 2010. Guam 2010 Census Results. Total population by Municipality. http://2010.census.gov/news/pdf/cb11cn179_ ia_guam_tota lpop_2010ma p.pdf last accessed October 18, 2011.
+21
+
+U.S. Environmental Protection Agency. 2011a. Watershed assessment, tracking and environmental results. http:// iaspub.epa.gov/waters10/atta ins_index.control? p_area=GU#total_ assessed_waters. last accessed October 24, 2011.
+U.S. Environmental Protection Agency. 2011b. Currently Designated Nonattainment Areas for All Criteria Pollutants. http://www.epa.gov/oar/oaqps/greenbk/ancl.html. last accessed October 23, 2011.
+U.S. Environmental Protection Agency. 2011c. OPP Ecotox One-Liner Database. http://www.ipmcenters.org/Ecotox/index.cfm. last accessed September 24, 2011.
+U.S. Environmental Protection Agency. 2009. Pyriproxyfen. Human Health Risk Assessment for the Proposed Use of Pyriproxyfen in/on Vegetables, Leaves of Root and Tuber, Group 2; Vegetables, Leafy, Except Brassica, Group 4; Vegetable, Foliage of Legume, Group 7; Fruit, Small, Vine Climbing, Except Grape, Subgroup 13-07E; Artichoke, Globe; Asparagus; and Watercress Commodities. 38 pp.
+U.S. Environmental Protection Agency. 2007. Zeta-cypermethrin: Human Health Risk Assessment for Section 3 Use of Zetacypermethrin on Citrus (Crop Group 10), Oilseeds (proposed Crop Group 20,except cottonseed), Safflower, Wild Rice and Okra. PC Code: 129064. DP Number: D344749. Regulatory Action: Section 3. Risk Assessment Type: Zeta-cypermethrin/cypermethrin Aggregate. 56 pp.
+U.S. Environmental Protection Agency. 2005. Revised EFED Risk Assessment for the Reregistration Eligibility Decision (RED) on Cypermethrin after 30-Day ―Error Only‖ Comment Period. 372 pp.
+U.S. Department of Agriculture, Animal and P lant Health Inspection Service. 2007. Coconut Rhinoceros Beetle Eradication Program Environmental Assessment, December 2007. EA Number: GU-08-1
+USDA, APHIS—see U.S. Department of Agriculture, Animal and Plant Health Inspection Service.
+Wang, H., Wang, S.F., Ning, H., Ji, Y.L., Zhang, C., Zhang, Y., Yu, T., Ma, X.H., Zhao, X.F., Wang, Q., Liu, P., Meng, X.H., and Xu, D.X. 2010. Maternal cypermethrin exposure during lactation impairs testicular development and spermatogenesis in male mouse offspring. Environ. Toxicol. 26(4): 82−394.
+22
+
+Zimmerman, G. 1993. The entomopathogenic fungus Metarhizium anisopliae and its potential as a biocontrol agent. Pestic. Sci. 37: 375– 379. Zimmerman, G. 2007. Review on safety of the entomopathogenic fungus Metarhizium anisopliae. Biocontrol Sci. and Technol. 17: 879– 920.
+23
+
+Appendix A. Quarantine boundary for CRB in Guam.
+A–1
+
+Appendix B. Number of CRB captured by the beginning of June in 2009, 2010, and 2011, demonstrating the expansion of the beetle on Guam (Moore, 2011).
+B–1
+
+B–2
+
+B Technical Note: Using QGIS to Detect Georeferencing Errors in an Online MySQL Database
+60
+
+Guam Coconut Rhinoceros Beetle Eradication Project
+Technical Note: Using QGIS to Detect Georeferencing Errors in an Online MySQL Database
+Prepared by Aubrey Moore University of Guam Cooperative Extension Service
+March 30, 2012
+Abstract
+The Guam Coconut Rhinoceros Beetle Eradication Project uses an online MySQL database to keep track of trapping data and observations. Point locations for traps and observations are stored in elds for latitude and longitude stored as decimal degrees. This note describes use of QGIS, an open source geographical information system, to nd points which do not lie within Guam's shoreline. A QGIS plugin named eVis is used to connect directly to the MySQL database to download and visualize georeferenced trap and observation data. A QGIS project and associated data which which demonstrate the methods can be downloaded from http://guaminsects.net/anr/content/technical-note-using-qgis-detectgeoreferencing-errors-online-mysql-database.
+1 Introduction
+The project's online MySQL database uses georeferenced tables (trap and crb_obs) to keep track of
+trapping data and observations. Each table contains elds containing latitude and longitude as decimal degrees. Location of traps and observations are entered into the database in several ways:
+• direct upload from GPS devices • GPS locations recorded on a datasheet • locations approximated using Google Earth The last 2 methods require transcription, which is error prone. Even direct upload from GPS devices may produce errors if the device has not been set up correctly, for example, if the unit is set to report degrees,
+1
+
+minutes, and seconds instead of decimal degrees. Another source of error is accuracy of the Guam island outline in the shape les we are using. GPS waypoints recorded on the beach may be outside the island outline polygon.
+This note outlines a method for identifying errors in latitude and longitude recorded in project database
+trap and crb_obs tables using QGIS (Quantum GIS) which is a free, user-friendly Open Source Geographic
+Information System (GIS) which may be downloaded from http://qgis.org/. The methods below use two QGIS plugins:
+eVis connects to the database and downloads georeferenced data specied by SQL query statements Spatial Query selects points which are inside or outside a polygon, etc.
+2 Methods
+1. QGIS 1.7.3 was opened and a new project was started.
+2. An outline of Guam, newguam.shp, was opened as a vector layer.
+3. Locations of traps and CRB observations were imported from the project's online MySQL database as vector layers in the QGIS project using the eVis plugin. eVis can read database collection parameters
+and SQL query statements saved in an xml le, in this case a le I wrote called preferedSQL.xml
+(Listing 1). 4. When the trap location layer is displayed on top of the island polygon, some errors are evident (Fig.
+1). 5. The area of the newguam polygon was buered by 0.0005 degrees and the buered polygon was saved
+as a new vector layer, newguam_buf_0_0005. This slightly increases the area covered by the
+Guam map so that points recorded on the beach are included (Fig. 2). 6. The QGIS Spatial Query plugin is used to select points lying outside the buered island polygon (Fig.
+3). The locations and IDs for these selected points can be exported in several formats, including kml,
+csv, and shp, using the menu selection Layer | Save Selection as vector le .... Exporting selected points to a kml le allows viewing them in Google Earth which facilitates making corrections.
+3 Results
+On March 29, 2012, the above methods found 5 of 2086 location errors in the trap table and 380 of 3164 records errors in the crb_obs table.
+By exporting attributes of selected points from the crb_obs table to a comma separated values (csv)
+le, it was plain to see that most of these observation records were not georeferenced when added to the database:
+• 199 points had latitude set to 0.0 and longitude set to 0.0 • 103 points had latitude set to 1.0 and longitude set to 1.0 • 78 points had points located in the ocean surrounding Guam, probably the result of transcription and
+data entry errors
+2
+
+Figure 1: Trap locations in the vicinity of the Agana boat basin. Note that several trap locations are just outside the island polygon. There are 2 locations, however, which are obvious errors.
+3
+
+Figure 2: Trap locations in the vicinity of the Agana boat basin. The island polygon has been buered by 0.0005 degrees to include trap locations on th beach.
+4
+
+Figure 3: A spatial query selects trap locations which lie outside the buered island polygon. Selected points are colored yellow.
+5
+
+4 Listings
+Listing 1: Prefered SQL <?xml v e r s i o n ="1.0"?> <doc> <query>
+<s h o r t d e s c r i p t i o n >Import a l l trap l o c a t i o n s </ s h o r t d e s c r i p t i o n > <d e s c r i p t i o n >This command w i l l import a l l trap l o c a t i o n s from the p r o j e c t
+database . </ d e s c r i p t i o n > <databasetype >ODBC</databasetype > <databasehost >mysql . guaminsects . net </databasehost > <databaseport >3306</databaseport> <databasename>o r y c t e s </databasename> <databaseusername>r e a d o n l y g u e s t </databaseusername> <databasepassword>mangilao </databasepassword> <s q l s t a t e m e n t >SELECT trap_id , l a t i t u d e , l o n g i t u d e FROM trap </s q l s t a t e m e n t > <autoconnect>true </autoconnect> </query> <query> <s h o r t d e s c r i p t i o n >Import a l l obs l o c a t i o n s </ s h o r t d e s c r i p t i o n > <d e s c r i p t i o n >This command w i l l import a l l obs l o c a t i o n s from the p r o j e c t database . </ d e s c r i p t i o n > <databasetype >ODBC</databasetype > <databasehost >mysql . guaminsects . net </databasehost > <databaseport >3306</databaseport> <databasename>o r y c t e s </databasename> <databaseusername>r e a d o n l y g u e s t </databaseusername> <databasepassword>mangilao </databasepassword> <s q l s t a t e m e n t >SELECT crb_obs_id , d e c i m a l _ l a t i t u d e AS l a t i t u d e , decimal_longitude AS l o n g i t u d e FROM crb_obs</s q l s t a t e m e n t > <autoconnect>true </autoconnect> </query> </doc>
+6
+

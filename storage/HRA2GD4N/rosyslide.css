@@ -1,0 +1,248 @@
+.asRosy,
+.asRosy div,
+.asRosy figure,
+.asRosy img,
+.asRosy figcaption{
+    display:block;
+    position:relative;
+    padding:0; border:0; margin:0;
+    box-sizing:border-box;
+    font-size:inherit;
+    font-family:sans-serif;
+    text-align:left;
+    color:#fff;
+    cursor:default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.asRosy{
+    background-color:#000;
+    font-size:1.5rem;
+    width:0; height:0;
+    overflow:hidden;
+    z-index:99;
+}
+/*
+.asRosy{
+    width:100%; height:auto;
+    overflow:visible;
+}
+*/
+.asRosy > .asView{
+    width:100%;
+}
+.asRosy > .asView > .asOuter{
+    width:100%; height:100%;
+}
+.asRosy > .asView > .asOuter > .asInner{
+    padding-top:66.6666%;
+
+}
+.asRosy > .asView > .asOuter > .asInner > .asUnit{
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure{
+    width:100%; height:100%;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0);
+}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > img{
+    position:absolute;    
+    top:0; left:0;
+    width:100%; height:100%;
+    background-repeat:no-repeat;
+    background-attachment:local;     
+    background-size:cover;
+    background-size:contain;
+    background-position: 50% 50%; 
+}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption *{
+    padding:0; border:0; margin:0;
+}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption{
+    position:absolute;
+    width:100%; height:auto;
+    bottom:0;
+    font-size:0.875em;
+    line-height:1.5em;
+    text-shadow:2px 2px 2px #000;  
+    color:#fff;    
+    background-color:rgba(0,0,0,0.45);
+    padding:0.5em;
+}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption > p{}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption > p > span{
+    display:inline-block;
+    font-size:0.86em;
+    padding-right:1em;
+}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption > p > span > i{
+    padding-right:0.25em;
+}
+.asRosy > .asView > .asOuter > .asButton{
+    display:block;
+    position:absolute;
+    top:0;
+    height:100%;
+    cursor:pointer;
+}
+.asRosy > .asView > .asOuter > .asButton > i{
+    font-size:1.5em;
+    padding:0.25em;
+    color:rgba(255,255,255,0.5);
+    background-color:rgba(0,0,0,0.25);
+}
+.asRosy > .asView > .asOuter > .asButton:hover > i{ 
+    color:rgba(255,255,255,1);
+    background-color:rgba(0,0,0,0.5);
+}
+.asRosy > .asView > .asOuter > .asButton:before{ content:''; display:inline-block; height:100%; vertical-align:middle; }
+.asRosy > .asView > .asOuter > .asPrev{ left:0; }
+.asRosy > .asView > .asOuter > .asNext{ right:0; }
+.asRosy > .asView > .asTool {
+    position:absolute;
+    width:100%;
+    top:0;
+}
+.asRosy > .asView > .asTool > div{
+    float:left;
+    font-size:1em;
+    padding:0.25em;
+    cursor:pointer;
+    color:rgba(255,255,255,0.5);
+    background-color:rgba(0,0,0,0.25);
+}
+.asRosy > .asView > .asTool > div:hover{
+    color:rgba(255,255,255,1);
+    background-color:rgba(0,0,0,0.75);
+}
+.asRosy > .asView > .asTool > div.enpop,
+.asRosy > .asView > .asTool > div.unpop{
+    float:right;
+}
+.asRosy > .asNavy{
+    width:100%;
+}
+.asRosy > .asNavy > .asOuter{
+    overflow:hidden;
+}
+.asRosy > .asNavy > .asOuter > .asButton{
+    display:block;
+    position:absolute;
+    top:0;
+    height:100%;
+    cursor:pointer;
+}
+.asRosy > .asNavy > .asOuter > .asButton > i{
+    font-size:1.5em;
+    padding:0.25em;
+    color:rgba(255,255,255,0.5);
+    background-color:rgba(0,0,0,0.25);
+}
+.asRosy > .asNavy > .asOuter > .asButton:hover > i{
+    color:rgba(255,255,255,1);
+    background-color:rgba(0,0,0,0.75);
+}
+.asRosy > .asNavy > .asOuter > .asButton:before{ 
+    content:''; display:inline-block; height:100%; vertical-align:middle; 
+}
+.asRosy > .asNavy > .asOuter > .asPrev{
+    left:0;
+}
+.asRosy > .asNavy > .asOuter > .asNext{
+    right:0;
+}
+
+.asRosy > .asNavy > .asOuter > .asInner{
+    font-size:0em;
+    white-space:nowrap;
+    left:0;
+}
+.asRosy > .asNavy > .asOuter > .asInner > .asUnit{
+    display:inline-block;
+    width:20%;
+    white-space:normal;
+}
+.asRosy > .asNavy > .asOuter > .asInner > .asUnit > figure{
+    width:100%; padding-top:66.6666%;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0);
+    font-size:1rem;
+}
+.asRosy > .asNavy > .asOuter > .asInner > .asUnit > figure > img{
+    position:absolute;    
+    width:100%; height:100%;
+    top:0; left:0;
+    background-repeat:no-repeat;
+    background-attachment:local;     
+    background-size:cover;
+    background-position: 50% 50%; 
+    cursor:pointer;
+}
+.asRosy > .asNavy > .asOuter > .asInner > .asUnit > figure > figcaption{
+    position:absolute;
+    width:100%;
+    bottom:0;
+    font-size:0.75em;
+    padding:0.5em;
+    text-shadow:2px 2px 2px #000;
+    background-color:rgba(0,0,0,0.45);
+}
+.asRosy > .asNavy > .asBary{
+    padding:2px;
+    padding-top:1px;
+}
+.asRosy > .asNavy > .asBary > .asOuter {
+    font-size:0;
+    width:100%;
+    height:2px;
+    background-color:rgba(255,255,255,0.45);
+}
+.asRosy > .asNavy > .asBary > .asOuter > .asInner {
+    position:absolute;
+    width:10%; height:100%;
+    left:0; top:0px;
+    font-size:0;
+    background-color:rgba(255,255,255,1);
+    transition:width,left, 0.25s ease-out;
+}
+/* theme */
+.asRosy {}
+.asRosy > .asView {}
+.asRosy > .asView > .asOuter {}
+.asRosy > .asView > .asOuter > .asInner {}
+.asRosy > .asView > .asOuter > .asInner > .asUnit {}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure {}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > img{}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption{}
+.asRosy > .asView > .asOuter > .asButton{}
+.asRosy > .asView > .asOuter > .asButton > i{}
+.asRosy > .asView > .asOuter > .asButton:hover {}
+.asRosy > .asView > .asTool {}
+.asRosy > .asView > .asTool > div {}
+.asRosy > .asView > .asTool > div:hover {}
+.asRosy > .asView > .asTool > div.open,
+.asRosy > .asView > .asTool > div.close {}
+.asRosy > .asNavy {}
+.asRosy > .asNavy > .asOuter {}
+.asRosy > .asNavy > .asOuter > .asButton {}
+.asRosy > .asNavy > .asOuter > .asButton > i {}
+.asRosy > .asNavy > .asOuter > .asButton:hover {}
+.asRosy > .asNavy > .asOuter > .asInner {}
+.asRosy > .asNavy > .asOuter > .asInner > .asUnit {}
+.asRosy > .asNavy > .asOuter > .asInner > .asUnit > figure {}
+.asRosy > .asNavy > .asOuter > .asInner > .asUnit > figure > img {}
+.asRosy > .asNavy > .asOuter > .asInner > .asUnit > figure > figcaption {}
+.asRosy > .asNavy > .asBary{}
+.asRosy > .asNavy > .asBary > .asOuter {}
+.asRosy > .asNavy > .asBary > .asOuter > .asInner {}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption {}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption > p {}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption > p > span {}
+.asRosy > .asView > .asOuter > .asInner > .asUnit > figure > figcaption > p > span > i {}

@@ -1,0 +1,167 @@
+
+Open in app
+Aubrey Moore
+Towards Data Science
+
+    Data Science
+    Machine Learning
+    Programming
+    Visualization
+    AI
+    Video
+    About
+    Contribute
+
+Anyone can publish on Medium per our Policies , but we don’t fact-check every story. For more info about the coronavirus, see cdc.gov .
+A Short Review of COVID-19 Data Sources
+The pros and cons of some popular COVID-19 data sources
+Jian Xu
+Jian Xu
+Follow
+Mar 28 · 6 min read
+
+As a data scientist, I am always on the look for “the best” data source to analyze the coronavirus pandemic. Unfortunately, there are so many different sources around, and each of them is a little different. Here’s a short review as of Mar 26, 2020. I will cover the strength and weakness of the following data sources so that you can choose the one that best fits your need:
+
+    1 Point 3 Acres
+    Johns Hopkins CSSE
+    The COVID Tracking Project
+    The Kaggle Novel Coronavirus Dataset
+    Ding Xiang Yuan
+
+Updated 2020–03–30: Worldometers , USAFacts, and NYTimes are discussed after #5 Ding Xiang Yuan.
+
+In short, if you don’t need an API, then 1Point3Acres has the best data and visualization.
+
+If you do need an API, then the Johns Hopkins CSSE data, together with the COVID Tracking Project for testing information, provides a good starting point.
+
+The following are the details.
+1 Point 3 Acres :
+
+If you are looking for the US COVID-19 data, and you don’t need an API, then look no further. This is the best website to go to.
+
+Strengths:
+
+    Has county-level details about the confirm and death counts. This is the only data source I found containing this information.
+    Integrated information from many other sources. For example, testing data (from https://covidtracking.com/ ), news from various sources, related videos from YouTube, etc.
+    Very reliable and high-quality data, even the US’s CDC (Centers for Disease Control and Prevention) uses its data daily .
+    Very nice visualization. Easy for readers to select the state in his/her interest. Comparison to other countries is also effortless. And the “racing” bar charts (using Flourish as backend) are also very informative, and rarely seen in other websites.
+
+Weaknesses:
+
+    No public API. If you want to use their data programmatically, then you need to contact them.
+    Focus on the US and Canada. If your main interest is somewhere else, then this is not the source for you.
+
+Johns Hopkins CSSE (Center for System Science and Engineering)
+
+If you are looking for global data, this is the data source to go to. It has been widely cited since the early days of the coronavirus epidemic.
+
+Strengths:
+
+    Covers data covers from all over the world.
+    Data on and after 2020–03–22 contains county-level data in the US.
+    Data are publicly available in GitHub , and actively being developed and used all over the world. So you can easily play with it on your own. In fact, most other data sources are built upon this data set. For example, you can get the daily report CSV on 2020–03–25 by:
+
+Weaknesses:
+
+    The US county-level information only after 2020–03–22. This is not ideal considering the US had announced National Emergency on 2020–03–13. The NYTimes data source (mentioned later in this article) has county-level information since 2020–01–21.
+    The dashboard GUI is less informative than 1Point3Acres. Other than the map, you can only see the time series plot of the confirmed cases and daily increase cases. You cannot compare different regions, cannot see the plot in log scale, etc.
+
+The COVID Tracking Project
+
+If you only need the US data, and you need an API, then this is the data source to go to.
+
+This is a unique data source because it contains not only the confirmed/death counts, but also the US’s test data, ie, positive and negative results, pending tests, and total people tested. This information is very valuable because it reveals a lot of information about the “actual” number of patients that has not yet been “confirmed”. This testing data is also used by 1Point3Acres on their website.
+
+Strengths:
+
+    Contains testing data
+    API (Google sheet, CSV, and JSON, download, and API endpoints) publicly available , and very easy to use. For example, you can get daily JSON and CSV by the following:
+
+Weaknesses:
+
+    No county-level data
+    No global data
+
+The Kaggle Novel Coronavirus Dataset
+
+If you want to build statistics on medical details, this is the preferred data source.
+
+Strengths:
+
+    Use Johns Hopkins CSSE data as the main underlying data source
+    Has medical details for a few thousand cases, such as symptoms, travel history, chronic disease, etc. And it’s available in a Google spreadsheet format.
+
+Weakness:
+
+    Basically the same as the Johns Hopkins data. No county data until 2020–03–22, and no testing data.
+
+Ding Xiang Yuan (丁香园)
+
+If you are looking for the best data for China, this is the data source to go to. This is the earliest data source available to the public. It has been widely used since the coronavirus breakout in January 2020.
+
+Strengths:
+
+    Contains the earliest and the most detailed data in China
+
+Weaknesses:
+
+    No public API. However, you can find web crawlers in GitHub which obtains data from Ding Xiang Yuan. For example, Isaac Lin’s COVID-19 Time Series Data Warehouse . This is also the data source I used when I analyze the Chinese outbreak data for my own GitHub project in this Medium article .
+    Visualizations on the website are primitive. All plots jam together without proper organization, and no log-scale plots available.
+    Global data only have country total, no breakdown to states.
+
+Update 2020–03–30:
+Worldometers
+
+Generally, I prefer Johns Hopkins CSSE than Worldometers. There’s no much information provided in Worldometers but not at Johns Hopkins CSSE. The only reason to check this website is that it splits the confirmed count into mild, and serious/critical. However, the website doesn’t specify the source or methodology of this split, so it’s hard to tell how trustworthy they are.
+USAFacts
+
+Generally, I prefer 1Point3Acres than USAFacts. Both websites provide county-level information. But 1Point3Acres has much better visualization such as log scale plots, state-level plots, racing bar plots, etc. In addition, 1Point3Acre can compare numbers to other countries easily, but USAFacts cannot.
+
+However, even though USAFacts doesn’t have any API, it does provide download links to the confirmed and death counts at county level:
+
+Confirmed Cases: https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_confirmed_usafacts.csv
+
+Deaths: https://usafactsstatic.blob.core.windows.net/public/data/covid-19/covid_deaths_usafacts.csv
+New York Times Data Set
+
+New York Times started to publish their data set in GitHub since 3/27/2020. If you are looking for a county-level data set for the USA, this is a decent place to go. However, their county-level numbers don’t exactly add up to the state total last time I look. In addition, the New York Times data is a little delayed, you may have to wait to the next day to get the updated daily data.
+
+Also, they don’t have test data, nor international data. So if you need that information, you need to merge from somewhere else.
+Final Words
+
+Most of the other data sources I have seen are derived from one or more of these sources. If you see any other good data sources, please don’t hesitate to leave me a comment. Thanks.
+Acknowledgment
+
+I want to thank my friend David Tian, a Machine Learning engineer, for his valuable suggestions on this article. Check out his fun self-driving * DeepPiCar * blog.
+Towards Data Science
+A Medium publication sharing concepts, ideas, and codes.
+Follow
+88
+
+    Coronavirus
+    Data Science
+    Data Visualization
+    Covid 19
+    Data Analysis
+
+88 claps
+Jian Xu
+
+Written by
+Jian Xu
+Follow
+Engineer, teacher, writer. Loves to explain complex problems in simple terms, and to solve real-world problems by technology.
+Follow
+Towards Data Science
+Towards Data Science
+Follow
+A Medium publication sharing concepts, ideas, and codes.
+Follow
+See responses (3)
+Discover Medium
+Welcome to a place where words matter. On Medium , smart voices and original ideas take center stage - with no ads in sight. Watch
+Make Medium yours
+Follow all the topics you care about, and we’ll deliver the best stories for you to your homepage and inbox. Explore
+Explore your membership
+Thank you for being a member of Medium . You get unlimited access to insightful stories from amazing thinkers and storytellers. Browse
+About Help Legal

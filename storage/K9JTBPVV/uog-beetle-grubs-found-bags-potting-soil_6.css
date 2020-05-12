@@ -1,0 +1,12 @@
+
+/* ::::: null ::::: */
+
+.alert--warning { border-radius: 3px; padding: 10px 15px; margin-bottom: 10px; background-color: rgb(255, 224, 112); color: rgb(164, 119, 3); }
+.alert--warning a, .alert--warning a:hover, .alert--warning strong { color: rgb(164, 119, 3); font-weight: bold; }
+.alert--error p, .alert--warning p { margin-top: 5px; margin-bottom: 5px; }
+
+/* ::::: null ::::: */
+
+html { overflow: hidden; }
+#error { display: none; }
+.clearfix::after { content: ""; display: block; height: 0px; clear: both; visibility: hidden; }

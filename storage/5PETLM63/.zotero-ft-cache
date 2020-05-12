@@ -1,0 +1,4010 @@
+United States Department of Agriculture
+Guam’s Forest Resources: Forest Inventory and Analysis, 2013
+Michelle Lazaro, Olaf Kuegler, Sharon Stanton, Ashley Lehman, Joseph Mafnas, and Mikhail Yatskov
+
+R TMENT OF AGRICU L
+
+T URE
+
+Forest Service
+
+Pacific Northwest Research Station
+
+Resource Bulletin PNW-RB-270
+
+February 2020
+
+DE PA
+
+In accordance with Federal civil rights law and U.S. Department of Agriculture (USDA) civil rights regulations and policies, the USDA, its Agencies, offices, and employees, and institutions participating in or administering USDA programs are prohibited from discriminating based on race, color, national origin, religion, sex, gender identity (including gender expression), sexual orientation, disability, age, marital status, family/parental status, income derived from a public assistance program, political beliefs, or reprisal or retaliation for prior civil rights activity, in any program or activity conducted or funded by USDA (not all bases apply to all programs). Remedies and complaint filing deadlines vary by program or incident.
+Persons with disabilities who require alternative means of communication for program information (e.g., Braille, large print, audiotape, American Sign Language, etc.) should contact the responsible Agency or USDA’s TARGET Center at (202) 720-2600 (voice and TTY) or contact USDA through the Federal Relay Service at (800) 877-8339. Additionally, program information may be made available in languages other than English.
+To file a program discrimination complaint, complete the USDA Program Discrimination Complaint Form, AD-3027, found online at http://www.ascr.usda.gov/complaint_filing_cust.html and at any USDA office or write a letter addressed to USDA and provide in the letter all of the information requested in the form. To request a copy of the complaint form, call (866) 632-9992. Submit your completed form or letter to USDA by: (1) mail: U.S. Department of Agriculture, Office of the Assistant Secretary for Civil Rights, 1400 Independence Avenue, SW, Washington, D.C. 20250-9410; (2) fax: (202) 690-7442; or (3) email: program.intake@usda.gov.
+USDA is an equal opportunity provider, employer, and lender.
+Authors
+Michelle Lazaro is a natural resources specialist, Hawai’i Conservation Alliance and Foundation, 1601 East-West Road, Honolulu, HI 96848-1601. Olaf Kuegler is a statistician and Sharon Stanton is a biological scientist, U.S. Department
+of Agriculture, Forest Service, Pacific Northwest Research Station, 620 SW Main Street, Suite 502, Portland, OR 97205. Ashley Lehman is a biologist, U.S. Department of Agriculture, Forest Service, Pacific Northwest Research Station, 161 E 1st Avenue, Door 8, Anchorage, AK 99501-1639. Joseph Mafnas is chief forester, Guam Department of Agriculture, Forestry and Soil Resources Division, 163 Dairy Road, Mangilao, Guam 96913. Mikhail Yatskov is a forester, U.S. Department of Agriculture, Forest Service, Pacific Northwest Research Station, 161 E 1st Avenue, Door 8, Anchorage, AK 99501-1639.
+Contributing Authors
+Thomas Thompson is a geographic information specialist, U.S. Department of Agriculture, Forest Service, Pacific Northwest Research Station, 161 E 1st Avenue, Door 8, Anchorage, AK 99501-1639; and Brett Davis is a biological science information specialist, U.S. Department of Agriculture, Forest Service, Pacific Northwest Research Station, 620 SW Main Street, Suite 502, Portland, OR 97205.
+Cover: Forest and savannah mosaic on volcanic soils, southern Guam. Photo by Seth Ayotte.
+
+Abstract
+Lazaro, Michelle; Kuegler, Olaf; Stanton, Sharon; Lehman, Ashley; Mafnas, Joseph; Yatskov, Mikhail. 2020. Guam’s forest resources: Forest Inventory and Analysis, 2013. Resour. Bull. PNW-RB-270. Portland, OR: U.S. Department of Agriculture, Forest Service, Pacific Northwest Research Station. 43 p.
+This report highlights key findings from 2013 data collected by the U.S. Department of Agriculture, Forest Service, Forest Inventory and Analysis program across all forested land on Guam, updating findings from data collected in 2002 that were published in Resource Bulletin PNW-RB-243. We summarize and interpret basic resource information such as estimates of forest area, stem volume, biomass, number of trees, damages to trees, and tree size distribution, as well as overstory and understory vegetation cover and information on invasive plant species presence and cover. Detailed tables and graphical highlights are included to help inform resource managers and policymakers, as well as to educate the public regarding the status and trends of their local natural resources. The appendixes provide details on inventory methods and design and include summary tables of data, with statistical errors, for the wide variety of forest characteristics inventoried.
+Keywords: Guam, biomass, carbon, damage, forest land, inventory, vegetation, invasive plants.
+Highlights
+• Tallest measured tree: Vitex parviflora, 66 ft in height • Estimated total forest area: 69,900 ac (table 1, p. 5) • Estimated total number of live trees (≥1 inch diameter at breast height):
+73.1 million (table A2-1, p. 30) • Total number of tree species recorded: 55 species (“Scientific and Common
+Names of Plants Found During Inventory”, p. 18) • Estimated total net live tree volume: 52.0 million ft3 (table A2-5, p. 35) • Estimated total live tree aboveground biomass: 2.267 million dry tons
+(table A2-6, p. 36) • Estimated total live tree aboveground carbon: 1.134 million dry tons
+(table A2-6, p. 36)
+
+Contents
+1 Guide to Forest Inventory and Analysis 1 Overview of the Purpose of This Report 1 Description of the Forest Inventory and Analysis Program 2 Common FIA Terminology 3 Forest Resources on Guam 3 Forest Area 7 Forest Composition 10 Volume, Biomass, and Carbon 11 Understory Vegetation 12 Extent of Standing Dead Wood 12 Nontimber Forest Products 13 Forest Health 14 Forest Disturbances and Their Extent 15 Insects 16 Invasive Vegetation 18 Conclusions 18 Scientific and Common Names of Plants Found During Inventory 22 Acknowledgments 23 Metric Equivalents 23 Literature Cited 26 Appendix 1: Inventory Design and Methods 29 Appendix 2: Summary Data Tables 40 Glossary
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+Guide to Forest Inventory and Analysis Overview of the Purpose of This Report
+This report presents a summary of Guam’s forest resources from the most recent data collected by the U.S. Department of Agriculture (USDA) Forest Service Forest Inventory and Analysis (FIA) program in 2013 across all ownerships and forest types. It updates previously published findings from data collected in 2002 (Donnegan et al. 2004). We summarize and interpret basic resource information, including forest area, ownership, land use change, biomass, biodiversity, standing dead wood, and forest health indicators. The Pacific Northwest Research Station Forest Inventory and Analysis (PNW-FIA) program implemented a sampling strategy on Guam that measures forest and nonforest vegetated plots, within a single year, on an intended 10-year cycle. PNW-FIA partners with Guam’s researchers and forest managers to use the inventory data to help answer local and national questions about the status and trends in tropical forests. These data update those published in the earlier report; however, not all the values presented here can be directly compared to previous reports or datasets to assess change in Guam’s forest resources over the past decade. Consistent sampling and field protocols standardized across different ownerships and forest management regimes allow for comparisons of change over time only for certain attributes. This report covers all forested and vegetated nonforest lands on Guam, with estimates representing averaged values computed from all inventory plots visited by field crews in 2013.
+Description of the Forest Inventory and Analysis Program
+The FIA program was established in 1928 to conduct unbiased assessments of the nation’s forested lands for use in economic and forest management planning. The program was charged with collecting forest data on a series of permanent field plots, compiling and making these data publicly available, and providing research and interpretations from the data. Four FIA units are responsible for inventories of all forested lands in the United States, including the insular areas and territories of Puerto Rico, Guam, American Samoa, Commonwealth of the Northern Mariana Islands, U.S. Virgin Islands, and freely associated Pacific Island nations of the Federated States of Micronesia, Republic of the Marshall Islands, and Republic of Palau. Historically, each of the four regional FIA units responsible for forest inventories in the United States implemented inventory methods to best fit its respective regional forest conditions and client needs, resulting in inconsistent national reporting (USDA FS 2006). After passage of the 1998 Farm Bill, the FIA program implemented an annualized inventory that was designed to be nationally consistent as well as spatially and temporally unbiased with respect
+1
+
+RESOURCE BULLETIN PNW-RB-270
+to forest types and land ownership groups (Bechtold and Patterson 2005). All FIA units use a common plot design, common set of measurement protocols, and standard database design for compilation and distribution of data. Under this unified approach, FIA is able to provide unbiased estimates of a wide variety of forest conditions over all forested lands in the United States in a consistent and timely manner.
+The national design was adapted for the Guam inventory to include additional branching and rooting forms and additional tree crown measurements, as well as special interest species ranging from invasive plants to pathogens to invasive insects and animals. With significant project support from the Government of Guam’s Forestry Division and the University of Guam, 48 plots were spaced uniformly at 1.9-mi intervals using a hexagonal grid, resulting in a threefold intensification of the spacing used in the mainland U.S. inventory plot grid. Forest inventory plots included four 24-ft fixed-radius subplots, where a variety of information was collected at the plot, subplot, and tree levels (USDA FS 2012). Primary variables collected include plot location, slope, aspect, elevation, subplot slope position and slope shape, tree species, diameters, heights, damages, branching and rooting forms, decay, and epiphytic loadings. Additional information about annual inventories is available in appendix 1 of this report and at http://fia.fs.fed.us/.
+Common FIA Terminology
+What is a tree?— The U.S. Forest Service defines a tree as a woody perennial plant, usually with a single well-defined stem carrying a crown, with a minimum height of 15 ft at maturity (USDA FS 2006). What is a forest? — Forests come in many shapes and sizes, varying from complex and species diverse to monoculture plantations. The FIA program defines forest land as an area currently or formerly (within 30 years) having at least 10 percent crown cover by trees of any size and not currently developed for nonforest use (USDA FS 2006). Forest land must be at least 1 ac in size with a minimum continuous width of 120 ft.
+2
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+Forest Resources on Guam
+The island of Guam (fig. 1) is the largest and farthest south in the north-sweeping Marianas archipelago (fig. 2). The highest point on the island is Mount Lamlam at 1,332 ft elevation. Guam is an unincorporated territory of the United States and has the highest human population of any island in Micronesia. The climate is tropical marine with little annual variation in temperature, but with a pronounced dry season from January to May (Manner 1993) (fig. 3).
+Forest Area
+About half of Guam is forested (53 percent) (fig. 4). The island’s total land area is about 132,230 ac, with 69,851 forested ac (table 1). A significant area of land is occupied by the U.S. military; on a portion of this area, a system of refuges and wildlife reserves has been designated. For example, Ritidian Point, about 22,500 ac in size at the northern tip of Guam, is administered by the U.S. Fish and Wildlife Service as a national wildlife refuge. The northern half of the island is generally a flat limestone plateau that can be strongly weathered into rugged karst topography. The limestone soils in the north are covered with forest in areas that are not cultivated or urbanized. The southern side of the island features a terrain composed of deeply weathered volcanic soils primarily covered by grassland, with some ravine forest in sheltered and leeward sites.
+Figure 1—Merizo, Guam, near ferry terminal to Cocos Island. .
+3
+
+Ashley Lehman
+
+RESOURCE BULLETIN PNW-RB-270
+
+Figure 2—Guam is an unincorporated territory of the United States in the North Pacific Ocean, about 1,600 mi east of Manila, Philippines, and 3,500 mi north of Melbourne, Australia.
+
+o
+or
+145°10'0"E
+
+145°10'0"E
+
+145°0'0"E
+
+Mexico 145°0'0"E
+
+20 Miles
+
+144°50'0"E
+
+144°50'0"E
+
+United States
+
+10
+
+144°40'0"E
+
+5
+
+144°40'0"E
+
+0
+
+Guam
+
+Hawaii
+
+144°30'0"E
+
+Tropic of Capricorn - (23.5S)
+
+Equator - (0)
+
+144°30'0"E
+
+! ! ! ! !! ! ! !
+! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
+
+!
+
+!! ! !
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+! !!
+
+!!
+
+!!
+
+! !!
+
+!! !!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+! !
+
+!
+
+!
+
+International Date Line
+
+! !
+! !
+! !
+
+! !
+
+! !
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+!!
+
+! !! !
+
+New Zealand
+
+Fiji
+
+Marshall Islands
+
+Federated States of Micronesia
+
+Commonwealth of the Northern Mariana Islands
+
+Japan
+
+Australia
+
+Guam
+
+Palau
+
+4
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+18
+
+90
+
+Average precipitation (inches) Average temperature (°F)
+
+16
+
+14
+
+85
+
+Precipitation
+
+12
+
+Maximum temperature
+
+Minimum temperature
+
+80
+
+10
+
+8 75
+6
+
+4
+
+70
+
+2
+
+0
+
+65
+
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+
+Month
+
+Figure 3—Average maximum and minimum temperatures, and total monthly precipitation for Guam. Note the pronounced seasonality in precipitation (Western Regional Climate Center, https://wrcc.dri.edu/cgi-bin/cliMAIN.pl?pi4226).
+
+Table 1—Estimated land area by status, 2013
+Land status
+Accessible forest land: Unreserved forest land Reserved forest land (Bird Island Wildlife Conservation Area and Guam National Wildlife Refuge) All accessible forest land
+
+Total Acres
+49,190 20,661
+69,851
+
+Nonforest and other areas:
+
+Nonforest urban Nonforest vegetation Barren lands
+
+36,659 25,720
+—
+
+Water
+
+—
+
+All nonforest and other Total area
+
+62,379 132,230
+
+QuickBird satellite imagery from Digital Globe, Inc. (Longmont, Colorado) was used to develop the vegetation mapping layers (Liu 2014). Note: the use of trade or firm names in this publication is for reader information and does not imply endorsement by the U.S. Department of Agriculture of any product or service.
+— = none.
+
+5
+
+RESOURCE BULLETIN PNW-RB-270
+
+! Plot locations
+Vegetation Barren Forest Rangeland Urban Water
+
+!
+
+o
+
+! !
+
+!
+
+! !
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+! !
+
+! !
+
+! !
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+! !
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+!
+
+! !
+
+!
+
+!
+
+!
+
+!
+
+!
+
+! !
+
+!
+
+!
+
+!
+
+!
+
+!
+
+! !
+
+!
+
+!
+
+!
+
+0
+
+2.5
+
+5
+
+10 Miles
+
+Figure 4—Forested plots measured in 2013 used to provide the data published in this report. Locations of 48 forested plots were measured, and locations are approximate (forest/nonforest geographic information system layer: Liu et al. 2014).
+6
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Forest Composition
+FIA crews identified 55 tree species on FIA plots in Guam (see “Scientific and Common Names of Plants Found During Inventory”). The most common tree species were Leucaena leucocephala, Guamia mariannae, and Hibiscus tiliaceus (table 2). The estimated total number of trees during this 2013 inventory was about 74 million. FIA plots on Guam each contained from 1 to 11 different tree species (fig. 5). Forest stands tended to be dominated by smaller size trees that are less than 5 inches in diameter (fig. 6). The diameter distribution for trees follows a reverse-J pattern on Guam (fig. 7). Frequent typhoon disturbance and the abundance of numerous species of small-diameter, short-lived trees (such as Leucaena leucocephala) contribute to this pattern, which is persistent through time in many stands.
+
+Table 2—Estimated number of trees on Guam, by species (continued)
+
+Scientific name
+Leucaena leucocephala Guamia mariannae Hibiscus tiliaceus Triphasia trifolia Vitex parviflora Aglaia mariannensis Morinda citrifolia Premna obtusifolia Heterospathe elata Neisosperma oppositifolia Averrhoa bilimbi Areca catechu Casuarina equisetifolia Ochrosia mariannensis Cocos nucifera Maytenus thompsonii Pandanus tectorius Cananga odorata
+
+Common name
+tangan tangan paipai sea-hibiscus, pago lemondichina smallflower chastetree mapunyao lada, ahgao palma brava fagot bilimbi, pickle tree Pugua, betel nut gagu, ironwood langiti niyok, coconut palm luluhut kafu ilang-ilang
+
+Number of trees
+
+Total
+
+Sampling error
+
+Thousands
+
+9,341
+
+2,983
+
+9,207
+
+3,996
+
+9,049
+
+2,452
+
+8,526
+
+6,470
+
+4,584
+
+1,661
+
+4,532
+
+3,241
+
+3,396
+
+1,268
+
+2,571
+
+1,055
+
+2,182
+
+1,408
+
+1,973
+
+1,304
+
+1,935
+
+1,422
+
+1,722
+
+1,193
+
+1,671
+
+1,113
+
+1,603
+
+1,547
+
+1,464
+
+528
+
+1,247
+
+1,203
+
+1,131
+
+352
+
+961
+
+955
+
+Adenanthera pavonina Eugenia reinwardtiana Cycas circinalis Annona muricata Bauhinia monandra
+
+kulalis a’abang fandang, federico laguaná, kasoy, soursop orchid tree, mariposa
+
+834
+
+826
+
+712
+
+687
+
+624
+
+242
+
+623
+
+437
+
+481
+
+484
+
+7
+
+RESOURCE BULLETIN PNW-RB-270
+
+Table 2—Estimated number of trees on Guam, by species (continued)
+
+Scientific name
+
+Common name
+
+Calophyllum inophyllum Ficus tinctoria Mangifera indica Annona reticulata Macaranga thompsonii Eugenia thompsonii Mammea odorata Melanolepis multiglandulosa Chrysophyllum cainito Tarenna sambucina Ficus prolixa Spathodea campanulata Pisonia grandis Tristiropsis obtusangula Artocarpus altilis Intsia bijuga Artocarpus mariannensis Barringtonia asiatica Leucaena insularum tree unknown Pandanus dubius Eugenia palumbis
+
+da’ok hoda, tagete mångga, mango annonas, custard apple pengua atoto chopak alom star apple sumac-lada nunu African tulip tree umumu faia, faniok lemmai, breadfruit ifit dugdug, seeded breadfruit puting, fish kill native tangan tangan other or unknown live tree pahong agatelang
+
+Number of trees
+
+Total
+
+Sampling error
+
+Thousands
+
+471
+
+301
+
+357
+
+306
+
+208
+
+196
+
+200
+
+126
+
+186
+
+129
+
+178
+
+172
+
+176
+
+178
+
+164
+
+165
+
+152
+
+153
+
+152
+
+153
+
+150
+
+81
+
+124
+
+82
+
+85
+
+86
+
+75
+
+63
+
+73
+
+51
+
+65
+
+41
+
+37
+
+20
+
+37
+
+37
+
+35
+
+36
+
+27
+
+18
+
+25
+
+18
+
+14
+
+14
+
+Glochidion marianum Barringtonia racemosa Hernandia sonora
+
+Glochidion marianum langasat nonak
+
+14
+
+14
+
+12
+
+12
+
+12
+
+12
+
+Tabebuia pallida
+
+pink tabebuia
+
+12
+
+12
+
+8
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Number of plots
+
+10
+
+9
+
+8
+
+7
+
+6
+
+5
+
+4
+
+3
+
+2
+
+1
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9 10 11
+
+Number of species
+
+Figure 5—Number of tree species found on Forest Inventory and Analysis sampled plots. The average number of tree species per field-visited plot was 5 and ranged from 1 to 11 species per plot based on the 45 plots with inventoried trees.
+
+Area (thousand acres)
+
+45 40 35 30 25 20 15 10
+5 0
+Small diameter Medium diameter Large diameter Stand size class
+Figure 6—Forest area by stand-size class. Forests in the large-diameter stand-size class are defined as having a majority of trees ≥11.0 inches in diameter at breast height (d.b.h.). Forests in the medium-diameter stand-size class are defined as having a majority of trees between 5.0 and 11.0 inches d.b.h. Forests in the smalldiameter stand-size class have a majority of trees with d.b.h. <5.0 inches.
+9
+
+RESOURCE BULLETIN PNW-RB-270
+
+60
+
+50
+
+Number of live trees (millions)
+
+40
+
+30
+
+20
+
+10
+
+0 0–2.9
+
+3.0–4.9 5.0–6.9 7.0–8.9 9.0–10.9 11.0–14.9 15+ Diameter (inches)
+
+Figure 7—Estimated number of live trees by diameter class in 2013. Smaller trees are the most numerous across all size classes, indicating that regeneration is abundant.
+
+Volume, Biomass, and Carbon
+Stem volume (wood) is a metric by which forest productivity, vigor, and structure can be assessed and modeled to examine current forest conditions and project future forest status. Field-derived tree length and diameter measurements are used to produce single-tree volume estimates, which are then expanded to assess volume for entire forested stands. Volume estimates can then be used in additional models to study forest biomass and carbon dynamics. Biomass and carbon distribution by diameter class follows closely the pattern seen in volume by diameter-class distribution (tables A2-5 and A2-6), in which biomass was concentrated in the small to medium stand-size classes. Trees 5.0 to 9.9 inches in diameter represented the highest overall pool of aboveground biomass (fig. 8).
+
+10
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Stem biomass (thousand tons)
+
+1,000 900 800 700 600 500 400 300 200 100 0
+
+0–4.9
+
+5.0–9.9
+
+10.0–14.9
+
+Diameter class (inches)
+
+15.0+
+
+Figure 8—Stem biomass (thousand tons) by diameter class. On Guam, stem biomass is generally present in the small to medium stand-size classes.
+
+Understory Vegetation
+Understory vegetation is an important structural component in all forest ecosystems. The life form type and density of cover could affect forest structure and function, as well as influence wildlife habitat, spread of disease, soil stability, and competition between native and nonnative plants. FIA field crews sample understory vegetation in plots on forest and vegetated nonforest land. To reflect forest structure, the percentage of canopy cover by four structural layers and the percentage of total canopy cover to 1 percent are estimated for tree seedlings (trees <1.0 inch in diameter at breast height [d.b.h.]) and saplings (trees 1.0 to 4.9 inches d.b.h.); shrubs (woody, multiple-stem plants of any size, including woody vines); forbs (herbaceous, broadleaf plants, including nonwoody vines and ferns); and graminoids (grasses and grass-like plants, including rushes and sedges). To reflect species composition, the percentages of total canopy cover and main canopy layer are estimated for the four most abundant (≥3 percent canopy cover) life forms: seedlings and saplings, shrubs, forbs, and graminoid species. Graminoids were the most common understory vegetation found on all FIA plots, followed by seedlings and saplings, shrubs, and woody vines (fig. 9).
+
+11
+
+RESOURCE BULLETIN PNW-RB-270
+
+Understory vegetation life form
+
+Shrubs and woody vines
+Seedlings and saplings
+Graminoids
+
+Forbs
+
+0
+
+5
+
+10
+
+15
+
+20
+
+25
+
+Average cover (percent)
+
+Figure 9—Average understory vegetation canopy cover percentage by life form in Guam’s forests.
+
+Extent of Standing Dead Wood
+Standing dead trees (snags) represent an important component of forest structure and wildlife habitat. FIA plot measurements are well suited to estimating standing dead wood throughout all forest types and ownerships across the island. Dead trees fill many ecologically important roles in forests. Dead wood in a forest provides habitat for wildlife, insects, and fungi (both native and invasive); improves soil fertility through nutrient cycling and moisture retention; adds to fuel loads; and is a key structural element in mature forests. Large-scale disturbances caused by weather events and insects can substantially increase input into the dead wood pool, leading to a notable effect on the total dead wood stores present. Dead wood resources are complex, and FIA provides estimates of the amount of standing dead trees (snags). There are approximately 30,251 tons of dead wood on Guam: 21,331 tons in the 5.0- to 9.9-inch diameter class and 8,920 tons in the >10-inch diameter class (fig. 10; table A2-6).
+Nontimber Forest Products
+Nontimber forest products are those not traditionally included as timber in economic reporting. These products contribute in important ways to the livelihoods and welfare of people living in and near forests. They provide construction materials, fencing, furniture, foods, medicines, fibers, floral products, plant oils, dyes, food wrapping, fuels, and livestock feed, and represent other important cultural values (Dawson et al. 2014). In Guam’s FIA plots, Cocos nucifera and Pandanus tectorius had the highest number of trees of these species of interest (fig. 11) and are used as a food crop and for handicrafts.
+12
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Dead tree biomass (thousands of tons)
+
+30
+
+25
+
+20
+
+15
+
+10
+
+5
+
+0
+
+5.0–9.9
+
+10+
+
+Diameter class (inches)
+
+Figure 10—Aboveground standing dead tree biomass for trees with a diameter greater than 5 inches.
+
+Scientific name of selected nontimber forest products
+
+Artocarpus mariannensis Artocarpus altilis
+Chrysophyllum cainito Mangifera indica Annona muricata
+Pandanus tectorius Cocos nucifera 500
+
+1,000
+
+1,500
+
+2,000
+
+Number of trees (thousands)
+
+2,500
+
+Figure 11—Number of trees in the thousands of selected nontimber forest product species. Cocos nucifera and Pandanus tectorius had the highest number of trees of the nontimber forest products sampled.
+
+Forest Health
+Forests are complex ecosystems composed of plants, animals, fungi, and bacteria that interact with each other and with nonbiotic elements. Trees dominate forested landscapes, but less obvious components such as fungi and soil microbes are also important (Molina 1994), with each piece of the system playing a role in creating a balanced and healthy environment. Forests can sequester carbon from the atmosphere, serve as longterm carbon storage (Harmon et al. 1990), protect soil from erosion, and remove pollutants to improve air quality (Nowak et al. 2014). On Guam, forests comprise nearly 53 percent of the land area, and the health of these forests affects their ability to maintain forest species composition and function and protect surrounding environments.
+13
+
+RESOURCE BULLETIN PNW-RB-270
+Forest Disturbances and Their Extent
+The forests on Guam have been affected by typhoons, droughts, urbanization, wildfires, and invasions of introduced insects, plants, and ungulate species. Introduced ungulates such as the Philippine deer (Rusa marianna) and feral pigs (Sus scrofa) consume seeds, fruits, and foliage, and trample and uproot regenerating plants, inhibiting forest regeneration (Morton et al. 2000). In the mid-1940s, the unintentional introduction of the brown tree snake (Boiga irregularis) led to the functional extirpation of native seed dispersing birds from the forests (Rogers et al. 2017). Declines and losses of native species as a result of these disturbances have been especially severe on Guam, prompting the U.S. Fish and Wildlife Service, in 2015, to add 23 species to the federal list of endangered and threatened wildlife and plants on Guam (50 C.F.R. § 17 2015). Guam is located in “Typhoon Alley,” where interactions between frequent tropical storms and anthropogenic disturbances, which expose soil and fragment ecosystems, have greatly altered natural communities (Mafnas 2010). Guam is also anticipating an increase in its human population because of the expansion of U.S. military installations, where proposed housing development and other activities are expected to eliminate about 9 percent of Guam’s forest area (Mafnas 2010). Disturbances on forest and nonforest land on Guam were generally caused by fire, animals and insects (fig. 12). The presence of conks, other fungi fruiting bodies, and signs of advanced decay, i.e., rot in sapwood/heartwood of trees, represented the majority of tree damage (57 percent) observed in inventory plots (fig. 13).
+
+16% 20%
+
+34%
+
+30%
+
+None found Fire damage Animal damage (deer/pig) Insect damage
+
+Figure 12—Area affected by type of disturbance on Guam. 14
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+1% 4% 7% 9%
+10%
+12%
+
+57%
+
+Conks, fruiting bodies, and signs of advanced decay
+Loss of apical dominance, dead terminal
+Open wounds Vines in the crown Broken or dead Damaged buds, foliage, or shoots Other
+
+Figure 13—Tree damage types occurring on live trees in Forest Inventory and Analysis plots. The majority of damages to saplings and trees were conks, fruiting bodies, and signs of advanced decay.
+
+Insects
+
+In 2003, an unintentional introduction of cycad scale (Aulacaspis yasumatsui) on
+
+Guam resulted in a steep decline in the population of native cycad species (Cycas
+
+circinalis), raising many concerns about the subsequent ecosystem response
+
+(Marler and Lawrence 2012). Rhi-
+
+noceros beetle (Oryctes rhinoceros)
+
+Number of live trees measured
+
+was found on Guam in 2007 and has the potential to cause significant damage to Guam’s forest ecosystems and economy (Mankin and Moore
+
+1,400 1,200 1,000
+
+No damage present
+Damages present from cycad scale or rhinoceros beetle
+
+2010). During the 2013 inventory, 93
+
+800
+
+percent of Cycas circinalis showed
+
+600
+
+signs of damage as a result of cycad scale, and 15 percent of Cocos nucifera showed signs of damage from the rhinoceros beetle (fig. 14).
+
+400
+
+200
+
+0 Cocos nucifera
+
+Cycas circinalis
+
+Scientific name
+
+Figure 14—Severity of damage from Cycad scale in Cycas circinalis and rhinoceros beetle in Cocos nucifera.
+
+15
+
+Ashley Lehman
+
+RESOURCE BULLETIN PNW-RB-270
+Invasive Vegetation
+Invasive plants can significantly alter forest structure and composition and can diminish ecosystem resilience to other disturbance processes. Accidental or intentional introductions of forbs, shrubs, vines, and trees have profoundly affected the environment on Guam (fig. 15). Invasive plants tend to proliferate owing to an absence of natural enemies and the inability of native plant species to compete with invasive species (Muniappan et al. 2002). During World War II, large areas of vegetation were cleared, leading to an increase in nonnative woody species such as Leucaena leucocephala (Fosberg 1960, Savidge 1987). Small oceanic islands are exceptionally vulnerable to damages caused by intentional and unintentional introduction of alien species that, once established, are difficult or even impossible to eradicate (Marler and Lawrence 2012, Van Driesche et al. 2010). Nineteen invasive species out of a list of 38 species identified by local land managers were found during the 2013 inventory (table 3). Vitex parviflora and Leucaena leucocephala were the most dominant invasive plant species present in 2013 (fig. 16).
+Figure 15—Invasive species, such as Mikania micrantha
+shown here, can outcompete and take over a landscape on Guam. 16
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Table 3—Presence or absence of listed Guam invasive species
+
+Scientific name Achyranthes aspera Adenanthera pavonina Amaranthus spinosus Antigonon leptopus Arundina graminifolia Averrhoa bilimbi Bidens alba Chromolaena odorata Cinnamomum verum Clerodendrum chinense Clerodendrum sp. Coccinia grandis
+
+Presence/absence —
+
+—
+    
+— — — —
+
+Scientific name Imperata cylindrica Lantana camara Leucaena leucocephala Lemna minor Lonicera japonica Mimosa diplotricha (M. invisia) Mikania micrantha Mucuna pruriens Nymphaea sp. Pennisetum polystachion Piper auritum Pistia stratiotes
+
+Presence/absence — —
+
+— — —
+ 
+—
+
+— —
+
+Egeria densa Eichhornia crassipes Epipremnum pinnatum Euphorbia cyathophora Falcataria moluccana Heterospathe elata Hydrilla verticillata
+
+—
+
+Spathodea campanulata
+
+
+
+—
+
+Stachytarpheta jamaicensis
+
+
+
+
+
+Syngonium podophyllum
+
+
+
+
+
+Tinospora sp.
+
+—
+
+—
+
+Tradescantia spathacea
+
+
+
+
+
+Panicum maximum (Urochloa maxima)
+
+
+
+—
+
+Vitex parviflora
+
+
+
+Note: 38 species were searched for; 19 species were found on plots.  = species was found during Forest Inventory and Analysis (FIA) inventory.
+— = species was not found during FIA inventory.
+
+Epipremnum pinnatum
+
+Averrhoa bilimbi
+
+Scientific name
+
+Mikania micrantha
+
+Antigonon leptopus
+
+Heterospathe elata
+
+Leucaena leucocephala
+
+Vitex parviflora
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+
+18
+
+Cover on forest land (percent)
+
+Figure 16—Total percentage of cover of invasive species present in the vegetation in Guam’s forested lands. Vitex parviflora and Leucaena leucocephala were the most dominant invasive vegetation species present during the 2013 inventory.
+17
+
+RESOURCE BULLETIN PNW-RB-270
+
+Conclusions
+This report presents an updated overview of Guam’s forest resources, highlighting information that is new as well as confirming previously known information. Some readers may want to see more indepth research and analysis on selected topics to fully understand the current state and changes taking place in Guam’s forests. Note, however, that not all the results published in this report can be directly compared to those in the previous report (Donnegan et al. 2004) for the purpose of assessing changes in forest resources over the past decade. Use of the same sampling protocols and plot design in the future will support meaningful assessment of change in each 10-year interval between field visits. Long-term forest monitoring in FIA plots is expected to provide information on the impacts of disturbances such as invasive species on tree growth and survival. Armed with these data, we can begin quantifying trends in Guam’s forest, from the growth and survival of understory seedlings to large, landscape-level shifts in forests from such challenges associated with a growing population and a changing climate.
+
+Scientific and Common Names of Plants Found During Inventory
+
+Life form Trees:
+
+Scientific name Adenanthera pavonina L. Aglaia mariannensis sensu Kaneh., non Merr. Annona muricata L. Annona reticulata L. Areca catechu L. Artocarpus altilis (Parkinson) Fosberg Artocarpus mariannensis Trécul Averrhoa bilimbi L. Barringtonia asiatica (L.) Kurz Barringtonia racemosa Roxb. Bauhinia monandra Kurz Calophyllum inophyllum L. Cananga odorata (Lam.) Hook. f. & Thomson Carica papaya L. Casuarina equisetifolia L. Cerbera dilatata Markgr. Chrysophyllum cainito L. Cocos nucifera L. Cyathea lunulata (G. Forst.) Copel. Cycas circinalis L. Eugenia palumbis Merr. Eugenia reinwardtiana (Blume) DC.
+Eugenia thompsonii (Merr.) N.Snow
+
+Common name kulalis mapunyao laguaná, kasoy, soursop annonas, custard apple puguá, betel nut lemmai, breadfruit dugdug, seeded breadfruit bilimbi, pickle tree puting, fish kill, sea putat langaasag orchid tree, mariposa da’ok ilang-ilang papaya gagu, ironwood chiute star apple niyok, coconut palm tsatsa, Pacific tree fern fandang, federico agatelang a’abang atoto
+
+18
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Scientific and Common Names of Plants Found During Inventory (continued)
+
+Life form Scientific name
+
+Common name
+
+Ficus prolixa G. Forst.
+
+Nunu, fig
+
+Ficus tinctoria G. Forst.
+
+hoda, tagete, fig
+
+Glochidion marianum Müll. Arg.
+
+Glochidion marianum
+
+Guamia mariannae (Saff.) Merr.
+
+paipai
+
+Hernandia ovigera L.
+
+oschal
+
+Hernandia sonora L.
+
+nonak, mago
+
+Heterospathe elata Scheff.
+
+palma brava
+
+Hibiscus tiliaceus L.
+
+sea hibiscus, pago
+
+Inocarpus fagifer (Parkinson) F.R. Fosberg
+
+budo buoy, Tahitian chestnut
+
+Intsia bijuga (Colebr.) Kuntze
+
+ifit
+
+Kleinhovia hospita L.
+
+guest tree
+
+Leucaena insularum (Guill.) Daniker
+
+native tangan tangan
+
+Leucaena leucocephala (Lam.) de Wit
+
+tangan tangan
+
+Macaranga thompsonii Merr.
+
+pengua
+
+Mammea odorata (Raf.) Kosterm.
+
+chopak
+
+Mangifera indica L.
+
+mångga, mango
+
+Maytenus thompsonii (Merr.) Fosberg
+
+luluhut
+
+Melanolepis multiglandulosa (Reinw. ex Blume) Rchb. f. & Zoll. alom
+
+Morinda citrifolia L.
+
+lada
+
+Neisosperma oppositifolia (Lam.) Fosberg & Sachet
+
+fagot
+
+Ochrosia mariannensis A. DC.
+
+langiti
+
+Pandanus dubius Spreng.
+
+pahong
+
+Pandanus tectorius Parkinson ex Zucc.
+
+kafu, kaffo, Tahitian screwpine
+
+Pisonia grandis R. Br.
+
+amumo
+
+Polyscias grandifolia Volkens
+
+pepega
+
+Premna obtusifolia R. Br.
+
+ahgao, premna
+
+Spathodea campanulata P. Beauv.
+
+African tulip tree
+
+Tabebuia pallida (Lindl.) Miers
+
+pink tabebuia
+
+Tarenna sambucina (G. Forst.) Durand
+
+sumac-lada
+
+Triphasia trifolia (Burm. f.) P. Wilson
+
+lemondichina
+
+Tristiropsis obtusangula Radlk.
+
+faia, faniok
+
+Vitex parviflora Juss.
+
+smallflower chastetree
+
+Forbs:
+
+Abelmoschus moschatus Medik. Alocasia cucullata (Lour.) G. Don Alocasia macrorrhizos (L.) G. Don Antigonon leptopus Hook. & Arn. Arundina graminifolia (D. Don) Hochr. Asplenium nidus L. Bidens alba (L.) DC. Chromolaena odorata (L.) R.M. King & H. Rob. Curcuma longa L.
+
+musk okra Chinese taro giant taro coral vine, chain of love bamboo orchid Hawaii birdnest fern romerillo Siam weed, kesengesil, masigsig common turmeric
+19
+
+RESOURCE BULLETIN PNW-RB-270
+
+Scientific and Common Names of Plants Found During Inventory (continued)
+
+Life form Scientific name
+
+Common name
+
+Dicranopteris linearis (Burm.) Underw.
+
+Old World forkedfern
+
+Epipremnum pinnatum (L.) Engl.
+
+pothos, centipede tongavine
+
+Gleichenia linearis (Burm. f.) C.B. Clarke
+
+Hyptis capitata Jacq.
+
+false ironwort
+
+Hyptis rhomboidea Martius & Galeott
+
+Ipomoea pes-caprae (L.) R. Br.
+
+bayhops
+
+Ipomoea pes-caprae (L.) R. Br. ssp. brasiliensis (L.) van Ooststr. Brazilian bayhops
+
+Lycopodiella cernua (L.) Pic. Serm. var. cernua
+
+staghorn clubmoss
+
+Lygodium microphyllum (Cav.) R. Br.
+
+small-leaf climbing fern
+
+Lygodium scandens
+
+Malvastrum coromandelianum (L.) Garcke
+
+threelobe false mallow
+
+Microlepia speluncae (L.) T. Moore
+
+limpleaf fern
+
+Mikania micrantha Kunth
+
+bittervine, mile-a-minute vine
+
+Mimosa pudica L.
+
+shameplant, sleeping grass
+
+Mucuna pruriens (L.) DC.
+
+cowitch, velvet bean, akangkang dangkulo
+
+Musa L. Nephrolepis biserrata (Sw.) Schott Nephrolepis hirsutula (J.R. Forst.) C. Presl
+
+banana giant swordfern scaly swordfern
+
+Passiflora foetida L. Passiflora suberosa L. Phymatosorus scolopendria (Burm. f.) Pic. Serm. Polypodium punctatum Thunb. ex Murray Pteris tripartita Sw. Pyrrosia lanceolata (L.) Farw.
+Senna tora (L.) Roxb. Sida rhombifolia L. Spathoglottis plicata Blume Sphagneticola trilobata (L.) Pruski Stachytarpheta jamaicensis (L.) Vahl Stictocardia tiliifolia (Desr.) Hallier f. Stylosanthes guianensis (Aubl.) Sw. Syngonium podophyllum Schott Teramnus labialis (L. f.) Spreng. Thelypteris maemonensis (W.H. Wagner & Grether) B.C. Stone Thelypteris opulenta (Kaulf.) Fosberg Thelypteris parasitica (L.) Fosberg Thelypteris pennata (Poir.) Morton
+
+fetid passionflower corkystem passionflower, devils pumpkin monarch fern elkhorn fern giant brake Lanceleaf tongue fern sickle senna Cuban jute Philippine ground orchid Bay Biscayne creeping-oxeye light-blue snakeweed spottedheart
+American evergreen blue wiss Maemon Valley maiden fern jeweled maiden fern parasitic maiden fern graceful maiden fern
+
+Thelypteris unita (L.) Morton Tradescantia spathacea Sw. Vigna adenantha (G. Mey.) Marechal, Mascherpa & Stanier Waltheria indica L. Wedelia Jacq.
+
+boatlily, moses-in-the-cradle wild pea uhaloa creepingoxeye
+
+20
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Scientific and Common Names of Plants Found During Inventory (continued)
+
+Life form Scientific name
+
+Common name
+
+Graminoids: Bothriochloa bladhii (Retz.) S.T. Blake
+
+Caucasian bluestem
+
+Centotheca latifolia (L.) Desv.
+
+Cynodon dactylon (L.) Pers.
+
+bermudagrass
+
+Dimeria chloridiformis sensu Ohwi 1941, non (Gaudich.) K. Schum. & Lauterb.
+
+Eleusine indica (L.) Gaertn.
+
+Indian goosegrass
+
+Fimbristylis dichotoma (L.) Vahl
+
+forked fimbry
+
+Fimbristylis tristachya R. Br.
+
+fimbry
+
+Imperata conferta (J. Presl) Ohwi
+
+Miscanthus floridulus (Labill.) Warb. ex K. Schum. & Lauterb. swordgrass
+
+Oplismenus compositus (L.) P. Beauv
+
+running mountaingrass
+
+Oplismenus hirtellus (L.) P. Beauv
+
+basketgrass
+
+Paspalum paniculatum L.
+
+arrocillo
+
+Pennisetum polystachion (L.) Schult.
+
+mission grass
+
+Pennisetum polystachion (L.) Schult. ssp. Setosum (Sw.) Brunken mission grass
+
+Phragmites karka (Retz.) Trin. ex Steud. [excluded]
+
+tall reed
+
+Rhynchospora rubra Domin
+
+rhynchospora
+
+Saccharum spontaneum L.
+
+wild sugarcane
+
+Scleria polycarpa Boeckeler
+
+nutrush
+
+Sorghum halepense (L.) Pers.
+
+Johnsongrass
+
+Urochloa maxima (Jacq.) R. Webster
+
+guineagrass
+
+Shrubs and woody vines:
+
+Abrus precatorius L. Cestrum diurnum L. Colubrina asiatica (L.) Brongn. Discocalyx megacarpa Merr. Entada pursaetha DC. Flagellaria indica L. Flemingia strobilifera (L.) W.T. Aiton Freycinetia reineckei Warb. iul (Palau) Ixora triantha Volkens Jasminum marianum DC. Medinilla medinilliana (Gaudich.) Fosberg & Sachet Melastoma malabathricum L. Melastoma malabathricum var. mariannum Miconia punctata (Desr.) D. Don ex DC.
+Myrtella bennigseniana (Volkens) Diels Scaevola sericea Vahl Scaevola sericea Vahl var. taccada (Gaertn.) Thieret & B.
+Lipscomb Telosma Coville Wikstroemia elliptica Merr.
+
+rosarypea day jessamine Asian nakedwood
+wildhops
+Malabar melastome auquey beach naupaka nanaso, beach naupaka telosma gapit atayaki
+
+21
+
+RESOURCE BULLETIN PNW-RB-270
+Acknowledgments
+This project would not have been possible without the close collaboration of the Government of Guam’s Department of Agriculture Forestry Division; the University of Guam (UOG); and the U.S. Forest Service. Guam’s Department of Agriculture provided logistical support, and the UOG hired and managed field personnel.
+We thank the Guam Forestry Division for supporting field crew access to plot locations as well as providing vehicles, staff support, and office space, with particular thanks to Justin Santos, Joe Mafnas, Bel Soliva, and Ruddy Estoy, who helped set up plot access, managed staff and crew schedules, and conducted outreach to private landowners and local communities. Forestry Division field crew members Carlos Medina, Johnny San Nicolas, Kulian Salil, Kenneth Aguon, Patrick Quenga, and Greg Dirige helped us collect quality data and reach a timely completion of field work. Thanks also go to the Guam Department of Land Management and Bureau of Statistics and Planning for additional support.
+We acknowledge the role of UOG professor James McConnell, who helped develop a partnership of the UOG, Micronesia Challenge Terrestrial monitoring program, Forest Service, and Guam Forestry Division. He remains an active player in current programs and an idea generator for future collaborations. We also thank Else Demuelenaere for helping to coordinate the UOG staff, participating in FIA plot remeasurement and installation, field data cleanup, and managing the project to collect additional monitoring data as part of the Micronesia Challenge program. We are grateful to Else Demuelenaere, John Benedict, Jonathan “Kawika” Davis, Ron Manzano, Anthony Santos, Robert Alexander, Jivan Ramachandran, and Jesse Hines for their dedication to collecting high-quality data. We also thank several prominent regional scientists for their input to FIA protocol and for providing training to FIA crews in data collection on insect and pathogen damages. Thanks are due to Aubrey Moore, Roland Quitugua, and Robert Schlub, University of Guam, and to Phil Cannon, Sheri Smith, David Bakke, and Kathleen Friday, U.S. Forest Service Pacific Southwest Region State and Private Forestry. We also thank Lauren Gutierrez for her efforts in training FIA field staff in plant identification on Guam.
+We thank our crew leaders, including Seth Ayotte, and Matthew O’Driscoll, for their significant input to field protocol revisions, training of new project staff, and attention to detail and data quality throughout the field season. Finally, we thank the members of the information management team for compiling the Guam raw plot measurements into meaningful data for analysis, and the reviewers of this manuscript for their invaluable comments.
+22
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Metric Equivalents
+
+When you know: Inches Feet (ft) Acres (ac) Cubic feet (ft3) Tons (ton)
+
+Multiply by: 2.54 0.3048 0.405 0.0283 0.907
+
+To find: Centimeters Meters Hectares Cubic meters Tonnes or megagrams
+
+Literature Cited
+50 C.F.R. § 17 2015. Endangered status for 16 species and threatened status for 7 species in Micronesia.
+Bechtold, W.A.; Patterson, P.L. 2005. The enhanced Forest Inventory and Analysis program—national sampling design and estimation procedures. Gen. Tech. Rep. GTR-SRS-80. Asheville, NC: U.S. Department of Agriculture, Forest Service, Southern Research Station. 85 p.
+Dawson, I.K.; Leakey, R.; Clement, C.R.; Weber, J.C.; Cornelius, J.P.; Roshetko, J.M.; Vinceti, B.; Kalinganire, A.; Tchoundjeu, Z.; Masters, E.; Jamnadass, R. 2014. The management of tree genetic resources and the livelihoods of rural communities in the tropics: nontimber forest products, small holder agroforestry practices and tree commodity crops. Forest Ecology and Management. 333: 9–21.
+Donnegan, J.A.; Butler, S.L.; Grabowiecki, W.; Hiserote, B.A.; Limtiaco, D. 2004. Guam’s forest resources, 2002. Resour. Bull. PNW-RB-243. Portland, OR: U.S. Department of Agriculture, Forest Service, Pacific Northwest Research Station. 28 p.
+Fosberg, F.R. 1960. The vegetation of Micronesia. Bulletin of the American Museum of Natural History. 119: 1–75.
+Harmon, M.E.; Ferrell, W.K.; Franklin, J.F. 1990. Effects on carbon storage of conversion of old growth forests to young forests. Science. 247(4943): 699–702.
+Helms, J.A., ed. 1998. The dictionary of forestry. Bethesda, MD: Society of American Foresters. 210 p.
+Liu, L.Z. 2014. Guam landcover map update 2014 accuracy assessment. http:// www.fs.usda.gov/detailfull/r5/forest-grasslandhealth/?cid=fsbdev3_046690&wid th=full.
+
+23
+
+RESOURCE BULLETIN PNW-RB-270
+Mafnas, J.S. 2010. Guam statewide forest resource assessment and resource strategy 2010–2015. Mangilao, Guam: Department of Agriculture, Forestry and Soil Resources Division. 143 p. https://www.stateforesters.org/wp-content/ uploads/2018/08/Guam-FAP.pdf. (8 August 2019).
+Mankin, R.W.; Moore, A. 2010. Acoustic detection of Orycetes rhinoceros (Coleoptera: Scarabaeidae: Dynastinae) and Nasutitermes luzonicus (Isoptera: Termitidae) in palm trees in urban Guam. Ecology and Behavior. 103(4): 1135–1143.
+Manner, H.I. 1993. A review of traditional agroforestry in Micronesia. In: Raynor, B.; Bay, R.R., tech. coords. Proceedings of the workshop on research methodologies and applications for Pacific Island agroforestry. Gen. Tech. Rep. PSW-GTR-140. Albany, CA: U.S. Department of Agriculture, Forest Service, Pacific Southwest Research Station: 32–36.
+Marler, T.E.; Lawrence, J.H. 2012. Demography of Cycas micronesica on Guam following introduction of the armoured scale Aulacaspis yasumatsui. Journal of Tropical Ecology. 28: 223–242.
+Molina, R. 1994. The role of mycorrhizal symbioses in the health of giant redwoods and other forest ecosystems. In: Aune, P.S., tech. coord. Proceedings of the symposium on giant sequoias: their place in the ecosystem and society. Gen. Tech. Rep. PSW-GTR-151. Albany, CA: U.S. Department of Agriculture, Forest Service, Pacific Southwest Research Station: 78–81.
+Morton, J.M.; Amidon, F.A.; Quinata, L.R. 2000. Structure of a limestone forest on northern Guam. Micronesica. 32(32): 229–244.
+Moore, D.S.; McCabe, G.P. 1989. Introduction to the practice of statistics. New York: W.H. Freeman. 825 p.
+Mueller-Dombois, D.; Fosberg, F.R. 1998. Vegetation of the tropical Pacific Islands. New York: Springer-Verlag. 733 p.
+Muniappan, R.; Cruz, J.; Bamba J. 2002. Invasive plants and their control in Micronesia. Micronesica. (Suppl.): 85–92.
+Nowak, D.J.; Hirabayashi, S.; Bodine, A.; Greenfield, E. 2014. Tree and forest effects on air quality and human health in the United States. Environmental Pollution. 193: 119–129.
+Raulerson, L.; Rinehart, A.F. 1991. Trees and shrubs of the Northern Mariana Islands. Saipan, Commonwealth of the Northern Mariana Islands: Coastal Resources Management, Office of the Governor. 120 p.
+24
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+Rogers, H.S.; Buhle, E.R.; HilleRisLambers, J.; Fricke, E.C.; Miller, R.H.; Tewksbury, J.J. 2017. Effects of an invasive predator cascade to plants via mutualism disruption. Nature Communications. 8: 14557.
+Savidge, J.A. 1987. Extinction of an island forest avifauna by an introduced snake. Ecology. 68(3): 660–668.
+Smith, W.B.; Miles; P.D.; Vissage, J.S.; Pugh, S.A. 2004. Forest resources of the United States, 2002. Gen. Tech. Rep. NC- 241. St. Paul, MN: U.S. Department of Agriculture, Forest Service, North Central Research Station. 137 p.
+U.S. Department of Agriculture, Forest Service [USDA FS]. 2006. Forest Inventory and Analysis glossary. On file with: Pacific Northwest Research Station, Forest Inventory and Analysis, 620 SW Main Street, Suite 400, Portland, OR 97205.
+U.S. Department of Agriculture, Forest Service [USDA FS]. 2012. Forest Inventory and Analysis program: inventory field manuals for the Pacific Islands. Portland, OR: U.S. Department of Agriculture, Forest Service, Pacific Northwest Research Station. https://www.fs.fed.us/pnw/rma/fia-topics/documentation/fieldmanuals/. (19 July 2019).
+U.S. Department of Agriculture, Natural Resources Conservation Service [USDA NRCS]. 2000. The PLANTS database. Baton Rouge, LA: National Plant Data Center. http://plants.usda.gov. (5 January 2015).
+Van Driesche, R.G.; Carruthers, R.I.; Center, T.; Hoddle, M.S.; HoughGoldstein, J.; Morin, L.; Smith, L.; Wagner, D.L.; Blossey, B.; Brancatini, V.; Casagrande, R.; Causton, C.E.; Coetzee, J.A.; Cuda, J.; Ding, J.; Fowler, S.V.; Frank, J.H.; Fuester, R.; Goolsby, J.; Grodowitz, M.; Heard, T.A.; Hill, M.P.; Hoffmann, J.H.; Huber, J.; Julien, M.; Kairo, M.T.K.; Kenis, M.; Mason, P.; Medal, J.; Messing, R.; Miller, R.; Moore, A.; Neuenschwander, P.; Newman, R.; Norambuena, H.; Palmer, W.A.; Pemberton, R.; Perez Panduro, A.; Pratt, P.D.; Rayamajhi, M.; Salom, S.; Sands. D.; Schooler, S.; Schwarzlander, M.; Sheppard, A.; Shaw, R.; Tipping, P.W.; van Klinken, R.D. 2010. Classical biological control for the protection of natural ecosystems. Biological Control. 54(Suppl. 1): S2–S33.
+25
+
+RESOURCE BULLETIN PNW-RB-270
+Appendix 1: Inventory Design and Methods Field Design and Sampling Method
+The Forest Inventory and Analysis (FIA) program conducts a systematic, samplebased field inventory across all ownerships on a periodic basis, remeasuring the same plots approximately every 10 years. All FIA units use a common plot design, common set of measurement protocols, and a standard database design for compilation and distribution of data. Adaptations were made to the national design for the Guam inventory to include additional branching and rooting forms and additional tree crown measurements, as well as special interest species ranging from invasive plants to pathogens to invasive insects and animals.
+With active assistance from our partners at the University of Guam, 48 plots were spaced uniformly at 1.9-mi intervals using a hexagonal grid, at a threefold intensification of the spacing used in the mainland United States inventory plot grid. Forest inventory plots included four 24-ft, fixed-radius subplots in which a variety of information is collected at the plot, subplot, and tree levels (USDA FS 2012). Primary variables collected include plot location, slope, aspect, elevation, subplot slope position and slope shape, tree species, diameters, heights, damages, branching and rooting forms, decay, and epiphytic loadings.
+All plots classified by aerial photography as possibly being forested are established in the field without regard to land use or land cover. Field crews delineate areas within the plot that are comparatively less heterogeneous than the plot as a whole with regard to reserved status, owner group, forest type, stand-size class, and tree density; these areas are described as condition classes. The process of delineating these condition classes on a fixed-radius subplot is called mapping. All measured trees are assigned to the mapped condition class in which they are located.
+On plots, crews assess physical characteristics such as slope, aspect, and elevation; stand characteristics such as age, size class, forest type, disturbance, site productivity, and regeneration status; and tree characteristics such as tree species, diameter, height, damages, decay, and vertical crown dimensions. They also collect general descriptive information such as proximity to water and roads and the geographic position of the plot in the larger landscape.
+Estimates of tree volume and other forest attributes were derived from tree measurements and classifications made at each plot. A number of other variables are unique to the Pacific Northwest Research Station’s FIA program. These are “regional” variables and include such items as insect and disease damage, a record of previous disturbance on the plot. The Pacific Islands standardized plot installed at each forested location is a cluster of four subplots spaced 120 ft apart (fig. A1-1). Subplot 1 is in the center, with subplots 2 through 4 distributed radically around it.
+26
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Distance between subplot centers: 120 feet Distance from subplot center to microplot center: 12 feet
+6.8-foot radius microplot: seedlings + saplings 24-foot radius subplot: all trees (≥5 inches)
+
+Subplot
+
+2
+Microplot
+
+N
+4
+
+1 3
+
+Figure A1-1—The Forest Inventory and Analysis plot design used on Guam.
+Each point serves as the center of a 1/24-ac circular subplot used to sample all trees at least 5.0 inches in diameter at breast height (d.b.h.). A 1/300-ac microplot, with its center located 12 ft east of each subplot center, is used to sample trees 1.0 to 4.9 inches d.b.h., as well as seedlings (trees less than 1.0 inch d.b.h.).
+Data Processing
+The data used for this report are stored in the FIA National Information Management System (NIMS), which provides a means to input, edit, process, manage, and distribute FIA data. It includes a process for data loading, a national set of edit checks to ensure data consistency, an error correction process, approved equations and algorithms, code to compile and calculate attributes, a table report generator, and routines to populate the presentation database. The NIMS applies numerous algorithms and equations to calculate such variables as stand size, volume, and
+27
+
+RESOURCE BULLETIN PNW-RB-270
+biomass. It also generates estimates and associated statistics based on county areas and stratum weights developed outside of NIMS. Additional FIA statistical design and estimation techniques are further reviewed in Bechtold and Patterson (2005).
+Statistical Estimates
+Throughout this report, we have published standard errors (SE) for most of our estimates. These SEs account for the fact that we measured only a small sample of the forest (thereby producing a sample-based estimate) and not the entire forest (which is the population parameter of interest). Because of small sample sizes or high variability within the population, some estimates can be very imprecise. The reader is encouraged to take the SE into account when drawing any inference. One way to consider this type of uncertainty is to construct confidence intervals. Customarily, 66- or 95-percent confidence intervals are used. A 95-percent confidence interval means that one can be 95 percent confident that the interval contains the true population parameter of interest. For more details about confidence intervals, please consult Moore and McCabe (1989) or other statistical literature.
+Access Denied, Hazardous, or Inaccessible Plots
+Although every effort was made to visit all field plots that were entirely or partially forested, some were not sampled for a variety of reasons. Field crews may have been unable to obtain permission from the landowner to access the plot, and some plots were impossible for crews to safely reach or access. Some private landowners deny access to their land, but privately owned plots usually are not as hazardous or inaccessible as plots on public land. Although permission to visit public land is almost always granted, some public land lies in higher elevation areas that can be very dangerous or impossible to reach.
+This kind of missing data can introduce bias into the estimates if the nonsampled plots tend to be different from the entire population. Plots that are obviously nonforested (based on aerial photos) are rarely visited, and therefore the proportion of denied-access, hazardous, or inaccessible plots is significantly smaller than it is for forested plots. The poststratification approach outlined in Bechtold and Patterson (2005) removes nonsampled plots from the sample. Estimates are adjusted for plots that are partially nonsampled by increasing the estimates by the nonsampled proportion within each stratum.
+28
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+Appendix 2: Summary Data Tables
+The following tables contain basic information about the forest resources of Guam as they relate to the discussion of current forest issues and basic forest resource information presented in this report. Data are also available for download in nonsummarized form at https://www.fia.fs.fed.us.
+Number of Live Trees
+Table A2-1—Number of live trees on forest land by diameter class Table A2-2—Percentage of live trees on forest land by species Table A2-3—Number of live trees on forest land by species and diameter class
+Tree Volume
+Table A2-4—Estimated net volume of live trees on forest land by species and diameter class Table A2-5—Estimated volume of all live trees on forest land by diameter class
+Biomass and Carbon
+Table A2-6—Aboveground biomass and carbon of live and dead trees on forest land Table A2-7—Aboveground biomass of live trees on forest land by species and diameter class
+Understory Vegetation
+Table A2-8—Average understory vegetation cover and number of Forest Inventory and Analysis plots where the species occurred
+29
+
+RESOURCE BULLETIN PNW-RB-270
+
+Table A2-1—Number of live treesa on forest land by diameter class
+
+Diameter class Inches 0–2.9 3.0–4.9 5.0–6.9 7.0–8.9 9.0–10.9 11.0–14.9 15+
+
+Estimated number of live trees
+
+Total
+
+SE
+
+Millions
+
+45.3
+
+9.4
+
+16.8
+
+2.8
+
+6.1
+
+1.1
+
+2.0
+
+0.3
+
+1.5
+
+0.3
+
+1.0
+
+0.2
+
+0.4
+
+0.1
+
+Note: Totals may be off because of rounding; estimates are subject to sampling error.
+SE = sampling error. a Includes all live trees ≥1 inches in diameter at breast height.
+
+Table A2-2—Percentage of live treesa on forest land by species (continued)
+
+Scientific name Leucaena leucocephala Guamia mariannae Hibiscus tiliaceus Triphasia trifolia Vitex parviflora Aglaia mariannensis Morinda citrifolia Premna obtusifolia Heterospathe elata Neisosperma oppositifolia Averrhoa bilimbi Areca catechu Casuarina equisetifolia Ochrosia mariannensis Cocos nucifera Maytenus thompsonii Pandanus tectorius Cananga odorata Adenanthera pavonina Eugenia reinwardtiana Cycas circinalis Annona muricata Bauhinia monandra
+
+Common name Tangan tangan paipai sea-hibiscus, pago lemondichina smallflower chastetree mapunyao lada ahgao palma brava fagot bilimbi, pickle tree Puguá, betel nut gagu, ironwood langiti niyok, coconut palm luluhut Kafu, kaffo ilang-ilang kulalis a’abang fandang, federico laguaná, kasoy, soursop orchid tree, mariposa
+
+Percentage of all trees 12.72 12.54 12.33 11.61 6.24 6.17 4.63 3.50 2.97 2.69 2.64 2.35 2.28 2.18 1.99 1.70 1.54 1.31 1.14 0.97 0.85 0.85 0.66
+
+30
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Table A2-2—Percentage of live treesa on forest land by species (continued)
+
+Scientific name
+
+Common name
+
+Calophyllum inophyllum
+
+daok
+
+Ficus tinctoria
+
+hoda, tagete
+
+Mangifera indica
+
+mango
+
+Annona reticulata
+
+annonas, custard apple
+
+Macaranga thompsonii
+
+pengua
+
+Eugenia thompsonii
+
+atoto
+
+Mammea odorata
+
+chopak
+
+Melanolepis multiglandulosa
+
+alom
+
+Chrysophyllum cainito
+
+star apple
+
+Tarenna sambucina
+
+sumac-lada
+
+Ficus prolixa
+
+nunu
+
+Spathodea campanulata
+
+African tulip tree
+
+Pisonia grandis
+
+amumo
+
+Tristiropsis obtusangula
+
+fai’a
+
+Artocarpus altilis
+
+lemmai, breadfruit
+
+Intsia bijuga
+
+ifit
+
+Artocarpus mariannensis
+
+dugdug, seeded breadfruit
+
+Barringtonia asiatica
+
+putting, fish kill
+
+Leucaena insularum
+
+strand tangan tangan
+
+tree unknown
+
+other or unknown live tree
+
+Pandanus dubius
+
+pahong
+
+Eugenia palumbis
+
+agatelang
+
+Glochidion marianum
+
+Glochidion marianum
+
+Barringtonia racemosa
+
+langaasag
+
+Hernandia sonora
+
+nonak
+
+Tabebuia pallida
+
+pink tabebuia
+
+a Includes all live trees ≥1 inches diameter at breast height.
+
+Percentage of all trees 0.64 0.49 0.28 0.27 0.25 0.24 0.24 0.22 0.21 0.21 0.20 0.17 0.12 0.10 0.10 0.09 0.05 0.05 0.05 0.04 0.03 0.02 0.02 0.02 0.02 0.02
+
+31
+
+RESOURCE BULLETIN PNW-RB-270
+
+Table A2-3—Number of live treesa on forest land by species and diameter class (continued)
+
+Diameter class (inches)
+
+0–4.9
+
+5.0–9.9
+
+10.0–14.9
+
+15.0+
+
+Scientific name
+
+Total SE Total SE Total SE Total SE Number of trees (thousands)
+
+Leucaena leucocephala
+
+8,607 2,866 734 320
+
+—
+
+—
+
+—
+
+—
+
+Guamia mariannae
+
+9,126 3,955
+
+82 45 —
+
+—
+
+—
+
+—
+
+Hibiscus tiliaceus
+
+7,765 2,278 1,255 424
+
+29
+
+28
+
+—
+
+—
+
+Triphasia trifolia
+
+8,526 6,470 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Vitex parviflora
+
+2,855 1,433 1,206 340 421 164 102
+
+42
+
+Aglaia mariannensis
+
+4,274 3,199 257 93
+
+—
+
+—
+
+—
+
+—
+
+Morinda citrifolia
+
+3,322 1,246
+
+75 42
+
+—
+
+—
+
+—
+
+—
+
+Premna obtusifolia
+
+1,938 949 578 205
+
+41
+
+30
+
+14
+
+14
+
+Heterospathe elata
+
+1,060 687 1,122 868 —
+
+—
+
+—
+
+—
+
+Neisosperma oppositifolia
+
+1,673 1,247 286 214
+
+14
+
+14 —
+
+—
+
+Averrhoa bilimbi
+
+1,825 1,341 110 81
+
+—
+
+—
+
+—
+
+—
+
+Areca catechu
+
+1,561 1,190 161 82
+
+—
+
+—
+
+—
+
+—
+
+Casuarina equisetifolia
+
+1,472 1,066 155 92
+
+43
+
+41 —
+
+—
+
+Ochrosia mariannensis Cocos nucifera
+
+1,603 1,547 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+705 281 745 290
+
+14
+
+14
+
+Maytenus thompsonii
+
+1,247 1,203 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Pandanus tectorius
+
+330 230 801 229
+
+—
+
+—
+
+—
+
+—
+
+Cananga odorata
+
+912 918
+
+37 37
+
+—
+
+—
+
+12
+
+12
+
+Adenanthera pavonina
+
+760 765
+
+49 49
+
+12
+
+12
+
+12
+
+12
+
+Eugenia reinwardtiana
+
+712 687 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Cycas circinalis
+
+—
+
+—
+
+610 242
+
+14
+
+14
+
+—
+
+—
+
+Annona muricata
+
+599 429
+
+24 17 —
+
+—
+
+—
+
+—
+
+Bauhinia monandra
+
+456 459
+
+24 25 —
+
+—
+
+—
+
+—
+
+Calophyllum inophyllum
+
+356 227 114 76
+
+—
+
+—
+
+—
+
+—
+
+Ficus tinctoria
+
+304 306
+
+53 31 —
+
+—
+
+—
+
+—
+
+Mangifera indica
+
+—
+
+—
+
+37 37
+
+49
+
+38 122 123
+
+Annona reticulata
+
+—
+
+—
+
+186 114
+
+14
+
+14 —
+
+—
+
+Macaranga thompsonii Eugenia thompsonii
+
+—
+
+—
+
+86 69
+
+86
+
+59
+
+14
+
+14
+
+178 172 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Mammea odorata
+
+152 153
+
+24 25
+
+—
+
+—
+
+—
+
+—
+
+Melanolepis multiglandulosa
+
+152 153
+
+12 12
+
+—
+
+—
+
+—
+
+—
+
+Chrysophyllum cainito
+
+152 153 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Tarenna sambucina
+
+152 153 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+Ficus prolixa
+
+—
+
+—
+
+98 60
+
+24
+
+24
+
+29
+
+28
+
+All classes Total SE
+
+9,341 9,207 9,049 8,526 4,584 4,532 3,396 2,571 2,182 1,973 1,935 1,722 1,671 1,603 1,464 1,247 1,131
+961 834 712 624 623 481 471 357 208 200 186 178 176 164 152 152 150
+
+2,983 3,996 2,452 6,470 1,661 3,241 1,268 1,055 1,408 1,304 1,422 1,193 1,113 1,547
+528 1,203
+352 955 826 687 242 437 484 301 306 196 126 129 172 178 165 153 153 81
+
+32
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Table A2-3—Number of live treesa on forest land by species and diameter class (continued)
+
+Diameter class (inches)
+
+0–4.9
+
+5.0–9.9
+
+10.0–14.9
+
+15.0+
+
+Scientific name
+Spathodea campanulata Pisonia grandis Tristiropsis obtusangula Artocarpus altilis Intsia bijuga Artocarpus mariannensis Barringtonia asiatica Leucaena insularum Tree unknown Pandanus dubius Eugenia palumbis
+
+Total SE Total SE Total SE Total SE
+
+Number of trees (thousands)
+
+—
+
+—
+
+49 38
+
+51
+
+30
+
+24
+
+25
+
+—
+
+—
+
+61 61
+
+24
+
+25
+
+—
+
+—
+
+—
+
+—
+
+75 63
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+37 20
+
+37
+
+37
+
+—
+
+—
+
+—
+
+—
+
+39 28
+
+27
+
+18 —
+
+—
+
+—
+
+—
+
+24 17
+
+12
+
+12
+
+—
+
+—
+
+—
+
+—
+
+24 25 —
+
+—
+
+12
+
+12
+
+—
+
+—
+
+35 36
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+27 18
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+25 18
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+14 14
+
+—
+
+—
+
+—
+
+—
+
+Glochidion marianum Barringtonia racemosa Hernandia sonora Tabebuia pallida
+
+—
+
+—
+
+14 14
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+12
+
+12
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+12
+
+12
+
+—
+
+—
+
+—
+
+—
+
+12 12
+
+—
+
+—
+
+—
+
+—
+
+Note: Totals may be off because of rounding; estimates are subject to sampling error.
+SE = sampling error. a Includes all live trees ≥1 inches in diameter at breast height.
+
+All classes Total SE
+
+124
+
+82
+
+85
+
+86
+
+75
+
+63
+
+73
+
+51
+
+65
+
+41
+
+37
+
+20
+
+37
+
+37
+
+35
+
+36
+
+27
+
+18
+
+25
+
+18
+
+14
+
+14
+
+14
+
+14
+
+12
+
+12
+
+12
+
+12
+
+12
+
+12
+
+33
+
+RESOURCE BULLETIN PNW-RB-270
+
+Table A2-4—Estimated net volume of live treesa on forest land by species group and diameter class (continued)
+
+Diameter class (inches)
+
+5.0–9.9
+
+10.0–14.9
+
+15.0–19.9
+
+20+
+
+All classes
+
+Scientific name
+Cocos nucifera Vitex parviflora Mangifera indica Hibiscus tiliaceus Heterospathe elata Pandanus tectorius Ficus prolixa Premna obtusifolia Macaranga thompsonii Spathodea campanulata Leucaena leucocephala Casuarina equisetifolia Cycas circinalis Neisosperma oppositifolia Annona reticulata Artocarpus altilis Aglaia mariannensis Pisonia grandis Intsia bijuga Adenanthera pavonina Cananga odorata Barringtonia asiatica Tristiropsis obtusangula Calophyllum inophyllum Artocarpus mariannensis Morinda citrifolia Areca catechu Ficus tinctoria Guamia mariannae Hernandia sonora Bauhinia monandra Averrhoa bilimbi Glochidion marianum Pandanus dubius
+
+Total SE Total SE Total SE Total SE Total SE
+
+Thousand cubic feet
+
+4,444.1 1,612.6 7,457.6 2,807.1 313.7 302.7 —
+
+— 12,215.4 4,235.1
+
+3,912.8 1,254.0 4,446.2 1,738.7 739.7 394.6 842.2 721.5 9,940.8 3,425.0
+
+83.5 84.1 836.4 622.1 1,784.3 1,795.8 419.7 422.4 3,123.9 2,877.0
+
+2,881.5 1,105.1 135.3 130.6 —
+
+—
+
+—
+
+— 3,016.8 1,171.3
+
+2,782.9 2,216.5 —
+
+—
+
+—
+
+—
+
+—
+
+— 2,782.9 2,216.5
+
+2,273.3 720.1 —
+
+—
+
+—
+
+—
+
+—
+
+— 2,273.3 720.1
+
+435.9 299.8 78.5 80.0 365.1 352.3 1,346.7 1,299.5 2,226.2 1,736.4
+
+1,163.1 478.0 231.8 173.7 —
+
+—
+
+679.3 655.5 2,074.1 1,086.5
+
+478.3 346.3 996.3 637.7 162.8 157.1 —
+
+— 1,637.5 1,045.1
+
+263.8 202.2 813.6 467.9 122.4 123.2 415.3 418.0 1,615.1 1,057.7
+
+1,346.4 616.3 —
+
+—
+
+—
+
+—
+
+—
+
+— 1,346.4 616.3
+
+589.8 409.6 538.5 519.6 —
+
+—
+
+—
+
+— 1,128.3 912.7
+
+1,070.8 458.7 32.5 31.4 —
+
+—
+
+—
+
+— 1,103.3 458.9
+
+1,001.7 742.4
+
+1.3 1.2 —
+
+—
+
+—
+
+— 1,003.0 742.6
+
+546.5 415.5 166.7 160.8 —
+
+—
+
+—
+
+—
+
+713.1 573.7
+
+86.6 58.0 625.8 629.9 —
+
+—
+
+—
+
+— 712.4 652.0
+
+600.3 262.3 —
+
+—
+
+—
+
+—
+
+—
+
+— 600.3 262.3
+
+273.8 275.6 319.4 321.5 —
+
+—
+
+—
+
+— 593.3 597.1
+
+198.6 138.3 388.1 278.2 —
+
+—
+
+—
+
+— 586.7 342.8
+
+146.9 147.9 20.1 20.2 —
+
+— 380.8 383.2 547.8 410.7
+
+39.2 39.4 —
+
+— 385.8 388.3 —
+
+— 425.0 388.3
+
+144.0 145.0 —
+
+—
+
+—
+
+—
+
+267.9 269.7 412.0 414.6
+
+276.8 266.9 —
+
+—
+
+—
+
+—
+
+—
+
+— 276.8 266.9
+
+244.7 161.6 —
+
+—
+
+—
+
+—
+
+—
+
+— 244.7 161.6
+
+112.9 113.0 128.7 129.5 —
+
+—
+
+—
+
+—
+
+241.5 167.5
+
+184.0 92.8 —
+
+—
+
+—
+
+—
+
+—
+
+— 184.0 92.8
+
+179.5 91.6 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+179.5 91.6
+
+139.4 88.5 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+139.4 88.5
+
+138.9 76.9 —
+
+—
+
+—
+
+—
+
+—
+
+— 138.9 76.9
+
+—
+
+—
+
+129.1 131.6 —
+
+—
+
+—
+
+—
+
+129.1 131.6
+
+77.2 77.7 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+77.2 77.7
+
+74.9 63.0 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+74.9 63.0
+
+56.3 54.3 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+56.3 54.3
+
+54.9 40.0 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+54.9 40.0
+
+34
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Table A2-4—Estimated net volume of live treesa on forest land by species group and diameter class (continued)
+
+Scientific name
+Annona muricata Mammea odorata Leucaena insularum Melanolepis multiglandulosa Barringtonia racemosa Eugenia palumbis Tree unknown Tabebuia pallida
+
+5.0–9.9 Total SE
+
+31.9 28.5 16.7 16.7 — 12.2 10.2
+4.2
+
+24.8 28.7 17.0 16.8 — 11.8
+9.0 4.3
+
+Diameter class (inches)
+
+10.0–14.9
+
+15.0–19.9
+
+20+
+
+Total SE Total SE Total SE
+
+Thousand cubic feet
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+16.4 16.7 —
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+—
+
+All classes Total SE
+31.9 24.8 28.5 28.7 16.7 17.0 16.7 16.8 16.4 16.7 12.2 11.8 10.2 9.0
+4.2 4.3
+
+Note: Totals may be off because of rounding; estimates are subject to sampling error.
+SE = sampling error. a Includes all live trees ≥5 inches in diameter at breast height.
+
+Table A2-5—Estimated volume of all live treesa on forest land by diameter class
+
+Diameter class (inches)
+
+5.0–9.9
+
+10.0–14.9
+
+15.0–19.9
+
+20.0+
+
+Total SE
+
+Total SE
+
+Total SE
+
+Total SE
+
+Thousand cubic feet
+
+Net volume 26,423.7 3,287.6 17,362.2 3617.0 3,873.7 1,890.4 4,351.8 1,597.3
+
+Note: Totals may be off because of rounding; estimates are subject to sampling error.
+SE = sampling error. a Includes all live trees ≥5 inches in diameter at breast height.
+
+All sizes Total SE
+52,011.4 6,353.0
+
+35
+
+RESOURCE BULLETIN PNW-RB-270
+
+Table A2-6—Aboveground biomass and carbon of live a and dead treesb on forest land by diameter class
+
+Diameter class (inches)
+
+5.0–9.9
+
+10.0–14.9
+
+15.0–19.9
+
+20+
+
+All classes
+
+Total SE
+
+Total SE
+
+Total SE
+
+Total SE
+
+Thousands of tons
+
+Total SE
+
+Live tree biomass Dead tree biomass
+
+776.0 92.6 21.3 4.7
+
+524.6 111.3 8.9 6.8
+
+174.7 81.2
+
+—
+
+—
+
+157.7 50.1
+
+—
+
+—
+
+2,267.0 233.3 30.3 8.8
+
+Live tree carbon Dead tree carbon
+
+388.0 46.3 10.7 2.4
+
+262.3 55.7 4.5 3.4
+
+87.4 40.6
+
+—
+
+—
+
+78.9 25.1
+
+—
+
+—
+
+1,133.5 116.7 15.2 4.4
+
+Note: Totals may be off because of rounding; estimates are subject to sampling error.
+SE = sampling error; a Includes all live trees ≥1 inches in diameter at breast height (d.b.h.); biomass of live trees 1 to 4.9 inches in diameter are not shown here. b Includes all dead trees ≥5 inches d.b.h.; smaller dead trees were not measured in this inventory.
+
+Table A2-7—Aboveground biomass of live treesa on forest land by species and diameter class (continued)
+
+Scientific name
+Vitex parviflora Cocos nucifera Hibiscus tiliaceus Leucaena leucocephala Mangifera indica Premna obtusifolia Heterospathe elata Aglaia mariannensis Casuarina equisetifolia Spathodea campanulata Guamia mariannae Neisosperma oppositifolia Cananga odorata Morinda citrifolia Pandanus tectorius Ficus prolixa Adenanthera pavonina Macaranga thompsonii Averrhoa bilimbi Cycas circinalis Triphasia trifolia Intsia bijuga
+
+0–4.9 Total SE
+30.9 16.7 —— 129.9 35.7 103.1 34.6 —— 16.9 11.4 22.8 14.2 57.9 49.1 26.2 20.6 —— 51.6 26.5 14.0 9.4 26.5 26.6 38.4 17.5 3.7 2.6 —— 2.6 2.6 —— 19.1 14.1 —— 24.9 20.9 ——
+
+Diameter class (inches)
+
+5.0–9.9
+
+10.0–14.9
+
+15+
+
+Total SE Total SE Total SE
+
+Thousands of tons
+
+138.4 41.5 164.7 70.4 104.2 46.1
+
+104.8 39.2 198.8 78.8
+
+7.1 6.9
+
+114.2 38.8
+
+8.1 7.8
+
+——
+
+57.5 25.6
+
+——
+
+——
+
+3.3 3.3 26.1 21.3 90.1 90.7
+
+56.6 21.1
+
+9.2 6.6 25.4 24.5
+
+75.1 58.9
+
+——
+
+——
+
+20.0 8.3
+
+—
+
+—
+
+——
+
+16.8 10.5 20.5 19.8
+
+——
+
+7.3 5.5 26.2 15.6 24.0 24.2
+
+5.0 2.8
+
+—
+
+—
+
+——
+
+28.9 21.5
+
+4.2 4.1
+
+——
+
+2.1 2.2
+
+—
+
+—
+
+15.1 15.2
+
+5.3 2.8
+
+—
+
+—
+
+——
+
+34.2 10.3
+
+—
+
+—
+
+——
+
+6.0 3.8
+
+6.1 6.3 24.9 24.1
+
+4.2 4.2
+
+2.9 2.9 23.8 24.0
+
+7.8 5.7
+
+16.6 10.7
+
+3.7 3.6
+
+6.2 4.7
+
+——
+
+——
+
+23.1 9.9
+
+2.0 1.9
+
+—
+
+—
+
+——
+
+——
+
+——
+
+7.7 5.4
+
+16.0 11.3
+
+—
+
+—
+
+All classes Total SE
+
+438.2 310.7 252.2 160.6 119.5 108.2 97.9 77.8 63.5 57.5 56.6 47.1 43.8 43.7 37.9 37.1 33.5 28.1 25.3 25.1 24.9 23.7
+
+141.0 111.8 65.2 52.7 114.8 50.1 69.0 51.2 36.3 38.3 29.0 29.1 31.9 18.4 11.2 26.2 25.4 18.0 18.8 10.1 20.9 14.1
+
+36
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Table A2-7—Aboveground biomass of live treesa on forest land by species and diameter class (continued)
+
+Scientific name
+
+0–4.9 Total SE
+
+Areca catechu
+
+15.3 11.2
+
+Annona reticulata
+
+——
+
+Artocarpus altilis
+
+——
+
+Barringtonia asiatica
+
+——
+
+Bauhinia monandra
+
+13.7 13.8
+
+Tristiropsis obtusangula
+
+——
+
+Ochrosia mariannensis
+
+10.3 10.0
+
+Calophyllum inophyllum
+
+1.5 1.0
+
+Pisonia grandis
+
+——
+
+Mammea odorata
+
+5.2 5.3
+
+Eugenia reinwardtiana
+
+6.5 6.3
+
+Maytenus thompsonii
+
+5.8 5.6
+
+Artocarpus mariannensis
+
+——
+
+Annona muricata
+
+3.1 2.2
+
+Hernandia sonora
+
+——
+
+Ficus tinctoria
+
+0.8 0.8
+
+Leucaena insularum
+
+——
+
+Barringtonia racemosa
+
+——
+
+Eugenia thompsonii
+
+2.4 2.3
+
+Tree unknown
+
+——
+
+Glochidion marianum
+
+——
+
+Tabebuia pallida
+
+——
+
+Eugenia palumbis
+
+——
+
+Melanolepis multiglandulosa 0.3 0.3
+
+Pandanus dubius
+
+——
+
+Chrysophyllum cainito
+
+0.5 0.5
+
+Tarenna sambucina
+
+0.2 0.2
+
+Diameter class (inches)
+
+5.0–9.9
+
+10.0–14.9
+
+15+
+
+Total SE Total SE Total SE
+
+Thousands of tons
+
+6.3 3.3
+
+—
+
+—
+
+——
+
+17.6 11.6
+
+3.7 3.6
+
+——
+
+4.5 2.8 14.2 14.3
+
+—
+
+—
+
+3.5 3.5
+
+—
+
+—
+
+13.9 14.0
+
+1.9 1.9
+
+—
+
+—
+
+—
+
+—
+
+11.6 9.8
+
+——
+
+——
+
+——
+
+——
+
+——
+
+7.6 5.0
+
+——
+
+——
+
+4.1 4.2
+
+4.4 4.4
+
+——
+
+1.5 1.5
+
+—
+
+—
+
+——
+
+——
+
+——
+
+——
+
+——
+
+——
+
+——
+
+2.0 1.4
+
+3.4 3.5
+
+—
+
+—
+
+1.2 0.8
+
+——
+
+——
+
+——
+
+3.9 4.0
+
+——
+
+3.0 1.6
+
+——
+
+——
+
+2.8 2.8
+
+——
+
+——
+
+——
+
+2.4 2.5
+
+—
+
+—
+
+——
+
+——
+
+——
+
+1.4 1.0
+
+——
+
+——
+
+1.2 1.1
+
+——
+
+——
+
+0.8 0.8
+
+——
+
+——
+
+0.7 0.6
+
+——
+
+——
+
+0.4 0.4
+
+——
+
+——
+
+0.7 0.5
+
+—
+
+—
+
+——
+
+——
+
+——
+
+——
+
+——
+
+——
+
+——
+
+All classes Total SE
+21.6 11.7 21.3 15.0 18.8 15.4 17.4 17.5 15.6 15.7 11.6 9.8 10.3 10.0 9.1 5.9 8.5 8.5 6.8 6.8 6.5 6.3 5.8 5.6 5.5 3.7 4.2 2.8 3.9 4.0 3.8 1.8 2.8 2.8 2.4 2.5 2.4 2.3 1.4 1.0 1.2 1.1 0.8 0.8 0.7 0.6 0.7 0.7 0.7 0.5 0.5 0.5 0.2 0.2
+
+Note: Totals may be off because of rounding; estimates are subject to sampling error.
+SE = sampling error. a Includes all live trees ≥1 inches in diameter at breast height.
+
+37
+
+RESOURCE BULLETIN PNW-RB-270
+
+Table A2-8—Average understory vegetation cover and number of Forest Inventory and Analysis subplots where the species occurred
+
+Scientific name
+Saccharum spontaneum Epipremnum pinnatum Bauhinia monandra Antigonon leptopus Miscanthus floridulus Urochloa maxima Musa Bambusa vulgaris Telosma Tradescantia spathacea Bothriochloa bladhii Heterospathe elata Casuarina equisetifolia Gleichenia linearis Hibiscus tiliaceus Guamia mariannae Triphasia trifolia Aglaia mariannensis Tarenna sambucina Leucaena leucocephala Tabebuia heterophylla Dicranopteris linearis Colubrina asiatica Freycinetia reineckei Neisosperma oppositifolia Ochrosia mariannensis Sorghum halepense Teramnus labialis Averrhoa bilimbi Cocos nucifera Flagellaria indica Nephrolepis hirsutula Curcuma longa Syngonium podophyllum Ochrosia oppositifolia Pennisetum polystachion Annona reticulata
+
+Average cover Percent 41.8 41.0 40.0 39.1 37.5 35.5 31.0 30.0 30.0 30.0 29.4 25.8 25.6 25.0 23.1 23.0 22.6 22.3 21.5 21.2 20.5 20.3 20.3 20.2 20.0 20.0 20.0 20.0 19.4 18.4 18.0 18.0 17.2 16.3 16.3 16.1 15.9
+
+Number of subplots
+13 5 1 9 48 11 2 2 1 1 23 12 5 1 59 29 19 14 2 49 2 15 12 9 4 4 1 2 8 20 27 41 5 3 10 24 7
+
+Scientific name
+Abelmoschus moschatus Vitex parviflora Nephrolepis biserrata Pandanus dubius Medinilla medinilliana Scleria polycarpa Annona squamosa Flemingia strobilifera Jasminum marianum Morinda citrifolia Areca catechu Adenanthera pavonina Pandanus tectorius Rhynchospora rubra Phymatosorus scolopendria Phragmites karka Cananga odorata Thelypteris pennata Premna obtusifolia Maytenus thompsonii Annona muricata Citrus × limon Cynodon dactylon Melanolepis multiglandulosa Melochia villosissima var.
+compacta Microlepia speluncae Thelypteris opulenta Wikstroemia elliptica Oplismenus hirtellus Bidens alba Eugenia thompsonii Mikania micrantha Spathodea campanulata Calophyllum inophyllum Cestrum diurnum Oplismenus compositus
+
+Average cover Percent 15.0 14.5 14.1 14.0 13.3 13.3 13.0 13.0 13.0 13.0 12.5 12.5 12.3 12.3 12.1 12.0 11.0 11.0 10.9 10.3 10.0 10.0 10.0 10.0 10.0
+
+Number of subplots
+1 33 19 2 7 8 1 9 3 37 13 2 35 11 22 4 1 1 17 3 7 1 1 1 1
+
+10.0
+
+1
+
+10.0
+
+1
+
+9.7
+
+3
+
+9.5
+
+6
+
+9.1
+
+8
+
+9.0
+
+2
+
+9.0
+
+21
+
+9.0
+
+2
+
+8.8
+
+5
+
+8.5
+
+4
+
+8.4
+
+8
+
+38
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+
+Table A2-8—Average understory vegetation cover and number of Forest Inventory and Analysis subplots where the species occurred (continued)
+
+Scientific name
+Barringtonia racemosa Dimeria chloridiformis Plumeria obtusa var. obtusa Fimbristylis tristachya Stylosanthes guianensis Ficus microcarpa Lycopodiella cernua var. cernua Scaevola sericea Thelypteris parasitica Lygodium scandens Cycas circinalis Ipomoea pes-caprae ssp.
+brasiliensis Entada pursaetha Mucuna pruriens Stictocardia tiliifolia Sphagneticola trilobata Acacia confusa Alocasia macrorrhizos Artocarpus altilis Eugenia reinwardtiana Ficus tinctoria Melastoma malabathricum var.
+mariannum Scaevola sericea var. taccada Chromolaena odorata Centotheca latifolia Ipomoea pes-caprae Ixora triantha Senna tora Sida rhombifolia Hyptis capitata Carica papaya Fimbristylis dichotoma Glochidion marianum Polypodium punctatum Waltheria indica Averrhoa carambola
+
+Average cover Percent 8.0 8.0 8.0 7.7 7.7 7.5 7.5 7.5 7.5 7.4 7.0 7.0
+
+Number of subplots
+2 11 1 9 3 2 6 2 2 10 2 1
+
+6.8
+
+9
+
+6.8
+
+4
+
+6.4
+
+8
+
+6.2
+
+5
+
+6.0
+
+1
+
+6.0
+
+1
+
+6.0
+
+1
+
+6.0
+
+2
+
+6.0
+
+4
+
+6.0
+
+1
+
+6.0
+
+1
+
+5.9
+
+14
+
+5.0
+
+1
+
+5.0
+
+1
+
+5.0
+
+3
+
+5.0
+
+1
+
+5.0
+
+1
+
+5.0
+
+26
+
+4.8
+
+5
+
+4.8
+
+4
+
+4.3
+
+6
+
+4.2
+
+20
+
+4.2
+
+5
+
+4.0
+
+1
+
+Scientific name
+Hyptis rhomboidea Mangifera indica Miconia punctata Passiflora foetida Tecoma stans Vigna adenantha Pyrrosia lanceolata Melastoma malabathricum Passiflora suberosa Arundina graminifolia Abrus precatorius Acacia mangium Alocasia cucullata Asplenium nidus Cerbera dilatata Discocalyx megacarpa Eleusine indica Imperata conferta Lygodium microphyllum Malvastrum coromandelianum Mimosa pudica Myrtella bennigseniana Paspalum paniculatum Pennisetum polystachion ssp.
+setosum Psidium guajava Pteris tripartita Samanea saman Spathoglottis plicata Stachytarpheta jamaicensis Thelypteris maemonensis Thelypteris unita Tristiropsis obtusangula Wedelia
+
+Average cover Percent 4.0 4.0 4.0 4.0 4.0 4.0 3.8 3.5 3.3 3.3 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0
+
+Number of subplots
+3 1 1 4 1 1 6 2 3 12 1 1 1 1 1 1 1 1 3 1 2 1 1 1
+
+3.0
+
+1
+
+3.0
+
+2
+
+3.0
+
+1
+
+3.0
+
+1
+
+3.0
+
+2
+
+3.0
+
+1
+
+3.0
+
+2
+
+3.0
+
+2
+
+3.0
+
+1
+
+39
+
+RESOURCE BULLETIN PNW-RB-270
+Glossary
+abiotic—Pertaining to nonliving factors such as temperature, moisture, and wind.
+aerial photography—Imagery acquired from an aerial platform (typically aircraft or helicopter) by means of a specialized large-format camera with well-defined optical characteristics. The geometry of the aircraft orientation at the time of image acquisition is also recorded. The resultant photograph will be of known scale, positional accuracy, and precision. Aerial photography for natural resource use is usually either natural color or color-infrared, and is film-based or acquired using digital electronic sensors.
+aspect—Compass direction that a slope faces.
+biodiversity—Variety and variability among living organisms and the ecological complexes in which they occur. Diversity can be defined as the number of different items and their relative frequencies. https://www.epa.gov/enviroatlas/enviroatlasbenefit-category-biodiversity-conservation. (27 October 2019).
+biomass—The aboveground weight of wood and bark in live trees 1.0 inch in diameter at breast height (d.b.h.) and larger from the ground to the tip of the tree, excluding all foliage. The weight of wood and bark in lateral limbs, secondary limbs, and twigs under 0.5 inch in diameter at the point of occurrence on sapling-size trees is included in the measure, but is excluded on poletimber- and sawtimber-size trees. Biomass is typically expressed as green oven-dry weight in tons (USDA FS 2006).
+bole—Trunk or main stem of a tree.
+damage—Damage to trees caused by biotic agents such as insects, diseases, and animals or abiotic agents such as weather, fire, or mechanical equipment.
+diameter at breast height (d.b.h.)—The diameter of a tree stem, located 4.5 ft above the ground (breast height) on the uphill side of a tree. The point of diameter measurement may vary on abnormally formed trees (USDA FS 2006).
+disturbance—Any relatively discrete event in time that disrupts ecosystem, community, or population structure and changes resources, substrate availability, or the physical environment (Helms 1998).
+down woody material (DWM)—Dead material on the ground in various stages of decay. It includes coarse and fine wood material. Previously named down woody debris (DWD). https://www.nrs.fs.fed.us/fia/data-tools/state-reports/glossary/default. asp (27 October 2019).
+40
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+ecosystem—A spatially explicit, relatively homogeneous unit of the Earth that includes all interacting organisms and components of the abiotic environment within its boundaries. An ecosystem can be of any size: a log, a pond, a field, a forest, or the Earth’s biosphere (Helms 1998).
+elevation—Height above a fixed reference point, often the mean sea level.
+erosion—The wearing away of the land surface by running water, wind, ice, or other geological agents.
+fixed-radius plot—A circular sampled area with a specified radius in which all trees of a given size, shrubs, and other items are tallied (USDA FS 2006).
+forb—A broad-leaved herbaceous plant, as distinguished from grasses, shrubs, and trees (USDA FS 2006).
+forest land—Land that is at least 10 percent tree cover by forest trees of any size, or land formerly having such tree cover, and not currently developed for a nonforest use (USDA FS 2006).
+forest type—A classification of forest land based on and named for the tree species that forms the plurality of live-tree cover that are not overtopped (USDA FS 2006). These forest types are also called forest communities and are delineated by the classification guide outlined in Mueller-Dombois and Fosberg (1998).
+forest type group—A combination of forest types that share closely associated species or site requirements (USDA FS 2006).
+graminoid—Grasses (family Gramineae or Poaceae) and grass-like plants such as sedges (family Cyperaceae) and rushes (family Juncaceae).
+grassland—Land on which the vegetation is dominated by grasses, grass-like plants, or forbs.
+invasive plant—A plant that is not native to the ecosystem under consideration and that causes or is likely to cause economic or environmental harm or harm to human, animal, or plant health. http://www.invasivespeciesinfo.gov/docs/council/isacdef. pdf. (5 January 2015).
+live trees—All living trees, including all size classes, all tree classes, and both commercial and noncommercial species listed in the Forest Inventory and Analysis (FIA) field manual (USDA FS 2006).
+mortality—The death of trees from natural causes, or subsequent to incidents such as storms, wildfire, or insect and disease epidemics (Helms 1998).
+41
+
+RESOURCE BULLETIN PNW-RB-270
+native species—Plant species that were native to an American region prior to EuroAmerican settlement. For vascular plants, they are the species that are not present on the USDA Natural Resources Conservation Service list of nonnative species (see nonnative species) (USDA NRCS 2000).
+nonforest land—Land that has never supported forests or formerly was forested and currently is developed for nonforest uses. Included are lands used for agricultural crops, residential areas, and constructed roads. The area must be at least 1.0 ac and 120.0 ft wide.
+nonnative species—Plant species that were introduced to America subsequent to Euro-American settlement. Nonnative vascular plants are present on the USDA Natural Resources Conservation Service list of nonnative species (USDA NRCS 2000).
+nontimber forest products (NTFP)—Species harvested from forests for reasons other than production of timber commodities.
+ownership—A legal entity having an ownership interest in land, regardless of the number of people involved. An ownership may be an individual; a combination of persons; a legal entity such as corporation, partnership, club, or trust; or a public agency. An ownership has control of a parcel or group of parcels of land (USDA FS 2006).
+pathogen—An organism or virus directly capable of causing disease or mortality.
+regeneration—The established progeny from a parent plant, seedlings or saplings existing in a stand, or the act of renewing tree cover by establishing young trees naturally or artificially. May be artificial (direct seeding or planting) or natural (natural seeding, coppice, or root suckers) (adapted from Helms 1998).
+remote sensing—Capture of information about the Earth from a distant vantage point. The term is often associated with satellite imagery but also applies to aerial photography, airborne digital sensors, ground-based detectors, and other devices.
+reserved forest land—Land permanently reserved from wood products utilization through statute or administrative designation. Examples include national forest wilderness areas and national parks and monuments (USDA FS 2006).
+sampling error—Difference between a population value and a sample estimate that is attributable to the sample, as distinct from errors due to bias in estimation, errors in observation, etc. Sampling error is measured as the standard error of the sample estimate (Helms 1998).
+sapling—A live tree 1.0 to 4.9 inches in diameter (USDA FS 2006).
+42
+
+American Samoa’s Forest Resources: Forest Inventory and Analysis, 2012
+seedlings—Live trees <1.0 inch d.b.h. and at least 6 inches in height (softwoods) or 12 inches in height (hardwoods) (USDA FS 2006).
+shrub—Perennial, multistem woody plant, usually less than 13 to 16 ft in height, although under certain environmental conditions shrubs may be single-stem or taller than 16 ft. Includes succulents (e.g., cacti) (USDA FS 2006).
+slope—Measure of change in surface value over distance, expressed in degrees or as a percentage (Helms 1998).
+snag—Standing dead tree ≥5 inches d.b.h. and ≥4.5 ft in length, with a lean of <45 degrees. Dead trees leaning more than 45 degrees are considered to be down woody material. Standing dead material shorter than 4.5 ft are considered stumps (USDA FS 2006).
+species group—A collection of species used for reporting purposes (USDA FS 2006).
+stand-size class—A classification of stands based on tree size. Large-diameter stands have the majority of trees at least 11.0 inches d.b.h. for hardwoods and 9.0 inches d.b.h. for softwoods; medium-diameter stands have the majority of trees at least 5.0 inches d.b.h. but not as large as large-diameter trees; and small-diameter stands have the majority of trees less than 5.0 inches d.b.h.
+stratification—A statistical tool used to reduce the variance of the attributes of interest by partitioning the population into homogenous strata (Bechtold and Patterson 2005).
+succession—The gradual supplanting of one community of plants by another (Helms 1998).
+terrestrial—Of or relating to the Earth or its inhabitants; of or relating to land as distinct from air or water. http://www. merriam-webster.com/dictionary/terrestrial. (5 January 2015).
+tree—A woody perennial plant, typically large, with a single well-defined stem carrying a more or less definite crown; sometimes defined as attaining a minimum diameter of 3 inches and a minimum height of 15 ft at maturity. For FIA, any plant on the tree list in the current field manual is measured as a tree (USDA FS 2006).
+understory—All forest vegetation growing under an overstory (Helms 1998).
+unreserved forest land—Forest land that is not withdrawn from harvest by statute or administrative regulation. Includes forest lands that are not capable of producing in excess of 20 ft3/ac per year of industrial wood in natural stands (Smith et al. 2004).
+43
+
+Pacific Northwest Research Station
+
+Website
+Telephone
+Publication requests
+FAX
+E-mail
+Mailing address 		 		 		
+
+https://www.fs.usda.gov/pnw/
+(503) 808–2100
+(503) 808–2138
+(503) 808–2130
+SM.FS.pnw_pnwpubs@usda.gov
+Publications Distribution Pacific Northwest Research Station P.O. Box 3890 Portland, OR 97208–3890
+
+U.S. Department of Agriculture Pacific Northwest Research Station 1220 SW 3rd Ave., Suite 1400 P.O. Box 3890 Portland, OR 97208–3890
+Official Business Penalty for Private Use, $300
+

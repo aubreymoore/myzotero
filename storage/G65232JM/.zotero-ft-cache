@@ -1,0 +1,1261 @@
+	   	   ANALYSIS AND DEVELOPMENT OF MANAGEMENT TOOLS FOR ORYCTES RHINOCEROS (COLEOPTERA: SCARABAEIDAE)
+A THESIS SUBMITTED TO THE GRAUDATE DIVISION OF THE UNIVERSITY OF HAWAIʻI AT MĀNOA IN PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE
+DEGREE OF MASTER OF SCIENCE
+IN TROPICAL PLANT PATHOLOGY
+MAY 2019
+By Brandi-Leigh H. Adams
+Thesis Committee: Michael Melzer, Chairperson
+Zhiqiang Cheng Brent Sipes 	  
+
+ACKNOWLEDGEMENTS It is with deep gratitude that I thank the members of my committee, Dr. Michael Melzer, Dr. Zhiqiang Cheng, and Dr. Brent Sipes for their expert advice and knowledge, to which I have constantly deferred to during my time as a graduate student. A very special thank you goes to Dr. Michael Melzer, who took me in as an undergraduate lab assistant, and saw enough potential in me that he felt I deserved the opportunity to learn, travel, and grow under his guidance. I would also like to give special thanks to Dr. Shizu Watanabe, who always made time to answer even the smallest, most O.C.D. of my questions, who gave me words of encouragement when experiments did not go as planned or when I would find myself in doubt, and who has become a mentor and friend along the way. To my very first mentors in science; Dr. Wendy Kuntz, Dr. Matthew Tuthill, and Keolani Noa; thank you for encouraging me to pursue a major and career in STEM in the first place. I would also like to thank my lab mates, Nelson Masang Jr., Alexandra Kong, Alejandro Olmedo Velarde, Tomie Vowell, Asoka De Silva, Megan Manley, Jarin Loristo, and Cheyenne Barela for their support with experiments, and the knowledge and skills they have passed on to me. My gratitude also goes out to my fellow graduate students, who have learned, grown, and triumphed alongside me. To all of the wonderful people in the PEPS department, I thank you for being my educators, and for always being kind and supportive. I would also like to thank the following collaborators for their help in acquiring the samples needed to conduct this research, and for their generosity in sharing their own collection of samples: the HDOA CRB Response Team, Dr. Keith Weiser, Darcy Oishi, Dr. Joel Miles, Dr. Christopher Kitalong, the faculty and students of Palau Community College, Dr. Daniel Rubinoff, J. Bradley Reil, Dr. Aubrey Moore, Roland Quitugua, Sami Soni, and Riten Gosai.
+ii
+
+Finally, from the bottom of my heart, I would like to thank my family and friends. To my mother, Tracy, I would like to thank for her eternal love and support. Thank you for all the advice and knowledge that has helped me grow as a person with each passing year. I hope I have made you proud. To my best friend, Kaliko, thank you for your love and understanding, for being the rock to my ʻopihi all these years, and for helping me see this through to the end. You inspire me endlessly to do better and live fully. To my grandmother, Cicinia and my brother, Brandon, thank you for being your crazy selves, and for adding laughter to my life when I need it most. To Mark, thank you for being an inquisitive mind and for taking a genuine interest in my research. To Eleanor, Alfred, and Norma, my second family, thank you for opening your home and your hearts to me, and making me feel like part of the family. To my precious fur babies, thank you for being a constant source of love and happiness, especially Kahu and Kui, who are no longer here to walk with me to the finish line, but were there from the start to comfort me during the hardest of times.
+Success is not won without the help of others, and I am eternally grateful to have had all of you supporting me throughout this journey. The culmination of this research is a result of hard work and dedication, not just of my own volition, but of all of yours’ too. It is my hope that this body of work is something we can all be proud of.
+“If I have seen further it is by standing on the shoulders of giants.” -Sir Isaac Newton
+iii
+
+ABSTRACT Oryctes rhinoceros (Coleoptera: Scarabaeidae) is a pestiferous beetle causing severe damage to coconut and other palms by boring into and feeding upon the crown tissue. Several tools are used to manage this beetle, including pheromone lured traps and the biocontrol agent, Oryctes rhinoceros nudivirus (OrNV). The pheromone lure, ethyl 4-methyloctanoate, was assessed for its attractive ability towards the CRB-S and CRB-G haplotypes by comparing the distribution of the haplotypes in non trap-caught and trap-caught populations collected from Palau. A diagnostic qPCR assay was designed to detect OrNV, and was found to be a more sensitive and accurate method for OrNV detection compared to the conventional PCR assay. Finally, because the newly emerged CRB-G haplotype has acquired resistance to OrNV, RNA extractions were sent for high-throughput sequencing to discover other viruses present in O. rhinoceros. Three sequences were discovered to be similar in sequence to viruses of other insect species.
+iv
+
+TABLE OF CONTENTS Acknowledgements…………………………………………………………………………….....ii Abstract…………………………………………………………………………………………...iv List of Tables…………………………………………………………………………………......ix List of Figures…………………………………………………………………………………......x Chapter 1: Literature Review………………………………………………………………….......1
+The Coconut Rhinoceros Beetle………………………………………………………......1 Impacts of Oryctes rhinoceros Damage………………………………………………......2 Control and Management Practices…………………………………………………….....4 Oryctes rhinoceros nudivirus as a Biological Control……………………………….........6 A New Oryctes rhinoceros Haplotype Resistant to OrNV……………………………......8 Significance of Oryctes rhinoceros in Hawaiʻi……………………………………….......9 Chapter 2: Assessment of Attraction to Ethyl 4-methyloctanoate Male Aggregation Pheromone Between Two Oryctes rhinoceros Haplotypes in Palau…………………………….11 Introduction………………………………………………………………………………11 Materials and Methods…………………………………………………………………...12
+Trapping Oryctes rhinoceros Specimens………………………………………...12 Sample Collection………………………………………………………………..12 Sample Selection………………………………………………………………....14 DNA Extraction from Oryctes rhinoceros Specimens………………………......14 Genotyping Oryctes rhinoceros Specimens……………………………………...14 Data Analysis…………………………………………………………………….16 Results…………………………………………………………………………………....16
+v
+
+Discussion……………………………………………………………………………......23 Chapter 3: Development of a Multiplex Quantitative Polymerase Chain Reaction Assay for Rapid and Sensitive Detection of the Oryctes rhinoceros nudivirus………………....28
+Introduction……………………………………………………………………………....28 Materials and Methods……………………………………………………………….......30
+Sample Collection………………………………………………………………..30 Total DNA Extraction…………………………………………………………....30 Primer Selection and Optimization………………………………………………30
+Arginine Kinase Degenerate Primer Set PCR Optimization…………….31 RNA pol II Degenerate Primer Set PCR Optimization………………….33 Sequencing Arginine Kinase and RNA pol II PCR Products…………………....33 Ligation of AK or PL PCR Products to Promega p-GEM®-T Easy Vector System I………………………………………………….....34 Transformation of Ligated AK or PL PCR Products Into DH5α Escherichia coli Cells……………………………………….........34 Screening Transformed DH5α Escherichia coli Cells…………………...34 Plasmid Extraction……………………………………………………….35 Preparing Plasmid Extracts for Sequencing……………………………...35 Sequence Analysis……………………………………………………………….36 Designing Primer-Probe Sets for Arginine Kinase, RNA pol II, and OrNV………………………………………………………………………...38 qPCR Assay Development……………………………………………………….38 qPCR Assay Efficiency Trials…………………………………………………...40
+vi
+
+qPCR Test Designs………………………………………………………………41 Data Analyses…………………………………………………………………....42 Results……………………………………………………………………………………44 OrNV Multiplex qPCR Assay Validation………………………………………..44 Detecting Strains of OrNV……………………………………………………….44 Comparing the PCR and qPCR Assays for Detection of OrNV…………………44 Determining the Status of OrNV in Hawaiʻi’s Oryctes rhinoceros Population……………………………………………………………50 Relative Quantification of OrNV in Oryctes rhinoceros Tissues………………..50 Discussion………………………………………………………………………………..50 Chapter 4: Virus Discovery in Oryctes rhinoceros Via High-throughput Sequencing Technology………………………………………………………………………….59 Introduction………………………………………………………………………………59 Materials and Methods…………………………………………………………………...60 Total and Small RNA Extraction for Illumina MiSeq…………………………...60
+Sample Selection………………………………………………………....60 Total and Small RNA Extraction…………………………………...........61 dsRNA Extraction for Illumina MiSeq………………………………………......62 Sample Selection………………………………………………………....62 dsRNA Extraction……………………………………………………......62 cDNA Library Synthesis………………………………………………....63 Screening cDNA Products…………………………………………….....63 Preparing Samples for Illumina MiSeq…………………………………..63
+vii
+
+Data Analysis…………………………………………………………….............64 Results……………………………………………………………………………………65
+Illumina MiSeq Results from Total and Small RNA Extractions………………..65 Illumina MiSeq Results from dsRNA Extraction………………………………..67 Discussion………………………………………………………………………………..73 Chapter 5: Conclusion and Future Studies…………………………………………………….....81 Literature Cited………………………………………………………………………………......84 	  
+viii
+
+LIST OF TABLES
+
+Table
+
+Page
+
+1. Number of non trap-caught and trap-caught Oryctes rhinoceros samples
+
+collected per state in Palau………………………………………………………………13
+
+2. Degenerate primer sets designed for amplification of nuclear protein-
+
+coding genes in Coleopteran species………………………………………………….....32
+
+3. Consensus sequences of the Oryctes rhinoceros arginine kinase and RNA
+
+polymerase II nuclear genes, and the OrNV glycoprotein gene………………………....37
+
+4. TaqMan primer-probe sets for arginine kinase, RNA polymerase II, and
+
+OrNV glycoprotein gene amplification via qPCR…………………………………….....39
+
+5. Intra-assay variability for the amplification of OrNV glycoprotein and
+
+Oryctes rhinoceros arginine kinase gene sequences via multiplex qPCR…………….....46
+
+6. Inter-assay variability for the amplification of OrNV glycoprotein and
+
+Oryctes rhinoceros arginine kinase gene sequences via multiplex qPCR…………….....47
+
+7. Multiplex qPCR diagnosis of OrNV in Oryctes rhinoceros specimens from
+
+countries with established strains of OrNV……………………………………………...48
+
+8. Comparing the sensitivity of OrNV detection between the PCR and qPCR
+
+assays using a serial dilution of OrNV-positive Oryctes rhinoceros DNA……………...49
+
+9. Comparison of normalized expression ratios of OrNV in Oryctes
+
+rhinoceros tissues using the comparative Ct and efficiency-corrected
+
+methods of relative quantification…………………………………………………….....51
+
+10. Velvet-assembled contigs matching to viral and oomycte accessions in
+
+GenBank…………………………………………………………………………………72
+
+ix
+
+LIST OF FIGURES
+
+Figure
+
+Page
+
+1. Evidence of severe damage on coconut palms caused by adult Oryctes
+
+rhinoceros feeding in Guam……………………………………………………………..3
+
+2. Percentage of CRB-S and CRB-G haplotypes from non trap-caught versus
+
+trap-caught Oryctes rhinoceros populations collected from 15 states in Palau………...17
+
+3. Percentage of CRB-S and CRB-G haplotypes from non trap-caught versus
+
+trap-caught Oryctes rhinoceros populations, with specimens from Angaur,
+
+Kayangel, and Sonsorol omitted………………………………………………………..19
+
+4. Percentage of CRB-S and CRB-G haplotypes from non trap-caught versus
+
+trap-caught populations of Oryctes rhinoceros collected from Koror, Palau…………..20
+
+5. Percentage of CRB-S and CRB-G haplotypes from non trap-caught
+
+versus trap-caught Oryctes rhinoceros populations from Ngardmau, Palau…………...21
+
+6. Percentage of CRB-S and CRB-G haplotypes from non trap-caught
+
+versus trap-caught Oryctes rhinoceros populations from Peleliu, Palau……………….22
+
+7. Standard curve plots of a ten-fold serial dilution of OrNV-positive Oryctes
+
+rhinoceros DNA to test the efficiency of OrNV glycoprotein and Oryctes
+
+rhinoceros arginine kinase sequence amplification via multiplex qPCR……………....45
+
+8. Gel electrophoresis results of the combined, ethanol precipitated total
+
+and small RNA extractions derived from Oryctes rhinoceros collected
+
+from Hawaiʻi and Oryctes rhinoceros collected from outside of Hawaiʻi……………..66
+
+9. Gel electrophoresis results of the cDNA library derived from the dsRNA
+
+extraction of Oryctes rhinoceros specimens collected in Hawaiʻi……………………..68
+
+x
+
+10. Velvet assembled contigs with matches to viral sequences of interest, organized by taxonomical family………………………………………………………69
+11. Velvet assembled reads matched to viral sequences of interest, organized by taxonomical family………………………………………………………………….70
+xi
+
+Chapter 1 LITERATURE REVIEW THE COCONUT RHINOCEROS BEETLE Oryctes rhinoceros (L.) (Coleoptera:Scarabaeidae), most commonly known as the coconut rhinoceros beetle, is a major pest of Cocos nucifera (coconut palm) and other palm species in both its natural and introduced range. Though the exact origin of O. rhinoceros is unknown, it is endemic to parts of southern and southeast Asia, including areas such as west Pakistan, India, China, Thailand, Malaysia, and the Philippines (Gressitt 1953; Catley 1969; Bedford 1980). It is thought that O. rhinoceros was accidentally introduced in 1909 via rubber seedlings imported to Western Samoa, and has since spread to many islands within Polynesia, including Tonga, Palau, Papua New Guinea, the Tokelau islands, American Samoa, and Fiji (Catley 1969; Bedford 1980). After about 40 years of no new introductions of this pestiferous beetle, O. rhinoceros was found in Guam in 2007 (Smith and Moore 2008), then in Hawaiʻi at Joint Base Pearl Harbor-Hickam on December 23, 2013 (Hawaiʻi Department of Agriculture 2014). O. rhinoceros was most recently identified on Rota, Commonwealth of the Northern Mariana Islands (CNMI) in 2017 (Joshua 2017). Because O. rhinoceros is emerging in new areas of the United States and United States territories, there is a large effort to eradicate the beetle to protect Hawaiʻi’s coconut palms and endangered native palm species, as well as prevent the spread of the beetle to other states in which coconut and other economically important palm species are abundant. The life cycle of O. rhinoceros includes seven stages: egg, first instar, second instar, third instar, pre-pupa, pupa, and adult (Gressitt 1953; Bedford 1980). The majority of the life cycle is spent at breeding sites in the non-damaging egg, larval, and pupa stages (USDA 2015). Of these
+1
+
+non-adult stages in the life cycle, only larvae actually feed, and generally only feed on dead or decaying organic matter, thus larvae do not cause direct damage to coconut palms (Gressitt 1953; Catley 1969; Hinckley 1973; Bedford 1980). However, when adult beetles emerge from the breeding sites, they take flight at night in search of food, and begin to feed on coconut palms, or other sufficient host plants, if coconut palms are unavailable (Gressitt 1953).
+To feed, adult beetles first land on the higher axils of the coconut tree, squeeze between the axil and stem to bore into the center of the crown, then burrow a tunnel into the center of the spear cluster where it macerates the young leaf tissue, feeding on the sap and juices that exude (Gressitt 1953; Young 1975; Bedford 1980; USDA 2015). Multiple beetles can feed on a single tree, leading to severe damage of the palm fronds that emerge from the crown, which results in “V”- or wedge-shaped cuts; a symptom specific to O. rhinoceros feeding (Fig. 1) (Gressitt 1953; Hinckley 1966; Bedford 1980). Leaf damage produced by the beetle results in a reduced photosynthetic area, thereby reducing nut yields (Hinckley 1973). Wounds open the tree up to secondary infection and, in severe cases of damage, the beetle may bore into the meristem, effectively killing the palm (Catley 1969; Young 1986; Bedford 2013). It is the adult feeding habits that make O. rhinoceros such a devastating pest for regions that depend on coconut and other palm species for economical and cultural reasons. IMPACTS OF ORYCTES RHINOCEROS DAMAGE
+The economic impacts of damage to coconut palms caused by O. rhinoceros is difficult to fully assess, due to the many cost components involved, such as cost of quarantine procedures, cost of control measures, and loss from reduced yields due to lower production of food products and copra (Catley 1969; USDA 2015). However, estimates have been made in past research. For example, Gressitt’s (1953) extensive study of O. rhinoceros in Palau estimated that half of
+2
+
+Figure 1. Evidence of severe damage on coconut palms caused by adult Oryctes rhinoceros feeding in Guam. Typically, only adults feed on living palm tissue by boring into the crown of the palm and feeding on the sappy exudate. When the fronds emerge from the damaged crown, they exhibit very obvious v- or wedge-shaped cuts. In cases of severe damage, the adult beetle will bore into the meristem of the palm crown, effectively killing the palm, resulting in a dead standing palm trunk. This photo depicts both dead standing coconut palms as well as palms exhibiting the wedge-shaped pattern of damage.
+3
+
+Palau’s coconut palms were killed within the first ten years of the beetle’s arrival. Catley (1969) compiled estimates of costs for South Pacific territories affected by O. rhinoceros at roughly $1,100,000. Due to the abundance of potential breeding sites and coconut palms in Guam, researchers can reasonably predict that high economic and environmental damage may occur if the beetle is not controlled (Smith and Moore 2008).
+Damage by O. rhinoceros can have negative impacts on businesses and tourism industries, due to decreased aesthetic value from the physical symptoms of damage on coconut palms (Smith and Moore 2008). Coconut palms also have a cultural value, especially for Pacific islands that rely upon coconut for sustenance, practical purposes, and traditional practices, including shelter, jewelry making, and other traditional ornaments (Young 1986; Smith and Moore 2008). Finally, O. rhinoceros can have detrimental environmental impacts by disrupting the structure of palm plantations, causing secondary infestations by other organisms that favor decaying palm and breeding substrates, and disrupting the diversity of flora and the habitats of fauna in native forests (Gressitt 1953; Cumber 1957). CONTROL AND MANAGEMENT PRACTICES
+Control and management practices of O. rhinoceros can be separated into three general categories: cultural, chemical, and biological control methods (Catley 1969). Historically, methods from each category have been used together to create an integrated pest management (IPM) system across several areas with infestations of O. rhinoceros, although some management methods have proved to be more effective than others. Of cultural control methods, the destruction of breeding sites has been extremely important (Catley 1969; Bedford 1980). Although destroying breeding sites is expensive, time consuming, and laborious, researchers in the field highly advocate the practice (Bedford 1980). In Hawaiʻi, destruction of breeding sites is
+4
+
+one of the main methods relied upon to reduce the beetle population. Trapping is also an important method for removing beetles from the environment. In
+Palau and Western Samoa, split coconut log traps were used to capture adult beetles who would treat these logs as breeding sites, allowing the capture and removal of eggs and larvae as well as the adults (Gressitt 1953; Cumber 1957). While the coconut log traps were indeed successful in capturing beetles, Cumber (1957) noted that there were limitations to the use of coconut log traps, especially when environmental factors of weather (i.e. heavy rainfall) and geography were considered. The regularity with which traps are checked as well as the availability of breeding sites in the field are also noted as factors contributing to the success of using traps (Gressitt 1953; Cumber 1957).
+Over the years, many types of traps have, for lack of a better word, evolved. Gressitt (1953) experimented with the use of light traps, but O. rhinoceros adults were found to be only moderately attracted to lights. Moore (2013) experimented with ultraviolet light-emitting diodes (UV-LEDs) in traps, and found that they were slightly more effective on their own in attracting O. rhinoceros, but catch number dramatically increased with the use of a pheromone. The pheromone, ethyl 4-methyloctanoate, is an aggregation pheromone secreted by adult male O. rhinoceros, but attracts both sexes of the beetle, and has become the most widely used pheromone in traps designed to attract O. rhinoceros (Hallett et al. 1994; Bedford 2013). In Hawaiʻi, UV-LED/pheromone lured panel traps are used to remove beetles from the environment while simultaneously tracking their distribution.
+Chemical control over O. rhinoceros has been attempted in many control programs across the world. Several types of insecticides have been tested, including juvenile hormone analogs, organophosphates, synthetic pyrethroids, fumigants, and botanicals (USDA 2015).
+5
+
+These insecticides have had varying degrees of success in managing O. rhinoceros populations, but often have other adverse side effects towards plants or the environment (Catley 1969; Bedford 1980). In addition, the cost of insecticides, as well as labor, are often factors contributing to the tendency not to use these chemical management options (Catley 1969).
+Biological control is another avenue of management that has been widely tested. A great deal of effort went into the discovery of pests, predators, nematodes, and fungi that could possibly be used as biological control agents, and while some were found, they unfortunately failed to establish in new areas, or simply did not produce any significant amount of control over the O. rhinoceros population (Gressitt 1953; Lever 1969; Bennett et al. 1976; Bedford 1980; Caltagirone 1981; Young 1986). The green muscardine fungus, Metarhizium anisopliae, has had mixed success as a biocontrol agent, with limited effectiveness in the field (Lever 1969; Bennett et al. 1976; Bedford 1980; Young 1986). The most successful biocontrol agent to date has been the Oryctes rhinoceros nudivirus (Bedford 1980; Young 1986; Bedford 2013). ORYCTES RHINOCEROS NUDIVIRUS AS A BIOLOGICAL CONTROL
+The Oryctes rhinoceros nudivirus (OrNV) was originally discovered in Malaysia by Dr. Alois Huger in 1963 while examining O. rhinoceros larvae that were exhibiting disease symptoms (Huger 1966). At the time of discovery, it was found that OrNV was similar in appearance to other viruses classified under Baculoviridae, except that OrNV was non-occluded; therefore the virus was instead classified under the Rhabdionvirus genus as Rhabdionvirus oryctes (Huger 1966; Huger and Krieg 1991). Following reassessment of viral taxonomy by the International Committee on Taxonomy of Viruses (ICTV), OrNV was moved to Baculoviridae under the non-occluded baculoviruses (Huger 2005). OrNV has since been given its current name and was reclassified into the Nudiviridae family (Wang et al. 2006; Wang et al. 2008;
+6
+
+Bedford 2013). OrNV viral particles are rod-shaped and enveloped, have a dsDNA genome of approximately 127 kilobase pairs, and accumulate in the hypertrophied nuclei of larval and adult stage O. rhinoceros fat body or midgut epithelial cells, respectively (Huger 1966; Payne 1974; Huger 2005; Wang et al. 2006). The virus was first released as a biological control agent in Western Samoa, where both autonomous spread of the virus and a drastic decrease in the O. rhinoceros population was observed (Marschall 1969). OrNV has been used a biocontrol throughout both the Pacific and the beetle’s native range since that time (Huger 2005; Bedford 2013). OrNV is lethal in O. rhinoceros larvae and causes chronic infection in adults (Bedford 1980).
+Symptoms of OrNV infection in larvae include visualization of the fat body through the integument; swelling due to increased hemolymph; the body having an overall translucent, shiny, or waxy appearance; increased turgidity; and, in the final phase of infection, a prolapsed rectum (Huger 1966; Huger 2005). Adult O. rhinoceros do not necessarily produce physical signs of infection, but OrNV infects the hypertrophied nuclei of midgut epithelial cells, triggering mass proliferation of cells from the regenerative crypts, which allows the virus to accumulate in the cells of the midgut (Huger 2005). OrNV is easily spread to both larvae and adult O. rhinoceros, when the adults visit breeding sites and defecate in the breeding material that larvae ingest (Zelazny and Alfiler 1991; Huger 2005). Infected larvae also defecate in breeding material, and the virus is ingested by healthy larvae and adults visiting the breeding site (Zelazny 1976). When healthy adults come into contact with infected adults during mating, the virus can also be transferred (Zelazny 1976; Bedford 1980; Huger 2005). Since O. rhinoceros adults are active flyers, they are capable of effectively spreading OrNV via horizontal transmission when visiting both breeding sites and palms (Huger 2005; Bedford 2013). Thus, the beetles themselves serve as
+7
+
+reservoirs and disseminators of this biological control agent, which is part of what has made this virus so effective in controlling the spread of O. rhinoceros. The use of OrNV coupled with other management tools, i.e. the destruction of breeding sites and pheromone trapping, has brought success in lowering and controlling invasive populations of O. rhinoceros in many Pacific islands (Lever 1969; Bedford 1980; Bedford 2013). In fact, OrNV has had such great success as a biocontrol agent against O. rhinoceros, it was deemed a landmark example of classical biological control (Caltagirone 1981), and is considered to be the only truly significant biocontrol agent against O. rhinoceros (Bennett et al. 1976; Young 1986; Bedford 2013). A NEW ORYCTES RHINOCEROS HAPLOTYPE RESISTANT TO OrNV
+With OrNV at the forefront of IPM programs, Pacific islands have achieved success in controlling O. rhinoceros populations, seeing substantial reductions in palm damage (Huger 2005; Bedford 2013). Unfortunately, after 40 years of no new introductions of O. rhinoceros, new invasions have been detected within the Pacific, the first being Guam in 2007 (Smith and Moore 2008; Marshall et al. 2016). The beetle was subsequently detected in Port Moresby, Papua New Guinea in 2009 (Marshall et al. 2017), Oahu, Hawaiʻi in 2013 (Hawaiʻi Department of Agriculture, 2017), Honihara, Solomon Islands in 2015 (Marshall et al. 2017), and most recently on Rota, CNMI in 2017 (Joshua 2017). Even more unfortunate was the discovery that the Guam O. rhinoceros population consists of a new haplotype, termed CRB-G, that is genetically and biologically distinct from the widespread CRB-S population in that the CRB-G haplotype has acquired some form of resistance to OrNV (Marshall et al. 2017). Guam has made several attempts at establishing different isolates of OrNV commonly used as biocontrol agents, but have not had success in controlling the O. rhinoceros population using the virus (Marshall et al. 2017). In addition, genetic studies have shown that the appearance of the new haplotype is
+8
+
+correlated to the resurgence of this pest into areas such as Palau, where the beetle was previously under control (Reil et al. 2018). The molecular work completed thus far on Hawaiʻi’s O. rhinoceros population has conclusively shown that the O. rhinoceros population consists solely of the resistant CRB-G haplotype, and Reil has also confirmed this (Reil et al. 2016, Reil et al. 2018). Without a highly effective method for control, there is serious concern that the CRB-G haplotype will cause high rates of damage to palms, which has already been witnessed in Guam. SIGNIFICANCE OF ORYCTES RHINOCEROS IN HAWAIʻI
+O. rhinoceros is a serious pest in Hawaiʻi because of the potentially detrimental impacts it can have on coconut palms, but also endangered native Pritchardia palm species. As such, the ultimate goal of Hawaiʻi’s O. rhinoceros response team is to eradicate the beetle from Hawaiʻi not only to protect palms in Hawaiʻi, but to also prevent further spread of O. rhinoceros to other areas in the United States, especially California, which has a relatively large date palm industry.
+In Hawaiʻi, control and management options are relatively limited. Currently, control relies heavily on trapping adult beetles to remove them from the environment and to track their distribution; however, some researchers have begun to question the effectiveness of UVLED/pheromone traps. For example, Dr. Aubrey Moore has anecdotally observed that, relative to the abundance of O. rhinoceros in Guam, they do not catch as many beetles as expected using traps. As such, there is concern that perhaps the CRB-G haplotype may not be as attracted toward the ethyl 4-methyloctanoate pheromone currently used in traps. Because the CRB-G haplotype is resistant toward OrNV, if it was also determined that the pheromone lure is truly not as effective against the CRB-G haplotype, it would be of utmost importance to pursue research that would elucidate a better pheromone or chemical attractant, as well as alternative organisms that could potentially serve as biological control agents against O. rhinoceros.
+9
+
+The challenges posed by this newly emerged CRB-G haplotype are of special interest to Hawaiʻi, because the O. rhinoceros population, to date, consists solely of the CRB-G haplotype of this invasive beetle. As such, a decreased effectiveness of UV-LED/pheromone lure traps should be investigated to determine if a more efficient attractant should be developed. Additionally, since OrNV is ineffective as a biocontrol against the CRB-G haplotype, it is worthwhile to investigate other viruses infecting O. rhinoceros that could serve as potential biological control agents. In terms of molecular techniques related to O. rhinoceros research, it has become necessary to develop a quantitative PCR assay for the detection of OrNV to better understand the virus itself, as well as provide a foundation for assays designed for the detection and identification of new viruses discovered in O. rhinoceros.
+10
+
+Chapter 2 ASSESSMENT OF ATTRACTION TO ETHYL 4-METHYLOCTANOATE MALE AGGREGATION PHEROMONE BETWEEN TWO ORYCTES RHINOCEROS HAPLOTYPES
+IN PALAU INTRODUCTION
+After 40 years of no introductions into new areas (Marshall et al. 2016), Oryctes rhinoceros was discovered on Guam in 2007 (Smith and Moore 2008), then on Oahu, Hawaiʻi in 2013 (Hawaiʻi Department of Agriculture 2014). Historically, the most effective management tool for the control of O. rhinoceros has been a biological control agent, the Oryctes rhinoceros nudivirus (OrNV) (Caltagirone 1981; Huger 2005). Unfortunately, a new haplotype of O. rhinoceros, currently termed CRB-G, has recently emerged in Guam and appears capable of evading the effects of OrNV, suggesting tolerance or resistance to the biological control agent (Marshall et al. 2017; Reil et al. 2018). Subsequently, the CRB-G haplotype was also identified to make up the O. rhinoceros population in Hawaiʻi, thereby negating OrNV as an option for control in Hawaiʻi’s IPM program for O. rhinoceros.
+One component of IPM currently relied upon to combat the O. rhinoceros infestation in Hawaiʻi are UV-LED panel traps equipped with Oryctalure (synthesized ethyl 4methyloctanoate, by ChemTica International, Costa Rica), an aggregation pheromone produced by male O. rhinoceros that attracts both males and females to the traps (Hallet et al. 1995). While traps aid in the removal of O. rhinoceros adults from the existing population, it is not enough to effectively eradicate the pest from Hawaiʻi. Additionally, there has been some speculation about the effectiveness of the aggregation pheromone used in the traps on different O. rhinoceros haplotypes.
+11
+
+Thus, the purpose of this chapter was to determine if a difference in attraction towards the ethyl 4-methyloctanoate pheromone lure used in traps exists between the CRB-S haplotype and the CRB-G haplotype of O. rhinoceros in Palau. It was necessary to conduct this study in Palau, because it is one of few countries in which both haplotypes are coexisting. The null hypothesis was that there is no significant difference between the CRB-G and CRB-S haplotypes of O. rhinoceros in their attraction towards the pheromone lure used in the traps. The alternate hypothesis was that a significant difference does exist between the CRB-G and CRB-S haplotypes in their attraction towards the pheromone lure used in traps. MATERIALS AND METHODS Trapping Oryctes rhinoceros Specimens
+To capture O. rhinoceros in the environment, traps were deployed and serviced by collaborators across 15 states in Palau over the duration of approximately 2 years. Traps used were black, double-vaned panel traps containing UV-LED lights as well as the ethyl 4methyloctanoate pheromone lure, purchased from ChemTica International, Costa Rica. Sample Collection
+To conduct this study, O. rhinoceros samples were collected from 15 states within Palau (Table 1) using two methods: UV-LED/pheromone panel traps (termed the trap-caught method), and collection by hand (termed the non trap-caught method). Samples were collected from Palau to conduct this study because Palau is one of few places in which both the CRB-S and CRB-G haplotype of O. rhinoceros co-exist. Samples were either collected personally while in Palau, or by collaborators in Palau, then subsequently sent to Hawaiʻi via mail. O. rhinoceros samples sent by collaborators consisted of 1-6 legs of each O. rhinoceros sample in a 1.5mL microcentrifuge tube. In cases where first instar larvae of O. rhinoceros were collected, the whole body was sent,
+12
+
+Table 1: Number of non trap-caught and trap-caught Oryctes rhinoceros samples collected per state in Palau. The definition of “non trap-caught” O. rhinoceros means these specimens were not caught using any type of trapping method, but instead were searched for in potential breeding sites at each location and collected by hand. The definition of “trap-caught” O. rhinoceros means that these specimens were obtained using pheromone-equipped UV-LED vaned panel traps. Note that not all states were able to be re-visited for non-trap collection, and some states do not have any trap caught O. rhinoceros. A total of 15 states in Palau were visited for sample collection.
+
+State	   Aimeliik	   Airai	   Angaur	   Kayangel	   Koror	   Mekekeok	   Ngaraard	   Ngarchelong	   Ngardmau	   Ngatpang	   Ngchesar	   Ngeremlengui	   Ngiwal	   Peleliu	   Sonsorol	   Total	  #	  of	  Samples	  
+
+Non-­‐Trap	  Caught	   10	   8	   1	   7	   50	   1	   9	   0	   50	   15	   3	   2	   15	   21	   11	   203	  
+
+Trap	  Caught	   15	   15	   0	   0	   50	   3	   6	   10	   50	   3	   10	   10	   10	   21	   29	   232	  
+
+13
+
+because their small size makes first instars easy to package in a 1.5mL microcentrifuge tube. O. rhinoceros samples were stored in 70-95% ethanol at -20°C upon receipt. Sample Selection
+O. rhinoceros samples from 15 states in Palau were selected for subsequent DNA extraction and genotyping. For some states, only a limited number of samples were collected, so all samples were used for analysis. For states that had a plethora of samples (i.e. Koror and Ngardmau), specimens to be processed were selected at random, up to 50 total samples. DNA Extraction from Oryctes rhinoceros Specimens
+DNA was extracted from the leg tissue of O. rhinoceros samples or, in a few cases, from the gut tissues. DNA extraction was performed using the QAIGEN DNeasy Blood and Tissue Kit (Cat. No. 69506) according to the protocol provided. DNA elutions were stored at -20°C until needed for downstream applications. Genotyping Oryctes rhinoceros Specimens
+To determine the haplotype of each sample, an assay originally developed by Sean Marshall of AgResearch, NZ	   was	   used	   (Marshall	   et	   al.	   2017). The assay consists of a polymerase chain reaction (PCR) to amplify a 523 bp amplicon of the cytochrome oxidase 1 (COI) gene of O. rhinoceros, followed by a restriction enzyme digest using MseI enzyme. Due to a polymorphism in the COI gene sequence (an A > G base change identified by Marshall et al. 2017), the restriction enzyme digest produces distinct DNA fragments of different sizes from the 523 bp PCR amplicon, thereby distinguishing the CRB-S haplotype from the CRB-G haplotype of O. rhinoceros when the digestion products are electrophoresed. Thus, this assay utilizes a genotypic variation of the COI gene in O. rhinoceros that corresponds to the distinction between the two haplotypes.
+14
+
+The PCR reaction consisted of the following reagents: 7.0µl of UltraPure™ Distilled Water from Invitrogen™, 10.0µl of Promega GoTaq® Green Master Mix 2x, 1.0µl of 10µM C1J-1718Oryctes primer (5’-GGAGGTTTCGGAAATTGACTTGTTCC-3’), 1.0µl of 10µM C1-N2191Oryctes primer (5’-CCAGGTAGAATTAAAATRTATACCTC-3’), and 1.0µl of O. rhinoceros DNA template (Marshall et al. 2017). The PCR reaction was conducted in either a Bio-Rad T100™ Thermal Cycler or an Applied Biosystems Veriti™ 96 Well Thermal Cycler according to the following cycle: initial denaturation at 94°C for 3 minutes; 35 cycles of denaturation at 94°C for 30 seconds, annealing at 50°C for 45 seconds, and extension at 72°C for 1 minute; final extension at 72°C for 7 minutes, and a 16°C hold period until termination of the PCR run. The PCR products were subsequently run on a 2% electrophoresis gel containing ethidium bromide for 45 minutes at 100V, then imaged under a Labnet International gel imager with an ethidium bromide filter to confirm that DNA amplification occurred, and that the PCR product was the expected size. All samples were run alongside a non-template control, an O. rhinoceros sample that previously tested positive for the CRB-S haplotype, an O. rhinoceros sample that previously tested positive for the CRB-G haplotype, and a 100-bp DNA ladder from either Thermo Scientific or Lambda Biotech.
+The MseI digest reaction consisted of the following reagents: 3.9µl of UltraPure™ Distilled Water from Invitrogen™, 1.0µl of 10x Thermo Scientific Tango Buffer with BSA, 0.1µl of Thermo Scientific Tru1I (MseI) (10U/µl) restriction enzyme, and 5.0µl of the O. rhinoceros genotyping PCR product. The reaction was allowed to run for 2 hours at 65°C in either a Bio-Rad T100™ Thermal Cycler or an Applied Biosystems Veriti™ 96 Well Thermal Cycler, with a 16°C hold until termination of the experiment. MseI digest products were run on a 2% electrophoresis gel containing ethidium bromide for 45 minutes at 100V, then imaged under
+15
+
+a Labnet International gel imager with an ethidium bromide filter. Digestion products were also run alongside the 100-bp DNA ladder. Upon imaging the gel, CRB-S haplotype samples produced two bands of 181bp and 138bp, and the CRB-G haplotype samples produced two bands of 253bp and 181bp. These are the dominant band combinations used to determine each haplotype. Data Analysis
+All data were inputted and analyzed using Microsoft Excel software. To determine the significance of the data, a chi-square test was performed in Excel, using a level of significance α = 0.050. Chi-square test results from Excel were also confirmed by manual calculation, using the rejection regions method. RESULTS
+Table 1 indicates the number of non trap-caught and trap-caught samples that were processed for each state. Note that not all locations have trap-caught or non trap-caught O. rhinoceros samples, either because every state could not be assessed for non trap-caught sample collection, specimens could not be recovered using the non trap-caught method, or beetles were not found in traps.
+The genotyping data of O. rhinoceros samples from all 15 states was compiled to compare the distribution of each haplotype present among the non trap-caught and trap-caught populations. Figure 2 shows that, for both the non trap-caught and trap-caught O. rhinoceros populations, there were a slightly higher number of CRB-S haplotype specimens representing each population. For the non trap-caught population, there were 105 CRB-S specimens, versus 98 CRB-G specimens, and for the trap-caught population, there were 118 CRB-S specimens,
+16
+
+Figure 2: Percentage of CRB-S and CRB-G haplotypes from non trap-caught versus trapcaught Oryctes rhinoceros populations collected from 15 states in Palau. Samples of O. rhinoceros were collected by the non trap-caught method (i.e. searching through potential breeding sites to collect specimens by hand) and the trap-caught method (i.e. collection of samples using UV-LED/pheromone-equipped panel traps) in 15 states across Palau. The number of CRB-S and CRB-G haplotype beetles was molecularly determined and compared between populations. The chi-square analysis of the data yielded a p-value of 0.858, indicating nonsignificance.
+17
+
+versus 114 CRB-G specimens. The chi-square test yielded a p-value of 0.858, indicating no significance.
+Upon further consideration, it was determined that three states – Angaur, Kayangel, and Sonsorol – should be omitted from the data analysis for the following reasons: 1) each state is its own island; 2) Angaur is represented by a single sample, which cannot represent the distribution of O. rhinoceros haplotypes in that state; 3) the samples collected from Kayangel and Sonsorol were all identified as the CRB-S haplotype, which means that, as represented by the acquired data, only one haplotype is present at these two states, deeming them unsuitable for comparison under the parameters of our study. Omitting the data from these three locations, results showed for both non trap-caught and trap-caught O. rhinoceros populations, there was a higher number of the CRB-G haplotype (Fig. 3). For the non trap-caught population, there were 97 CRB-G specimens, versus 87 CRB-S specimens. For the trap-caught population, the difference was slightly larger, with 114 CRB-G beetles, versus 89 CRB-S beetles. The chi-square test resulted in a p-value of 0.497, indicating no significance.
+Because Koror, Ngardmau, and Peleliu have the largest number of samples analyzed, the distribution of each haplotype for the non trap-caught and trap-caught populations was determined for each state, individually. Analysis of the Koror O. rhinoceros samples indicated that there was a higher number of the CRB-G haplotype present in both the non trap-caught and trap-caught populations, with the non trap-caught population being highly dominated by the CRB-G haplotype (n = 43, CRB-G vs. n = 7, CRB-S) (Fig. 4). The chi-square test resulted in a pvalue of 0.000947, indicating high significance. Analysis of O. rhinoceros collected from Ngardmau revealed that there was a higher number of the CRB-G haplotype representing both the non trap-caught and trap-caught populations of O. rhinoceros (Fig. 5). For the non trap-
+18
+
+Figure 3: Percentage of CRB-S and CRB-G haplotypes from non trap-caught versus trapcaught Oryctes rhinoceros populations, with specimens from Angaur, Kayangel, and Sonsorol omitted. Samples from Angaur, Kayangel, and Sonsorol states were omitted from the analysis, because the O. rhinoceros specimens was obtained from these locations ultimately did not fit within the parameters of this study, which necessitates both haplotypes of O. rhinoceros to be present at each state. Chi-square analysis yielded a p-value of 0.497, indicating no statistical significance.
+19
+
+Figure 4: Percentage of CRB-S and CRB-G haplotypes from non trap-caught versus trapcaught populations of Oryctes rhinoceros collected from Koror, Palau. The distribution of O. rhinoceros haplotypes was compared between the non trap-caught and trap-caught populations sampled from the state of Koror only, because there was a large enough sample size from this state to analyze individually. Chi-square analysis yielded a p-value of 0.000947, indicating high statistical significance.
+20
+
+Figure 5: Percentage of CRB-S and CRB-G haplotypes from non trap-caught versus trapcaught Oryctes rhinoceros populations from Ngardmau, Palau. The distribution of O. rhinoceros haplotypes was compared between the non trap-caught and trap-caught populations sampled from the state of Ngardmau. Chi-square analysis of this data yielded a p-value of 0.300, indicating no statistical significance.
+21
+
+Figure 6: Percentage of CRB-S and CRB-G haplotypes from non trap-caught versus trapcaught Oryctes rhinoceros populations from Peleliu, Palau. The distribution of O. rhinoceros haplotypes was compared between the non trap-caught and trap-caught populations sampled from the state of Peleliu. Chi-square analysis of this data yielded a p-value of 0.035, indicating statistical significance.
+22
+
+caught population, there were 29 CRB-G beetles, versus 21 CRB-S beetles, and the trap-caught population contained 34 CRB-G and 16 CRB-S beetles. The chi-square test revealed a p-value of 0.300, indicating no statistical significance. Analysis of the O. rhinoceros samples collected from Peleliu showed that the non trap-caught population consisted solely of the CRB-S haplotype (n = 21), and the trap-caught population predominantly consisted of the CRB-S haplotype (n = 17), with the rest of the population (n = 4) represented by the CRB-G haplotype (Fig. 6). The chisquare test yielded a p-value of 0.035, indicating statistical significance. DISCUSSION
+In this chapter, the distribution of CRB-S and CRB-G haplotypes in non trap-caught and trap-caught O. rhinoceros populations from Palau was analyzed to determine if a difference in attraction toward ethyl 4-methyloctanoate, an aggregation pheromone widely used in O. rhinoceros traps, existed between the two haplotypes. When the overall data from 15 states was analyzed, it was found that both non trap-caught and trap-caught populations of O. rhinoceros had a slightly higher number of the CRB-S haplotype, but the difference was not statistically significant, therefore the null hypothesis was accepted. This finding indicates that there was no significant difference between the two O. rhinoceros haplotypes and their attraction toward ethyl 4-methyloctanoate; however, it was later determined that 3 of the 15 states included in the analysis – Angaur, Kayangel, and Sonsorol – did not meet the requirements for comparison under the conditions of this study.
+Following this realization, the data was re-analyzed, this time omitting the aforementioned states. Upon doing so, it was found for both the non trap-caught and trap-caught O. rhinoceros populations that there was now a slightly higher number of the CRB-G haplotype. This change in the distribution of haplotypes for both populations corresponds to the omission of
+23
+
+Kayangel and Sonsorol, because these states consisted solely of the CRB-S haplotype; therefore, a decline in the number of CRB-S O. rhinoceros was expected. Once again, the results were shown to be statistically insignificant, meaning that there was no significant difference in attraction toward ethyl 4-methyloctanoate between the CRB-S and CRB-G haplotypes, and the null hypothesis was once again accepted.
+For the aforementioned analyses of the overall data, both the non trap-caught and trapcaught populations of O. rhinoceros reflected the same general trend in the data (e.g. in the analysis of all 15 states, both populations of O. rhinoceros had a slightly higher number of CRBS haplotype beetles and a lower number of CRB-G haplotype beetles; for the analysis excluding Angaur, Kayangel, and Sonsorol specimens, both populations of O. rhinoceros had lower numbers of the CRB-S haplotype and higher numbers of the CRB-G haplotype). This indicates that the haplotype dynamics occurring naturally, represented by the non trap-caught sampling method, is also reflected in the trap-caught population. This perspective may further confirm the result that there is no significant difference between the two O. rhinoceros haplotypes in their attraction toward ethyl 4-methyloctanoate.
+When specimens from Koror, Ngardmau, and Peleliu were analyzed by individual states, mixed results were obtained. Ngardmau state showed the same trend as the overall data, meaning that the haplotype distributions occurring naturally in the non trap-caught population are reflected in the trap-caught population, and no statistically significant difference between haplotypes in their attraction toward ethyl 4-methyloctnoate was discovered; therefore, the null hypothesis could be accepted. However, the results for Koror and Peleliu conflicted with the overall results. In the case of Koror, a higher number of the CRB-G haplotype represented the non trap-caught and trap-caught populations, the higher distribution was found to be statistically
+24
+
+significant, and thus the null hypothesis was rejected. In Peleliu, the same results were observed, this time for the CRB-S haplotype. By these results, it is tempting conclude that there may be a difference in attraction toward ethyl 4-methyloctanoate between the CRB-S and CRB-G haplotypes at these states; however, there are key points about non trap-caught sampling that must be considered when discussing the results of Koror and Peleliu.
+Non trap-caught sampling means that no instruments, such as a trap, are used to obtian O. rhinoceros specimens. Instead, O. rhinoceros were actively searched for by investigating potential breeding sights and palm trees exhibiting symptoms of O. rhinoceros damage. As such, there are drawbacks to the non trap-caught sampling method that are not present when using the trap-caught method. Specifically, breeding sites may not have any O. rhinoceros occupying them; certain sites, such as the tops of palm trees or palm crowns, cannot be accessed for investigation; and not all breeding sites are accessible, as permission or permits may be required by homeowners, business owners, or government officials. However, the most notable obstacle with the non trap-caught sampling method is the high likelihood that, for a single breeding site where specimens are collected, only one female has laid eggs at that site, so only one cohort consisting of the same haplotype is sampled.
+Recall that, in order to determine the haplotype of O. rhinoceros samples, the mitochondrial gene, cytochrome oxidase I (COI), is sequenced by PCR, then subjected to a restriction enzyme digestion that cuts the PCR product into distinct, unique banding patterns for each haplotype of O. rhinoceros. Mitochondrial genes are passed on to progeny from the maternal parent alone (Vawter and Brown 1986), meaning all progeny in a single brood of O. rhinoceros will possess the same haplotype as the mother. O. rhinoceros larvae of the same instar stage tend to be contained at a single breeding site, and only a few breeding sites
+25
+
+containing O. rhinoceros specimens are actually found at any given state. As such, it is highly likely that all larvae found at a single breeding site come from the same mother and are subsequently identified as the same haplotype, thereby skewing the haplotype distribution in the non trap-caught population. The skew becomes more obvious when a smaller subset of data – such as an individual state in Palau – is analyzed. It is possible that the non trap-caught population inaccurately represented the haplotype distributions that occurred naturally at Koror and Peleliu, which may have caused the changes in the statistical significance of the data that were not present when samples were combined from all states investigated in Palau.
+Finally, another limitation to consider is that O. rhinoceros is not distributed evenly across all the states in Palau; i.e. it is clear that some states, such as Koror, have a much higher population density than others. As a result, comparing states individually may better represent the nuances of population dynamics between O. rhinoceros haplotypes at that particular state, but it does not provide an accurate representation of population dynamics as a whole in Palau. Furthermore, individual analysis of states does not give an accurate representation of the overall effectiveness of traps in attracting O. rhinoceros haplotypes, which is why it was determined that conducting an overall analysis when investigating trap performance was best.
+In regards to why the Guam eradication program has seen lower than anticipated trap catch numbers, the question that initially facilitated this research, our results show that differences in pheromone attraction between O. rhinoceros haplotypes is not the cause of the problem. However, an alternative reason for the low trap catches could be the fact that Guam has such a dense population of O. rhinoceros, the beetles are out-competing the pheromone released from the traps. With such a dense population of beetles infesting Guam, there are likely many male O. rhinoceros flooding the area with ethyl 4-methyloctanoate, making it unlikely for
+26
+
+beetles of either sex to be specifically attracted toward a trap, which could lead to very low numbers of beetles being collected from said traps.
+27
+
+Chapter 3 DEVELOPMENT OF A MULTIPLEX QUANTITATIVE POLYMERASE CHAIN REACTION ASSAY FOR RAPID AND SENSITIVE DETECTION OF THE ORYCTES
+RHINOCEROS NUDIVIRUS INTRODUCTION
+In light of the emergence of the resistant CRB-G haplotype and the lack of OrNV strains available to control it, the hunt is on for new methods of controlling O. rhinoceros in areas where the CRB-G haplotype occurs (Marshall et al. 2017; Reil et al. 2018). While there is active research aimed at discovering other biocontrol agents for O. rhinoceros, it also important to further investigate OrNV and its relationship to the CRB-G haplotype. Currently, the only modern method available for OrNV detection is a polymerase chain reaction (PCR) assay (Moslim et al. 2010). PCR is a widely accepted, ubiquitous method for detection of target nucleic acids, but it lacks certain qualities, such as direct quantification and real-time monitoring (Mackay et al. 2002); two qualities that are highly useful when studying viruses and infection processes. In addition, PCR amplicons require subsequent steps for detection (e.g. electrophoresis in the presence of ethidium bromide), increasing the time, work, and resources it takes to obtain diagnoses.
+The advent of new technology, the real-time quantitative polymerase chain reaction (qPCR) developed by Higuchi et al. (1992), has overcome the limitations of conventional PCR, and has been eagerly adopted into a wide range of research and clinical settings (Mackay et al. 2002). qPCR has many advantages, including but not limited to very fast turn-around times for obtaining results, high specificity and sensitivity, minimization of cross contamination, the ability to quantify results, the option of detecting multiple targets at one time in a single reaction,
+28
+
+and detection of gene amplification in real-time (Mackay et al. 2002; Shipley 2006). While there are some disadvantages to qPCR, such as the inability to measure amplicon size directly, lack of a consensus on how best to normalize and interpret data, incompatibility among different qPCR platforms, and the higher cost of probes and other materials, it is still a widely adopted method of nucleic acid detection due to the increased speed, sensitivity, specificity, and high quality, quantitative data it has to offer (Mackay et al. 2002; Shipley 2006; Bustin et al. 2009).
+Seeing the need for a more sensitive, accurate, rapid, and quantifiable method of OrNV detection, the purpose of this chapter was to design a multiplex qPCR assay capable of more accurately and sensitively detecting OrNV in O. rhinoceros specimens relative to the conventional PCR assay in current use. The null hypothesis was that a diagnostic multiplex qPCR assay could not be developed to detect OrNV more accurately in O. rhinoceros specimens, and the alternate hypothesis was that a diagnostic multiplex qPCR assay could be developed to more accurately detect OrNV in O. rhinoceros specimens. A multiplex design was chosen in order to detect the target OrNV gene, as well as a nuclear gene from O. rhinoceros that would serve as an internal control for each sample tested, as well as a reference from which raw OrNV Ct values, defined as the cycle number at which fluorescence detected during qPCR amplification crosses the threshold or background (Dorak 2006), could be normalized. The goals for this multiplex qPCR assay were to design it to operate at high efficiency rates with low variability between replicates and runs, detect OrNV in O. rhinoceros at low titers, and detect multiple strains of OrNV, so the assay could be use in a wide variety of settings. Finally, the assay was used to answer two questions regarding OrNV: 1) Is OrNV present in Hawaiʻi’s O. rhinoceros population, and 2) can relative OrNV levels be quantified and compared in different tissues of O. rhinoceros? The former question is important for the O. rhinoceros eradication
+29
+
+effort in Hawaiʻi, the latter is important for determining the best tissues to use for OrNV detection, and both questions help to demonstrate the potential uses of the qPCR assay designed. MATERIALS AND METHODS Sample Collection
+Specimens of O. rhinoceros used to conduct this study were collected from Hawaiʻi, Palau, China, Thailand, American Samoa, Taiwan, Vietnam, and Fiji, with the help of several collaborators. Samples were stored in 70-95% ethanol at -20°C or -80°C, depending on the lab where the samples originated. Total DNA Extraction
+All DNA extractions were performed using the QIAGEN DNeasy Blood and Tissue Kit (Cat. No. 69506) according to the provided protocol. DNA elutions were stored at -20°C until needed for downstream applications. The majority of DNA samples used in this experiment were previously extracted from the leg or gut tissue of O. rhinoceros samples, based on the needs of the researcher who originally isolated the DNA. A smaller subset of O. rhinoceros samples had DNA extracted from several tissues within the specimen. For female O. rhinoceros, DNA was extracted from the legs, eggs, ovaries, spermatheca, foregut, midgut, and hindgut, depending on what could be successfully isolated from a given sample. For male O. rhinoceros samples, the legs, testes, ejaculatory duct, foregut, midgut, and hindgut were dissected for DNA extraction. Primer Selection and Optimization
+To begin developing the specific primers for this assay, candidate primers were first selected to amplify an O. rhinoceros nuclear gene, which would serve as an internal control for the qPCR assay. Potential primers were selected from a publication detailing several degenerate
+30
+
+primer sets that were designed for the purpose of amplifying Coleopteran nuclear genes (Wild and Maddison 2008). The primer sets selected for this study are shown in Table 2.
+The primer sets in Table 2 were ordered from Integrated DNA Technologies (IDT), rehydrolyzed using 1x TE Buffer to produce a 100µM stock solution of each primer, from which 10µM working stocks were subsequently made for experimental use. PCR protocols were designed to optimize the use of the arginine kinase (AK) and RNA pol II (PL) degenerate primer sets against CRB samples collected from Palau. Given the understanding that two haplotypes of O. rhinoceros are present in Palau (Reil et al. 2016) – the CRB-G and CRB-S haplotypes – specimens of both haplotypes were used for optimization to ensure the primers produced consistent results, regardless of beetle haplotype. The degenerate primers meant to amplify the topoisomerase nuclear gene were not successfully optimized for use against O. rhinoceros samples, and thus were omitted from further use in this research.
+Arginine Kinase Degenerate Primer Set PCR Optimization. The PCR reaction mixture consisted of: 7µl of UltraPure™ Distilled Water from Invitrogen, 10µl of Promega GoTaq® Green Master Mix 2x, 1µl of 10µM AK168F primer, 1µl of 10µM AK939R primer, and 1µl of O. rhinoceros DNA. For the AK primer set, the optimized PCR cycle was determined to be as follows: initial denaturation at 95°C for 3 minutes, followed by 35 repeated cycles of denaturation at 95°C for 30 seconds, annealing at 54.8°C for 40 seconds, and extension at 72°C for 1 minute, finished with a final extension period at 72°C for 7 minutes, and a 12°C hold until termination of the PCR run. PCR products were subsequently run on a 1% agarose gel containing ethidium bromide at 60V for 1 hour, then imaged under a Labnet International gel imager with an ethidium bromide filter. All samples tested produced the same band size, slightly above the 750bp marker on the 1kb GeneRuler ladder from Thermo Scientific.
+31
+
+Table 2: Degenerate primer sets designed for amplification of nuclear protein-coding genes in Coleopteran species. All primers used were originally developed by Wild & Maddison (2008), and optimized for PCR amplification of the corresponding target genes in O. rhinoceros. The only primer set that could not be successfully optimized in O. rhinoceros was the primer set meant to amplify topoisomerase (TP643F/TP932R). The primer set was subsequently omitted from further analysis in this study.
+
+Nuclear	  Gene	  
+
+Primer	  
+
+Primer	  Sequence	  (5’-­‐3’)	  
+
+Source	  
+
+Arginine	   Kinase	  
+
+AK168F	   AK939R	  
+
+CAGGTTTGGARAAYCACGAYTCYGG	   GCCNCCYTCRGCYTCRGTGTGYTC	  
+
+Wild	  &	  Maddison	  	   2008	  
+
+RNA	  pol	  II	  
+
+PL527F	   PL758R	  
+
+AAYAAACCVGTYATGGGTATTGTRCA	   ACGACCATAGCCTTBAGRTTRTTRTAYTC	  
+
+Wild	  &	  Maddison	  	   2008	  
+
+Topoisomerase	  
+
+TP643F	   TP932R	  
+
+GACGATTGGAARTCNAARGARATG	   GGWCCDGCATCDATDGCCCA	  
+
+Wild	  &	  Maddison	  	   2008	  
+
+Degenerate	  base	  codes:	  R	  =	  A	  or	  G;	  Y	  =	  C	  or	  T;	  N	  =	  any	  base;	  V	  =	  A,	  C,	  or	  G;	  B	  =	  C,	  G,	  or	  T;	  W	  =	  A	  or	  T;	  and	  D	  =	  A,	  G,	   or	  T.	  
+
+32
+
+RNA pol II Degenerate Primer Set PCR Optimization. The PCR reaction mixture for the PL primer set consisted of: 7µl of UltraPure™ Distilled Water from Invitrogen, 10µl of Promega GoTaq® Green Master Mix 2x, 1µl of 10µM PL527F primer, 1µl of 10µM PL758R primer, and 1µl of O. rhinoceros DNA. The optimized PCR cycle was determined to be as follows: initial denaturation at 95°C for 3 minutes, followed by 35 repeated cycles of denaturation at 95°C for 30 seconds, annealing at 47°C for 30 seconds, and extension at 72°C for 45 seconds, finished with a final extension phase at 72°C for 7 minutes, and a 12°C hold until termination of the PCR run. PCR products were subsequently run on a 1% agarose gel containing ethidium bromide at 60V for 1 hour, then imaged under a Labnet International gel imager with an ethidium bromide filter. All samples tested produced a single band of the same size, approximately halfway between the 750bp and 1kb markers of the 1kb GeneRuler ladder from Thermo Scientific. Sequencing Arginine Kinase and RNA pol II PCR Products.
+Following successful PCR amplification of the O. rhinoceros arginine kinase and RNA pol II gene targets using the degenerate primers designed by Wild and Maddison, PCR products were ligated using the Promega pGEM®-T Easy Vector System I (Cat No. A1360). Ligation products were transformed into Escherichia coli DH5α cells using shock treatment, then plated on MacConkey agar for colony selection. Selected colonies were screened using 10µM Sp6 and T7 primers in PCR, and colonies that showed positive results after running them on a gel were selected for plasmid extraction using QIAGEN’s QIAprep® Spin Miniprep Kit (Cat No. 27104) following the protocol provided. Finally, plasmid extractions were sent to the Advanced Studies in Genomics, Proteomics and Bioinformatics (ASGPB) Core Facility at UH Mānoa for Sanger sequencing. For complete details of the protocols used, please see the corresponding sections below.
+33
+
+Ligation of AK or PL PCR Products to Promega pGEM®-T Easy Vector System I. The ligation reaction mixture consisted of: 1µL of ddH2O, 2.5µl of Promega 2x Rapid Ligation Buffer, 0.5µl of Promega p-GEM®-T Easy vector, 0.5µl of Promega T4 DNA Ligase, and 0.5µl of either the arginine kinase or RNA pol II PCR product. Ligation samples were allowed to incubate at 4°C overnight.
+Transformation of Ligated AK or PL PCR Products Into DH5α Escherichia coli Cells. Following ligation of the AK or PL PCR products into the pGEM®-T Easy vector, these ligation products were transformed into DH5α E. coli cells using shock treatment. Specifically, 2µl of ligation product was added to a tube of pre-prepared DH5α competent cells, and put on ice for 1 hour. The cells were then exposed to a heat shock therapy at 42°C for exactly 45 seconds, then immediately put back on ice. 400µl of SOB and 2µl of 2M MgCl2 were added to the cells, then allowed to incubate at 37°C, 300rpm for 45 minutes. Following incubation, 250µl of each transformation product were plated onto sterile MacConkey agar plates, making two plates per sample. Plates were incubated at 37°C for 16 hours or more, depending on how quickly growth occurred.
+Screening Transformed DH5α Escherichia coli Cells. After allowing the transformed DH5α cells to grow at 37°C, colonies were selected to undergo screening via PCR. Potential colonies were selected by circling white colonies (colonies that were successfully transformed by the pGEM®-T Easy vector containing the target sequence) and/or by crossing out pink colonies (colonies that were not successfully transformed by the pGEM®-T Easy vector containing the target sequence). To confirm that the selected colonies contained the plasmid with the target sequence, a PCR was performed on the colonies using Sp6 and T7 primers, which would anneal
+34
+
+to the Sp6 and T7 promoter regions on the pGEM®-T Easy vector, allowing for amplification of the region containing the cloned insert (i.e. the AK or PL PCR product).
+The PCR reaction mixture consisted of: 5µl of ddH2O, 6µl of Promega GoTaq® Green Master Mix 2x, 0.5µl of 10µM Sp6 primer, 0.5µl of 10µM T7 primer, and a small sample of the colony being tested. Colony samples were obtained by using a 10µl micropipette tip to pick up a sample of the colony, then dabbing the tip into the PCR tube. The PCR cycle consisted of an initial denaturation phase at 95°C for 5min, followed by 35 repeated cycles of denaturation at 95°C for 30 seconds, annealing at 55°C for 30 seconds, and extension at 72°C for 1 min, followed by a final extension phase at 72°C for 7 minutes, and a 12°C hold period until termination of the PCR run. The PCR products were run on a 1% agarose gel containing ethidium bromide for 45 minutes at 100V, then imaged under a Labnet International gel imager with an ethidium bromide filter. A positive result was indicated by a band at or near the 1kb marker on the Thermo Scientific 1kb GeneRuler Ladder.
+Plasmid Extraction. Colonies that were selected for screening by PCR were also subcultured in 2mL of LB + 2µL of ampicillin per well on a Falcon 24-well plate. The plate was incubated on a shaker at 37°C, 200 rpm for more than 12 hours, but less than 24 hours. These cell cultures were then used to perform plasmid extractions from the transformed DH5α cells, once it was confirmed that the cells were successfully transformed with the plasmid containing the target sequence via the PCR protocol previously outlined. Plasmid extraction was performed using QAIGEN’s QIAprep® Spin Miniprep Kit according to the provided protocol. Plasmid samples were stored at -20°C.
+Preparing Plasmid Extracts for Sequencing. The concentration of plasmid extracts was determined using a NanoDrop 2000 Spectrophotometer. The sequencing preparation contained
+35
+
+3.2µl of either Sp6 or T7 primer (1pmol/µl), the appropriate volume of plasmid extract needed to make approximately 300-400ng of plasmid per sequence preparation, then filled to a final volume of 7µl using ddH2O. Sequence preparations were sent to the ASGPB Core Facility for Sanger sequencing. Sequence files were returned via email and subsequently analyzed. Sequence Analysis
+Sequence files were imported into 4Peaks software and edited in the following ways: Sp6 sequence files were reverse complemented; sequences were trimmed to remove excess plasmid sequence, leaving only the cloned insert portion; and missing or unknown bases (denoted by an “N” in the sequence file) were corrected, when feasible. The edited sequences were then imported in to NCBI’s BLASTn program to confirm their identity. While there are no sequence files currently available in GenBank for the arginine kinase and RNA pol II genes for O. rhinoceros, the sequences obtained produced high pairwise identity to either arginine kinase sequences in the Coleopteran order (Dynastinae subfamily) or RNA pol II sequences of the Coleopteran or Hymenopteran orders.
+After confirming that the sequences obtained from Sanger sequencing were of the correct gene through BLASTn, the edited sequences files were imported to Geneious to obtain a consensus sequence for the arginine kinase and RNA pol II genes of O. rhinoceros. All edited sequence files for each gene were pooled together in Geneious to obtain the overall consensus sequence. The final consensus sequence for the O. rhinoceros arginine kinase gene was 797bp in length, and the final consensus sequence for the O. rhinoceros RNA pol II gene was 858bp (Table 3). Using these consensus sequences, as well as a consensus sequence for the OrNV glycoprotein gene commonly used for OrNV detection, TaqMan primer-probe sets were designed for use in the qPCR assay.
+36
+
+Table 3: Consensus sequences of the Oryctes rhinoceros arginine kinase and RNA
+
+polymerase II nuclear genes, and the OrNV glycoprotein gene. All consensus sequences
+
+represent only a partial region of each gene, not the full gene sequence.
+
+Gene	  
+
+Sequence	  (5’-­‐3’)	  
+
+Arginine	   Kinase	  
+RNA	  pol	   II	  
+OrNV	  
+
+CAGGTTTGGARAATCACGATTCTGGTATTGGCATTTATGCACCCGATGCTGAAGCCTACA CTGTGTTCGCTGAATTATTCGATCCGATCATCGAAGATTACCATGGTGGATTCAAGAAGA CTGATAGACATCCACCAAAGAACTGGGGTGACGTTAGCGTTTTCGGAAATCTAGACCCAG CCAACGAGTACATCGTATCCACTCGCGTACGTTGTGGCCGTTCCATGGAAGGATATCCCT TCAACCCATGCTTGACTGAAGAACAGTACAAGGAAATGGAACAGAAAGTGTCCGGCACAT TATCTGGTCTTGAAGGCGAACTCAAGGGTACATTCTATCCATTGACTGGAATGAGCAAAG ATGTTCAACAGAAGCTGATCGATGACCATTTCTTGTTCAAGGAAGGTGATCGCTTCTTAC AAGCAGCCAACGCTTGCCGTTTCTGGCCGACTGGACGTGGCATTTACCATAACGACAATA AAACATTCTTGGTCTGGTGCAATGAAGAAGATCATCTTCGTATTATTTCCATGCAGATGG GTGGTGATCTTGGCCAAGTTTACAGGCGTTTGGTAACCGCTGTTAATGATATCGAGAAAC GTATTCCATTCTCGCATAACGATAGATTGGGATTCCTTACTTTCTGCCCAACCAATCTTG GAACTACCGTACGTGCGTCCGTTCACATTAAAGTGCCCAAATTAGCTTCCAACAAGGCTA AACTCGAGGAAGTCGCAGCTAAATACAATTTGCAAGTCCGCGGAACTCGCGGTGARCACA CYGAAGCTGARGGMGGC AACAAACCAGTCATGGGTATTGTGCAAGATACATTAACTGCTGTTCGAAAAATGACGAAA CGCGATGTATTTATTGACAAAGAACAAATGATGACATTACTTATGTTCTTACCTATTTGG GATGGAAAAATGCCTAGACCGGCTATATTAAAACCAAAGCCACTGTGGACAGGAAAACAG ATTTTTTCGTTAATTATTCCGGGTAATGTAAATATGATTCGCACTCATTCAACACATCCA GATGAAGAGGATGATGGGCCATATAAATGGATATCACCTGGTGACACAAAGGTATATTTT TTATGATTTCCAAAAAGTTGTACCATATGCGTAATCAAATTGCATTGATATTTTTTAGGT AATGGTAGAACATGGAGAATTAGTTATGGGCATTTTATGTAAAAAGACGCTGGGTACCTC AGCAGGTTCACTACTTCATATTTGTATGTTAGAACTTGGTCATGAAGTATGTGGTCGATT CTATGGCAACATTCAAACTGTAATTAATAATTGGCTGTTATTAGAAGGTGTGTAAAGAAA AGAAACTTTGAAACATAATAGAACAGCGATTTTATAATACTTCTTTCTTATTTTAGGTCA CAGCATTGGTATTGGTGACACCATTGCTGATCCTCAGACTTATTTAGAAATTCAAAAAGC CATTAAGAAAGCTAAGGAAGATGTAATAGAAGTAATTCAGAAAGCTCACAATATGGAACT GGAACCTACACCTGGTAACACATTAAGGCAAACTTTCGAAAATCAGGTAAACAGAATTCT AAACGACGCTCGTGACAAAACTGGTGGTTCGGCTAAAAAATCGTTAACTGAATAYAAYAA CCTGAAGGCTATGGTCGT ATCGCGGAAAAGAGAAAGAGTTTCTCGTCGCGGCCTCATATCTGCTAGCAAAATTCTACA AGAACAAATTGTGGGCGATCCGATCAAAGAATCTAAAGTTATACGCCAAACAGGCGGCCA GAGCTCAGAATCCAAAACTTACGCCGACATCATCGTCCGATTCCGAATTATCCGACAAGA AGCCAAGCCGAGGCTTCAAAGTTAACAAGTTGGATTGTATAACGGACTCGTTCTCCAGAT GTACGTCTACACAAATTAAACTTGCAGTCGCGATATTTCTAAGCTCGAATTTCGTAGACT CTATTCGACGCGAATTCATCAATACTATCGTCTCCGATGTCAATCACGAAAAGAGCGTGG AATACATCGTCGAAATGTTTATGCATCCACAACAATCGGTCGTCAAAGTACGAGAGTACA TCAACTCCGTCGAGGCGCGAGGTTTGGATAAATCATCCGAAAAGTACATAATATGTGCTC TGATTGAATTGTCCGAATTACTGAACGACAAGTCATACTGCAAACTTGCGTTCGAAGTGA ATTCGTCCAGATACGTTCAATTGGCGCAAAAGTATCTCGAATCGAGTTTGATTCGATCGA TCGTACCGTTCGAGCCTGCTATAAACAAGTACTTGAAGACGTCCATAGCTCAATGTTCGC AATCGGCAGAACGAAAAATCGTCTACAATCAATTCAAGACCGATCCGATTGGAGCCATTG CCGTTGTTATTCGTGGTCTCCCAGAGCCGAAGAAGAAGAGTTTGTCTCGAGTATCCGACA AATTACGAGTATTCAATCCCGATGAAATTTACCAATGCCATAAAGGTCCGGTCGGTTATA CTCGAGATATCGTCGCCACATATCATCGTGTCGGCTATGACTTGTACAAAATTCTAACGT ACAGC
+
+Length	   (bp)	   797	  
+858	  
+905	  
+
+37
+
+Designing Primer-Probe Sets for Arginine Kinase, RNA pol II, and OrNV Using the consensus sequences of arginine kinase, RNA pol II, and OrNV glycoprotein,
+potential primer-probe sets for each sequence were assessed using IDT’s PrimerQuest Tool. In short, the FASTA files for each consensus sequence were copied and pasted into the PrimerQuest tool, which gave back 5 possible primer-probe sets along different regions of each gene sequence. The final six primer-probe sets, two for each gene, were ordered for optimization (Table 4).
+Initially, only the forward and reverse primers were ordered from IDT, to ensure that they could be optimized for use against multiple O. rhinoceros samples, before committing to ordering the associated probes for qPCR. The primer sets were first tested independently of each other, then tested in combination, with either of the O. rhinoceros nuclear genes’ primer sets (arginine kinase or RNA pol II) combined with the OrNV primer sets. Ultimately, the most effective primer combination was OrNV-T4-S1 primers (for the detection of OrNV) combined with CRB-AK-S2 primers (for the detection of O. rhinoceros nuclear gene, arginine kinase). O. rhinoceros specimens from China, American Samoa, Palau, Thailand, Hawaiʻi, Vietnam, Taiwan, Japan, and Guam were tested against the primer set combinations, and it was concluded that the OrNV-T4-S1/CRB-AK-S2 primer combination worked the best against all samples. qPCR Assay Development
+After confirming that the OrNV-T4-S1 and CRB-AK-S2 primer combination worked well together against a variety of O. rhinoceros samples, the corresponding probes, OrNVp1 and CRBAKp2, were ordered to test the multiplex qPCR assay (Table 4). The final, optimized multiplex qPCR reaction (25µl) consisted of: 8.7µl of HyPure™ molecular biology grade nuclease free ddH2O (HyClone), 2.5µl 10x PCR Rxn Buffer (Invitrogen), 3.0µl 50mM MgCl2
+38
+
+Table 4: TaqMan primer-probe sets for arginine kinase, RNA polymerase II, and OrNV
+
+glycoprotein gene amplification via qPCR. All primer-probe sets were designed by IDT’s
+
+PrimerQuest Tool. Two primer-probe sets were selected for each gene sequence, and tested
+
+against O. rhinoceros specimens via qPCR to select the optimized primer-probe sets to be used
+
+in the final qPCR assay.
+
+Primer	   /Probe	  
+
+Start	  
+
+CRB-­‐AK-­‐S2	  
+
+Forward	   401	  
+
+Probe	   447	  
+
+Reverse	   484	  
+
+CRB-­‐AK-­‐S4	  
+
+Forward	   172	  
+
+Probe	   236	  
+
+Reverse	   273	  
+
+CRB-­‐PL-­‐S2	  
+
+Forward	   371	  
+
+Probe	   411	  
+
+Reverse	   467	  
+
+CRB-­‐PL-­‐S3	  
+
+Forward	   659	  
+
+Probe	   713	  
+
+Reverse	   777	  
+
+OrNV-­‐T4-­‐S1	  
+
+Forward	   606	  
+
+Probe	   648	  
+
+Reverse	   726	  
+
+OrNV-­‐T4-­‐S2	  
+
+Forward	   742	  
+
+Probe	   814	  
+
+Reverse	   859	  
+
+Stop	   Length	  
+
+Sequence	  (5’-­‐3’)	  
+
+Tm	  
+
+GC %	  
+
+Amplicon	   Size	  
+
+422	   21	  
+
+GGAAGGTGATCGCTTCTTACA	   62	   47.6	   104	  
+
+471	   24	   CCGACTGGACGTGGCATTTACCAT	   68	   54	   104	  
+
+505	   21	  
+
+CATTCTTGGTCTGGTGCAATG	   62	   47.6	   104	  
+
+191	   19	   260	   24	   295	   22	  
+
+TAGACCCAGCCAACGAGTA	  
+
+62	   52.6	   123	  
+
+TCCCTTCAACCCATGCTTGACTGA	   68	   50	   123	  
+
+GAAATGGAACAGAAAGTGTCCG	   62	   45.5	   123	  
+
+396	   25	   CATGGAGAATTAGTTATGGGCATTT	   62	   36	   118	  
+
+436	   25	   TGGGTACCTCAGCAGGTTCACTACT	   68	   52	   118	  
+
+489	   22	  
+
+GTATGTGGTCGATTCTATGGCA	   62	   45.5	   118	  
+
+684	   25	   GCCATTAAGAAAGCTAAGGAAGATG	   62	   40	   138	  
+
+737	   24	   ATGGAACTGGAACCTACACCTGGT	   67	   50	   138	  
+
+797	   20	  
+
+TTCTAAACGACGCTCGTGAC	  
+
+62	   50	   138	  
+
+626	   20	  
+
+CCGTTCGAGCCTGCTATAAA	  
+
+62	   50	   141	  
+
+672	   24	   TTCTGCCGATTGCGAACATTGAGC	   68	   50	   141	  
+
+747	   21	   	   GTTATTCGTGGTCTCCCAGAG	   62	   52.4	   141	  
+
+763	   21	  
+
+CAGAGCCGAAGAAGAAGAGTT	   62	   47.6	   139	  
+
+838	   24	   AATGCCATAAAGGTCCGGTCGGTT	   68	   50	   139	  
+
+881	   22	  
+
+CATATCATCGTGTCGGCTATGA	   62	   45.5	   139	  
+
+39
+
+(Invitrogen), 0.6µl of 10mM dNTP’s (10mM each of 100mM stock dATP, dGTP, dCTP, and dTTP from Invitrogen), 0.2µl Platinum® Taq DNA Polymerase (5U/µl) (Invitrogen), 0.5µl of 10µM OrNV-T4-S1F forward primer, 0.5µl of 10µM OrNV-T4-S1R reverse primer, 3.0µl of 1µM OrNVp1 probe, 0.5µl of 10µM CRB-AK-S2F forward primer, 0.5µl of 10µM CRB-AKS2R reverse primer, 3.0µl of 1µM CRBAKp2 probe, and 2.0µl of O. rhinoceros DNA template.
+The final qPCR program consisted of an initial denaturation stage at 95°C for 20 seconds, followed by 40 repeated cycles of denaturation at 95°C for 1 second, and both annealing of primers/probes and extension by Taq DNA polymerase at 61°C for 40 seconds. The conditions of this assay were optimized using SmartCycler® (Cepheid), each of the two machines having 16 individual reaction sites, for a total of 32 reaction sites that can run individual protocols, if necessary. The qPCR assay was initially tested as singleplex reactions, then as multiplex reactions, to ensure the primer-probe sets worked both on their own and in combination. After confirming that both primer/probe sets produced consistent results in multiplex, assay efficiency tests were performed. qPCR Assay Efficiency Trials
+To test the efficiency of the qPCR assay, the standard curve method was used based off of recommendations outlined in a publication by Svec et al. (2015) for assessing qPCR assay efficiency. The dilutions for the standard curve were procured by performing a 10-fold serial dilution on a concentrated stock of an O. rhinoceros DNA sample previously confirmed positive for OrNV via conventional PCR and qPCR. A transfer volume of 10µl of DNA was added into 90µl of ddH2O for each standard dilution, and each dilution in the series was thoroughly triturated before moving on to create the next dilution in the series. Altogether, 7 diluted standards represented the serial dilution, plus the original, undiluted DNA sample. When
+40
+
+performing the efficiency tests, each standard dilution was run in triplicate alongside a nontemplate control, and three separate runs were performed. qPCR Test Designs
+Four tests were designed with the goal of utilizing the OrNV qPCR assay to test a variety of questions regarding the assay itself and OrNV. The ultimate goal of developing this assay was to have a rapid, sensitive diagnostic test for detecting OrNV in any given unknown sample. Therefore, O. rhinoceros specimens from multiple countries where OrNV is established (Palau, China, Thailand, American Samoa, Taiwan, Vietnam, and Fiji) were subjected to the qPCR assay, in order to determine if the assay could detect various strains of OrNV. In a second test, the accuracy and sensitivity of the conventional PCR and qPCR assays for detecting OrNV were compared by testing a 1:10 serial dilution of OrNV-positive O. rhinoceros DNA diluted using OrNV-negative DNA.
+To determine the status of OrNV in Hawaiʻi, specimens from Hawaiʻi’s population of O. rhinoceros were tested against the qPCR assay. To conduct this experiment, 15 freshly caught O. rhinoceros “wild-caught” specimens (defined as O. rhinoceros collected during trap servicing by the Hawaiʻi CRB Response Team), and 6 “colony-raised” specimens (defined as O. rhinoceros that completed the entire life cycle – from egg to adult – in the quarantine facility located at the University of Hawaiʻi at Mānoa) were collected and subjected to the qPCR assay. Upon acquisition, the samples were immediately placed into separate 50mL falcon tubes containing 70% ethanol, processed for DNA extraction, and subjected to the PCR and qPCR assays for OrNV detection. Care was taken to ensure no cross contamination of virus occurred between samples (i.e. sterilizing dissection tools between samples, changing gloves between handling different samples, sterilizing micropipettes before use, and using filtered micropipette tips).
+41
+
+Lastly, one sample each from Guam, Fiji, American Samoa, China, and Taiwan were dissected for various tissues to be tested for OrNV using the qPCR assay, in order to determine the tissues from which OrNV could be reliably detected. Regardless of sex, tissue samples from the leg, foregut, midgut, and hindgut were dissected from all samples. For female specimens, the ovaries, spermatheca, and eggs were also dissected, if found. In male specimens, the testes and ejaculatory duct were dissected. All samples were dissected using sterile techniques to avoid cross contamination between samples and tissue types. The samples were tested for OrNV using the diagnostic qPCR assay, and raw Ct values were used to determine the expression levels of OrNV, relative to the reference gene (CRB-AK) and a calibrator/control sample using two methods for relative quantification – the comparative Ct (ΔΔCt) method and the efficiencycorrected method – for comparison.
+Regardless of test design, all qPCR runs used the same reagents, qPCR machines, and qPCR program for detection of OrNV. Each qPCR run also included a non-template control, an O. rhinoceros sample confirmed positive for OrNV, and an O. rhinoceros sample confirmed negative for OrNV. Data Analyses
+Data files for each OrNV qPCR assay run were downloaded from the Cepheid SmartCycler® software and imported into Microsoft Excel. Raw qPCR Ct values from efficiency trials and O. rhinoceros tissue tests underwent preliminary analysis – evaluating Ct differences between replicates, and calculating standard deviation, mean, and coefficient of variance (CV) – to establish if the data was suited for downstream analysis.
+qPCR assay efficiency was determined using the procedures outlined by Svec et al. (2015). In short, standard curve samples were tested in triplicate in three separate runs,
+42
+
+replicates from all runs were averaged, averaged values for each standard were plotted on a graph to obtain the slope and coefficient of determination (R2). Using the equation, E = 10-(1/slope), the efficiency of the assay for both OrNV glycoprotein and arginine kinase nuclear gene amplification was obtained. In addition to obtaining the efficiency of the assay, the intra-assay variability and inter-assay variability were also calculated.
+Data from OrNV strain detection and the O. rhinoceros population in Hawaiʻi were treated as purely diagnostic tests, assigning a plus (+) or minus (-) value for detection of OrNV in each sample. To determine OrNV titer in different tissues, raw Ct values were normalized via relative quantification using the comparative Ct method (ΔΔCt method) (Livak and Schmittgen 2001) and the efficiency-corrected method (Pfaffl et al. 2001; Pfaffl 2006), and the two methods were compared. To calculate relative expression ratios of OrNV using the ΔΔCt method, replicates were averaged, ΔCt was calculated by subtracting the averaged Ct of the reference gene (CRB-AK) from the averaged Ct of the target (OrNV glycoprotein) (ΔCt = Ct target – Ct reference), ΔΔCt was calculated by subtracting the ΔCt of the calibrator sample from the ΔCt of the test sample (ΔΔCt = ΔCt test sample – ΔCt calibrator sample), and the ΔΔCt value was plugged into the final equation, 2-ΔΔCt, to obtain the fold-difference in expression of OrNV relative to the calibrator. To calculate the relative expression of OrNV using the efficiency-corrected method, the Ct values of replicates were averaged, the ΔCt of the target (OrNV glycoprotein) was calculated by subtracting the Ct OrNV of the test sample from the Ct OrNV of the calibrator sample (ΔCt target = Ct calibrator – Ct sample), the ΔCt of the reference (CRB-AK) was calculated using the same method (ΔCt reference = Ct calibrator – Ct sample), and the ΔCt values along with the efficiencies of target and reference amplification were plugged into the following equation to obtain the final relative expression ratios of OrNV:
+43
+
+Ratio = (Etarget)ΔCttarget(control – sample) / (Ereference)Δctreference(control – sample) (Pfaffl 2001). RESULTS OrNV Multiplex qPCR Assay Validation
+The obtained efficiencies for the target and internal control gene amplifications using the multiplex qPCR assay were 96.51% (E = 1.97; R2 = 0.9998) for OrNV glycoprotein gene amplification and 95.35% (E = 1.95; R2 = 0.99875) for CRB-AK gene amplification (Fig. 7). The intra-assay CVs for OrNV and CRB-AK gene detection were between 0.07% and 4.68%, and between 0.50% and 3.88%, respectively (Table 5). The inter-assay CVs for OrNV and CRB-AK gene detection ranged from 0.05% and 3.91%, and from 0.34% to 1.28%, respectively (Table 6). Detecting Strains of OrNV
+The O. rhinoceros specimens from Palau, China, Thailand, American Samoa, Taiwan, Vietnam, and Fiji that were tested for detection of established strains of OrNV in these countries resulted in positive results for all samples tested, with the exception of the single specimen from Fiji (Table 7). It is important to note that this Fiji sample initially tested positive for OrNV via conventional PCR, though it was later determined, by testing the internal tissues, that this sample was truly negative for OrNV, and that the initial positive result was due to surface contamination of OrNV on the sample. Comparing the PCR and qPCR Assays for Detection of OrNV
+The results of the 1:10 serial dilution of OrNV-positive O. rhinoceros DNA that was subjected to the conventional PCR and qPCR assays for OrNV detection showed that the conventional PCR assay was capable of detecting OrNV up to the 10-3 standard dilution, and the qPCR assay was able to detect OrNV up to the 10-4 serial dilution concentration (Table 8). These results indicated a higher sensitivity for the qPCR assay relative to the conventional PCR assay.
+44
+
+Figure 7. Standard curve plots of a ten-fold serial dilution of OrNV-positive Oryctes rhinoceros DNA to test the efficiency of OrNV glycoprotein and Oryctes rhinoceros arginine kinase sequence amplification via multiplex qPCR. Each standard was tested in triplicate, and three separate runs were completed. The data from all three runs was compiled to obtain averaged Ct values, then plotted to obtain the slope, thereby allowing us to determine the efficiency of amplification of each gene using the equation: E = 10-(1/slope).
+45
+
+Table 5: Intra-assay variability for the amplification of OrNV glycoprotein and Oryctes
+
+rhinoceros arginine kinase gene sequences via multiplex qPCR. A 7-point standard dilution ranging from 100 – 106 was run in triplicate in three separate runs. Ct values for each dilution point were averaged for each run; the standard dilution (SD) and coefficient of variance (CV)
+
+were subsequently calculated.
+
+OrNV
+Log	   Concentration
+0 1 2 3 4 5 6
+CRB-­‐AK
+Log	   Concentration
+0 1 2 3 4
+
+st
+1 	  Run
+
+Ct	   Mean
+
+Ct	  SD
+
+CV	  (%)
+
+15.29 0.12 0.78
+
+19.13 0.04 0.18
+
+22.35 0.06 0.27
+
+25.78 0.07 0.26
+
+29.21 0.21 0.71
+
+32.49 0.15 0.45
+
+37.54 1.67 4.68
+st
+1 	  Run
+
+Ct	   Mean
+
+Ct	  SD
+
+CV	  (%)
+
+22.03 0.30 1.34
+
+25.75 0.19 0.74
+
+29.12 0.20 0.68
+
+32.80 0.55 1.66
+
+35.21 1.36 3.88
+
+nd
+2 	  Run
+
+Ct	   Mean
+
+Ct	  SD
+
+CV	  (%)
+
+15.45 0.08 0.49
+
+19.11 0.09 0.47
+
+22.36 0.13 0.60
+
+25.71 0.21 0.80
+
+29.07 0.08 0.28
+
+32.15 0.33 1.03
+
+35.01 0.37 1.06
+nd
+2 	  Run
+
+Ct	   Mean
+
+Ct	  SD
+
+CV	  (%)
+
+22.08 0.11 0.50
+
+25.79 0.15 0.57
+
+29.35 0.44 1.49
+
+32.38 0.58 1.78
+
+36.11 0.92 2.55
+
+rd
+3 	  Run
+
+Ct	   Mean
+
+Ct	  SD
+
+CV	  (%)
+
+15.38 0.16 1.06
+
+19.09 0.18 0.92
+
+22.59 0.14 0.60
+
+25.98 0.19 0.72
+
+29.16 0.02 0.07
+
+33.04 0.32 0.97
+
+37.75 0.23 0.60
+rd
+3 	  Run
+
+Ct	   Mean
+
+Ct	  SD
+
+CV	  (%)
+
+21.87 0.32 1.46
+
+25.62 0.21 0.81
+
+29.47 0.37 1.26
+
+32.58 0.80 2.45
+
+35.76 1.16 3.23
+
+46
+
+Table 6: Inter-assay variability for the amplification of OrNV glycoprotein and Oryctes rhinoceros arginine kinase gene sequences via multiplex qPCR. Standard dilutions ranging from 100 – 106 were run in triplicate, in three separate runs. Ct values for each dilution point were averaged for each run; the standard dilution (SD) and coefficient of variance (CV) were subsequently calculated.
+
+	   Log	   Concentration	   0	   1	   2	   3	   4	   5	   6	  
+
+Ct	  Mean	   15.37	   19.10	   22.41	   25.80	   29.07	   32.58	   36.18	  
+
+OrNV	   Ct	  SD	   0.08	   0.01	   0.16	   0.15	   0.09	   0.44	   1.41	  
+
+CV	  (%)	   0.52	   0.05	   0.70	   0.58	   0.32	   1.36	   3.91	  
+
+Ct	  Mean	   21.99	   25.72	   29.31	   32.59	   35.69	  
+	   	  
+
+CRB-­‐AK	   Ct	  SD	   0.11	   0.09	   0.18	   0.21	   0.46	   	   	  
+
+CV	  (%)	   0.49	   0.34	   0.61	   0.65	   1.28	  
+	   	  
+
+47
+
+Table 7: Multiplex qPCR diagnosis of OrNV in Oryctes rhinoceros specimens from countries with established strains of OrNV. N = the number of samples tested from each country.
+
+Country	  
+
+N	  
+
+Palau	  
+
+4	  
+
+China	  
+
+4	  
+
+Thailand	  
+
+4	  
+
+American	  Samoa	  
+
+3	  
+
+Taiwan	  
+
+3	  
+
+Vietnam	  
+
+1	  
+
+Fiji	  
+
+1	  
+
+OrNV	  Diagnosis	   +	   +	   +	   +	   +	   +	   -­‐	  
+
+48
+
+Table 8: Comparing the sensitivity of OrNV detection between the PCR and qPCR assays using a serial dilution of OrNV-positive Oryctes rhinoceros DNA. To create the serial dilution, a total DNA extraction of an O. rhinoceros sample confirmed positive for OrNV was diluted ten-fold using a total DNA extraction from an O. rhinoceros sample that was confirmed negative for OrNV. The original, undiluted OrNV-positive O. rhinoceros DNA sample, along with serial dilutions ranging from 10-1 to 10-8 dilution factors were subjected to the conventional PCR and qPCR assays for OrNV detection, and compared.
+
+Log	  Concentration	   0	   1	   2	   3	   4	   5	   6	   7	   8	  
+Non-­‐template	  Control	   OrNV+	  control	   OrNV-­‐	  control	  
+
+OrNV	  PCR	   +	   +	   +	   +	   -­‐	   -­‐	   -­‐	   -­‐	   -­‐	   -­‐	   +	   -­‐	  
+
+OrNV	  qPCR	   +	   +	   +	   +	   +	   -­‐	   -­‐	   -­‐	   -­‐	   -­‐	   +	   -­‐	  
+
+49
+
+Determining the Status of OrNV in Hawaiʻi’s Oryctes rhinoceros Population The final results from both the conventional PCR and qPCR assays showed that the 6
+colony-raised specimens and the 15 wild-caught O. rhinoceros specimens all tested negative for OrNV (data not shown). Relative Quantification of OrNV in Oryctes rhinoceros Tissues
+The Guam and Fiji O. rhinoceros samples (both male) tested negative (Ct = 0) for OrNV in all tissue types, so relative quantification calculations were not necessary. Results from the American Samoa, China, and Taiwan O. rhinoceros specimens showed that, for all O. rhinoceros samples and tissue types, the efficiency-corrected method of relative quantification produced lower relative expression ratios (Table 9). An overall trend was observed in which the difference in relative expression ratios between the two methods of relative quantification becomes more evident as the values of the expression ratios themselves become higher. When the relative expression ratios are ranked for each O. rhinoceros specimen from the tissue type with the lowest titer of OrNV to the tissue type with the highest titer of OrNV, the order of ranking was the same for all tissue types between the two methods of relative quantification. All three O. rhinoceros specimens were found to have the highest titer of virus located in some type of gut tissue. The lowest amount virus was located in the leg tissue of the China and Taiwan O. rhinoceros specimens, and the testes for the American Samoa specimen. DISCUSSION
+The efficiencies obtained for OrNV glycoprotein target gene amplification and CRB-AK internal control gene amplification were well within the range of what is considered acceptable for qPCR efficiency, which is 90-110% (Raymaekers et al. 2009). Potentially, the qPCR efficiencies were not at 100% due to the fact that one of the downsides to designing a multiplex
+50
+
+Table 9: Comparison of normalized expression ratios of OrNV in Oryctes rhinoceros tissues
+
+using the comparative Ct and efficiency-corrected methods of relative quantification.
+
+Relative expression ratios of the ΔΔCt methods are expressed as a range, calculated from the
+
+standard deviation, which is shown in parentheses next to the average relative expression ratio.
+
+For the efficiency-corrected model, the average relative expression ratio is reported, followed by
+
+the standard deviation. Tissue types denoted with an asterisk (*) indicate tissue samples that required the use of a 10-1 dilution of the original DNA, because the undiluted DNA produced
+
+abnormal amplification curves during qPCR, due to the presence of too much starting template.
+
+Tissue American	  Samoa	  Specimen Calibrator Leg Testes Ejaculatory	  Duct Foregut* Midgut Hindgut China	  Specimen Calibrator Leg Ovaries Spermatheca Gut	  Piece Taiwan	  Specimen Calibrator Leg Egg	  1 Egg	  2 Spermatheca Foregut Midgut* Hindgut
+
+-­‐ΔΔCt
+2 	  Method
+
+	  1.00 (0.90	  –	  1.12)
+
+35.42 (28.30	  –	  44.35)
+
+13.61	   (9.33	  –	  19.85)
+
+71.67 (54.94	  –	  93.50)
+
+4
+
+4
+
+4
+
+2.66x10 (2.46x10 	  –	  2.86x10 )
+
+3
+
+2
+
+3
+
+1.01x10 (6.91x10 	  –	  1.48x10 )
+
+3
+
+2
+
+3
+
+1.25x10 (9.57x10 	  –	  1.62x10 )
+
+1.00 (0.78	  –	  1.28)	  
+
+2
+
+2
+
+2
+
+1.74x10 (1.06x10 	  –	  2.86x10 )
+
+3
+
+3
+
+3
+
+5.58x10 (4.27x0 	  –	  7.30x10 )
+
+4
+
+3
+
+4
+
+1.58x10 (8.75x10 	  –	  2.86x10 )
+
+5
+
+5
+
+5
+
+5.24x10 (4.53x10 	  –	  6.06x10 )
+
+1.00 (0.88	  –	  1.14)
+
+27.10 (21.98	  –	  33.40)
+
+2
+
+2
+
+2
+
+7.24x10 (5.60x10 	  –	  9.37x10 )
+
+2
+
+2
+
+2
+
+1.84x10 (1.55x10 	  –	  2.19x10 )
+
+2
+
+2
+
+2
+
+1.43x10 (1.30x10 	  –	  1.58x10 )
+
+4
+
+4
+
+4
+
+2.40x10 (1.65x10 	  –	  3.49x10 )
+
+4
+
+4
+
+4
+
+8.22x10 (7.63x10 	  –	  8.86x10 )
+
+2
+
+2
+
+2
+
+3.30x10 (2.78x10 	  –	  3.92x10 )
+
+Efficiency-­‐Corrected	  Method
+
+1.00 ±	  0.11
+
+32.51 ±	  4.93
+
+13.46	  ±	  3.45
+
+65.32	  ±	  6.94
+
+4
+
+3
+
+2.04x10 	  ±	  1.94x10
+
+2
+
+2
+
+8.54x10 	  ±	  1.60x10
+
+3
+
+2
+
+1.06x10 	  ±	  1.99x10
+
+1.00 ±	  0.08
+
+2
+1.49x10 	  ±	  83.02
+
+3
+
+3
+
+4.38x10 	  ±	  1.65x10
+
+4
+
+3
+
+1.26x10 	  ±	  7.23x10
+
+5
+
+4
+
+3.54x10 	  ±	  3.90x10
+
+1.00 ±	  0.08
+
+25.47	  ±	  5.39
+
+2
+
+2
+
+6.22x10 	  ±	  1.55x10
+
+2
+1.66x10 	  ±	  26.12
+
+2
+1.29x10 	  ±	  9.56
+
+4
+
+3
+
+1.87x10 	  ±	  5.57x10
+
+4
+
+3
+
+6.03x10 	  ±	  5.95x10
+
+2
+2.89x10 	  ±	  61.25
+
+51
+
+qPCR assay is that detection of more than one target in a well can cause competition between reaction substrates. Pipetting inaccuracies are also a likely contributor to efficiencies less than 100%.
+From the qPCR efficiency data, the intra- and inter-assay variability for OrNV glycoprotein and CRB-AK gene amplification was also calculated. The intra-assay variability for OrNV gene amplification of the 10-6 standard dilution was rather large, but it is important to consider that the higher the dilution is, the more unreliable detection can become. It is also possible that pipetting volume errors occurred between replicate samples, further increasing the coefficient of variance for this particular data point. The intra- and inter-assay variability CVs for CRB-AK gene amplification fell within acceptable ranges of variance. Again, high CVs obtained were seen only in high dilutions, and the higher the dilution, the higher the Ct values, and the less reliable detection of the target becomes, which results in greater variance.
+In the test designed to detect different strains of OrNV from countries where the virus is established, the single O. rhinoceros specimen from Fiji that tested negative for OrNV initially tested positive using the conventional PCR assay. As such, the negative result via qPCR is not an indication of the assay’s inability to detect the strain of OrNV present in Fiji. Rather, this O. rhinoceros specimen had surface contamination at the time the sample was acquired from the field, which is why there was initial detection of the virus, later deemed to be surface contamination. The Fiji specimen’s OrNV infection status was confirmed by testing internal tissues of the sample, all of which tested negative for OrNV.
+Furthermore, to confirm surface contamination was the issue, the sample from Fiji was subjected to a bleach sterilization technique using a fresh DNA extraction, and compared against a second DNA extraction of the same sample without any sterilization. Results showed that the
+52
+
+unsterilized sample tested positive for OrNV via conventional PCR and qPCR, and the sterilized sample tested negative for OrNV via both methods. The results indicated that the O. rhinoceros specimen from Fiji did contain OrNV on the exoskeleton, most likely picked up from the environment it was in, or by the individual who collected the sample, but was not actually infected with OrNV. The positive results from all other samples tested from Palau, China, Thailand, American Samoa, Taiwan, and Vietnam confirms that the qPCR assay is capable of detecting multiple strains of OrNV. During the design of the primer-probe sets, primers and probes were double-checked to ensure they fell along sections of the OrNV glycoprotein sequence that were conserved in all strains of OrNV originally isolated from O. rhinoceros specimens collected from the same countries tested for the virus in this experiment.
+Results from comparing the sensitivity and accuracy of the conventional PCR and qPCR assays in detecting OrNV confirmed that the qPCR assay is more sensitive, and therefore more accurate and reliable as a diagnostic assay for OrNV. As such, the qPCR assay allows a greater degree of confidence in the results when diagnosing an O. rhinoceros sample for OrNV, especially if the sample has a low titer of the virus. Having successfully designed a more sensitive diagnostic assay for OrNV is important, because using the conventional PCR assay has presented inconclusive results in the past. There have been instances in which very faint detection of OrNV occurs, sometimes to the point where the sample is determined to be negative, when it is actually a true positive for the virus (type II error). This is a clear example of how this newly developed qPCR assay could be beneficial to OrNV diagnosis, because the higher sensitivity will provide more accurate results for O. rhinoceros samples presenting a low titer of OrNV, and gives more definitive results.
+53
+
+Testing O. rhinoceros specimens from Hawaiʻi confirmed previous postulations that OrNV is not currently present in Hawaiʻi. In some ways, this is unfortunate, because without the virus already being present, obtaining the necessary approval to bring strains of OrNV into Hawaiʻi for further studies will be near to impossible. Additionally, the resounding negative results of this experiment conflict with previous results when testing for OrNV first began with O. rhinoceros samples from Hawaiʻi via the conventional PCR assay.
+When O. rhinoceros was first detected in Hawaiʻi and testing for OrNV began, some specimens from the early population produced faint positive results for the virus, which begs the question of why no detection of the virus occurred in this new round of specimens subjected to both the PCR and qPCR assays. There are two possibilities to consider, the first being that, when O. rhinoceros first made its way to Hawaiʻi, the initial population did carry the virus at a low titer, but due to the resistant nature of the CRB-G haplotype, the virus could not sustain itself in the population long-term. This scenario has plausibility, since bioassay treatments on CRB-G haplotype beetles by hemocoelic injection of OrNV did produce mortality, though the visual evidence for OrNV infection usually seen in O. rhinoceros was not present in these injected O. rhinoceros specimens (Marshall et al. 2017). Furthermore, OrNV has been detected in some CRB-G O. rhinoceros from Palau and Taiwan, which may indicate the capability for the virus to infect CRB-G O. rhinoceros, though it has not been detected from specimens in other areas where CRB-G is present, such as Port Moresby, Indonesia, and the Philippines (Marshall et al. 2017). At any rate, the work done by Marshall et al. (2017) has demonstrated that it may be possible for OrNV to infect CRB-G O. rhinoceros, but that the virus may not be capable of producing disease in the beetle. Areas where CRB-G occurs have reported high levels of palm damage, which would indicate that the beetle remains unhindered by the virus, even when
+54
+
+attempts were made to control the beetle population using OrNV isolates commonly used as biocontrols throughout the Pacific (Marshall et al. 2017). Regardless, it is important to keep in mind that the exact mechanism of resistance or tolerance to OrNV in the CRB-G haplotype has yet to be determined, so attempts to explain the nature of resistance in this haplotype is only speculation until further studies are conducted to better characterize CRB-G and its ability to overcome OrNV infection.
+The second possibility, and perhaps more plausible explanation, for detection of OrNV in the early diagnostic tests on the O. rhinoceros population in Hawaiʻi is that cross-contamination occurred either between samples or via handling by the researcher processing the samples. The early tests for OrNV on Hawaiʻi samples of O. rhinoceros occurred alongside samples from other countries, such as Guam, where OrNV biocontrol treatments were being tested on their O. rhinoceros population. It is possible that OrNV from other samples may have contaminated the samples from Hawaiʻi during dissection of tissues for DNA extraction, or during the process of PCR. Since then, care has been taken to ensure that sterile techniques are used during all handling and treatment of O. rhinoceros samples (e.g. applying a surface sterilization technique to samples prior to dissection or manipulation of the specimens, sterilizing dissection tools, sterilizing micropipettes, using filtered micropipette tips, working with fresh aliquots of PCR reagents, etc.).
+In the final test design where tissues of O. rhinoceros specimens were dissected and tested for OrNV, the O. rhinoceros specimen from Fiji that initially tested positive using the conventional PCR assay was confirmed to be a false positive result. Once again, this indicates the usefulness of the qPCR assay’s high sensitivity, which is advantageous in scenarios where cross contamination may have occurred, or when conventional PCR produces questionable
+55
+
+results. The negative results for all tissue types in the Guam specimen, albeit anecdotally, corroborates the lack of success the eradication program in Guam has had in introducing and establishing OrNV as a biological control (Moore 2012; Marshall et. al 2017). However, it is also important to note that testing one sample does not allow for any conclusive statements on the status of OrNV in Guam.
+In the final test comparing relative expression ratios between the ΔΔCt and efficiencycorrected methods of relative quantification for the tissues tested from O. rhinoceros specimens from American Samoa, China, and Taiwan, the efficiency-corrected method produced overall lower values. The fact that actual amplification efficiencies of the OrNV glycoprotein and CRBAK gene sequences are taken into account in the efficiency-corrected model is likely the reason for the lower relative expression ratios observed. Additionally, there also exists an overall trend where the difference in relative expression ratios increased between the two methods of relative quantification as the relative expression values for OrNV themselves increased. This is due to the fact that, when raw Ct values are represented as relative expression ratios using these models of relative quantification, the Ct values are essentially converted from exponential values into linear values (Livak and Schmittgen 2001). As a result, any minor differences in the numbers used to perform these calculations, such as slight variations in Ct’s among replicates or changes in efficiency values, will lead to seemingly large differences in the final relative expression ratios.
+Regardless of the relative quantification method used, the relative amount of OrNV in each tissue type showed that, in all samples, OrNV was highest in some type of gut tissue (i.e. the foregut of the American Samoa specimen, the gut piece of the China specimen, and the midgut of the Taiwan specimen). Notably, the gut tissue of the O. rhinoceros from China could not be identified in as detailed a manner as the other specimens, because the tissues of the
+56
+
+specimen were heavily disintegrated. As such, the gut was already broken into pieces, which made it impossible to identify the individual gut sections. Regardless, these results are commensurate to previous knowledge of the nature of OrNV replication, which happens primarily in the hypertrophied nuclei of the midgut epithelium (Payne 1974; Huger 2005).
+The O. rhinoceros specimens that showed the lowest titer of OrNV in the leg tissue were of particular interest, because diagnostic assays performed on O. rhinoceros generally utilize DNA extracted from leg tissue. Because OrNV replicates in the midgut epithelial cells of O. rhinoceros, there has been some criticism over the use of leg tissue for OrNV diagnosis. While it is true that the results from testing various tissue types indicated that leg tissue had the lowest titer of OrNV in most samples, it must also be acknowledged that, in all infected O. rhinoceros specimens, OrNV was detectable in all tissue types tested. Therefore, testing leg tissue for OrNV should not be an issue when using the qPCR diagnostic assay; however, there may be potential false negative results when using the conventional PCR assay. As was previously shown, the conventional PCR assay is not as reliable when detecting OrNV at very low titers relative to the qPCR assay. As such, continued use of leg tissues for detecting OrNV can be done confidently when using the qPCR assay. If qPCR is unavailable, and questionable results are encountered when using the conventional PCR assay, re-testing for OrNV using qPCR should confirm the presence of the virus. While tedious, these distinctions are crucial, because sharing of samples en mass between collaborators is most practical, cost-effective, and efficient when only one or two legs from each O. rhinoceros specimen is shipped. Sending hundreds of full-bodied samples becomes very expensive, and dissection of other tissues, such as the gut, would be extremely time-consuming and opens up the possibility of cross contamination of samples.
+57
+
+Finally, detection of OrNV in other tissue types indicates that the virus is capable of spreading from the midgut to other areas of the body, which is in line with previous findings where virus has been found in the cytoplasm of larvae (Huger 1966), as well as in the ovarian sheath, spermatheca, spermatids, ejaculatory canal, and chorionated oocytes (Bedford 1981). Of particular interest is the high relative expression ratio of OrNV in the “Egg 1” tissue sample from the Taiwan O. rhinoceros specimen. OrNV does not appear to be transmissible during development from one life stage to the next, as adults developing into larvae and larvae hatching from eggs surface-contaminated with OrNV did not become infected, and larvae hatching from the eggs of infected females were rarely infected with OrNV (Zelazny 1976; Bedford 1981). Thus, OrNV may have been detectable and may have occurred at relatively high titers in the eggs of the Taiwan female, but perhaps eggs containing high titers of OrNV simply do not develop into the larval stages, or for some reason, do not carry on OrNV in their systems when they do develop into larvae. The mechanics of transmission, or lack thereof, from life stage to life stage are still not well understood, and further studies are needed to understand transmission from parent to progeny. These results raise interesting questions about the process of OrNV infection, and further exploration of OrNV spreading to different types of tissues would be an interesting endeavor. Ideally, further studies would benefit from access to a wider selection of O. rhinoceros test samples, as well as fresh specimens of O. rhinoceros, which would provide better conditions for dissection as well as detection of OrNV.
+58
+
+Chapter 4 VIRUS DISCOVERY IN ORYCTES RHINOCEROS VIA HIGH-THROUGHPUT
+SEQUENCING TECHNOLOGY INTRODUCTION
+A new O. rhinoceros haplotype, CRB-G, has been determined to have some form of tolerance or resistance to OrNV (Marshall et al. 2017). While the widely established CRB-S haplotype still remains susceptible to the virus, there is warranted concern over the emergence and correlated new invasion wave of the CRB-G haplotype to areas such as Guam and Hawaiʻi, where it can cause considerable damage without an effective control mechanism in place (Reil et al. 2018). Furthermore, there is concern over potential hybridization between biotypes in places such as Palau, where populations of CRB-S and CRB-G coexist, the consequences of which are yet unknown, but could lead to serious problems in areas where O. rhinoceros was once under control (Reil et al. 2018).
+In the past, research for control methods of O. rhinoceros involved testing various organisms for biological control, including arthropod parasites and predators, fungi, nematodes, and viruses (Bedford 1980). Unfortunately, in those years spent investigating natural enemies of O. rhinoceros, the only viable biocontrol option other than OrNV uncovered was a fungus, Metarhizium anisopliae which, historically, has had mixed success when tested in the laboratory and the field (Bedford 1980; Young 1986; Bedford 2013). Once OrNV was discovered to be highly effective, searches for other biological control agent essentially halted (Young 1986). Now that resistance to this virus has been observed in O. rhinoceros, the hunt for effective biological control agents has become a priority once again, as areas with the resistant CRB-G haplotype will face serious consequences if the O. rhinoceros populations are left uncontrolled.
+59
+
+Considering that a virus proved to be the most successful control agent for O. rhinoceros in the past, beginning the search for alternative biological control agents with virus discovery seemed reasonable. Therefore, the purpose of this research was to discover any viruses besides OrNV present in O. rhinoceros via high-throughput sequencing methods, with the goal of better understanding the viral diversity of this invasive beetle. The null hypothesis was that no novel viruses for the use of biocontrol could be found in O. rhinoceros using high-throughput sequencing techniques, and the alternate hypothesis was that novel viruses for the use of biocontrol could be found in O. rhinoceros using high-throughput sequencing. To discover viruses in O. rhinoceros, high-throughput sequencing techniques were utilized. High-throughput sequencing technology has revolutionized virus discovery in that this technology is so sensitive, it can detect and sequence viruses that occur at relatively low titers, are asymptomatic, cause latent infections, or that have otherwise evaded detection by traditional methods of virus discovery (Liu et al. 2011). MATERIALS AND METHODS Total and Small RNA Extraction for Illumina MiSeq
+Sample Selection. Samples of O. rhinoceros populations from Hawaiʻi as well as specimens collected from other countries were processed for total and small RNA to uncover and compare viruses present in populations of O. rhinoceros from Hawaiʻi and outside of Hawaiʻi. Ten O. rhinoceros samples from Hawaiʻi were captured from the wild and dissected for their gut tissue, which was immediately stored in Invitrogen RNAlater™ Stabilization Solution to preserve the tissue for subsequent RNA extraction. A total of 20 O. rhinoceros samples from Guam (N=4), Japan (N=2), Palau (N=4), Thailand (N=3), American Samoa (N=2), Vietnam (N=1), China (N=2), and Taiwan (N=2) were collected with the assistance of collaborators to
+60
+
+represent the O. rhinoceros population outside of Hawaiʻi. These samples were subjected to the same dissection and sample preservation as the specimens collected from Hawaiʻi.
+Total and Small RNA Extraction. For both O. rhinoceros sample sets, the gut tissues from each sample were cut in half and put into separate 1.5mL microcentrifuge tubes – one to be used for total RNA extraction and one to be used for small RNA extraction. Total RNA extraction was completed using the Macherey-Nagel NucleoSpin RNA Kit according to the kit instructions, and small RNA extraction was completed using Invitrogen’s PureLink miRNA Isolation Kit, which is designed to isolate high quality small RNA molecules, not just miRNAs. Small RNA extraction was performed to enhance the sRNA composition of the total RNA sample, as deep sequencing of small RNAs has been shown to be a viable method for discovery of both RNA and DNA viruses, especially if the viruses occur at low titers (Wu et al. 2010; Baran-Gale et al. 2015; Nouri et al. 2015).
+Following RNA extraction, 60µl each of the total and small RNA extracts were combined, resulting in one extraction sample for the O. rhinoceros specimens from Hawaiʻi and one sample for the O. rhinoceros specimens from outside of Hawaiʻi. Each extraction was subjected to ethanol precipitation to further purify the RNA extracts. Purified extracts were subsequently run on an electrophoresis gel to check the condition of the RNA, and the concentration of each sample was determined using a ThermoScientific Nanodrop™ 2000 spectrophotometer. After determining the samples were of sufficient concentration, they were shipped to SeqMatic (Freemont, California) to generate the RNA library and perform Illumina MiSeq sequencing. Two data files were returned upon completion of sequencing, though it was noted by SeqMatic that the quality of the reads might be low, because the samples arrived to the facility warm, indicating a high likelihood of RNA degradation during the shipping process.
+61
+
+dsRNA Extraction for Illumina MiSeq Sample Selection. As a back-up method for virus discovery, dsRNA extraction was
+performed on a separate sampling of O. rhinoceros from Hawaiʻi, in the event that the NGS results from SeqMatic did not provide quality data. Two adults and two third instar O. rhinoceros larvae were procured from the wild population of O. rhinoceros from Hawaiʻi and extracted for dsRNA using the entirety of the samples, with the exclusion of the elytra, wings, and legs of the adult specimens.
+dsRNA Extraction. dsRNA extraction was performed by grinding the tissue of O. rhinoceros specimens in liquid nitrogen using a pre-cooled mortar and pestle. The powdered tissue was added to 200mL of dsRNA extraction buffer for 60 minutes at 4°C, centrifuged at 4,000rpm for 10 minutes, and the aqueous phase added to a new collection bottle. 95% ethanol and 2g of CF-11 cellulose powder was added, and this solution was allowed to incubate on a gentle shake overnight at room temperature.
+The following day, the mixture was passed through a column to separate the liquid from the cellulose, washed using 1X STE containing 16.5% (v/v) ethanol, and the dsRNA was eluted into a 50mL centrifuge tube using five 5mL aliquots of 1X STE (without ethanol). Next, ethanol was added at 0.2 volume, 1.5g of CF-11 cellulose was added to the dsRNA elution, and allowed to gently shake for 1 hour at room temperature. Column separation, washing, and elution steps were repeated again, except elution was done using three 3mL aliquots of 1X STE (without ethanol). The dsRNA eluate was centrifuged for 1 minute to pellet any left over cellulose, and the supernatant transferred to a 30mL corex glass centrifuge tube. 0.9mL of 3M NaAc (pH 5.2) was added, and the tube filled to a final volume of approximately 20mL with 95% ethanol. The corex tube was sealed with parafilm, mixed well, and allowed to incubate at -20°C overnight.
+62
+
+On the final day, the corex tube containing our sample was centrifuged at 10,000rpm for 30 minutes, the supernatant removed, and the pelleted sample re-suspended in 500µL of RNasefree water. This sample was then concentrated using the Amicon Ultra 50K membrane centrifugal filter columns according to the provided protocol. The concentrated dsRNA elution underwent a DNase treatment (9µL dsRNA eluate, 1µL Promega RQ1 RNase-free DNase 10x Reaction Buffer, and 0.5µL RQ1 RNase-free DNase; incubated in a thermocyler for 1 hour at 37°C, followed by 10 minutes at 65°C), then run on an electrophoresis gel to confirm the presence of dsRNA.
+cDNA Library Synthesis. To establish a cDNA library from our dsRNA eluate, the dsRNA extract was denatured using a universal primer designed for rPCR, the cDNA strands were extended using a reverse-transcriptase, then digested with RNaseH to remove the original strands of RNA. The sample, after RNaseH digestion, was concentrated using the Millipore Amicon Ultra 50K membrane centrifugal filter columns, and this concentrated sample was used for overlap extension PCR of the cDNA. In the final step, the overlap extension PCR product was used as the template for single-primer PCR, and the product of this PCR reaction was run on a 1% electrophoresis gel to confirm the presence of a product smear indicative of cDNA.
+Screening cDNA Products. Initially, Sanger sequencing was performed as a preliminary check for viral sequences. 1:5, 1:10, and 1:15 dilutions of the cDNA product were ligated to Promega’s pGEM-T Easy Vector System, transformed into DH5α Escherichia coli cells via heat shock treatment, screened for cells successfully transformed with the vector, then prepared and sent for Sanger sequencing to an off-site sequencing facility, GeneWiz (La Jolla, CA).
+Preparing Samples for Illumina MiSeq. Though no viral sequences were found from the initial Sanger sequencing, the cDNA library was sent for high-throughput sequencing regardless,
+63
+
+in the hopes that a deeper sequencing would reveal the presence of viruses in the sample. The cDNA product of the O. rhinoceros specimens collected from Hawaiʻi was purified one last time using the Amicon Ultra 50K membrane centrifugal filter columns, quantified using the ThermoScientific Nanodrop™ 2000 spectrophotometer, and prepared as 10ng/µL and 1ng/µL dilutions, as specified by the sequencing facility. Lastly, the cDNA product was sent to the ASGPB Core Facility, and subsequently processed via Illumina MiSeq high-throughput sequencing. Data Analysis
+The paired-end reads from the cDNA library of the O. rhinoceros samples from Hawaiʻi were merged prior to any further dataset manipulations. The data from total and small RNA extracts produced single-end reads, and therefore did not have to be merged. All data files were uploaded to Galaxy to trim low-quality reads using Trimmomatic. Trimmed files were imported into Geneious to be mapped to a reference genome in order to remove host-related reads. Unfortunately, the genome of Oryctes rhinoceros has not been fully sequenced, so the genome of a closely related Oryctes species was used instead. The sequence file, Oryctes borbonicus isolate OB123, whole genome shotgun sequencing project (GenBank accession: LJIG00000000.1), was downloaded from NCBI’s GenBank and imported to Geneious. After removing host-related reads, the files were re-imported into Galaxy to be processed using the Velvet de novo assembly tool (Zerbino and Birney 2008). Velvet assemblies were completed using 15, 17, and 19kmer hash lengths. Contiguous sequences from the Velvet assemblies were imported into Geneious and batch searched using NCBI BLASTx to find matches to viral sequences. The modified highthroughput sequencing data files were also uploaded to the VirFind de novo assembly pipeline (Ho and Tzanetakis 2014), in order to obtain two sets of virus matches for comparison.
+64
+
+RESULTS Illumina MiSeq Results from Total and Small RNA Extractions
+After initial extraction of total and small RNAs, the O. rhinoceros sample set from Hawaiʻi produced banding patterns that were typical of 28S and 18S rRNAs, and it was unclear if miRNAs were present from the gel image, although it could be possible that the miRNAs are contained in the bottom-most band (Fig. 8). Unfortunately, the RNA product of the O. rhinoceros sample set from outside of Hawaiʻi produced a smear when imaged after gel electrophoresis, which is generally indicative of a degraded RNA product (Fig. 8). This sample was still sent for sequencing, as it was the only sample set available to represent an O. rhinoceros population outside of Hawaiʻi, due to limited sample availability from other countries in which O. rhinoceros occurs. It is also important to note that, after sending both RNA samples from O. rhinoceros specimens collected in Hawaiʻi and outside of Hawaiʻi, SeqMatic noted that the samples arrived warm, making it highly likely that degradation occurred in both RNA products while in-transit. SeqMatic also noted issues with buffer compatibility while processing both samples for RNA library construction, despite attempting alternative protocols for sample processing.
+After receiving the datasets from SeqMatic, analysis of contiguous sequences from both the Velvet and VirFind de novo assemblies did not produce any viable viral sequences. Multiple VirFind assemblies were attempted with variations to the pipeline parameters, but in all attempts, no viral sequences were returned. The Velvet assemblies of the dataset from the O. rhinoceros population outside of Hawaiʻi did produce matches to viral sequences in GenBank; however, the only insect-related virus match was to the protein sequence vp39 of Oryctes rhinoceros nudivirus (GenBank accession: YP_002321326).
+65
+
+	   	   	  
+	   	   Figure 8. Gel electrophoresis results of the combined, ethanol precipitated total and small RNA extractions derived from Oryctes rhinoceros collected from Hawaiʻi and Oryctes rhinoceros collected from outside of Hawaiʻi. The 1% agarose gel was run in 1xTAE for 90 minutes at 50V. The Hawaiʻi RNA extraction shows banding patterns that typically indicate the presence of 28s and 18s RNA. The RNA extraction for the O. rhinoceros samples collected outside of Hawaiʻi produced a smear, indicative of sample RNA degradation.
+66
+
+Illumina MiSeq Results from dsRNA Extraction Even though the preliminary Sanger sequencing results of the cDNA library synthesized
+from O. rhinoceros specimens from Hawaiʻi produced only bacterial sequences, the cDNA was still sent for Illumina MiSeq, since the cDNA library produced a decent smear when electrophoresed (Fig. 9). The Illumina MiSeq dataset from this cDNA library produced matches to viral sequences using the VirFind assembly pipeline; however, after a more detailed analysis of these results, it became clear that the vast majority of the VirFind contigs matched to plantand fungus-infecting viruses, and a smaller number of contigs matched to human and mammalian viruses.
+The Velvet assembly resulted in 22,485 contigs in total, of which 125 contigs (0.6%) produced matches to some type of viral sequence when a BLASTx search was performed. The remainder of the contigs either did not produce any matches after the BLASTx search or produced matches to non-viral sequences in GenBank. Of the 125 contigs that returned matches to viruses, 58 were selected for further analysis, based on their matches to sequences of insectassociated or insect-infecting viruses in GenBank.
+When the 58 contigs were classified based on the phylogenetic families of the preexisting viral sequences they matched to in GenBank, about a third of the contigs were classified into the Picobirnaviridae family (N=23), followed by the Chrysoviridae (N=9), Narnaviridae (N=8), and Totiviridae (N=4) virus families (Fig. 10). It is worth noting that there were also four contigs that matched to viral accessions in GenBank for which their phylogenetic family has yet to be determined. When the same 58 contigs were categorized into phylogenetic families, this time by the number of reads from the original sequencing data file used to compose each contig in Velvet, the same trend resulted, with the highest number of reads being classified under the
+67
+
+	   	   	   	  
+	   	   Figure 9. Gel electrophoresis results of the cDNA library derived from the dsRNA extraction of Oryctes rhinoceros specimens collected in Hawaiʻi. dsRNA extraction was performed on two adult and two third instar larvae O. rhinoceros collected from the wild population in Hawaiʻi. The cDNA product produced from the dsRNA extraction was run on a 1% agarose gel in 1x TAE for 1.5 hours at 70V.
+68
+
+	   	   	   	   	  
+	   	   Figure 10. Velvet assembled contigs with matches to viral sequences of interest, organized by taxonomical family. The 58 contigs represented here were selected for further analysis because of they matched to viral sequences in GenBank that were either insect-infecting or insect-associated.
+69
+
+	   	   	   	  
+	   	   	   Figure 11. Velvet assembled reads matched to viral sequences of interest, organized by taxonomical family. These reads correspond to the contigs in Figure 11, meaning that these reads were used to compose the final 58 contigs of interest during the Velvet assembly.
+70
+
+family Picobirnaviridae (N=4,495), followed by the Chrysoviridae (N=1,931), Narnaviridae (N=1,185), and Totiviridae (N=995) families. There was also a substantial number of reads (N=631) that fell under the unclassified RNA viruses category (Fig. 11).
+For the 58 contigs analyzed, several contained hits to viruses that originated from a project profiling the transcriptomes of invertebrates for the discovery of RNA viruses (Shi et al. 2016). After further analysis, it was concluded that the contigs matching to viral sequences from this publication likely shared identity to plant- and fungus-infecting viruses, as the BLASTx hits were classified under or related to other sequences in the Totiviridae, Chrysoviridae, Narnaviridae, and Partitiviridae virus families. Other contigs from the Velvet assembly matched to viral sequences originating from the same publication, this time classified under the Picobirnaviridae family, for which both vertebrates and invertebrates are known to be hosts (Delmas et al. 2019). Finally, five contigs from the Velvet assembly matched to insect-infecting or insect-associated viruses in the Baculoviridae (N=3), Entomopoxivirinae (N=1), and Genomoviridae (N=1) families (Fig. 10). Of the three contigs with matches to viruses in the Baculoviridae family, one contig was too short (47 bp long) to be confidently identified as a true viral sequence, and a second contig showed a substantially higher identity to a hypothetical protein for Oryctes borbonicus, so they were eliminated from further analysis. Contig 43777 matched to a virus in the Genomoviridae family, showing 60% pairwise identity to a capsid protein for the Bark beetle-associated genomovirus 3 (Table 10). This match also showed high query coverage (97.22%), and had a low e-value (3.88e-06). However, this same contig also showed slightly higher pairwise identity and query coverage, as well as lower e-values with other viruses in the Genomoviridae family that were not associated with insect species. Contig 64291 matched to a putative ATP-binding cassette transporter protein for Anomala cuprea
+71
+
+Table 10: Velvet-assembled contigs matching to viral and oomycte accessions in GenBank.
+
+Contig	   Queried	  
+
+BLASTx	  Hit	  
+
+43777	  
+
+Capsid	   protein	  
+
+Organism	  
+Bark	  beetle-­‐ associated	   genomovirus	  3	  
+
+GenBank	   Accession(s)	  
+AWU66515	  
+
+Taxonomical	   Family	  
+
+Query	   Shared	  
+
+Coverage	   Identity	   E-­‐value	  
+
+(%)	  
+
+(%)	  
+
+Genomoviridae	   97.22	   60.00	   3.88E-­‐06	  
+
+64291	  
+
+Putative	   ATP-­‐binding	  
+cassette	   transporter	  
+
+Anomala	  cuprea	   entomopoxvirus	  
+
+YP_009001498	   Entomopoxvirinae	  
+
+94.59	  
+
+41.40	   1.52E-­‐06	  
+
+79764	   78511	   97191	  
+
+Immediate	   early	  
+protein	  2	  
+Ribosomal	   protein	  L22	  
+Protein	   abnormal	  
+spindle	  
+
+Anticarsia	   gemmatalis	  
+mulitple	   nucelopoly-­‐ hedrovirus	  
+Phytophthora	   palmivora	  var.	  
+palmivora	  
+Phytophthora	   palmivora	  var.	  
+palmivora	  
+
+ALR69977,	   ALR70134,	   ALR70604,	   ALR70447,	   YP_009316029	  
+
+Baculoviridae	  
+
+POM57900,	   POM66284	  
+
+Peronosporaceae	  
+
+POM74355	   Peronosporaceae	  
+
+79.47	   93.75	   87.27	  
+
+37.50	   4.83E+00	  
+
+53.30	  
+
+2.33E-­‐03	   1.14E-­‐02	  
+
+53.10	   1.22E-­‐03	  
+
+72
+
+entomopoxvirus, which belongs to the Entomopoxvirinae family. A secondary BLASTx search of this contig showed that this was the only sequence in GenBank that this 222bp contig matched to. In addition, the query coverage was high (94.59%), and the e-value was low (2e-05), but the pairwise identity was also low (41.40%) (Table 10). Finally, contig 79764 matched to a protein sequence for a virus in the Baculoviridae family, the immediate early protein 2 of Anticarsia gemmatalis multiple nucleopolyhedrovirus, and to no other sequences. Unfortunately, the query coverage and pairwise identity were low at 79.47% and 37.50%, respectively, and the e-value was poor (Table 10). These three contigs, in comparison to the other contigs that produced matches to virus sequences, had a very low number of reads that combined to form the contigs (Fig. 11). Contig 43777, which matched to other genomovirus sequences in GenBank, was composed from 21 individual reads from our dataset; contig 64291, which matched to the putative ATP-binding cassette transporter protein of ACEV, was originally composed from 7 reads; and contig 79764, which matched to a virus in the Baculoviridae family, was composed from 6 individual reads. Lastly, an interesting secondary find was discovered with two contigs that matched to accessions in GenBank belonging to Phytophthora palmivora var. palmivora, both having reasonable query coverages and e-values, but with low shared identities of 53.10% (Table 10). DISCUSSION
+The results of the high-throughput sequencing datasets produced from the O. rhinoceros specimens collected from Hawaiʻi and from outside of Hawaiʻi did not provide any substantial information regarding the presence of viruses in O. rhinoceros from either populations. The only evidence of insect-infecting viruses came from the Velvet assembly performed on the RNA extract from O. rhinoceros specimens collected from outside of Hawaiʻi, in which a single contig
+73
+
+matched to a protein sequence for OrNV. This match is not new or surprising, because it is well known that OrNV infects O. rhinoceros, and that the virus is established in several countries where the beetle is found, although the fact that we were able to detect a virus infecting O. rhinoceros does provide an indication that this method of virus discovery is valid, and can possibly lead to the discovery of other viruses should this experiment be repeated.
+When the condition of the total and small RNA extracts prior to being sent for sequencing is taken into consideration, it is not surprising that better results were not obtained. Running the RNA extractions on an electrophoresis gel provided evidence that the RNA sample extracted from O. rhinoceros collected outside of Hawaiʻi was degraded, and that the presence of small RNAs was suspect in both sample sets. It was not surprising to see evidence of RNA degradation, because the O. rhinoceros specimens collected from outside of Hawaiʻi were older samples that were stored in ethanol at -20°C or -80°C, which is adequate for the preservation of DNA, but not for RNA. However, these were the only samples available, and it could not have been foreseen that these specimens would be needed for RNA extraction, so these samples had to suffice. Additionally, a few of the specimens collected from outside of Hawaiʻi were O. rhinoceros larvae; the internal contents of which are mainly soil ingested from their environment. Care was taken to remove all debris during the dissection process, but there was still some soil that contaminated the RNA sample, which was evident by the discoloration of the final RNA elution and the poor quality results when the sample was tested using the Nanodrop spectrophotometer. These issues, coupled with the fact that the RNA samples arrived warm at SeqMatic, as well as the issues SeqMatic faced with processing the samples for library construction, made for a perfect storm of issues that led to low quality datasets and subsequent lack of useful results.
+74
+
+In lieu of the aforementioned issues with the total and small RNA extractions, dsRNA extraction was performed on O. rhinoceros specimens from Hawaiʻi for virus discovery. Velvet assembly of the high-throughput sequencing data derived form the dsRNA extraction revealed the presence of many viruses. Several contigs matched to viruses classified under Picobirnaviridae, a family of dsRNA viruses with bi-segmented genomes and non-enveloped spherical virions (Delmas et al. 2019). Based on the RNA-dependent RNA polymerase (RdRp) and capsid protein sequences, viruses belonging to Picobirnaviridae are currently classified into three genogroups: genogroups I and II are restricted to vertebrate viruses, and genogroup III consists of invertebrate-derived viruses (Delmas et al. 2019). The viruses classified in genogroup III come from an article that profiled the transcriptomes of over 220 invertebrate species in order to better understand the invertebrate RNA virosphere (Shi et al. 2016), and the contigs from the Velvet assembly matched to these sequences. While it is tempting to think the contigs that matched to these Picobirnaviruses (PVBs) may be insect-infecting, it is important to keep in mind that PBVs share a similar genome organization and genome content with viruses in the Partitiviridae family; a family of bi-segmented dsRNA viruses infecting plants and fungi (Delmas et al. 2019; Vainio et al. 2018).
+Based on the current knowledge about the Picobirnaviridae virus family, it is highly likely that the contigs from the Velvet assembly showing sequence similarity to PBVs are not necessarily insect-infecting viruses causing disease in O. rhinoceros, but were simply found in the O. rhinoceros specimens tested because the beetles may have picked up these viruses from the environment (e.g. soil, plants). Even so, it is important to note that very little is currently understood about PBVs. Though PBVs seem to exhibit a wide range of hosts given the variety of organisms from which they have been isolated from thus far; currently, not enough sequence
+75
+
+data is available to make any definitive statements about PBVs pathogenicity in some organisms, such as insects (Yinda et al. 2018; Delmas et al. 2019). Additionally, the overwhelming diversity in results of newly discovered viruses from Shi et al. (2016) showed that the current virus classification for invertebrates will need restructuring in order to better understand the role viruses play in insects and other invertebrates.
+Other contigs from the Velvet assembly were also matched to viral GenBank accessions from the invertebrate RNA virosphere paper (Shi et al. 2016). These viruses are currently unclassified RNA viruses, but the BLASTx search of the contigs revealed that the unclassified RNA viruses consistently matched to other viral accessions in GenBank that allowed organization of the virus-matched contigs into temporary classifications not only under the Picobirnaviridae family, but also under the Chrysoviridae, Narnaviridae, and Totiviridae families. Chrysoviridae is a family of dsRNA viruses with small, isometric, non-enveloped viruses, and their genome is typically organized as four linear, separately encapsidated dsRNA segments, and are known to infect ascomycetous or basidiomycetous fungi (Ghabrial et al. 2018). The family Narnaviridae consists of positive-sense RNA viruses that only encode an RdRp to direct their replication, and are classified into two genera: Narnavirus and Mitovirus, the latter of which replicates in the mitochondria of fungi, and former in the cytosol of fungi (Hillman and Cai 2013). The Totiviridae family consists of dsRNA viruses with monosegmented genomes, and are known to cause latent infections in fungal or protozoan hosts (Wickner et al. 2012). Being that all three the aforementioned virus families appear to use fungi or protozoa as their hosts, it was concluded that the Velvet contigs matching to viruses classified under or associated with these families were likely to be fungus-infecting viruses picked up by O. rhinoceros from their environment. Totiviruses have been discovered in arthopods (Dantas et
+76
+
+al. 2016); however, the Velvet contigs did not match to arthropod totiviruses when the BLASTx search was performed, but instead matched to fungal and algal-infecting totiviruses. It is important to reiterate that the invertebrate RNA virosphere project conducted by Shi et al. (2016) has very clearly shown how little is understood about the diversity of invertebrate viruses; therefore, definitive statements about the identity of the virus-matched contigs produced in this study cannot be made without further investigation. Consequently, detailed classification of the RNA viruses deposited in GenBank by Shi et al. would aid not only understanding the virosphere of O. rhinoceros, but also advance knowledge regarding insect virus diversity in general.
+The viruses in the previously described viral families may not be of immediate interest in regards to controlling O. rhinoceros, but a few of the Velvet contigs matched to viruses in known insect-infecting or insect-associated viral families. Namely, three contigs were found to be associated with GenBank accessions classified under the Baculoviridae, Entomopoxvirinae, and Genomoviridae families. Contig 43777 matched to GenBank accession AWU66515, a capsid protein sequence of Bark beetle-associated genomovirus 3 (BbaGV-3) (Kraberger et al. 2018). However, this same contig also matched to several other genomovirus accessions that were not insect-associated, and also had better query coverage, pairwise identity, and e-values to these genomoviruses. The Genomoviridae family consists of circular, single-stranded DNA viruses, has nine established genera within the family, and they infect a highly diverse range of organisms (Varsani and Krupovic 2017). Thus far, there has not been evidence that genomoviruses cause disease in insects, but there has been evidence for genomoviruses of pathogenic fungi also infecting insects associated with the fungi (Varsani and Krupovic 2017; Kraberger et al. 2018). Further research is needed to understand the relationships between genomoviruses, fungi, and insects, and if the contig identified in this research is possibly a
+77
+
+genomovirus that plays an important role between O. rhinoceros and any fungi they may be associated with in their environment.
+Contig 79764 matched to five GenBank accessions for the immediate early protein 2 sequences of Anticarsia gemmatalis multiple nucleopolyhedrovirus (AgMNPV) (Table 10). AgMNPV is classified in the Alphabaculovirus genus within the Baculoviridae family, and has been widely used as a bioinsecticide against A. gemmitalis damaging soybean crops (Brito et al. 2015). Unfortunately the query coverage, pairwise identity, and e-values of these matches to the Velvet contig are not good quality, but perhaps that is an indication of a related, but distinct baculovirus that may be infecting O. rhinoceros specifically. The Baculoviridae family consists solely of insect-specific, circular dsDNA viruses that are generally restricted to infecting one or a few related insect species (Brito et al. 2015). Because A. gemmatalis is a lepidopteran insect species, and O. rhinoceros is a coleopteran insect species, it is plausible that any baculoviruses infecting these phylogenetically distinct insects would be genetically distinct themselves, allowing the specific viruses to effectively infect these insect species. Further testing of O. rhinoceros samples is required to determine if a baculovirus is truly present and, furthermore, causing disease.
+Contig 64291 matched the putative ATP-binding cassette transporter protein sequence for Anomala cuprea entomopoxvirus (ACEV). ACEV is classified under the Alphaentomopoxvirus genus within the Entomopoxvirinae family, which is specific to entomopoxviruses infecting coleopteran beetles (Mitsuhashi et al. 2014). Currently, ACEV is the only virus classified in the Alphaentomopoxvirus genus, and the low pairwise identity between this virus and contig 64291 potentially suggests a new virus that could be added to this genus. Contig 64291 appears to be the most promising, since it matched to ACEV, an entomopoxvirus that is specific to infecting a
+78
+
+Coleopteran beetle, and has also been shown to improve the efficacy of bioinsecticides, such a Bacillus thuringiensis (Bt) (Mitsuhashi et al. 2014). A match to this virus implicates that a new, related virus could be isolated and identified from O. rhinoceros, added to the Alphaentomopoxvirus genus, and studied as an enhancer for bioinsecticides for O. rhinoceros control and management.
+However, it is also important to note that contigs 43777, 64291, and 79764 each had a low number of reads from the original sequence dataset that composed these final contigs. It may be the case that novel viruses with genetic similarity to these viral accessions in GenBank were truly present in the O. rhinoceros specimens used to perform high-throughput sequencing, but only at very low titers, resulting in a low number of reads per sequence. A second possibility is that there are only a limited number of reads that aligned to produce these contigs because they share nucleotide similarity, but are not necessarily accurately represented by the sequences they matched to in GenBank. Another likely cause for the low number of reads is, because we opted for dsRNA extraction, and not all DNA viruses produce dsRNA intermediates, these contigs that matched to DNA viruses in GenBank were only minimally amplified via high-throughput sequencing, probably as a result of any residual DNA present in the original dsRNA extraction, and thus only had a limited number of reads contributing to those contigs. Whatever the case may be, more sequence information is necessary to understand these viral matches to our contigs, accurately classify them within the vast and minimally understood realm of insect viruses, and produce a better understanding of the viruses that may be associated with or causing disease in Oryctes rhinoceros.
+Lastly, two contigs from the Velvet assembly shared homology with GenBank accessions for protein sequences of Phytophthora palmivora var. palmivora. Phytophthora palmivora is an
+79
+
+oomycete plant pathogen with a wide host range that can attack over 170 host plant species, including palms, papaya, and cacao (Torres et al. 2016; Gumtow et al. 2018). Phytophthora palmivora is present in Hawaiʻi, and these results may indicate O. rhinoceros is acting as a vector, or is at the very least assisting in the spread of this pathogen, as adult beetles move from palm to palm, or breeding site to breeding site. However, when we consider the low pairwise identity of our contigs to the Phytophthora palmivora var. palmivora sequences, and the fact that these same contigs also matched to other Phytophthora species, it is more likely that the contigs are sequences of related Phytophthora species, but not to Phytophthora palmivora var. palmivora itself.
+80
+
+Chapter 5 CONCLUSION AND FUTURE STUDIES With O. rhinoceros recently discovered as an invasive pest in Hawaiʻi, the goal of this thesis was to analyze a management tool currently used to control O. rhinoceros populations, as well as to design and discover new tools that could potentially aid O. rhinoceros control programs in Hawaiʻi and across the world. In the second chapter, the male O. rhinoceros aggregation pheromone, ethyl 4methyloctanoate, was studied for its effectiveness in attracting two haplotypes of O. rhinoceros, the OrNV-resistant CRB-G and OrNV-susceptible CRB-S haplotypes. The results of this work showed there was no statistical significance between haplotypes in the number of beetles caught using ethyl 4-methyloctanoate, deeming this pheromone a sufficient attractant for both haplotypes of O. rhinoceros. While this result may seem mundane, it is significant for IPMs designed to control O. rhinoceros, because traps are a major component, and ethyl 4methyloctanoate has been the pheromone of choice for optimizing trapping since the 90’s (Hallett et al. 1995; Bedford 2013). Conducting this study was necessary to confirm that ethyl 4methyloctanoate remains a viable method for detection and that, currently, there is no immediate need to modify the traps. However, there is always room for improvement, and future research will focus on studying the efficacy of other chemical attractants for O. rhinoceros. Future research will also focus on adding a nuclear gene to the O. rhinoceros genotyping assay, to increase the confidence of genotyping results, and to further study the implications of hybridization occurring between coexisting O. rhinoceros haplotypes in light of the emergence of the OrNV-resistant CRB-G haplotype.
+81
+
+In the third chapter, the goal was to design a qPCR assay that would be more sensitive and accurate in its detection of OrNV relative to the commonly used PCR assay, which can sometimes produce inconclusive diagnoses of OrNV in O. rhinoceros specimens. The results of the tests performed using the multiplex qPCR assay showed that the qPCR works at high efficiency with low variability, can detect a variety of OrNV strains, and is more sensitive and accurate in its detection of OrNV, especially in O. rhinoceros specimens with low OrNV titers. The qPCR assay also confirmed that OrNV is not present in the O. rhinoceros population in Hawaiʻi, and that, while the gut tissue of O. rhinoceros presents the highest titer of OrNV, the virus can be detected in other tissues. The availability of a qPCR assay for OrNV detection opens up a variety of future studies that could elucidate the biology of this virus (e.g. studying changes in gene expression of infected O. rhinoceros, performing dosage studies, following the infection process) and the mechanism of resistance or tolerance acquired by the CRB-G haplotype.
+In the fourth chapter, the objective was to discover novel viruses in O. rhinoceros that could potentially serve as biological control agents against O. rhinoceros, since the emergence of the OrNV-resistant CRB-G haplotype has prompted the need for alternative methods to control this invasive pest. The results of performing high-throughput sequencing on O. rhinoceros specimens collected in Hawaiʻi yielded a few matches to viral sequences that were either insectassociated or insect-infecting viruses, as well as matches to plant pathogenic oomycetes. Future studies will focus on designing primers for the detection and subsequent sequencing, identification, and classification of these virus-like and oomycete-like sequences using available O. rhinoceros samples. Ideally, future research in this area would also benefit from the acquisition of fresh O. rhinoceros samples from the beetle’s native range to be used for another round of high-throughput sequencing, to discover other viruses that could serve as biocontrol
+82
+
+agents, and to gain a better understanding of the O. rhinoceros virosphere. Protocols for RNA enrichment or virus enrichment prior to high-throughput sequencing should also be considered to increase the chances of finding virus-related reads via next generation sequencing, such as centrifugation, filtration, and nuclease-treatment (Hall et al. 2014). Lastly, it may be beneficial for future studies to include a DNA extraction protocol for virus isolation, since the most promising viruses found in this study were DNA viruses, and DNA extraction will presumably yield a higher number of reads for DNA viruses via high-throughput sequencing.
+83
+
+LITERATURE CITED Baran-Gale, J., C. Kurtz, M. Erdos, C. Sison, A. Young, E. Fannin, P. Chines, and P.
+Sethupathy. 2015. Addressing Bias in Small RNA Library Preparation for Sequencing: A New Protocol Recovers MicroRNAs that Evade Capture by Current Methods. Frontiers in Genetics. 6. Bedford, G. 1980. Biology, Ecology, and Control of Palm Rhinoceros Beetles. Annual Review of Entomology. 25: 309-39. Bedford, G. 1981. Control of the Rhinoceros Beetle by Baculovirus. Microbial Control of Pests and Plant Diseases 1970-1980. 409-26. Bedford, G. 2013. Biology and Management of Palm Dynastid Beetles: Recent Advances. Annual Review of Entomology. 58: 353-372. Bennett, F., D. Rosen, P. Cochereau, and B. Wood. 1976. Biological control of pests of tropical fruits and nuts. In Theory and Practice of Biological Control, ed. C.B. Huffaker, P.S. Messenger. Academic Press, New York. Brito, A., C. Braconi, M. Weidmann, M. Dilcher, J. Alves, A. Gruber, and P. Zanotto. 2015. The Pangenome of the Anticarsia gemmatalis Multiple Nucleopolyhedrovirus (AgMNPV). Genome Biology and Evolution. 8: 94-108. Bustin, S., V. Benes, J. Garson, J. Hellemans, J. Huggett, M. Kubista, R. Mueller, T. Nolan, M. Pfaffl, G. Shipley, J. Vandesompele, and C. Wittwer. 2009. The MIQE Guidelines: Minimum Information for Publication of Quantitative Real-Time PCR Experiments. Clinical Chemistry. 55: 611-622. Caltagirone, L. 1981. Landmark Examples in Classical Biological Control. Annual Review of Entomology. 26: 213-232.
+84
+
+Catley, A. 1969. The Coconut Rhinoceros Beetle Oryctes rhinoceros (L.) (Coleoptera:Scarabaeidae:Dynastinae). PANS. 15: 18-30.
+Cumber, R. 1957. Ecological studies of the rhinoceros beetle Oryctes rhinoceros (L.) in Western Samoa. South Pacific Commission Technical Paper no. 107. vi + 32pp.
+Dantas, M., G. Cavalcante, R. Oliveira, and D. Lanza. 2016. New insights about ORF1 coding regions support the proposition of a new genus comprising arthropod viruses in the family Totiviridae. Virus Research. 211: 159-164.
+Delmas, B., H. Attoui, S. Ghosh, Y. Malik, E. Mundt, and V. Vakharia. 2019. ICTV virus taxonomy profile: Picobirnaviridae. Journal of General Virology. 100: 133-134.
+Dorak, M. 2006. Real-time PCR, 1st ed. Taylor & Francis Group, New York, NY. Ghabrial, S., J. Castón, R. Coutts, B. Hillman, D. Jiang, D. Kim, and H. Moriyama. 2018.
+ICTV Virus Taxonomy Profile: Chrysoviridae. Journal of General Virology. 99: 19-20. Gressitt, J. 1953. The Coconut Rhinoceros Beetle (Oryctes rhinoceros) With Particular
+Reference to the Palau Islands, 1st ed. Bernice P. Bishop Museum, Honolulu. Gumtow, R., D. Wu, J. Uchida, and M. Tian. 2018. A Phytophthora palmivora Extracellular
+Cystatin-Like Protease Inhibitor Targets Papain to Contribute to Virulence on Papaya. Molecular Plant-Microbe Interactions. 31: 363-373. Hall, R., J. Wang, A. Todd, A. Bissielo, S. Yen, H. Strydom, N. Moore, X. Ren, Q. Huang, P. Carter, and M. Peacey. 2014. Evaluation of rapid and simple techniques for the enrichment of viruses prior to metagenomic virus discovery. Journal of Virological Methods. 195: 194-204. Hallett, R., A. Perez, G. Gries, R. Gries, H. Pierce, J. Yue, A. Oehlschlager, L. Gonzalez, and J. Borden. 1995. Aggregation pheromone of coconut rhinoceros beetle, Oryctes
+85
+
+rhinoceros (L.) (Coleoptera: Scarabaeidae). Journal of Chemical Ecology. 21: 15491567. Hawaii Department of Agriculture. 2014. Destructive Beetles Found on Oahu Coconut Trees. hdoa.hawaii.gov. (http://hdoa.hawaii.gov/blog/main/crb/). Higuchi, R., G. Dollinger, P. Walsh, and R. Griffith. 1992. Simultaneous amplification and detection of specific DNA sequences. Biotechnology. 10: 413-417. Hillman, B., and G. Cai. 2013. The Family Narnaviridae: Simplest of RNA Viruses. Advances in Virus Research. Volume 86: Mycoviruses: 149-176. Hinckley, A. 1966. Damage by the Rhinoceros Beetle, Oryctes rhinoceros (L.), to Pacific island palms. South Pacific Bulletin. 16: 51-52. Hinckley, A. 1973. Ecology of the Coconut Rhinoceros Beetle, Oryctes rhinoceros (L.) (Coleoptera: Dynastidae). Biotropica. 5: 111-116. Ho, T., and I. Tzanetakis. 2014. Development of a virus detection and discovery pipeline using next generation sequencing. Virology. 471-473: 54-60. Huger, A. 1966. A virus disease of the Indian rhinoceros beetle, Oryctes rhinoceros (Linnaeus), caused by a new type of insect virus, Rhabdionvirus oryctes gen. n., sp. n. Journal of Invertebrate Pathology. 8: 38-51. Huger, A. 2005. The Oryctes virus: Its detection, identification, and implementation in biological control of the coconut palm rhinoceros beetle, Oryctes rhinoceros (Coleoptera: Scarabaeidae). Journal of Invertebrate Pathology. 89: 78-84. Huger, A., and J. Krieg. 1991. Baculoviridae. Nonoccluded baculoviruses. In Atlas of Invertebrate Viruses, ed. J.R. Adams and J.R. Bonami. Boca Raton: CRC Press.
+86
+
+Joshua, T. 2017. Interior Provides $181,048 to Support CNMI Efforts in Preventing Spread of
+
+Recently
+
+Discovered
+
+Coconut
+
+Rhinoceros
+
+Beetle.
+
+Doi.gov.
+
+(https://www.doi.gov/oia/interior-provides-181048-support-cnmi-efforts-preventing-
+
+spread-recently-discovered-coconut).
+
+Kraberger, S., R. Hofstetter, K. Potter, K. Farkas, and A. Varsani. 2018. Genomoviruses
+
+associated with mountain and western pine beetles. Virus Research. 256: 17-20.
+
+Lever, R. 1969. Pests of the Coconut Palm. Food and Agriculture Organization, Rome.
+
+Liu, S., D. Vijayendran, and B. Bonning. 2011. Next Generation Sequencing Technologies for
+
+Insect Virus Discovery. Viruses. 3: 1849-1869.
+
+Livak, K., and T. Schmittgen. 2001. Analysis of Relative Gene Expression Data Using RealTime Quantitative PCR and the 2−ΔΔCt Method. Methods. 25: 402-408.
+
+Mackay, I., K. Arden, and A. Nitsche. 2002. Survey and Summary: Real-time PCR in Virology.
+
+Nucleic Acids Research. 30: 1292-1305.
+
+Marschall, K. 1969. Introduction of a New Virus Disease of the Coconut Rhinoceros Beetle in
+
+Western Samoa. Nature. 225: 288.
+
+Marshall, S., A. Moore, and M. Vaqalo. 2016. A New Coconut Rhinoceros Beetle Biotype
+
+Threatens Coconut and Oil Palms in Southeast Asia and the Pacific.
+
+Marshall, S., A. Moore, M. Vaqalo, A. Noble, and T. Jackson. 2017. A new haplotype of the
+
+coconut rhinoceros beetle, Oryctes rhinoceros, has escaped biological control by Oryctes
+
+rhinoceros nudivirus and is invading Pacific Islands. Journal of Invertebrate Pathology.
+
+149: 127-134.
+
+Mitsuhashi, W., K. Miyamoto, and S. Wada. 2014. The complete genome sequence of the
+
+Alphaentomopoxvirus Anomala cuprea entomopoxvirus, including its terminal hairpin
+
+87
+
+loop sequences, suggests a potentially unique mode of apoptosis inhibition and mode of DNA replication. Virology. 452-453: 95-116. Moore, A. 2012. Guam Coconut Rhinoceros Beetle Eradication Project: Semiannual Report for USDA APHIS Grant 11-8510-1123-CA. Moore, A. 2013. Improved Pheromone Traps for Coconut Rhinoceros Beetle, Technical Report Series. University of Guam Cooperative Extension Service. Moslim, R., I. Ghani, M. Wahid, T. Glare, and T. Jackson. 2010. Optimization of the polymerase chain reaction (PCR) method for the detection of Oryctes rhinoceros virus. Journal of Palm Research. 22: 736-749. Nouri, S., N. Salem, J. Nigg, and B. Falk. 2015. Diverse Array of New Viral Sequences Identified in Worldwide Populations of the Asian Citrus Psyllid (Diaphorina citri) Using Viral Metagenomics. Journal of Virology. 90: 2434-2445. Payne, C. 1974. The Isolation and Characterization of a Virus from Oryctes rhinoceros. Journal of General Virology. 25: 105-116. Pfaffl, M. 2001. A new mathematical model for relative quantification in real-time RT-PCR. Nucleic Acids Research. 29: 2002-07. Pfaffl, M. 2006. Relative quantification in Real-time PCR, ed. M.T. Dorak. Taylor & Francis Group, New York. Raymaekers, M., R. Smets, B. Maes, and R. Cartuyvels. 2009. Checklist for optimization and validation of real-time PCR assays. Journal of Clinical Laboratory Analysis. 23: 145-151. Reil, J., M. San Jose, and D. Rubinoff. 2016. Low Variation in Nuclear and Mitochondrial DNA Inhibits Resolution of Invasion Pathways across the Pacific for the Coconut
+88
+
+Rhinoceros Beetle (Scarabaeidae: Oryctes rhinoceros). Proceedings of the Hawaiian Entomological Society. 48: 57-69. Reil, J., C. Doorenweerd, M. San Jose, S. Sim, S. Geib, and D. Rubinoff. 2018. Transpacific coalescent pathways of coconut rhinoceros beetle biotypes: resistance to biological control catalyzes resurgence of an old pest. Molecular Ecology. Shi, M., X. Lin, J. Tian, L. Chen, X. Chen, C. Li, X. Qin, J. Li, J. Cao, J. Eden, J. Buchmann, W. Wang, J. Xu, E. Holmes, and Y. Zhang. 2016. Redefining the invertebrate RNA virosphere. Nature. 540: 539-543. Shipley, G. 2006. An introduction to real-time PCR in Real-time PCR, ed. M.T. Dorak. Taylor & Francis Group, New York. Smith, S., and A. Moore. 2008. Early Detection Pest Risk Assessment: Coconut Rhinoceros Beetle. United States Department of Agriculture. Svec, D., A. Tichopad, V. Novosadova, M. Pfaffl, and M. Kubista. 2015. How good is a PCR efficiency estimate: Recommendations for precise and robust qPCR efficiency assessments. Biomolecular Detection and Quantification. 3: 9-16. Torres, G., G. Sarria, G. Martinez, F. Varon, A. Drenth, and D. Guest. 2016. Bud Rot Caused by Phytophthora palmivora: A Destructive Emerging Disease of Oil Palm. Phytopathology. 106: 320-329. United States Department of Agriculture (USDA). 2015. New Pest Response Guidelines: Oryctes rhinoceros (L.) Coleoptera: Scarabaeidae, Coconut Rhinoceros Beetle, New Pest Response Guidelines. Government Printing Office, Washington, D.C.
+89
+

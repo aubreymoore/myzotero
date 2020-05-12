@@ -1,0 +1,113 @@
+
+Open in app
+Aubrey Moore
+Towards Data Science
+
+    Data Science
+    Machine Learning
+    Programming
+    Visualization
+    AI
+    Video
+    About
+    Contribute
+
+Anyone can publish on Medium per our Policies , but we don’t fact-check every story. For more info about the coronavirus, see cdc.gov .
+Top highlight
+Don’t believe any numbers on Coronavirus
+The science-backed reason why official COVID-data is fake — in every country
+Rhea Moutafis
+Rhea Moutafis
+Follow
+Apr 2 · 5 min read
+Woman wearing medical mask staring at laptop
+Woman wearing medical mask staring at laptop Woman wearing medical mask staring at laptop
+Don’t believe everything you see. Photo by engin akyurt on Unsplash
+
+I I t’s no secret that the reported Coronavirus cases — coming from official sources — are grossly underestimated. In most countries, people are only being tested if they have symptoms. This is clear because a large proportion of cases are mild or asymptomatic, and these go widely unreported .
+
+So, in a naïve approximation, I’ve been assuming that the number of infected people is about five times higher than the official count. I deduced this from the fact that about one in five cases is rather severe.
+
+On the other hand, I’d considered the number of deaths to be pretty reliable — after all, a patient will consult a doctor if they have such severe symptoms that might die. And that doctor would surely get them tested.
+
+Or so I thought.
+
+I was wrong.
+Why we are definitely NOT over-hyping coronavirus
+I calculate the estimated amount of deaths in six months with and without social distancing, using the official numbers. The truth is likely even worse than my simulations.
+towardsdatascience.com
+
+My eureka -moment came in a conversation with Luca Foresti, CEO of the Centro Medico Santagostino , a network of specialized clinics in Northern Italy. I’d asked him for his opinion why the death toll in Italy is so high.
+
+Ten minutes later, my whole confidence in the official numbers was shattered.
+
+Foresti’s approach is simple: Take the death toll of a city over the past few years — people always die — and compare it with the death toll right now. Since a lot more people are dying of Corona, you’ll expect an excess amount of deaths compared to the past.
+
+In an ideal world, this excess of deaths would be equal to the official number of people who died of Corona. You can give or take a few, because more people might not be getting adequate health care for other diseases, while less people are dying in car accidents.
+
+But the reality is vastly different.
+
+As an example, Foresti analyzed the data of two cities in Lombardy, Northern Italy: Bergamo, which is the hardest-hit city in Europe, according to the New York Times . And Nembro, a close-by village — which has been hit even harder, when you consider the deaths per capita.
+
+In Bergamo, the expected number of deaths from the beginning of this year to March 24 is 628, if we average the deaths from 2015–2019. The death count in 2020 is almost twice as high. And only one in ten excess deaths is officially related to Covid-19.
+Infographic of deaths in Bergamo in 2020: 1128 total deaths, 48 official Covid deaths, 628 expected deaths, 500 excess deaths
+Infographic of deaths in Bergamo in 2020: 1128 total deaths, 48 official Covid deaths, 628 expected deaths, 500 excess deaths Infographic of deaths in Bergamo in 2020: 1128 total deaths, 48 official Covid deaths, 628 expected deaths, 500 excess deaths
+
+Now, one could conclude that the fatality ratio in many parts of Italy is even higher than you’d expect from the official numbers. But that’s unlikely to be the case.
+
+Even if you take into account the fact that the Italian population is pretty old, and that many people couldn’t get adequate care because of overflowing hospitals, this doesn’t explain the Italian death toll. The only explanation is that many people in Italy have already been infected.
+
+Let’s assume that the fatality ratio is approximately the same in every country. You’ll have to give or take a bit because of the age of the population and the availability of healthcare, but we will see in a moment that this doesn’t play such a big role.
+
+One good example to study the fatality ratio is the Diamond Princess . The cruise ship was cut off for several weeks, and everyone on board was tested. The case fatality ratio was 1.1 percent.
+
+Another example is South Korea . The country had started mass testing very early on, so its numbers are be more or less reliable. The case fatality ratio was about 0.7 percent in the early days.
+
+The difference between these two ratii is entirely explainable with the fact that the people on the cruise ship were rather old on average, while the population of South Korea is pretty young .
+
+Since the population of Bergamo is older, let’s assume that the case fatality ratio for Italy is around 1.1 percent. If we naïvely assume that all excess deaths are due to Corona, then about 45,000 people in the town are currently infected or have already recovered. That’s about two in five people in Bergamo.
+
+The case of Nembro, the suburb of Bergamo, is even more extreme. Based on the death toll 2015–2019, one would have expected 35 deaths. But this year, there are five times more deaths.
+
+While the proportion of reported Corona-related deaths is higher than in Bergamo — one in four excess deaths is attributed to the virus — the impact on the village is even more severe. Not only has 72 percent of all people have already contracted the Coronavirus. Worse than that, 0.8 percent of the population of Nembro has died a Corona-related death — in less than three months.
+Bottom line: A lot more people are dying
+
+Nationwide all-cause death tolls are pretty hard to obtain. But the example of these two small Italian towns shows one thing: The number of people that have died of Corona is a factor of four, maybe even ten, higher than what we’re seeing in official counts.
+
+Let us not take this to mistrust our governments. They’re just trying to do their job and save people’s lives.
+
+Instead, let’s take this as a warning of just how deadly this virus is. Let us take care of the elderly and the vulnerable. And, of course, let us #StayAtHome. That has saved thousands of lives already .
+
+Note from the editors: Towards Data Science is a Medium publication primarily based on the study of data science and machine learning. We are not health professionals or epidemiologists, and the opinions of this article should not be interpreted as professional advice. To learn more about the coronavirus pandemic, you can click here .
+Towards Data Science
+A Medium publication sharing concepts, ideas, and codes.
+Follow
+861
+
+    Towards Data Science
+    Coronavirus
+    Covid 19
+    Data Science
+    World News
+
+861 claps
+Rhea Moutafis
+
+Written by
+Rhea Moutafis
+Follow
+Pursuing my PhD on Dark Matter physics. Lover of art, music and beautiful things. Queer in every sense.
+Follow
+Towards Data Science
+Towards Data Science
+Follow
+A Medium publication sharing concepts, ideas, and codes.
+Follow
+See responses (21)
+Discover Medium
+Welcome to a place where words matter. On Medium , smart voices and original ideas take center stage - with no ads in sight. Watch
+Make Medium yours
+Follow all the topics you care about, and we’ll deliver the best stories for you to your homepage and inbox. Explore
+Explore your membership
+Thank you for being a member of Medium . You get unlimited access to insightful stories from amazing thinkers and storytellers. Browse
+About Help Legal

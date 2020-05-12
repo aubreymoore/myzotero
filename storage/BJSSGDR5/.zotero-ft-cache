@@ -1,0 +1,956 @@
+Screen reader users, click here to load entire article This page uses JavaScript to progressively load the article content as a user scrolls. Screen reader users, click the load entire article button to bypass dynamically loaded article content.
+Please note that Internet Explorer version 8.x will not be supported as of January 1, 2016. Please refer to this blog post for more information. Close
+ScienceDirect
+
+    Journals
+    Books
+    Register
+
+    Sign in
+    Sign in using your ScienceDirect credentials
+    Username
+    Password
+    Remember me
+    Forgotten username or password?
+    Sign in via your institution
+        OpenAthens
+        Other institution
+    Help
+
+    Journals
+    Books
+    Register
+
+Sign in
+Help
+close
+Sign in using your ScienceDirect credentials
+Username
+Password
+Remember me
+Forgotten username or password?
+Sign in via your institution
+
+    OpenAthens
+    Other institution
+
+    Download PDF Opens in a new window. Article suggestions will be shown in a dialog on return to ScienceDirect.
+     
+    You have selected 1 citation for export.
+    Help
+        Direct export
+         
+         
+        Export file
+          RIS (for EndNote, Reference Manager, ProCite)
+          BibTeX
+          Text
+          RefWorks Direct Export
+        Content
+          Citation Only
+          Citation and Abstract
+
+Advanced search
+
+ 
+Article outline
+Show full outline
+
+    Highlights
+    Abstract
+    Keywords
+    1. Introduction
+    2. Methods
+    2.1. GloBI framework
+    2.2. Data model
+    2.3. Data acquisition
+    2.4. Software and data management
+    2.5. Term matching
+    2.6. Continuous integration
+    2.7. Data access
+    2.8. Competency query results
+    2.8.1. GloBI API
+    2.8.2. Cypher queries
+    3. Results
+    3.1. Data sources
+    3.2. Data coverage
+    3.3. Usage of the GloBI framework and data collection
+    3.3.1. Usage within EOL
+    3.3.2. Usage within GoMexSI
+    3.3.3. GloBI web pages
+    3.4. RDF export
+    4. Discussion
+    4.1. Data sharing
+    4.2. Process automation
+    4.3. Term mapping
+    4.4. The prior art of data sharing
+    4.5. Assessment of GloBI's benefits
+    5. Conclusion
+    Acknowledgments
+    References
+
+Alert message
+JavaScript is disabled on your browser.
+Please enable JavaScript to use all the features on this page.
+Figures and tables
+
+    Interaction data is modeled in terms of study, specimen, taxon, and location ...
+    GloBI
+    Screenshot of Cypher query result using Listing 2 using Neo4j
+    Table 1
+    Spatial distributions of the GloBI data collection (as of July 16, 2014). Map ...
+    Table 2
+    Screenshots of EOL pages on the Atlantic croaker (Micropagonias undulatus) at ...
+    Screenshots of GoMexSI pages using GloBI interaction data: (a) homepage, (b) ...
+    Screenshots of GloBI web pages at http://globalbioticinteractions.org (a) What ...
+
+ADVERTISEMENT
+ 
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. View full text
+
+Ecological Informatics
+
+Volume 24 , November 2014, Pages 148–159
+Cover image Cover image
+Global biotic interactions: An open infrastructure to share and analyze species-interaction datasets
+
+    Jorrit H. Poelen a , , ,
+    James D. Simons b ,
+    Chris J. Mungall c
+
+    a 400 Perkins Street, Apt. 104, Oakland, CA 94610, USA
+    b Center for Coastal Studies Natural Resource Center, Ste. 3200 6300 Ocean Drive, Unit 5866, Corpus Christi, TX 78412-5866, USA
+    c Genomics Division, Lawrence Berkeley National Laboratory, 1 Cyclotron Road, MS 64-121, Berkeley, CA 94720, USA
+
+    Received 22 July 2014, Revised 16 August 2014, Accepted 24 August 2014, Available online 3 September 2014
+
+  Show more   Show less
+
+    http://dx.doi.org/10.1016/j.ecoinf.2014.08.005 
+    Get rights and content 
+
+    Under a Creative Commons license 
+
+  Open Access
+Highlights
+
+•
+
+    Integrates existing species-interaction datasets
+•
+
+    Provides access to a large spatiotemporal data collection of biotic interactions
+•
+
+    Cross-references existing ontologies, vocabularies, and taxonomies
+•
+
+    Used by the Encyclopedia of Life and Gulf of Mexico Species Interactions projects
+
+Abstract
+
+An intricate network of interactions between organisms and their environment form the ecosystems that sustain life on earth. With a detailed understanding of these interactions, ecologists and biologists can make better informed predictions about the ways different environmental factors will impact ecosystems. Despite the abundance of research data on biotic and abiotic interactions, no comprehensive and easily accessible data collection is available that spans taxonomic, geospatial, and temporal domains. Biotic-interaction datasets are effectively siloed, inhibiting cross-dataset comparisons. In order to pool resources and bring to light individual datasets, specialized research tools are needed to aggregate, normalize, and integrate existing datasets with standard taxonomies, ontologies, vocabularies, and structured data repositories. Global Biotic Interactions (GloBI) provides such tools by way of an open, community-driven infrastructure designed to lower the barrier for researchers to perform ecological systems analysis and modeling. GloBI provides a tool that (a) ingests, normalizes, and aggregates datasets, (b) integrates interoperable data with accepted ontologies (e.g., OBO Relations Ontology, Uberon, and Environment Ontology), vocabularies (e.g., Coastal and Marine Ecological Classification Standard), and taxonomies (e.g., Integrated Taxonomic Information System and National Center for Biotechnology Information Taxonomy Database), (c) makes data accessible through an application programming interface (API) and various data archives (Darwin Core, Turtle, and Neo4j), and (d) houses a data collection of about 700,000 species interactions across about 50,000 taxa, covering over 1100 references from 19 data sources. GloBI has taken an open-source and open-data approach in order to make integrated species-interaction data maximally accessible and to encourage users to provide feedback, contribute data, and improve data access methods. The GloBI collection of datasets is currently used in the Encyclopedia of Life (EOL) and Gulf of Mexico Species Interactions (GoMexSI).
+Keywords
+
+    Species interactions ;
+    Data integration ;
+    Taxonomy ;
+    Ontology
+
+1. Introduction
+
+Though relationships between organisms and their environment have been studied for hundreds of years, answering a question as simple as “What do sharks eat near California?” still requires quite some research, even for an experienced marine biologist. If we enter this query into a mainstream search engine, we get back lists of web pages with general information about white sharks ( Carcharodon carcharias ) and leopard sharks ( Triakis semifasciata ) and articles about how to avoid sharks while surfing and why sharks attack humans. The search result closest to providing an answer is a Yahoo! Answers page that addresses the question “What do great white sharks eat?” in free-form text without references to data sources. This results page shows that the search engine lacks the ability to answer a question that requires the knowledge of the interactions between species in a specific environment. What we expect in the search results is one or more reference to a web resource that contains a comprehensive list of shark diets off the coast of California. By using the system and methods described in this paper, such web resources can be developed.
+
+We believe that the reasons for the absence of a comprehensive, machine-readable, spatiotemporal species-interaction data collection are (a) the lack of integrated information systems specifically built for capturing and sharing structured species-interaction data, and (b) insufficient incentives for scientists to make their datasets available. In this paper, we discuss a method and system addressing both these obstacles to an open repository of species-interaction data. We describe Global Biotic Interactions (GloBI), an extensible, open-source infrastructure that was tailored for importing, searching, and exporting species-interaction data. The GloBI infrastructure implements an automated workflow in which existing datasets are transformed, integrated, and aggregated into a normalized data collection. GloBI also incentivizes data sharing by providing a framework for increasing the visibility of a contributing researcher; each entry is attributed to a scientist, research institution, or other source. The inclusion of attributions in GloBI has the multiple benefits of encouraging connections among researchers, assigning credit, and creating accountability. Also, an argument can be made that data collection efforts are facilitated by repurposing existing datasets. With access to a large species-interaction data collection, a researcher might decide that no extra data collection is necessary to test a hypothesis. Alternatively, with a clearer assessment of gaps in existing data collections, researchers might decide to target taxa or geographical locations that have not yet been studied.
+2. Methods
+2.1. GloBI framework
+
+We created an integrated system for the acquisition, normalization, management, and querying of biotic-interaction data called GloBI. The system is implemented in Java Gosling (2000) and uses (Neo4j) as a persistent data store and query system. The systems architecture consists of (a) a data model capable of representing diverse types of interaction data, (b) an ingestion framework for the acquisition and normalization of data, and a collection of parsers for different data formats, (c) a term matcher to assign vocabulary identifiers to free-form text descriptions, and (d) an application programming interface (API) and web interface.
+2.2. Data model
+
+For the basis of the GloBI framework, we designed a data model ( Fig. 1 ) to capture species interactions and their associated spatiotemporal information. In our model, an interaction observation is figured as a specimen (or occurrence) that interacts with another specimen, using interaction terms from the OBO Relations Ontology ( Smith et al., 2005 ). Each specimen can be related to (or classified as) a specific biotic or abiotic term like a taxon of appropriate rank (e.g., Homo sapiens , Elasmobranchii), functional group (e.g., algae, plankton), or environment (e.g., rocks, sediment). In addition, when the information is available, the location at which the interaction was observed is described by its latitude, longitude, altitude and depth properties. To make grouping of locations more meaningful, we made an association between a location and its ecoregion (e.g. Northern Gulf of Mexico), habitat, or environment when possible. Terms used to describe ecoregion, habitat, and environment are taken from published ecoregion classifications ( Abell et al., 2008 , Longhurst, 2007 , Olson et al., 2001  and  Spalding et al., 2007 ), existing ontologies such as EnvO ( Buttigieg et al., 2013 ), Uberon ( Mungall et al., 2012 ), the OBO Relations Ontology (RO) ( Smith et al., 2005 ), and habitat classification vocabularies, such as Coastal and Marine Ecological Classification Standard (CMECS) ( F. G. D. Committee, 2012 ).
+
+Interaction data is modeled in terms of study, specimen, taxon, and location ... Interaction data is modeled in terms of study, specimen, taxon, and location ...
+    Fig. 1. 
+
+    Interaction data is modeled in terms of study, specimen, taxon, and location concepts. The location has an additional relation to ecoregions and environments to facilitate spatial searches. Most IDs are uniform resource identifiers (URIs) to external ontologies and/or vocabularies. If neither ontologies nor vocabularies are available, a custom GloBI term is used until a suitable (external) ID is found. Note that only a single interaction type is displayed in the figure, where many interaction types exist (e.g., predator–prey, host–parasite).
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+To enable granular citation of interaction data, each specimen is associated with a study, and each study is related to a source or contributor. The study represents a reference to the origins of the data, and the source is a reference to the entity that shared the data in electronic form. Some sources share data related to a single study ( Cook, 2012 ), while other sources have collected data from multiple studies ( Raymond et al., 2011  and  Sachs et al., 2006 ).
+2.3. Data acquisition
+
+Individual interaction datasets were acquired through web resources (e.g., data journals, web APIs) or received by email after directly contacting data managers or authors. Our only data requirement was that it should be in digital form. Data contributors were encouraged to submit their interaction data in the original file format to preserve as much information as possible. When necessary, we implemented parsers to map these datasets to the GloBI data model.
+2.4. Software and data management
+
+We take advantage of free tools provided by GitHub to share, document, and discuss datasets and associated data processing software (see https://github.com/jhpoelen/eol-globi-data ). We established a GloBI GitHub wiki to describe data processing and access methods, and created a Git repository to archive original interaction data in case the data has not yet been archived or made available elsewhere. We use GitHubs issue tracker to keep track of promising interaction datasets, discuss new features, or report issues with existing datasets.
+2.5. Term matching
+
+In an effort to detect spelling errors and ambiguous or invalid names, all terms used in the interaction data are checked against existing taxonomies, ontologies, and/or vocabularies. Terms that do not match are published in web-accessible tabular comma-separated values (CSV) files. Domain experts use these files to review troublesome names and request corrections or explanations from authors. If an author is unable to correct the name in the source data, GloBI curators can correct a name without changing the original data by adding the original name, the corrected name, and the reason for the correction to a taxon correction list. Because the original data is preserved, the corrections can be undone or updated as needed.
+
+Terms that are mapped include common and scientific names of organisms, life stages, body parts, environments (or habitats), and citations. Term mapping is performed while ingesting the interaction datasets and is part of the normalization process ( Fig. 2 ). Taxonomic names are first matched against EOL's API ( Parr et al., 2014 ). Then, an additional name service, GlobalNames ( http://resolver.globalnames.org ), is used to cross-reference the name against WoRMS, ITIS, NCBI, and Global Biodiversity Information Facility (GBIF) taxonomies. For life stages and body parts terms, the Uberon metazoan anatomy ontology is used. The Environmental Ontology (EnvO) is used to map environment or habitat terms, while citations are resolved to their digital object identifiers (DOIs) using CrossRef ( http://crossref.org ) wherever possible. Whenever free-form text locales are used in datasets (e.g., “locality:Kansas,US”), they are mapped onto GeoNames ( http://geonames.org ) terms, and location information is extracted in the form of latitude and longitude pairs. These pairs are associated with relevant terms from Marine Ecoregions of the World (MEOW, ( Spalding et al., 2007 )), Freshwater Ecoregions of the World (FEOW, ( Abell et al., 2008 )), TerrestrialEcoregions of the World (FEOW, ( Abell et al., 2008 )), and Longhurst's Biogeographical Provinces ( Longhurst, 2007 ).
+
+GloBI's data aggregation process: First, existing datasets are imported; then ... GloBI's data aggregation process: First, existing datasets are imported; then ...
+    Fig. 2. 
+
+    GloBI's data aggregation process: First, existing datasets are imported; then data elements are normalized, using existing taxonomies, ontologies, and vocabularies. Next, the data is added to the data collection. This aggregated data collection forms the basis for data-access methods, such as file exports and web APIs provided by GloBI's web API and Neo4j's Cypher API.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+In addition to normalizing data-source text with exact term matching, we also implemented a fuzzy or partial term-matching method based on the Levenshtein Distance algorithm (as provided by Apache Lucene, http://lucene.apache.org ). This fuzzy search was implemented so users can interactively discover normalized terms in the data collection even when their text strings contain typos. The matching algorithm matches not only exact taxonomic name matches (e.g., Homo sapiens ), but also slightly invalid or incomplete names (e.g., Homo zapiens and Homo sap, respectively). The algorithm also incorporates higher taxonomic ranks and common names to give the user many ways to find a desired taxon.
+2.6. Continuous integration
+
+Integrating interaction data into a single, consistent aggregated dataset involves many steps: data is parsed, mapped, checked, aggregated, and exported. Custom software was developed (see https://github.com/jhpoelen/eol-globi-data ) to automate all these steps as well as regular quality checks and tests. An automated test suite is executed each time a change is made to the software (see http://travis-ci.org/jhpoelen/eol-globi-data ), and another automated process rebuilds the aggregated datasets from the original data sources on a daily basis. This continuous integration helps to keep the interaction data up-to-date. The services that the rebuild process relies on (e.g., GlobalNames, EOL API, CrossRef) are used daily to ensure that technical integration and availability issues are caught within a matter of days. As the volume of interaction data grows, it is expected that this process will be optimized as needed to ensure scalability. One of such optimizations is to split up the process into intermediate reproducible steps to allow for distributed or parallel data processing.
+2.7. Data access
+
+The output of the automated dataset normalization and aggregation process can be accessed through a hosted web API. The full datasets can also be published in three file formats: Darwin Core ( Wieczorek et al., 2012 ), Turtle ( Beckett and Berners-Lee, 2008 ), and (Neo4j) database archives. The API enables users to build interactive web applications without having to install custom software. The archives allow for bulk data processing by way of custom or existing software, without the limitations of web APIs.
+
+For Darwin Core, we provide different archives: one with all interaction observations and another with distinct interaction observations aggregated by study. The row types included in the export are Occurrence, Taxon, Reference, MeasurementOrFact, and Association. Occurrence tables include information specific to the observed occurrences of taxa. Each occurrence is related to a specific taxon and reference. The Taxon table includes information about the taxonomic classification of observed organisms. The Reference table contains bibliographic references to source studies that recorded the associations between classified occurrences. The MeasurementOrFact table allows users to annotate a recorded occurrence with additional information that isn't shown in the Occurrence table. The Association table captures how occurrences interact with each other. MeasurementOrFact and Association tables are custom extensions created by EOL.
+2.8. Competency query results
+
+To integrate GloBI data into web applications, statistical environments, and other interactive computer applications, two methods of data extraction were put in place: the GloBI API, which gives web developers a way to integrate interaction data with commonly used web-programming languages such as PHP and JavaScript, and the Cypher query interface, a web-accessible interface that requires knowledge of Cyphers graph query language. The Cypher method was added for specialized uses of GloBI data that are not covered by the GloBI API.
+2.8.1. GloBI API
+
+GloBIs web API data extraction method was built with Java programming language to implement a Spring MVC-based service that runs in Jetty, an open-source servlet container. This service receives requests from web clients, executes queries on the graph database, and returns the results in the requested format. For an example, visit the following URL to see GloBIs answer to the question, “What mammals do sharks eat?”: http://api.globalbioticinteractions.org/taxon/Elasmobranchii/preysOn/Mammalia .
+
+Query results can be requested in JavaScript Object Notation (JSON), CSV, or DOT ( Gansner and North, 2000 ) formats for integration into web pages, spreadsheets, R ( R Core Team, 2014 ), or visualization tools like Graphviz ( Gansner and North, 2000 ), Cytoscape ( Shannon et al., 2003 ), or Gephi ( Bastian et al., 2009 ). GloBIs web API also features a bounding box that can be manipulated to limit search results to a specific geographical area, and offers various convenience methods, such as taxon name suggestions, a list of supported interaction types, and dataset statistics (see https://github.com/jhpoelen/eol-globi-data/wiki/api ).
+
+To make it easier to use this API in web pages or the R statistical environment, a JavaScript library ( https://www.npmjs.org/package/globi-data ) and an R package ( https://github.com/ropensci/rglobi ) are available.
+2.8.2. Cypher queries
+
+Neo4j's Cypher query language can also be used to answer questions and create summaries of GloBI species-interaction data. The queries can be executed using Neo4j technologies such as a Java ( Gosling, 2000 ) API, a web service, and the web-based data browser. These tools are openly accessible by way of a server hosting an instance of the Neo4j graph database.
+
+The Cypher query language is specially designed for traversing complex directed-graph data in an intuitive way. The Cypher query in Listing 1queries GloBI to answer the question: “What mammals do sharks eat?” The query defines two starting points: the predator and prey taxon. The predator taxon selects any taxa classified as sharks, skates, and rays (Elasmobranchii) from the taxonPaths index. The prey taxon includes any taxa part of the mammal (Mammalia) family that are present in the taxonPaths index. The match clause specifies how these two taxa should be related. In our case, the predator taxon should be related to a predator specimen that ate or preyed on a prey specimen. This prey specimen should then be classified as the prey taxon. The return clause specifies that only the names of the respective taxon nodes should be returned.
+
+    Listing 1: Cypher query to find mammalian (Mammalia) prey of sharks, rays, and skates (Elasmobranchii).
+
+    Image for unlabelled figure Image for unlabelled figure
+        Figure options
+
+            Download full-size image
+            Download as PowerPoint slide
+
+So, the start clause selects the nodes that are included as the starting point in the graph traversal. The match clause describes the pattern in which the graph should be searched. The return clause specifies what properties of the matching nodes should be returned.
+
+In Listing 2 an additional pattern is added to answer the question: “What do sharks eat in California?” In our case, California is interpreted as an ecoregion that includes the term “California.”
+
+    Listing 2: Cypher query to find prey of Elasmobranchii in ecoregions that include term “California.”
+
+    Image for unlabelled figure Image for unlabelled figure
+        Figure options
+
+            Download full-size image
+            Download as PowerPoint slide
+
+The search indexes used in this example (e.g., taxonPaths, ecoregionPaths) are populated during the GloBI data import process. The ecoregion search index uses the latitude and longitude information provided by the location node in combination with shapefiles from Longhurst's Biogeographical Provinces ( Longhurst, 2007 ), Marine Ecoregions of the World (MEOW) ( Spalding et al., 2007 ), Terrestrial Ecoregions of the World (TEOW) ( Olson et al., 2001 ), and Freshwater Ecoregions of the World (FEOW) ( Abell et al., 2008 ). Each location is associated, or indexed, with the ecoregion that contains it, making it possible to constrain searches to ecologically relevant geographical areas.
+
+An alternate approach to selecting a geographical area is to use a WHERE clause with latitude and longitude constraints (see Listing 3). For example, the following listing answers the question, “What do sharks eat above latitude 30?”
+
+    Listing 3: Cypher query to find prey of Elasmobranchii found above latitude 30.
+
+    Image for unlabelled figure Image for unlabelled figure
+        Figure options
+
+            Download full-size image
+            Download as PowerPoint slide
+
+The three queries above use a fraction of the functionality that the Cypher query language provides, but already answer complex ecological questions. The queries can be executed against GloBI data by copying the query text into the web tool available at url http://api.globalbioticinteractions.org:7474/webadmin//data/search/ . A screenshot of a query result of Listing 2 using this discovery tool is shown in Fig. 3 .
+
+Screenshot of Cypher query result using Listing 2 using Neo4j's Data Browser ... Screenshot of Cypher query result using Listing 2 using Neo4j's Data Browser ...
+    Fig. 3. 
+
+    Screenshot of Cypher query result using Listing 2 using Neo4j's Data Browser tool with GloBI data (see http://tinyurl.com/globiBrowser ).
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+3. Results
+3.1. Data sources
+
+Shared datasets were aggregated from various sources ( Table 1 ). None of the data sources shared a common data format, and custom importers had to be developed to fit the data into our interaction model ( Fig. 1 ). While most datasets contained scientific taxon names, only a single source, http://inaturalist.org , contained explicit references to a taxonomy reference. References to locations varied between using decimal degrees and using free-form text locale information (e.g., Country: USA). Only GoMexSI used a controlled vocabulary to describe habitat and ecoregions (CMECS, MEOW). No digital object identifiers (DOIs) for references within the data sources were present, but 704 DOIs out of 1175 references were obtained from the reference text using CrossRef, as of July 16, 2014.
+
+    Table 1.
+
+    Breakdown of GloBI data by source. O total and O distinct describe the total and distinct number of interaction observations between a begin taxon ( B ) and an end taxon ( E ). B distinct and E distinct are the number of unique taxa that occur within the set of begin and end taxa. L total and T total are the total number of location and time data elements across all observations O . Period indicates the time range in which interaction data was recorded. Data source statistics were retrieved from GloBI on July 16, 2014.
+    Data source 	Refs 	O total 	O distinct 	B distinct 	E distinct 	L total 	T total 	Period
+    Kelp Forest Food Web ( Byrnes et al., 2011 ) 	130 	1915 	1611 	84 	210 	0 	0 	n/a
+    Species Interactions of Australia ( Cassis and Pickering ) 	1 	14,896 	13,657 	4461 	4075 	0 	0 	n/a
+    Species Interactions in UK and Ireland ( Storey, 2014 ) 	1 	50,157 	37,612 	13,599 	5429 	0 	0 	n/a
+    Semantic Prototypes in Research Informatics ( Sachs et al., 2006 ) 	195 	30,101 	21,191 	3335 	2616 	27,152 	0 	n/a
+    Southern Ocean Diet Database ( Raymond et al., 2011 ) 	324 	26,462 	10,368 	341 	898 	26,391 	25,858 	1961–2011
+    Cymothoa excisa parasitizes Micropogonias undulatus ( Cook, 2012 ) 	1 	335 	1 	1 	1 	335 	335 	2010–2012
+    http://inaturalist.org 	1 	2015 	1718 	824 	799 	1980 	2010 	1989–2014
+    Food Webs of Three California Estuaries ( Hechinger et al., 2011 ) 	1 	13,966 	7129 	234 	247 	13,966 	0 	n/a
+    Food Webs of Three Coral Reef Systems ( Roopnarine and Hertog, 2013 ) 	1 	96,647 	33,257 	659 	730 	1939 	0 	n/a
+    Predator and Prey Body Sizes in Marine Food Webs ( Barnes et al., 2008 ) 	24 	34,931 	529 	93 	167 	34,931 	0 	n/a
+    Polytraits: Biological Traits of Polychaetes ( Faulwetter et al., 2014 ) 	146 	793 	544 	150 	64 	0 	0 	n/a
+    Gulf of Mexico Species Interactions ( Simons et al., 2013 ) 	53 	34,902 	4810 	180 	1063 	9691 	8058 	1998–2007
+    Papilionoidea of the World ( Ferrer-Paris et al., 2013 ) 	1 	24,436 	9915 	2497 	3543 	0 	0 	n/a
+    Avian Diet Database ( Hurlbert, 2014 ) 	68 	1658 	1365 	63 	625 	0 	510 	1897–2004
+    EOL Text Mining ( Thessen, 2014 ) 	1 	183,872 	161,871 	21,516 	30,957 	0 	0 	n/a
+    Tropical Plant Herbivore Networks ( García-Robledo et al., 2013 ) 	1 	74 	52 	19 	18 	19 	0 	n/a
+    ICES North Sea Fish Stomach Data ( I. C. for the Exploration of the Sea, 1989  and  I. C. for the Exploration of the Sea, 1996 ) 	1 	183,935 	2628 	35 	825 	44,280 	44,280 	1979–1991
+    Body Sizes of Consumers and Their Resources ( Brose et al., 2005 ) 	20 	16,865 	11,233 	951 	985 	16,181 	0 	n/a
+    Who Eats Whom in the Barents Sea ( Planque et al., 2014 ) 	215 	1578 	1371 	159 	194 	1578 	0 	n/a
+    Total 	1173 	719,536 	302,803 	34,993 	41,725 	437,983 	232,117 	1897–2014
+    Full-size table 
+    Table options
+
+        View in workspace
+        Download as CSV
+
+3.2. Data coverage
+
+Spatial, temporal, and taxonomic coverage of the combined datasets ( Fig. 4 , Table 1  and  Table 2 ) shows that the aggregation of the described data sources covers about 50,000 taxa (or 8% of total number of ITIS taxa) in a period from 1897 until the present. This coverage is larger than any other single open aggregated species-interaction data collection that is available today simply because it aggregates many of the currently available, large, open datasets ( Table 1 ). However, the sampling density across space, time, and taxonomic ranks is highly variable: where datasets provided by ICES ( I. C. for the Exploration of the Sea, 1989  and  I. C. for the Exploration of the Sea, 1996 ), GoMexSI ( Simons et al., 2013 ), and Southern Ocean ( Raymond et al., 2011 ) provide most of the spatiotemporal interaction data, datasets such as Thessen (2014) , SPIRE ( Sachs et al., 2006 ), and BioInfo ( Storey, 2014 ) contribute most of the total taxonomic coverage.
+
+Spatial distributions of the GloBI data collection (as of July 16, 2014). Map ... Spatial distributions of the GloBI data collection (as of July 16, 2014). Map ...
+    Fig. 4. 
+
+    Spatial distributions of the GloBI data collection (as of July 16, 2014). Map (a) shows the global distribution of the number of recorded interactions. Map (b) includes the number of spatially explicit interactions that include time stamps. Map (c) shows the sum of all distinct interactions. A distinct interaction is defined as presence of at least one interaction between two specific taxa. Map (d) contains the number of interaction studies referenced in a specific area. Map (e) indicates the spatial distribution of the number of unique data sources (or contributors) for recorded interactions, and map (f) provides a distribution of how many individual locations were observed within the sample areas. A spatial bin size of 5 by 5° was used to aggregate spatial statistics shown in the figures. A color-coded log 10 scale visualizes the values contained in each bin.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+    Table 2.
+
+    Breakdown of taxa with known interactions provided by datasets included in GloBI. The numbers represent the count of distinct taxa given the higher-order taxon (e.g., Chordata) and taxonomic rank (e.g., any rank, species, genus). The percentage represents the ratio of GloBI taxa count (accessed on July 16, 2014) and ITIS taxa count (accessed on March 3, 2014) for given higher-order taxonomic groups.
+    	Any rank 	% ITIS 	Species 	Genus 	Family
+    Arthropoda 	17,201 	5.5% 	13,428 	2867 	417
+    Fungi 	9378 	199.5% 	7762 	725 	12
+    Plantae 	9382 	6.5% 	6959 	1940 	160
+    Chordata 	6737 	5.9% 	5473 	740 	249
+    Mollusca 	1027 	5.6% 	736 	195 	65
+    Annelida 	485 	7.8% 	301 	128 	47
+    Bacteria 	109 	19.0% 	76 	28 	2
+    Other 	5749 	13.0% 	4379 	1047 	63
+    Total 	50,068 	7.8% 	39,114 	7670 	1015
+    Full-size table 
+    Table options
+
+        View in workspace
+        Download as CSV
+
+Taxonomic coverage ( Table 2 ) varies by multiple orders of magnitude between datasets. A study of a single parasite, Cymothoa excisa , and its host, the Atlantic croaker ( Micropogonias undulatus ) ( Cook, 2012 ), offers the smallest taxonomic coverage with a spatiotemporal resolution. The largest taxonomic coverage is provided by a study that used a text-mining technique to extract species interactions from text objects in Encyclopedia of Life (EOL) taxon pages ( Thessen, 2014 ). Spatial distributions of species interactions ( Fig. 4 ) are by no means uniform. The maps in Fig. 4 a and c show a high concentration of distinct interactions with spatiotemporal interaction information in Europe, North America, the Southern Ocean, and New Zealand. The highest density of distinct interaction studies can be found in the Gulf of Mexico, the North Sea, and Weddell Sea ( Fig. 4 ). In regards to the density of data sources, North American and European regions provide most coverage ( Fig. 4 ).
+3.3. Usage of the GloBI framework and data collection
+
+Besides GloBI web pages, two websites use GloBI data to embed structured species-interaction information: the Encyclopedia of Life (EOL) and Gulf of Mexico Species Interactions (GoMexSI). EOL is a website that provides global access to knowledge about life on earth. Specifically, EOL hosts curated web pages containing information about organisms and the classification of organisms. GoMexSI offers open web access to trophic-interaction datasets observed in the Gulf of Mexico. The GoMexSI website features tools that allow users to query, navigate, and download data on the diets of marine life in the Gulf of Mexico.
+3.3.1. Usage within EOL
+
+EOL integrates GloBI interaction data by periodically importing a publicly available GloBI Darwin Core archive ( Wieczorek et al., 2012 ). Of the two Darwin Core archives available, EOL uses the archive that aggregates all interactions by study reference. This way, EOL can cite the study and its data source without having to import every single observed interaction. The interaction data is then integrated into the trait summary section on the relevant taxon overview page ( Fig. 5 a,b). Also, a full list of available interactions (from the GloBI collection) is included in the Data tab of EOLs taxon page ( Fig. 5 c).
+
+Screenshots of EOL pages on the Atlantic croaker (Micropagonias undulatus) at ... Screenshots of EOL pages on the Atlantic croaker (Micropagonias undulatus) at ...
+    Fig. 5. 
+
+    Screenshots of EOL pages on the Atlantic croaker ( Micropagonias undulatus ) at http://eol.org/pages/994841 with GloBI interaction data: (a) overview page, (b) data detail of overview page, and (c) detail of the Data tab.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+3.3.2. Usage within GoMexSI
+
+GoMexSI is using the web API provided by GloBI to support various features. First, statistics are retrieved from GloBI and displayed on the home page of GoMexSI ( Fig. 6 a). This statistical analysis summarizes information about the number of references, interactions, and taxa specific to GoMexSI datasets. Second, query and discovery pages allow the user to request and display specific interaction observations ( Fig. 6 b). The data from the queries can also be downloaded into a tabular file for further use. The raw data is provided in a CSV file format with a much richer array of parameters for the interacting species. The explorer mode provides a complete array of all the predators and prey of a selected organism, a favorite feature of some educators who have registered on the site.
+
+Screenshots of GoMexSI pages using GloBI interaction data: (a) homepage, (b) ... Screenshots of GoMexSI pages using GloBI interaction data: (a) homepage, (b) ...
+    Fig. 6. 
+
+    Screenshots of GoMexSI pages using GloBI interaction data: (a) homepage, (b) prey statistics, and (c) name suggestions.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+To help the user enter a scientific name for available taxa, GoMexSI uses GloBIs fuzzy name-search algorithm, generating close matches to the entered text string ( Fig. 6 c). Other enhancements to GloBI are currently being planned to enrich and simplify the data-searching experience on GoMexSI. Planned enhancements include tools that will allow the data to be parsed by locations, life history/size class, or seasonal/temporal modes.
+3.3.3. GloBI web pages
+
+An informational, proof-of-concept website, http://globalbioticinteractions.org , demonstrates some examples of how to embed interaction data into a stand-alone, dynamic, HTML page. GloBIs website showcases three kinds of functionality: First, the “What do … eat?” page ( Fig. 7 a) allows the user to search for all prey of a specific predator, using the name suggestion tool and interaction query service. The resulting prey-items list includes a scientific name, common name, and image for each prey. Each prey item also links to an external website, such as EOL ( Parr et al., 2014 ) or WoRMS ( Costello et al., 2013 ), or an associated ontology such as the EnvO ( Buttigieg et al., 2013 ). Second, the reference page ( Fig. 7 b) gives an overview of GloBIs aggregated interaction data by study, displaying the citation, data source, number of interactions, and distinct number of source and target taxa for each study. Finally, an interaction browser makes it possible for the user to select a region of interest on a map, and displays a visual representation of the species interactions in the selection in bundle and circular layouts. The visualizations for the interaction browser were created using Google Maps APIs andd3js.org ( Bostock et al., 2011 ) in combination with the GloBI API. The interaction browser is under development and can be found at http://globalbioticinteractions.org/browse .
+
+Screenshots of GloBI web pages at http://globalbioticinteractions.org (a) What ... Screenshots of GloBI web pages at http://globalbioticinteractions.org (a) What ...
+    Fig. 7. 
+
+    Screenshots of GloBI web pages at http://globalbioticinteractions.org (a) What do Ariopsis felis eat?, and (b) reference table.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+3.4. RDF export
+
+GloBI's data collection is also available as an RDF triple dump, which can be queried via its SPARQL endpoint. The export includes all interactions in GloBI, but, at this time, does not include the full metadata available for each interaction.
+
+Each interaction is modeled as an instance of the Gene Ontology (GO) class “interspecies interaction between organisms” (GO_0044419). The interaction is connected to the two organisms participating in the interaction, each of which is a type of the class “organism” (CARO_0010004), taken from the Common Anatomy Reference Ontology. The two organisms are connected by way of an interaction relation taken from the OBO Relations Ontology (RO), for example, “parasite of” (RO_0002444).
+
+Each of the two organisms is connected by a “member of” relation (RO_0002350) to the taxon object, which is connected to one or more taxonomy references via an OWL sameAs predicate.
+
+If the interaction has environmental context, this is recorded using an “occurs in” relationship (BFO_0000066) to an instance of a class from EnvO.
+
+The triples from GloBI can be combined with these ontologies and logical reasoners to perform powerful knowledge-enhanced queries. For example, querying for all interactions that occur in a “terrestrial biome” (ENVO_00000446) will return interactions that occur in any instance of this EnvO class or its subclasses.
+4. Discussion
+
+In the process of building the GloBI infrastructure and integrating datasets, we encountered a number of nontrivial challenges that fall in roughly three categories: (a) data sharing, (b) process automation, and (c) term mapping.
+4.1. Data sharing
+
+Despite the advances in technology and a shift in various disciplines to open-data science (e.g., genomics, particle physics, astronomy), scientists and institutions are often unable or unwilling to make available the species-interaction datasets on which their publications are based. For instance, large US government fisheries-survey datasets remain closed due to legal restrictions of the Magnuson–Stevens Fishery Conservation and Management Act; as amended, Public Law 109-479; 16 U.S.C. 1853; implemented at 50 CFR 679.50. Some research bodies, including governmental institutions, claim to have invested too many funds into compiling datasets to give them away for free. Other frequently heard reasons for not sharing data are that, even though research results have been published, the data is not ready to be released because other publications based on the data are pending.
+
+For those who are uncomfortable in sharing their datasets, we have instantiated Dark GloBI, a version of GloBI that contains datasets accessible only with the explicit permission of the data contributors. In this way, researchers can still take advantage of GloBIs different functionalities while using restricted datasets.
+
+That said, we hope that GloBIs open-source tools for attributing, accessing, and discussing datasets will both increase the visibility of data contributors and amplify the usefulness of their data. By loosening proprietary restrictions on species-interaction data, researchers will have more opportunities to collaborate and ampler resources for testing hypotheses. These benefits will hopefully provide enough incentive not only to share data, but also to reuse datasets from colleagues around the world.
+
+On our part, several improvements can be made to show how data is shared and managed within GloBI. Currently, some Java programming is necessary to add an interaction dataset to GloBI. While our results suggest that this approach is sufficient at current scale, introducing a more user-friendly way to add datasets might lower the threshold for sharing. However, if datasets use standard exchange formats such as Darwin Core, this problem is mitigated.
+
+Another possible improvement would be to build a tool that allows for manual entry of interaction data. This data-entry tool would permit institutions or individuals to transcribe and share interaction records from nondigital sources. We believe that the growing community of data contributors and users will promote the adoption of existing data-exchange formats and guide the development of increasingly effective data-aggregation and access methods.
+
+Attribution is an important part of GloBI – inclusion of attributions can potentially encourage connections among researchers. While contributor visibility is currently increased by an online reference list (see http://globalbioticinteractions.org/references.html ), no major technical barriers exist to use more sophisticated methods like assigning digital object identifiers (DOIs) to contributed datasets that individual contributors can list on their profiles at http://orcid.org . We are working with the Semantic Web in Health Case and Life Sciences Interest Group (HCLSIG) ( Gray et al. ) to provide enhanced metadata descriptions of each dataset using standard web vocabularies in order to make the data more discoverable.
+4.2. Process automation
+
+GloBI's data-transformation algorithms are automated to reduce human error. This automation helps to establish a reproducible data-processing pipeline to reduce variability in outcomes with the same input data. The main source of process variation and delay are introduced by web APIs. While the process is sufficiently reliable, it raises a question about the long-term challenges of reproducing data transformations relying on web APIs that might not be available in the future.
+
+GloBI itself proposes an answer to this question by offering an API and full data archives. These archives contain a versioned copy of all interaction data and are stored in a Maven repository ( http://maven.apache.org ). They can be embedded in automated processing workflows without the need for internet access, because copies can be cached locally.
+4.3. Term mapping
+
+Terms like taxon names, life stages, and locations are mapped to existing ontologies as much as possible. Currently, identical mapping procedures are used across all datasets; term mapping is largely a manual operation that involves inspecting mismatching terms and entering an appropriate mapping using a CSV file. While this method holds up nicely at this time, we anticipate two challenges: First, as more datasets come in, the mapping files will grow to a point where a tool will have to be introduced to curate data mappings. Second, we expect that more sophisticated, dataset-specific name mappings will be needed to avoid mapping conflicts.
+4.4. The prior art of data sharing
+
+The realization that sharing and reusing interaction data facilitates ecological research is far from new. Efforts such as Ecologists' Cooperative Web Bank ( Cohen and Ecologists co-operative web bank (ecoweb), 2010 ), Webs on the Web ( Yoon et al., 2004 ), Animal Diversity Web ( Myers et al., 2014 ), and Interaction Web Database ( Vázquez, 2005 ) have aggregated and published biotic-interaction datasets using various methods to make it easier to access existing interaction datasets using various custom information systems. Unfortunately, few of these initiatives are still active, and their aggregated datasets are at risk of becoming inaccessible due to loss of web-hosting capacity.
+
+The scientific community is getting better at ensuring continued access to scientific datasets beyond a two-to-three year research grant cycle: the advent of open-access data publication clauses in research grants and journal data submission requirements have stimulated the creation of scientific data repositories (DataONE ( Michener et al., 2011 ), LifeWatch ( Basset and Los, 2012 ), (Dryad) , PANGAEA ( Diepenbroek et al., 2002 )) and online data journals (ESA's Ecological Archives , Biodiversity Data Journal , Nature's Scientific Data ). These new publication methods allow scientific communities to reuse and cite source datasets for purposes of reproducing results, or gaining new insights without having to collect new data. However, these data publication platforms are general purpose and provide data that isn't necessarily machine-readable. For instance, the ability to search inside these sources' published datasets is not provided. In other words, while a wealth of data is now accessible, it cannot be used without a significant effort on the part of the data consumer. Aside from downloading and attempting to import nonstandard file formats, typical manual operations to reuse a published species-interaction dataset include correcting taxonomic names, converting common names to scientific names, and mapping unstructured text that describes terms such as life stage or locale into controlled vocabularies. So, while many ecological datasets are available, putting the data to work is a time-consuming task.
+
+To turn openly accessible data into usable information, a data process step is required after data publication to allow for automated discovery and aggregation of relevant datasets for a specific purpose. The EcoData Retriever ( Morris and White, 2013 ), an ecological data discovery and retrieval tool, provides a way to search preindexed, tabular, ecological datasets and install them in a relational database. However, this leaves the challenge of aggregating separate datasets into a single dataset. A recent effort ( Poisot et al., 2014 ) implements an R package and web API for accessing and analyzing interaction data. In the future, we will provide an interoperation layer with the rmangal package.
+
+Elaborate data-transformation platforms like Galaxy ( Goecks et al., 2010 ) or Pentaho Kettle ( Bouman and Van Dongen, 2009 ) automate the process of data discovery and aggregation, but even these sophisticated platforms require significant amount of programming to configure data workflows.
+4.5. Assessment of GloBI's benefits
+
+While the success of GloBI is difficult to express quantitatively at this early stage, some qualitative observations can be made. Namely, the quality of interaction datasets was improved when they were introduced into GloBI. In many instances, the GloBIdata-aggregation process or GloBI users brought data inconsistencies or errors to light. For example, a user of GloBI data reported a number of suspicious interactions by creating a GitHub issue ( https://github.com/jhpoelen/eol-globi-data/issues/67 ). This issue was then used to discuss the steps to be taken to fix the errors in the data. In this case, the issue revealed a bug in the data import and an invalid record in a source database. The bug was fixed and the author of the source data confirmed a data error and corrected the invalid record at the source. Effectively, aggregating species-interaction data into GloBI initiates a crowd-sourced review process for that data.
+
+Another sign of GloBI's success is its use by several scientific institutions and researchers. EOLs and GoMexSIs websites have been using GloBI data access methods since January 2014 and September 2013, respectively, and GloBI provided data access tools that were used to develop novel interaction visualization method ( Poelen, 2014a  and  Poelen, 2014b ). We expect that, over time, the GloBI citation index will give a more quantitative measure of success within the scientific community, and that API usage and data-download statistics will provide a more general measure for success within citizen science and educational communities.
+5. Conclusion
+
+By making a large collection of machine-readable species-interaction data available, we can help educators and scientists to better understand how organisms interact with their surroundings. This understanding could inform strategies on how to conserve the natural resources that we rely on for survival.
+
+Through an open, iterative collaboration process between the Encyclopedia of Life community, data contributors, scientists, and software engineers, we built GloBI. GloBI offers methods to discover, analyze, and cite existing species-interaction datasets that currently cover about 700,000 interactions, across 50,000 taxa, over 1100 studies, from 19 data sources. With GloBIs tools and data collection, we can now ask complex questions about species interactions, and obtain answers with detailed taxonomic, habitat/environment, geographic, and temporal information. The GloBI infrastructure is a modular, scalable infrastructure that relies heavily on openly accessible APIs (e.g., GlobalNames, EOL's API, CrossRef), free technologies (e.g., Apache Maven for software life-cycle and dependency management, and (Neo4j) for graph database), and low or no-cost platforms (e.g., Amazon S3 1 for storage; GitHub for source-code repository, wiki documentation and issue management; and Travis 2 for continuous integration testing).
+
+As the cross-disciplinary GloBI community continues to share, discuss, improve, and use species-interaction data, we expect that others will step forward and open up their biotic-interaction observations to offer an increasingly valuable ecological research resource to all.
+Acknowledgments
+
+We thank Jen Hammock, Brian Hayden, Peter Roopnarine, Jeff Holmes, and Cyndy Parr for sharing their ideas, participating in discussions, and supporting our efforts. Also, thanks to Robert Reiz, Göran Bodenschatz, Stephan Gosnell, and Sergey Slyusarev for using and providing feedback on GloBI data as part of developing software and visualizations. Thanks to Pepper Luboff for editing this article. Last but not least, we thank all the data contributors that have opened up their datasets and answered many of our questions: Malcolm Storey; Joel Sachs; Ken-ichi Ueda; Allen Hurlbert; Ben Raymond; Carolyn Barnes; Jarrett Byrnes; Colt Cook; Jos Ferrer-Paris; Anne Thessen; Institute for Marine Resources and Ecosystem Studies (IMARES); International Council for Exploration of the Sea (ICES); UK Species Inventory at the Angela Marmont Centre for UK Biodiversity, the Natural History Museum, London; and many others. This work has been supported by the Encyclopedia of Life, EOL Rubenstein Fellows Program and the David M. Rubenstein Grant (CRDF EOL-33066-13/F33066 ), Smithsonian Institution.
+References
+
+        Abell et al., 2008
+        R. Abell, M.L. Thieme, C. Revenga, M. Bryer, M. Kottelat, N. Bogutskaya, B. Coad, N. Mandrak, S.C. Balderas, W. Bussing, M.L.J. Stiassny, P. Skelton, G.R. Allen, P. Unmack, A. Naseka, R. Ng, N. Sindorf, J. Robertson, E. Armijo, J.V. Higgins, T.J. Heibel, E. Wikramanayake, D. Olson, H.L. López, R.E. Reis, J.G. Lundberg, M.H.S. Pérez, P. Petry
+
+        Freshwater ecoregions of the world: a new map of biogeographic units for freshwater biodiversity conservation
+
+        Bioscience, 58 (5) (2008), p. 403 http://dx.doi.org/10.1641/b580507
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (413)
+        Barnes et al., 2008
+        C. Barnes, D.M. Bethea, R.D. Brodeur, J. Spitz, V. Ridoux, C. Pusineri, B.C. Chase, M.E. Hunsicker, F. Juanes, A. Kellermann, J. Lancaster, F. Ménard, F.-X. Bard, P. Munk, J.K. Pinnegar, F.S. Scharf, R.A. Rountree, K.I. Stergiou, C. Sassa, A. Sabates, S. Jennings
+
+        Predator and prey body sizes in marine food webs
+
+        Ecology, 89 (3) (2008), p. 881 http://dx.doi.org/10.1890/07-1551.1
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (29)
+        Basset and Los, 2012
+        A. Basset, W. Los
+
+        Biodiversity e-Science: LifeWatch, the European infrastructure on biodiversity and ecosystem research
+
+        Plant Biosyst. Int. J. Dealing Aspects Plant Biol., 146 (4) (2012), pp. 780–782 http://dx.doi.org/10.1080/11263504.2012.740091
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (15)
+        Bastian et al., 2009
+        M. Bastian, S. Heymann, M. Jacomy
+
+        Gephi: an open source software for exploring and manipulating networks
+
+        ICWSM (2009), pp. 361–362
+        View Record in Scopus
+         | 
+        Citing articles (906)
+        Beckett and Berners-Lee, 2008
+        D. Beckett, T. Berners-Lee
+
+        Turtle-terse RDF triple language
+
+        http://www.w3.org/TeamSubmission/turtle/ (2008) (last accessed on July 17, 2014)
+        Bostock et al., 2011
+        M. Bostock, V. Ogievetsky, J. Heer
+
+        D3 data-driven documents
+
+        IEEE Trans. Vis. Comput. Graph., 17 (12) (2011), pp. 2301–2309 http://dx.doi.org/10.1109/tvcg.2011.185
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (504)
+        Bouman and Van Dongen, 2009
+        R. Bouman, J. Van Dongen
+
+        Pentaho Solutions: Business Intelligence and Data Warehousing with Pentaho and MySQL
+
+        Wiley Publishing (2009)
+        Brose et al., 2005
+        U. Brose, L. Cushing, E.L. Berlow, T. Jonsson, C. Banasek-Richter, L.-F. Bersier, J.L. Blanchard, T. Brey, S.R. Carpenter, M.-F.C. Blandenier, J.E. Cohen, H.A. Dawah, T. Dell, F. Edwards, S. Harper-Smith, U. Jacob, R.A. Knapp, M.E. Ledger, J. Memmott, K. Mintenbeck, J.K. Pinnegar, B.C. Rall, T. Rayner, L. Ruess, W. Ulrich, P. Warren, R.J. Williams, G. Woodward, P. Yodzis, N.D. Martinez
+
+        Body sizes of consumers and their resources
+
+        Ecology, 86 (9) (2005), p. 2545 http://dx.doi.org/10.1890/05-0379
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (50)
+        Buttigieg et al., 2013
+        P. Buttigieg, N. Morrison, B. Smith, C.J. Mungall, S.E. Lewis
+
+        The environment ontology: contextualising biological and biomedical entities
+
+        J. Biomed. Sem., 4 (1) (2013), p. 43 http://dx.doi.org/10.1186/2041-1480-4-43
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (27)
+        Byrnes et al., 2011
+        J.E. Byrnes, D.C. Reed, B.J. Cardinale, K.C. Cavanaugh, S.J. Holbrook, R.J. Schmitt
+
+        Climate-driven increases in storm frequency simplify kelp forest food webs
+
+        Glob. Chang. Biol., 17 (8) (2011), pp. 2513–2524 http://dx.doi.org/10.1111/j.1365-2486.2011.02409.x
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (55)
+        Cassis and Pickering
+        G. Cassis, J. Pickering
+
+        Species interactions of Australia database
+
+        http://www.discoverlife.org/siad/ (last accessed on July 17, 2014)
+        Cohen and Ecologists co-operative web bank (ecoweb), 2010
+        J.E. Cohen, Ecologists co-operative web bank (ECOWeB)
+
+        Version 1.1 machine-readable data base of food webs
+
+        The Rockefeller University, New York (2010) ( http://hdl.handle.net/10209/306 )
+        Cook, 2012
+        C.W. Cook
+
+        The early life history and reproductive biology of Cymothoa excisa , a marine isopod parasitizing Atlantic croaker, ( Micropogonias undulatus ), along the Texas coast
+
+        (Master's thesis) University of Texas, Austin (2012) (last accessed on July 17, 2014)
+        Costello et al., 2013
+        M.J. Costello, P. Bouchet, G. Boxshall, K. Fauchald, D. Gordon, B.W. Hoeksema, G.C.B. Poore, R.W.M. van Soest, S. Stöhr, T.C. Walter, B. Vanhoorne, W. Decock, W. Appeltans
+
+        Global coordination and standardisation in marine biodiversity through the world register of marine species (worms) and related databases
+
+        PLoS One, 8 (1) (2013), p. e51629 http://dx.doi.org/10.1371/journal.pone.0051629
+        CrossRef
+        Diepenbroek et al., 2002
+        M. Diepenbroek, H. Grobe, M. Reinke, U. Schindler, R. Schlitzer, R. Sieger, G. Wefer
+
+        PANGAEA jan information system for environmental sciences
+
+        Comput. Geosci., 28 (10) (2002), pp. 1201–1210 http://dx.doi.org/10.1016/s0098-3004(02)00039-0
+        Article
+        |
+          PDF (693 K)
+        |
+        View Record in Scopus
+         | 
+        Citing articles (31)
+        Dryad
+        Dryad
+
+        A nonprofit repository for data underlying the international scientific and medical literature
+
+        http://www.datadryad.org/ (last accessed on August 13, 2014)
+        F. G. D. Committee, 2012
+        F. G. D. Committee
+
+        Coastal and marine ecological classification standard
+
+        http://www.csc.noaa.gov/digitalcoast/publications/cmecs (2012) (last Accessed on July 17, 2014)
+        Faulwetter et al., 2014
+        S. Faulwetter, V. Markantonatou, C. Pavloudi, N. Papageorgiou, K. Keklikoglou, E. Chatzinikolaou, E. Pafilis, E. Pafilis, G. Chatzigeorgiou, K. Vasileiadou, T. Dailianis, L. Fanini, P. Koulouri, C. Arvanitidis
+
+        Polytraits: a database on biological traits of marine polychaetes
+
+        Biodivers. Data J., 2 (2014), p. e1024 http://dx.doi.org/10.3897/bdj.2.e1024
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (2)
+        Ferrer-Paris et al., 2013
+        J.R. Ferrer-Paris, A. Sánchez-Mercado, A.L. Viloria, J. Donaldson
+
+        Congruence and diversity of butterfly–host plant associations at higher taxonomic levels
+
+        PLoS One, 8 (5) (2013), p. e63570 http://dx.doi.org/10.1371/journal.pone.0063570
+        CrossRef
+        Gansner and North, 2000
+        E.R. Gansner, S.C. North
+
+        An open graph visualization system and its applications to software engineering
+
+        Software Pract. Exper., 30 (11) (2000), pp. 1203–1233 http://dx.doi.org/10.1002/1097-024X(200009)30:11<1203::AID-SPE338>3.0.CO;2-N
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (528)
+
+        García-Robledo et al., 2013
+        C. García-Robledo, D.L. Erickson, C.L. Staines, T.L. Erwin, W.J. Kress
+
+        Tropical plant-herbivore networks: reconstructing species interactions using DNA barcodes
+
+        PLoS One, 8 (1) (2013), p. e52967 http://dx.doi.org/10.1371/journal.pone.0052967
+        CrossRef
+        Goecks et al., 2010
+        J. Goecks, A. Nekrutenko, J. Taylor, T.G. Team
+
+        Galaxy: a comprehensive approach for supporting accessible, reproducible, and transparent computational research in the life sciences
+
+        Genome Biol., 11 (8) (2010), p. R86 http://dx.doi.org/10.1186/gb-2010-11-8-r86
+        CrossRef
+        Gosling, 2000
+        J. Gosling
+
+        The Java Language Specification
+
+        Addison-Wesley Professional (2000)
+        Gray et al
+        A.J. Gray, M. Dumontier, M.S. Marshall, J. Baran
+
+        Dataset descriptions: HCLS community profile
+
+        http://tinyurl.com/HCLSDatasetDescription (last accessed on August 15, 2014)
+        Hechinger et al., 2011
+        R.F. Hechinger, K.D. Lafferty, J.P. McLaughlin, B.L. Fredensborg, T.C. Huspeni, J. Lorda, P.K. Sandhu, J.C. Shaw, M.E. Torchin, K.L. Whitney, A.M. Kuris
+
+        Food webs including parasites, biomass, body sizes, and life stages for three California/Baja California estuaries
+
+        Ecology, 92 (3) (2011), p. 791 http://dx.doi.org/10.1890/10-1383.1
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (15)
+        Hurlbert, 2014
+        Hurlbert, A. Avian diet database, unpublished dataset (2014).
+        I. C. for the Exploration of the Sea, 1989
+        I. C. for the Exploration of the Sea
+
+        Data base report of the stomach sampling project 1981
+
+        Cooperative research report no. 164 (1989) ( http://www.ices.dk/sites/pub/Publication%20Reports/Cooperative%20Research%20Report%20(CRR)/crr164/CRR164.pdf , last accessed on July 17, 2014 (April 1989))
+        I. C. for the Exploration of the Sea, 1996
+        I. C. for the Exploration of the Sea
+
+        Data base report of the stomach sampling project 1981
+
+        Cooperative research report no. 219 (1996) ( http://www.ices.dk/sites/pub/Publication%20Reports/Cooperative%20Research%20Report%20(CRR)/crr219/CRR219.pdf , last accessed on July 17, 2014 (October 1996))
+        Longhurst, 2007
+        A.R. Longhurst
+
+        Biogeographic partition of the ocean
+
+        Ecological Geography of the Sea, Elsevier (2007), pp. 19–34 http://dx.doi.org/10.1016/b978-012455521-1/50003-6
+        Article
+        |
+          PDF (313 K)
+        |
+        View Record in Scopus
+         | 
+        Citing articles (1)
+        Michener et al., 2011
+        W. Michener, D. Vieglais, T. Vision, J. Kunze, P. Cruse, G. Janée
+
+        Dataone: Data observation network for earth preserving data and enabling innovation in the biological and environmental sciences
+
+        D-Lib Magazine, 17 (1/2) (2011) http://dx.doi.org/10.1045/january2011-michener
+        Morris and White, 2013
+        B.D. Morris, E.P. White
+
+        The ecodata retriever: improving access to existing ecological data
+
+        PLoS One, 8 (6) (2013), p. e65848 http://dx.doi.org/10.1371/journal.pone.0065848
+        CrossRef
+        Mungall et al., 2012
+        C.J. Mungall, C. Torniai, G.V. Gkoutos, S.E. Lewis, M.A. Haendel
+
+        Uberon, an integrative multi-species anatomy ontology
+
+        Genome Biol., 13 (1) (2012), p. R5 http://dx.doi.org/10.1186/gb-2012-13-1-r5
+        CrossRef
+        Myers et al., 2014
+        P. Myers, R. Espinosa, C.S. Parr, T. Jones, G.S. Hammond, T.A. Dewey
+
+        The animal diversity web
+
+        http://animaldiversity.org (2014) (last accessed on July 17, 2014)
+        Neo4j
+        Neo4j
+
+        graph database
+
+        http://neo4j.org (last accessed on July 17, 2014)
+        Olson et al., 2001
+        D.M. Olson, E. Dinerstein, E.D. Wikramanayake, N.D. Burgess, G.V. Powell, E.C. Underwood, J.A. D'amico, I. Itoua, H.E. Strand, J.C. Morrison, et al.
+
+        Terrestrial ecoregions of the world: a new map of life on earth a new global map of terrestrial ecoregions provides an innovative tool for conserving biodiversity
+
+        Bioscience, 51 (11) (2001), pp. 933–938 http://dx.doi.org/10.1641/0006-3568(2001)051[0933:teotwa]2.0.co;2
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (1999)
+        Parr et al., 2014
+        C.S. Parr, N. Wilson, P. Leary, K. Schulz, K. Lans, L. Walley, J. Hammock, A. Goddard, J. Rice, M. Studer, J. Holmes, J. Robert Corrigan
+
+        The encyclopedia of life v2: providing global access to knowledge about life on earth
+
+        Biodivers. Data J., 2 (2014), p. e1079 http://dx.doi.org/10.3897/bdj.2.e1079
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (20)
+        Planque et al., 2014
+        B. Planque, R. Primicerio, K. Michalsen, M. Aschan, G. Certain, P. Dalpadado, H. Gjosaeater, C. Hansen, E. Johannesen, L.L. Jorgensen, I. Kolsum, S. Kortsch, L.-M. Leclerc, L. Omli, M. Skern-Mauritzen, M. Wiedmann
+
+        Who eats whom in the Barents Sea: a food web topology from plankton to whales
+
+        Ecology, 95 (5) (2014), p. 1430 http://dx.doi.org/10.1890/13-1062.1
+        CrossRef
+        |
+        View Record in Scopus
+        Poelen, 2014a
+        J.H. Poelen
+
+        Exploring antarctic interactions using GloBI's interaction browser
+
+        http://globalbioticinteractions.wordpress.com/2014/03/21/exploring-antarctic-interactions-using-globis-interaction-browser/ (2014) (last accessed on July 17, 2014)
+        Poelen, 2014b
+        J.H. Poelen
+
+        A food-web map of the world
+
+        http://globalbioticinteractions.wordpress.com/2014/06/06/a-food-web-map-of-the-world/ (2014) (last accessed on July 17, 2014)
+        Poisot et al., 2014
+        T.E. Poisot, B. Baiser, J.A. Dunne, S. Kéfi, F. Massol, N. Mouquet, T.N. Romanuk, D.B. Stouffer, S.A. Wood
+
+        Gravel, D. mangal - making complex ecological network analysis simpler
+
+        bioRxiv (2014), p. e65848 http://dx.doi.org/10.1101/002634
+        View Record in Scopus
+         | 
+        Citing articles (1)
+
+        R Core Team, 2014
+        R Core Team
+
+        R: A Language and Environment for Statistical Computing
+
+        R Foundation for Statistical Computing, Vienna, Austria (2014)
+        Raymond et al., 2011
+        B. Raymond, M. Marshall, G. Nevitt, C.L. Gillies, J. van den Hoff, J.S. Stark, M. Losekoot, E.J. Woehler, A.J. Constable
+
+        A southern ocean dietary database
+
+        Ecology, 92 (5) (2011), p. 1188 http://dx.doi.org/10.1890/10-1907.1
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (4)
+        Roopnarine and Hertog, 2013
+        P.D. Roopnarine, R. Hertog
+
+        Detailed food web networks of Three Greater Antillean Coral Reef Systems: The Cayman Islands, Cuba, and Jamaica
+
+        Dataset Pap. Ecology, 2013 (2013), pp. 1–9 http://dx.doi.org/10.7167/2013/857470
+        CrossRef
+        Sachs et al., 2006
+        J. Sachs, C. Parr, A. Parafiynyk, R. Pan, L. Han, L. Ding, T. Finin, A. Hollander, T. Wang
+
+        Using the semantic web to support ecoinformatics
+
+        Proceedings of the AAAI Fall Symposium on the Semantic Web for Collaborative Knowledge Acquisition, American Associate for Artificial Intelligence (2006), pp. 56–61
+        View Record in Scopus
+         | 
+        Citing articles (2)
+        Shannon et al., 2003
+        P. Shannon, A. Markiel, O. Ozier, N.S. Baliga, J.T. Wang, D. Ramage, N. Amin, B. Schwikowski, T. Ideker
+
+        Cytoscape: a software environment for integrated models of biomolecular interaction networks
+
+        Genome Res., 13 (11) (2003), pp. 2498–2504 http://dx.doi.org/10.1101/gr.1239303
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (5514)
+        Simons et al., 2013
+        J.D. Simons, M. Yuan, C. Carollo, M. Vega-Cendejas, T. Shirley, M.L. Palomares, P. Roopnarine, L.G.A. Arenas, A.I. nez, J. Holmes, C.M. Schoonard, R. Hertog, D. Reed, J. Poelen
+
+        Building a fisheries trophic interaction database for management and modeling research in the Gulf of Mexico large marine ecosystem
+
+        Bull. Mar. Sci., 89 (1) (2013), pp. 135–160 http://dx.doi.org/10.5343/bms.2011.1130
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (8)
+        Smith et al., 2005
+        B. Smith, W. Ceusters, B. Klagges, J. Köhler, A. Kumar, J. Lomax, C. Mungall, F. Neuhaus, A.L. Rector, C. Rosse
+
+        Relations in biomedical ontologies
+
+        Genome Biol., 6 (5) (2005), p. R46 http://dx.doi.org/10.1186/gb-2005-6-5-r46
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (515)
+        Spalding et al., 2007
+        M.D. Spalding, H.E. Fox, G.R. Allen, N. Davidson, Z.A.F. na, M. Finlayson, B.S. Halphern, M.A. Jorge, A. Lombana, S.A. Lourie, K.D. Martin, E. McManus, J. Molnar, C.A. Rechhia, J. Robertson
+
+        Marine ecoregions of the world: a bioregionalization of coastal and shelf areas
+
+        Bioscience, 57 (7) (2007), p. 573 http://dx.doi.org/10.1641/b570707
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (689)
+        Storey, 2014
+        M. Storey
+
+        Bioinfo: food webs and species interactions in the biodiversity of UK and Ireland
+
+        http://bioinfo.org.uk (2014) (last accessed on July 17, 2014)
+        Thessen, 2014
+        A. Thessen
+
+        pseudonitzchia: biodiversity informatics code relevant to the encyclopedia of life
+
+        https://github.com/eol/pseudonitzchia (2014)
+        Vázquez, 2005
+        D.P. Vázquez
+
+        Degree distribution in plant–animal mutualistic networks: forbidden links or random interactions?
+
+        Oikos, 108 (2) (2005), pp. 421–426 http://dx.doi.org/10.1111/j.0030-1299.2005.13619.x
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (80)
+        Wieczorek et al., 2012
+        J. Wieczorek, D. Bloom, R. Guralnick, S. Blum, M. Döring, R. Giovanni, T. Robertson, D. Vieglais
+
+        Darwin core: an evolving community-developed biodiversity data standard
+
+        PLoS One, 7 (1) (2012), p. e29715 http://dx.doi.org/10.1371/journal.pone.0029715
+        CrossRef
+        |
+        View Record in Scopus
+        Yoon et al., 2004
+        I. Yoon, R. Williams, E. Levine, S. Yoon, J. Dunne, N. Martinez
+
+        Webs on the web (wow): 3D visualization of ecological networks on the www for collaborative research and education
+
+        Visualization and Data Analysis 2004vol. 5295 (2004), pp. 124–132 http://dx.doi.org/10.1117/12.526956
+        CrossRef
+        |
+        View Record in Scopus
+         | 
+        Citing articles (2)
+
+    Corresponding author.
+
+1
+
+    http://aws.amazon.com/s3 .
+
+2
+
+    http://travis-ci.org .
+
+Copyright © 2014 Published by Elsevier B.V.
+Elsevier
+About ScienceDirect Remote access Shopping cart Contact and support Terms and conditions Privacy policy
+Cookies are used by this site. For more information, visit the cookies page .
+Copyright © 2016 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+RELX Group
+  Recommended articles
+
+        An infrastructure-oriented approach for supporting biodiversity research
+        2015, Ecological Informatics
+        more
+            Leonardo Candela, , Donatella Castelli, , Gianpaolo Coro, , Lucio Lelii, , Francesco Mangiacrapa, , Valentina Marioli, , Pasquale Pagano,
+            An infrastructure-oriented approach for supporting biodiversity research
+            Ecological Informatics, Volume 26, Part 2, March 2015, Pages 162–172
+            Original Research Article
+                PDF (1597 K)
+        Co-evolution and ecosystem based problem solving
+        2012, Ecological Informatics
+        more
+            Folkert K. de Boer, , Paulien Hogeweg,
+            Co-evolution and ecosystem based problem solving
+            Ecological Informatics, Volume 9, May 2012, Pages 47–58
+            Original Research Article
+                PDF (2450 K)
+        Discovering and developing primary biodiversity data from social networking sites: A novel approach
+        2014, Ecological Informatics
+        more
+            Vijay Barve,
+            Discovering and developing primary biodiversity data from social networking sites: A novel approach
+            Ecological Informatics, Volume 24, November 2014, Pages 194–199
+            Original Research Article
+                PDF (684 K)
+    View more articles »
+
+  Citing articles ( 18 )
+
+    This article has not been cited.
+
+  Related book content
+
+    No articles found.
+
++ Show more applications
+- Show fewer applications
+ 
+Download PDFs
+Help
+Help
+ 
+  close
+
+Click to get updates and verify authenticity.
+[Entitle Gadget]
+Entitle Gadget
+

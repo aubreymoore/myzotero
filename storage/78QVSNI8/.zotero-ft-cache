@@ -1,0 +1,112 @@
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Marketplace
+    Gist
+
+        New repository Import repository New gist New organization
+        This repository
+        New issue 
+    @aubreymoore
+    Signed in as aubreymoore
+    Your profile Your stars Explore Help
+    Settings
+    Sign out
+
+Sign out
+
+    Unwatch 1
+    Notifications
+    Not watching Be notified when participating or @mentioned. Watch
+    Watching Be notified of all conversations. Unwatch
+    Ignoring Never be notified. Stop ignoring
+    Unstar 0
+    Star 0
+    Fork
+    0
+
+aubreymoore / SQLite-database-for-Guam-Forest-Inventory
+Code Issues 0 Pull requests 0 Projects 0 Wiki Settings
+Insights
+Community Pulse Graphs
+iPython Nottebook which creates an SQLite database for the US Forest Service FIA data for Guam
+Edit
+Description
+Website
+Save or Cancel
+Add topics
+Loading
+
+    5 commits
+    1 branch
+    0 releases
+    1 contributor
+
+    Jupyter Notebook 97.4%
+    TeX 2.6%
+
+Jupyter Notebook TeX
+Clone or download
+Use SSH
+Clone with HTTPS
+
+Use Git or checkout with SVN using the web URL.
+Use HTTPS
+Clone with SSH
+
+Use an SSH key and passphrase from account.
+Download ZIP
+Create new file
+Upload files Find file
+Branch: master
+Switch branches/tags
+
+    Branches
+    Tags
+
+master
+Create branch: from ‘master’
+Nothing to show
+New pull request
+Latest commit e2bd0fb on Apr 5 @aubreymoore aubreymoore added pdf plot
+Permalink
+	Failed to load latest commit information.
+	.ipynb_checkpoints 	new analysis notebook 	4 months ago
+	Analyze Guam Forest Inventory Survey Data.ipynb 	added pdf plot 	4 months ago
+	GuamFIA-lyxformat-413.lyx 	new analysis notebook 	4 months ago
+	GuamFIA.lyx 	new analysis notebook 	4 months ago
+	GuamFIA.lyx~ 	new analysis notebook 	4 months ago
+	Make Guam Forest Inventory Survey SQLite DB.ipynb 	safety 	4 months ago
+	README.md 	initial commit 	a year ago
+	guam_forest_survey.db 	deleted columns which do not comtain data from database tables 	a year ago
+	longtable.tex 	new analysis notebook 	4 months ago
+	plot.pdf 	added pdf plot 	4 months ago
+Drop to upload your files
+Drop to upload your files
+README.md
+Creating an SQLite Database for the Guam Forest Inventory Survey
+
+This iPython notebook creates an SQLite database containing US Forest Service Forest Inventory data collected on Guam in 2003 and 2013.
+
+The Forest Service has kindly provided online access to data from its national forest inventory surveys on its FIA DataMart page. Data are available as Microsoft Access databases (*.accx) for Windows users and as plain text tables (*.csv) for Mac and Linux users.
+
+Survey methods and resulting data are very thoroughly documented in PDFs stored in the Access database zip file. For Guam, this is http://apps.fs.fed.us/fiadb-downloads/Databases/GUaccdb.zip .
+
+    Contact GitHub
+    API
+    Training
+    Shop
+    Blog
+    About
+
+    © 2017 GitHub , Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+You can't perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.

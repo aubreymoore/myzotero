@@ -1,0 +1,10 @@
+if (window['google'] != undefined && window['google']['loader'] != undefined) {
+if (!window['google']['visualization']) {
+window['google']['visualization'] = {};
+google.visualization.Version = '1.1';
+google.visualization.JSHash = 'cc5d8333ad9d2dca8ea31ac15ed4e2df';
+google.visualization.LoadArgs = 'file\x3dvisualization\x26v\x3d1.1\x26packages\x3dbar';
+}
+google.loader.writeLoadTag("css", google.loader.ServiceBase + "/api/visualization/1.1/cc5d8333ad9d2dca8ea31ac15ed4e2df/ui+en.css", false);
+google.loader.writeLoadTag("script", google.loader.ServiceBase + "/api/visualization/1.1/cc5d8333ad9d2dca8ea31ac15ed4e2df/dygraph,webfontloader,format+en,default+en,ui+en,bar+en.I.js", false);
+}

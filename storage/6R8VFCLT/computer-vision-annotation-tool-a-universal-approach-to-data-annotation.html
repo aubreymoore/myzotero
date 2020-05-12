@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]>
+<html class="iem7"  lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]>
+<html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>
+<html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9"  lang="en" dir="ltr"><![endif]-->
+<!--[if IE 9]>
+<html class="lt-ie10"  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><![endif]-->
+<!--[if (gte IE 10)|(gt IEMobile 7)]><!-->
+<html dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#" class="js js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths tablesaw-enhanced" style="overflow: visible;" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="//tags.tiqcdn.com/utag/intel/profile-ssg.intel/prod/utag.js" type="text/javascript" async=""></script><script type="text/javascript" charset="UTF-8" src="WidgetV3.ashx"></script>
+  <meta charset="utf-8">
+<meta property="article:skill_level" content="Intermediate">
+<meta property="article:programming_language" content="JavaScript*">
+<meta property="article:segment" content="Professional, Professors, Students">
+<meta property="article:published_time" content="2019-03-01 08:00:00 UTC">
+<meta property="article:last_edit_time" content="2019-03-02 00:45:30 UTC">
+<meta property="article:product_type" content="Intel® Distribution of OpenVINO™ toolkit">
+<meta property="article:tag" content="Artificial Intelligence, Machine Learning">
+<link rel="canonical" href="https://software.intel.com/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation">
+<script type="text/javascript" async="" src="wap-ssg-intel.js"></script><script src="gtm.html" type="text/javascript" async=""></script><script async="" src="analytics.js"></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","mainEntityofPage":"https:\/\/software.intel.com","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https:\/\/software.intel.com\/sites\/default\/files\/managed\/01\/a1\/intel_blue.png","name":"thumbnail","width":"86","height":"60"},"name":"Intel"},"@type":"TechArticle","learningResourceType":"article","headline":"Computer Vision Annotation Tool: A Universal Approach to Data Annotation","name":"Computer Vision Annotation Tool: A Universal Approach to Data Annotation","author":{"@type":"Person","name":"Sekachev, Boris"},"datePublished":"2019-03-01 16:45:30","dateModified":"2019-03-04 10:33:46","url":"https:\/\/software.intel.com\/articles\/computer-vision-annotation-tool-a-universal-approach-to-data-annotation","image":{"@type":"ImageObject","url":"https:\/\/software.intel.com\/sites\/default\/files\/managed\/ab\/3c\/webops12118-page-icon.jpg","name":"thumbnail","width":375,"height":222},"inLanguage":"en","description":"","thumbnailURL":"https:\/\/software.intel.com\/sites\/default\/files\/managed\/ab\/3c\/webops12118-page-icon.jpg","uploadDate":"","operatingSystem":"","applicationCategory":"","audience":"81559,Professional,17154,Professors,17155,Students,20808,Intermediate","genre":[],"keywords":"20806,JavaScript*,85082,Intel\u00ae Distribution of OpenVINO\u2122 toolkit,85763,Artificial Intelligence,83732,Machine Learning"}</script>
+<script type="text/javascript">
+//configure analytics
+var wa_ssg_data=
+{"wa_ssg_type_macro":"article","wa_ssg_title":"Computer Vision Annotation Tool: A Universal Approach to Data Annotation","wa_ssg_nid":"805417","wa_ssg_local_code":"en_US","wa_ssg_audience":"81559,Professional,17154,Professors,17155,Students","wa_ssg_programming_language":"20806,JavaScript*","wa_ssg_software":"85082,Intel\u00ae Distribution of OpenVINO\u2122 toolkit","wa_ssg_topic":"85763,Artificial Intelligence,83732,Machine Learning"}</script>
+<script>dataLayer = [{"timestamp":1555573851,"entityType":"node","entityBundle":"article","entityId":"805417","entityLabel":"Computer Vision Annotation Tool: A Universal Approach to Data Annotation","entityLanguage":"en","entityTnid":"0","entityVid":"4256957","entityUid":"2035027","entityCreated":"1551487530","entityStatus":"1","entityUuid":"9ad3ab56-983c-40af-97bb-0a47dd729ecb","userUuid":"192b3516-0d5e-4e6f-bdc7-df9538ea1665","userInit":"1","drupalLanguage":"en","userUid":0,"systemId":"1","systemName":"idzDrupal"}];</script>
+<link rel="shortcut icon" href="https://software.intel.com/sites/all/themes/zero/favicon.ico" type="image/vnd.microsoft.icon">
+<meta property="article:dev_framework" content="TensorFlow*">
+<meta property="article:authored_time" content="2019-03-04 18:33:46 UTC">
+<meta property="og:title" content="Computer Vision Annotation Tool: A Universal Approach to Data Annotation">
+<meta property="article:body" content="At Intel, one of the projects we’re undertaking research on is developing computer vision algorithms based on deep neural networks (DNNs) and how to streamline the process. As with any other DNN, for model training data scientists need annotated data. Of course, there is plenty of data available on the Internet, but there are some roadblocks to utilizing. On one hand, data scientists are asked to apply AI to more and more new tasks without appropriate annotated data for those tasks. On the...">
+<meta property="article:author" content="mad\bsekache">
+<meta property="og:locale" content="en">
+<meta property="article:sticky_text" content="GitHub* CVAT">
+<meta property="article:additional_authors" content="nmanovic">
+<meta property="og:image" content="https://software.intel.com/sites/default/files/managed/ab/3c/webops12118-page-icon.jpg">
+<meta property="article:alias" content="/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation">
+<meta property="article:additional_authors" content="azhavoro">
+<meta property="article:sticky_link" content="https://github.com/opencv/cvat">
+<meta name="description" content="At Intel, one of the projects we’re undertaking research on is developing computer vision algorithms based on deep neural networks (DNNs) and how to streamline the process. As with any other DNN, for model training data scientists need annotated data. Of course, there is plenty of data available on the Internet, but there are some roadblocks to utilizing. On one hand, data scientists are asked to apply AI to more and more new tasks without appropriate annotated data for those tasks.">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="shortlink" href="https://software.intel.com/en-us/node/805417">
+  <title>Computer Vision Annotation Tool: A Universal Approach to Data Annotation | Intel® Software</title>
+
+      <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+  <meta property="fb:pages" content="94251532337">
+
+  <link type="text/css" rel="stylesheet" href="css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all">
+<link type="text/css" rel="stylesheet" href="css_mxbvRAV0_YoXwGCXbsQzCkegc1pXHICzfd8PPQD9YE4.css" media="all">
+<link type="text/css" rel="stylesheet" href="css_2SM5xe_kG8JtKiu6PlMIuLLW_9Sy0F1Gs4AvnDF5fBI.css" media="all">
+<link type="text/css" rel="stylesheet" href="css_WlIfyqRNruJMjDkbd0XavOLMVe1z8euF0qBhFKXzKvY.css" media="all">
+<link type="text/css" rel="stylesheet" href="css_udo_azakWTakoaesA5cjpZWeqdCBLAIu8lY_r4g6OvY.css" media="all">
+  <script src="js_vDrW3Ry_4gtSYaLsh77lWhWjIC6ml2QNkcfvfP5CVFs.js"></script>
+<script src="js_fDyuIEGrEBqCopqPxfNZo3fOcNiTp5Sr0AKIgjl2qcw.js"></script>
+<script src="js_CEcULLFTMV4q0ihR85UUYyqfCZWaAFqowXd3xr1wvYI.js"></script>
+<script src="BrightcoveExperiences.js"></script>
+<script src="js_3OrdPQ8A2p1O-FiM5cyjfUslA2tDKURNe4ndfamdNGg.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-17890616-1", {"cookieDomain":"auto"});var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+_gaq.push(["_setDomainName", ".intel.com"]);
+_gaq.push(["_setAllowLinker", true]);ga("send", "pageview");</script>
+<script src="js_gpTugKXwQQGP-BdHWjsf2iTkolFwkJUIKHpy0UGMoaM.js"></script>
+<script src="js_afmmq3JEvlh6EO4muHdkjLZfDsPEHwfgIV8L8_HbUoE.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"en-us\/","ajaxPageState":{"theme":"zero","theme_token":"MIv_-5aWRM1dBbw-BYaipMX16Ec5hjPQM6yO8UO7O54","js":{"sites\/all\/modules\/custom\/idz_panelizer_widgets\/js\/collapse-list.min.js":1,"sites\/all\/modules\/custom\/idz_search\/js\/idz_search_block.min.js":1,"sites\/all\/modules\/custom\/bds\/resize-twitch.js":1,"sites\/all\/themes\/zero\/js\/language-selector.min.js":1,"sites\/all\/themes\/zero\/js\/mobile-language-selector.min.js":1,"sites\/all\/themes\/zero\/js\/user-dropdown.min.js":1,"sites\/all\/themes\/zero\/js\/collapse-list.min.js":1,"sites\/all\/themes\/zero\/js\/jquery.equalheights.min.js":1,"sites\/all\/themes\/zero\/js\/trunk8.min.js":1,"sites\/all\/themes\/zero\/js\/selectric-runner.min.js":1,"sites\/all\/themes\/zero\/js\/tabs.min.js":1,"sites\/all\/themes\/zero\/js\/gss_search.min.js":1,"sites\/all\/themes\/zero\/js\/comments.min.js":1,"sites\/all\/themes\/zero\/js\/user-login.min.js":1,"sites\/all\/themes\/zero\/js\/faq.min.js":1,"sites\/all\/themes\/zero\/js\/combobox.min.js":1,"sites\/all\/themes\/zero\/js\/comparison-tables.min.js":1,"sites\/all\/themes\/zero\/js\/simple-toggle.min.js":1,"sites\/all\/themes\/zero\/js\/rateus.min.js":1,"sites\/all\/themes\/zero\/js\/tabgroup.min.js":1,"sites\/all\/modules\/custom\/idz_zero\/js\/idz_zero.min.js":1,"sites\/all\/themes\/zero\/js\/comment-form-resizer.min.js":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/ui\/jquery.ui.widget.min.js":1,"misc\/ui\/jquery.ui.position.min.js":1,"misc\/ui\/jquery.ui.autocomplete.min.js":1,"sites\/all\/modules\/contrib\/dhtml_menu\/dhtml_menu.js":1,"sites\/all\/modules\/contrib\/gss\/scripts\/autocomplete.js":1,"sites\/all\/modules\/custom\/intel_belt_rewards\/intel_belt_rewards.js":1,"sites\/all\/modules\/custom\/social_block\/social-block.min.js":1,"https:\/\/sadmin.brightcove.com\/js\/BrightcoveExperiences.js":1,"sites\/all\/modules\/contrib\/quote\/quote.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/themes\/zero\/js\/intel-filter.min.js":1,"sites\/all\/modules\/contrib\/datalayer\/js\/getCanonical.js":1,"sites\/all\/themes\/zero\/js\/script.min.js":1,"sites\/all\/themes\/zero\/js\/vendors\/jquery\/jquery-1.10.2.min.js":1,"sites\/all\/themes\/zero\/js\/plugins\/jquery.selectric.min.js":1,"sites\/all\/themes\/zero\/js\/plugins\/jquery.inview.min.js":1,"sites\/all\/themes\/zero\/js\/plugins\/jquery.breakpoint.min.js":1,"sites\/all\/themes\/zero\/js\/plugins\/jquery.magnific-popup.js":1,"sites\/all\/themes\/zero\/js\/plugins\/jquery.waypoints.min.js":1,"sites\/all\/themes\/zero\/js\/jquery-noconflict.min.js":1,"sites\/all\/themes\/zero\/js\/vendors\/jquery\/modernizr.min.js":1,"sites\/all\/themes\/zero\/js\/zero-init.min.js":1,"sites\/all\/themes\/zero\/js\/zero-common.min.js":1,"sites\/all\/themes\/zero\/js\/zero-breakpoints.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shCore.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushBash.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushCpp.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushCSharp.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushCss.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushFortran.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushJava.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushJScript.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushPerl.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushPhp.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushPlain.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushPython.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushR.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushRuby.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushSql.min.js":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/scripts\/shBrushXml.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.autocomplete.css":1,"sites\/all\/modules\/custom\/bds\/bds.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/dhtml_menu\/dhtml_menu.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/custom\/intel_advanced_forum_style\/styles\/idz\/advanced-forum.idz.images.css":1,"sites\/all\/modules\/custom\/intel_advanced_forum_style\/styles\/idz\/advanced-forum.idz.structure.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/custom\/node_attachments_block\/node-attachments-block.less.css":1,"modules\/search\/search.css":1,"sites\/all\/modules\/custom\/social_block\/social-block.less.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/quote\/quote.css":1,"sites\/all\/modules\/custom\/idz_panelizer_widgets\/css\/collapse-list.css":1,"modules\/contextual\/contextual.css":1,"modules\/locale\/locale.css":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/styles\/shThemeIntel.css":1,"sites\/all\/modules\/custom\/idz_zero\/css\/idz_zero.css":1,"sites\/all\/themes\/zero\/system.menus.css":1,"sites\/all\/themes\/zero\/system.messages.css":1,"sites\/all\/themes\/zero\/system.theme.css":1,"sites\/all\/themes\/zero\/css\/export.css":1,"sites\/all\/themes\/zero\/css\/styles.css":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/styles\/shCore.css":1,"sites\/all\/themes\/zero\/js\/brushes\/syntaxhighlighter\/styles\/shThemeRDark.css":1}},"dhtmlMenu":{"nav":"bullet","animation":{"effects":{"height":"height","opacity":"opacity","width":0},"speed":"500"},"effects":{"siblings":"close-same-tree","children":"none","remember":""},"filter":{"type":"blacklist","list":{"main-menu":"main-menu","management":"management","menu-advisor":"menu-advisor","menu-advisor-second-menu":"menu-advisor-second-menu","menu-android-resources":"menu-android-resources","menu-auto-driving-second-footer":"menu-auto-driving-second-footer","menu-automated-driving":"menu-automated-driving","menu-bi-endian-technology":"menu-bi-endian-technology","menu-catc-2018":"menu-catc-2018","menu-computer-vision-sdk":"menu-computer-vision-sdk","menu-computer-vision-sdk-footer":"menu-computer-vision-sdk-footer","menu-context-sensing-sdk":"menu-context-sensing-sdk","menu-context-sensing-sdk-footer":"menu-context-sensing-sdk-footer","menu-dal":"menu-dal","menu-data-center":"menu-data-center","menu-data-center-second-footer":"menu-data-center-second-footer","menu-dev-api-second-footer":"menu-dev-api-second-footer","menu-dx-second-footer":"menu-dx-second-footer","menu-footer-for-bi-endian-techno":"menu-footer-for-bi-endian-techno","menu-footer-for-intel-deep-learn":"menu-footer-for-intel-deep-learn","menu-footer-for-intel-software-g":"menu-footer-for-intel-software-g","menu-footer-for-intel-trace-anal":"menu-footer-for-intel-trace-anal","menu-footer-intel-pal":"menu-footer-intel-pal","menu-footer-menu-for-intel-activ":"menu-footer-menu-for-intel-activ","menu-footer-menu-for-intel-unite":"menu-footer-menu-for-intel-unite","menu-fpga-academic":"menu-fpga-academic","menu-fpga-second-footer":"menu-fpga-second-footer","menu-game-dev":"menu-game-dev","menu-game-dev-second-footer":"menu-game-dev-second-footer","menu-gpa":"menu-gpa","menu-gpa-second-footer":"menu-gpa-second-footer","menu-harp-menu":"menu-harp-menu","menu-home":"menu-home","menu-home-second-footer":"menu-home-second-footer","menu-hpc-containers-from-intel":"menu-hpc-containers-from-intel","menu-inde":"menu-inde","menu-inspector-menu":"menu-inspector-menu","menu-inspector-second-footer":"menu-inspector-second-footer","menu-intel-active-management-tec":"menu-intel-active-management-tec","menu-intel-aero":"menu-intel-aero","menu-intel-aero-second-footer":"menu-intel-aero-second-footer","menu-intel-c-compiler":"menu-intel-c-compiler","menu-intel-c-compiler-footer-men":"menu-intel-c-compiler-footer-men","menu-intel-deep-learning-deploym":"menu-intel-deep-learning-deploym","menu-intel-dist-for-pyth":"menu-intel-dist-for-pyth","menu-intel-fortran-compiler":"menu-intel-fortran-compiler","menu-intel-fortran-compiler-foot":"menu-intel-fortran-compiler-foot","menu-intel-go-automotive-sdk":"menu-intel-go-automotive-sdk","menu-intel-go-automotive-sdk-sec":"menu-intel-go-automotive-sdk-sec","menu-intel-media-sdk":"menu-intel-media-sdk","menu-intel-mkl":"menu-intel-mkl","menu-intel-mkl-second-footer":"menu-intel-mkl-second-footer","menu-intel-realsense-sdk-for-win":"menu-intel-realsense-sdk-for-win","menu-intel-realsense-technology":"menu-intel-realsense-technology","menu-intel-secure-device-onboard":"menu-intel-secure-device-onboard","menu-intel-security-dev-api":"menu-intel-security-dev-api","menu-intel-software-guard-extens":"menu-intel-software-guard-extens","menu-intel-system-studio":"menu-intel-system-studio","menu-intel-trace-analyzer-and-co":"menu-intel-trace-analyzer-and-co","menu-intel-true-vr-sdk":"menu-intel-true-vr-sdk","menu-intel-unite-plugin-software":"menu-intel-unite-plugin-software","menu-intel-xdk":"menu-intel-xdk","menu-iot":"menu-iot","menu-iot-main-menu":"menu-iot-main-menu","menu-iot-second-footer":"menu-iot-second-footer","menu-ipsxe":"menu-ipsxe","menu-ipsxe-second-footer":"menu-ipsxe-second-footer","menu-iss-second-footer":"menu-iss-second-footer","menu-machine-learning":"menu-machine-learning","menu-machine-learning-second-foo":"menu-machine-learning-second-foo","menu-media-sdk-second-footer":"menu-media-sdk-second-footer","menu-meet-the-developers":"menu-meet-the-developers","menu-menu-intel-pal":"menu-menu-intel-pal","menu-modern-code":"menu-modern-code","menu-modern-code-second-footer":"menu-modern-code-second-footer","menu-movidius-ncs":"menu-movidius-ncs","menu-movidius-ncs-second-footer":"menu-movidius-ncs-second-footer","menu-mpi-library":"menu-mpi-library","menu-mpi-library-second-footer":"menu-mpi-library-second-footer","menu-networking":"menu-networking","menu-networking-second-footer":"menu-networking-second-footer","menu-openvino-toolkit":"menu-openvino-toolkit","menu-openvino-toolkit-second-foo":"menu-openvino-toolkit-second-foo","menu-performance-snapshot":"menu-performance-snapshot","menu-persistent-memory":"menu-persistent-memory","menu-persistent-memory-second-fo":"menu-persistent-memory-second-fo","menu-python-second-footer":"menu-python-second-footer","menu-realsense-sdk-footer-disc":"menu-realsense-sdk-footer-disc","menu-realsense-tech-second-foot":"menu-realsense-tech-second-foot","menu-saffron-second-footer":"menu-saffron-second-footer","menu-sbe":"menu-sbe","menu-second-footer-for-intel-tru":"menu-second-footer-for-intel-tru","menu-shdap":"menu-shdap","menu-test-ai-menu":"menu-test-ai-menu","menu-test-second-footer":"menu-test-second-footer","menu-time-coordinated-computing":"menu-time-coordinated-computing","menu-useful-packages-modules":"menu-useful-packages-modules","menu-ux-main-menu":"menu-ux-main-menu","menu-virtual-reality":"menu-virtual-reality","menu-virtual-reality-second-foot":"menu-virtual-reality-second-foot","menu-vpa":"menu-vpa","menu-vtune":"menu-vtune","menu-vtune-second-footer":"menu-vtune-second-footer","menu-windows":"menu-windows","menu-windows-second-footer":"menu-windows-second-footer","navigation":"navigation","shortcut-set-1":"shortcut-set-1","user-menu":"user-menu","book-toc-401277":0,"book-toc-438058":0,"book-toc-468328":0,"book-toc-471718":0,"book-toc-471930":0,"book-toc-471960":0,"book-toc-473525":0,"book-toc-473527":0,"book-toc-474337":0,"book-toc-474339":0,"book-toc-487631":0,"book-toc-498033":0,"book-toc-498423":0,"book-toc-498595":0,"book-toc-498939":0,"book-toc-498954":0,"book-toc-499050":0,"book-toc-499114":0,"book-toc-501640":0,"book-toc-501977":0,"book-toc-501979":0,"book-toc-501980":0,"book-toc-501994":0,"book-toc-502751":0,"book-toc-503882":0,"book-toc-505525":0,"book-toc-506039":0,"book-toc-507032":0,"book-toc-507536":0,"book-toc-515758":0,"book-toc-517758":0,"book-toc-519946":0,"book-toc-520075":0,"book-toc-520076":0,"book-toc-520268":0,"book-toc-520269":0,"book-toc-520277":0,"book-toc-520699":0,"book-toc-522349":0,"book-toc-522354":0,"book-toc-522437":0,"book-toc-522750":0,"book-toc-522753":0,"book-toc-522755":0,"book-toc-522758":0,"book-toc-522774":0,"book-toc-522786":0,"book-toc-528316":0,"book-toc-528318":0,"book-toc-528490":0,"book-toc-528650":0,"book-toc-528760":0,"book-toc-528852":0,"book-toc-529109":0,"book-toc-529730":0,"book-toc-529753":0,"book-toc-529755":0,"book-toc-530757":0,"book-toc-530758":0,"book-toc-531234":0,"book-toc-534201":0,"book-toc-534265":0,"book-toc-534443":0,"book-toc-534451":0,"book-toc-534454":0,"book-toc-534455":0,"book-toc-534755":0,"book-toc-535292":0,"book-toc-535512":0,"book-toc-535564":0,"book-toc-539278":0,"book-toc-539988":0,"book-toc-540373":0,"book-toc-540374":0,"book-toc-540375":0,"book-toc-540376":0,"book-toc-540377":0,"book-toc-540499":0,"book-toc-540565":0,"book-toc-540664":0,"book-toc-541291":0,"book-toc-542152":0,"book-toc-543885":0,"book-toc-543995":0,"book-toc-544575":0,"book-toc-551014":0,"book-toc-551034":0,"book-toc-557537":0,"book-toc-558501":0,"book-toc-558502":0,"book-toc-559913":0,"book-toc-559914":0,"book-toc-561188":0,"book-toc-561203":0,"book-toc-561212":0,"book-toc-561218":0,"book-toc-561269":0,"book-toc-561457":0,"book-toc-561592":0,"book-toc-561831":0,"book-toc-561846":0,"book-toc-561866":0,"book-toc-561885":0,"book-toc-562383":0,"book-toc-564482":0,"book-toc-564572":0,"book-toc-564573":0,"book-toc-564889":0,"book-toc-565519":0,"book-toc-565530":0,"book-toc-566133":0,"book-toc-566144":0,"book-toc-566726":0,"book-toc-566739":0,"book-toc-567641":0,"book-toc-567642":0,"book-toc-567643":0,"book-toc-567645":0,"book-toc-567646":0,"book-toc-569961":0,"book-toc-569963":0,"book-toc-583849":0,"book-toc-584151":0,"book-toc-584152":0,"book-toc-584153":0,"book-toc-584154":0,"book-toc-584155":0,"book-toc-584156":0,"book-toc-584159":0,"book-toc-584162":0,"book-toc-584182":0,"book-toc-584183":0,"book-toc-584185":0,"book-toc-585194":0,"book-toc-585207":0,"book-toc-585224":0,"book-toc-586153":0,"book-toc-586154":0,"book-toc-586166":0,"book-toc-587354":0,"book-toc-587395":0,"book-toc-587399":0,"book-toc-587422":0,"book-toc-587431":0,"book-toc-587454":0,"book-toc-587463":0,"book-toc-587464":0,"book-toc-587486":0,"book-toc-587487":0,"book-toc-587489":0,"book-toc-587495":0,"book-toc-587504":0,"book-toc-587510":0,"book-toc-587542":0,"book-toc-587599":0,"book-toc-587604":0,"book-toc-587607":0,"book-toc-587629":0,"book-toc-587631":0,"book-toc-587633":0,"book-toc-587773":0,"book-toc-587776":0,"book-toc-587779":0,"book-toc-587781":0,"book-toc-587790":0,"book-toc-587853":0,"book-toc-587885":0,"book-toc-587916":0,"book-toc-587917":0,"book-toc-587919":0,"book-toc-587922":0,"book-toc-587924":0,"book-toc-587996":0,"book-toc-588028":0,"book-toc-588060":0,"book-toc-588067":0,"book-toc-588073":0,"book-toc-588172":0,"book-toc-588204":0,"book-toc-588210":0,"book-toc-588216":0,"book-toc-588217":0,"book-toc-588218":0,"book-toc-588313":0,"book-toc-588315":0,"book-toc-588345":0,"book-toc-588347":0,"book-toc-588353":0,"book-toc-588359":0,"book-toc-588360":0,"book-toc-588361":0,"book-toc-588392":0,"book-toc-588424":0,"book-toc-588458":0,"book-toc-588460":0,"book-toc-588576":0,"book-toc-588600":0,"book-toc-588606":0,"book-toc-588607":0,"book-toc-588638":0,"book-toc-588663":0,"book-toc-588743":0,"book-toc-588749":0,"book-toc-588781":0,"book-toc-588806":0,"book-toc-588886":0,"book-toc-588892":0,"book-toc-588893":0,"book-toc-589029":0,"book-toc-589035":0,"book-toc-589067":0,"book-toc-589092":0,"book-toc-589099":0,"book-toc-589145":0,"book-toc-589172":0,"book-toc-589178":0,"book-toc-589210":0,"book-toc-589235":0,"book-toc-589242":0,"book-toc-589288":0,"book-toc-589321":0,"book-toc-589353":0,"book-toc-589378":0,"book-toc-589385":0,"book-toc-589431":0,"book-toc-589483":0,"book-toc-589521":0,"book-toc-589568":0,"book-toc-589574":0,"book-toc-590352":0,"book-toc-590353":0,"book-toc-590623":0,"book-toc-591704":0,"book-toc-591768":0,"book-toc-591972":0,"book-toc-592052":0,"book-toc-592054":0,"book-toc-592487":0,"book-toc-593589":0,"book-toc-594272":0,"book-toc-594555":0,"book-toc-594816":0,"book-toc-595378":0,"book-toc-596404":0,"book-toc-597167":0,"book-toc-598097":0,"book-toc-599846":0,"book-toc-600044":0,"book-toc-603207":0,"book-toc-603214":0,"book-toc-603220":0,"book-toc-604281":0,"book-toc-604531":0,"book-toc-604532":0,"book-toc-605227":0,"book-toc-607226":0,"book-toc-607310":0,"book-toc-607323":0,"book-toc-607353":0,"book-toc-608061":0,"book-toc-608069":0,"book-toc-608085":0,"book-toc-608125":0,"book-toc-608133":0,"book-toc-608141":0,"book-toc-608149":0,"book-toc-608206":0,"book-toc-608214":0,"book-toc-608242":0,"book-toc-608270":0,"book-toc-608295":0,"book-toc-608346":0,"book-toc-608394":0,"book-toc-608418":0,"book-toc-608419":0,"book-toc-608474":0,"book-toc-608522":0,"book-toc-608546":0,"book-toc-608547":0,"book-toc-608614":0,"book-toc-608658":0,"book-toc-608678":0,"book-toc-608694":0,"book-toc-608723":0,"book-toc-608727":0,"book-toc-608743":0,"book-toc-608787":0,"book-toc-608799":0,"book-toc-608807":0,"book-toc-608851":0,"book-toc-608863":0,"book-toc-608871":0,"book-toc-610391":0,"book-toc-610445":0,"book-toc-610465":0,"book-toc-610591":0,"book-toc-610914":0,"book-toc-611630":0,"book-toc-622387":0,"book-toc-622642":0,"book-toc-622915":0,"book-toc-623046":0,"book-toc-623113":0,"book-toc-623535":0,"book-toc-623566":0,"book-toc-623572":0,"book-toc-623578":0,"book-toc-624484":0,"book-toc-624486":0,"book-toc-624488":0,"book-toc-624493":0,"book-toc-624506":0,"book-toc-625343":0,"book-toc-628212":0,"book-toc-628252":0,"book-toc-628408":0,"book-toc-628730":0,"book-toc-628866":0,"book-toc-628966":0,"book-toc-629122":0,"book-toc-631691":0,"book-toc-631722":0,"book-toc-631734":0,"book-toc-631755":0,"book-toc-631786":0,"book-toc-631798":0,"book-toc-631819":0,"book-toc-631850":0,"book-toc-631862":0,"book-toc-631915":0,"book-toc-631948":0,"book-toc-631979":0,"book-toc-632012":0,"book-toc-632043":0,"book-toc-632045":0,"book-toc-632107":0,"book-toc-632109":0,"book-toc-632284":0,"book-toc-632317":0,"book-toc-632348":0,"book-toc-632381":0,"book-toc-632876":0,"book-toc-632892":0,"book-toc-632909":0,"book-toc-632941":0,"book-toc-632958":0,"book-toc-633005":0,"book-toc-633022":0,"book-toc-633069":0,"book-toc-633087":0,"book-toc-633281":0,"book-toc-639647":0,"book-toc-639805":0,"book-toc-642700":0,"book-toc-645821":0,"book-toc-645824":0,"book-toc-645837":0,"book-toc-645873":0,"book-toc-645903":0,"book-toc-645904":0,"book-toc-645950":0,"book-toc-645967":0,"book-toc-646014":0,"book-toc-646031":0,"book-toc-646078":0,"book-toc-651109":0,"book-toc-651135":0,"book-toc-656652":0,"book-toc-656666":0,"book-toc-660920":0,"book-toc-661300":0,"book-toc-661302":0,"book-toc-661307":0,"book-toc-661364":0,"book-toc-661366":0,"book-toc-661371":0,"book-toc-661377":0,"book-toc-661428":0,"book-toc-661430":0,"book-toc-661435":0,"book-toc-661441":0,"book-toc-661492":0,"book-toc-661494":0,"book-toc-661505":0,"book-toc-661519":0,"book-toc-661523":0,"book-toc-661552":0,"book-toc-661555":0,"book-toc-661558":0,"book-toc-661563":0,"book-toc-661564":0,"book-toc-661605":0,"book-toc-661616":0,"book-toc-661669":0,"book-toc-661684":0,"book-toc-661692":0,"book-toc-661698":0,"book-toc-661733":0,"book-toc-661735":0,"book-toc-661748":0,"book-toc-661756":0,"book-toc-661762":0,"book-toc-661937":0,"book-toc-661941":0,"book-toc-661949":0,"book-toc-661955":0,"book-toc-662005":0,"book-toc-662013":0,"book-toc-662019":0,"book-toc-662066":0,"book-toc-662069":0,"book-toc-662072":0,"book-toc-662078":0,"book-toc-662103":0,"book-toc-662130":0,"book-toc-662133":0,"book-toc-662136":0,"book-toc-662142":0,"book-toc-662148":0,"book-toc-662167":0,"book-toc-667811":0,"book-toc-670509":0,"book-toc-670512":0,"book-toc-670521":0,"book-toc-670527":0,"book-toc-670546":0,"book-toc-670548":0,"book-toc-670576":0,"book-toc-670577":0,"book-toc-670585":0,"book-toc-670591":0,"book-toc-670610":0,"book-toc-670638":0,"book-toc-670641":0,"book-toc-670702":0,"book-toc-670705":0,"book-toc-670708":0,"book-toc-670720":0,"book-toc-670766":0,"book-toc-670769":0,"book-toc-670784":0,"book-toc-670833":0,"book-toc-670848":0,"book-toc-670895":0,"book-toc-670898":0,"book-toc-670959":0,"book-toc-670962":0,"book-toc-671023":0,"book-toc-671026":0,"book-toc-671090":0,"book-toc-671152":0,"book-toc-671180":0,"book-toc-671186":0,"book-toc-672403":0,"book-toc-672519":0,"book-toc-672529":0,"book-toc-672535":0,"book-toc-674861":0,"book-toc-674972":0,"book-toc-675478":0,"book-toc-675480":0,"book-toc-675482":0,"book-toc-675484":0,"book-toc-675486":0,"book-toc-675488":0,"book-toc-676249":0,"book-toc-676253":0,"book-toc-676255":0,"book-toc-676257":0,"book-toc-676261":0,"book-toc-676262":0,"book-toc-676264":0,"book-toc-676403":0,"book-toc-680259":0,"book-toc-680316":0,"book-toc-680317":0,"book-toc-680319":0,"book-toc-680321":0,"book-toc-681460":0,"book-toc-681478":0,"book-toc-681573":0,"book-toc-681575":0,"book-toc-681616":0,"book-toc-681618":0,"book-toc-681864":0,"book-toc-681865":0,"book-toc-681866":0,"book-toc-681910":0,"book-toc-681911":0,"book-toc-681915":0,"book-toc-681916":0,"book-toc-681917":0,"book-toc-681918":0,"book-toc-684692":0,"book-toc-684707":0,"book-toc-684728":0,"book-toc-684867":0,"book-toc-685011":0,"book-toc-685375":0,"book-toc-685376":0,"book-toc-685451":0,"book-toc-685453":0,"book-toc-685454":0,"book-toc-685455":0,"book-toc-685456":0,"book-toc-685458":0,"book-toc-691235":0,"book-toc-691238":0,"book-toc-691253":0,"book-toc-696094":0,"book-toc-696878":0,"book-toc-696906":0,"book-toc-697690":0,"book-toc-697727":0,"book-toc-698585":0,"book-toc-699454":0,"book-toc-699541":0,"book-toc-700327":0,"book-toc-700717":0,"book-toc-701415":0,"book-toc-701542":0,"book-toc-702404":0,"book-toc-702468":0,"book-toc-703101":0,"book-toc-704094":0,"book-toc-704718":0,"book-toc-705714":0,"book-toc-705778":0,"book-toc-707344":0,"book-toc-709265":0,"book-toc-711193":0,"book-toc-712559":0,"book-toc-712658":0,"book-toc-712679":0,"book-toc-712883":0,"book-toc-712937":0,"book-toc-712966":0,"book-toc-713788":0,"book-toc-713910":0,"book-toc-713974":0,"book-toc-714038":0,"book-toc-714118":0,"book-toc-714158":0,"book-toc-714167":0,"book-toc-714183":0,"book-toc-714222":0,"book-toc-714231":0,"book-toc-714247":0,"book-toc-714295":0,"book-toc-714302":0,"book-toc-714311":0,"book-toc-714368":0,"book-toc-714432":0,"book-toc-714496":0,"book-toc-714560":0,"book-toc-714605":0,"book-toc-714685":0,"book-toc-714749":0,"book-toc-715008":0,"book-toc-717511":0,"book-toc-717512":0,"book-toc-720032":0,"book-toc-720369":0,"book-toc-720718":0,"book-toc-721119":0,"book-toc-721395":0,"book-toc-721433":0,"book-toc-721564":0,"book-toc-721990":0,"book-toc-722243":0,"book-toc-722458":0,"book-toc-722460":0,"book-toc-722465":0,"book-toc-722466":0,"book-toc-722467":0,"book-toc-722468":0,"book-toc-722524":0,"book-toc-724083":0,"book-toc-724115":0,"book-toc-724116":0,"book-toc-724117":0,"book-toc-724552":0,"book-toc-724553":0,"book-toc-724554":0,"book-toc-724599":0,"book-toc-731038":0,"book-toc-731039":0,"book-toc-731053":0,"book-toc-731066":0,"book-toc-731067":0,"book-toc-731080":0,"book-toc-731228":0,"book-toc-733361":0,"book-toc-733378":0,"book-toc-734163":0,"book-toc-734669":0,"book-toc-734715":0,"book-toc-734898":0,"book-toc-734910":0,"book-toc-734937":0,"book-toc-734967":0,"book-toc-734968":0,"book-toc-734977":0,"book-toc-734985":0,"book-toc-734996":0,"book-toc-735008":0,"book-toc-735024":0,"book-toc-735042":0,"book-toc-735049":0,"book-toc-735072":0,"book-toc-735089":0,"book-toc-735138":0,"book-toc-735175":0,"book-toc-735195":0,"book-toc-735216":0,"book-toc-735382":0,"book-toc-735572":0,"book-toc-735854":0,"book-toc-737016":0,"book-toc-737207":0,"book-toc-737243":0,"book-toc-737282":0,"book-toc-737308":0,"book-toc-737312":0,"book-toc-737456":0,"book-toc-737474":0,"book-toc-737481":0,"book-toc-738158":0,"book-toc-740721":0,"book-toc-741434":0,"book-toc-742008":0,"book-toc-742976":0,"book-toc-743107":0,"book-toc-743241":0,"book-toc-743254":0,"book-toc-743305":0,"book-toc-743335":0,"book-toc-743698":0,"book-toc-743723":0,"book-toc-743741":0,"book-toc-743742":0,"book-toc-744050":0,"book-toc-744051":0,"book-toc-744084":0,"book-toc-744089":0,"book-toc-744105":0,"book-toc-744350":0,"book-toc-744351":0,"book-toc-744355":0,"book-toc-744366":0,"book-toc-744367":0,"book-toc-744368":0,"book-toc-744369":0,"book-toc-744370":0,"book-toc-744371":0,"book-toc-744373":0,"book-toc-744394":0,"book-toc-744395":0,"book-toc-744396":0,"book-toc-744712":0,"book-toc-745781":0,"book-toc-745794":0,"book-toc-745809":0,"book-toc-745815":0,"book-toc-745826":0,"book-toc-745832":0,"book-toc-745838":0,"book-toc-745857":0,"book-toc-745869":0,"book-toc-745877":0,"book-toc-745883":0,"book-toc-745890":0,"book-toc-745911":0,"book-toc-746171":0,"book-toc-746883":0,"book-toc-746991":0,"book-toc-747381":0,"book-toc-747537":0,"book-toc-747737":0,"book-toc-748161":0,"book-toc-748987":0,"book-toc-749079":0,"book-toc-749343":0,"book-toc-749391":0,"book-toc-752305":0,"book-toc-752323":0,"book-toc-753957":0,"book-toc-754334":0,"book-toc-754724":0,"book-toc-754929":0,"book-toc-755030":0,"book-toc-755770":0,"book-toc-757959":0,"book-toc-758977":0,"book-toc-759136":0,"book-toc-759195":0,"book-toc-759336":0,"book-toc-759515":0,"book-toc-759672":0,"book-toc-760652":0,"book-toc-760671":0,"book-toc-760772":0,"book-toc-760805":0,"book-toc-760820":0,"book-toc-760850":0,"book-toc-762645":0,"book-toc-762807":0,"book-toc-762823":0,"book-toc-762840":0,"book-toc-762879":0,"book-toc-762880":0,"book-toc-763183":0,"book-toc-763317":0,"book-toc-765163":0,"book-toc-765182":0,"book-toc-765191":0,"book-toc-765210":0,"book-toc-765249":0,"book-toc-767649":0,"book-toc-767803":0,"book-toc-768356":0,"book-toc-769010":0,"book-toc-769030":0,"book-toc-769074":0,"book-toc-769094":0,"book-toc-769138":0,"book-toc-769154":0,"book-toc-769158":0,"book-toc-769202":0,"book-toc-769218":0,"book-toc-769267":0,"book-toc-769303":0,"book-toc-769311":0,"book-toc-769323":0,"book-toc-769331":0,"book-toc-769368":0,"book-toc-769376":0,"book-toc-769388":0,"book-toc-769396":0,"book-toc-769463":0,"book-toc-769528":0,"book-toc-769529":0,"book-toc-769530":0,"book-toc-769531":0,"book-toc-769534":0,"book-toc-776512":0,"book-toc-776519":0,"book-toc-776657":0,"book-toc-776658":0,"book-toc-776660":0,"book-toc-776770":0,"book-toc-776798":0,"book-toc-776806":0,"book-toc-777111":0,"book-toc-777117":0,"book-toc-777163":0,"book-toc-777750":0,"book-toc-777839":0,"book-toc-777946":0,"book-toc-778017":0,"book-toc-778108":0,"book-toc-778113":0,"book-toc-778168":0,"book-toc-778232":0,"book-toc-778236":0,"book-toc-778257":0,"book-toc-778296":0,"book-toc-778321":0,"book-toc-778333":0,"book-toc-778370":0,"book-toc-778377":0,"book-toc-778397":0,"book-toc-779040":0,"book-toc-779315":0,"book-toc-779333":0,"book-toc-779407":0,"book-toc-779412":0,"book-toc-779475":0,"book-toc-779508":0,"book-toc-779533":0,"book-toc-779626":0,"book-toc-779640":0,"book-toc-779819":0,"book-toc-779986":0,"book-toc-780125":0,"book-toc-780207":0,"book-toc-780875":0,"book-toc-780876":0,"book-toc-781220":0,"book-toc-781221":0,"book-toc-781222":0,"book-toc-781223":0,"book-toc-781224":0,"book-toc-781225":0,"book-toc-781242":0,"book-toc-781243":0,"book-toc-781244":0,"book-toc-781590":0,"book-toc-781591":0,"book-toc-781661":0,"book-toc-781768":0,"book-toc-781833":0,"book-toc-782010":0,"book-toc-782236":0,"book-toc-782293":0,"book-toc-782801":0,"book-toc-782871":0,"book-toc-782990":0,"book-toc-783572":0,"book-toc-783610":0,"book-toc-783953":0,"book-toc-790615":0,"book-toc-790616":0,"book-toc-790641":0,"book-toc-790654":0,"book-toc-791058":0,"book-toc-791065":0,"book-toc-793554":0,"book-toc-795979":0,"book-toc-796210":0,"book-toc-796341":0,"book-toc-796344":0,"book-toc-796346":0,"book-toc-796348":0,"book-toc-796351":0,"book-toc-796353":0,"book-toc-796372":0,"book-toc-796386":0,"book-toc-796403":0,"book-toc-796560":0,"book-toc-796632":0,"book-toc-796843":0,"book-toc-796988":0,"book-toc-797024":0,"book-toc-797035":0,"book-toc-797049":0,"book-toc-797056":0,"book-toc-797065":0,"book-toc-797080":0,"book-toc-797097":0,"book-toc-797101":0,"book-toc-797216":0,"book-toc-797224":0,"book-toc-797297":0,"book-toc-797340":0,"book-toc-797423":0,"book-toc-797448":0,"book-toc-797820":0,"book-toc-797965":0,"book-toc-798243":0,"book-toc-798305":0,"book-toc-798601":0,"book-toc-798695":0,"book-toc-798700":0,"book-toc-798958":0,"book-toc-799845":0,"book-toc-800143":0,"book-toc-800488":0,"book-toc-801130":0,"book-toc-801326":0,"book-toc-801427":0,"book-toc-801897":0,"book-toc-801996":0,"book-toc-802011":0,"book-toc-802065":0,"book-toc-802253":0,"book-toc-802382":0,"book-toc-802394":0,"book-toc-802395":0,"book-toc-802438":0,"book-toc-802439":0,"book-toc-802441":0,"book-toc-803321":0,"book-toc-804940":0,"book-toc-805007":0,"book-toc-805861":0,"book-toc-805896":0,"book-toc-805910":0,"book-toc-806105":0,"book-toc-806321":0,"book-toc-806409":0,"book-toc-806543":0}}},"gss":{"key":"017112334782586706075:axbmndd0alq"},"jcarousel":{"ajaxPath":"\/en-us\/jcarousel\/ajax\/views"},"quote_nest":"2","translations_available":[],"node_language":"en","intel_i18n":{"language_node":"en"},"language":{"language":"en","name":"English","native":"English","direction":"0","enabled":"1","plurals":"0","formula":"","domain":"","prefix":"en-us","weight":"-10","javascript":"","provider":"locale-url"},"better_exposed_filters":{"views":{"article_related_links":{"displays":{"block":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|bz2|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|pkg|png|ppt|pptx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip","trackDomainMode":1}});</script>
+      <!--[if lt IE 9]>
+    <script src="/sites/all/themes/zen/js/html5-respond.js"></script>
+    <![endif]-->
+      <meta name="microsoft" content="notranslateclasses header slider-processed comments-wrapper page-top-second-footer page-footer admin-menu-processed">
+<script type="text/javascript" async="" charset="utf-8" id="utag_intel.profile-ssg.intel_130" src="//tags.tiqcdn.com/utag/intel/profile-ssg.intel/prod/utag.130.js?utv=ut4.46.201810242104"></script><script type="text/javascript" async="" charset="utf-8" id="utag_intel.profile-ssg.intel_284" src="//tags.tiqcdn.com/utag/intel/profile-ssg.intel/prod/utag.284.js?utv=ut4.46.201810242104"></script><script type="text/javascript" async="" charset="utf-8" id="utag_intel.profile-ssg.intel_294" src="//tags.tiqcdn.com/utag/intel/profile-ssg.intel/prod/utag.294.js?utv=ut4.46.201812212226"></script></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-805417 node-type-article theme-zero i18n-en section-articles has-inpage-navigation path-articles-computer-vision-annotation-tool-a-universal-approach-to-data-annotation" style="overflow: visible;">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PZRG3F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PZRG3F');</script>
+<!-- End Google Tag Manager -->
+<script type="text/javascript">
+/*<![CDATA[*/
+  //configure tms
+  var wapLocalCode = 'us-en'; //dynamically set per localized site, see mapping table for values
+  var wapSection = "ssg-intel"; //section, specific for each site
+  //load tms
+  (function() {
+    var host = (window.document.location.protocol == 'http:') ? "https://www.intel.com" : "https://www.intel.com";
+    var url = host+"/content/dam/www/global/wap/wap-ssg-intel.js"; //wap file url
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;  po.src = url;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+/*]]>*/
+</script>
+
+  <p id="skip-link">
+    <a href="#main-menu" class="element-invisible element-focusable">Jump to navigation</a>
+  </p>
+
+<div id="page-wrapper" class="intel_filter_syntaxhighlighter-processed">
+  <header class="header notranslate " id="header" role="banner">
+    <div class="intel-blue-bar clearfix">
+              <span id="header-logo-container" data-wap_type="navheader">
+          <a href="https://software.intel.com/en-us" title="Home" rel="home" class="header__logo" id="logo" data-wap_type="navheader"><img src="logo.png" alt="Home" class="header__logo-image">
+
+            <div class="logo-left">
+              <span class="logo-img"></span>
+            </div>
+            <span class="logo-text"> Developer Zone</span>
+          </a>
+        </span>
+      
+        <div id="block-idz-user-login-idz-user-login" class="block block-idz-user-login first odd">
+
+      
+  <ul class="language-switcher-locale-url js-processed">
+<li class="en active"><a href="https://software.intel.com/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link active active icon-zz_000005_global" xml:lang="en">English</a><ul id="languagechooser" data-wap_type="languagechooser"><li class="zh-hans first"><a href="https://software.intel.com/zh-cn/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link" xml:lang="zh-hans">简体中文</a></li><li class="en active"><a href="https://software.intel.com/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link active active icon-zz_000005_global" xml:lang="en">English</a><ul id="languagechooser" data-wap_type="languagechooser"></ul></li><li class="es"><a href="https://software.intel.com/es-es/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link" xml:lang="es">Español</a></li><li class="pt-br"><a href="https://software.intel.com/pt-br/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link" xml:lang="pt-br">Português</a></li><li class="ru last"><a href="https://software.intel.com/ru-ru/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link" xml:lang="ru">Русский</a></li></ul></li>
+
+
+
+</ul><div id="header-user-display" class="user-display js-processed">
+      <div class="login">
+      <ul class="user-login-dropdown"><li class="first"><a href="https://software.intel.com/en-us/user/login?destination=node/805417" class="login-link icon-user">Sign in</a></li><ul class="user-login-dropdown-inside"><li><a href="https://software.intel.com/en-us/user/login?destination=node/805417" class="login-link icon-user">Sign in</a></li><li><a href="https://software.intel.com/registration?lang=en-us" class="register-link">Signup</a></li></ul></ul>          </div>
+  </div>
+<div class="header-support" id="header-support" data-wap_type="navheader"><a href="https://software.intel.com/en-us/support" class="icon-zz_000005_question">Support</a></div>
+</div>
+<div id="block-idz-search-idz-search-block" class="block block-idz-search last even">
+
+      
+  <form action="https://software.intel.com/en-us/search/site/language/en" method="get" id="idz-search-block-form" accept-charset="UTF-8" target="_top">
+  <div class="form-wrapper" id="idz_search_search_form">
+        <ul id="search-dropdown-options" class="dropdown-menu">
+      <li class="disabled"><a href="javascript:void(0)">Site to search:</a></li>
+      <li class="divider"></li>
+      <li><a class="active" href="javascript:void(0)" data-value="idz">Intel® DZ</a></li>
+      <li><a href="javascript:void(0)" data-value="intel">Intel.com</a></li>
+    </ul>
+    <input title="Search our content library..." placeholder="Search our content library..." class="form-text" id="edit-search-keyword" name="query" size="15" maxlength="128" type="text">
+    <button class="form-submit dropdown-toggle" type="submit" id="edit-submit" value="Search"></button>
+  </div>
+</form>
+<form action="https://software.intel.com/en-us/search/site/language/en" method="get" id="idz-search-block-form-mobile" accept-charset="UTF-8" target="_top">
+  <div class="form-wrapper" id="idz_search_search_form_mobile">
+    <span class="search-icon-mobile"></span>
+    <input title="Search our content library..." id="edit-submit" placeholder="Search our content library..." name="query" size="15" maxlength="128" type="search">
+  </div>
+</form>
+</div>
+
+    </div>
+  </header>
+        <div id="menu-navigation" data-wap_type="navheader" class="slider-processed">
+
+        <nav class="navigation notranslate">
+          <div class="page-title-sec">
+                          <span class="page__title zonetitle">Intel® AI Developer Program</span>
+                                                      <h4 class="page__title title">Documentation</h4>
+                                    </div>
+          <a class="menu-icon" href="#"><i><span></span></i></a>
+          <div class="menu-container" style="height: 0px; overflow-x: hidden; overflow-y: scroll;">
+            <div class="menu-container-wrapper">
+              <div class="menu-containerInner">
+                <ul class="menu js-processed"><hr><li class="menu__item is-leaf first leaf"><a href="https://software.intel.com/en-us/ai" class="menu__link menu-node-unpublished menu-node-unpublished menu-node-unpublished">Home</a><hr></li>
+<li class="menu__item is-expanded expanded"><a href="https://software.intel.com/en-us" class="menu__link">Technologies</a><ul class="menu js-processed"><hr><li class="menu__item is-expanded first expanded"><a href="https://software.intel.com/en-us" class="menu__link">Frameworks</a><ul class="menu js-processed"><hr><li class="menu__item is-leaf first leaf"><a href="https://software.intel.com/en-us/ai/frameworks/bigdl" class="menu__link menu-node-unpublished">BigDL</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/ai/frameworks/caffe" class="menu__link">Caffe*</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/articles/manage-deep-learning-networks-with-intelchainer-for-intel-architecture" class="menu__link menu-node-unpublished">Chainer</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://www.intel.ai/investing-in-the-pytorch-developer-community/" target="_blank" class="menu__link">PyTorch</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/ai/frameworks/tensorflow" class="menu__link menu-node-unpublished menu-node-unpublished menu-node-unpublished">TensorFlow*</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="http://en.paddlepaddle.org/en" class="menu__link menu-node-unpublished" target="_blank">PaddlePaddle</a><hr></li>
+<li class="menu__item is-leaf last leaf"><a href="https://software.intel.com/en-us/ai/frameworks" class="menu__link">More...</a><hr></li>
+</ul><hr></li>
+<li class="menu__item is-expanded expanded"><a href="https://software.intel.com/en-us" class="menu__link">Tools</a><ul class="menu js-processed"><hr><li class="menu__item is-leaf first leaf"><a href="https://www.intel.ai/ngraph/" target="_blank" class="menu__link">nGraph Library</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/openvino-toolkit" class="menu__link">Intel® Distribution of OpenVINO™ Toolkit</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/intel-daal" class="menu__link">Intel® Data Analytics Acceleration Library</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/distribution-for-python" class="menu__link">Intel® Distribution for Python*</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://01.org/mkl-dnn/overview" target="_blank" class="menu__link">Intel® Math Kernel Library for Deep Neural Networks</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://www.intel.ai/plaidML/" target="_blank" class="menu__link">PlaidML</a><hr></li>
+<li class="menu__item is-leaf last leaf"><a href="https://software.intel.com/en-us/ai/tools" class="menu__link">More...</a><hr></li>
+</ul><hr></li>
+<li class="menu__item is-expanded expanded"><a href="https://software.intel.com/en-us" class="menu__link">Hardware</a><ul class="menu js-processed"><hr><li class="menu__item is-leaf first leaf"><a href="https://software.intel.com/en-us/ai/on-pc" class="menu__link">AI on the PC</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/neural-compute-stick" class="menu__link">Intel® Neural Compute Stick 2</a><hr></li>
+<li class="menu__item is-leaf last leaf"><a href="https://www.intel.ai/hardware/" target="_blank" class="menu__link">Boards and Development Kits</a><hr></li>
+</ul><hr></li>
+<li class="menu__item is-leaf last leaf"><a href="https://software.intel.com/en-us/ai/devcloud" class="menu__link">Development Cluster</a><hr></li>
+</ul><hr></li>
+<li class="menu__item is-expanded expanded"><a href="https://software.intel.com/en-us" class="menu__link">Training</a><ul class="menu js-processed"><hr><li class="menu__item is-leaf first leaf"><a href="https://software.intel.com/en-us/ai/courses" class="menu__link menu-node-unpublished">Courses</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/ai/events" class="menu__link">Events</a><hr></li>
+<li class="menu__item is-leaf last leaf"><a href="https://software.seek.intel.com/AIWebinarSeries?registration_source=IDZ" class="menu__link menu-node-unpublished" target="_blank">Webinars</a><hr></li>
+</ul><hr></li>
+<li class="menu__item is-expanded expanded"><a href="https://software.intel.com/en-us" class="menu__link menu-node-unpublished">Library</a><ul class="menu js-processed"><hr><li class="menu__item is-leaf first leaf"><a href="https://software.intel.com/en-us/ai/get-started" class="menu__link menu-node-unpublished">Get Started</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/ai/docs?search_api_views_fulltext=&amp;current_page=0&amp;value=20780" class="menu__link">Code Samples</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/ai/docs" class="menu__link">Documentation</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://www.intel.ai/publications/" target="_blank" class="menu__link">Intel Publications</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/ai/community-publications" class="menu__link">Community Publications</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/ai/healthcare" class="menu__link">AI for Healthcare</a><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/ai/poster-presentations" class="menu__link">Poster Presentations</a><hr></li>
+<li class="menu__item is-leaf last leaf"><a href="https://software.intel.com/en-us/ai/success" class="menu__link">Success Stories</a><hr></li>
+</ul><hr></li>
+<li class="menu__item is-expanded expanded"><a href="https://software.intel.com/en-us" class="menu__link">University Resources</a><ul class="menu js-processed"><hr><li class="menu__item is-leaf first leaf"><a href="https://software.intel.com/en-us/ai/devcloud-for-classroom" class="menu__link menu-node-unpublished">Request Development Cluster for Classrooms</a><hr></li>
+<li class="menu__item is-collapsed last collapsed"><a href="https://software.intel.com/en-us/ai/request-for-instructional-materials" class="menu__link">Curriculum for Professors</a><hr></li>
+</ul><hr></li>
+<li class="menu__item is-expanded expanded"><a href="https://software.intel.com/en-us" class="menu__link">Community</a><ul class="menu js-processed"><hr><li class="menu__item is-expanded first expanded"><a href="https://software.intel.com/en-us" class="menu__link menu-node-unpublished">Member Programs</a><ul class="menu js-processed"><hr><li class="menu__item is-leaf first leaf"><a href="https://software.intel.com/en-us/ai/ambassadors" class="menu__link">Student Ambassadors</a><hr></li>
+<li class="menu__item is-leaf last leaf"><a href="https://software.intel.com/en-us/intel-software-innovators" class="menu__link menu-node-unpublished" target="_blank">Innovators</a><hr></li>
+</ul><hr></li>
+<li class="menu__item is-leaf leaf"><a href="https://devmesh.intel.com/topics/39" target="_blank" class="menu__link">Community Projects</a><hr></li>
+<li class="menu__item is-leaf last leaf"><a href="https://software.intel.com/en-us/ai/sign-up" class="menu__link">Join</a><hr></li>
+</ul><hr></li>
+<li class="menu__item is-leaf last leaf"><a href="https://software.intel.com/en-us/ai/support" class="menu__link menu-node-unpublished">Support</a><hr></li>
+</ul><h2 class="block__title CORE-2649"><a href="https://software.intel.com/en-us">All Developer Programs</a></h2>
+              </div>
+              <div class="mobile-top-menu clearfix">
+                    <div id="block-idz-user-login-idz-user-login" class="block block-idz-user-login first odd">
+
+      
+  <ul class="language-switcher-locale-url js-processed">
+<li class="en active"><a href="https://software.intel.com/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link active active icon-zz_000005_global" xml:lang="en">English</a><ul><li class="zh-hans first"><a href="https://software.intel.com/zh-cn/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link" xml:lang="zh-hans">简体中文</a></li><li class="en active"><a href="https://software.intel.com/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link active active icon-zz_000005_global" xml:lang="en">English</a><ul></ul></li><li class="es"><a href="https://software.intel.com/es-es/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link" xml:lang="es">Español</a></li><li class="pt-br"><a href="https://software.intel.com/pt-br/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link" xml:lang="pt-br">Português</a></li><li class="ru last"><a href="https://software.intel.com/ru-ru/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="language-link" xml:lang="ru">Русский</a></li></ul></li>
+
+
+
+</ul><div id="header-user-display" class="user-display js-processed">
+      <div class="login">
+      <ul class="user-login-dropdown"><li class="first"><a href="https://software.intel.com/en-us/user/login?destination=node/805417" class="login-link icon-user">Sign in</a></li><ul class="user-login-dropdown-inside"><li><a href="https://software.intel.com/en-us/user/login?destination=node/805417" class="login-link icon-user">Sign in</a></li><li><a href="https://software.intel.com/registration?lang=en-us" class="register-link">Signup</a></li></ul></ul>          </div>
+  </div>
+<div class="header-support" id="header-support" data-wap_type="navheader"><a href="https://software.intel.com/en-us/support" class="icon-zz_000005_question">Support</a></div>
+</div>
+<div id="block-idz-search-idz-search-block" class="block block-idz-search last even">
+
+      
+  <form action="https://software.intel.com/en-us/search/site/language/en" method="get" id="idz-search-block-form" accept-charset="UTF-8" target="_top">
+  <div class="form-wrapper" id="idz_search_search_form">
+        <ul id="search-dropdown-options" class="dropdown-menu">
+      <li class="disabled"><a href="javascript:void(0)">Site to search:</a></li>
+      <li class="divider"></li>
+      <li><a class="active" href="javascript:void(0)" data-value="idz">Intel® DZ</a></li>
+      <li><a href="javascript:void(0)" data-value="intel">Intel.com</a></li>
+    </ul>
+    <input title="Search our content library..." placeholder="Search our content library..." class="form-text" id="edit-search-keyword" name="query" size="15" maxlength="128" type="text">
+    <button class="form-submit dropdown-toggle" type="submit" id="edit-submit" value="Search"></button>
+  </div>
+</form>
+<form action="https://software.intel.com/en-us/search/site/language/en" method="get" id="idz-search-block-form-mobile" accept-charset="UTF-8" target="_top">
+  <div class="form-wrapper" id="idz_search_search_form_mobile">
+    <span class="search-icon-mobile"></span>
+    <input title="Search our content library..." id="edit-submit" placeholder="Search our content library..." name="query" size="15" maxlength="128" type="search">
+  </div>
+</form>
+</div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div id="navigation-right">
+            <div id="block-idz-zero-idz-zero-share-widget-block" class="block block-idz-zero first odd">
+
+      
+  <div class="show_all_widget notranslate">
+  <div class="item-list"><ul id="wap-social" data-wap_type="socialshare"><li class="facebook first"><a href="https://www.facebook.com/sharer/sharer.php?u=https://software.intel.com/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="icon-logo-facebook" target="_blank" data-wap_ref="facebook">Share</a></li>
+<li class="twitter"><a href="https://twitter.com/intent/tweet?text=Computer+Vision+Annotation+Tool%3A+A+Universal+Approach+to+Data+Annotation%3A&amp;url=https%3A%2F%2Fsoftware.intel.com%2Fen-us%2Farticles%2Fcomputer-vision-annotation-tool-a-universal-approach-to-data-annotation&amp;hashtags=IntelSoftware" class="icon-logo-twitter-bird" target="_blank" data-wap_ref="twitter" data-hashtags="IntelSoftware" data-text="Computer Vision Annotation Tool: A Universal Approach to Data Annotation:" data-url="https://software.intel.com/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation">Tweet</a></li>
+<li class="google"><a href="https://plus.google.com/share?url=https://software.intel.com/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="icon-logo-gplus" target="_blank" data-wap_ref="twitter">Share</a></li>
+<li class="send last"><a href="mailto:?subject=Computer%20Vision%20Annotation%20Tool:%20A%20Universal%20Approach%20to%20Data%20Annotation&amp;body=https://software.intel.com/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" class="icon-email" target="_self" data-wap_ref="send">Send</a></li>
+</ul></div></div>
+<div class="showsharewidget notranslate">
+  <span class="share_label icon-zz_000005_share">
+    Share  </span>
+</div>
+
+
+</div>
+<div id="block-idz-zero-idz-zero-sticky-button-widget-block" class="block block-idz-zero last even">
+
+      
+  <div class="sticky_button_orange">
+  <span class="sticky_label">
+      <a href="https://github.com/opencv/cvat" target="_blank">GitHub* CVAT</a>
+  </span>
+</div>
+
+</div>
+        </div>
+      </div>
+        <div id="main">
+
+      <div id="content" class="column" role="main">
+                <a id="main-content"></a>
+
+                                        
+
+
+<article class="node-805417 node node-article view-mode-full clearfix" about="/en-us/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation" typeof="sioc:Item foaf:Document">
+
+      <header>
+            <h1 class="node__title node-title" id="page-title">Computer Vision Annotation Tool: A Universal Approach to Data Annotation</h1>
+                  <span property="dc:title" content="Computer Vision Annotation Tool: A Universal Approach to Data Annotation" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>        <div class="submitted-and-translation clearfix">
+                          <p class="submitted ctHidden" data-hj-masked="">
+                                <span property="dc:date dc:created" content="2019-03-01T16:45:30-08:00" datatype="xsd:dateTime" rel="sioc:has_creator">By <a href="https://software.intel.com/en-us/user/2035027" title="View user profile" class="username" data-hj-masked="">Sekachev, Boris</a>, <a href="https://software.intel.com/en-us/user/1544334" title="View user profile" class="username" data-hj-masked="">Nikita M.</a>, <a href="https://software.intel.com/en-us/user/1471933" title="View user profile" class="username" data-hj-masked="">Andrey Z.</a>, published on March 1, 2019</span>              </p>
+            
+            <div id="translation_button"><span id="translation_progress" class="notranslate">Translating...</span><div class="selectricWrapper notranslate select-fancy bing-translate-style selectricResponsive"><div class="selectricHideSelect"><select id="bing-language-list" class="notranslate select-fancy bing-translate-style"><option value="0" selected="selected">Translate</option><option value="zh-chs">Chinese Simplified</option><option value="zh-cht">Chinese Traditional</option><option value="en">English</option><option value="fr">French</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="ru">Russian</option><option value="es">Spanish</option><option value="tr">Turkish</option></select></div><div class="selectric"><p class="label">Translate</p><b class="button icon-caret-down"></b></div><div class="selectricItems" tabindex="-1"><ul><li class="selected">Translate</li><li class="">Chinese Simplified</li><li class="">Chinese Traditional</li><li class="">English</li><li class="">French</li><li class="">German</li><li class="">Italian</li><li class="">Portuguese</li><li class="">Russian</li><li class="">Spanish</li><li class=" last">Turkish</li></ul></div><input class="selectricInput" type="text"></div><script type="text/javascript">
+                                setTimeout(function(){{
+                                  var s=document.createElement('script');
+                                  s.type='text/javascript';
+                                  s.charset='UTF-8';
+                                  s.src=((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&ctf=True&ui=true&category=70adf6fd-a86d-4c27-af86-11655f788400_TECH&settings=Manual&ui=false&languages=es,pt,fr,it,tr,zh-CHS,zh-CHT,ru,de,en';
+                                  var p=document.getElementsByTagName('head')[0]||document.documentElement;
+                                  p.insertBefore(s,p.firstChild);
+                                }},0);
+                              </script></div><div class="disclaimer"><div id="disclaimer-text">This
+ is a computer translation of the original content. It is provided for 
+general information only and should not be relied upon as complete or 
+accurate.</div></div>          </div>
+
+          </header>
+  
+  <div id="inpage-navigation" style="margin-top: 351px; height: 0px;"><h4 id="inpage-nav-contents">CONTENTS</h4><ul class="inpage-nav"><li class="parent nochildren"><a class="jumplink" href="#inpage-nav-1"><span class="word_arrow">General</span> Information</a></li><li class="parent nochildren"><a class="jumplink" href="#inpage-nav-2"><span class="word_arrow">Data</span> annotation</a></li><li class="parent nochildren"><a class="jumplink" href="#inpage-nav-3"><span class="word_arrow">The</span> Internal Structure</a></li><li class="parent nochildren"><a class="jumplink" href="#inpage-nav-4"><span class="word_arrow">Development</span> directions</a></li><li class="parent nochildren"><a class="jumplink" href="#inpage-nav-5"><span class="word_arrow">Links</span></a></li></ul></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div id="bing-translation-error" class="hide messages--error messages error" style="display: none;">Sorry, we can't translate this content right now, please try again later.</div><div class="field-items"><div class="field-item even" property="content:encoded"><p>At
+ Intel, one of the projects we’re undertaking research on is developing 
+computer vision algorithms based on deep neural networks (DNNs) and how 
+to streamline the process. As with any other DNN, for model training 
+data scientists need annotated data. Of course, there is plenty of data 
+available on the Internet, but there are some roadblocks to utilizing. 
+On one hand, data scientists are asked to apply AI to more and more new 
+tasks without appropriate annotated data for those tasks. On the other 
+hand, some data require a license agreement and therefore not suitable 
+for use in commercial products’ development. That’s why Intel’s work 
+isn’t only to develop and train algorithms, but to annotate data. This 
+is a quite long and time-consuming process and shouldn’t fall to the 
+algorithm developers to tackle. For example, members of our data 
+annotation team spent about 3,100 hours to annotate more than 769,000 
+objects only for one of our algorithms.</p><p>There are two options to solve the data annotation dilemma:</p><p>First
+ – delegate data annotation to other companies with the appropriate 
+specialization. It should be noted that in this case the process of data
+ validation and re-annotation is quite complicated and, of course, 
+involves more paperwork.</p><p>Second (more convenient for our team) – 
+create and support an internal data annotation team. We can quickly 
+assign them new tasks and manage the work process. It is also easy to 
+balance the price and quality of the work. In addition, it’s possible to
+ implement our own automation algorithms and to improve the quality of 
+annotation.</p><p>Generally, there are many ways to annotate data, but 
+using special tools may help to speed up this process. Thus, in order to
+ accelerate this process within the realm of Computer Vision, Intel 
+developed a program called Computer Vision Annotation Tool (CVAT).</p><p>In
+ this article, we will cover general information on CVAT, as well as 
+more information on the architecture and future development directions. 
+Let’s start by looking at an overview of CVAT before diving into the 
+details.</p><h2>General Information<a class="inpage-nav-anchor" id="inpage-nav-1"></a></h2><p><img alt="Car at intersection" src="webops12118-fig1-car-intersection.jpg"></p><p><a href="https://github.com/opencv/cvat" target="_blank" rel="nofollow">Computer Vision Annotation Tool (CVAT)</a>
+ is an open source tool for annotating digital images and videos. The 
+main function of the application is to provide users with convenient 
+annotation instruments. For that purpose, we designed CVAT as a 
+versatile service that has many powerful features.</p><p>CVAT is a 
+browser-based application for both individuals and teams that supports 
+different work scenarios. The main tasks of supervised machine learning 
+can be divided into three groups:</p><ul><li>Object detection</li><li>Image classification</li><li>Image segmentation</li></ul><p>CVAT allows you to annotate data for each of these cases. There are some advantages and disadvantages of the tool.</p><p>Advantages:</p><ul><li>Web-based.
+ Users don’t need to install the app; they just have to open the tool’s 
+link in a browser if they want to create a task or annotate data.</li><li>Collaborative. Users can create a public task and split the work between other users.</li><li>Easy to deploy. CVAT can be installed in the local network using&nbsp;<a href="https://www.docker.com/" rel="nofollow"></a><a href="https://www.docker.com/" target="_blank" rel="nofollow">Docker*</a>.</li><li>Automatic annotation. For example, users can employ interpolation between key frames.</li><li>Professionally developed. The tool was created with support from professional annotation and algorithmic teams.</li><li>Integration. CVAT is suitable for embedding into open and extendable platforms, for example,<a href="https://help.onepanel.io/data-annotation/video-image-annotation-workflow-using-gpus-with-cvat" target="_blank" rel="nofollow"> Onepanel*</a>.</li><li>Optional tools supported:
+		<ul><li>Deep Learning Deployment Toolkit (Intel® Distribution of OpenVINO™ toolkit element)</li><li>TensorFlow* Object Detection API (TF OD API)</li><li>ELK (Elasticsearch* + Logstash* + Kibana*) analytic system</li><li>NVIDIA* CUDA* Toolkit</li></ul></li><li>Support for different annotation scenarios.</li><li>Open source code under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="nofollow">MIT license</a>.</li></ul><p>Disadvantages:</p><ul><li>Limited
+ browser support. CVAT’s client works only in Google Chrome*. CVAT is 
+not tested in other browsers, but it may work in Chromium*-based 
+browsers, such as Opera* or Yandex* Browser.</li><li>Unelaborated system
+ of automatic testing. All checks have to be done manually, considerably
+ slowing the development process. However, Intel is working to address 
+this with the help of students of Lobachevsky State University of Nizhny
+ Novgorod, who assist the team as a part of an <a href="http://www.itlab.unn.ru/" target="_blank" rel="nofollow">IT Lab</a> project.</li><li>Lack of source code documentation. This can make it quite difficult to get involved in the tool’s development.</li><li>Performance
+ issues. Increasing requirements due to larger amounts of annotated data
+ led to problems with Chrome Sandbox, which limits the use of RAM.</li></ul><p>As mentioned above, CVAT supports a number of additional optional components:</p><ul><li><a href="https://software.intel.com/en-us/openvino-toolkit/deep-learning-cv">Deep Learning Deployment Toolkit</a>, an element of the <a href="https://software.intel.com/en-us/openvino-toolkit">Intel® Distribution of OpenVINO toolkit</a> used to speed up the TF OD API model launching without a GPU. The toolkit has some beneficial features for use in development.</li><li><a href="https://github.com/tensorflow/models/tree/master/research/object_detection" target="_blank" rel="nofollow">TensorFlow* Object Detection API</a>, used to automatically annotate objects. Faster RCNN Inception ResNet V2 model trained on <a href="http://cocodataset.org/" target="_blank" rel="nofollow">COCO</a> (80 classes) is the default, but users can easily connect other models.</li><li><a href="https://www.elastic.co/" target="_blank" rel="nofollow">Logstash*, Elasticsearch*, Kibana*</a>
+ lets users visualize and analyze annotation logs from clients. It may 
+help monitor annotation process, or search for errors and their causes.<img alt="Kibana dashboard" src="webops12118-fig2-kibana-dashboard-750.jpg" height="437" width="750"></li></ul><h2>Data annotation<a class="inpage-nav-anchor" id="inpage-nav-2"></a></h2><ul><li>Data annotation in CVAT starts by creating an annotation task with the following instructions:
+		<ul><li>Name a task</li><li>Specify labels and their attributes</li><li>Choose files to download
+				<ul><li>Datasets are loaded from the local file system or a mounted 
+file system inside a container. A task can include one image archive, 
+one video, a set or catalogue of images from shared storage.</li></ul></li><li>A few additional options: <img alt="Task configuration screen" src="webops12118-fig3-task-configuration.jpg"><ul><li>To specify the full URL of a detailed annotation specification and other additional information (<em>Bug Tracker</em>)</li><li>To specify the URL of a Git-repository for data storage (<em>Dataset Repository</em>)</li><li>To rotate all images 180 degrees (<em>Flip Images</em>)</li><li>To support the layers for a segmentation task (<em>Z-Order</em>)</li><li>To divide a huge dataset into a few smaller segments (<em>Segment Siz</em>e)</li><li>To make overlapped segments (<em>Overlap</em>). This option makes video continuous from one segment into another</li><li>To specify the quality of uploaded images (<em>Image Quality</em>)</li></ul></li></ul></li><li>Then press <em>Submit</em> button and it will be added into the list of annotation tasks.<br><img alt="Create new task U I" src="webops12118-fig4-create-new-task.jpg"></li><li>Each link inside the <em>Jobs</em>
+ section corresponds to one segment. In this case, the dataset isn’t 
+divided into segments. Users can follow any link to start the annotation
+ process.<br><img alt="Annonating images" src="webops12118-fig5-annonation.jpg"></li><li>Users
+ can use four shapes to annotate images: boxes, polygons (generally, for
+ segmentation tasks), polylines (which can be useful for annotating 
+roadmarks), and points (e.g., for annotating <em>face landmarks</em> or <em>pose estimation</em>).<br><img alt="Shape annotation" src="webops12118-fig6-shape-annonation.jpg"><p>Additionally,
+ there are many features for use in typical annotation tasks: automation
+ instruments (copy and propagate objects, interpolation, and automatic 
+annotation using the TensorFlow OD API), visual settings, shortcuts, 
+filters, and others. These can be changed in the <em>Settings</em> menu.</p><img alt="Settings" src="webops12118-fig7-settings.jpg"><p>The <em>Help</em> menu also contains a number of shortcuts and other hints.</p><img alt="hotkeys and shortcuts list" src="webops12118-fig8-shortcuts-hotkeys.jpg"><p>The annotation process is detailed in the examples below</p></li></ul><p>&nbsp;</p><p>Interpolation
+ mode: CVAT may be used to interpolate bounding boxes and attributes 
+between key frames. Then a set of images will be annotated 
+automatically.</p><div class="videoContainer"><div class="videoWrapper"><iframe src="https://www.youtube.com/embed/U3MYDhESHo4?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" height="270" frameborder="0" width="480"></iframe></div></div><p>Attribute
+ annotation mode: Attribute Annotation Mode was developed for image 
+classification and accelerates the process of attribute annotation by 
+focusing the annotator’s attention on just one exact attribute. 
+Additionally, the process of annotation is carried out in this mode by 
+using hot keys.</p><div class="videoContainer"><div class="videoWrapper"><iframe src="https://www.youtube.com/embed/UPNfWl8Egd8?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" height="270" frameborder="0" width="480"></iframe></div></div><p>Segmentation
+ mode: Annotation with polygons is used for semantic segmentation and 
+instance segmentation. In this mode, visual settings make the annotation
+ process easier.</p><div class="videoContainer"><div class="videoWrapper"><iframe src="https://www.youtube.com/embed/6IJ0QN7PBKo?feature=oembed" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" height="344" frameborder="0" width="459"></iframe></div></div><p>Downloading annotations<br>
+	Users have to choose <em>Dump Annotation</em> to download the latest annotations. It will be written in <a href="https://github.com/opencv/cvat/blob/master/cvat/apps/documentation/xml_format.md" target="_blank" rel="nofollow">.xml file</a>
+ that contains some metadata and all annotations. If a user connected a 
+Git repository at the stage of creating a task, this file can be 
+downloaded there.</p><h2>The Internal Structure<a class="inpage-nav-anchor" id="inpage-nav-3"></a></h2><p style="text-align:center"><img alt="flowchart" src="webops12118-flowchart.jpg"></p><p>Docker*
+ containers in CVAT are used to simplify its installation and 
+deployment. The system includes several containers. The CVAT container 
+runs the <em>supervisord </em>process which generates a few Python* processes in a Django* environment. For example, the <em>wsgi server</em>
+ process, which works on clients’ requests. Other processes – rq workers
+ are used to process the “long-running” tasks from Redis: default and 
+low. The <em>long-running</em>&nbsp;tasks are those which can’t be 
+processed during one user’s request (creating a task, preparing an 
+annotation file, annotation using TF OD API, and others). The number of 
+workers can be changed in the <em>supervisord</em> configuration file.</p><p>The
+ Django environment works with two database servers. The Redis* server 
+stores information about the status of the tasks’ queue and the CVAT 
+database contains all information about tasks, users, annotations, etc. 
+PostgreSQL* (and SQLite* 3 during the development) is used as a Database
+ Management System for CVAT. All data stores in <em>cvat db volume</em>.
+ Volumes are used to avoid data loss when updating a container. In this 
+way, the following volumes are mounted to CVAT container:</p><ul><li><em>cvat data volume</em></li><li><em>cvat keys volume</em></li><li><em>cvat logs volume</em></li><li><em>cvat shared volume</em></li></ul><p>The
+ analytics system contains Elasticsearch, Logstash, and Kibana wrapped 
+in Docker containers. When the work is saved, all data, including logs, 
+are transferred to the server. The server transfers it in Logstash for 
+filtration. Additionally, there’s an opportunity to automatically send 
+notifications to email if any errors occur. Then, logs are transferred 
+to Elasticsearch, where they are stored in the cvat events volume. After
+ that, the user can view statistics and logs in Kibana. Meanwhile, 
+Kibana will closely work with Elasticsearch.</p><p>CVAT’s source code contains a list of Django applications:</p><ul><li><em>authentication</em> enables users’ authentication in the system (basic and LDAP)</li><li>engine
+ provides key applications: basic database models, loading and saving 
+tasks, loading and uploading annotations, client’s interface, and server
+ for creating, modifying, and deleting tasks</li><li><em>dashboard</em> is the client’s interface for creating, editing, searching, and deleting tasks</li><li><em>documentation</em> is used to display user documentation in the client interface</li><li><em>tf_annotation</em> enables automatic annotation using the TensorFlow Object Detection API</li><li><em>log_viewer</em> is used to send the client’s logs to Logstash when he or she saves work</li><li><em>log_proxy</em> enables the proxy connection from CVAT to Kibana</li><li><em>git</em> is used to integrate Git-repositories for data storage</li></ul><p>The
+ client part was implemented in JavaScript* and Django’s templates. CVAT
+ uses mainly object-oriented programming paradigms and 
+model-view-controller architecture, so every high-level object in the 
+client part (player, shape, history) has its own source code file. A 
+file can contain one (if an object isn’t displayed in UI) or many 
+classes (for example, there are many different types of shapes as sets 
+of classes: models, views, and controllers).</p><h2>Development directions<a class="inpage-nav-anchor" id="inpage-nav-4"></a></h2><p>Strong feedback and user demand is helping Intel determine the future direction of CVAT’s development.</p><p>For example:</p><ul><li>Make CVAT more convenient, easy to use, fast, and intuitive for users.</li><li>Include more annotation features. For example, add <a href="https://github.com/opencv/cvat/issues/147" target="_blank" rel="nofollow">cuboid annotation</a> or the ability to filter images by a specific attribute.</li><li>Improve
+ the reliability and stability of the tool and simplify its development,
+ including modifying the automatic testing system to make it very useful
+ and effective.</li><li>Expand the ways to automatically annotate data 
+and implement more deep learning models that automate data annotation. 
+In particular, there’s an opportunity to connect a huge amount of 
+different <a href="https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models">Intel Distribution of OpenVINO toolkits models</a> using the Deep Learning Deployment Toolkit.</li><li>Develop a demo-server of CVAT so that users can try the tool without having to install. There is a third-party<a href="https://c.onepanel.io/onepanel-demo/projects/cvat-public-demo/workspaces" target="_blank" rel="nofollow"> demo-server</a> from Onepanel*, but uses significant CVAT modifications so Intel cannot be responsible for the stability of the service.</li><li>Integrate the<a href="https://www.mturk.com/" target="_blank" rel="nofollow"> Amazon Mechanical Turk*</a> and other platforms in CVAT for data annotation using crowdsourcing.</li></ul><p>There
+ are many feature requests in addition to what is detailed above. 
+Unfortunately, there are always more requests than opportunities to 
+implement them. That’s why Intel encourages the community to take an 
+active part in the open source development.</p><p>There is also a <a href="https://github.com/opencv/cvat/blob/master/CONTRIBUTING.md" target="_blank" rel="nofollow">guideline</a>
+ where users can learn how to set up a development environment, the 
+process of creating your PR, etc. As has been mentioned above, there’s 
+no documentation for developers yet but users can always ask for help in
+ <a href="https://gitter.im/opencv-cvat" target="_blank" rel="nofollow"> Gitter</a> chat.</p><p>Now get involved and create, using the <a href="https://github.com/opencv/cvat" target="_blank" rel="nofollow">Computer Vision Annotation Tool</a>.</p><h2>Links<a class="inpage-nav-anchor" id="inpage-nav-5"></a></h2><ul><li><a href="https://github.com/opencv/cvat" target="_blank" rel="nofollow">GitHub* CVAT</a></li><li><a href="https://gitter.im/opencv-cvat" target="_blank" rel="nofollow">Gitter* Chat</a></li><li>GitHub <a href="https://github.com/opencv/cvat/blob/develop/CHANGELOG.md" target="_blank" rel="nofollow">Changelog</a></li><li>GitHub <a href="https://github.com/opencv/cvat/blob/develop/CONTRIBUTING.md" target="_blank" rel="nofollow">Contributing</a></li><li><a href="https://software.intel.com/en-us/openvino-toolkit">Intel® Distribution of OpenVINO™</a></li><li><a href="https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models">Pretrained models</a></li></ul></div></div><div class="field field-name-field-protected-attachments field-type-file field-label-hidden"><div class="field-items"></div></div><div class="optimization-notice">
+  For more complete information about compiler optimizations, see our <a href="https://software.intel.com/en-us/articles/optimization-notice#opt-en">Optimization Notice</a>.</div></div>
+    
+</article>
+
+                <div id="action-secondary-tabs">
+                  </div>
+
+      </div>
+
+      
+      
+    </div>
+  </div>
+
+    <nav class="page-top-second-footer">
+      <div class="page-top-second-footer-inner clearfix notranslate" id="navfooter" data-wap_type="navfooter">
+        <ul class="menu js-processed"><li class="menu__item is-expanded first expanded footer-columns-3"><a class="menu__link">Technologies</a><ul class="menu js-processed"><li class="menu__item is-leaf first leaf"><a href="https://software.intel.com/en-us/ai/devcloud" class="menu__link">Intel® AI DevCloud</a></li>
+<li class="menu__item is-leaf leaf"><a href="https://www.altera.com/solutions/technology/artificial-intelligence/overview.html" target="_blank" class="menu__link">Intel® FPGA</a></li>
+<li class="menu__item is-leaf leaf"><a href="https://simplecore.intel.com/ai/intel-movidius-myriad-vpus" target="_blank" class="menu__link">Intel® Movidius™ Vision Processing Unit</a></li>
+<li class="menu__item is-leaf leaf"><a href="https://software.intel.com/en-us/neural-compute-stick" class="menu__link">Intel® Neural Compute Stick 2</a></li>
+<li class="menu__item is-leaf last leaf"><a href="https://www.intel.com/content/www/us/en/products/processors/xeon/scalable.html" target="_blank" class="menu__link">Intel® Xeon® Scalable Processor</a></li>
+</ul></li>
+<li class="menu__item is-expanded expanded footer-columns-3"><a class="menu__link">Connect</a><ul class="menu js-processed"><li class="menu__item is-leaf first leaf"><a href="https://devmesh.intel.com/" target="_blank" class="menu__link">Community Projects</a></li>
+<li class="menu__item is-leaf leaf"><a href="https://communities.intel.com/community/tech/intel-ai-academy" target="_blank" class="menu__link">Forum</a></li>
+<li class="menu__item is-leaf leaf"><a href="https://plan.seek.intel.com/MetalMindsnewsletter_REG" target="_blank" class="menu__link">Newsletter</a></li>
+<li class="menu__item is-leaf last leaf"><a href="https://twitter.com/intelaidev" target="_blank" class="menu__link">Twitter</a></li>
+</ul></li>
+<li class="menu__item is-expanded last expanded footer-columns-3"><a class="menu__link">Related</a><ul class="menu js-processed"><li class="menu__item is-leaf first leaf"><a href="https://builders.intel.com/ai/" target="_blank" class="menu__link">Intel® AI Builders</a></li>
+<li class="menu__item is-leaf leaf"><a href="https://ai.intel.com/research-projects/" target="_blank" class="menu__link">AI Research Projects</a></li>
+<li class="menu__item is-leaf leaf"><a href="https://ai.intel.com/ai4good/" target="_blank" class="menu__link">AI4Good</a></li>
+<li class="menu__item is-leaf leaf"><a href="https://newsroom.intel.com/category/artificial-intelligence/" target="_blank" class="menu__link">Intel® AI News</a></li>
+<li class="menu__item is-leaf last leaf"><a href="https://www.intel.com/content/www/us/en/events/ai/devcon.html" target="_blank" class="menu__link">Intel® AI DevCon</a></li>
+</ul></li>
+</ul>      </div>
+    </nav>
+  
+<div class="page-footer notranslate">
+  <div id="idz-rateus">
+  <div id="survey_container">
+    <div id="survey_button">
+      <div class="rate-star">
+        <span class="rate-txt">Rate Us </span>
+        <span class="icon-star-empty"></span><span class="icon-star-empty"></span><span class="icon-star-empty"></span>
+      </div>
+    </div>
+    <div class="survey_iframe_container">
+      <div id="survey_frame">
+        <div class="scrollable">
+          <iframe id="iframe_survey" data-src="https://idz.qualtrics.com/SE/?SID=SV_eai43JosW74IFxz" height="100%" frameborder="0" width="100%"></iframe>
+        </div>
+      </div>
+      <div id="close_button">
+        <div id="close_survey">
+          <img src="bwc_close.png">
+        </div>
+      </div>
+      <div id="open_survey">
+        <div class="survey_up">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="block-bean-homepage-newsletter-subscribe" class="block block-bean first odd" data-wap_type="navfooter" style="margin-left: 147px;">
+  <div class="entity entity-bean bean-idz-newsletter-subscribe view-mode-default clearfix" about="/en-us/block/homepage-newsletter-subscribe" typeof="">
+    <div class="content">
+      <div class="field field-name-field-subscribed-action-text field-type-text field-label-hidden">
+        <div class="field-items">
+          <div class="field-item even "><a href="https://software.intel.com/en-us/newsletter/subscribe">Get the Newsletter</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="block-idz-responsive-blocks-idz-responsive-superfooter" class="block block-idz-responsive-blocks even" data-wap_type="socialreferral">
+  <footer class="l-language-footer">
+    <div class="limiter">
+      <section class="look-for-intel">
+        <span id="look-for-intel-expander"></span>
+        <span class="blurb">Follow us:</span>
+
+        <div class="item-list notranslate">
+          <div class="item-list"><ul><li class="facebook first"><a href="http://facebook.com/inteldeveloperzone" target="_blank" class="icon-logo-facebook">Facebook</a></li>
+<li class="twitter-bird"><a href="http://twitter.com/intelsoftware" target="_blank" class="icon-logo-twitter-bird">Twitter</a></li>
+<li class="github"><a href="https://github.com/IntelSoftware" target="_blank" class="icon-zz_000003_githuboctokitty">Github</a></li>
+<li class="twitch"><a href="https://twitch.tv/IntelGameDev" target="_blank" class="icon-zz_000003_twitch">Twitch</a></li>
+<li class="youtube last"><a href="https://www.youtube.com/user/intelswnetwork" target="_blank" class="icon-logo-youtube">YouTube</a></li>
+</ul></div>        </div>
+      </section>
+    </div>
+  </footer>
+</div>
+  <div id="block-idz-responsive-blocks-idz-responsive-legal-footer" class="block block-idz-responsive-blocks last odd" data-wap_type="navfooter">
+
+  <footer class="l-legal-footer">
+    <nav class="menu">
+      <ul>
+                <li>
+          <a href="http://www.intel.com/content/www/us/en/legal/terms-of-use.html">Terms of Use</a>        </li>
+        <li>
+          <a href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>        </li>
+        <li>
+          <a href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy</a>        </li>
+        <li>
+          <a href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>        </li>
+        <li>
+          <a href="https://www.intel.com/content/www/us/en/my-intel/subscription-center.html#/communication-preferences">Email preferences</a>        </li>
+
+      </ul>
+    </nav>
+  </footer>
+</div>
+  </div>
+<div vocab="http://schema.org/" typeof="TechArticle"><span property="learningResourceType" content="article"></span><span property="headline" content="Computer Vision Annotation Tool: A Universal Approach to Data Annotation"></span><span property="name" content="Computer Vision Annotation Tool: A Universal Approach to Data Annotation"></span><div property="author" typeof="Person"><meta property="name" content="Sekachev, Boris"></div><span property="datePublished" content="2019-03-01 16:45:30"></span><span property="dateModified" content="2019-03-04 10:33:46"></span><span property="url" content="https://software.intel.com/articles/computer-vision-annotation-tool-a-universal-approach-to-data-annotation"></span><div property="image" typeof="ImageObject"><img class="element-invisible" src="webops12118-page-icon.jpg" property="url"><meta property="name" content="thumbnail"><meta property="width" content="375"><meta property="height" content="222"></div><span property="inLanguage" content="en"></span><span property="thumbnailURL" content="https://software.intel.com/sites/default/files/managed/ab/3c/webops12118-page-icon.jpg"></span><span property="audience" content="81559,Professional,17154,Professors,17155,Students,20808,Intermediate"></span><span property="keywords" content="20806,JavaScript*,85082,Intel® Distribution of OpenVINO™ toolkit,85763,Artificial Intelligence,83732,Machine Learning"></span>
+    <meta property="mainEntityOfPage" href="https://software.intel.com">
+      <div property="publisher" typeof="Organization">
+      <div property="logo" typeof="ImageObject">
+        <img class="element-invisible" src="intel_blue.png" property="url">
+        <meta property="name" content="thumbnail">
+        <meta property="width" content="86">
+        <meta property="height" content="60">
+      </div>
+      <meta property="name" content="Intel">
+    </div></div>
+  <div class="region region-page-bottom">
+    
+<!--[if lte IE 9]>
+<script> if(jQuery('html.lt-ie10.js')) { jQuery(document).ready(function () {jQuery('form').h5Validate();}); }</script>
+<![endif]-->
+
+  </div>
+<script src="js_5eOTgi6gKWKO6pPoQQ_AzG4f0Iotjme8OnrlrIuc-Bg.js"></script>
+
+
+</body></html>

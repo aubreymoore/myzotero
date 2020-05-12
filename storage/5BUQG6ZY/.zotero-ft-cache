@@ -1,0 +1,1122 @@
+CENTRUM SCIENTIARUM MATHEMATICARUM
+
+UNBIASED PITCH DETECTION
+AND PHASE ESTIMATION IN ENTOMOLOGICAL LIDAR
+JOHAN FOGELMARK
+Master’s thesis 2019:E37
+Faculty of Engineering Centre for Mathematical Sciences Mathematical Statistics
+
+Abstract
+Good insect monitoring is important for both disease vector control and e cient usage of pesticides in farming. Entomological lidar has been proven useful for detecting and monitoring insects. For every insect that transit the laser beam a backscatter signal containing species-speciﬁc information is obtained. Estimating the fundamental wing beat frequency of an observation is important for determining the species. In this thesis, four non-parametric spectral estimation techniques have been evaluated on their ability to estimate the fundamental wing beat frequency. Furthermore, a method for phase estimation, the matched phase reassignment, has been investigated for estimating the relative phase of the harmonic overtones. All four techniques managed to estimate the fundamental wing beat frequency in simulated signals to a high degree, even for short and noisy signals. The techniques were fairly equally successful in estimating the fundamental frequency, although the periodogram and the Wigner-Ville distribution proved somewhat better than the spectrogram and the scaled reassigned spectrogram. The matched phase reassignment can not be deemed reliable in estimating the relative phase of the overtones in entomological lidar signals due to sensitivity to noise.
+Keywords: Entomological lidar, wing beat frequency estimation, phase estimation, matched phase reassignment, scaled reassigned spectrogram.
+
+Acknowledgements
+I want to thank Prof. Maria Sandsten, Dept. Mathematical Statistics, Lund University for guidance throughout my thesis work. I also thank Mikkel Brydegaard and Samuel Jansson, Dept. Physics, Lund University for valuable inputs. The measurement data was collected in a collaborative campaign between Lund University, Norsk Elektro Optikk, FaunaPhotonics and Ifakara Health Institute and was sponsored by InnovationsFunden. The instrument was lent by Norsk Elektro Optikk and ﬁeld work carried out by Samuel Jansson, Mikkel Brydegaard, Elin Malmqvist (LU), Flemming Ramussen (FP) and Yeromin Mlacha (IHI).
+
+Contents
+
+1 Introduction
+
+1
+
+1.1 Background . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+
+1.2 Entomological lidar . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+
+1.3 Backscatter signal . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+
+1.3.1 Wing beat frequency . . . . . . . . . . . . . . . . . . . . . 5
+
+1.3.2 Phase of overtones . . . . . . . . . . . . . . . . . . . . . . 5
+
+1.4 Aim of the thesis . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+
+2 Theory
+
+7
+
+2.1 Spectral analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+
+2.2 The periodogram . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+
+2.3 The Fourier transform and power spectrum . . . . . . . . . . . . 8
+
+2.4 The STFT and the spectrogram . . . . . . . . . . . . . . . . . . . 8
+
+2.5 The scaled reassigned spectrogram . . . . . . . . . . . . . . . . . 9
+
+2.6 The Wigner-Ville distribution . . . . . . . . . . . . . . . . . . . . 10
+
+2.6.1 Cross-terms . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+
+2.6.2 The Hilbert transform . . . . . . . . . . . . . . . . . . . . 11
+
+2.7 R´enyi entropy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+
+2.8 Matched phase reassignment . . . . . . . . . . . . . . . . . . . . 12
+
+3 Data Simulation
+
+15
+
+3.1 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+
+3.2 Identifying the fundamental frequency . . . . . . . . . . . . . . . 17
+
+3.3 Relative phase estimation . . . . . . . . . . . . . . . . . . . . . . 18
+
+4 Results
+
+21
+
+4.1 Wing beat frequency estimation . . . . . . . . . . . . . . . . . . . 21
+
+4.1.1 Di↵erent noise level . . . . . . . . . . . . . . . . . . . . . 21
+
+4.1.2 Di↵erent signal length . . . . . . . . . . . . . . . . . . . . 24
+
+4.1.3 Di↵erent fundamental frequency . . . . . . . . . . . . . . 26
+
+4.2 Phase estimation . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+
+4.2.1 Di↵erent noise level . . . . . . . . . . . . . . . . . . . . . 29
+
+4.2.2 Di↵erent signal length . . . . . . . . . . . . . . . . . . . . 30
+
+5 Real data
+
+33
+
+5.1 Data . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+
+5.2 Wing beat frequency estimation . . . . . . . . . . . . . . . . . . . 34
+
+5.3 Phase estimation . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+
+6 Discussion and conclusion
+
+41
+
+Bibliography
+
+43
+
+A Appendix
+
+47
+
+Chapter 1
+Introduction
+1.1 Background
+Insects play an important role in all terrestrial ecosystems. They are fundamental for pollinating plants, spreading seeds, controlling population of other organisms and they are a major food source for many animals [1].
+Some insects are however also a threat to us humans. Vector-borne diseases cause more than 700,000 deaths annually and many of these vectors are spread by blood-sucking insects which inject parasites while feeding. The most infamous one is mosquitoes which can transmit diseases such as malaria, dengue fever, zika, and yellow fever. Malaria is transmitted by mosquitoes of the genus Anopheles and cause over 400,000 deaths annually. Some mosquito species of the genus Aedes are vectors for diseases such as zika, dengue fever, and yellow fever. Over 3.9 billion people live in areas with a threat of contracting dengue and there are close to 100 million cases estimated per year [2]. These mosquito species are predominantly present in tropical and subtropical regions which are also some of the poorest regions in the world. Therefore is it also the most poor countries that are a↵ected the most by these diseases, putting further stress on both the often weak economy and health systems in many countries.
+Pest insects is another threat which causes large economic damages in agriculture and forestry every year [3]. Pesticides are often used to control insect pests and reduce the economic damages caused by these. Pesticides can however be harmful to both humans [4] and other insects. Insect populations has decreased rapidly during the recent decades which has received increased attention from both researchers and mainstream media. One recent study conducted in 63 nature protection areas in Germany shows a 75 percent decline in ﬂying insect biomass over the last 27 years [5]. The extensive use of pesticides has been identiﬁed as one the main drivers of the insect decline [6]. Especially worrying is the decline of pollinators such as bees [7]. Much of the food production in the world is dependent on pollinators and this includes 84 percent of the crop species cultivated in Europe. It has been estimated that the economic value of
+1
+
+pollination worldwide amounts to 153 billion euro [8]. Improved monitoring and understanding of insect ecology is vital to better
+tackle these issues. With good insect monitoring farmers can use pesticides more e ciently and hence protect non-target insects such as pollinators better. Monitoring of mosquito vectors is also critical to long-term success of malaria control e↵orts [9]. Current preventive measures consisting primarily of bed-nets and mosquito spray has historically been e↵ective in reducing malaria vectors [10]. There are however challenges to the future success of these methods. Some malaria vectors have shifted their feeding habit from late evening, when most people are in bed, to early evening reducing the e↵ect of bed-nets [11]. With better understanding of mosquito behavior and population levels, other preventive work such as draining of wet areas and urban planning can be used more e↵ectively.
+Monitoring ﬂying insects is however not an easy task. Their often small size and fast ﬂight speed makes it di cult to detect with the accuracy needed to be able to classify them. Many of the methods used today, including human landing catch, insect traps and sweep nets, rely on capturing the insects [12]. These methods are also known to be biased, attracting di↵erent species and sexes to di↵erent extents. They are also often labour intensive and yield relatively low insect counts [13]. In human landing catch a person exposes a part of their body and tries to catch mosquitoes that tries to bite him/her. This has been deemed the gold standard in mosquito research [14] but using humans as bait poses a risk and it has raised ethical concerns. Entomological radar is another method wherein back scattered microwaves are analyzed to classify insects. Radar is however limited to larger insects and unable to monitor insect movements close to the ground due to clutter e↵ects [15].
+1.2 Entomological lidar
+An alternative method is to use entomological lidar to detect and monitor insects. In entomological lidar a laser beam is transmitted and when an insect is ﬂying through the beam the light is backscattered onto a sensor. The light is backscattered onto di↵erent segment of the sensor depending on the distance to the insect [16, 17]. Consequently both time and range information about the observation is obtained. This method have been used by several research groups in recent years with great success in terms of observation counts. Upwards of a hundred thousand observations per hour has been recorded using the lidar method [18].
+Entomological lidar are of the same type as atmospheric lidar but has been modiﬁed to better suit the application. Atmospheric lidars have been around for decades and they can be used for classiﬁcation, quantiﬁcation and investigation of aerosol particles [19], pollen as well as bio-warfare agents [20]. Therefore these lidars have to be very sensitive which make them able to detect even small insects at a range of several kilometers [21]. The sample rate of these lidars is often in the range of 10-20 Hz which would be too low for studying
+2
+
+insects. Entomological lidars need to have a sample in the kHz range to be able to capture the wing beats of insects. Lidar wavelengths have been selected for increased scattering in insect bodies and wings. Commonly used wavelengths in entomological lidars are 808 nm and 1550 nm [22].
+(a)
+(b)
+Figure 1.1: a) An entomological lidar system viewed from the side. b) IR photo of the system at dawn. The laser beam can be seen originating from the emitting telescope.
+1.3 Backscatter signal
+To obtain the backscatter time series signal from an insect transiting the laser beam, the time-range data from the lidar is searched for insect events. Pixels
+3
+
+with an intensity over a certain threshold are identiﬁed and the pixels belonging to the event are separated from the other pixels in the time-range map. The backscatter time series of the observation is then obtained by summing the optical cross section (OCS) values for all pixels in each time sample of the event [17].
+The time series signal can be used to extract information about the insect to help identify the species. The signal is consisting of an oscillatory part originating from the insects’ wing beats and a low-frequency envelope from the insects’ body [22]. The shape of the envelope is from the insect ﬂying in and out of the laser beam. Depending on the insect and how the insect ﬂies through the beam the signals will vary a lot. An insect transiting the beam orthogonally will yield a di↵erent signal compared with if the same insect entered the beam from another angle [13]. Also the length of the signals di↵ers as the time spent in the beam varies for each observation. Some observations are very short, down to a few tens of milliseconds, whereas others are upwards of a second. Other factors, such as noise, also makes it hard to detect clear wing beats in some observations.
+
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+Figure 1.2: Backscatter time series of observations. a) A relatively long signal with clear wing beats. b) Short signal of 30 ms with only two wing beats. c) Backscatter from an insect with multiple wing pair, yielding more than one spike per wing beat cycle. d) Signal with not so clear wing beats.
+
+4
+
+1.3.1 Wing beat frequency
+The fundamental wing beat frequency (WBF) of insects vary between species and can therefore be used for classiﬁcation. The frequency varies in the range 101000 Hz. Larger insects generally have a WBF in the lower range, e.g. butterﬂies which can have a WBF of around 10 Hz. The species with the highest WBF is the midge of the genus Forcipomyia which can beat their wings an astonishing 1000 times per second [23]. Mosquitoes also have a very high WBF of around 400-700 for females and around 600-950 for males, depending on the species [22]. The variation of WBF within a species is due to factors such as ﬂight speed, temperature and payload, e.g. in the form of a blood meal [24]. Considering the amount of di↵erent insect species WBF alone is often not su cient for insect classiﬁcation. Mosquitoes can however often be distinguished due to their unusually high frequency [22].
+1.3.2 Phase of overtones
+In addition to the fundamental frequency the wing beat signal may contain several harmonic overtones [21]. A harmonic overtone is a multiple of the fundamental frequency (f0), e.g. the ﬁrst overtone is at f = 2 · f0. The relative amplitude of these harmonics contain species-speciﬁc information that can be used to classify insects [25]. Less research has been conducted about the relative phase of the overtones. Depending on the relative phase of the harmonics the signal will look very di↵erent. If the harmonics are in phase specular spikes are displayed in the signal and if the harmonics have di↵erent relative phases the signal will look drastically di↵erent [17]. It is believed that the relative phase could help with determining the ﬂight heading of the insect which is required to accurately assess the ﬂight speed [13].
+1.4 Aim of the thesis
+The overall objective of the thesis is to evaluate di↵erent methods for estimating the fundamental wing beat frequency from backscatter time series. How the different methods cope with observations with short transit time and observations with considerable noise disturbances will be of extra focus. Furthermore, the matched phase reassignment will be investigated if it can be used to estimate the relative phase of the overtones.
+5
+
+6
+
+Chapter 2
+Theory
+
+2.1 Spectral analysis
+Spectral analysis is used to analyze time-series data in the frequency domain and has applications in many ﬁelds, including economics, medicine and physics. By estimating how the total power is distributed over frequencies it is possible to detect periodicity in the data.There are two main approaches to spectral analysis, non-parametric methods and parametric methods (e.g. AR and ARMA). The periodogram, spectrogram, Wigner-Ville distribution and the reassignment method is part of the non-parametric family and will be the focus of this thesis. To estimate the relative phase of the overtones, a novel method called matched phase reassignment will be used.
+
+2.2 The periodogram
+
+The periodogram is one of the ﬁrst estimators of spectral density and goes back to 1898 when Arthur Schuster invented the method. It is deﬁned [26] as
+
+1 Px(!) = N
+
+NX1 x(n)e
+
+2 i!n
+
+n=0
+
+(2.1)
+
+where N is the number of samples of the signal and ! = 2⇡f . The spectral bias of the periodogram is reduced with higher sampling rate as the width of the mainlobe is 2/N. The variance and the spectral leakage from the sidelobes, however, is not reduced with increasing N. This can be a problem since the sidelobe leakage of a stronger power component might cause the frequency of a nearby located weaker component to be hidden. One way to reduce this problem is to use the windowed periodogram, deﬁned as
+
+1 Px(!) = N
+
+NX1 x(n)h(n)e
+
+2 i!n
+
+n=0
+
+(2.2)
+
+7
+
+where h(n) is a window function. A window that has a spectrum with narrow mainlobe and low sidelobes is desirable but there is often a tradeo↵ between these two. The rectangle window used in the normal periodogram has a spectrum with very narrow mainlobe but also high sidelobes. There are many different windows and a common one is the Hanning window. This window has a spectrum with wider mainlobes but also much lower sidelobes than the rectangle window. The periodogram lacks time representation and thus makes most sense to use on stationary signals.
+
+2.3 The Fourier transform and power spectrum
+
+The Fourier transform is used to transform the signal to the frequency domain
+
+and is deﬁned [27] as
+
+Z1
+
+X(!) =
+
+x(t)e i!tdt
+
+(2.3)
+
+1
+
+where x(t) is a continuous and integrable signal. The power spectrum is found by taking the square of the absolute value of the Fourier transform
+
+SX (!) = |X(!)|2.
+
+(2.4)
+
+One can also ﬁnd the power spectrum by calculating the Fourier transform of
+
+the covariance function, rx(⌧ ), of the signal
+
+Z1
+
+SX (!) = F (rx(⌧ )) =
+
+rx(⌧ )e i!⌧ d⌧.
+
+1
+
+(2.5)
+
+2.4 The STFT and the spectrogram
+
+The short-time Fourier transform (STFT) is an extension of the Fourier transform which also includes the time domain [27]. This is done by adding a window, h(t), centered at time t.
+
+Z1
+
+X(t, !) =
+
+x(t1)h⇤(t1
+
+1
+
+t)e i!t1 dt1
+
+(2.6)
+
+The It is
+
+window used also common
+
+when calculating to normalize the
+
+pthoeweSrTsFoTthisatofRt1 e1 n
+
+ﬁxed, positive |h(t)|2dt = 1.
+
+and
+
+even.
+
+The spectrogram is given by the squared absolute value of the STFT and can
+
+be formulated as
+
+SX (t, !) = |X(t, !)|2.
+
+(2.7)
+
+The selection of window is important as both the shape and the length of the window a↵ect the behaviour of the spectrogram. When selecting the length there is a tradeo↵ in resolution between time and frequency. A broad window will provide good frequency resolution but bad time resolution and vice versa.
+
+8
+
+2.5 The scaled reassigned spectrogram
+
+Reassignment is relatively new technique and was ﬁrst introduced in 1976. As
+
+mentioned earlier the spectrogram cannot have good resolution in both the time
+
+and frequency domain at the same time. Reassignment is a method that can
+
+be used to improve the resolution of the spectrogram by reassigning energy to
+
+the local center of gravity (see Figure 2.1). The reassignment technique do not
+
+give optimal result for shorter transients but this can be resolved by scaling of
+
+the relocation with the help of scaling factors. The scaled reassignment method
+
+has previously been used for estimating dolphin echo-location signals [28].
+
+The reassigned spectrogram relocates each value of the spectrogram to the
+
+reassignment coordinates, tˆx and !ˆx, and is deﬁned [27] as
+
+Z1Z1
+
+RSxh(t, !) =
+
+Sxh(t1, !1) (t tˆx(t1, !1), ! !ˆx(t1, !1))dt1d!1. (2.8)
+
+11
+
+The two-dimensional Dirac impulse, (t, !), is deﬁned as Z1Z1
+f (t, !) (t t0, ! !0)dtd! = f (t0, !0).
+11
+
+(2.9)
+
+The reassignment coordinates, with the scaling factors ct and c!, can be com-
+
+puted as
+
+tˆx(t,
+
+!)
+
+=
+
+t
+
++
+
+✓ ct<
+
+Xth(t, !) Xh(t, !)
+
+◆
+
+(2.10)
+
+✓ Xdh/dt(t, !) ◆ !ˆx(t, !) = ! c!= Xh(t, !)
+
+(2.11)
+
+where Xth(t, !) and Xdh/dt(t, !) are STFTs of the signal x(t) using di↵erent
+
+windows. The ﬁrst, t·h(t), is the time multiplied window and the other, dh(t)/dt,
+
+the time derivative window [29].
+
+The scaled reassignment technique works especially well for signals with a
+
+Gaussian shaped envelope [30, 31]. For a Gaussian signal with parameter the
+
+reassignment coordinates are
+
+✓ 2◆ tˆx(t, !) = t + ct 2 + 2 t
+
+(2.12)
+
+✓2 ◆ !ˆx(t, !) = ! + c! 2 + 2 !
+
+(2.13)
+
+With a matching Gaussian window the coordinates simplify to
+
+tˆx(t,
+
+!)
+
+=
+
+t
+
++
+
+ct
+
+t 2
+
+(2.14)
+
+!ˆx(t,
+
+!)
+
+=
+
+!
+
++
+
+c!
+
+! 2
+
+(2.15)
+
+By setting the scaling factors equal to 2, perfect localization in both time and
+
+frequency will be achieved.
+
+9
+
+Figure 2.1: Signal with three Gaussian windowed sinusoidal components centered at t=0.029 and with frequencies 250, 500 and 750 Hz.
+
+2.6 The Wigner-Ville distribution
+
+Another method with better resolution than the spectrogram is the Wigner-Ville
+
+distribution. The Wigner-Ville distribution is deﬁned [27] as
+
+Wx(t, !)
+
+=
+
+Z
+
+1 1
+
+x(t
+
++
+
+⌧ )x⇤(x 2
+
+⌧ )e i!⌧ d⌧ 2
+
+(2.16)
+
+where x(t) is a deterministic and continuous signal. It can be noted that the Wigner-Ville distribution actually is the Fourier transform of the instantaneous autocorrelation function (IAF), which is deﬁned as
+
+rx(t,
+
+⌧)
+
+=
+
+x(t
+
++
+
+⌧ 2
+
+)x⇤(x
+
+⌧ 2
+
+.)
+
+(2.17)
+
+For some signals, e.g. the impulse and linear chirp signal, the Wigner-Ville distribution gives perfect time-frequency representation. The method also works well for short components, such as Gaussian windowed sinusoids.
+
+2.6.1 Cross-terms
+Despite having many good properties the Wigner-Ville distribution has one major drawback. For multicomponent signals cross-terms will show up in the mid-
+
+10
+
+dle between all components. The Wigner-Ville distribution of a two-component signal becomes
+
+Wx(t, !) = Wx1 (t, !) + Wx2 (t, !) + 2<[Wx1,x2 (t, !)]
+
+(2.18)
+
+where the ﬁrst two terms, Wx1 (t, !) and Wx2 (t, !), are the Wigner-Ville distri-
+
+bution of x1(t, !) and x2(t, !) respectively. These are called auto-terms. The
+
+last term
+
+2<[Wx1,x2 (t, !)] = 2<[F (x1(t + ⌧ /2)x⇤2(t ⌧ /2))]
+
+(2.19)
+
+is the cross-term and will be located midway between the auto-terms. The cross-term oscillate and also adopts negative values which can be helpful in distinguishing the cross-terms from the auto-terms. In Figure 2.2 the crossterms of a three-component signal can seen.
+
+Figure 2.2: A signal with three Gaussian windowed sinusoidal components (C1, C2 and C3) with frequencies 250, 500 and 750 Hz. Cross-terms can be seen in the middle between C1 and C2 and between C2 and C3. One cross-term is also located between C1 and C3, which is at the same frequency as C2, i.e. 500 Hz.
+2.6.2 The Hilbert transform
+The Wigner-Ville distribution is often used together with the analytic signal. To transform a real-valued signal, x(t), into the the analytic signal, z(t), the
+11
+
+Hilbert transform is often used. The Hilbert transform is computed as
+
+H(x(t)) = F 1(( i sign(!))F (x(t)))
+
+(2.20)
+
+yielding the analytic signal
+
+z(t) = x(t) + iH(x(t))
+
+(2.21)
+
+With the analytic signal the resulting spectrum is zero for all negative values of f and remains the same for positive values of f . This have several advantages in the context of the Wigner-Ville distribution. When calculating the Wigner-Ville distribution with a real-valued signal, x(t), using the discrete Fourier transform extra aliasing is introduced for frequencies > fs/4. A normalized frequency at f = 0.4 will also show up at f = 0.4 creating a cross-term at f = 0 as well as an aliased term at f = 0.1. With the analytic signal, z(t), negative frequencies in the spectrum are zero, which will remove both the cross-term at f = 0 and the aliased term at f = 0.1.
+
+2.7 R´enyi entropy
+
+The R´enyi entropy can be used to measure time-frequency concentration and is
+
+deﬁned [27] as
+
+R↵
+
+=
+
+1
+
+1
+
+↵
+
+Z log2(
+
+1Z
+1
+
+1
+W ↵(t, !)dtd!),
+1
+
+↵ > 2.
+
+(2.22)
+
+For highly concentrated distributions the R´enyi entropy will adopt a low value and the less concentrated the distribution is, the higher the R´enyi entropy will become.
+
+2.8 Matched phase reassignment
+
+The matched phase reassignment is a method for estimating the phase synchronization of two signals and was developed by Maria Sandsten et al. [32]. It is built upon the matched reassigned spectrogram but with estimation of phase synchronization as the aim. The matched phase reassignment method for two oscillating signals deﬁned as
+
+yn(t) = Anx(t)e i n , n = 1, 2
+
+(2.23)
+
+start with the calculation of the cross-spectrogram, which is found as
+
+Syh1,y2 (t, !) = Xyh1 (t, !)(Xyh2 (t, !))⇤.
+
+(2.24)
+
+The reassigned cross-spectrogram is then found by replacing Sxh(t, !) in Eq. (2.8) with |Syh1,y2 (t, !)|. The reassignment vectors, tˆy1,y2 (t, !) and !ˆy1,y2 (t, !),
+
+are here deﬁned as
+
+tˆy1,y2 (t,
+
+!)
+
+=
+
+t
+
++
+
+ct
+
+✓ <
+
+Xyth1 (t, Xyh2 (t,
+
+!) !)
+
++
+
+Xyth2 (t, !) ◆ Xyh1 (t, !)
+
+(2.25)
+
+12
+
+!ˆy1,y2(t, !) = !
+
+✓ dh
+
+dh
+
+◆
+
+c! =
+
+X dt
+y1
+
+(t,
+
+!)
+
+Xyh2 (t, !)
+
++
+
+X dt
+y2
+
+(t,
+
+!)
+
+Xyh1 (t, !)
+
+(2.26)
+
+Included in the reassignment vectors are the following STFTs of the signal yn(t),
+
+Xyhn (t, !) = Anx(t)e i nXxh(t, !)
+
+Xythn (t, !) = Anx(t)e i nXxth(t, !)
+
+dh
+Xydnt (t, !) = Anx(t)e
+
+i
+
+n
+
+dh
+Xxdt
+
+(t,
+
+!).
+
+Consequently the terms can be expressed as
+
+(2.27) (2.28) (2.29)
+
+Xyth1 (t, !) Xyh2 (t, !)
+
+=
+
+A1 e A2
+
+i(
+
+1
+
+2) Xxth(t, !) Xxh(t, !)
+
+(2.30)
+
+dh
+
+X dt
+y1
+
+(t,
+
+!)
+
+Xyh2 (t, !)
+
+=
+
+A1 e A2
+
+i(
+
+1
+
+dh
+
+2
+
+)
+
+Xxdt (t, !) Xxh(t, !)
+
+.
+
+(2.31)
+
+The scaling factors, ct and c!, used in the calculation of the reassignment vectors are adjusted for the amplitude of yn(t) according to
+
+ct
+
+=
+
+c!
+
+=
+
+2
+
+A1A2 A21 + A22
+
+(2.32)
+
+It can now been seen that perfect localization and thus highest concentration is achieved when 1 = 2. To ﬁnd the phase di↵erence, = 2 1, surrogate data is created for one of the signals with estimated parameters and the phase shifted from 0 to 2⇡ with appropriate steps. The phase di↵erence can then be found as the phase yielding the lowest R´enyi entropy, which is when 1 = 2. The method can also be applied on multicomponent signals to estimate the phase di↵erence between components by using the method on each component.
+
+13
+
+14
+
+Chapter 3
+Data Simulation
+
+3.1 Methodology
+
+To asses the di↵erent methods ability to estimate the wing beat frequency of the backscatter signal, a study on simulated signals will be conducted. Simulations will be made in MATLAB.
+The wing beat contribution of the backscatter signal can be expressed as a sum of harmonic functions, representing the fundamental frequency and the overtones [17]. Consequently the simulated signals will be created as
+
+X3 y(t) = (An + Ax,n) cos(2⇡fnt + x), t 2 [t0, t1]
+n=0
+
+(3.1)
+
+where Ax,n and x are uniformly distributed stochastic variables. Three overtones is included in addition to the fundamental wing beat frequency, f0. Furthermore noise, e(t), is added to the signal to better mimic real signals. The noise is generated as normal white Gaussian, e(t) ⇠ N (0, 1), and the noise level is determined by the signal to noise ratio (SNR). SNR is here deﬁned as
+
+SNR
+
+=
+
+10 log10
+
+✓ R t1
+t0
+
+y2(t) dt
+2
+
+·
+
+1 t1 t0
+
+◆
+
+()
+
+=
+
+s R t1
+t0
+
+y2(t) dt · t1 10SNR/10
+
+1 t0
+
+(3.2)
+
+and is used to scale the standard deviation of the noise, , in Eq. (3.3). Di↵erent values of SNR will be tried to see how the methods cope with signals with various noise level. Finally the signal is multiplied with a Gaussian window, g(t), to mimic the e↵ect of an insect entering and exiting the laser beam. This leads to the following signal which will be used in the evaluation
+
+z(t) = (y(t) + · e(t))g(t).
+
+(3.3)
+
+A comparison between a simulated signal, z(t), and a real backscatter signal can be seen in Figure 3.1.
+
+15
+
+The amplitude of the harmonics is based on estimations from 117,475 observations obtained in Tanzania. The set of estimations has been cleaned of outliers and the normalized values are shown in table 3.1. The mean values
+
+Mean Interquartile range
+
+A0 0.258 0.182
+
+A1 0.188 0.144
+
+A2 0.152 0.102
+
+A3 0.138 0.091
+
+Table 3.1: Mean values and interquartile range for the amplitude of the harmonics.
+
+is used for An in Eq. (3.1) and the stochastic amplitude variable, Ax,n, are uniformly distributed within the interquartile range as shown in table 3.2.
+
+Ax,0
+
+Ax,1
+
+Ax,2
+
+Ax,3
+
+[-0.091, 0.091] [-0.072, 0.072] [-0.051, 0.051] [-0.046, 0.046]
+
+Table 3.2: The stochastic amplitude variable is uniformly distributed with minimum and maximum shown within square brackets.
+
+As mentioned in the introduction, the relative phase of the harmonics a↵ect
+
+the signal signiﬁcantly. The phase, x, of the harmonics in Eq. (3.1) is therefore shifted stochastically as
+
+x ⇠ U (0, 2⇡)
+
+(3.4)
+
+for each simulation.
+
+The width of the Gaussian window, g(t), and as a result the length of the
+
+signal is controlled with a variable ↵. The window is deﬁned as
+
+✓ w(t) = exp
+
+1⇣t
+
+t1/2 ⌘2◆
+
+2↵
+
+(3.5)
+
+where t1 is the max length of the signal before windowing. The width of the window is proportional to ↵, which means that larger ↵ equals longer signal. Di↵erent values of ↵ will be tried in the simulations to see how the methods handle signals of di↵erent length.
+The signal is sampled with a sample rate, fs, of 1750 Hz which means that a time step of 1/fs is used. Simulations will be made with a wide range of di↵erent fundamental frequencies. This is to investigate if any di culties might arise for certain frequencies. High fundamental frequencies could be a di culty since the overtones will be greater than the Nyquist frequency.
+
+16
+
+(a)
+
+(b)
+
+Figure 3.1: Comparison of simulated signal (b) with real backscatter signal (a). a) Filtered backscatter signal from an insect with WBF of 176 Hz. b) Simulated signal with f0 = 176 Hz and SNR=15.
+
+3.2 Identifying the fundamental frequency
+To ﬁnd the fundamental frequency in the output of the methods the following algorithms has been used.
+Algorithm 1 Find frequencies
+Input: Matrix S with time-frequency distribution Output: Vector Freq with frequencies
+1: function FrequencyFinder(S) 2: SS = sum(S) over time-axis 3: maxEnergy = max(SS) 4: Allfreq = ﬁndFrequencies(SS>(maxEnergy/10)) 5: Peaks = ﬁndLocalPeaks(Allfreq) 6: Freq = sort(Peaks) based on energy content with highest ﬁrst 7: return Freq 8: end function
+The ﬁrst algorithm is used to extract the fundamental frequency and corresponding overtones from the time-frequency distribution derived from the methods. To do this the energy is summed for each frequency bin over all time bins. For the periodogram this ﬁrst step is not needed since the method has no time representation. Frequencies with spectral density over a certain threshold are then extracted. The threshold is chosen so that the fundamental frequency and the ﬁrst overtones are extracted while excluding as much noise as possible. For these simulations a threshold of 10 percent of the highest spectral density is chosen. Peaks are then extracted by ﬁnding local maximas. The peaks are then sorted by energy content and returned as an output of the algorithm.
+The second algorithm uses the output vector of the ﬁrst algorithm to determine the fundamental frequency. If the vector only contains one frequency
+
+17
+
+Algorithm 2 Find fundamental frequency f0
+
+Input: Freq
+Output: f0 1: function FindF0(Freq) 2: f0 = F req(1) 3: N = number of frequencies in Freq
+
+4: if N > 1 then
+
+5:
+
+for k = 1 to min(N, 5) do
+
+6:
+
+Check if ﬁrst overtone to Freq(k) exists in Freq vector
+
+7:
+
+if First overtone exists then
+
+8:
+
+return f0=Freq(k)
+
+9:
+
+end if
+
+10:
+
+Check if second overtone to Freq(k) exists in Freq vector
+
+11:
+
+if Second overtone exists then
+
+12:
+
+return f0=Freq(k)
+
+13:
+
+end if
+
+14:
+
+end for
+
+15: end if 16: return f0
+
+17: end function
+
+this is deemed to be the fundamental frequency. If the vector contains multiple frequencies, the fundamental frequency is deemed to be the ﬁrst frequency that has a harmonic overtone. A presumed fundamental frequency of 200 Hz would have a ﬁrst overtone at 400 Hz and a second overtone at 600 Hz. If neither the ﬁrst nor the second overtone is found in the vector the next frequency in the vector will be tried. An overtone is deemed to found if the frequency is within a margin of ±5 percent of the exact multiple, i.e. the ﬁrst overtone to f0 = 200 Hz should be in the range of 380-420 Hz. Overtones that have a frequency greater than the Nyquist frequency are folded back and appear as aliased peaks within the Nyquist frequency, e.g. an overtone with a frequency of 1000 Hz will appear at 750 Hz. This is adjusted for in the search of overtones. The fundamental frequency is presumed to be one of the top 5 frequencies in terms of energy content and thus only these frequencies will be tried. If no overtones are found to any of these, the frequency with the highest energy content is deemed to be the fundamental frequency. The estimated fundamental frequency is considered to be correct if it lies within a margin of ±10 percent of the true fundamental frequency.
+
+3.3 Relative phase estimation
+The ﬁrst step for estimating the relative phase of the overtones, in the signal z(t), is to identify the frequency of all the tones, including the fundamental tone. This is done by taking the 4 highest peaks from the frequency margin of the
+
+18
+
+Wigner-Ville distribution. For signals with relatively high SNR this should be the fundamental frequency and its 3 overtones. The Wigner-Ville distribution is used since it has better resolution than the spectrogram and avoids peak splitting that can occur for the scaled reassigned spectrogram (ScRe-Spect). Peak splitting could result in the same tone being chosen twice leaving out one of the overtones. To get the center time of the signal the highest peak from the time-margin of the ScRe-Spect is taken. The ScRe-Spect has very good resolution and is not troubled by the cross-terms, as is the case for the WignerVille distribution. The centre time is used when estimating the amplitudes of the signals in the matched phase reassignment. It also with respect to this point that the phases are estimated.
+Once the 4 frequencies have been chosen, 20 surrogate signals with di↵erent phase are created for each frequency as
+
+y2(t) = 0.5 cos(2⇡fkt + test)g(t), t 2 [t0, t1]
+
+(3.6)
+
+where fk is each identiﬁed frequency. The phase, test, is ranging from 0 to 0.95 (·2⇡ radians) with an increment of 0.05. The matched phase reassignment is then computed for the signal z(t) and each surrogate signal, y2(t). The surrogate signal with the phase yielding the lowest R´enyi entropy is chosen as the presumed phase, ˆk, of the tone with frequency fk. An example of this is shown in ﬁgure 3.2.
+When the phase has been estimated for all 4 tones it is time to see if they are the correct ones. The frequency of each of the identiﬁed tones are compared with the frequencies of the actual fundamental frequency and its overtones. If the estimated frequency is within a range of ±10 percent of the actual frequency of a tone it is deemed to be correct. The estimated phase is then compared with the corresponding actual phase of the tone. The estimated phase is deemed to be correct if it lies within a range of ±0.075 · 2⇡ radians of the actual phase.
+
+19
+
+Figure 3.2: R´enyi entropy for di↵erent phase values of an overtone. The true phase of the overtone is 0.3293 · 2⇡ radians and the R´enyi entropy is the lowest for 0.3 · 2⇡ radians.
+20
+
+Chapter 4
+Results
+4.1 Wing beat frequency estimation
+4.1.1 Di↵erent noise level
+For this set of simulations a window with ↵ = 10 has been used. This gives a signal length of around 82 samples, equivalent to 47 ms. The signal is considered to start when the magnitude of the signal reaches 5 percent of the maximum signal magnitude and end the last time this level is reached. The signal length is thus the di↵erence between these two points. Forty-one di↵erent values of SNR is tried, ranging from -10 to 30 with an increment of one. In ﬁgure 4.1 it can be seen how a signal with both the highest and the lowest noise level might look like. For each value of SNR 2000 simulations are made. The fundamental
+
+(a)
+
+(b)
+
+Figure 4.1: In (a) a signal with SNR=30 and in (b) a signal with SNR=-10. Both signals have the same fundamental frequency of 200 Hz.
+
+frequency is 200 Hz for all simulations. As can be seen in ﬁgure 4.2 the algorithm identiﬁes the correct fundamental
+frequency for all methods to a very high degree for high values of SNR. For the
+
+21
+
+periodogram, Wigner-Ville, and the spectrogram, the correct fundamental frequency is identiﬁed 98-99 percent of the time and the ScRe-Spect 95-98 percent. The fraction of correctly estimated f0 starts to drop when SNR falls to around 10. The drop is then accelerated when SNR falls below 5. Less than 50 percent of the estimated f0 is correct for SNR below -5.
+Figure 4.2: Fraction of correctly estimated fundamental frequency for the different methods.
+For relatively high SNR, wrong estimations are caused due to the ﬁrst overtone being chosen as the presumed fundamental frequency. This happens when the spectral density peak of the ﬁrst overtone is higher than the peak of the fundamental frequency and the peak of the third overtone is higher than 10 percent of the highest peak. An example of this can be seen in ﬁgure 4.4 for the scaled reassigned spectrogram. When the SNR drops even further also the second and the third overtone gets chosen as the presumed fundamental frequency, see ﬁgure 4.3. The estimations also become less precise, e.g. fˆ0 = 190 Hz instead of the correct 200 Hz.
+In ﬁgure 4.4 it can also be seen that the spectral density of Wigner-Ville is almost identical to the periodogram. This is no surprise as the frequency marginal of the Wigner-Ville distribution is related to the periodogram estimate of the signal [27]. This explains why the two methods have the same fraction of correctly estimated f0 for di↵erent values of SNR. The cross-terms that lies between
+22
+
+(a)
+
+(b)
+
+Figure 4.3: Histograms of the estimated fundamental frequency for Wigner-Ville and ScRe-Spect. In (a) when SNR=10 in (a) and in (b) when SNR=0.
+
+the peaks for Wigner-Ville are oscillating around zero and hence evens out when summed over all time bins. Why the ScRe-Spect performs slightly worse than the other methods is because of the reassignment. Sometimes more spectral density gets reassigned to the frequency of one of the overtones which could results in this peak being higher than the peak of the fundamental frequency. Hence the algorithm identiﬁes the overtone as the fundamental frequency more often for ScRe-Spect.
+
+23
+
+Figure 4.4: Spectral density distribution for the di↵erent methods from a simulation with SNR=12.
+4.1.2 Di↵erent signal length
+For this set of simulations the SNR has been set to 5. Fundamental frequency is the same as in the previous simulations, 200 Hz. Thirty di↵erent signal lengths
+24
+
+are tested. The parameter for the window length, ↵, is incremented by a half from 0.5 to 15. Some examples on how this translates to signal length deﬁned above; ↵ = 5 yields a signal of around 22 ms, ↵ = 8 around 36 ms and ↵ = 15 around 69 ms. For each value of ↵, 2000 simulations are made.
+As can be seen in ﬁgure 4.5, the fraction of correctly estimated f0 increases with longer signal length. There is however very little improvement once the signal reaches a length of 40 ms. For signals longer than 40 ms the algorithm picks the right f0 around 91-93 percent of the time for the periodogram, WignerVille and the spectrogram, and around 87-90 percent for the ScRe-Spect. The upper limit for signals of this length seems to be more determined by the level of noise. The fraction of correctly estimated f0 drops rapidly for signals shorter than 20 ms. This is no surprise since the period for a signal with a frequency of 200 Hz is 5 ms. Wrong estimations are caused due the same reasons as in the SNR simulations, the overtones gets chosen as the presumed fundamental frequency. For relatively long signals the ﬁrst overtone sometimes gets chosen and for very short signals also the second and the third overtone gets chosen to some extent.
+Figure 4.5: Fraction of correctly estimated fundamental frequency for the different methods.
+25
+
+4.1.3 Di↵erent fundamental frequency
+For this set of simulations SNR has been set to 5 and ↵ to 15. Eighty-three di↵erent values of fundamental frequency has been tried, ranging from 50 to 870 Hz with an increment of 10 Hz. For each value 2000 simulations has been made.
+As can be seen in ﬁgure 4.6 the fraction of correctly estimated f0 stays relatively stable for most values of f0. For these frequencies the algorithm identiﬁes the correct f0 in 92-95 percent of the time for the periodogram, Wigner-Ville and the spectrogram and 87-91 percent for the ScRe-Spect. Peculiar things
+Figure 4.6: Fraction of correctly estimated fundamental frequency for the different methods. happen for certain values of f0 however. This is due to frequency folding of the overtones. For certain frequency values the aliased peak will land at the same frequency as one of the other tones. The ﬁrst time this happen is when f0 = 250 Hz, then the third overtone will be folded back to f=750 Hz, the same frequency as the second overtone. This makes the peak at f=750 Hz extra high, see ﬁgure 4.7, and the algorithm has a higher change of picking this frequency as the presumed fundamental frequency. The other drops in correctly estimated f0 are caused by the same mechanism. When f0 is around 580-590 Hz the algorithm identiﬁes the correct fundamental frequency almost 100 percent of the time. This is because the ﬁrst overtone is folded back to the same frequency as the fundamental frequency.
+26
+
+Figure 4.7: Spectral density output by ScRe-Spect for one simulation to the left with f0 = 240 and one to the right with f0 = 250. The peaks of the second and the third overtones are separated in the simulation with f0 = 240 and not in the simulation with f0 = 250.
+Interestingly ScRe-Spect seems to perform better than the other methods when f0 = 290. The ﬁrst overtone then have a frequency of 580 Hz and the third overtone show up as an aliased peak at 590 Hz, slightly higher than the ﬁrst overtone. They are too closely located to be separated by any of the methods, which causes this peak to become very high. But since they are slightly separated the reassigned peak becomes slightly wider and therefore not as high. The fundamental frequency is located far from any other major peak and thus the spectral density gets reassigned to a very thin, almost impulse-like, peak which is very high. Therefore there are simulations when the fundamental frequency peak is the highest for ScRe-Spect and not for the other methods. An example of this can be seen in ﬁgure 4.8.
+27
+
+Figure 4.8: Spectral density distribution for the di↵erent methods from a simulation with f0 = 290.
+28
+
+4.2 Phase estimation
+
+4.2.1 Di↵erent noise level
+For this set of simulations a window with ↵ = 10 has been used. The fundamental frequency is 200 Hz for all simulations. Six di↵erent values of SNR is investigated, ranging from 0 to 25 with an increment of 5. For each value of SNR, 2000 simulations are made.
+Since it is the relative phase of the overtones compared to the phase of the fundamental frequency that is of interest, simulations when the phase of the fundamental frequency is incorrect are considered failures. Table 4.1 shows how often the phase of the fundamental frequency is estimated correctly. To be
+SNR=0 =5 =10 =15 =20 =25 Correct 0 0.513 0.727 0.854 0.937 0.979 0.999
+Table 4.1: How often the phase of the fundamental tone is correctly estimated for di↵erent noise levels.
+
+useful the phase of the fundamental frequency and at least one of the overtones has to be correct. In the best case scenario all the tones are identiﬁed and the corresponding estimated phase is correct. In ﬁgure 4.9 the fraction of correctly estimated phases for di↵erent values of SNR is shown. For low values of SNR the method barely never estimates the phase of all three overtones correctly. When SNR is increased to 15, the method estimates the phase correctly for all three overtones around 63 percent of the time and for two overtones around 25 percent. This level further improves as SNR is increased and for SNR=25 the phase of all three overtones are estimated correctly in more than 90 percent of the simulations.
+The method works poorly when SNR is equal to both 0 and 5. To be able to estimate the phase of an overtone, the overtone ﬁrst needs to be identiﬁed. In table 4.2 it can be seen that both the fundamental frequency and the overtones are identiﬁed most of the time for SNR=5. Still, the estimated phase of all three overtones are correct only 10 percent of the time. From this it can be concluded that the phase estimation works very poorly for signals with high noise level.
+
+SNR=0 SNR=5
+
+fˆ0 0.995
+1
+
+fˆ1 0.913 0.999
+
+fˆ2 0.793 0.995
+
+fˆ3 0.719 0.985
+
+Table 4.2: How often the correct frequencies are found for SNR=0 and SNR=5.
+
+29
+
+Figure 4.9: The fraction of correctly estimated phase of the overtones for di↵erent values of SNR. Each line represent how often the phase is estimated correctly for one, two or all three overtones, in addition to a correct estimation of the phase of f0. The dashed line represents how often the phase of f0 and at least one of the overtones is estimated correctly.
+4.2.2 Di↵erent signal length
+For this set of simulations a SNR of 15 is used. The fundamental frequency is 200 Hz for all simulations. Eight di↵erent signal lengths is tried, with ↵ ranging from 4 to 18 with an increment of 2. For each level of ↵ 2000 simulations are made.
+Table 4.3 shows how often the phase of the fundamental frequency is estimated correctly. There is large increase from ↵ = 4 to ↵ = 6 and then a gradual increase with increasing signal length. In ﬁgure 4.10 it can be seen that the frac-
+↵ = 4 =6 =8 =10 =12 =14 =16 =18 Correct 0 0.672 0.838 0.885 0.943 0.958 0.979 0.988 0.992
+Table 4.3: How often the phase of the fundamental tone is correctly estimated for di↵erent window lengths.
+tion of correctly estimated phases increases with increasing signal length. For
+30
+
+shorter signals the phase is correctly estimated for one or two of the overtones to some extent. As the signal length increases the phase of all three overtones are more often correctly estimated.
+Figure 4.10: The fraction of correctly estimated phase of the overtones for di↵erent values of alpha.
+31
+
+32
+
+Chapter 5
+Real data
+5.1 Data
+Backscatter signals from 25 000 observations are studied in this thesis. This is a subset from a larger set consisting of 233 660 observations obtained outside the village Lupiro in Tanzania. Lidar measurements were carried out continuously between August 31 and September 5 2016 and the laser sensor had a line rate of 3 500 Hz. The laser was turned o↵ and on every other exposure to enable background subtraction. Hence, the sample rate after background subtraction was 1 750 Hz and therefore a Nyquist frequency of 875 Hz.
+A histogram of how long time each insect spent in the laser beam can be seen in ﬁgure 5.1. Most observations are very short, the shortest being 23.4 ms and the median being 36.6 ms. There are around a hundred observations longer than 200 ms with the longest being 611 ms.
+As mentioned in the introduction the backscatter signal consists of an oscillatory wing beat part and a low frequency, envelope shaped body part. To separate the wing beat part a low pass ﬁlter has been used. The low pass ﬁlter is used to extract the body part that is then subtracted from the backscatter signal, leaving the wing beat part of the signal left. The cuto↵ frequency, fc, has been set to fc = 2fs/L where L is the signal length in samples and fs the sampling rate. The reason for this is that the wing beat frequency has to be high enough so that at least two wing beats are present in the signal. The ﬁlter coe cients are created with the MATLAB function ﬁr1 and then passed through the function ﬁltﬁlt along with the signal. For the spectrogram and the ScRe-Spect, a Gaussian window of the same length as the signal has been used.
+33
+
+Figure 5.1: A histogram over the transit time for all observations.
+5.2 Wing beat frequency estimation
+The same algorithm presented in chapter 3 has been used for estimating the fundamental frequency of the real observations. A minor modiﬁcation has been made to the algorithm and that is to not consider frequencies less than fc as a potential fundamental frequency. In ﬁgure 5.2 a histogram over the estimated fundamental frequencies is shown. Histograms for each method can be found in the appendix. As can be seen, the estimated fundamental frequency is fairly similar for the di↵erent methods. Most observations have a wing beat frequency between 100 and 200 Hz. Observations with a wing beat frequency around 50100 Hz and 200-400 Hz are also common. There are around 3 900 observations with a wing beat frequency over 400 Hz, which could therefore potentially be mosquitoes. It is noteworthy that it seems to be peaks of observations with wing beat frequency of 440 Hz and 580 Hz. The peak at 580 Hz could be as a result of the ﬁrst overtone being folded back to the same frequency making the algorithm extra likely to pick the right fundamental frequency. If that is the case, the algorithm might underestimate the number of observations with fundamental frequency nearby. In case of a strong ﬁrst and third overtone it might also be that 580 Hz gets chosen as the fundamental frequency even if the correct one is 290 Hz. For 440 Hz, the same pattern could be an explanation also here, the second overtone being folded back the fundamental frequency making
+34
+
+Figure 5.2: Histogram over estimated fundamental frequency. it likely to be correctly chosen. It could, however, also just be a coincidence and that there more insects with these wing beat frequencies in the set.
+Among the observations with very low estimated frequency, there some cases where the low pass ﬁlter does not work perfectly. As can be seen in ﬁgure 5.3 the body part of the signal has an irregular shape between t=70-110 ms which the ﬁlter can not handle properly. When the body part then is subtracted from the signal a strong low frequency pattern is created. This particular observation might, however, not even be an insect. There are no visible wing beats and ﬂuctuation on the envelope looks more like noise.
+35
+
+(a)
+(b)
+Figure 5.3: (a) The blue line is the unﬁltered backscatter signal, the yellow line is the body part derived from the low pass ﬁlter and the orange line is the ﬁltered signal representing the wing beat part of the signal. As can be seen around t=60-70 ms, the ﬁlter has caused a peak in the ﬁltered signal which gets picked up as a very low frequency (b).
+36
+
+Some of the observations with very low estimated fundamental frequency are nonetheless insects that has been misestimated. In some of the longer signals the insect changed direction while being in the laser beam making a drastic change to particularly the body part of the signal. Such drastic changes can not be handled by the ﬁlter and a low frequency pattern will show up in the ﬁltered signal. An example of this can be seen in ﬁgure 5.4, where the insect seems to change direction at t=50-60 ms.
+(a)
+(b)
+Figure 5.4: (a) Low frequency pattern caused by the change of direction at around t=50 ms which the ﬁlter could not handle. (b) In the spectrogram the true fundamental frequency and its overtones can be noted at around 130-140 Hz and multiples of that.
+37
+
+By utilizing the good time-frequency resolution of the ScRe-Spect it is possible to overcome this issue by analyzing the part of the signal before or after the change of direction instead. If the frequency-margin is taken from this signal between t=5 ms and t=55, the fundamental frequency will be the major peak and the algorithm will pick the right wing beat frequency. In ﬁgure 5.5 the frequency margin of the cropped signal can be seen.
+Figure 5.5: Cropped signal and the corresponding frequency-margin. Now the fundamental frequency is the highest peak and the ﬁve overtones are clearly visible.
+5.3 Phase estimation
+As could be seen in the simulation study, the matched phase reassignment can not estimate the phase correctly to a high degree for noisy signals. For this analysis a signal with seemingly little noise has therefore been selected. The selected signal and the frequency marginal of Wigner-Ville can be seen in ﬁgure 5.6. Although 6 overtones can be seen in the frequency marginal, only the phase of the ﬁrst 3 overtones will be estimated. In table 5.1 the estimated frequencies of the fundamental wing beat frequency and the 3 ﬁrst overtones can be found.
+38
+
+Figure 5.6: Backscatter signal and frequency marginal of the selected observation. The fundamental frequency of 112 Hz and up to six overtones can be seen in the frequency marginal. The low frequency of 45 Hz is an e↵ect of the ﬂuctuation in the body part of the insect at around t=20ms.
+fˆ0 fˆ1 fˆ2 fˆ3 Frequency (Hz) 112 219 326 436
+Table 5.1: Estimated frequencies of the fundamental wing beat frequency and the 3 ﬁrst overtones.
+The matched phase reassignment is used on the fundamental frequency and the ﬁrst 3 overtones. The R´enyi entropy for di↵erent phase values of the di↵erent frequencies can be seen in ﬁgure 5.7 and the estimated phases can be found in table 5.2. As can be seen, the R´enyi entropy is quite unstable, especially for the the ﬁrst overtone. Hence, the results are somewhat ambiguous. For the ﬁrst overtone the R´enyi entropy is almost the same for ˆ1 = 0.1, in which case the fundamental frequency and the ﬁrst overtone would be more or less in phase, as it is for ˆ1 = 0.9. The second and third overtone are not in phase with the fundamental frequency, judging by the R´enyi entropy. Considering that this is among the least noisy signals and with clear overtones, reliable phase estimations would be hard to attain for the majority of the signals using the
+39
+
+matched phase reassignment method.
+
+Figure 5.7: R´enyi entropy for di↵erent phase values of the fundamental wing beat frequency, f0, and the ﬁrst three overtones.
+
+ˆ0
+
+ˆ1
+
+ˆ2
+
+ˆ3
+
+Phase (·2⇡ radians) 0.05 0.90 0.55 0.75
+
+Table 5.2: Estimated phase of the fundamental wing beat frequency and the 3 ﬁrst overtones.
+
+40
+
+Chapter 6
+Discussion and conclusion
+All 4 methods evaluated for estimating the fundamental wing beat frequency managed to correctly estimate the fundamental frequency, in simulated signals, to a high degree and the results were fairly similar. The Wigner-Ville distribution and the periodogram were slightly better than the spectrogram and the scaled reassigned spectrogram, although the di↵erences were slim. The scaled reassigned spectrogram estimated the correct wing beat frequency slightly less often than the other methods. However, it estimated the correct fundamental frequency for some observations, for which all the other methods failed.
+The methods were fairly robust to high noise levels and managed to estimate the correct fundamental frequency for SNR as low as 5 to a high degree. They also coped well with signals as short as 22 ms.
+The algorithm used to identify the fundamental frequency experienced problems for certain frequencies. Those problems were related to folding of the overtones. Insects can have a wing beat frequency of up to 1000 Hz, with overtones of multiples of that. A sample rate of 1750 Hz is therefore probably too low. By sampling with a higher sample rate the problem with folded overtones would be resolved.
+The window used for the spectrogram and the scaled reassigned spectrogram was a Gaussian window of the same length as the signal. For optimal results the window should also have the same shape as the envelope of the signal. Some, but far from all signals had an envelope resembling a Gaussian shape. The shape of the envelope is unique for each observation and ﬁnding the perfect window shape for each observation is a challenging task.
+Separating the wing beat part and the body part of the signal also proved challenging. The low pass ﬁlter worked well for most signals but for some, especially longer signals, the ﬁlter failed to do this which sometimes resulted in that a low frequency originating from the shape of the envelope from the insect body got selected as the estimated fundamental frequency. When the ﬁlter worked, which it did for most signals, the wing beat signal would be stationary and there would be no need for time-frequency methods as the periodogram would su ce. Considering that most signals consists of just a few wing beats it
+41
+
+would be strange if the signal would not be stationary. However, for the cases when the ﬁlter failed, time-frequency methods proved useful. By identifying low frequencies that only are present in the begging and the end of the signal, or during a short time span when the insect changed direction, it is possible to estimate the correct fundamental frequency from a stationary part of the signal. For these cases the scaled reassigned spectrogram is useful since it has superior time resolution.
+The matched phase reassignment successfully estimated the phases of the overtones in simulated signals with low noise level. The method is not very robust to noise and also require signals of some length. When applied to a real signal the matched phase reassignment showed ambiguous results, despite seemingly low noise level and clear overtones. Considering that most signals are considerably more noisy and often shorter, the matched phase reassignment can not be used on a wide scale to estimate the relative phase of the overtones from backscatter signals. Also the noise in the real signals are necessarily not white but more lack of clear wing beats and other disturbances.
+Future work
+Estimating the fundamental frequency of backscatter signals is challenging and there are areas that could be improved. Finding the right window for each observation would improve the methods accuracy. Also the ﬁlter separating the wing beat part and the body part is not perfect. A sliding min ﬁlter would be better but on the other hand it requires an idea of the fundamental frequency on beforehand. Creating an algorithm that automatically detects cases when the ﬁlter fails could be an option. Also the algorithm used to identify the fundamental frequency could be reﬁned. The current algorithm sometimes chooses the ﬁrst overtone over the fundamental frequency and it also has a high risk of failing on observations with multiple wing pairs.
+42
+
+Bibliography
+[1] R. G. Foottit and P. H. Adler. Insect Biodiversity: Science and Society, Second Edition. John Wiley & Sons, 2017.
+[2] World Health Organization. Vector-borne diseases. 2017. url: https : / / www.who.int/news-room/fact-sheets/detail/vector-borne-diseases.
+[3] E.-C. Oerke. “Crop losses to pests”. The Journal of Agricultural Science 144.1 (2006), pp. 31–43.
+[4] M. Vrijheid et al. “Environmental pollutants and child health—a review of recent concerns”. International journal of hygiene and environmental health 219.4-5 (2016), pp. 331–342.
+[5] C. A. Hallmann et al. “More than 75 percent decline over 27 years in total ﬂying insect biomass in protected areas”. PloS one 12.10 (2017), e0185809.
+[6] F. S´anchez-Bayo and K. A. Wyckhuys. “Worldwide decline of the entomofauna: A review of its drivers”. Biological Conservation 232 (2019), pp. 8–27.
+[7] F. S´anchez-Bayo et al. “Are bee diseases linked to pesticides?—A brief review”. Environment international 89 (2016), pp. 7–11.
+[8] N. Gallai et al. “Economic valuation of the vulnerability of world agriculture confronted with pollinator decline”. Ecological economics 68.3 (2009), pp. 810–821.
+[9] S. A. Onyango et al. “Monitoring malaria vector control interventions: e↵ectiveness of ﬁve di↵erent adult mosquito sampling methods”. Journal of medical entomology 50.5 (2013), pp. 1140–1151.
+[10] M. N. Bayoh et al. “Anopheles gambiae: historical population decline associated with regional distribution of insecticide-treated bed nets in western Nyanza Province, Kenya”. Malaria journal 9.1 (2010), p. 62.
+[11] M. Yohannes and E. Boelee. “Early biting rhythm in the afro-tropical vector of malaria, Anopheles arabiensis, and challenges for its control in Ethiopia”. Medical and veterinary entomology 26.1 (2012), pp. 103–105.
+[12] J. B. Silver. Mosquito ecology: ﬁeld sampling methods. springer science & business media, 2007.
+43
+
+[13] S. Jansson and M. Brydegaard. “Passive kHz lidar for the quantiﬁcation of insect activity and dispersal”. Animal Biotelemetry 6.1 (2018), p. 6.
+[14] P. Ndebele and R. Musesengwa. “Ethical dilemmas in malaria vector research in Africa: Making the di cult choice between mosquito, science and humans”. Malawi Medical Journal 24.3 (2012), pp. 65–68.
+[15] S. Jansson et al. “First polarimetric investigation of malaria mosquitoes as lidar targets”. IEEE Journal of Selected Topics in Quantum Electronics 25.1 (2019), pp. 1–8.
+[16] L. Mei and M. Brydegaard. “Atmospheric aerosol monitoring by an elastic Scheimpﬂug lidar system”. Optics express 23.24 (2015), A1613–A1628.
+[17] E. Malmqvist et al. “E↵ective parameterization of laser radar observations of atmospheric fauna”. IEEE Journal of Selected Topics in Quantum Electronics 22.3 (2016), pp. 327–334.
+[18] M. Brydegaard et al. “Daily evolution of the insect biomass spectrum in an agricultural landscape accessed with lidar”. In: EPJ Web of Conferences. Vol. 119. EDP Sciences. 2016, p. 22004.
+[19] A. Comer´on et al. “Current research in lidar technology used for the remote sensing of atmospheric aerosols”. Sensors 17.6 (2017), p. 1450.
+[20] NATO. “Laser Based Stand-O↵ Detection of Biological Agents” (2010).
+[21] M. Brydegaard. “Towards quantitative optical cross sections in entomological laser radar–potential of temporal and spherical parameterizations for identifying atmospheric fauna”. PLoS One 10.8 (2015), e0135231.
+[22] A. Gebru et al. “Multiband modulation spectroscopy for the determination of sex and species of mosquitoes in ﬂight”. Journal of biophotonics 11.8 (2018), e201800014.
+[23] J. L. Cloudsley-Thompson. Evolution and adaptation of terrestrial arthropods. Springer Science & Business Media, 2012.
+[24] M. J. Lehane. The biology of blood-sucking in insects. Cambridge University Press, 2005.
+[25] A. Moore and R. H. Miller. “Automated identiﬁcation of optically sensed aphid (Homoptera: Aphidae) wingbeat waveforms”. Annals of the Entomological Society of America 95.1 (2002), pp. 1–8.
+[26] G. Lindgren, H. Rootz´en, and M. Sandsten. Stationary stochastic processes for scientists and engineers. Chapman and Hall/CRC, 2013.
+[27] M. Sandsten. Time-Frequency Analysis of Time-Varying Signals and NonStationary Processes. Lund University, available at http://www.maths. lu.se/ﬁleadmin/maths/personal sta↵/mariasandsten/TFkompver2.pdf, 2018.
+[28] I. Reinhold, M. Sandsten, and J. Starkhammar. “Objective detection and time-frequency localization of components within transient signals”. The Journal of the Acoustical Society of America 143.4 (2018), pp. 2368–2378.
+44
+
+[29] F. Auger and P. Flandrin. “Improving the readability of time-frequency and time-scale representations by the reassignment method”. IEEE Transactions on signal processing 43.5 (1995), pp. 1068–1089.
+[30] J. Brynolfsson and M. Sandsten. “Parameter estimation of oscillating Gaussian functions using the scaled reassigned spectrogram”. Signal Processing 150 (2018), pp. 20–32.
+[31] M. Hansson-Sandsten and J. Brynolfsson. “The scaled reassigned spectrogram with perfect localization for estimation of Gaussian functions”. IEEE Signal Processing Letters 22.1 (2014), pp. 100–104.
+[32] M. Sandsten et al. “The matched phase reassignment”. Unpublished.
+45
+
+46
+
+Appendix A
+Appendix
+Figure A.1: Histogram over estimated fundamental frequency with the periodogram.
+47
+
+Figure A.2: Histogram over estimated fundamental frequency with the scaled reassigned spectrogram.
+48
+
+Figure A.3: Histogram over estimated fundamental frequency with the spectrogram.
+49
+
+Figure A.4: Histogram over estimated fundamental frequency with the WignerVille distribution.
+50
+
+Upskatta insekters vingslagsfrekvens från laserdata
+Varje år dör fler än 700,000 människor runt om i världen av sjukdomar spridda av insekter. Det kanske mest ökända smittobäraren är myggan som kan sprida sjukdomar som malaria och gula febern. Preventiva åtgärder så som myggnät har räddat många liv men riskerar att bli mindre verkningsamma i framtiden. Forskare har sett att vissa malariamyggor ändrat sitt betende så att de går på jakt tidigare, innan folk har hunnit lägga sig under sina myggnät. För att effektivt kunna bekämpa malariamyggor och andra skadeinsekter behöver man veta både när och var de finns.
+Att mäta insekter är dock ingen lätt uppgift. De är små och flyger snabbt. En relativt ny metod är att använda sig utav lidar (laserradar). Lidar har många användningsområden och används bland annat i självkörande bilar för att bilen ska få bild om hur miljön runt omkring bilen ser ut i realtid. För insektsobservationer andvänds en lite annorlunda lidar som skickar ut en laserstråle flera tusen gången per sekund. När en insekt flyger genom laserstrålen studsar ljus tillbaka från insektens kropp och vingar. Det tillbakastudsande ljuset (signalen) kan sedan analyseras för att ta reda på vad det är för insekt. Ett sätt är att uppskatta med vilken frekvens insekten slår sina vingar. Olika insekter flaxar sina vingar olika snabbt och information om detta kan på så sätt uttnyttjas för att ta reda på vad det är för insekt. Myggor har t.ex. en väldigt hög vinglsagsfrekvens, 400-700 slag per sekund för honorna och 600-900 slag per sekund för hanarna.
+I denna uppsats har fyra olika frekvensestimeringsmetoder utvärderats på hur väl de olika metoderna är på att uppskatta vingslagsfrekvensen. Tre av metoderna är så kallade tids-frekvensmetoder som tar hänsyn till både tid och frekvens medan en av metoderna bara tar hänsyn till frekvens. Denna utvärdering har gjorts på både riktig lidardata som kommer från en mätning i Tanzania och på simulerad data. I de olika frekvensestimeringsmetoderna räknas spektraltätheten ut för signalen, alltså hur energin är fördelad i frekvensplanet. Lidar-signalen innehåller utöver vingslagsfrekvensen även harmoniska övertoner och olika sorters brus. En algortim som identifierar vingslagsfrekvensen i spektrumet har således också tagits fram. Utöver vingslagsfrekevensen har även fasskillnaden mellan övertonerna uppskattats med en metod som kallas the matched phase reassignment.
+Resultatet från utvärdering visar att alla fyra metoder för att uppskatta vingslagsfrekvens fungerar väl och är ungefär lika bra. Metoderna är också tåliga för brus som kan finnas i signalen. Tidsaspekten från tids-frekvensmetoderna kommer till störst använding i de fall insekten stannar länge i laserstrålen och kanske ändrar flygriktning. Metoden för att uppskatta fasskillnaden mellan övertonerna fungerade inte lika väl på grund av känslighet för brus.
+Uppsatsens titel: ”Unbiased pitch detection and phase estimation in entomolical lidar” Författare: Johan Fogelmark Datum: 2019-06-09
+
+Master’s Theses in Mathematical Sciences 2019:E37 ISSN 1404-6342
+LUTFMS-3371-2019
+Mathematical Statistics Centre for Mathematical Sciences
+Lund University Box 118, SE-221 00 Lund, Sweden
+http://www.maths.lth.se/
+

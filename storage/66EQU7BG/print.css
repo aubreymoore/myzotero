@@ -1,0 +1,84 @@
+body {
+	margin:0;
+	font-size: 100%; 
+	width: 100%; 
+	margin: 0; 
+	float: none;
+	background: #FFF;
+}
+
+#navbar, a.menu-link, #menu, .noprint, embed, iframe, .container, #donateContainer, #donateContainerHome, #donateContainerBottom, #bannerWrap img, #carouselWrap, #themeLinks, #themeLinksArchive, #themeLinksArchiveAlt, #themeRight, #articleLinks, #mainImage, #rightHeader, #footerLinks { 
+	display: none; 
+}
+
+#keywordsBox, #contributors {
+	background: #fff;
+	padding: 0;
+	border: 0;
+}
+
+#headerBackground, header, #leftHeader, #rightHeader {
+	background: #fff;
+}
+
+#leftHeader h1, #leftHeader h2, #bannerWrap h1, #carouselWrap h1 {
+	display: block;
+}
+
+#mainGrid {
+	width: 100%;
+}
+
+#contentPadding{
+	padding: 0;
+}
+
+#footerAddress {
+	padding: 10px 0;
+	margin: 0;
+}	
+
+#bannerWrap, #carouselAlt, #articleTop, #themeTop, #articleMain	{
+	width: 100%;
+	float: none;
+}
+
+.clearRight	{
+	clear: none;
+}
+
+.clearLeft	{
+	clear: none;
+}
+
+#home 	{
+	margin: 10px 0 0 0;
+}
+
+#homeDescription	{
+	border-top: 1px solid #bed0d5;
+}
+
+.homeArticle	{
+	width: 100%;
+	float: none;
+	clear: both;
+}
+	
+#homeArticles ul {
+	margin-top: 5px;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+
+.homeThemeImg  {
+	display: none;
+}
+
+.homeThemeAlt {
+	display: block;
+	text-align: left;
+	font-weight: bold;
+	width: 100%;
+}
